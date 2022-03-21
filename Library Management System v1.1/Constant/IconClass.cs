@@ -20,6 +20,8 @@ namespace Library_Management_System_v1._1.Constant
         public String manageFeebtnDark = exePath + "\\Images\\feeDark.png";
         public String manageActivitiesbtnLight = exePath + "\\Images\\activityLight.png";
         public String manageActivitiesbtnDark = exePath + "\\Images\\activityDark.png";
+        public String showPass = exePath + "\\Images\\showPass.png";
+        public String hidePass = exePath + "\\Images\\hidePass.png";
 
 
     }
