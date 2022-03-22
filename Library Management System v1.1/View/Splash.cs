@@ -24,7 +24,6 @@ namespace Library_Management_System_v1._1
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
-            
             progressBar1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
         }
 
