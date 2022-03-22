@@ -11,7 +11,7 @@ namespace Library_Management_System_v1._1.Constant
         static String exePath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
         
         public String dashboardbtnLight = exePath+ "\\Images\\dashboardLight.png";
-        public String dashboardbtnDark = exePath + "\\Images\\dashboardIco.png";
+        public String dashboardbtnDark = exePath + "\\Images\\dashboardDark.png";
         public String manageUsersbtnLight = exePath + "\\Images\\usersLight.png";
         public String manageUsersbtnDark = exePath + "\\Images\\usersDak.png";
         public String manageBooksbtnLight = exePath + "\\Images\\booksLight.png";
@@ -23,6 +23,11 @@ namespace Library_Management_System_v1._1.Constant
         public String showPass = exePath + "\\Images\\showPass.png";
         public String hidePass = exePath + "\\Images\\hidePass.png";
         public String dashboardBooks = exePath + "\\Images\\books.png";
+        public String bookBorrowLight = exePath + "\\Images\\bookBorrowLight.png";
+        public String bookBorrowDark = exePath + "\\Images\\bookBorrowDark.png";
+        public String   userLight = exePath + "\\Images\\userLight.png";
+        public String userDark = exePath + "\\Images\\userDark.png";
+
 
 
 

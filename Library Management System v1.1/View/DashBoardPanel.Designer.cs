@@ -30,9 +30,9 @@ namespace Library_Management_System_v1._1.View
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardPanel));
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.dateTime = new MetroFramework.Controls.MetroTile();
+            this.time = new System.Windows.Forms.Label();
+            this.date = new System.Windows.Forms.Label();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -67,7 +67,7 @@ namespace Library_Management_System_v1._1.View
             this.label13 = new System.Windows.Forms.Label();
             this.metroTile7 = new MetroFramework.Controls.MetroTile();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.metroTile1.SuspendLayout();
+            this.dateTime.SuspendLayout();
             this.metroTile3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -88,40 +88,40 @@ namespace Library_Management_System_v1._1.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
-            // metroTile1
+            // dateTime
             // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroTile1.Controls.Add(this.label8);
-            this.metroTile1.Controls.Add(this.label7);
-            this.metroTile1.ForeColor = System.Drawing.Color.White;
-            this.metroTile1.Location = new System.Drawing.Point(408, 11);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(177, 27);
-            this.metroTile1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTile1.TabIndex = 0;
-            this.metroTile1.UseCustomBackColor = true;
-            this.metroTile1.UseSelectable = true;
+            this.dateTime.ActiveControl = null;
+            this.dateTime.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dateTime.Controls.Add(this.time);
+            this.dateTime.Controls.Add(this.date);
+            this.dateTime.ForeColor = System.Drawing.Color.White;
+            this.dateTime.Location = new System.Drawing.Point(483, 11);
+            this.dateTime.Name = "dateTime";
+            this.dateTime.Size = new System.Drawing.Size(199, 27);
+            this.dateTime.Style = MetroFramework.MetroColorStyle.Blue;
+            this.dateTime.TabIndex = 0;
+            this.dateTime.UseCustomBackColor = true;
+            this.dateTime.UseSelectable = true;
             // 
-            // label8
+            // time
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(110, 6);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 17);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "7:15 AM";
+            this.time.AutoSize = true;
+            this.time.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.time.Location = new System.Drawing.Point(102, 6);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(55, 17);
+            this.time.TabIndex = 1;
+            this.time.Text = "7:15 AM";
             // 
-            // label7
+            // date
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(10, 5);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 17);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "2022 - 03 - 25";
+            this.date.AutoSize = true;
+            this.date.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date.Location = new System.Drawing.Point(10, 5);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(84, 17);
+            this.date.TabIndex = 0;
+            this.date.Text = "2022 - 03 - 25";
             // 
             // metroTile3
             // 
@@ -134,7 +134,7 @@ namespace Library_Management_System_v1._1.View
             this.metroTile3.Controls.Add(this.label1);
             this.metroTile3.Location = new System.Drawing.Point(16, 59);
             this.metroTile3.Name = "metroTile3";
-            this.metroTile3.Size = new System.Drawing.Size(174, 102);
+            this.metroTile3.Size = new System.Drawing.Size(220, 102);
             this.metroTile3.TabIndex = 2;
             this.metroTile3.UseCustomBackColor = true;
             this.metroTile3.UseCustomForeColor = true;
@@ -169,7 +169,7 @@ namespace Library_Management_System_v1._1.View
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(106, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(128, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -207,9 +207,9 @@ namespace Library_Management_System_v1._1.View
             this.metroTile4.Controls.Add(this.pictureBox2);
             this.metroTile4.Controls.Add(this.label4);
             this.metroTile4.Controls.Add(this.label3);
-            this.metroTile4.Location = new System.Drawing.Point(196, 59);
+            this.metroTile4.Location = new System.Drawing.Point(241, 59);
             this.metroTile4.Name = "metroTile4";
-            this.metroTile4.Size = new System.Drawing.Size(188, 102);
+            this.metroTile4.Size = new System.Drawing.Size(220, 102);
             this.metroTile4.TabIndex = 3;
             this.metroTile4.UseCustomBackColor = true;
             this.metroTile4.UseCustomForeColor = true;
@@ -241,7 +241,7 @@ namespace Library_Management_System_v1._1.View
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(123, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(159, 11);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -279,9 +279,9 @@ namespace Library_Management_System_v1._1.View
             this.metroTile5.Controls.Add(this.pictureBox3);
             this.metroTile5.Controls.Add(this.label6);
             this.metroTile5.Controls.Add(this.label5);
-            this.metroTile5.Location = new System.Drawing.Point(391, 59);
+            this.metroTile5.Location = new System.Drawing.Point(465, 59);
             this.metroTile5.Name = "metroTile5";
-            this.metroTile5.Size = new System.Drawing.Size(197, 102);
+            this.metroTile5.Size = new System.Drawing.Size(220, 102);
             this.metroTile5.TabIndex = 4;
             this.metroTile5.UseCustomBackColor = true;
             this.metroTile5.UseCustomForeColor = true;
@@ -313,7 +313,7 @@ namespace Library_Management_System_v1._1.View
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(136, 9);
+            this.pictureBox3.Location = new System.Drawing.Point(164, 9);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -362,9 +362,9 @@ namespace Library_Management_System_v1._1.View
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.metroTile2);
-            this.panel1.Location = new System.Drawing.Point(13, 187);
+            this.panel1.Location = new System.Drawing.Point(16, 167);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(174, 69);
+            this.panel1.Size = new System.Drawing.Size(219, 69);
             this.panel1.TabIndex = 6;
             // 
             // label10
@@ -394,7 +394,7 @@ namespace Library_Management_System_v1._1.View
             this.metroTile2.ActiveControl = null;
             this.metroTile2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.metroTile2.Controls.Add(this.pictureBox7);
-            this.metroTile2.Location = new System.Drawing.Point(0, 0);
+            this.metroTile2.Location = new System.Drawing.Point(0, -1);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(75, 69);
             this.metroTile2.TabIndex = 0;
@@ -417,9 +417,9 @@ namespace Library_Management_System_v1._1.View
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.metroTile6);
-            this.panel2.Location = new System.Drawing.Point(196, 187);
+            this.panel2.Location = new System.Drawing.Point(241, 167);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(188, 69);
+            this.panel2.Size = new System.Drawing.Size(220, 69);
             this.panel2.TabIndex = 7;
             // 
             // label12
@@ -476,9 +476,9 @@ namespace Library_Management_System_v1._1.View
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.metroTile7);
-            this.panel3.Location = new System.Drawing.Point(390, 187);
+            this.panel3.Location = new System.Drawing.Point(465, 167);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(197, 69);
+            this.panel3.Size = new System.Drawing.Size(221, 69);
             this.panel3.TabIndex = 8;
             // 
             // label14
@@ -530,6 +530,8 @@ namespace Library_Management_System_v1._1.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoScrollMinSize = new System.Drawing.Size(715, 480);
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -538,14 +540,14 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.metroTile5);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile3);
-            this.Controls.Add(this.metroTile1);
-            this.MaximumSize = new System.Drawing.Size(1030, 705);
-            this.MinimumSize = new System.Drawing.Size(1030, 705);
+            this.Controls.Add(this.dateTime);
+            this.MaximumSize = new System.Drawing.Size(715, 480);
+            this.MinimumSize = new System.Drawing.Size(715, 480);
             this.Name = "DashBoardPanel";
-            this.Size = new System.Drawing.Size(1030, 705);
+            this.Size = new System.Drawing.Size(715, 480);
             this.Load += new System.EventHandler(this.DashBoardPanel_Load);
-            this.metroTile1.ResumeLayout(false);
-            this.metroTile1.PerformLayout();
+            this.dateTime.ResumeLayout(false);
+            this.dateTime.PerformLayout();
             this.metroTile3.ResumeLayout(false);
             this.metroTile3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -580,7 +582,7 @@ namespace Library_Management_System_v1._1.View
 
         #endregion
 
-        private MetroFramework.Controls.MetroTile metroTile1;
+        private MetroFramework.Controls.MetroTile dateTime;
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTile metroTile4;
         private MetroFramework.Controls.MetroTile metroTile5;
@@ -596,8 +598,8 @@ namespace Library_Management_System_v1._1.View
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroTile metroTile2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label time;
+        private System.Windows.Forms.Label date;
         private System.Windows.Forms.PictureBox pictureBox4;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.PictureBox pictureBox5;

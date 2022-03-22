@@ -32,7 +32,6 @@ namespace Library_Management_System_v1._1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageBookAdmin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_search = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.cmb_search = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -63,23 +62,6 @@ namespace Library_Management_System_v1._1
             this.label1.TabIndex = 0;
             this.label1.Text = "Manage Books";
             // 
-            // txt_search
-            // 
-            this.txt_search.Depth = 0;
-            this.txt_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.txt_search.Hint = "";
-            this.txt_search.Location = new System.Drawing.Point(19, 53);
-            this.txt_search.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txt_search.Name = "txt_search";
-            this.txt_search.PasswordChar = '\0';
-            this.txt_search.SelectedText = "";
-            this.txt_search.SelectionLength = 0;
-            this.txt_search.SelectionStart = 0;
-            this.txt_search.Size = new System.Drawing.Size(202, 23);
-            this.txt_search.TabIndex = 5;
-            this.txt_search.Text = "search";
-            this.txt_search.UseSystemPasswordChar = false;
-            // 
             // cmb_search
             // 
             this.cmb_search.FormattingEnabled = true;
@@ -102,7 +84,6 @@ namespace Library_Management_System_v1._1
             this.panel2.Controls.Add(this.btn_update);
             this.panel2.Controls.Add(this.btn_edit);
             this.panel2.Controls.Add(this.cmb_search);
-            this.panel2.Controls.Add(this.txt_search);
             this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(600, 106);
@@ -159,7 +140,6 @@ namespace Library_Management_System_v1._1
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txt_search;
         private System.Windows.Forms.ComboBox cmb_search;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;

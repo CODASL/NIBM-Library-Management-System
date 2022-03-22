@@ -15,7 +15,10 @@ namespace Library_Management_System_v1._1.View
         public DashBoardPanel()
         {
             InitializeComponent();
-            metroTile1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dateTime.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            date.Text = DateTime.Now.ToShortDateString();
+            time.Text = DateTime.Now.ToString("hh:mm:ss tt");
+         
        
         }
 

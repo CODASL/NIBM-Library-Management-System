@@ -42,8 +42,8 @@ namespace Library_Management_System_v1._1
 
         private void btnQR_Click(object sender, EventArgs e)
         {
-            txtemail.Hide();
-            txtpass.Hide();
+            txtmail.Hide();
+            txtPass.Hide();
             //lblforgotpass.Hide();
             btnlogin.Hide();
             hideShowPass.Hide();
@@ -72,12 +72,12 @@ namespace Library_Management_System_v1._1
         {
             if (hideShowPass.Image == Image.FromFile(icons.showPass))
             {
-                txtpass.UseSystemPasswordChar = false;
+                //txtpass.UseSystemPasswordChar = false;
                 hideShowPass.Image = Image.FromFile(icons.hidePass);
             }
             else
             {
-                txtpass.UseSystemPasswordChar = true;
+                //txtpass.UseSystemPasswordChar = true;
                 hideShowPass.Image = Image.FromFile(icons.showPass);
             }
         }

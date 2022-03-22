@@ -39,7 +39,6 @@ namespace Library_Management_System_v1._1
             this.btn_update = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -89,7 +88,6 @@ namespace Library_Management_System_v1._1
             this.panel3.Controls.Add(this.btn_update);
             this.panel3.Controls.Add(this.btn_edit);
             this.panel3.Controls.Add(this.comboBox1);
-            this.panel3.Controls.Add(this.materialSingleLineTextField1);
             this.panel3.Location = new System.Drawing.Point(0, 1);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(600, 106);
@@ -132,23 +130,6 @@ namespace Library_Management_System_v1._1
             this.comboBox1.Size = new System.Drawing.Size(102, 21);
             this.comboBox1.TabIndex = 6;
             // 
-            // materialSingleLineTextField1
-            // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(19, 51);
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(214, 23);
-            this.materialSingleLineTextField1.TabIndex = 5;
-            this.materialSingleLineTextField1.Text = "search";
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
-            // 
             // ManageBookLibrarian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +160,5 @@ namespace Library_Management_System_v1._1
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.ComboBox comboBox1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
     }
 }

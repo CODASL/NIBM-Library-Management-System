@@ -65,8 +65,8 @@ namespace Library_Management_System_v1._1
                 }
                 else {
                     timer1.Enabled = false;
-                    frm.Closed += (s, args) => this.Close();
-                    frm.ShowDialog();
+                    frm2.Closed += (s, args) => this.Close();
+                    frm2.ShowDialog();
                 }
                
             }

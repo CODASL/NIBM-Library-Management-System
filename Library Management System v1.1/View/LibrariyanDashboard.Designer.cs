@@ -66,7 +66,7 @@ namespace Library_Management_System_v1._1.View
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(20, 60);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(195, 469);
+            this.metroPanel1.Size = new System.Drawing.Size(195, 480);
             this.metroPanel1.TabIndex = 1;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -250,7 +250,8 @@ namespace Library_Management_System_v1._1.View
             this.contextPanel.HorizontalScrollbarSize = 10;
             this.contextPanel.Location = new System.Drawing.Point(221, 60);
             this.contextPanel.Name = "contextPanel";
-            this.contextPanel.Size = new System.Drawing.Size(704, 481);
+            this.contextPanel.Size = new System.Drawing.Size(715, 480);
+            this.contextPanel.Style = MetroFramework.MetroColorStyle.White;
             this.contextPanel.TabIndex = 2;
             this.contextPanel.VerticalScrollbarBarColor = true;
             this.contextPanel.VerticalScrollbarHighlightOnWheel = false;
@@ -279,21 +280,20 @@ namespace Library_Management_System_v1._1.View
             // 
             // LibrariyanDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(935, 549);
+            this.ClientSize = new System.Drawing.Size(950, 560);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Heading);
             this.Controls.Add(this.contextPanel);
             this.Controls.Add(this.metroPanel1);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(930, 540);
+            this.MaximumSize = new System.Drawing.Size(950, 560);
+            this.MinimumSize = new System.Drawing.Size(950, 560);
             this.Name = "LibrariyanDashboard";
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
             this.Style = MetroFramework.MetroColorStyle.White;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.metroPanel1.ResumeLayout(false);
             this.IntroPanel.ResumeLayout(false);
             this.IntroPanel.PerformLayout();

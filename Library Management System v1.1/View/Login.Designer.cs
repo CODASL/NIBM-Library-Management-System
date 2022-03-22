@@ -38,18 +38,18 @@
             this.btnQR = new System.Windows.Forms.Button();
             this.lblhedder = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtemail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtpass = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.hideShowPass = new System.Windows.Forms.PictureBox();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.resetBtn = new System.Windows.Forms.Button();
+            this.hideShowPass = new System.Windows.Forms.PictureBox();
+            this.txtmail = new MetroFramework.Controls.MetroTextBox();
+            this.txtPass = new MetroFramework.Controls.MetroTextBox();
             this.bluebackround.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hideShowPass)).BeginInit();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hideShowPass)).BeginInit();
             this.SuspendLayout();
             // 
             // bluebackround
@@ -146,24 +146,6 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Email Address";
             // 
-            // txtemail
-            // 
-            this.txtemail.Depth = 0;
-            this.txtemail.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemail.Hint = "";
-            this.txtemail.Location = new System.Drawing.Point(11, 35);
-            this.txtemail.MaxLength = 32767;
-            this.txtemail.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtemail.Name = "txtemail";
-            this.txtemail.PasswordChar = '\0';
-            this.txtemail.SelectedText = "";
-            this.txtemail.SelectionLength = 0;
-            this.txtemail.SelectionStart = 0;
-            this.txtemail.Size = new System.Drawing.Size(212, 23);
-            this.txtemail.TabIndex = 18;
-            this.txtemail.TabStop = false;
-            this.txtemail.UseSystemPasswordChar = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -174,43 +156,14 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Password";
             // 
-            // txtpass
-            // 
-            this.txtpass.Depth = 0;
-            this.txtpass.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpass.Hint = "";
-            this.txtpass.Location = new System.Drawing.Point(11, 106);
-            this.txtpass.MaxLength = 32767;
-            this.txtpass.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtpass.Name = "txtpass";
-            this.txtpass.PasswordChar = '\0';
-            this.txtpass.SelectedText = "";
-            this.txtpass.SelectionLength = 0;
-            this.txtpass.SelectionStart = 0;
-            this.txtpass.Size = new System.Drawing.Size(212, 23);
-            this.txtpass.TabIndex = 20;
-            this.txtpass.TabStop = false;
-            this.txtpass.UseSystemPasswordChar = false;
-            // 
-            // hideShowPass
-            // 
-            this.hideShowPass.Image = ((System.Drawing.Image)(resources.GetObject("hideShowPass.Image")));
-            this.hideShowPass.Location = new System.Drawing.Point(201, 104);
-            this.hideShowPass.Name = "hideShowPass";
-            this.hideShowPass.Size = new System.Drawing.Size(20, 20);
-            this.hideShowPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.hideShowPass.TabIndex = 21;
-            this.hideShowPass.TabStop = false;
-            this.hideShowPass.Click += new System.EventHandler(this.hideShowPass_Click);
-            // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.txtmail);
             this.metroPanel1.Controls.Add(this.label2);
             this.metroPanel1.Controls.Add(this.btnlogin);
             this.metroPanel1.Controls.Add(this.hideShowPass);
             this.metroPanel1.Controls.Add(this.label1);
-            this.metroPanel1.Controls.Add(this.txtemail);
-            this.metroPanel1.Controls.Add(this.txtpass);
+            this.metroPanel1.Controls.Add(this.txtPass);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
@@ -245,6 +198,77 @@
             this.resetBtn.UseVisualStyleBackColor = true;
             this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
+            // hideShowPass
+            // 
+            this.hideShowPass.Image = ((System.Drawing.Image)(resources.GetObject("hideShowPass.Image")));
+            this.hideShowPass.Location = new System.Drawing.Point(212, 104);
+            this.hideShowPass.Name = "hideShowPass";
+            this.hideShowPass.Size = new System.Drawing.Size(20, 20);
+            this.hideShowPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.hideShowPass.TabIndex = 21;
+            this.hideShowPass.TabStop = false;
+            this.hideShowPass.Click += new System.EventHandler(this.hideShowPass_Click);
+            // 
+            // txtmail
+            // 
+            // 
+            // 
+            // 
+            this.txtmail.CustomButton.Image = null;
+            this.txtmail.CustomButton.Location = new System.Drawing.Point(210, 1);
+            this.txtmail.CustomButton.Name = "";
+            this.txtmail.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtmail.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtmail.CustomButton.TabIndex = 1;
+            this.txtmail.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtmail.CustomButton.UseSelectable = true;
+            this.txtmail.CustomButton.Visible = false;
+            this.txtmail.Lines = new string[0];
+            this.txtmail.Location = new System.Drawing.Point(3, 44);
+            this.txtmail.MaxLength = 32767;
+            this.txtmail.Name = "txtmail";
+            this.txtmail.PasswordChar = '\0';
+            this.txtmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtmail.SelectedText = "";
+            this.txtmail.SelectionLength = 0;
+            this.txtmail.SelectionStart = 0;
+            this.txtmail.ShortcutsEnabled = true;
+            this.txtmail.Size = new System.Drawing.Size(232, 23);
+            this.txtmail.TabIndex = 22;
+            this.txtmail.UseSelectable = true;
+            this.txtmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtmail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtPass
+            // 
+            // 
+            // 
+            // 
+            this.txtPass.CustomButton.Image = null;
+            this.txtPass.CustomButton.Location = new System.Drawing.Point(210, 1);
+            this.txtPass.CustomButton.Name = "";
+            this.txtPass.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPass.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPass.CustomButton.TabIndex = 1;
+            this.txtPass.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPass.CustomButton.UseSelectable = true;
+            this.txtPass.CustomButton.Visible = false;
+            this.txtPass.Lines = new string[0];
+            this.txtPass.Location = new System.Drawing.Point(0, 104);
+            this.txtPass.MaxLength = 32767;
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '\0';
+            this.txtPass.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPass.SelectedText = "";
+            this.txtPass.SelectionLength = 0;
+            this.txtPass.SelectionStart = 0;
+            this.txtPass.ShortcutsEnabled = true;
+            this.txtPass.Size = new System.Drawing.Size(232, 23);
+            this.txtPass.TabIndex = 23;
+            this.txtPass.UseSelectable = true;
+            this.txtPass.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPass.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,9 +290,9 @@
             this.bluebackround.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hideShowPass)).EndInit();
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hideShowPass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,12 +308,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblhedder;
         private System.Windows.Forms.Label label1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtemail;
         private System.Windows.Forms.Label label2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtpass;
-        private System.Windows.Forms.PictureBox hideShowPass;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button resetBtn;
+        private System.Windows.Forms.PictureBox hideShowPass;
+        private MetroFramework.Controls.MetroTextBox txtmail;
+        private MetroFramework.Controls.MetroTextBox txtPass;
     }
 }

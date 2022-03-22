@@ -33,8 +33,8 @@ namespace Library_Management_System_v1._1.View
             sideBarBtns.SetValue(new Model.SideBarNavigateBtn(iconClass.manageUsersbtnLight, iconClass.manageUsersbtnDark, btnManageUsers), 1);
             sideBarBtns.SetValue(new Model.SideBarNavigateBtn(iconClass.manageBooksbtnLight , iconClass.manageBooksbtnDark , btnManageCustomers), 2);
             sideBarBtns.SetValue(new Model.SideBarNavigateBtn(iconClass.manageFeebtnLight, iconClass.manageFeebtnDark, btnManageFee), 3);
-            sideBarBtns.SetValue(new Model.SideBarNavigateBtn(iconClass.manageActivitiesbtnLight, iconClass.manageActivitiesbtnDark, bookBorrowingBtn), 4);
-            sideBarBtns.SetValue(new Model.SideBarNavigateBtn(iconClass.manageActivitiesbtnLight, iconClass.manageActivitiesbtnDark, LibrariyanProfileBtn), 5);
+            sideBarBtns.SetValue(new Model.SideBarNavigateBtn(iconClass.bookBorrowLight, iconClass.bookBorrowDark, bookBorrowingBtn), 4);
+            sideBarBtns.SetValue(new Model.SideBarNavigateBtn(iconClass.userLight, iconClass.userDark, LibrariyanProfileBtn), 5);
 
 
             Console.WriteLine(sideBarBtns[0].darkIcon);
