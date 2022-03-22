@@ -243,6 +243,7 @@
             this.resetBtn.TabIndex = 25;
             this.resetBtn.Text = "Reset Password";
             this.resetBtn.UseVisualStyleBackColor = true;
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
             // Login
             // 

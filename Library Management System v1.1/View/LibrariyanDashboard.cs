@@ -16,17 +16,13 @@ namespace Library_Management_System_v1._1.View
     {
         Controller.LibrariyanHomeController librariyanHomeCtrl = new Controller.LibrariyanHomeController();
         Constant.IconClass iconClass = new Constant.IconClass();
-        int height; 
-        int width;
+      
         public LibrariyanDashboard()
         {
             InitializeComponent();
             onChangeNavigation(0, contextPanel, new DashBoardPanel());
-            height = Controller.ResponsiveController.height;
-            width =  Controller.ResponsiveController.width;
-
-            Console.WriteLine(height + "x" + width);
            
+
         }
         private void onChangeNavigation(int arrayIndex , Panel where , UserControl from )
         {

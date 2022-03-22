@@ -81,5 +81,10 @@ namespace Library_Management_System_v1._1
                 hideShowPass.Image = Image.FromFile(icons.showPass);
             }
         }
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+            new View.ResetPassword().ShowDialog();
+        }
     }
 }

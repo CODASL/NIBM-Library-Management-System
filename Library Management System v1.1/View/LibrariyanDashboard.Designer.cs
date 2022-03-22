@@ -289,6 +289,7 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.contextPanel);
             this.Controls.Add(this.metroPanel1);
             this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(930, 540);
             this.Name = "LibrariyanDashboard";
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
             this.Style = MetroFramework.MetroColorStyle.White;

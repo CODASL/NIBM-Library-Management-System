@@ -149,6 +149,12 @@
     <Compile Include="View\QRlogin.Designer.cs">
       <DependentUpon>QRlogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\QRlogin.resx">
       <DependentUpon>QRlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
