@@ -44,6 +44,7 @@
             this.hideShowPass = new System.Windows.Forms.PictureBox();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.label3 = new System.Windows.Forms.Label();
+            this.resetBtn = new System.Windows.Forms.Button();
             this.bluebackround.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).BeginInit();
@@ -128,10 +129,10 @@
             // 
             this.lblhedder.AutoSize = true;
             this.lblhedder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblhedder.Font = new System.Drawing.Font("Noto Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhedder.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhedder.Location = new System.Drawing.Point(334, 96);
             this.lblhedder.Name = "lblhedder";
-            this.lblhedder.Size = new System.Drawing.Size(217, 17);
+            this.lblhedder.Size = new System.Drawing.Size(200, 15);
             this.lblhedder.TabIndex = 1;
             this.lblhedder.Text = "Hello , Welcome to the System Again!";
             // 
@@ -224,18 +225,31 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Copperplate Gothic Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(387, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(223, 13);
+            this.label3.Size = new System.Drawing.Size(167, 13);
             this.label3.TabIndex = 23;
             this.label3.Text = "NIBM Library Management System";
+            // 
+            // resetBtn
+            // 
+            this.resetBtn.FlatAppearance.BorderSize = 0;
+            this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetBtn.Location = new System.Drawing.Point(403, 391);
+            this.resetBtn.Name = "resetBtn";
+            this.resetBtn.Size = new System.Drawing.Size(109, 23);
+            this.resetBtn.TabIndex = 25;
+            this.resetBtn.Text = "Reset Password";
+            this.resetBtn.UseVisualStyleBackColor = true;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 450);
+            this.Controls.Add(this.resetBtn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.btnQR);
@@ -275,5 +289,6 @@
         private System.Windows.Forms.PictureBox hideShowPass;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button resetBtn;
     }
 }
