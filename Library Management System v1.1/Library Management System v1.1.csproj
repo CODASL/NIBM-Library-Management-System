@@ -76,6 +76,7 @@
     <Compile Include="Controller\LibrariyanHomeController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\SplashController.cs" />
+    <Compile Include="Model\DatabaseService.cs" />
     <Compile Include="Model\LoginUser.cs" />
     <Compile Include="Model\SideBarNavigateBtn.cs" />
     <Compile Include="Program.cs" />
