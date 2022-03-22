@@ -22,6 +22,8 @@ namespace Library_Management_System_v1._1.Constant
         public String manageActivitiesbtnDark = exePath + "\\Images\\activityDark.png";
         public String showPass = exePath + "\\Images\\showPass.png";
         public String hidePass = exePath + "\\Images\\hidePass.png";
+        public String dashboardBooks = exePath + "\\Images\\books.png";
+
 
 
     }

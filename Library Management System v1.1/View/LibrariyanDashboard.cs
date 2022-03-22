@@ -16,22 +16,29 @@ namespace Library_Management_System_v1._1.View
     {
         Controller.LibrariyanHomeController librariyanHomeCtrl = new Controller.LibrariyanHomeController();
         Constant.IconClass iconClass = new Constant.IconClass();
+        int height; 
+        int width;
         public LibrariyanDashboard()
         {
             InitializeComponent();
             onChangeNavigation(0, contextPanel, new DashBoardPanel());
+            height = Controller.ResponsiveController.height;
+            width =  Controller.ResponsiveController.width;
 
+            Console.WriteLine(height + "x" + width);
+           
         }
         private void onChangeNavigation(int arrayIndex , Panel where , UserControl from )
         {
             
 
-            Model.SideBarNavigateBtn[] sideBarBtns = new Model.SideBarNavigateBtn[5];
+            Model.SideBarNavigateBtn[] sideBarBtns = new Model.SideBarNavigateBtn[6];
             sideBarBtns.SetValue(new Model.SideBarNavigateBtn(iconClass.dashboardbtnLight , iconClass.dashboardbtnDark , btnDashboard),0);
             sideBarBtns.SetValue(new Model.SideBarNavigateBtn(iconClass.manageUsersbtnLight, iconClass.manageUsersbtnDark, btnManageUsers), 1);
             sideBarBtns.SetValue(new Model.SideBarNavigateBtn(iconClass.manageBooksbtnLight , iconClass.manageBooksbtnDark , btnManageCustomers), 2);
             sideBarBtns.SetValue(new Model.SideBarNavigateBtn(iconClass.manageFeebtnLight, iconClass.manageFeebtnDark, btnManageFee), 3);
-            sideBarBtns.SetValue(new Model.SideBarNavigateBtn(iconClass.manageActivitiesbtnLight, iconClass.manageActivitiesbtnDark, myActivitiesBtn), 4);
+            sideBarBtns.SetValue(new Model.SideBarNavigateBtn(iconClass.manageActivitiesbtnLight, iconClass.manageActivitiesbtnDark, bookBorrowingBtn), 4);
+            sideBarBtns.SetValue(new Model.SideBarNavigateBtn(iconClass.manageActivitiesbtnLight, iconClass.manageActivitiesbtnDark, LibrariyanProfileBtn), 5);
 
 
             Console.WriteLine(sideBarBtns[0].darkIcon);
@@ -100,30 +107,25 @@ namespace Library_Management_System_v1._1.View
 
         private void btnManageFee_Click(object sender, EventArgs e)
         {
-            onChangeNavigation(3,contextPanel, new DashBoardPanel());
-      
+            onChangeNavigation(3, contextPanel, new DashBoardPanel());
+
+        }
+        private void bookBorrowingBtn_Click(object sender, EventArgs e)
+        {
+            onChangeNavigation(4, contextPanel, new DashBoardPanel());
         }
 
-        private void myActivitiesBtn_Click(object sender, EventArgs e)
+        private void LibrariyanProfileBtn_Click(object sender, EventArgs e)
         {
-            onChangeNavigation(4,contextPanel, new DashBoardPanel());
-            
+            onChangeNavigation(5, contextPanel, new DashBoardPanel());
         }
 
-
-        Point lastPoint;
-       private void LibrariyanDashboard_MouseMove(object sender, MouseEventArgs e)
+        [Obsolete]
+        private void logoutBtn_Click(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
-            }
-        }
-
-        private void LibrariyanDashboard_MouseDown(object sender, MouseEventArgs e)
-        {
-            lastPoint = new Point(e.X, e.Y);
+            Controller.SplashController.setIsLoggedIn(false , null);
+            this.Hide();
+            new Login().Show();
         }
     }
 }

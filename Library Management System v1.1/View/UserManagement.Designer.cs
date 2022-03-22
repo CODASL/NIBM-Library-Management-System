@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,12 +39,12 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_view = new MetroFramework.Controls.MetroButton();
             this.btn_delete = new MetroFramework.Controls.MetroButton();
             this.btn_update = new MetroFramework.Controls.MetroButton();
             this.btn_add = new MetroFramework.Controls.MetroButton();
-            this.check_search = new MetroFramework.Controls.MetroCheckBox();
             this.txt_search = new MetroFramework.Controls.MetroTextBox();
+            this.cmbFilterUsers = new MetroFramework.Controls.MetroComboBox();
+            this.userHeading = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -54,34 +53,19 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel1.Controls.Add(this.materialLabel1);
+            this.panel1.Controls.Add(this.userHeading);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 40);
             this.panel1.TabIndex = 0;
             // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.White;
-            this.materialLabel1.Location = new System.Drawing.Point(7, 9);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(131, 19);
-            this.materialLabel1.TabIndex = 0;
-            this.materialLabel1.Text = "User Management";
-            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.cmbFilterUsers);
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.btn_view);
             this.panel2.Controls.Add(this.btn_delete);
             this.panel2.Controls.Add(this.btn_update);
             this.panel2.Controls.Add(this.btn_add);
-            this.panel2.Controls.Add(this.check_search);
             this.panel2.Controls.Add(this.txt_search);
             this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
@@ -157,30 +141,21 @@
             this.Column8.Name = "Column8";
             this.Column8.Width = 80;
             // 
-            // btn_view
-            // 
-            this.btn_view.Location = new System.Drawing.Point(502, 23);
-            this.btn_view.Name = "btn_view";
-            this.btn_view.Size = new System.Drawing.Size(75, 23);
-            this.btn_view.TabIndex = 5;
-            this.btn_view.Text = "View";
-            this.btn_view.UseSelectable = true;
-            // 
             // btn_delete
             // 
             this.btn_delete.BackColor = System.Drawing.SystemColors.Desktop;
-            this.btn_delete.Location = new System.Drawing.Point(421, 23);
+            this.btn_delete.Location = new System.Drawing.Point(514, 23);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(75, 23);
+            this.btn_delete.Size = new System.Drawing.Size(75, 27);
             this.btn_delete.TabIndex = 4;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseSelectable = true;
             // 
             // btn_update
             // 
-            this.btn_update.Location = new System.Drawing.Point(340, 23);
+            this.btn_update.Location = new System.Drawing.Point(430, 23);
             this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(75, 23);
+            this.btn_update.Size = new System.Drawing.Size(75, 27);
             this.btn_update.TabIndex = 3;
             this.btn_update.Text = "Update";
             this.btn_update.UseSelectable = true;
@@ -188,22 +163,12 @@
             // btn_add
             // 
             this.btn_add.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btn_add.Location = new System.Drawing.Point(259, 23);
+            this.btn_add.Location = new System.Drawing.Point(350, 23);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(75, 23);
+            this.btn_add.Size = new System.Drawing.Size(75, 27);
             this.btn_add.TabIndex = 2;
             this.btn_add.Text = "Add";
             this.btn_add.UseSelectable = true;
-            // 
-            // check_search
-            // 
-            this.check_search.AutoSize = true;
-            this.check_search.Location = new System.Drawing.Point(122, 23);
-            this.check_search.Name = "check_search";
-            this.check_search.Size = new System.Drawing.Size(88, 15);
-            this.check_search.TabIndex = 1;
-            this.check_search.Text = "Search by ID";
-            this.check_search.UseSelectable = true;
             // 
             // txt_search
             // 
@@ -212,7 +177,7 @@
             // 
             // 
             this.txt_search.CustomButton.Image = null;
-            this.txt_search.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.txt_search.CustomButton.Location = new System.Drawing.Point(195, 1);
             this.txt_search.CustomButton.Name = "";
             this.txt_search.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txt_search.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -220,23 +185,44 @@
             this.txt_search.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txt_search.CustomButton.UseSelectable = true;
             this.txt_search.CustomButton.Visible = false;
-            this.txt_search.Lines = new string[] {
-        "Search"};
-            this.txt_search.Location = new System.Drawing.Point(30, 23);
+            this.txt_search.Lines = new string[0];
+            this.txt_search.Location = new System.Drawing.Point(11, 23);
             this.txt_search.MaxLength = 32767;
             this.txt_search.Name = "txt_search";
             this.txt_search.PasswordChar = '\0';
+            this.txt_search.PromptText = "Search";
             this.txt_search.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txt_search.SelectedText = "";
             this.txt_search.SelectionLength = 0;
             this.txt_search.SelectionStart = 0;
             this.txt_search.ShortcutsEnabled = true;
-            this.txt_search.Size = new System.Drawing.Size(75, 23);
+            this.txt_search.Size = new System.Drawing.Size(217, 23);
             this.txt_search.TabIndex = 0;
-            this.txt_search.Text = "Search";
             this.txt_search.UseSelectable = true;
+            this.txt_search.WaterMark = "Search";
             this.txt_search.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txt_search.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // cmbFilterUsers
+            // 
+            this.cmbFilterUsers.FormattingEnabled = true;
+            this.cmbFilterUsers.ItemHeight = 23;
+            this.cmbFilterUsers.Location = new System.Drawing.Point(235, 21);
+            this.cmbFilterUsers.Name = "cmbFilterUsers";
+            this.cmbFilterUsers.Size = new System.Drawing.Size(109, 29);
+            this.cmbFilterUsers.TabIndex = 7;
+            this.cmbFilterUsers.UseSelectable = true;
+            // 
+            // userHeading
+            // 
+            this.userHeading.AutoSize = true;
+            this.userHeading.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userHeading.ForeColor = System.Drawing.Color.White;
+            this.userHeading.Location = new System.Drawing.Point(18, 11);
+            this.userHeading.Name = "userHeading";
+            this.userHeading.Size = new System.Drawing.Size(151, 19);
+            this.userHeading.TabIndex = 0;
+            this.userHeading.Text = "User Management";
             // 
             // UserManagement
             // 
@@ -249,7 +235,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -258,14 +243,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private MetroFramework.Controls.MetroButton btn_view;
         private MetroFramework.Controls.MetroButton btn_delete;
         private MetroFramework.Controls.MetroButton btn_update;
         private MetroFramework.Controls.MetroButton btn_add;
-        private MetroFramework.Controls.MetroCheckBox check_search;
         private MetroFramework.Controls.MetroTextBox txt_search;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -275,5 +257,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private MetroFramework.Controls.MetroComboBox cmbFilterUsers;
+        private System.Windows.Forms.Label userHeading;
     }
 }

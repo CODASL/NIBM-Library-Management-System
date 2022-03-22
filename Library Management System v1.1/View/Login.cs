@@ -15,6 +15,7 @@ namespace Library_Management_System_v1._1
     public partial class Login : MetroFramework.Forms.MetroForm
     {
         Constant.IconClass icons = new Constant.IconClass();
+        Controller.LoginController loginController = new Controller.LoginController();
        
         [Obsolete]
         public Login()
@@ -58,8 +59,7 @@ namespace Library_Management_System_v1._1
         private void btnlogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var libDash = new View.LibrariyanDashboard();
-            libDash.Show();
+            loginController.onLoggedIn(new View.LibrariyanDashboard() , "Librariyan");
 
         }
 

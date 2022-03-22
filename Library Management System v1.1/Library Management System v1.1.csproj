@@ -75,9 +75,11 @@
     <Compile Include="Controller\DashboardController.cs" />
     <Compile Include="Controller\LibrariyanHomeController.cs" />
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\ResponsiveController.cs" />
     <Compile Include="Controller\SplashController.cs" />
     <Compile Include="Model\DatabaseService.cs" />
     <Compile Include="Model\LoginUser.cs" />
+    <Compile Include="Model\ResponsiveSize.cs" />
     <Compile Include="Model\SideBarNavigateBtn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

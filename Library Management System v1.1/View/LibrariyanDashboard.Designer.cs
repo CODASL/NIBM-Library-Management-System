@@ -31,8 +31,9 @@ namespace Library_Management_System_v1._1.View
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibrariyanDashboard));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.LibrariyanProfileBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
-            this.myActivitiesBtn = new System.Windows.Forms.Button();
+            this.bookBorrowingBtn = new System.Windows.Forms.Button();
             this.btnManageFee = new System.Windows.Forms.Button();
             this.btnManageCustomers = new System.Windows.Forms.Button();
             this.btnManageUsers = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@ namespace Library_Management_System_v1._1.View
             this.lblUserName = new MetroFramework.Controls.MetroLabel();
             this.contextPanel = new MetroFramework.Controls.MetroPanel();
             this.Heading = new MetroFramework.Controls.MetroLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.metroPanel1.SuspendLayout();
             this.IntroPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatarImg)).BeginInit();
@@ -50,8 +52,9 @@ namespace Library_Management_System_v1._1.View
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.LibrariyanProfileBtn);
             this.metroPanel1.Controls.Add(this.logoutBtn);
-            this.metroPanel1.Controls.Add(this.myActivitiesBtn);
+            this.metroPanel1.Controls.Add(this.bookBorrowingBtn);
             this.metroPanel1.Controls.Add(this.btnManageFee);
             this.metroPanel1.Controls.Add(this.btnManageCustomers);
             this.metroPanel1.Controls.Add(this.btnManageUsers);
@@ -63,40 +66,59 @@ namespace Library_Management_System_v1._1.View
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(20, 60);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(195, 408);
+            this.metroPanel1.Size = new System.Drawing.Size(195, 469);
             this.metroPanel1.TabIndex = 1;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // LibrariyanProfileBtn
+            // 
+            this.LibrariyanProfileBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LibrariyanProfileBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LibrariyanProfileBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.LibrariyanProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LibrariyanProfileBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LibrariyanProfileBtn.Image = ((System.Drawing.Image)(resources.GetObject("LibrariyanProfileBtn.Image")));
+            this.LibrariyanProfileBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LibrariyanProfileBtn.Location = new System.Drawing.Point(0, 304);
+            this.LibrariyanProfileBtn.Name = "LibrariyanProfileBtn";
+            this.LibrariyanProfileBtn.Size = new System.Drawing.Size(195, 41);
+            this.LibrariyanProfileBtn.TabIndex = 9;
+            this.LibrariyanProfileBtn.Text = "My Profile";
+            this.LibrariyanProfileBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LibrariyanProfileBtn.UseVisualStyleBackColor = true;
+            this.LibrariyanProfileBtn.Click += new System.EventHandler(this.LibrariyanProfileBtn_Click);
+            // 
             // logoutBtn
             // 
             this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutBtn.Location = new System.Drawing.Point(47, 351);
+            this.logoutBtn.Location = new System.Drawing.Point(47, 381);
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(76, 29);
             this.logoutBtn.TabIndex = 8;
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
-            // myActivitiesBtn
+            // bookBorrowingBtn
             // 
-            this.myActivitiesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.myActivitiesBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.myActivitiesBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.myActivitiesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.myActivitiesBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myActivitiesBtn.Image = ((System.Drawing.Image)(resources.GetObject("myActivitiesBtn.Image")));
-            this.myActivitiesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.myActivitiesBtn.Location = new System.Drawing.Point(0, 263);
-            this.myActivitiesBtn.Name = "myActivitiesBtn";
-            this.myActivitiesBtn.Size = new System.Drawing.Size(195, 41);
-            this.myActivitiesBtn.TabIndex = 7;
-            this.myActivitiesBtn.Text = "My Activities";
-            this.myActivitiesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.myActivitiesBtn.UseVisualStyleBackColor = true;
-            this.myActivitiesBtn.Click += new System.EventHandler(this.myActivitiesBtn_Click);
+            this.bookBorrowingBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bookBorrowingBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bookBorrowingBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.bookBorrowingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bookBorrowingBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookBorrowingBtn.Image = ((System.Drawing.Image)(resources.GetObject("bookBorrowingBtn.Image")));
+            this.bookBorrowingBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bookBorrowingBtn.Location = new System.Drawing.Point(0, 263);
+            this.bookBorrowingBtn.Name = "bookBorrowingBtn";
+            this.bookBorrowingBtn.Size = new System.Drawing.Size(195, 41);
+            this.bookBorrowingBtn.TabIndex = 7;
+            this.bookBorrowingBtn.Text = "Book Borrwing";
+            this.bookBorrowingBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bookBorrowingBtn.UseVisualStyleBackColor = true;
+            this.bookBorrowingBtn.Click += new System.EventHandler(this.bookBorrowingBtn_Click);
             // 
             // btnManageFee
             // 
@@ -172,6 +194,7 @@ namespace Library_Management_System_v1._1.View
             // 
             // IntroPanel
             // 
+            this.IntroPanel.BackColor = System.Drawing.Color.Red;
             this.IntroPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.IntroPanel.Controls.Add(this.avatarImg);
             this.IntroPanel.Controls.Add(this.lblUserPosition);
@@ -190,6 +213,7 @@ namespace Library_Management_System_v1._1.View
             // 
             // avatarImg
             // 
+            this.avatarImg.BackColor = System.Drawing.Color.White;
             this.avatarImg.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("avatarImg.BackgroundImage")));
             this.avatarImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.avatarImg.InitialImage = null;
@@ -226,7 +250,7 @@ namespace Library_Management_System_v1._1.View
             this.contextPanel.HorizontalScrollbarSize = 10;
             this.contextPanel.Location = new System.Drawing.Point(221, 60);
             this.contextPanel.Name = "contextPanel";
-            this.contextPanel.Size = new System.Drawing.Size(600, 400);
+            this.contextPanel.Size = new System.Drawing.Size(704, 481);
             this.contextPanel.TabIndex = 2;
             this.contextPanel.VerticalScrollbarBarColor = true;
             this.contextPanel.VerticalScrollbarHighlightOnWheel = false;
@@ -245,20 +269,30 @@ namespace Library_Management_System_v1._1.View
             this.Heading.UseCustomForeColor = true;
             this.Heading.UseStyleColors = true;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel1.Location = new System.Drawing.Point(0, 768);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1922, 20);
+            this.panel1.TabIndex = 9;
+            // 
             // LibrariyanDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(823, 488);
+            this.ClientSize = new System.Drawing.Size(935, 549);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Heading);
             this.Controls.Add(this.contextPanel);
             this.Controls.Add(this.metroPanel1);
+            this.MaximizeBox = false;
             this.Name = "LibrariyanDashboard";
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LibrariyanDashboard_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LibrariyanDashboard_MouseMove);
+            this.Style = MetroFramework.MetroColorStyle.White;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.metroPanel1.ResumeLayout(false);
             this.IntroPanel.ResumeLayout(false);
             this.IntroPanel.PerformLayout();
@@ -270,7 +304,7 @@ namespace Library_Management_System_v1._1.View
 
         #endregion
         private MetroFramework.Controls.MetroPanel metroPanel1;
-        private System.Windows.Forms.Button myActivitiesBtn;
+        private System.Windows.Forms.Button bookBorrowingBtn;
         private System.Windows.Forms.Button btnManageFee;
         private System.Windows.Forms.Button btnManageCustomers;
         private System.Windows.Forms.Button btnManageUsers;
@@ -282,5 +316,7 @@ namespace Library_Management_System_v1._1.View
         private MetroFramework.Controls.MetroPanel IntroPanel;
         private System.Windows.Forms.PictureBox avatarImg;
         private MetroFramework.Controls.MetroLabel Heading;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button LibrariyanProfileBtn;
     }
 }

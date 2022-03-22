@@ -171,8 +171,8 @@ namespace Library_Management_System_v1._1.View
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(106, 11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 42);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -243,8 +243,8 @@ namespace Library_Management_System_v1._1.View
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(123, 11);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(52, 42);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
@@ -315,8 +315,8 @@ namespace Library_Management_System_v1._1.View
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(136, 9);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(52, 42);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
@@ -539,10 +539,10 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile3);
             this.Controls.Add(this.metroTile1);
-            this.MaximumSize = new System.Drawing.Size(600, 400);
-            this.MinimumSize = new System.Drawing.Size(600, 400);
+            this.MaximumSize = new System.Drawing.Size(1030, 705);
+            this.MinimumSize = new System.Drawing.Size(1030, 705);
             this.Name = "DashBoardPanel";
-            this.Size = new System.Drawing.Size(600, 400);
+            this.Size = new System.Drawing.Size(1030, 705);
             this.Load += new System.EventHandler(this.DashBoardPanel_Load);
             this.metroTile1.ResumeLayout(false);
             this.metroTile1.PerformLayout();
