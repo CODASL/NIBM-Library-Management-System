@@ -213,7 +213,7 @@ namespace Library_Management_System_v1._1.View
             this.LibrariyanTabController.Multiline = true;
             this.LibrariyanTabController.Name = "LibrariyanTabController";
             this.LibrariyanTabController.SelectedIndex = 0;
-            this.LibrariyanTabController.Size = new System.Drawing.Size(1049, 750);
+            this.LibrariyanTabController.Size = new System.Drawing.Size(1049, 700);
             this.LibrariyanTabController.TabIndex = 0;
             this.LibrariyanTabController.SelectedIndexChanged += new System.EventHandler(this.LibrariyanTabController_SelectedIndexChanged);
             // 
@@ -1374,7 +1374,7 @@ namespace Library_Management_System_v1._1.View
             this.LibMyProfile.Location = new System.Drawing.Point(4, 39);
             this.LibMyProfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LibMyProfile.Name = "LibMyProfile";
-            this.LibMyProfile.Size = new System.Drawing.Size(1041, 707);
+            this.LibMyProfile.Size = new System.Drawing.Size(1041, 657);
             this.LibMyProfile.TabIndex = 5;
             this.LibMyProfile.Text = "My Profile";
             this.LibMyProfile.UseVisualStyleBackColor = true;
@@ -1388,7 +1388,7 @@ namespace Library_Management_System_v1._1.View
             this.LibSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LibSettings.Name = "LibSettings";
             this.LibSettings.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.LibSettings.Size = new System.Drawing.Size(1041, 707);
+            this.LibSettings.Size = new System.Drawing.Size(1041, 657);
             this.LibSettings.TabIndex = 6;
             this.LibSettings.Text = "Settings";
             this.LibSettings.UseVisualStyleBackColor = true;
@@ -1400,7 +1400,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard8.Controls.Add(this.materialFloatingActionButton8);
             this.materialCard8.Depth = 0;
             this.materialCard8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard8.Location = new System.Drawing.Point(793, 594);
+            this.materialCard8.Location = new System.Drawing.Point(806, 545);
             this.materialCard8.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard8.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard8.Name = "materialCard8";
@@ -2000,7 +2000,7 @@ namespace Library_Management_System_v1._1.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(0, 479);
-            this.ClientSize = new System.Drawing.Size(1049, 750);
+            this.ClientSize = new System.Drawing.Size(1049, 700);
             this.Controls.Add(this.LibrariyanTabController);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.LibrariyanTabController;

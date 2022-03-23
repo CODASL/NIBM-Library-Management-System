@@ -31,6 +31,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.bluebackround = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.piclogo = new System.Windows.Forms.PictureBox();
             this.btnlogin = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.txtPass = new MetroFramework.Controls.MetroTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.resetBtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.bluebackround.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).BeginInit();
@@ -61,6 +61,15 @@
             this.bluebackround.Name = "bluebackround";
             this.bluebackround.Size = new System.Drawing.Size(339, 450);
             this.bluebackround.TabIndex = 10;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(298, 20);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(348, 407);
+            this.panel1.TabIndex = 16;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox1
             // 
@@ -141,7 +150,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 83);
+            this.label2.Location = new System.Drawing.Point(-1, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 15);
             this.label2.TabIndex = 19;
@@ -199,7 +208,7 @@
             // hideShowPass
             // 
             this.hideShowPass.Image = ((System.Drawing.Image)(resources.GetObject("hideShowPass.Image")));
-            this.hideShowPass.Location = new System.Drawing.Point(212, 104);
+            this.hideShowPass.Location = new System.Drawing.Point(212, 107);
             this.hideShowPass.Name = "hideShowPass";
             this.hideShowPass.Size = new System.Drawing.Size(20, 20);
             this.hideShowPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -225,7 +234,7 @@
             this.txtPass.Location = new System.Drawing.Point(0, 104);
             this.txtPass.MaxLength = 32767;
             this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '\0';
+            this.txtPass.PasswordChar = '*';
             this.txtPass.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPass.SelectedText = "";
             this.txtPass.SelectionLength = 0;
@@ -259,15 +268,6 @@
             this.resetBtn.Text = "Reset Password";
             this.resetBtn.UseVisualStyleBackColor = true;
             this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(298, 20);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(348, 407);
-            this.panel1.TabIndex = 16;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Login
             // 
