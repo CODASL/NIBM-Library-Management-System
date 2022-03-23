@@ -31,7 +31,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.bluebackround = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.piclogo = new System.Windows.Forms.PictureBox();
             this.btnlogin = new System.Windows.Forms.Button();
@@ -40,11 +39,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.txtmail = new MetroFramework.Controls.MetroTextBox();
+            this.hideShowPass = new System.Windows.Forms.PictureBox();
+            this.txtPass = new MetroFramework.Controls.MetroTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.resetBtn = new System.Windows.Forms.Button();
-            this.hideShowPass = new System.Windows.Forms.PictureBox();
-            this.txtmail = new MetroFramework.Controls.MetroTextBox();
-            this.txtPass = new MetroFramework.Controls.MetroTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.bluebackround.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).BeginInit();
@@ -61,15 +61,6 @@
             this.bluebackround.Name = "bluebackround";
             this.bluebackround.Size = new System.Drawing.Size(339, 450);
             this.bluebackround.TabIndex = 10;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(298, 20);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(348, 407);
-            this.panel1.TabIndex = 16;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox1
             // 
@@ -129,10 +120,10 @@
             // 
             this.lblhedder.AutoSize = true;
             this.lblhedder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblhedder.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhedder.Font = new System.Drawing.Font("Berlin Sans FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhedder.Location = new System.Drawing.Point(334, 96);
             this.lblhedder.Name = "lblhedder";
-            this.lblhedder.Size = new System.Drawing.Size(200, 15);
+            this.lblhedder.Size = new System.Drawing.Size(239, 17);
             this.lblhedder.TabIndex = 1;
             this.lblhedder.Text = "Hello , Welcome to the System Again!";
             // 
@@ -175,40 +166,6 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(387, 59);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 13);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "NIBM Library Management System";
-            // 
-            // resetBtn
-            // 
-            this.resetBtn.FlatAppearance.BorderSize = 0;
-            this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetBtn.Location = new System.Drawing.Point(403, 391);
-            this.resetBtn.Name = "resetBtn";
-            this.resetBtn.Size = new System.Drawing.Size(109, 23);
-            this.resetBtn.TabIndex = 25;
-            this.resetBtn.Text = "Reset Password";
-            this.resetBtn.UseVisualStyleBackColor = true;
-            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
-            // 
-            // hideShowPass
-            // 
-            this.hideShowPass.Image = ((System.Drawing.Image)(resources.GetObject("hideShowPass.Image")));
-            this.hideShowPass.Location = new System.Drawing.Point(212, 104);
-            this.hideShowPass.Name = "hideShowPass";
-            this.hideShowPass.Size = new System.Drawing.Size(20, 20);
-            this.hideShowPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.hideShowPass.TabIndex = 21;
-            this.hideShowPass.TabStop = false;
-            this.hideShowPass.Click += new System.EventHandler(this.hideShowPass_Click);
-            // 
             // txtmail
             // 
             // 
@@ -239,6 +196,17 @@
             this.txtmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtmail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // hideShowPass
+            // 
+            this.hideShowPass.Image = ((System.Drawing.Image)(resources.GetObject("hideShowPass.Image")));
+            this.hideShowPass.Location = new System.Drawing.Point(212, 104);
+            this.hideShowPass.Name = "hideShowPass";
+            this.hideShowPass.Size = new System.Drawing.Size(20, 20);
+            this.hideShowPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.hideShowPass.TabIndex = 21;
+            this.hideShowPass.TabStop = false;
+            this.hideShowPass.Click += new System.EventHandler(this.hideShowPass_Click);
+            // 
             // txtPass
             // 
             // 
@@ -268,6 +236,38 @@
             this.txtPass.UseSelectable = true;
             this.txtPass.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPass.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(387, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(189, 15);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "NIBM Library Management System";
+            // 
+            // resetBtn
+            // 
+            this.resetBtn.FlatAppearance.BorderSize = 0;
+            this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetBtn.Location = new System.Drawing.Point(403, 391);
+            this.resetBtn.Name = "resetBtn";
+            this.resetBtn.Size = new System.Drawing.Size(109, 23);
+            this.resetBtn.TabIndex = 25;
+            this.resetBtn.Text = "Reset Password";
+            this.resetBtn.UseVisualStyleBackColor = true;
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(298, 20);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(348, 407);
+            this.panel1.TabIndex = 16;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Login
             // 
@@ -305,7 +305,6 @@
         private System.Windows.Forms.PictureBox piclogo;
         private System.Windows.Forms.Button btnlogin;
         private System.Windows.Forms.Button btnQR;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblhedder;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -315,5 +314,6 @@
         private System.Windows.Forms.PictureBox hideShowPass;
         private MetroFramework.Controls.MetroTextBox txtmail;
         private MetroFramework.Controls.MetroTextBox txtPass;
+        private System.Windows.Forms.Panel panel1;
     }
 }
