@@ -18,9 +18,9 @@ namespace Library_Management_System_v1._1
         public Splash()
         {
             InitializeComponent();
-            Console.WriteLine(Controller.SplashController.isLoggedIn.ToString());
+     
             Controller.ResponsiveController.setResponsiveSize(new Model.ResponsiveSize(Screen.PrimaryScreen.Bounds.Height, Screen.PrimaryScreen.Bounds.Width));
-            Console.WriteLine(Controller.ResponsiveController.width);
+           
             
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
@@ -65,8 +65,8 @@ namespace Library_Management_System_v1._1
                 }
                 else {
                     timer1.Enabled = false;
-                    frm2.Closed += (s, args) => this.Close();
-                    frm2.ShowDialog();
+                    frm.Closed += (s, args) => this.Close();
+                    frm.ShowDialog();
                 }
                
             }

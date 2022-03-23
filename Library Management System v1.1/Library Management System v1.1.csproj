@@ -92,6 +92,7 @@
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\ResponsiveController.cs" />
     <Compile Include="Controller\SplashController.cs" />
+    <Compile Include="Model\Book.cs" />
     <Compile Include="Model\DatabaseService.cs" />
     <Compile Include="Model\LoginUser.cs" />
     <Compile Include="Model\ResponsiveSize.cs" />
@@ -115,6 +116,18 @@
     </Compile>
     <Compile Include="View\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BookItemTile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\BookItemTile.Designer.cs">
+      <DependentUpon>BookItemTile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BookTile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\BookTile.Designer.cs">
+      <DependentUpon>BookTile.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Custom Controls\RJCircularPictureBox.cs">
       <SubType>Component</SubType>
@@ -235,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BookTile.resx">
+      <DependentUpon>BookTile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DashBoardPanel.resx">
       <DependentUpon>DashBoardPanel.cs</DependentUpon>

@@ -59,7 +59,7 @@ namespace Library_Management_System_v1._1
         private void btnlogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            loginController.onLoggedIn(new View.LibrariyanDashboard() , "Librariyan");
+            loginController.onLoggedIn(new View.LibrariyanHome() , "Librariyan");
 
         }
 
