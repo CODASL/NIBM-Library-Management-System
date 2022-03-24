@@ -34,7 +34,7 @@ namespace Library_Management_System_v1._1.View
             this.LibrariyanTabController = new MaterialSkin.Controls.MaterialTabControl();
             this.LibrariyanDashBoard = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
+            this.addBorrowDashBoardBtn = new MaterialSkin.Controls.MaterialButton();
             this.addMemberDashboard = new MaterialSkin.Controls.MaterialButton();
             this.addBookDashboardBtn = new MaterialSkin.Controls.MaterialButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -97,7 +97,6 @@ namespace Library_Management_System_v1._1.View
             this.LibBookList = new MaterialSkin.Controls.MaterialListView();
             this.LibbookName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bookcategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.bookPublisher = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bookAuthor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bookAvalability = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bookLastUpdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -111,14 +110,9 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel28 = new MaterialSkin.Controls.MaterialLabel();
             this.LibManageFee = new System.Windows.Forms.TabPage();
             this.materialListView3 = new MaterialSkin.Controls.MaterialListView();
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.feeId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.AdmissionStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.memberFeeStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialLabel38 = new MaterialSkin.Controls.MaterialLabel();
             this.materialComboBox3 = new MaterialSkin.Controls.MaterialComboBox();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
@@ -165,7 +159,7 @@ namespace Library_Management_System_v1._1.View
             this.materialFloatingActionButton16 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialListView2 = new MaterialSkin.Controls.MaterialListView();
             this.BID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialButton8 = new MaterialSkin.Controls.MaterialButton();
+            this.borrowBookBtn = new MaterialSkin.Controls.MaterialButton();
             this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
             this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel24 = new MaterialSkin.Controls.MaterialLabel();
@@ -176,6 +170,9 @@ namespace Library_Management_System_v1._1.View
             this.bookIssuedDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bookReturnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.returnStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.isbnNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MIDFee = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.feeLastUpdated = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LibrariyanTabController.SuspendLayout();
             this.LibrariyanDashBoard.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
@@ -251,7 +248,7 @@ namespace Library_Management_System_v1._1.View
             // 
             // flowLayoutPanel3
             // 
-            this.flowLayoutPanel3.Controls.Add(this.materialButton6);
+            this.flowLayoutPanel3.Controls.Add(this.addBorrowDashBoardBtn);
             this.flowLayoutPanel3.Controls.Add(this.addMemberDashboard);
             this.flowLayoutPanel3.Controls.Add(this.addBookDashboardBtn);
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -260,24 +257,25 @@ namespace Library_Management_System_v1._1.View
             this.flowLayoutPanel3.Size = new System.Drawing.Size(166, 208);
             this.flowLayoutPanel3.TabIndex = 11;
             // 
-            // materialButton6
+            // addBorrowDashBoardBtn
             // 
-            this.materialButton6.AutoSize = false;
-            this.materialButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton6.Depth = 0;
-            this.materialButton6.DrawShadows = true;
-            this.materialButton6.HighEmphasis = true;
-            this.materialButton6.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton6.Icon")));
-            this.materialButton6.Location = new System.Drawing.Point(4, 6);
-            this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 25);
-            this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton6.Name = "materialButton6";
-            this.materialButton6.Size = new System.Drawing.Size(158, 36);
-            this.materialButton6.TabIndex = 10;
-            this.materialButton6.Text = "New Borrow";
-            this.materialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton6.UseAccentColor = false;
-            this.materialButton6.UseVisualStyleBackColor = true;
+            this.addBorrowDashBoardBtn.AutoSize = false;
+            this.addBorrowDashBoardBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addBorrowDashBoardBtn.Depth = 0;
+            this.addBorrowDashBoardBtn.DrawShadows = true;
+            this.addBorrowDashBoardBtn.HighEmphasis = true;
+            this.addBorrowDashBoardBtn.Icon = ((System.Drawing.Image)(resources.GetObject("addBorrowDashBoardBtn.Icon")));
+            this.addBorrowDashBoardBtn.Location = new System.Drawing.Point(4, 6);
+            this.addBorrowDashBoardBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 25);
+            this.addBorrowDashBoardBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addBorrowDashBoardBtn.Name = "addBorrowDashBoardBtn";
+            this.addBorrowDashBoardBtn.Size = new System.Drawing.Size(158, 36);
+            this.addBorrowDashBoardBtn.TabIndex = 10;
+            this.addBorrowDashBoardBtn.Text = "New Borrow";
+            this.addBorrowDashBoardBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.addBorrowDashBoardBtn.UseAccentColor = false;
+            this.addBorrowDashBoardBtn.UseVisualStyleBackColor = true;
+            this.addBorrowDashBoardBtn.Click += new System.EventHandler(this.addBorrowDashBoardBtn_Click);
             // 
             // addMemberDashboard
             // 
@@ -1114,6 +1112,7 @@ namespace Library_Management_System_v1._1.View
             // 
             // LibBooks
             // 
+            this.LibBooks.AutoScroll = true;
             this.LibBooks.Controls.Add(this.materialButton4);
             this.LibBooks.Controls.Add(this.materialLabel16);
             this.LibBooks.Controls.Add(this.materialComboBox4);
@@ -1147,11 +1146,11 @@ namespace Library_Management_System_v1._1.View
             this.LibBookList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.LibbookName,
             this.bookcategory,
-            this.bookPublisher,
             this.bookAuthor,
             this.bookAvalability,
             this.bookLastUpdate,
-            this.LblBookRack});
+            this.LblBookRack,
+            this.isbnNo});
             this.LibBookList.Depth = 0;
             this.LibBookList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LibBookList.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1172,45 +1171,45 @@ namespace Library_Management_System_v1._1.View
             // 
             // LibbookName
             // 
+            this.LibbookName.DisplayIndex = 1;
             this.LibbookName.Text = "Name";
             this.LibbookName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.LibbookName.Width = 128;
+            this.LibbookName.Width = 115;
             // 
             // bookcategory
             // 
+            this.bookcategory.DisplayIndex = 2;
             this.bookcategory.Text = "Category";
             this.bookcategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bookcategory.Width = 110;
-            // 
-            // bookPublisher
-            // 
-            this.bookPublisher.Text = "Publisher";
-            this.bookPublisher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bookPublisher.Width = 131;
+            this.bookcategory.Width = 117;
             // 
             // bookAuthor
             // 
+            this.bookAuthor.DisplayIndex = 3;
             this.bookAuthor.Text = "Author";
             this.bookAuthor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bookAuthor.Width = 136;
+            this.bookAuthor.Width = 133;
             // 
             // bookAvalability
             // 
+            this.bookAvalability.DisplayIndex = 4;
             this.bookAvalability.Text = "Avalability";
             this.bookAvalability.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bookAvalability.Width = 109;
+            this.bookAvalability.Width = 103;
             // 
             // bookLastUpdate
             // 
+            this.bookLastUpdate.DisplayIndex = 5;
             this.bookLastUpdate.Text = "Last Update";
             this.bookLastUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bookLastUpdate.Width = 151;
+            this.bookLastUpdate.Width = 195;
             // 
             // LblBookRack
             // 
+            this.LblBookRack.DisplayIndex = 6;
             this.LblBookRack.Text = "Rack No";
             this.LblBookRack.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.LblBookRack.Width = 221;
+            this.LblBookRack.Width = 100;
             // 
             // LibAddBook
             // 
@@ -1346,14 +1345,11 @@ namespace Library_Management_System_v1._1.View
             this.materialListView3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialListView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialListView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12,
-            this.columnHeader13,
-            this.columnHeader14,
-            this.columnHeader15,
-            this.columnHeader16,
-            this.columnHeader17});
+            this.feeId,
+            this.AdmissionStatus,
+            this.memberFeeStatus,
+            this.MIDFee,
+            this.feeLastUpdated});
             this.materialListView3.Depth = 0;
             this.materialListView3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialListView3.FullRowSelect = true;
@@ -1369,53 +1365,25 @@ namespace Library_Management_System_v1._1.View
             this.materialListView3.UseCompatibleStateImageBehavior = false;
             this.materialListView3.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader10
+            // feeId
             // 
-            this.columnHeader10.Text = "BID";
-            this.columnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader10.Width = 66;
+            this.feeId.Text = "Fee ID";
+            this.feeId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.feeId.Width = 97;
             // 
-            // columnHeader11
+            // AdmissionStatus
             // 
-            this.columnHeader11.Text = "Name";
-            this.columnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader11.Width = 90;
+            this.AdmissionStatus.DisplayIndex = 2;
+            this.AdmissionStatus.Text = "Admission Status";
+            this.AdmissionStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.AdmissionStatus.Width = 198;
             // 
-            // columnHeader12
+            // memberFeeStatus
             // 
-            this.columnHeader12.Text = "Category";
-            this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader12.Width = 110;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "Publisher";
-            this.columnHeader13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader13.Width = 100;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Author";
-            this.columnHeader14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader14.Width = 100;
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "Avalability";
-            this.columnHeader15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader15.Width = 100;
-            // 
-            // columnHeader16
-            // 
-            this.columnHeader16.Text = "Last Update";
-            this.columnHeader16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader16.Width = 110;
-            // 
-            // columnHeader17
-            // 
-            this.columnHeader17.Text = "Rack No";
-            this.columnHeader17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader17.Width = 110;
+            this.memberFeeStatus.DisplayIndex = 3;
+            this.memberFeeStatus.Text = "Member Fee Status";
+            this.memberFeeStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.memberFeeStatus.Width = 235;
             // 
             // materialLabel38
             // 
@@ -1468,7 +1436,7 @@ namespace Library_Management_System_v1._1.View
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.Size = new System.Drawing.Size(100, 35);
             this.materialButton2.TabIndex = 25;
-            this.materialButton2.Text = "Add";
+            this.materialButton2.Text = "Pay Fee";
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
@@ -2143,27 +2111,28 @@ namespace Library_Management_System_v1._1.View
             // 
             this.BID.Text = "Book ID";
             this.BID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.BID.Width = 84;
+            this.BID.Width = 109;
             // 
-            // materialButton8
+            // borrowBookBtn
             // 
-            this.materialButton8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton8.Depth = 0;
-            this.materialButton8.DrawShadows = true;
-            this.materialButton8.HighEmphasis = true;
-            this.materialButton8.Icon = null;
-            this.materialButton8.Location = new System.Drawing.Point(688, 156);
-            this.materialButton8.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton8.MaximumSize = new System.Drawing.Size(100, 35);
-            this.materialButton8.MinimumSize = new System.Drawing.Size(100, 35);
-            this.materialButton8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton8.Name = "materialButton8";
-            this.materialButton8.Size = new System.Drawing.Size(100, 35);
-            this.materialButton8.TabIndex = 26;
-            this.materialButton8.Text = "Add";
-            this.materialButton8.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton8.UseAccentColor = false;
-            this.materialButton8.UseVisualStyleBackColor = true;
+            this.borrowBookBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.borrowBookBtn.Depth = 0;
+            this.borrowBookBtn.DrawShadows = true;
+            this.borrowBookBtn.HighEmphasis = true;
+            this.borrowBookBtn.Icon = null;
+            this.borrowBookBtn.Location = new System.Drawing.Point(688, 156);
+            this.borrowBookBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.borrowBookBtn.MaximumSize = new System.Drawing.Size(100, 35);
+            this.borrowBookBtn.MinimumSize = new System.Drawing.Size(100, 35);
+            this.borrowBookBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.borrowBookBtn.Name = "borrowBookBtn";
+            this.borrowBookBtn.Size = new System.Drawing.Size(100, 35);
+            this.borrowBookBtn.TabIndex = 26;
+            this.borrowBookBtn.Text = "Add";
+            this.borrowBookBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.borrowBookBtn.UseAccentColor = false;
+            this.borrowBookBtn.UseVisualStyleBackColor = true;
+            this.borrowBookBtn.Click += new System.EventHandler(this.borrowBookBtn_Click);
             // 
             // materialTextBox3
             // 
@@ -2246,7 +2215,7 @@ namespace Library_Management_System_v1._1.View
             this.LibBookBorrowings.Controls.Add(this.materialLabel24);
             this.LibBookBorrowings.Controls.Add(this.materialComboBox1);
             this.LibBookBorrowings.Controls.Add(this.materialTextBox3);
-            this.LibBookBorrowings.Controls.Add(this.materialButton8);
+            this.LibBookBorrowings.Controls.Add(this.borrowBookBtn);
             this.LibBookBorrowings.Controls.Add(this.materialListView2);
             this.LibBookBorrowings.Controls.Add(this.materialCard13);
             this.LibBookBorrowings.Controls.Add(this.materialCard14);
@@ -2263,7 +2232,7 @@ namespace Library_Management_System_v1._1.View
             // 
             this.MID.Text = "Member ID";
             this.MID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.MID.Width = 101;
+            this.MID.Width = 129;
             // 
             // LID
             // 
@@ -2285,6 +2254,25 @@ namespace Library_Management_System_v1._1.View
             this.returnStatus.Text = "Status";
             this.returnStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.returnStatus.Width = 117;
+            // 
+            // isbnNo
+            // 
+            this.isbnNo.DisplayIndex = 0;
+            this.isbnNo.Text = "ISBN";
+            this.isbnNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.isbnNo.Width = 89;
+            // 
+            // MIDFee
+            // 
+            this.MIDFee.DisplayIndex = 1;
+            this.MIDFee.Text = "MID";
+            this.MIDFee.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.MIDFee.Width = 127;
+            // 
+            // feeLastUpdated
+            // 
+            this.feeLastUpdated.Text = "Last Updated";
+            this.feeLastUpdated.Width = 126;
             // 
             // LibrariyanHome
             // 
@@ -2435,21 +2423,15 @@ namespace Library_Management_System_v1._1.View
         private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialListView LibBookList;
         private System.Windows.Forms.ColumnHeader bookcategory;
-        private System.Windows.Forms.ColumnHeader bookPublisher;
         private System.Windows.Forms.ColumnHeader bookAuthor;
         private System.Windows.Forms.ColumnHeader bookAvalability;
         private System.Windows.Forms.ColumnHeader bookLastUpdate;
         private System.Windows.Forms.ColumnHeader LibbookName;
         private System.Windows.Forms.ColumnHeader LblBookRack;
         private MaterialSkin.Controls.MaterialListView materialListView3;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
-        private System.Windows.Forms.ColumnHeader columnHeader13;
-        private System.Windows.Forms.ColumnHeader columnHeader14;
-        private System.Windows.Forms.ColumnHeader columnHeader15;
-        private System.Windows.Forms.ColumnHeader columnHeader16;
-        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.ColumnHeader feeId;
+        private System.Windows.Forms.ColumnHeader AdmissionStatus;
+        private System.Windows.Forms.ColumnHeader memberFeeStatus;
         private MaterialSkin.Controls.MaterialLabel materialLabel38;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox3;
         private MaterialSkin.Controls.MaterialButton materialButton2;
@@ -2464,7 +2446,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialButton materialButton3;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton6;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton9;
-        private MaterialSkin.Controls.MaterialButton materialButton6;
+        private MaterialSkin.Controls.MaterialButton addBorrowDashBoardBtn;
         private MaterialSkin.Controls.MaterialButton addMemberDashboard;
         private MaterialSkin.Controls.MaterialButton addBookDashboardBtn;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
@@ -2482,7 +2464,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialLabel materialLabel24;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox3;
-        private MaterialSkin.Controls.MaterialButton materialButton8;
+        private MaterialSkin.Controls.MaterialButton borrowBookBtn;
         private MaterialSkin.Controls.MaterialListView materialListView2;
         private System.Windows.Forms.ColumnHeader BID;
         private MaterialSkin.Controls.MaterialCard materialCard13;
@@ -2504,5 +2486,8 @@ namespace Library_Management_System_v1._1.View
         private System.Windows.Forms.ColumnHeader bookIssuedDateTime;
         private System.Windows.Forms.ColumnHeader bookReturnDate;
         private System.Windows.Forms.ColumnHeader returnStatus;
+        private System.Windows.Forms.ColumnHeader isbnNo;
+        private System.Windows.Forms.ColumnHeader MIDFee;
+        private System.Windows.Forms.ColumnHeader feeLastUpdated;
     }
 }
