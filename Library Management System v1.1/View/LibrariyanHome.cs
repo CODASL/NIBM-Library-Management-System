@@ -16,16 +16,14 @@ namespace Library_Management_System_v1._1.View
 {
     public partial class LibrariyanHome : MaterialForm
     {
-        MaterialSkinManager.Themes thememode = MaterialSkinManager.Themes.LIGHT;
+
+        Controller.MaterialController material = new Controller.MaterialController();
         
-        MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
         public LibrariyanHome()
         {
             InitializeComponent();
-           
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = thememode;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Blue200, TextShade.WHITE);
+
+            material.addStyle(this);
             cmbFilterAvalibility.SelectedIndex = 0;
             swtSwitchTheme.Text = "Dark Mode";
         }
@@ -51,15 +49,15 @@ namespace Library_Management_System_v1._1.View
         {
             if (swtSwitchTheme.Checked) {
                 swtSwitchTheme.Text = "Light Mode";
-                thememode = MaterialSkinManager.Themes.DARK;
+                material.Thememode = MaterialSkinManager.Themes.DARK;
                 
             }
             else
             {
                 swtSwitchTheme.Text = "Dark Mode";
-                thememode = MaterialSkinManager.Themes.LIGHT;
+                material.Thememode = MaterialSkinManager.Themes.LIGHT;
             }
-            materialSkinManager.Theme = thememode;
+            material.MaterialSkinManager.Theme = material.Thememode;
 
         }
 
@@ -134,6 +132,11 @@ namespace Library_Management_System_v1._1.View
         private void LibBookList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            new View.AddMember().Show();
         }
     }
 }

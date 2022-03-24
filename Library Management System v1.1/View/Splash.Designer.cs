@@ -33,7 +33,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.progressBar1 = new MaterialSkin.Controls.MaterialProgressBar();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,24 +54,14 @@
             // progressBar1
             // 
             this.progressBar1.Depth = 0;
-            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.progressBar1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.progressBar1.Location = new System.Drawing.Point(0, 349);
+            this.progressBar1.Location = new System.Drawing.Point(0, 342);
             this.progressBar1.MinimumSize = new System.Drawing.Size(586, 8);
             this.progressBar1.MouseState = MaterialSkin.MouseState.HOVER;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(586, 5);
+            this.progressBar1.Size = new System.Drawing.Size(586, 8);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(586, 153);
-            this.panel1.TabIndex = 4;
             // 
             // materialLabel1
             // 
@@ -91,13 +80,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(586, 354);
             this.ControlBox = false;
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.progressBar1);
             this.ForeColor = System.Drawing.Color.Black;
             this.MaximizeBox = false;
@@ -105,9 +92,8 @@
             this.Name = "Splash";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Sizable = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Style = MetroFramework.MetroColorStyle.White;
             this.Load += new System.EventHandler(this.Splash_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -120,7 +106,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
         private MaterialSkin.Controls.MaterialProgressBar progressBar1;
-        private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

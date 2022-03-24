@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Library_Management_System_v1._1
 {
-    public partial class Splash :MaterialSkin.Controls.MaterialForm
+    public partial class Splash : MetroFramework.Forms.MetroForm
     {
        
         private int borderSize = 2;
@@ -24,10 +24,7 @@ namespace Library_Management_System_v1._1
             
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            
             
         }
 
@@ -46,7 +43,7 @@ namespace Library_Management_System_v1._1
                 this.Hide();
                 
                 var frm = new Login();
-                var frm1 = new View.LibrariyanDashboard();
+                var frm1 = new View.LibrariyanHome();
                 var frm2 = new View.AdminDashboard();
 
                 if (Controller.SplashController.isLoggedIn) { 

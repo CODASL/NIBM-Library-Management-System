@@ -90,6 +90,7 @@
     <Compile Include="Controller\DashboardController.cs" />
     <Compile Include="Controller\LibrariyanHomeController.cs" />
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\MaterialController.cs" />
     <Compile Include="Controller\ResponsiveController.cs" />
     <Compile Include="Controller\SplashController.cs" />
     <Compile Include="Model\Book.cs" />
@@ -105,11 +106,11 @@
     <Compile Include="RJButton.Designer.cs">
       <DependentUpon>RJButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\AddUser.cs">
+    <Compile Include="View\AddMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\AddUser.Designer.cs">
-      <DependentUpon>AddUser.cs</DependentUpon>
+    <Compile Include="View\AddMember.Designer.cs">
+      <DependentUpon>AddMember.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AdminDashboard.cs">
       <SubType>Form</SubType>
@@ -158,12 +159,6 @@
     </Compile>
     <Compile Include="View\Edit_Book_Librarian.Designer.cs">
       <DependentUpon>Edit_Book_Librarian.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\LibrariyanDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\LibrariyanDashboard.Designer.cs">
-      <DependentUpon>LibrariyanDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AdminActivityListTile.cs">
       <SubType>UserControl</SubType>
@@ -240,8 +235,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\AddUser.resx">
-      <DependentUpon>AddUser.cs</DependentUpon>
+    <EmbeddedResource Include="View\AddMember.resx">
+      <DependentUpon>AddMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AdminActivityListTile.resx">
       <DependentUpon>AdminActivityListTile.cs</DependentUpon>
@@ -263,9 +258,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Edit_Book_Librarian.resx">
       <DependentUpon>Edit_Book_Librarian.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\LibrariyanDashboard.resx">
-      <DependentUpon>LibrariyanDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LibrariyanHome.resx">
       <DependentUpon>LibrariyanHome.cs</DependentUpon>
