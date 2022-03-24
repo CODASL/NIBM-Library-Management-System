@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Library_Management_System_v1._1.View
 {
-    public partial class AddMember : MaterialForm
+    public partial class Add_Book_Borrowing_Details : MaterialForm
     {
-        public AddMember()
+        public Add_Book_Borrowing_Details()
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);

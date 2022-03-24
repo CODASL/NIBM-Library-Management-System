@@ -63,43 +63,10 @@ namespace Library_Management_System_v1._1.View
 
         private void LibAddBook_Click(object sender, EventArgs e)
         {
-            List<Model.Book> Booklist = new List<Model.Book>(){
-                new Model.Book("B01", "", "", "", "", "", "", "", new MaterialButton()),
-                new Model.Book("B02", "", "", "", "", "", "", "", new MaterialButton()),
-                new Model.Book("B03", "", "", "", "", "", "", "", new MaterialButton()),
-                new Model.Book("B04", "", "", "", "", "", "", "", new MaterialButton()),
-
-            };
-            
-
-            for(int i=0;i<3;i++) {
-                ListViewItem item = new ListViewItem("");
-                item.SubItems.Add("Sherlock");
-                item.SubItems.Add("Mystery");
-                item.SubItems.Add("Athur Conan Doyle");
-                item.SubItems.Add("Athur Conan Doyle");
-                item.SubItems.Add("Unavailable");
-                item.SubItems.Add("2021-04-05");
-                item.SubItems.Add("2021-04-05");
-                item.SubItems.Add("");
-                LibBookList.Items.Add(item);
-            }
-
-
-
-
-
-            
-
-
+            new View.AddBook().ShowDialog();
         }
 
         private void materialButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LibrariyanTabController_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -134,9 +101,19 @@ namespace Library_Management_System_v1._1.View
 
         }
 
-        private void addBtn_Click(object sender, EventArgs e)
+        private void LibaddMemberBtn_Click(object sender, EventArgs e)
         {
-            new View.AddMember().Show();
+            new View.AddMember().ShowDialog();
+        }
+
+        private void addMemberDashboard_Click(object sender, EventArgs e)
+        {
+            new View.AddMember().ShowDialog();
+        }
+
+        private void addBookDashboardBtn_Click(object sender, EventArgs e)
+        {
+            new View.AddBook().ShowDialog();
         }
     }
 }

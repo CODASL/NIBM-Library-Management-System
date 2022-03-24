@@ -106,6 +106,18 @@
     <Compile Include="RJButton.Designer.cs">
       <DependentUpon>RJButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Add Book Borrowing Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Add Book Borrowing Details.Designer.cs">
+      <DependentUpon>Add Book Borrowing Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddBook.Designer.cs">
+      <DependentUpon>AddBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AddMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +247,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Add Book Borrowing Details.resx">
+      <DependentUpon>Add Book Borrowing Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddBook.resx">
+      <DependentUpon>AddBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AddMember.resx">
       <DependentUpon>AddMember.cs</DependentUpon>
     </EmbeddedResource>
