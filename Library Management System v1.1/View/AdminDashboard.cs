@@ -40,5 +40,10 @@ namespace Library_Management_System_v1._1.View
         {
             timer1.Start();
         }
+
+        private void adminNotifications_Click(object sender, EventArgs e)
+        {
+            new AdminNotifications().ShowDialog();
+        }
     }
 }

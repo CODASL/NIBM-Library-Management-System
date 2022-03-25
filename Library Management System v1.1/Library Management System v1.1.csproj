@@ -154,6 +154,12 @@
     <Compile Include="View\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AdminNotifications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminNotifications.Designer.cs">
+      <DependentUpon>AdminNotifications.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\BookTile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminNotifications.resx">
+      <DependentUpon>AdminNotifications.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\BookTile.resx">
       <DependentUpon>BookTile.cs</DependentUpon>
