@@ -125,5 +125,10 @@ namespace Library_Management_System_v1._1.View
         {
             new View.Add_Book_Borrowing_Details().ShowDialog();
         }
+
+        private void LibrariyanDashBoard_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

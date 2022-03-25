@@ -17,6 +17,20 @@ namespace Library_Management_System_v1._1.View
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
+           
+        }
+
+        private void startQrCameraBookBorrow_Click(object sender, EventArgs e)
+        {
+            if (this.qrPanelBookBorrow.Controls.Count > 0)
+                this.qrPanelBookBorrow.Controls.RemoveAt(0);
+            QRlogin f = new QRlogin();
+            f.TopLevel = false;
+            f.Dock = Dock;
+            qrPanelBookBorrow.Controls.Clear();
+            qrPanelBookBorrow.Controls.Add(f);
+            qrPanelBookBorrow.Tag = f;
+            f.Show();
         }
     }
 }
