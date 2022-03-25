@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,12 @@ using System.Windows.Forms;
 
 namespace Library_Management_System_v1._1.View
 {
-    public partial class ResetPassword : MetroFramework.Forms.MetroForm
+    public partial class ResetPassword : MaterialForm
     {
         public ResetPassword()
         {
             InitializeComponent();
+            new Controller.MaterialController().addStyle(this);
         }
     }
 }
