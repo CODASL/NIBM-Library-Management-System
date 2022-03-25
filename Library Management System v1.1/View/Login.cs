@@ -46,7 +46,7 @@ namespace Library_Management_System_v1._1
             txtPass.Hide();
             //lblforgotpass.Hide();
             btnlogin.Hide();
-            hideShowPass.Hide();
+            //hideShowPass.Hide();
             Loadform(new QRlogin());
 
         }
@@ -70,16 +70,16 @@ namespace Library_Management_System_v1._1
 
         private void hideShowPass_Click(object sender, EventArgs e)
         {
-            if (hideShowPass.Image == Image.FromFile(icons.showPass))
-            {
-                //txtpass.UseSystemPasswordChar = false;
-                hideShowPass.Image = Image.FromFile(icons.hidePass);
-            }
-            else
-            {
-                //txtpass.UseSystemPasswordChar = true;
-                hideShowPass.Image = Image.FromFile(icons.showPass);
-            }
+            //if (hideShowPass.Image == Image.FromFile(icons.showPass))
+            //{
+            //    //txtpass.UseSystemPasswordChar = false;
+            //    hideShowPass.Image = Image.FromFile(icons.hidePass);
+            //}
+            //else
+            //{
+            //    //txtpass.UseSystemPasswordChar = true;
+            //    hideShowPass.Image = Image.FromFile(icons.showPass);
+            //}
         }
 
         private void resetBtn_Click(object sender, EventArgs e)
