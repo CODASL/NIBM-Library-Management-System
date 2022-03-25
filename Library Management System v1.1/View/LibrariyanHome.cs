@@ -130,5 +130,52 @@ namespace Library_Management_System_v1._1.View
         {
 
         }
+
+        private void returnBookBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogresult  = MessageBox.Show("Have Any Damages in Book ?","" , MessageBoxButtons.YesNoCancel);
+            if (dialogresult.Equals(DialogResult.Yes))
+            {
+                Console.WriteLine(dialogresult.ToString());
+                new AddfineWindow().ShowDialog();
+                
+            }
+            else if(dialogresult.Equals(DialogResult.No))
+            {
+                Console.WriteLine(dialogresult.ToString());
+                DialogResult dialogresult1 = MessageBox.Show("Are you sure that member retured Book?", "", MessageBoxButtons.YesNo);
+                if (dialogresult1.Equals(DialogResult.Yes))
+                {
+                    Console.WriteLine("Database should update Status into returned");
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                this.Close();
+            }
+           
+        }
+
+        private void PayMemberFee_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogresult = MessageBox.Show("Are you sure That Member Paid Fee ?", "", MessageBoxButtons.YesNo);
+            if (dialogresult.Equals(DialogResult.Yes))
+            {
+                MessageBox.Show("Member Fee Updated");
+            }
+            else
+            {
+      
+            }
+        }
+
+        private void LibManageFee_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -136,6 +136,12 @@
     <Compile Include="View\AddBook.Designer.cs">
       <DependentUpon>AddBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AddfineWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddfineWindow.Designer.cs">
+      <DependentUpon>AddfineWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AddMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddBook.resx">
       <DependentUpon>AddBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddfineWindow.resx">
+      <DependentUpon>AddfineWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddMember.resx">
       <DependentUpon>AddMember.cs</DependentUpon>
