@@ -41,9 +41,9 @@ namespace Library_Management_System_v1._1.View
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
             this.materialComboBox2 = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
+            this.addCategoryBtnAddBook = new MaterialSkin.Controls.MaterialButton();
+            this.addAuthorBtnAddBook = new MaterialSkin.Controls.MaterialButton();
+            this.addRackNoBtnAddBook = new MaterialSkin.Controls.MaterialButton();
             this.materialComboBox3 = new MaterialSkin.Controls.MaterialComboBox();
             this.startQrCameraBookAdd = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
@@ -222,59 +222,62 @@ namespace Library_Management_System_v1._1.View
             this.materialComboBox2.TabIndex = 18;
             this.materialComboBox2.UseTallSize = false;
             // 
-            // materialButton3
+            // addCategoryBtnAddBook
             // 
-            this.materialButton3.AutoSize = false;
-            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton3.Depth = 0;
-            this.materialButton3.DrawShadows = true;
-            this.materialButton3.HighEmphasis = true;
-            this.materialButton3.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton3.Icon")));
-            this.materialButton3.Location = new System.Drawing.Point(399, 170);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton3.Name = "materialButton3";
-            this.materialButton3.Size = new System.Drawing.Size(45, 35);
-            this.materialButton3.TabIndex = 19;
-            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton3.UseAccentColor = false;
-            this.materialButton3.UseVisualStyleBackColor = true;
+            this.addCategoryBtnAddBook.AutoSize = false;
+            this.addCategoryBtnAddBook.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addCategoryBtnAddBook.Depth = 0;
+            this.addCategoryBtnAddBook.DrawShadows = true;
+            this.addCategoryBtnAddBook.HighEmphasis = true;
+            this.addCategoryBtnAddBook.Icon = ((System.Drawing.Image)(resources.GetObject("addCategoryBtnAddBook.Icon")));
+            this.addCategoryBtnAddBook.Location = new System.Drawing.Point(399, 170);
+            this.addCategoryBtnAddBook.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.addCategoryBtnAddBook.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addCategoryBtnAddBook.Name = "addCategoryBtnAddBook";
+            this.addCategoryBtnAddBook.Size = new System.Drawing.Size(45, 35);
+            this.addCategoryBtnAddBook.TabIndex = 19;
+            this.addCategoryBtnAddBook.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.addCategoryBtnAddBook.UseAccentColor = false;
+            this.addCategoryBtnAddBook.UseVisualStyleBackColor = true;
+            this.addCategoryBtnAddBook.Click += new System.EventHandler(this.addCategoryBtnAddBook_Click);
             // 
-            // materialButton4
+            // addAuthorBtnAddBook
             // 
-            this.materialButton4.AutoSize = false;
-            this.materialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton4.Depth = 0;
-            this.materialButton4.DrawShadows = true;
-            this.materialButton4.HighEmphasis = true;
-            this.materialButton4.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton4.Icon")));
-            this.materialButton4.Location = new System.Drawing.Point(399, 221);
-            this.materialButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton4.Name = "materialButton4";
-            this.materialButton4.Size = new System.Drawing.Size(45, 35);
-            this.materialButton4.TabIndex = 20;
-            this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton4.UseAccentColor = false;
-            this.materialButton4.UseVisualStyleBackColor = true;
+            this.addAuthorBtnAddBook.AutoSize = false;
+            this.addAuthorBtnAddBook.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addAuthorBtnAddBook.Depth = 0;
+            this.addAuthorBtnAddBook.DrawShadows = true;
+            this.addAuthorBtnAddBook.HighEmphasis = true;
+            this.addAuthorBtnAddBook.Icon = ((System.Drawing.Image)(resources.GetObject("addAuthorBtnAddBook.Icon")));
+            this.addAuthorBtnAddBook.Location = new System.Drawing.Point(399, 221);
+            this.addAuthorBtnAddBook.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.addAuthorBtnAddBook.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addAuthorBtnAddBook.Name = "addAuthorBtnAddBook";
+            this.addAuthorBtnAddBook.Size = new System.Drawing.Size(45, 35);
+            this.addAuthorBtnAddBook.TabIndex = 20;
+            this.addAuthorBtnAddBook.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.addAuthorBtnAddBook.UseAccentColor = false;
+            this.addAuthorBtnAddBook.UseVisualStyleBackColor = true;
+            this.addAuthorBtnAddBook.Click += new System.EventHandler(this.addAuthorBtnAddBook_Click);
             // 
-            // materialButton5
+            // addRackNoBtnAddBook
             // 
-            this.materialButton5.AutoSize = false;
-            this.materialButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton5.Depth = 0;
-            this.materialButton5.DrawShadows = true;
-            this.materialButton5.HighEmphasis = true;
-            this.materialButton5.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton5.Icon")));
-            this.materialButton5.Location = new System.Drawing.Point(276, 271);
-            this.materialButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton5.Name = "materialButton5";
-            this.materialButton5.Size = new System.Drawing.Size(45, 35);
-            this.materialButton5.TabIndex = 21;
-            this.materialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton5.UseAccentColor = false;
-            this.materialButton5.UseVisualStyleBackColor = true;
+            this.addRackNoBtnAddBook.AutoSize = false;
+            this.addRackNoBtnAddBook.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addRackNoBtnAddBook.Depth = 0;
+            this.addRackNoBtnAddBook.DrawShadows = true;
+            this.addRackNoBtnAddBook.HighEmphasis = true;
+            this.addRackNoBtnAddBook.Icon = ((System.Drawing.Image)(resources.GetObject("addRackNoBtnAddBook.Icon")));
+            this.addRackNoBtnAddBook.Location = new System.Drawing.Point(276, 271);
+            this.addRackNoBtnAddBook.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.addRackNoBtnAddBook.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addRackNoBtnAddBook.Name = "addRackNoBtnAddBook";
+            this.addRackNoBtnAddBook.Size = new System.Drawing.Size(45, 35);
+            this.addRackNoBtnAddBook.TabIndex = 21;
+            this.addRackNoBtnAddBook.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.addRackNoBtnAddBook.UseAccentColor = false;
+            this.addRackNoBtnAddBook.UseVisualStyleBackColor = true;
+            this.addRackNoBtnAddBook.Click += new System.EventHandler(this.addRackNoBtnAddBook_Click);
             // 
             // materialComboBox3
             // 
@@ -346,9 +349,9 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.materialLabel13);
             this.Controls.Add(this.qrPanelBookAdd);
             this.Controls.Add(this.materialComboBox3);
-            this.Controls.Add(this.materialButton5);
-            this.Controls.Add(this.materialButton4);
-            this.Controls.Add(this.materialButton3);
+            this.Controls.Add(this.addRackNoBtnAddBook);
+            this.Controls.Add(this.addAuthorBtnAddBook);
+            this.Controls.Add(this.addCategoryBtnAddBook);
             this.Controls.Add(this.materialComboBox2);
             this.Controls.Add(this.materialComboBox1);
             this.Controls.Add(this.materialButton1);
@@ -381,9 +384,9 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox2;
-        private MaterialSkin.Controls.MaterialButton materialButton3;
-        private MaterialSkin.Controls.MaterialButton materialButton4;
-        private MaterialSkin.Controls.MaterialButton materialButton5;
+        private MaterialSkin.Controls.MaterialButton addCategoryBtnAddBook;
+        private MaterialSkin.Controls.MaterialButton addAuthorBtnAddBook;
+        private MaterialSkin.Controls.MaterialButton addRackNoBtnAddBook;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox3;
         private MaterialSkin.Controls.MaterialButton startQrCameraBookAdd;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;

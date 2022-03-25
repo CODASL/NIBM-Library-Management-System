@@ -46,5 +46,20 @@ namespace Library_Management_System_v1._1.View
             qrPanelBookAdd.Tag = f;
             f.Show();
         }
+
+        private void addRackNoBtnAddBook_Click(object sender, EventArgs e)
+        {
+            new Add_RackNo().ShowDialog();
+        }
+
+        private void addAuthorBtnAddBook_Click(object sender, EventArgs e)
+        {
+            new Add_Author().ShowDialog();
+        }
+
+        private void addCategoryBtnAddBook_Click(object sender, EventArgs e)
+        {
+            new Add_Category().ShowDialog();
+        }
     }
 }
