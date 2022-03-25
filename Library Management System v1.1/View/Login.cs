@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
 using MetroFramework.Forms;
 
 namespace Library_Management_System_v1._1
 {
     
-    public partial class Login : MetroFramework.Forms.MetroForm
+    public partial class Login : MaterialForm
     {
         Constant.IconClass icons = new Constant.IconClass();
         Controller.LoginController loginController = new Controller.LoginController();
@@ -85,6 +86,11 @@ namespace Library_Management_System_v1._1
         private void resetBtn_Click(object sender, EventArgs e)
         {
             new View.ResetPassword().ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
