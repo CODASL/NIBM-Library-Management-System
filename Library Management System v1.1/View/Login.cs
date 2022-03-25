@@ -22,6 +22,7 @@ namespace Library_Management_System_v1._1
         public Login()
         {
             InitializeComponent();
+            //new Controller.MaterialController().addStyle(this);
            
             
         }
@@ -60,7 +61,7 @@ namespace Library_Management_System_v1._1
         private void btnlogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            loginController.onLoggedIn(new View.LibrariyanHome() , "Librariyan");
+            loginController.onLoggedIn(new View.AdminDashboard() , "Admin");
 
         }
 
@@ -88,9 +89,6 @@ namespace Library_Management_System_v1._1
             new View.ResetPassword().ShowDialog();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

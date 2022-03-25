@@ -18,12 +18,12 @@ namespace Library_Management_System_v1._1.View
         public AdminDashboard()
         {
             InitializeComponent();
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Blue200, TextShade.WHITE);
+            new Controller.MaterialController().addStyle(this);
             
-           
+            todayDateAdmin.Text = DateTime.Now.ToString();
+
+
+
         }
 
         private void materialLabel3_Click(object sender, EventArgs e)
@@ -34,6 +34,11 @@ namespace Library_Management_System_v1._1.View
         private void materialListView2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void AdminDashboard_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
         }
     }
 }

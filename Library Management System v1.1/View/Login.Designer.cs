@@ -38,11 +38,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnlogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.resetBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnQR = new System.Windows.Forms.Button();
             this.lblhedder = new System.Windows.Forms.Label();
+            this.resetBtn = new System.Windows.Forms.Button();
             this.piclogo = new System.Windows.Forms.PictureBox();
+            this.btnQR = new System.Windows.Forms.Button();
             this.bluebackround.SuspendLayout();
             this.materialCard1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -55,9 +55,9 @@
             this.bluebackround.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bluebackround.BackgroundImage")));
             this.bluebackround.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bluebackround.Controls.Add(this.materialCard1);
-            this.bluebackround.Location = new System.Drawing.Point(0, 26);
+            this.bluebackround.Location = new System.Drawing.Point(0, 24);
             this.bluebackround.Name = "bluebackround";
-            this.bluebackround.Size = new System.Drawing.Size(730, 495);
+            this.bluebackround.Size = new System.Drawing.Size(730, 497);
             this.bluebackround.TabIndex = 10;
             // 
             // materialCard1
@@ -71,7 +71,7 @@
             this.materialCard1.Controls.Add(this.btnQR);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(17, 39);
+            this.materialCard1.Location = new System.Drawing.Point(20, 29);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
@@ -140,7 +140,7 @@
             // 
             // btnlogin
             // 
-            this.btnlogin.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnlogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnlogin.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnlogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(81)))), ((int)(((byte)(192)))));
             this.btnlogin.FlatAppearance.BorderSize = 0;
@@ -167,6 +167,27 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Employee ID";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(97, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(204, 15);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "NIBM Library Management System";
+            // 
+            // lblhedder
+            // 
+            this.lblhedder.AutoSize = true;
+            this.lblhedder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblhedder.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhedder.Location = new System.Drawing.Point(39, 84);
+            this.lblhedder.Name = "lblhedder";
+            this.lblhedder.Size = new System.Drawing.Size(261, 18);
+            this.lblhedder.TabIndex = 1;
+            this.lblhedder.Text = "Hello , Welcome to the System Again!";
+            // 
             // resetBtn
             // 
             this.resetBtn.FlatAppearance.BorderSize = 0;
@@ -180,15 +201,15 @@
             this.resetBtn.UseVisualStyleBackColor = true;
             this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
-            // label3
+            // piclogo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(97, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(204, 15);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "NIBM Library Management System";
+            this.piclogo.Image = ((System.Drawing.Image)(resources.GetObject("piclogo.Image")));
+            this.piclogo.Location = new System.Drawing.Point(38, 24);
+            this.piclogo.Name = "piclogo";
+            this.piclogo.Size = new System.Drawing.Size(54, 37);
+            this.piclogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.piclogo.TabIndex = 11;
+            this.piclogo.TabStop = false;
             // 
             // btnQR
             // 
@@ -204,32 +225,11 @@
             this.btnQR.UseVisualStyleBackColor = true;
             this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
             // 
-            // lblhedder
-            // 
-            this.lblhedder.AutoSize = true;
-            this.lblhedder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblhedder.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblhedder.Location = new System.Drawing.Point(39, 84);
-            this.lblhedder.Name = "lblhedder";
-            this.lblhedder.Size = new System.Drawing.Size(261, 18);
-            this.lblhedder.TabIndex = 1;
-            this.lblhedder.Text = "Hello , Welcome to the System Again!";
-            // 
-            // piclogo
-            // 
-            this.piclogo.Image = ((System.Drawing.Image)(resources.GetObject("piclogo.Image")));
-            this.piclogo.Location = new System.Drawing.Point(38, 24);
-            this.piclogo.Name = "piclogo";
-            this.piclogo.Size = new System.Drawing.Size(54, 37);
-            this.piclogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.piclogo.TabIndex = 11;
-            this.piclogo.TabStop = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 521);
+            this.ClientSize = new System.Drawing.Size(730, 516);
             this.Controls.Add(this.bluebackround);
             this.MaximizeBox = false;
             this.Name = "Login";
