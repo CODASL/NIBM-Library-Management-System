@@ -84,7 +84,7 @@ namespace Library_Management_System_v1._1.View
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.pieChart1 = new LiveCharts.WinForms.PieChart();
+            this.categoriesPieChart = new LiveCharts.WinForms.PieChart();
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
             this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
             this.materialListView2 = new MaterialSkin.Controls.MaterialListView();
@@ -100,9 +100,9 @@ namespace Library_Management_System_v1._1.View
             this.adminNotifications = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.rjCircularPictureBox1 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.rjCircularPictureBox1 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.adminSettings.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.materialCard7.SuspendLayout();
@@ -117,8 +117,8 @@ namespace Library_Management_System_v1._1.View
             this.materialCard6.SuspendLayout();
             this.materialCard3.SuspendLayout();
             this.materialCard1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.materialTabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -370,7 +370,7 @@ namespace Library_Management_System_v1._1.View
             // metroDateTime2
             // 
             this.metroDateTime2.Location = new System.Drawing.Point(761, 91);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime2.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTime2.Name = "metroDateTime2";
             this.metroDateTime2.Size = new System.Drawing.Size(200, 29);
             this.metroDateTime2.TabIndex = 12;
@@ -849,7 +849,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard12.Controls.Add(this.materialButton2);
             this.materialCard12.Controls.Add(this.materialLabel7);
             this.materialCard12.Controls.Add(this.materialLabel6);
-            this.materialCard12.Controls.Add(this.pieChart1);
+            this.materialCard12.Controls.Add(this.categoriesPieChart);
             this.materialCard12.Depth = 0;
             this.materialCard12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard12.Location = new System.Drawing.Point(15, 276);
@@ -903,13 +903,12 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel6.TabIndex = 1;
             this.materialLabel6.Text = "Book Categories";
             // 
-            // pieChart1
+            // categoriesPieChart
             // 
-            this.pieChart1.Location = new System.Drawing.Point(0, 38);
-            this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(359, 247);
-            this.pieChart1.TabIndex = 0;
-            this.pieChart1.Text = "pieChart1";
+            this.categoriesPieChart.Location = new System.Drawing.Point(0, 38);
+            this.categoriesPieChart.Name = "categoriesPieChart";
+            this.categoriesPieChart.Size = new System.Drawing.Size(359, 247);
+            this.categoriesPieChart.TabIndex = 0;
             // 
             // materialCard6
             // 
@@ -1103,22 +1102,6 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel1.TabIndex = 1;
             this.materialLabel1.Text = "John Doe";
             // 
-            // rjCircularPictureBox1
-            // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 0;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(40, 61);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(85, 85);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 0;
-            this.rjCircularPictureBox1.TabStop = false;
-            // 
             // materialTabControl1
             // 
             this.materialTabControl1.Controls.Add(this.adminDashboardBtn);
@@ -1140,6 +1123,22 @@ namespace Library_Management_System_v1._1.View
             // 
             this.timer1.Enabled = true;
             // 
+            // rjCircularPictureBox1
+            // 
+            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox1.BorderSize = 0;
+            this.rjCircularPictureBox1.GradientAngle = 50F;
+            this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
+            this.rjCircularPictureBox1.Location = new System.Drawing.Point(40, 61);
+            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
+            this.rjCircularPictureBox1.Size = new System.Drawing.Size(85, 85);
+            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox1.TabIndex = 0;
+            this.rjCircularPictureBox1.TabStop = false;
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1151,6 +1150,7 @@ namespace Library_Management_System_v1._1.View
             this.DrawerWidth = 250;
             this.Name = "AdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "NIBM LIBRARY MANAGEMENT SYSTEM - ADMIN";
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.adminSettings.ResumeLayout(false);
             this.materialCard2.ResumeLayout(false);
@@ -1178,8 +1178,8 @@ namespace Library_Management_System_v1._1.View
             this.materialCard3.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             this.materialTabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1227,7 +1227,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private LiveCharts.WinForms.PieChart pieChart1;
+        private LiveCharts.WinForms.PieChart categoriesPieChart;
         private MaterialSkin.Controls.MaterialCard materialCard6;
         private MaterialSkin.Controls.MaterialButton materialButton4;
         private MaterialSkin.Controls.MaterialListView materialListView2;

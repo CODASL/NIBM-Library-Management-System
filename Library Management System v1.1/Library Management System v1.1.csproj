@@ -87,8 +87,7 @@
   <ItemGroup>
     <Compile Include="Constant\IconClass.cs" />
     <Compile Include="Constant\ImageClass.cs" />
-    <Compile Include="Controller\DashboardController.cs" />
-    <Compile Include="Controller\LibrariyanHomeController.cs" />
+    <Compile Include="Controller\AdminDashboardController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\MaterialController.cs" />
     <Compile Include="Controller\ResponsiveController.cs" />
@@ -100,12 +99,6 @@
     <Compile Include="Model\SideBarNavigateBtn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RJButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RJButton.Designer.cs">
-      <DependentUpon>RJButton.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Add Author.cs">
       <SubType>Form</SubType>
     </Compile>

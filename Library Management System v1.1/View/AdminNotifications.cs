@@ -19,10 +19,7 @@ namespace Library_Management_System_v1._1.View
             new Controller.MaterialController().addStyle(this);
         }
 
-        private void notification_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
+        
 
         private void notification_Click(object sender, EventArgs e)
         {
