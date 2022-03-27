@@ -15,17 +15,14 @@ namespace Library_Management_System_v1._1
     {
        
         private int borderSize = 2;
+
+        [Obsolete]
         public Splash()
         {
             InitializeComponent();
-     
-            Controller.ResponsiveController.setResponsiveSize(new Model.ResponsiveSize(Screen.PrimaryScreen.Bounds.Height, Screen.PrimaryScreen.Bounds.Width));
-           
-            
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
-            
-            
+        
         }
 
         private void Splash_Load(object sender, EventArgs e)

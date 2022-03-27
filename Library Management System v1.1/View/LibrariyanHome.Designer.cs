@@ -2678,7 +2678,7 @@ namespace Library_Management_System_v1._1.View
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LibrariyanHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NIBM Library Management System - Librariyan Home";
+            this.Text = "NIBM LIBRARY MANAGEMENT SYSTEM - LIBRARIYAN";
             this.Load += new System.EventHandler(this.LibrariyanHome_Load);
             this.LibrariyanTabController.ResumeLayout(false);
             this.LibrariyanDashBoard.ResumeLayout(false);
