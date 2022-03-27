@@ -36,9 +36,9 @@ namespace Library_Management_System_v1._1.View
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.addBorrowDashBoardBtn = new MaterialSkin.Controls.MaterialButton();
             this.addMemberDashboard = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.addBookDashboardBtn = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
+            this.addBookDashBoard = new MaterialSkin.Controls.MaterialButton();
+            this.addCategoryDashboard = new MaterialSkin.Controls.MaterialButton();
+            this.addAuthorDashboard = new MaterialSkin.Controls.MaterialButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.cmbFilterAvalibility = new MaterialSkin.Controls.MaterialComboBox();
@@ -278,9 +278,9 @@ namespace Library_Management_System_v1._1.View
             // 
             this.flowLayoutPanel3.Controls.Add(this.addBorrowDashBoardBtn);
             this.flowLayoutPanel3.Controls.Add(this.addMemberDashboard);
-            this.flowLayoutPanel3.Controls.Add(this.materialButton1);
-            this.flowLayoutPanel3.Controls.Add(this.addBookDashboardBtn);
-            this.flowLayoutPanel3.Controls.Add(this.materialButton6);
+            this.flowLayoutPanel3.Controls.Add(this.addBookDashBoard);
+            this.flowLayoutPanel3.Controls.Add(this.addCategoryDashboard);
+            this.flowLayoutPanel3.Controls.Add(this.addAuthorDashboard);
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(793, 372);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
@@ -327,63 +327,65 @@ namespace Library_Management_System_v1._1.View
             this.addMemberDashboard.UseVisualStyleBackColor = true;
             this.addMemberDashboard.Click += new System.EventHandler(this.addMemberDashboard_Click);
             // 
-            // materialButton1
+            // addBookDashBoard
             // 
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.DrawShadows = true;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton1.Icon")));
-            this.materialButton1.Location = new System.Drawing.Point(4, 110);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 10);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(158, 36);
-            this.materialButton1.TabIndex = 11;
-            this.materialButton1.Text = "New Book";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.addBookDashBoard.AutoSize = false;
+            this.addBookDashBoard.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addBookDashBoard.Depth = 0;
+            this.addBookDashBoard.DrawShadows = true;
+            this.addBookDashBoard.HighEmphasis = true;
+            this.addBookDashBoard.Icon = ((System.Drawing.Image)(resources.GetObject("addBookDashBoard.Icon")));
+            this.addBookDashBoard.Location = new System.Drawing.Point(4, 110);
+            this.addBookDashBoard.Margin = new System.Windows.Forms.Padding(4, 6, 4, 10);
+            this.addBookDashBoard.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addBookDashBoard.Name = "addBookDashBoard";
+            this.addBookDashBoard.Size = new System.Drawing.Size(158, 36);
+            this.addBookDashBoard.TabIndex = 11;
+            this.addBookDashBoard.Text = "New Book";
+            this.addBookDashBoard.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.addBookDashBoard.UseAccentColor = false;
+            this.addBookDashBoard.UseVisualStyleBackColor = true;
+            this.addBookDashBoard.Click += new System.EventHandler(this.addBookDashBoard_Click);
             // 
-            // addBookDashboardBtn
+            // addCategoryDashboard
             // 
-            this.addBookDashboardBtn.AutoSize = false;
-            this.addBookDashboardBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.addBookDashboardBtn.Depth = 0;
-            this.addBookDashboardBtn.DrawShadows = true;
-            this.addBookDashboardBtn.HighEmphasis = true;
-            this.addBookDashboardBtn.Icon = ((System.Drawing.Image)(resources.GetObject("addBookDashboardBtn.Icon")));
-            this.addBookDashboardBtn.Location = new System.Drawing.Point(4, 162);
-            this.addBookDashboardBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 10);
-            this.addBookDashboardBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.addBookDashboardBtn.Name = "addBookDashboardBtn";
-            this.addBookDashboardBtn.Size = new System.Drawing.Size(158, 36);
-            this.addBookDashboardBtn.TabIndex = 8;
-            this.addBookDashboardBtn.Text = "New Category";
-            this.addBookDashboardBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.addBookDashboardBtn.UseAccentColor = false;
-            this.addBookDashboardBtn.UseVisualStyleBackColor = true;
-            this.addBookDashboardBtn.Click += new System.EventHandler(this.addBookDashboardBtn_Click);
+            this.addCategoryDashboard.AutoSize = false;
+            this.addCategoryDashboard.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addCategoryDashboard.Depth = 0;
+            this.addCategoryDashboard.DrawShadows = true;
+            this.addCategoryDashboard.HighEmphasis = true;
+            this.addCategoryDashboard.Icon = ((System.Drawing.Image)(resources.GetObject("addCategoryDashboard.Icon")));
+            this.addCategoryDashboard.Location = new System.Drawing.Point(4, 162);
+            this.addCategoryDashboard.Margin = new System.Windows.Forms.Padding(4, 6, 4, 10);
+            this.addCategoryDashboard.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addCategoryDashboard.Name = "addCategoryDashboard";
+            this.addCategoryDashboard.Size = new System.Drawing.Size(158, 36);
+            this.addCategoryDashboard.TabIndex = 8;
+            this.addCategoryDashboard.Text = "New Category";
+            this.addCategoryDashboard.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.addCategoryDashboard.UseAccentColor = false;
+            this.addCategoryDashboard.UseVisualStyleBackColor = true;
+            this.addCategoryDashboard.Click += new System.EventHandler(this.addCategoryDashboard_Click);
             // 
-            // materialButton6
+            // addAuthorDashboard
             // 
-            this.materialButton6.AutoSize = false;
-            this.materialButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton6.Depth = 0;
-            this.materialButton6.DrawShadows = true;
-            this.materialButton6.HighEmphasis = true;
-            this.materialButton6.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton6.Icon")));
-            this.materialButton6.Location = new System.Drawing.Point(4, 214);
-            this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 4);
-            this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton6.Name = "materialButton6";
-            this.materialButton6.Size = new System.Drawing.Size(158, 36);
-            this.materialButton6.TabIndex = 12;
-            this.materialButton6.Text = "New Author";
-            this.materialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton6.UseAccentColor = false;
-            this.materialButton6.UseVisualStyleBackColor = true;
+            this.addAuthorDashboard.AutoSize = false;
+            this.addAuthorDashboard.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addAuthorDashboard.Depth = 0;
+            this.addAuthorDashboard.DrawShadows = true;
+            this.addAuthorDashboard.HighEmphasis = true;
+            this.addAuthorDashboard.Icon = ((System.Drawing.Image)(resources.GetObject("addAuthorDashboard.Icon")));
+            this.addAuthorDashboard.Location = new System.Drawing.Point(4, 214);
+            this.addAuthorDashboard.Margin = new System.Windows.Forms.Padding(4, 6, 4, 4);
+            this.addAuthorDashboard.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addAuthorDashboard.Name = "addAuthorDashboard";
+            this.addAuthorDashboard.Size = new System.Drawing.Size(158, 36);
+            this.addAuthorDashboard.TabIndex = 12;
+            this.addAuthorDashboard.Text = "New Author";
+            this.addAuthorDashboard.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.addAuthorDashboard.UseAccentColor = false;
+            this.addAuthorDashboard.UseVisualStyleBackColor = true;
+            this.addAuthorDashboard.Click += new System.EventHandler(this.addAuthorDashboard_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -1356,7 +1358,6 @@ namespace Library_Management_System_v1._1.View
             this.LibBookList.TabIndex = 22;
             this.LibBookList.UseCompatibleStateImageBehavior = false;
             this.LibBookList.View = System.Windows.Forms.View.Details;
-            this.LibBookList.SelectedIndexChanged += new System.EventHandler(this.LibBookList_SelectedIndexChanged);
             // 
             // LibbookName
             // 
@@ -1444,7 +1445,6 @@ namespace Library_Management_System_v1._1.View
             this.materialCard11.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard11.Size = new System.Drawing.Size(395, 103);
             this.materialCard11.TabIndex = 15;
-            this.materialCard11.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard11_Paint);
             // 
             // materialFloatingActionButton12
             // 
@@ -1523,7 +1523,6 @@ namespace Library_Management_System_v1._1.View
             this.materialCard12.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard12.Size = new System.Drawing.Size(395, 103);
             this.materialCard12.TabIndex = 14;
-            this.materialCard12.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard12_Paint);
             // 
             // materialFloatingActionButton10
             // 
@@ -1938,7 +1937,6 @@ namespace Library_Management_System_v1._1.View
             this.LibManageFee.TabIndex = 4;
             this.LibManageFee.Text = "Accounting";
             this.LibManageFee.UseVisualStyleBackColor = true;
-            this.LibManageFee.Click += new System.EventHandler(this.LibManageFee_Click);
             // 
             // materialListView3
             // 
@@ -2580,7 +2578,6 @@ namespace Library_Management_System_v1._1.View
             this.materialFloatingActionButton8.TabIndex = 3;
             this.materialFloatingActionButton8.Text = "materialFloatingActionButton8";
             this.materialFloatingActionButton8.UseVisualStyleBackColor = true;
-            this.materialFloatingActionButton8.Click += new System.EventHandler(this.materialFloatingActionButton8_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -2843,7 +2840,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton9;
         private MaterialSkin.Controls.MaterialButton addBorrowDashBoardBtn;
         private MaterialSkin.Controls.MaterialButton addMemberDashboard;
-        private MaterialSkin.Controls.MaterialButton addBookDashboardBtn;
+        private MaterialSkin.Controls.MaterialButton addCategoryDashboard;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private MaterialSkin.Controls.MaterialButton materialButton4;
         private MaterialSkin.Controls.MaterialLabel materialLabel16;
@@ -2882,8 +2879,8 @@ namespace Library_Management_System_v1._1.View
         private System.Windows.Forms.ColumnHeader isbnNo;
         private System.Windows.Forms.ColumnHeader MIDFee;
         private System.Windows.Forms.ColumnHeader feeLastUpdated;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialButton materialButton6;
+        private MaterialSkin.Controls.MaterialButton addBookDashBoard;
+        private MaterialSkin.Controls.MaterialButton addAuthorDashboard;
         private MaterialSkin.Controls.MaterialButton materialButton8;
         private MaterialSkin.Controls.MaterialButton materialButton9;
         private MaterialSkin.Controls.MaterialButton returnBookBtn;

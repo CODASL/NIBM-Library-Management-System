@@ -63,7 +63,7 @@ namespace Library_Management_System_v1._1.View
             this.materialFloatingActionButton9 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel20 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
+            this.librariyanList = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.libName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.libAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -79,7 +79,7 @@ namespace Library_Management_System_v1._1.View
             this.materialComboBox2 = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
-            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
+            this.memberRegistrationChart = new LiveCharts.WinForms.CartesianChart();
             this.materialCard12 = new MaterialSkin.Controls.MaterialCard();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
@@ -102,6 +102,10 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.materialCard9 = new MaterialSkin.Controls.MaterialCard();
+            this.materialFloatingActionButton3 = new MaterialSkin.Controls.MaterialFloatingActionButton();
+            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
+            this.switchtoLibrariyanBtn = new MaterialSkin.Controls.MaterialButton();
             this.rjCircularPictureBox1 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.adminSettings.SuspendLayout();
             this.materialCard2.SuspendLayout();
@@ -118,6 +122,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard3.SuspendLayout();
             this.materialCard1.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
+            this.materialCard9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,9 +149,11 @@ namespace Library_Management_System_v1._1.View
             this.imageList1.Images.SetKeyName(16, "icons8-add-32.png");
             this.imageList1.Images.SetKeyName(17, "icons8-dashboard-layout-32.png");
             this.imageList1.Images.SetKeyName(18, "icons8-settings-32.png");
+            this.imageList1.Images.SetKeyName(19, "icons8-librarian-32.png");
             // 
             // adminSettings
             // 
+            this.adminSettings.Controls.Add(this.materialCard9);
             this.adminSettings.Controls.Add(this.materialCard2);
             this.adminSettings.Controls.Add(this.materialCard7);
             this.adminSettings.ImageKey = "icons8-settings-32.png";
@@ -418,7 +425,7 @@ namespace Library_Management_System_v1._1.View
             this.ManageLibrariyans.Controls.Add(this.materialButton5);
             this.ManageLibrariyans.Controls.Add(this.materialCard5);
             this.ManageLibrariyans.Controls.Add(this.materialCard4);
-            this.ManageLibrariyans.Controls.Add(this.materialListView1);
+            this.ManageLibrariyans.Controls.Add(this.librariyanList);
             this.ManageLibrariyans.Controls.Add(this.materialComboBox1);
             this.ManageLibrariyans.Controls.Add(this.materialButton1);
             this.ManageLibrariyans.Controls.Add(this.materialTextBox2);
@@ -609,31 +616,31 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel20.TabIndex = 6;
             this.materialLabel20.Text = "2021-05-14";
             // 
-            // materialListView1
+            // librariyanList
             // 
-            this.materialListView1.AutoSizeTable = false;
-            this.materialListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.librariyanList.AutoSizeTable = false;
+            this.librariyanList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.librariyanList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.librariyanList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.libName,
             this.libAddress,
             this.libPhone,
             this.libNIC,
             this.libLastUpdate});
-            this.materialListView1.Depth = 0;
-            this.materialListView1.FullRowSelect = true;
-            this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(24, 177);
-            this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
-            this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView1.Name = "materialListView1";
-            this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(883, 355);
-            this.materialListView1.TabIndex = 14;
-            this.materialListView1.UseCompatibleStateImageBehavior = false;
-            this.materialListView1.View = System.Windows.Forms.View.Details;
+            this.librariyanList.Depth = 0;
+            this.librariyanList.FullRowSelect = true;
+            this.librariyanList.HideSelection = false;
+            this.librariyanList.Location = new System.Drawing.Point(24, 177);
+            this.librariyanList.MinimumSize = new System.Drawing.Size(200, 100);
+            this.librariyanList.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.librariyanList.MouseState = MaterialSkin.MouseState.OUT;
+            this.librariyanList.Name = "librariyanList";
+            this.librariyanList.OwnerDraw = true;
+            this.librariyanList.Size = new System.Drawing.Size(883, 355);
+            this.librariyanList.TabIndex = 14;
+            this.librariyanList.UseCompatibleStateImageBehavior = false;
+            this.librariyanList.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -755,7 +762,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard13.Controls.Add(this.materialComboBox2);
             this.materialCard13.Controls.Add(this.materialLabel9);
             this.materialCard13.Controls.Add(this.materialLabel8);
-            this.materialCard13.Controls.Add(this.cartesianChart1);
+            this.materialCard13.Controls.Add(this.memberRegistrationChart);
             this.materialCard13.Depth = 0;
             this.materialCard13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard13.Location = new System.Drawing.Point(384, 276);
@@ -835,13 +842,13 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel8.TabIndex = 2;
             this.materialLabel8.Text = "Member Registrations";
             // 
-            // cartesianChart1
+            // memberRegistrationChart
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(13, 53);
-            this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(715, 262);
-            this.cartesianChart1.TabIndex = 0;
-            this.cartesianChart1.Text = "cartesianChart1";
+            this.memberRegistrationChart.Location = new System.Drawing.Point(13, 53);
+            this.memberRegistrationChart.Name = "memberRegistrationChart";
+            this.memberRegistrationChart.Size = new System.Drawing.Size(715, 262);
+            this.memberRegistrationChart.TabIndex = 0;
+            this.memberRegistrationChart.Text = "cartesianChart1";
             // 
             // materialCard12
             // 
@@ -1122,6 +1129,71 @@ namespace Library_Management_System_v1._1.View
             // timer1
             // 
             this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // materialCard9
+            // 
+            this.materialCard9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard9.Controls.Add(this.switchtoLibrariyanBtn);
+            this.materialCard9.Controls.Add(this.materialFloatingActionButton3);
+            this.materialCard9.Controls.Add(this.materialLabel12);
+            this.materialCard9.Depth = 0;
+            this.materialCard9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard9.Location = new System.Drawing.Point(38, 122);
+            this.materialCard9.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard9.Name = "materialCard9";
+            this.materialCard9.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard9.Size = new System.Drawing.Size(1082, 71);
+            this.materialCard9.TabIndex = 4;
+            // 
+            // materialFloatingActionButton3
+            // 
+            this.materialFloatingActionButton3.AnimateShowHideButton = false;
+            this.materialFloatingActionButton3.Depth = 0;
+            this.materialFloatingActionButton3.DrawShadows = true;
+            this.materialFloatingActionButton3.Icon = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton3.Icon")));
+            this.materialFloatingActionButton3.Image = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton3.Image")));
+            this.materialFloatingActionButton3.Location = new System.Drawing.Point(17, 6);
+            this.materialFloatingActionButton3.Mini = false;
+            this.materialFloatingActionButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFloatingActionButton3.Name = "materialFloatingActionButton3";
+            this.materialFloatingActionButton3.Size = new System.Drawing.Size(56, 56);
+            this.materialFloatingActionButton3.TabIndex = 3;
+            this.materialFloatingActionButton3.Text = "materialFloatingActionButton3";
+            this.materialFloatingActionButton3.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel12
+            // 
+            this.materialLabel12.AutoSize = true;
+            this.materialLabel12.Depth = 0;
+            this.materialLabel12.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel12.Location = new System.Drawing.Point(91, 25);
+            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel12.Name = "materialLabel12";
+            this.materialLabel12.Size = new System.Drawing.Size(211, 19);
+            this.materialLabel12.TabIndex = 0;
+            this.materialLabel12.Text = "Switch  to Librariyan Features";
+            // 
+            // switchtoLibrariyanBtn
+            // 
+            this.switchtoLibrariyanBtn.AutoSize = false;
+            this.switchtoLibrariyanBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.switchtoLibrariyanBtn.Depth = 0;
+            this.switchtoLibrariyanBtn.DrawShadows = true;
+            this.switchtoLibrariyanBtn.HighEmphasis = true;
+            this.switchtoLibrariyanBtn.Icon = null;
+            this.switchtoLibrariyanBtn.Location = new System.Drawing.Point(906, 16);
+            this.switchtoLibrariyanBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.switchtoLibrariyanBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.switchtoLibrariyanBtn.Name = "switchtoLibrariyanBtn";
+            this.switchtoLibrariyanBtn.Size = new System.Drawing.Size(146, 35);
+            this.switchtoLibrariyanBtn.TabIndex = 4;
+            this.switchtoLibrariyanBtn.Text = "Switch";
+            this.switchtoLibrariyanBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.switchtoLibrariyanBtn.UseAccentColor = false;
+            this.switchtoLibrariyanBtn.UseVisualStyleBackColor = true;
+            this.switchtoLibrariyanBtn.Click += new System.EventHandler(this.switchtoLibrariyanBtn_Click);
             // 
             // rjCircularPictureBox1
             // 
@@ -1179,6 +1251,8 @@ namespace Library_Management_System_v1._1.View
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
             this.materialTabControl1.ResumeLayout(false);
+            this.materialCard9.ResumeLayout(false);
+            this.materialCard9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -1189,7 +1263,7 @@ namespace Library_Management_System_v1._1.View
         private System.Windows.Forms.TabPage adminSettings;
         private System.Windows.Forms.TabPage adminActivity;
         private System.Windows.Forms.TabPage ManageLibrariyans;
-        private MaterialSkin.Controls.MaterialListView materialListView1;
+        private MaterialSkin.Controls.MaterialListView librariyanList;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader libName;
         private System.Windows.Forms.ColumnHeader libAddress;
@@ -1222,7 +1296,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialComboBox materialComboBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
-        private LiveCharts.WinForms.CartesianChart cartesianChart1;
+        private LiveCharts.WinForms.CartesianChart memberRegistrationChart;
         private MaterialSkin.Controls.MaterialCard materialCard12;
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
@@ -1257,5 +1331,9 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialButton materialButton7;
         private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialFloatingActionButton adminNotifications;
+        private MaterialSkin.Controls.MaterialCard materialCard9;
+        private MaterialSkin.Controls.MaterialButton switchtoLibrariyanBtn;
+        private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel12;
     }
 }

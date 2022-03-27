@@ -25,7 +25,7 @@ namespace Library_Management_System_v1._1.View
 
             material.addStyle(this);
             cmbFilterAvalibility.SelectedIndex = 0;
-            swtSwitchTheme.Text = "Dark Mode";
+          
         }
         
        
@@ -35,15 +35,7 @@ namespace Library_Management_System_v1._1.View
             
         }
 
-        private void materialButton3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialFloatingActionButton8_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void swtSwitchTheme_CheckedChanged(object sender, EventArgs e)
         {
@@ -66,64 +58,29 @@ namespace Library_Management_System_v1._1.View
             new View.AddBook().ShowDialog();
         }
 
-        private void materialButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialCard12_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void materialCard11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void materialTextBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialLabel24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LibBookList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void LibaddMemberBtn_Click(object sender, EventArgs e)
         {
-            new View.AddMember().ShowDialog();
+            new AddMember().ShowDialog();
         }
 
         private void addMemberDashboard_Click(object sender, EventArgs e)
         {
-            new View.AddMember().ShowDialog();
+            new AddMember().ShowDialog();
         }
 
         private void addBookDashboardBtn_Click(object sender, EventArgs e)
         {
-            new View.AddBook().ShowDialog();
+            new AddBook().ShowDialog();
         }
 
         private void addBorrowDashBoardBtn_Click(object sender, EventArgs e)
         {
-            new View.Add_Book_Borrowing_Details().ShowDialog();
+            new Add_Book_Borrowing_Details().ShowDialog();
         }
 
         private void borrowBookBtn_Click(object sender, EventArgs e)
         {
-            new View.Add_Book_Borrowing_Details().ShowDialog();
+            new Add_Book_Borrowing_Details().ShowDialog();
         }
 
         private void LibrariyanDashBoard_Click(object sender, EventArgs e)
@@ -173,9 +130,19 @@ namespace Library_Management_System_v1._1.View
             }
         }
 
-        private void LibManageFee_Click(object sender, EventArgs e)
+        private void addBookDashBoard_Click(object sender, EventArgs e)
         {
+            new AddBook().Show();
+        }
 
+        private void addCategoryDashboard_Click(object sender, EventArgs e)
+        {
+            new Add_Category().Show();
+        }
+
+        private void addAuthorDashboard_Click(object sender, EventArgs e)
+        {
+            new Add_Author().Show();
         }
     }
 }
