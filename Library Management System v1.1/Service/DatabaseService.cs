@@ -17,7 +17,7 @@ namespace Library_Management_System_v1._1.Model
 
         public DatabaseService()
         {
-            con = new SqlConnection("");
+            con = new SqlConnection("Server=tcp:coda-lms.database.windows.net,1433;Initial Catalog=NIBM LMS;Persist Security Info=False;User ID=coda;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
 
         public int insertData(String query) {
