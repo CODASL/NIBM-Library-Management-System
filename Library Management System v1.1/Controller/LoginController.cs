@@ -8,8 +8,10 @@ using System.Windows.Forms;
 
 namespace Library_Management_System_v1._1.Controller
 {
+   
     class LoginController
     {
+        public static String currentUserId;
         [Obsolete]
         public void onLoggedIn(SqlDataReader sdr , String password) {
 
@@ -28,10 +30,13 @@ namespace Library_Management_System_v1._1.Controller
                         {
 
                             new View.AdminDashboard(emp_id).Show();
+                            currentUserId = emp_id;
+                            
                         }
                         else
                         {
                             new View.LibrariyanHome(emp_id).Show();
+                            currentUserId = emp_id;
                         }
                     }
                     else

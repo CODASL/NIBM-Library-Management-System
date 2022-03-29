@@ -42,30 +42,11 @@ namespace Library_Management_System_v1._1
             if (progressBar1.Value > 50)
             {
                 this.Hide();
-                
                 var frm = new Login();
-                var frm1 = new View.LibrariyanHome();
-                var frm2 = new View.AdminDashboard();
-
-                if (Controller.SplashController.isLoggedIn) { 
-                    if(Controller.SplashController.currentUser == "Admin")
-                    {
-                        timer1.Enabled = false;
-                        frm2.Closed += (s, args) => this.Close();
-                        frm2.ShowDialog();
-                    }
-                    else
-                    {
-                        timer1.Enabled = false;
-                        frm1.Closed += (s, args) => this.Close();
-                        frm1.ShowDialog();
-                    }
-                }
-                else {
-                    timer1.Enabled = false;
-                    frm.Closed += (s, args) => this.Close();
-                    frm.ShowDialog();
-                }
+                timer1.Enabled = false;
+                frm.Closed += (s, args) => this.Close();
+                frm.ShowDialog();
+                
                
             }
         }

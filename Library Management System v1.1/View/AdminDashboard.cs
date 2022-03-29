@@ -33,7 +33,7 @@ namespace Library_Management_System_v1._1.View
 
         }
 
-        public AdminDashboard() { }
+        
 
        
         private void AdminDashboard_Load(object sender, EventArgs e)
@@ -54,7 +54,25 @@ namespace Library_Management_System_v1._1.View
         private void switchtoLibrariyanBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new LibrariyanHome().Show();
+            new LibrariyanHome(emp_id).Show();
+        }
+
+        private void adminLogout_Click(object sender, EventArgs e)
+        {
+            int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_id + "'");
+            if (line > 0)
+            {
+                this.Hide();
+                new Login().Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Logout Failed");
+            }
+            
+            
+
         }
     }
 }

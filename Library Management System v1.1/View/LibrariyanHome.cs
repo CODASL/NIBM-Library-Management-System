@@ -30,7 +30,6 @@ namespace Library_Management_System_v1._1.View
           
         }
         
-        public LibrariyanHome() { }
        
         private void LibrariyanHome_Load(object sender, EventArgs e)
         {
