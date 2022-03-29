@@ -8,26 +8,26 @@ namespace Library_Management_System_v1._1.Model
 {
     class User
     {
-        String token;
-        String email;
+    
+        String empId;
         String password;
-        String userType;
+        String empType;
         bool IsLoggedIn;
 
         public User() { }
-        public User(string token, string email, string password, string userType, bool isLoggedIn)
+        public User( string empId, string password, string userType, bool isLoggedIn)
         {
-            this.token = token;
-            this.email = email;
+         
+            this.empId = empId;
             this.password = password;
-            this.userType = userType;
+            this.empType = userType;
             IsLoggedIn = isLoggedIn;
         }
 
-        public string Token { get => token; set => token = value; }
-        public string Email { get => email; set => email = value; }
+       
+        public string Email { get => empId; set => empId = value; }
         public string Password {set => password = value; }
-        public string UserType { get => userType; set => userType = value; }
+        public string UserType { get => empType; set => empType = value; }
         public bool IsLoggedIn1 { get => IsLoggedIn; set => IsLoggedIn = value; }
     }
 }

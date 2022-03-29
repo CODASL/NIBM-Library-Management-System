@@ -9,29 +9,40 @@ namespace Library_Management_System_v1._1.Model
 {
     class Book
     {
-        String bID;
+        String id;
         String name;
         String category;
-        String publisher;
         String author;
+        String isbn;
         String availibility;
-        String lastUpdate;
         String rackNo;
-        MaterialSkin.Controls.MaterialButton btn;
+        DateTime addedDate;
+        DateTime updatedDate;
 
-       
-
-        public Book(string bID, string name, string category, string publisher, string author, string availibility, string lastUpdate, String rackNo, MaterialButton btn)
+        public Book(string id, string name, string category, string author, string isbn, string availibility, string rackNo, DateTime addedDate, DateTime updatedDate)
         {
-            this.bID = bID;
+            this.id = id;
             this.name = name;
             this.category = category;
-            this.publisher = publisher;
             this.author = author;
+            this.isbn = isbn;
             this.availibility = availibility;
-            this.lastUpdate = lastUpdate;
             this.rackNo = rackNo;
-            this.btn = btn;
+            this.addedDate = addedDate;
+            this.updatedDate = updatedDate;
         }
+
+        public string Id { get => id; set => id = value; }
+        public string Name { get => name; set => name = value; }
+        public string Category { get => category; set => category = value; }
+        public string Author { get => author; set => author = value; }
+        public string Isbn { get => isbn; set => isbn = value; }
+        public string Availibility { get => availibility; set => availibility = value; }
+        public string RackNo { get => rackNo; set => rackNo = value; }
+        public DateTime AddedDate { get => addedDate; set => addedDate = value; }
+        public DateTime UpdatedDate { get => updatedDate; set => updatedDate = value; }
     }
 }
+       
+
+       

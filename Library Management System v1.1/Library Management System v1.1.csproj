@@ -99,8 +99,7 @@
     <Compile Include="Model\DatabaseService.cs" />
     <Compile Include="Model\Fine.cs" />
     <Compile Include="Model\Guardian.cs" />
-    <Compile Include="Model\Librariyan.cs" />
-    <Compile Include="Model\LoginUser.cs" />
+    <Compile Include="Model\Librarian.cs" />
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\MemberFee.cs" />
     <Compile Include="Model\Notification.cs" />
