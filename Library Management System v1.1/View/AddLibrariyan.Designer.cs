@@ -67,6 +67,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_LibID.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_LibID.Multiline = false;
             this.txt_LibID.Name = "txt_LibID";
+            this.txt_LibID.ReadOnly = true;
             this.txt_LibID.Size = new System.Drawing.Size(100, 36);
             this.txt_LibID.TabIndex = 2;
             this.txt_LibID.Text = "";
@@ -117,7 +118,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_LibNIC.Depth = 0;
             this.txt_LibNIC.Font = new System.Drawing.Font("Roboto", 12F);
             this.txt_LibNIC.Location = new System.Drawing.Point(151, 189);
-            this.txt_LibNIC.MaxLength = 50;
+            this.txt_LibNIC.MaxLength = 12;
             this.txt_LibNIC.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_LibNIC.Multiline = false;
             this.txt_LibNIC.Name = "txt_LibNIC";

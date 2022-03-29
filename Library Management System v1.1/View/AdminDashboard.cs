@@ -45,15 +45,13 @@ namespace Library_Management_System_v1._1.View
             timer1.Start();
             adminName.Text = adminDashboardCtrl.setName(emp_id);
             loadLibrariyanList();
+            lblNumberOfLibrariyans.Text = librariyanList.Items.Count.ToString();
         }
 
 
         public void loadLibrariyanList()
         {
-
-
             librariyanList.Items.Clear();
-
             try
             {
                 database.Con.Open();
@@ -68,9 +66,11 @@ namespace Library_Management_System_v1._1.View
                         item.SubItems.Add(sdr["Phone"].ToString());
                         item.SubItems.Add(sdr["NIC"].ToString());
                         item.SubItems.Add(sdr["updated_date"].ToString());
+                        
                         librariyanList.Items.Add(item);
                     }
                     database.Con.Close();
+                    lblNumberOfLibrariyans.Text = librariyanList.Items.Count.ToString();
 
                 }
                 else

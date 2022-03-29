@@ -60,7 +60,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton1 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblNumberOfLibrariyans = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton9 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
@@ -538,7 +538,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard5.Controls.Add(this.materialFloatingActionButton1);
             this.materialCard5.Controls.Add(this.materialLabel4);
-            this.materialCard5.Controls.Add(this.materialLabel5);
+            this.materialCard5.Controls.Add(this.lblNumberOfLibrariyans);
             this.materialCard5.Depth = 0;
             this.materialCard5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -580,18 +580,18 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel4.TabIndex = 7;
             this.materialLabel4.Text = "Total Number Of Librariyans";
             // 
-            // materialLabel5
+            // lblNumberOfLibrariyans
             // 
-            this.materialLabel5.AutoSize = true;
-            this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel5.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel5.Location = new System.Drawing.Point(18, 43);
-            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(14, 29);
-            this.materialLabel5.TabIndex = 6;
-            this.materialLabel5.Text = "3";
+            this.lblNumberOfLibrariyans.AutoSize = true;
+            this.lblNumberOfLibrariyans.Depth = 0;
+            this.lblNumberOfLibrariyans.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblNumberOfLibrariyans.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.lblNumberOfLibrariyans.Location = new System.Drawing.Point(18, 43);
+            this.lblNumberOfLibrariyans.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblNumberOfLibrariyans.Name = "lblNumberOfLibrariyans";
+            this.lblNumberOfLibrariyans.Size = new System.Drawing.Size(14, 29);
+            this.lblNumberOfLibrariyans.TabIndex = 6;
+            this.lblNumberOfLibrariyans.Text = "3";
             // 
             // materialCard4
             // 
@@ -1281,7 +1281,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialCard materialCard5;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton1;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private MaterialSkin.Controls.MaterialLabel lblNumberOfLibrariyans;
         private MaterialSkin.Controls.MaterialCard materialCard4;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton9;
         private MaterialSkin.Controls.MaterialLabel materialLabel19;

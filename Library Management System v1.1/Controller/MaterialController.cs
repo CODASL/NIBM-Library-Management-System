@@ -21,8 +21,10 @@ namespace Library_Management_System_v1._1.Controller
         {
             MaterialSkinManager.AddFormToManage(form);
             MaterialSkinManager.Theme = Thememode;
+            materialSkinManager.EnforceBackcolorOnAllComponents = false;
+            materialSkinManager.getTextBoxFontBySize(5);
             MaterialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Blue200, TextShade.WHITE);
-            
+             
         }
     }
 }

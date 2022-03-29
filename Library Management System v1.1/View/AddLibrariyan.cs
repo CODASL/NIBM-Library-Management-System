@@ -19,14 +19,17 @@ namespace Library_Management_System_v1._1.View
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
+            addLibrarianObj.setLibId(txt_LibID);
         }
+
+       
 
         private void addLibrariyanDialogBtn_Click(object sender, EventArgs e)
         {
             Model.Librarian librarian = new Model.Librarian(txt_LibID.Text, txt_LibName.Text, txt_LibAddress.Text, txt_LibEmail.Text,
                     txt_LibNIC.Text, txt_LibPhone.Text, DateTime.Now, DateTime.Now);
 
-            Model.User appUser = new Model.User(txt_LibID.Text , txt_LibID+"123" ,"Admin",false);
+            Model.User appUser = new Model.User(txt_LibID.Text , txt_LibID.Text+"123" ,"Librarian",false);
            
             try
             {
@@ -36,7 +39,7 @@ namespace Library_Management_System_v1._1.View
                 {
                     this.Hide();
                     MessageBox.Show("Record Added");
-                    new AdminDashboard().loadLibrariyanList();
+                    
                 }
                 else
                 {
@@ -47,11 +50,12 @@ namespace Library_Management_System_v1._1.View
                 MessageBox.Show(ex.ToString());
             }
             
+
         }
 
         private void clearLibrarianBtnDialog_Click(object sender, EventArgs e)
         {
-            txt_LibID.Clear();
+            
             txt_LibName.Clear();
             txt_LibAddress.Clear();
             txt_LibEmail.Clear();
