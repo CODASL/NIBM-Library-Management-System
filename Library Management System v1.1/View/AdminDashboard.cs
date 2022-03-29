@@ -62,6 +62,7 @@ namespace Library_Management_System_v1._1.View
                         item.SubItems.Add(sdr["updated_date"].ToString());
                         librariyanList.Items.Add(item);
                     }
+                    database.Con.Close();
 
                 }
                 else
@@ -117,10 +118,53 @@ namespace Library_Management_System_v1._1.View
 
         }
 
+        //=======================Delete Librarian===================================
+
         private void deleteLibrariyanBtn_Click(object sender, EventArgs e)
         {
+ 
+            DialogResult res = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
+            if (res.Equals(DialogResult.Yes)){
+                ListView.SelectedIndexCollection selectedIndex = librariyanList.SelectedIndices;
+                if (selectedIndex.Count > 0)
+                {
+                    foreach (int index in selectedIndex)
+                    {
+                        Console.WriteLine(index);
 
-           
+                    }
+                    String selectedRowId = librariyanList.SelectedItems[0].SubItems[0].Text;
+
+                    try
+                    {
+                        int line = database.deleteData("DELETE FROM Librarian WHERE Librarian_Id = '" + selectedRowId + "'");
+                        int line1 = database.deleteData("DELETE FROM AppUser WHERE Emp_Id = '" + selectedRowId + "'");
+
+                        if (line > 0 && line1 > 0)
+                        {
+                            MessageBox.Show("Data Deleted Successfully");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Something Went Wrong");
+                        }
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("No Rows Selected");
+
+                }
+            }
+            else{
+                MessageBox.Show("Deletation Cancelled");
+            }
         }
     }
 }
