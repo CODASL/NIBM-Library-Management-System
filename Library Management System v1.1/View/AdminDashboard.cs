@@ -30,6 +30,11 @@ namespace Library_Management_System_v1._1.View
             this.emp_id = emp_id;
         }
 
+        public AdminDashboard()
+        {
+
+        }
+
 
 
 
@@ -43,9 +48,12 @@ namespace Library_Management_System_v1._1.View
         }
 
 
-        private void loadLibrariyanList()
+        public void loadLibrariyanList()
         {
-            librariyanList.MultiSelect = false;
+
+
+            librariyanList.Items.Clear();
+
             try
             {
                 database.Con.Open();
@@ -74,7 +82,12 @@ namespace Library_Management_System_v1._1.View
             {
                 MessageBox.Show(ex.ToString());
             }
-           
+
+            if (librariyanList != null)
+            {
+                librariyanList.MultiSelect = false;
+            }
+
         }
 
         private void adminNotifications_Click(object sender, EventArgs e)
@@ -143,6 +156,7 @@ namespace Library_Management_System_v1._1.View
                         if (line > 0 && line1 > 0)
                         {
                             MessageBox.Show("Data Deleted Successfully");
+                            loadLibrariyanList();
                         }
                         else
                         {

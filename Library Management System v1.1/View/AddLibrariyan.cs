@@ -36,6 +36,7 @@ namespace Library_Management_System_v1._1.View
                 {
                     this.Hide();
                     MessageBox.Show("Record Added");
+                    new AdminDashboard().loadLibrariyanList();
                 }
                 else
                 {
