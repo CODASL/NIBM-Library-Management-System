@@ -27,33 +27,18 @@ namespace Library_Management_System_v1._1.View
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
-
-            this.emp_id = emp_id;
-            adminDashboardCtrl.loadCartChart(memberRegistrationChart);
-            adminDashboardCtrl.loadCategoriesPieChart(categoriesPieChart);
-            setName();
-            
+            this.emp_id = emp_id;    
         }
 
         
 
-       public void setName()
-        {
-            try
-            {
-                database.Con.Open();
-                SqlDataReader sdr = database.readData("Select Name From admin WHERE Id = '" + emp_id + "'");
-                sdr.Read();
-                adminName.Text =sdr["Name"].ToString();
-                database.Con.Close();
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
+       
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
+            adminDashboardCtrl.loadCartChart(memberRegistrationChart);
+            adminDashboardCtrl.loadCategoriesPieChart(categoriesPieChart);
             timer1.Start();
+            adminName.Text = adminDashboardCtrl.setName(emp_id);
         }
 
         private void adminNotifications_Click(object sender, EventArgs e)
@@ -89,6 +74,11 @@ namespace Library_Management_System_v1._1.View
             
             
 
+        }
+
+        private void addLibrarianBtn_Click(object sender, EventArgs e)
+        {
+            new AddLibrariyan().Show();
         }
     }
 }

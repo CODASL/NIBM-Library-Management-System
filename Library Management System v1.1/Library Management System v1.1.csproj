@@ -142,6 +142,12 @@
     <Compile Include="View\AddfineWindow.Designer.cs">
       <DependentUpon>AddfineWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AddLibrariyan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddLibrariyan.Designer.cs">
+      <DependentUpon>AddLibrariyan.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AddMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddfineWindow.resx">
       <DependentUpon>AddfineWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddLibrariyan.resx">
+      <DependentUpon>AddLibrariyan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddMember.resx">
       <DependentUpon>AddMember.cs</DependentUpon>

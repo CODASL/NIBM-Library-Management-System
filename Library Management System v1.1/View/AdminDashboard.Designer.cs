@@ -55,8 +55,8 @@ namespace Library_Management_System_v1._1.View
             this.DateTimeActivity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ManageLibrariyans = new System.Windows.Forms.TabPage();
             this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton8 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
+            this.updateLibrariyanBtn = new MaterialSkin.Controls.MaterialButton();
+            this.deleteLibrariyanBtn = new MaterialSkin.Controls.MaterialButton();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton1 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
@@ -73,7 +73,7 @@ namespace Library_Management_System_v1._1.View
             this.libNIC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.libLastUpdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.addLibrarianBtn = new MaterialSkin.Controls.MaterialButton();
             this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
             this.adminDashboardBtn = new System.Windows.Forms.TabPage();
             this.materialCard13 = new MaterialSkin.Controls.MaterialCard();
@@ -457,13 +457,13 @@ namespace Library_Management_System_v1._1.View
             // ManageLibrariyans
             // 
             this.ManageLibrariyans.Controls.Add(this.materialButton6);
-            this.ManageLibrariyans.Controls.Add(this.materialButton8);
-            this.ManageLibrariyans.Controls.Add(this.materialButton5);
+            this.ManageLibrariyans.Controls.Add(this.updateLibrariyanBtn);
+            this.ManageLibrariyans.Controls.Add(this.deleteLibrariyanBtn);
             this.ManageLibrariyans.Controls.Add(this.materialCard5);
             this.ManageLibrariyans.Controls.Add(this.materialCard4);
             this.ManageLibrariyans.Controls.Add(this.librariyanList);
             this.ManageLibrariyans.Controls.Add(this.materialComboBox1);
-            this.ManageLibrariyans.Controls.Add(this.materialButton1);
+            this.ManageLibrariyans.Controls.Add(this.addLibrarianBtn);
             this.ManageLibrariyans.Controls.Add(this.materialTextBox2);
             this.ManageLibrariyans.ImageKey = "userDark.png";
             this.ManageLibrariyans.Location = new System.Drawing.Point(4, 39);
@@ -492,45 +492,45 @@ namespace Library_Management_System_v1._1.View
             this.materialButton6.UseAccentColor = false;
             this.materialButton6.UseVisualStyleBackColor = true;
             // 
-            // materialButton8
+            // updateLibrariyanBtn
             // 
-            this.materialButton8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton8.Depth = 0;
-            this.materialButton8.DrawShadows = true;
-            this.materialButton8.HighEmphasis = true;
-            this.materialButton8.Icon = null;
-            this.materialButton8.Location = new System.Drawing.Point(704, 130);
-            this.materialButton8.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton8.MaximumSize = new System.Drawing.Size(100, 35);
-            this.materialButton8.MinimumSize = new System.Drawing.Size(100, 35);
-            this.materialButton8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton8.Name = "materialButton8";
-            this.materialButton8.Size = new System.Drawing.Size(100, 35);
-            this.materialButton8.TabIndex = 18;
-            this.materialButton8.Text = "Update";
-            this.materialButton8.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton8.UseAccentColor = false;
-            this.materialButton8.UseVisualStyleBackColor = true;
+            this.updateLibrariyanBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.updateLibrariyanBtn.Depth = 0;
+            this.updateLibrariyanBtn.DrawShadows = true;
+            this.updateLibrariyanBtn.HighEmphasis = true;
+            this.updateLibrariyanBtn.Icon = null;
+            this.updateLibrariyanBtn.Location = new System.Drawing.Point(704, 130);
+            this.updateLibrariyanBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.updateLibrariyanBtn.MaximumSize = new System.Drawing.Size(100, 35);
+            this.updateLibrariyanBtn.MinimumSize = new System.Drawing.Size(100, 35);
+            this.updateLibrariyanBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.updateLibrariyanBtn.Name = "updateLibrariyanBtn";
+            this.updateLibrariyanBtn.Size = new System.Drawing.Size(100, 35);
+            this.updateLibrariyanBtn.TabIndex = 18;
+            this.updateLibrariyanBtn.Text = "Update";
+            this.updateLibrariyanBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.updateLibrariyanBtn.UseAccentColor = false;
+            this.updateLibrariyanBtn.UseVisualStyleBackColor = true;
             // 
-            // materialButton5
+            // deleteLibrariyanBtn
             // 
-            this.materialButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton5.Depth = 0;
-            this.materialButton5.DrawShadows = true;
-            this.materialButton5.HighEmphasis = true;
-            this.materialButton5.Icon = null;
-            this.materialButton5.Location = new System.Drawing.Point(807, 130);
-            this.materialButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton5.MaximumSize = new System.Drawing.Size(100, 35);
-            this.materialButton5.MinimumSize = new System.Drawing.Size(100, 35);
-            this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton5.Name = "materialButton5";
-            this.materialButton5.Size = new System.Drawing.Size(100, 35);
-            this.materialButton5.TabIndex = 17;
-            this.materialButton5.Text = "Delete";
-            this.materialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton5.UseAccentColor = false;
-            this.materialButton5.UseVisualStyleBackColor = true;
+            this.deleteLibrariyanBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.deleteLibrariyanBtn.Depth = 0;
+            this.deleteLibrariyanBtn.DrawShadows = true;
+            this.deleteLibrariyanBtn.HighEmphasis = true;
+            this.deleteLibrariyanBtn.Icon = null;
+            this.deleteLibrariyanBtn.Location = new System.Drawing.Point(807, 130);
+            this.deleteLibrariyanBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.deleteLibrariyanBtn.MaximumSize = new System.Drawing.Size(100, 35);
+            this.deleteLibrariyanBtn.MinimumSize = new System.Drawing.Size(100, 35);
+            this.deleteLibrariyanBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.deleteLibrariyanBtn.Name = "deleteLibrariyanBtn";
+            this.deleteLibrariyanBtn.Size = new System.Drawing.Size(100, 35);
+            this.deleteLibrariyanBtn.TabIndex = 17;
+            this.deleteLibrariyanBtn.Text = "Delete";
+            this.deleteLibrariyanBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.deleteLibrariyanBtn.UseAccentColor = false;
+            this.deleteLibrariyanBtn.UseVisualStyleBackColor = true;
             // 
             // materialCard5
             // 
@@ -736,25 +736,26 @@ namespace Library_Management_System_v1._1.View
             this.materialComboBox1.TabIndex = 13;
             this.materialComboBox1.UseTallSize = false;
             // 
-            // materialButton1
+            // addLibrarianBtn
             // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.DrawShadows = true;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(602, 130);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MaximumSize = new System.Drawing.Size(100, 35);
-            this.materialButton1.MinimumSize = new System.Drawing.Size(100, 35);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(100, 35);
-            this.materialButton1.TabIndex = 12;
-            this.materialButton1.Text = "Add";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.addLibrarianBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addLibrarianBtn.Depth = 0;
+            this.addLibrarianBtn.DrawShadows = true;
+            this.addLibrarianBtn.HighEmphasis = true;
+            this.addLibrarianBtn.Icon = null;
+            this.addLibrarianBtn.Location = new System.Drawing.Point(602, 130);
+            this.addLibrarianBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.addLibrarianBtn.MaximumSize = new System.Drawing.Size(100, 35);
+            this.addLibrarianBtn.MinimumSize = new System.Drawing.Size(100, 35);
+            this.addLibrarianBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addLibrarianBtn.Name = "addLibrarianBtn";
+            this.addLibrarianBtn.Size = new System.Drawing.Size(100, 35);
+            this.addLibrarianBtn.TabIndex = 12;
+            this.addLibrarianBtn.Text = "Add";
+            this.addLibrarianBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.addLibrarianBtn.UseAccentColor = false;
+            this.addLibrarianBtn.UseVisualStyleBackColor = true;
+            this.addLibrarianBtn.Click += new System.EventHandler(this.addLibrarianBtn_Click);
             // 
             // materialTextBox2
             // 
@@ -1242,7 +1243,7 @@ namespace Library_Management_System_v1._1.View
         private System.Windows.Forms.ColumnHeader libNIC;
         private System.Windows.Forms.ColumnHeader libLastUpdate;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialButton addLibrarianBtn;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
         private System.Windows.Forms.TabPage adminDashboardBtn;
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
@@ -1285,8 +1286,8 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialLabel materialLabel19;
         private MaterialSkin.Controls.MaterialLabel materialLabel20;
         private MaterialSkin.Controls.MaterialButton materialButton6;
-        private MaterialSkin.Controls.MaterialButton materialButton8;
-        private MaterialSkin.Controls.MaterialButton materialButton5;
+        private MaterialSkin.Controls.MaterialButton updateLibrariyanBtn;
+        private MaterialSkin.Controls.MaterialButton deleteLibrariyanBtn;
         private MaterialSkin.Controls.MaterialLabel materialLabel52;
         private MetroFramework.Controls.MetroDateTime metroDateTime2;
         private MaterialSkin.Controls.MaterialListView materialListView4;
