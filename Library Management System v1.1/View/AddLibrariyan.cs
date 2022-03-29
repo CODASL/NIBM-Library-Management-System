@@ -23,11 +23,14 @@ namespace Library_Management_System_v1._1.View
 
         private void addLibrariyanDialogBtn_Click(object sender, EventArgs e)
         {
+            Model.Librarian librarian = new Model.Librarian(txt_LibID.Text, txt_LibName.Text, txt_LibAddress.Text, txt_LibEmail.Text,
+                    txt_LibNIC.Text, txt_LibPhone.Text, DateTime.Now, DateTime.Now);
+
+            Model.User appUser = new Model.User(txt_LibID.Text , txt_LibID+"123" ,"Admin",false);
            
             try
             {
-              Boolean isAdded =  addLibrarianObj.addLibrarian(new Model.Librarian(txt_LibID.Text, txt_LibName.Text, txt_LibAddress.Text, txt_LibEmail.Text, 
-                    txt_LibNIC.Text,txt_LibPhone.Text, DateTime.Now, DateTime.Now));
+              Boolean isAdded =  addLibrarianObj.addLibrarian(librarian , appUser);
 
                 if (isAdded)
                 {
