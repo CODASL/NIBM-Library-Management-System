@@ -12,10 +12,12 @@ namespace Library_Management_System_v1._1.Model
         String name;
         String address;
         String email;
-        String updatedDate;
-        String addedDate;
+        String NIC;
+        String phone;
+        DateTime updatedDate;
+        DateTime addedDate;
 
-        public Librarian(string id, string name, string address, string email, string updatedDate, string addedDate)
+        public Librarian(string id, string name, string address, string email,  string nIC, String phone , DateTime updatedDate, DateTime addedDate)
         {
             this.id = id;
             this.name = name;
@@ -23,13 +25,17 @@ namespace Library_Management_System_v1._1.Model
             this.email = email;
             this.updatedDate = updatedDate;
             this.addedDate = addedDate;
+            NIC = nIC;
+            this.phone = phone;
         }
 
         public string Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public string Address { get => address; set => address = value; }
         public string Email { get => email; set => email = value; }
-        public string UpdatedDate { get => updatedDate; set => updatedDate = value; }
-        public string AddedDate { get => addedDate; set => addedDate = value; }
+        public DateTime UpdatedDate { get => updatedDate; set => updatedDate = value; }
+        public DateTime AddedDate { get => addedDate; set => addedDate = value; }
+        public string NIC1 { get => NIC; set => NIC = value; }
+        public String Phone { get => phone; set => phone = value; }
     }
 }

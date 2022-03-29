@@ -13,7 +13,7 @@ namespace Library_Management_System_v1._1.Controller
     {
         public static String currentUserId;
         [Obsolete]
-        public void onLoggedIn(SqlDataReader sdr , String password) {
+        public void onLoggedIn(SqlDataReader sdr , String password , Form form) {
 
 
             if (sdr.HasRows)
@@ -22,13 +22,15 @@ namespace Library_Management_System_v1._1.Controller
                 if (sdr["Password"].ToString() == password)
                 {
                     String emp_id = sdr["Emp_Id"].ToString();
-                    new Login().Hide();
+                    
                     int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 1 Where Emp_Id = '" + emp_id + "'");
                     if (line > 0)
                     {
+                        form.Hide();
+                        
                         if (sdr["Emp_Type"].ToString() == "Admin")
                         {
-
+                            
                             new View.AdminDashboard(emp_id).Show();
                             currentUserId = emp_id;
                             

@@ -30,17 +30,17 @@ namespace Library_Management_System_v1._1.View
         private void InitializeComponent()
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_LibID = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_LibName = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_LibNIC = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox4 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_LibAddress = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox5 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_LibEmail = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox6 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_LibPhone = new MaterialSkin.Controls.MaterialTextBox();
             this.addLibrariyanDialogBtn = new MaterialSkin.Controls.MaterialButton();
             this.clearLibrarianBtnDialog = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
@@ -57,20 +57,20 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel1.TabIndex = 3;
             this.materialLabel1.Text = "Librarian ID";
             // 
-            // materialTextBox1
+            // txt_LibID
             // 
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox1.Location = new System.Drawing.Point(151, 83);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(100, 36);
-            this.materialTextBox1.TabIndex = 2;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.UseTallSize = false;
+            this.txt_LibID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_LibID.Depth = 0;
+            this.txt_LibID.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_LibID.Location = new System.Drawing.Point(151, 83);
+            this.txt_LibID.MaxLength = 50;
+            this.txt_LibID.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_LibID.Multiline = false;
+            this.txt_LibID.Name = "txt_LibID";
+            this.txt_LibID.Size = new System.Drawing.Size(100, 36);
+            this.txt_LibID.TabIndex = 2;
+            this.txt_LibID.Text = "";
+            this.txt_LibID.UseTallSize = false;
             // 
             // materialLabel2
             // 
@@ -84,20 +84,20 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel2.TabIndex = 5;
             this.materialLabel2.Text = "Name";
             // 
-            // materialTextBox2
+            // txt_LibName
             // 
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox2.Location = new System.Drawing.Point(151, 136);
-            this.materialTextBox2.MaxLength = 50;
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(343, 36);
-            this.materialTextBox2.TabIndex = 4;
-            this.materialTextBox2.Text = "";
-            this.materialTextBox2.UseTallSize = false;
+            this.txt_LibName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_LibName.Depth = 0;
+            this.txt_LibName.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_LibName.Location = new System.Drawing.Point(151, 136);
+            this.txt_LibName.MaxLength = 50;
+            this.txt_LibName.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_LibName.Multiline = false;
+            this.txt_LibName.Name = "txt_LibName";
+            this.txt_LibName.Size = new System.Drawing.Size(343, 36);
+            this.txt_LibName.TabIndex = 4;
+            this.txt_LibName.Text = "";
+            this.txt_LibName.UseTallSize = false;
             // 
             // materialLabel3
             // 
@@ -111,20 +111,20 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel3.TabIndex = 7;
             this.materialLabel3.Text = "NIC";
             // 
-            // materialTextBox3
+            // txt_LibNIC
             // 
-            this.materialTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox3.Depth = 0;
-            this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox3.Location = new System.Drawing.Point(151, 189);
-            this.materialTextBox3.MaxLength = 50;
-            this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox3.Multiline = false;
-            this.materialTextBox3.Name = "materialTextBox3";
-            this.materialTextBox3.Size = new System.Drawing.Size(218, 36);
-            this.materialTextBox3.TabIndex = 6;
-            this.materialTextBox3.Text = "";
-            this.materialTextBox3.UseTallSize = false;
+            this.txt_LibNIC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_LibNIC.Depth = 0;
+            this.txt_LibNIC.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_LibNIC.Location = new System.Drawing.Point(151, 189);
+            this.txt_LibNIC.MaxLength = 50;
+            this.txt_LibNIC.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_LibNIC.Multiline = false;
+            this.txt_LibNIC.Name = "txt_LibNIC";
+            this.txt_LibNIC.Size = new System.Drawing.Size(218, 36);
+            this.txt_LibNIC.TabIndex = 6;
+            this.txt_LibNIC.Text = "";
+            this.txt_LibNIC.UseTallSize = false;
             // 
             // materialLabel4
             // 
@@ -139,20 +139,20 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel4.TabIndex = 9;
             this.materialLabel4.Text = "Address";
             // 
-            // materialTextBox4
+            // txt_LibAddress
             // 
-            this.materialTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox4.Depth = 0;
-            this.materialTextBox4.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox4.Location = new System.Drawing.Point(151, 241);
-            this.materialTextBox4.MaxLength = 50;
-            this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox4.Multiline = false;
-            this.materialTextBox4.Name = "materialTextBox4";
-            this.materialTextBox4.Size = new System.Drawing.Size(483, 36);
-            this.materialTextBox4.TabIndex = 8;
-            this.materialTextBox4.Text = "";
-            this.materialTextBox4.UseTallSize = false;
+            this.txt_LibAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_LibAddress.Depth = 0;
+            this.txt_LibAddress.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_LibAddress.Location = new System.Drawing.Point(151, 241);
+            this.txt_LibAddress.MaxLength = 50;
+            this.txt_LibAddress.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_LibAddress.Multiline = false;
+            this.txt_LibAddress.Name = "txt_LibAddress";
+            this.txt_LibAddress.Size = new System.Drawing.Size(483, 36);
+            this.txt_LibAddress.TabIndex = 8;
+            this.txt_LibAddress.Text = "";
+            this.txt_LibAddress.UseTallSize = false;
             // 
             // materialLabel5
             // 
@@ -167,20 +167,20 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel5.TabIndex = 11;
             this.materialLabel5.Text = "Email";
             // 
-            // materialTextBox5
+            // txt_LibEmail
             // 
-            this.materialTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox5.Depth = 0;
-            this.materialTextBox5.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox5.Location = new System.Drawing.Point(151, 293);
-            this.materialTextBox5.MaxLength = 50;
-            this.materialTextBox5.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox5.Multiline = false;
-            this.materialTextBox5.Name = "materialTextBox5";
-            this.materialTextBox5.Size = new System.Drawing.Size(312, 36);
-            this.materialTextBox5.TabIndex = 10;
-            this.materialTextBox5.Text = "";
-            this.materialTextBox5.UseTallSize = false;
+            this.txt_LibEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_LibEmail.Depth = 0;
+            this.txt_LibEmail.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_LibEmail.Location = new System.Drawing.Point(151, 293);
+            this.txt_LibEmail.MaxLength = 50;
+            this.txt_LibEmail.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_LibEmail.Multiline = false;
+            this.txt_LibEmail.Name = "txt_LibEmail";
+            this.txt_LibEmail.Size = new System.Drawing.Size(312, 36);
+            this.txt_LibEmail.TabIndex = 10;
+            this.txt_LibEmail.Text = "";
+            this.txt_LibEmail.UseTallSize = false;
             // 
             // materialLabel6
             // 
@@ -195,20 +195,20 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel6.TabIndex = 13;
             this.materialLabel6.Text = "Phone";
             // 
-            // materialTextBox6
+            // txt_LibPhone
             // 
-            this.materialTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox6.Depth = 0;
-            this.materialTextBox6.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox6.Location = new System.Drawing.Point(151, 346);
-            this.materialTextBox6.MaxLength = 50;
-            this.materialTextBox6.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox6.Multiline = false;
-            this.materialTextBox6.Name = "materialTextBox6";
-            this.materialTextBox6.Size = new System.Drawing.Size(271, 36);
-            this.materialTextBox6.TabIndex = 12;
-            this.materialTextBox6.Text = "";
-            this.materialTextBox6.UseTallSize = false;
+            this.txt_LibPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_LibPhone.Depth = 0;
+            this.txt_LibPhone.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_LibPhone.Location = new System.Drawing.Point(151, 346);
+            this.txt_LibPhone.MaxLength = 50;
+            this.txt_LibPhone.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_LibPhone.Multiline = false;
+            this.txt_LibPhone.Name = "txt_LibPhone";
+            this.txt_LibPhone.Size = new System.Drawing.Size(312, 36);
+            this.txt_LibPhone.TabIndex = 12;
+            this.txt_LibPhone.Text = "";
+            this.txt_LibPhone.UseTallSize = false;
             // 
             // addLibrariyanDialogBtn
             // 
@@ -228,6 +228,7 @@ namespace Library_Management_System_v1._1.View
             this.addLibrariyanDialogBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.addLibrariyanDialogBtn.UseAccentColor = false;
             this.addLibrariyanDialogBtn.UseVisualStyleBackColor = true;
+            this.addLibrariyanDialogBtn.Click += new System.EventHandler(this.addLibrariyanDialogBtn_Click);
             // 
             // clearLibrarianBtnDialog
             // 
@@ -247,6 +248,7 @@ namespace Library_Management_System_v1._1.View
             this.clearLibrarianBtnDialog.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.clearLibrarianBtnDialog.UseAccentColor = false;
             this.clearLibrarianBtnDialog.UseVisualStyleBackColor = true;
+            this.clearLibrarianBtnDialog.Click += new System.EventHandler(this.clearLibrarianBtnDialog_Click);
             // 
             // AddLibrariyan
             // 
@@ -256,17 +258,17 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.addLibrariyanDialogBtn);
             this.Controls.Add(this.clearLibrarianBtnDialog);
             this.Controls.Add(this.materialLabel6);
-            this.Controls.Add(this.materialTextBox6);
+            this.Controls.Add(this.txt_LibPhone);
             this.Controls.Add(this.materialLabel5);
-            this.Controls.Add(this.materialTextBox5);
+            this.Controls.Add(this.txt_LibEmail);
             this.Controls.Add(this.materialLabel4);
-            this.Controls.Add(this.materialTextBox4);
+            this.Controls.Add(this.txt_LibAddress);
             this.Controls.Add(this.materialLabel3);
-            this.Controls.Add(this.materialTextBox3);
+            this.Controls.Add(this.txt_LibNIC);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.materialTextBox2);
+            this.Controls.Add(this.txt_LibName);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.materialTextBox1);
+            this.Controls.Add(this.txt_LibID);
             this.Name = "AddLibrariyan";
             this.Text = "Add Librarian";
             this.ResumeLayout(false);
@@ -277,17 +279,17 @@ namespace Library_Management_System_v1._1.View
         #endregion
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox txt_LibID;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
+        private MaterialSkin.Controls.MaterialTextBox txt_LibName;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox3;
+        private MaterialSkin.Controls.MaterialTextBox txt_LibNIC;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox4;
+        private MaterialSkin.Controls.MaterialTextBox txt_LibAddress;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox5;
+        private MaterialSkin.Controls.MaterialTextBox txt_LibEmail;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox6;
+        private MaterialSkin.Controls.MaterialTextBox txt_LibPhone;
         private MaterialSkin.Controls.MaterialButton addLibrariyanDialogBtn;
         private MaterialSkin.Controls.MaterialButton clearLibrarianBtnDialog;
     }

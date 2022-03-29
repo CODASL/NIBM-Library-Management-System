@@ -17,7 +17,7 @@ using System.Data.SqlClient;
 
 namespace Library_Management_System_v1._1.View
 {
-    public partial class AdminDashboard :MaterialForm
+    public partial class AdminDashboard : MaterialForm
     {
 
         Controller.AdminDashboardController adminDashboardCtrl = new Controller.AdminDashboardController();
@@ -27,12 +27,12 @@ namespace Library_Management_System_v1._1.View
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
-            this.emp_id = emp_id;    
+            this.emp_id = emp_id;
         }
 
-        
 
-       
+
+
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
             adminDashboardCtrl.loadCartChart(memberRegistrationChart);
@@ -71,14 +71,15 @@ namespace Library_Management_System_v1._1.View
             {
                 MessageBox.Show("Logout Failed");
             }
-            
-            
+
+
 
         }
 
         private void addLibrarianBtn_Click(object sender, EventArgs e)
         {
             new AddLibrariyan().Show();
+
         }
     }
 }

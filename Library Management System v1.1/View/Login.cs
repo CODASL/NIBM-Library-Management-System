@@ -65,7 +65,7 @@ namespace Library_Management_System_v1._1
                 database.Con.Open();
                 SqlDataReader sdr = database.readData("Select * From AppUser where Emp_Id = '" + txtmail.Text + "'");
                 sdr.Read();
-                loginController.onLoggedIn(sdr, txtPass.Text);
+                loginController.onLoggedIn(sdr, txtPass.Text,this);
                 database.Con.Close();
             }
             catch(Exception ex)

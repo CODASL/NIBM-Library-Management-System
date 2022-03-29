@@ -34,7 +34,11 @@ namespace Library_Management_System_v1._1.Controller
             }
         }
 
+        
 
+       
+
+       //=========================Chart Codes========================================
         private Random rand = new Random(0);
         private double[] RandomWalk(int points = 5, double start = 100, double mult = 50)
         {
