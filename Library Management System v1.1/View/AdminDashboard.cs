@@ -20,17 +20,20 @@ namespace Library_Management_System_v1._1.View
     {
 
         Controller.AdminDashboardController adminDashboardCtrl = new Controller.AdminDashboardController();
-        public AdminDashboard()
+        String emp_id;
+        public AdminDashboard(String emp_id)
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
 
-
+            this.emp_id = emp_id;
             adminDashboardCtrl.loadCartChart(memberRegistrationChart);
             adminDashboardCtrl.loadCategoriesPieChart(categoriesPieChart);
             
 
         }
+
+        public AdminDashboard() { }
 
        
         private void AdminDashboard_Load(object sender, EventArgs e)

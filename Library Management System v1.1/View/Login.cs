@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MetroFramework.Forms;
 
+
 namespace Library_Management_System_v1._1
 {
     
@@ -17,6 +19,7 @@ namespace Library_Management_System_v1._1
     {
         Constant.IconClass icons = new Constant.IconClass();
         Controller.LoginController loginController = new Controller.LoginController();
+        Model.DatabaseService database = new Model.DatabaseService();
        
         [Obsolete]
         public Login()
@@ -53,15 +56,24 @@ namespace Library_Management_System_v1._1
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-           
-        }
-
+        [Obsolete]
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            loginController.onLoggedIn(new View.AdminDashboard() , "Admin");
+            
+            try
+            {
+                database.Con.Open();
+                SqlDataReader sdr = database.readData("Select * From AppUser where Emp_Id = '" + txtmail.Text + "'");
+                sdr.Read();
+                loginController.onLoggedIn(sdr, txtPass.Text);
+                database.Con.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
+               
 
         }
 
@@ -88,7 +100,5 @@ namespace Library_Management_System_v1._1
         {
             new View.ResetPassword().ShowDialog();
         }
-
-       
     }
 }

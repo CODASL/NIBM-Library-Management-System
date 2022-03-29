@@ -16,7 +16,7 @@ namespace Library_Management_System_v1._1
     {
        
         private int borderSize = 2;
-        Model.DatabaseService database = new Model.DatabaseService();
+        
 
         [Obsolete]
         public Splash()
@@ -24,8 +24,7 @@ namespace Library_Management_System_v1._1
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
-            SqlDataReader sdr = database.readData("Select * From AppUser");
-            Console.WriteLine(sdr["Emp_Id"]);
+            
             
         
         }

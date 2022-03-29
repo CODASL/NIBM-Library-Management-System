@@ -18,16 +18,19 @@ namespace Library_Management_System_v1._1.View
     {
 
         Controller.MaterialController material = new Controller.MaterialController();
+        String emp_Id;
         
-        public LibrariyanHome()
+        public LibrariyanHome(String emp_Id)
         {
             InitializeComponent();
 
             material.addStyle(this);
             cmbFilterAvalibility.SelectedIndex = 0;
+            this.emp_Id = emp_Id;
           
         }
         
+        public LibrariyanHome() { }
        
         private void LibrariyanHome_Load(object sender, EventArgs e)
         {

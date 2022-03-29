@@ -25,8 +25,8 @@ namespace Library_Management_System_v1._1.Model
         }
 
        
-        public string Email { get => empId; set => empId = value; }
-        public string Password {set => password = value; }
+        public string EmpID { get => empId; set => empId = value; }
+        public string Password { get => empId; set => password = value; }
         public string UserType { get => empType; set => empType = value; }
         public bool IsLoggedIn1 { get => IsLoggedIn; set => IsLoggedIn = value; }
     }

@@ -12,8 +12,10 @@ namespace Library_Management_System_v1._1.Model
     class DatabaseService
     {
         SqlCommand cmd;
-        SqlDataReader sdr;
+        
         SqlConnection con;
+
+        public SqlConnection Con { get => con; set => con = value; }
 
         public DatabaseService()
         {
@@ -24,6 +26,7 @@ namespace Library_Management_System_v1._1.Model
             con.Open();
             cmd = new SqlCommand(query , con);
             int i = cmd.ExecuteNonQuery();
+            con.Close();
             return 1;
         }
 
@@ -33,6 +36,7 @@ namespace Library_Management_System_v1._1.Model
             con.Open();
             cmd = new SqlCommand(query, con);
             int i = cmd.ExecuteNonQuery();
+            con.Close();
             return 1;
         }
 
@@ -42,16 +46,16 @@ namespace Library_Management_System_v1._1.Model
             con.Open();
             cmd = new SqlCommand(query, con);
             int i = cmd.ExecuteNonQuery();
-            return 1;
+            con.Close();
+            return i;
         }
 
         public SqlDataReader readData(String quey)
         {
-            con.Open();
             cmd = new SqlCommand(quey, con);
             cmd.CommandType = System.Data.CommandType.Text;
+            SqlDataReader sdr;
             sdr = cmd.ExecuteReader();
-            sdr.Read();
             return sdr;
         }
 
