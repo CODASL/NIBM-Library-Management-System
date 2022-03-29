@@ -85,11 +85,6 @@ namespace Library_Management_System_v1._1.View
             new Add_Book_Borrowing_Details().ShowDialog();
         }
 
-        private void LibrariyanDashBoard_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void returnBookBtn_Click(object sender, EventArgs e)
         {
             DialogResult dialogresult  = MessageBox.Show("Have Any Damages in Book ?","" , MessageBoxButtons.YesNoCancel);
@@ -128,7 +123,7 @@ namespace Library_Management_System_v1._1.View
             }
             else
             {
-      
+                this.Hide();
             }
         }
 

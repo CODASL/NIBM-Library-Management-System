@@ -272,7 +272,6 @@ namespace Library_Management_System_v1._1.View
             this.LibrariyanDashBoard.TabIndex = 0;
             this.LibrariyanDashBoard.Text = "Dashboard";
             this.LibrariyanDashBoard.UseVisualStyleBackColor = true;
-            this.LibrariyanDashBoard.Click += new System.EventHandler(this.LibrariyanDashBoard_Click);
             // 
             // flowLayoutPanel3
             // 

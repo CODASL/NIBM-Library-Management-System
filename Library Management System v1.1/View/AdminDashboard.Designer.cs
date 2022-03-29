@@ -33,6 +33,7 @@ namespace Library_Management_System_v1._1.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.adminSettings = new System.Windows.Forms.TabPage();
+            this.adminLogout = new MaterialSkin.Controls.MaterialButton();
             this.materialCard9 = new MaterialSkin.Controls.MaterialCard();
             this.switchtoLibrariyanBtn = new MaterialSkin.Controls.MaterialButton();
             this.materialFloatingActionButton3 = new MaterialSkin.Controls.MaterialFloatingActionButton();
@@ -100,11 +101,10 @@ namespace Library_Management_System_v1._1.View
             this.label1 = new System.Windows.Forms.Label();
             this.adminNotifications = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.rjCircularPictureBox1 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
+            this.adminName = new MaterialSkin.Controls.MaterialLabel();
+            this.adminAvatar = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.adminLogout = new MaterialSkin.Controls.MaterialButton();
             this.adminSettings.SuspendLayout();
             this.materialCard9.SuspendLayout();
             this.materialCard7.SuspendLayout();
@@ -119,7 +119,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard6.SuspendLayout();
             this.materialCard3.SuspendLayout();
             this.materialCard1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminAvatar)).BeginInit();
             this.materialTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,6 +160,25 @@ namespace Library_Management_System_v1._1.View
             this.adminSettings.TabIndex = 6;
             this.adminSettings.Text = "Settings";
             this.adminSettings.UseVisualStyleBackColor = true;
+            // 
+            // adminLogout
+            // 
+            this.adminLogout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.adminLogout.Depth = 0;
+            this.adminLogout.DrawShadows = true;
+            this.adminLogout.HighEmphasis = true;
+            this.adminLogout.Icon = ((System.Drawing.Image)(resources.GetObject("adminLogout.Icon")));
+            this.adminLogout.Location = new System.Drawing.Point(1000, 566);
+            this.adminLogout.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.adminLogout.MouseState = MaterialSkin.MouseState.HOVER;
+            this.adminLogout.Name = "adminLogout";
+            this.adminLogout.Size = new System.Drawing.Size(106, 36);
+            this.adminLogout.TabIndex = 7;
+            this.adminLogout.Text = "Logout";
+            this.adminLogout.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.adminLogout.UseAccentColor = false;
+            this.adminLogout.UseVisualStyleBackColor = true;
+            this.adminLogout.Click += new System.EventHandler(this.adminLogout_Click);
             // 
             // materialCard9
             // 
@@ -1062,8 +1081,8 @@ namespace Library_Management_System_v1._1.View
             this.materialCard1.Controls.Add(this.label1);
             this.materialCard1.Controls.Add(this.adminNotifications);
             this.materialCard1.Controls.Add(this.materialLabel2);
-            this.materialCard1.Controls.Add(this.materialLabel1);
-            this.materialCard1.Controls.Add(this.rjCircularPictureBox1);
+            this.materialCard1.Controls.Add(this.adminName);
+            this.materialCard1.Controls.Add(this.adminAvatar);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard1.Location = new System.Drawing.Point(14, 14);
@@ -1113,34 +1132,34 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel2.TabIndex = 2;
             this.materialLabel2.Text = "Admin";
             // 
-            // materialLabel1
+            // adminName
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel1.Location = new System.Drawing.Point(45, 161);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(85, 24);
-            this.materialLabel1.TabIndex = 1;
-            this.materialLabel1.Text = "John Doe";
+            this.adminName.AutoSize = true;
+            this.adminName.Depth = 0;
+            this.adminName.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.adminName.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            this.adminName.Location = new System.Drawing.Point(45, 161);
+            this.adminName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.adminName.Name = "adminName";
+            this.adminName.Size = new System.Drawing.Size(84, 24);
+            this.adminName.TabIndex = 1;
+            this.adminName.Text = "No Name";
             // 
-            // rjCircularPictureBox1
+            // adminAvatar
             // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 0;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(40, 61);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(85, 85);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 0;
-            this.rjCircularPictureBox1.TabStop = false;
+            this.adminAvatar.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.adminAvatar.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.adminAvatar.BorderColor2 = System.Drawing.Color.HotPink;
+            this.adminAvatar.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.adminAvatar.BorderSize = 0;
+            this.adminAvatar.GradientAngle = 50F;
+            this.adminAvatar.Image = ((System.Drawing.Image)(resources.GetObject("adminAvatar.Image")));
+            this.adminAvatar.Location = new System.Drawing.Point(40, 61);
+            this.adminAvatar.Name = "adminAvatar";
+            this.adminAvatar.Size = new System.Drawing.Size(85, 85);
+            this.adminAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.adminAvatar.TabIndex = 0;
+            this.adminAvatar.TabStop = false;
             // 
             // materialTabControl1
             // 
@@ -1163,25 +1182,6 @@ namespace Library_Management_System_v1._1.View
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // adminLogout
-            // 
-            this.adminLogout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.adminLogout.Depth = 0;
-            this.adminLogout.DrawShadows = true;
-            this.adminLogout.HighEmphasis = true;
-            this.adminLogout.Icon = ((System.Drawing.Image)(resources.GetObject("adminLogout.Icon")));
-            this.adminLogout.Location = new System.Drawing.Point(1000, 566);
-            this.adminLogout.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.adminLogout.MouseState = MaterialSkin.MouseState.HOVER;
-            this.adminLogout.Name = "adminLogout";
-            this.adminLogout.Size = new System.Drawing.Size(106, 36);
-            this.adminLogout.TabIndex = 7;
-            this.adminLogout.Text = "Logout";
-            this.adminLogout.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.adminLogout.UseAccentColor = false;
-            this.adminLogout.UseVisualStyleBackColor = true;
-            this.adminLogout.Click += new System.EventHandler(this.adminLogout_Click);
             // 
             // AdminDashboard
             // 
@@ -1223,7 +1223,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard3.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminAvatar)).EndInit();
             this.materialTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1252,8 +1252,8 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialLabel materialLabel17;
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private Custom_Controls.RJCircularPictureBox rjCircularPictureBox1;
+        private MaterialSkin.Controls.MaterialLabel adminName;
+        private Custom_Controls.RJCircularPictureBox adminAvatar;
         private MaterialSkin.Controls.MaterialCard materialCard3;
         private MaterialSkin.Controls.MaterialLabel todayDateAdmin;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
