@@ -39,6 +39,41 @@ namespace Library_Management_System_v1._1.View
             adminDashboardCtrl.loadCategoriesPieChart(categoriesPieChart);
             timer1.Start();
             adminName.Text = adminDashboardCtrl.setName(emp_id);
+            loadLibrariyanList();
+        }
+
+
+        private void loadLibrariyanList()
+        {
+            librariyanList.MultiSelect = false;
+            try
+            {
+                database.Con.Open();
+                SqlDataReader sdr = database.readData("Select * From Librarian");
+                if (sdr.HasRows) {
+
+                    while (sdr.Read())
+                    {
+                        ListViewItem item = new ListViewItem(sdr["Librarian_Id"].ToString());
+                        item.SubItems.Add(sdr["Name"].ToString());
+                        item.SubItems.Add(sdr["Address"].ToString());
+                        item.SubItems.Add(sdr["Phone"].ToString());
+                        item.SubItems.Add(sdr["NIC"].ToString());
+                        item.SubItems.Add(sdr["updated_date"].ToString());
+                        librariyanList.Items.Add(item);
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("No Data to Show");
+                }
+                
+            }catch(SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+           
         }
 
         private void adminNotifications_Click(object sender, EventArgs e)
@@ -80,6 +115,12 @@ namespace Library_Management_System_v1._1.View
         {
             new AddLibrariyan().Show();
 
+        }
+
+        private void deleteLibrariyanBtn_Click(object sender, EventArgs e)
+        {
+
+           
         }
     }
 }

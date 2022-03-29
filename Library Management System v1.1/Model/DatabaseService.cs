@@ -12,7 +12,6 @@ namespace Library_Management_System_v1._1.Model
     class DatabaseService
     {
         SqlCommand cmd;
-        
         SqlConnection con;
 
         public SqlConnection Con { get => con; set => con = value; }
