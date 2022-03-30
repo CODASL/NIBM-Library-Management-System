@@ -30,10 +30,10 @@ namespace Library_Management_System_v1._1.View
         private void InitializeComponent()
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialComboBox2 = new MaterialSkin.Controls.MaterialComboBox();
+            this.cmb_libID = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.requestBtn = new MaterialSkin.Controls.MaterialButton();
+            this.txt_reason = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -49,49 +49,27 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel1.TabIndex = 6;
             this.materialLabel1.Text = "Librariyan ID";
             // 
-            // materialComboBox1
+            // cmb_libID
             // 
-            this.materialComboBox1.AutoResize = false;
-            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox1.Depth = 0;
-            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox1.DropDownHeight = 118;
-            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox1.DropDownWidth = 121;
-            this.materialComboBox1.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox1.FormattingEnabled = true;
-            this.materialComboBox1.IntegralHeight = false;
-            this.materialComboBox1.ItemHeight = 29;
-            this.materialComboBox1.Location = new System.Drawing.Point(42, 144);
-            this.materialComboBox1.MaxDropDownItems = 4;
-            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.Size = new System.Drawing.Size(121, 35);
-            this.materialComboBox1.TabIndex = 7;
-            this.materialComboBox1.UseTallSize = false;
-            // 
-            // materialComboBox2
-            // 
-            this.materialComboBox2.AutoResize = false;
-            this.materialComboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox2.Depth = 0;
-            this.materialComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox2.DropDownHeight = 118;
-            this.materialComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox2.DropDownWidth = 121;
-            this.materialComboBox2.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox2.FormattingEnabled = true;
-            this.materialComboBox2.IntegralHeight = false;
-            this.materialComboBox2.ItemHeight = 29;
-            this.materialComboBox2.Location = new System.Drawing.Point(42, 234);
-            this.materialComboBox2.MaxDropDownItems = 4;
-            this.materialComboBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox2.Name = "materialComboBox2";
-            this.materialComboBox2.Size = new System.Drawing.Size(303, 35);
-            this.materialComboBox2.TabIndex = 9;
-            this.materialComboBox2.UseTallSize = false;
+            this.cmb_libID.AutoResize = false;
+            this.cmb_libID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmb_libID.Depth = 0;
+            this.cmb_libID.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmb_libID.DropDownHeight = 118;
+            this.cmb_libID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_libID.DropDownWidth = 121;
+            this.cmb_libID.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmb_libID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmb_libID.FormattingEnabled = true;
+            this.cmb_libID.IntegralHeight = false;
+            this.cmb_libID.ItemHeight = 29;
+            this.cmb_libID.Location = new System.Drawing.Point(42, 144);
+            this.cmb_libID.MaxDropDownItems = 4;
+            this.cmb_libID.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmb_libID.Name = "cmb_libID";
+            this.cmb_libID.Size = new System.Drawing.Size(121, 35);
+            this.cmb_libID.TabIndex = 7;
+            this.cmb_libID.UseTallSize = false;
             // 
             // materialLabel2
             // 
@@ -106,23 +84,39 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel2.TabIndex = 8;
             this.materialLabel2.Text = "Reason";
             // 
-            // materialButton1
+            // requestBtn
             // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.DrawShadows = true;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(187, 293);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(158, 36);
-            this.materialButton1.TabIndex = 10;
-            this.materialButton1.Text = "Request a Reset";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.requestBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.requestBtn.Depth = 0;
+            this.requestBtn.DrawShadows = true;
+            this.requestBtn.HighEmphasis = true;
+            this.requestBtn.Icon = null;
+            this.requestBtn.Location = new System.Drawing.Point(187, 293);
+            this.requestBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.requestBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.requestBtn.Name = "requestBtn";
+            this.requestBtn.Size = new System.Drawing.Size(146, 36);
+            this.requestBtn.TabIndex = 10;
+            this.requestBtn.Text = "Request a Reset";
+            this.requestBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.requestBtn.UseAccentColor = false;
+            this.requestBtn.UseVisualStyleBackColor = true;
+            this.requestBtn.Click += new System.EventHandler(this.requestBtn_Click);
+            // 
+            // txt_reason
+            // 
+            this.txt_reason.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_reason.Depth = 0;
+            this.txt_reason.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_reason.Location = new System.Drawing.Point(39, 225);
+            this.txt_reason.MaxLength = 50;
+            this.txt_reason.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_reason.Multiline = false;
+            this.txt_reason.Name = "txt_reason";
+            this.txt_reason.Size = new System.Drawing.Size(291, 36);
+            this.txt_reason.TabIndex = 11;
+            this.txt_reason.Text = "";
+            this.txt_reason.UseTallSize = false;
             // 
             // ResetPassword
             // 
@@ -130,10 +124,10 @@ namespace Library_Management_System_v1._1.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(375, 344);
-            this.Controls.Add(this.materialButton1);
-            this.Controls.Add(this.materialComboBox2);
+            this.Controls.Add(this.txt_reason);
+            this.Controls.Add(this.requestBtn);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.materialComboBox1);
+            this.Controls.Add(this.cmb_libID);
             this.Controls.Add(this.materialLabel1);
             this.Name = "ResetPassword";
             this.Text = "Reset Password";
@@ -144,9 +138,9 @@ namespace Library_Management_System_v1._1.View
 
         #endregion
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox2;
+        private MaterialSkin.Controls.MaterialComboBox cmb_libID;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialButton requestBtn;
+        private MaterialSkin.Controls.MaterialTextBox txt_reason;
     }
 }
