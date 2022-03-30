@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using MetroFramework.Forms;
 
@@ -26,9 +27,11 @@ namespace Library_Management_System_v1._1
         {
             InitializeComponent();
             //new Controller.MaterialController().addStyle(this);
+ 
            
-           
-            
+
+
+
         }
 
 
@@ -46,37 +49,10 @@ namespace Library_Management_System_v1._1
             f.Show();
         }
 
-        private void btnQR_Click(object sender, EventArgs e)
-        {
-            txtmail.Hide();
-            txtPass.Hide();
-            //lblforgotpass.Hide();
-            btnlogin.Hide();
-            //hideShowPass.Hide();
-            Loadform(new QRlogin());
+       
 
-        }
-
-        [Obsolete]
-        private void btnlogin_Click(object sender, EventArgs e)
-        {
-            
-            try
-            {
-                database.Con.Open();
-                SqlDataReader sdr = database.readData("Select * From AppUser where Emp_Id = '" + txtmail.Text + "'");
-                sdr.Read();
-                loginController.onLoggedIn(sdr, txtPass.Text,this);
-                database.Con.Close();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            
-               
-
-        }
+       
+        
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -100,6 +76,32 @@ namespace Library_Management_System_v1._1
         private void resetBtn_Click(object sender, EventArgs e)
         {
             new View.ResetPassword().ShowDialog();
+        }
+
+        private void btnlogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                database.Con.Open();
+                SqlDataReader sdr = database.readData("Select * From AppUser where Emp_Id = '" + txtmail.Text + "'");
+                sdr.Read();
+                loginController.onLoggedIn(sdr, txtPass.Text, this);
+                database.Con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnQR_Click(object sender, EventArgs e)
+        {
+            txtmail.Hide();
+            txtPass.Hide();
+            //lblforgotpass.Hide();
+            btnlogin.Hide();
+            //hideShowPass.Hide();
+            Loadform(new QRlogin());
         }
     }
 }

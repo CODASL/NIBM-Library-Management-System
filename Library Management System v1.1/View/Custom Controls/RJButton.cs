@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Windows.Forms;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.ComponentModel;
 
-namespace Library_Management_System_v1._1
+namespace Library_Management_System_v1._1.View.Custom_Controls
 {
-    public partial class RJButton :MetroFramework.Controls.MetroButton
+    public partial class RJButton : Button
     {
         private int borderSize = 0;
         private int borderRadius = 0;
@@ -140,14 +140,7 @@ namespace Library_Management_System_v1._1
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
-            try
-            {
-                this.Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            
+            this.Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
         }
 
         private void Container_BackColorChanged(object sender, EventArgs e)

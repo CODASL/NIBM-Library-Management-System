@@ -36,13 +36,15 @@
             this.txtPass = new MaterialSkin.Controls.MaterialTextBox();
             this.txtmail = new MaterialSkin.Controls.MaterialTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnlogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblhedder = new System.Windows.Forms.Label();
             this.resetBtn = new System.Windows.Forms.Button();
             this.piclogo = new System.Windows.Forms.PictureBox();
-            this.btnQR = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnlogin = new Library_Management_System_v1._1.View.Custom_Controls.RJButton();
+            this.btnQR = new Library_Management_System_v1._1.View.Custom_Controls.RJButton();
             this.bluebackround.SuspendLayout();
             this.materialCard1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -51,47 +53,47 @@
             // 
             // bluebackround
             // 
-            this.bluebackround.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.bluebackround.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bluebackround.BackgroundImage")));
+            this.bluebackround.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.bluebackround.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bluebackround.Controls.Add(this.materialCard1);
-            this.bluebackround.Location = new System.Drawing.Point(0, 24);
+            this.bluebackround.Controls.Add(this.label5);
+            this.bluebackround.Controls.Add(this.label4);
+            this.bluebackround.Controls.Add(this.label3);
+            this.bluebackround.Controls.Add(this.piclogo);
+            this.bluebackround.Location = new System.Drawing.Point(0, 23);
             this.bluebackround.Name = "bluebackround";
-            this.bluebackround.Size = new System.Drawing.Size(730, 497);
+            this.bluebackround.Size = new System.Drawing.Size(300, 450);
             this.bluebackround.TabIndex = 10;
             // 
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.metroPanel1);
-            this.materialCard1.Controls.Add(this.label3);
-            this.materialCard1.Controls.Add(this.lblhedder);
-            this.materialCard1.Controls.Add(this.resetBtn);
-            this.materialCard1.Controls.Add(this.piclogo);
             this.materialCard1.Controls.Add(this.btnQR);
+            this.materialCard1.Controls.Add(this.label6);
+            this.materialCard1.Controls.Add(this.metroPanel1);
+            this.materialCard1.Controls.Add(this.resetBtn);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(20, 29);
+            this.materialCard1.Location = new System.Drawing.Point(292, 23);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(336, 433);
+            this.materialCard1.Size = new System.Drawing.Size(343, 450);
             this.materialCard1.TabIndex = 26;
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.btnlogin);
             this.metroPanel1.Controls.Add(this.txtPass);
             this.metroPanel1.Controls.Add(this.txtmail);
             this.metroPanel1.Controls.Add(this.label2);
-            this.metroPanel1.Controls.Add(this.btnlogin);
             this.metroPanel1.Controls.Add(this.label1);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(46, 133);
+            this.metroPanel1.Location = new System.Drawing.Point(46, 103);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(251, 205);
+            this.metroPanel1.Size = new System.Drawing.Size(251, 220);
             this.metroPanel1.TabIndex = 22;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -99,6 +101,7 @@
             // 
             // txtPass
             // 
+            this.txtPass.BackColor = System.Drawing.Color.White;
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPass.Depth = 0;
             this.txtPass.Font = new System.Drawing.Font("Roboto", 12F);
@@ -131,62 +134,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(-1, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(60, 14);
             this.label2.TabIndex = 19;
             this.label2.Text = "Password";
-            // 
-            // btnlogin
-            // 
-            this.btnlogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.btnlogin.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnlogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(81)))), ((int)(((byte)(192)))));
-            this.btnlogin.FlatAppearance.BorderSize = 0;
-            this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnlogin.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogin.ForeColor = System.Drawing.Color.White;
-            this.btnlogin.Image = ((System.Drawing.Image)(resources.GetObject("btnlogin.Image")));
-            this.btnlogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnlogin.Location = new System.Drawing.Point(0, 165);
-            this.btnlogin.Name = "btnlogin";
-            this.btnlogin.Size = new System.Drawing.Size(251, 40);
-            this.btnlogin.TabIndex = 2;
-            this.btnlogin.Text = "Login";
-            this.btnlogin.UseVisualStyleBackColor = false;
-            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.Size = new System.Drawing.Size(74, 14);
             this.label1.TabIndex = 17;
             this.label1.Text = "Employee ID";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(97, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(204, 15);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "NIBM Library Management System";
-            // 
-            // lblhedder
-            // 
-            this.lblhedder.AutoSize = true;
-            this.lblhedder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblhedder.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblhedder.Location = new System.Drawing.Point(39, 84);
-            this.lblhedder.Name = "lblhedder";
-            this.lblhedder.Size = new System.Drawing.Size(261, 18);
-            this.lblhedder.TabIndex = 1;
-            this.lblhedder.Text = "Hello , Welcome to the System Again!";
             // 
             // resetBtn
             // 
@@ -204,38 +167,116 @@
             // piclogo
             // 
             this.piclogo.Image = ((System.Drawing.Image)(resources.GetObject("piclogo.Image")));
-            this.piclogo.Location = new System.Drawing.Point(38, 24);
+            this.piclogo.Location = new System.Drawing.Point(21, 32);
             this.piclogo.Name = "piclogo";
-            this.piclogo.Size = new System.Drawing.Size(54, 37);
+            this.piclogo.Size = new System.Drawing.Size(72, 70);
             this.piclogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.piclogo.TabIndex = 11;
             this.piclogo.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(18, 114);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 18);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "NIBM";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(18, 132);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(176, 18);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "LIBRARY MANAGEMENT";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(18, 150);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 18);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "SYSTEM";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(43, 50);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(160, 18);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Hello Welcome Again !";
+            // 
+            // btnlogin
+            // 
+            this.btnlogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnlogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnlogin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnlogin.BorderRadius = 8;
+            this.btnlogin.BorderSize = 0;
+            this.btnlogin.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnlogin.FlatAppearance.BorderSize = 0;
+            this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlogin.Font = new System.Drawing.Font("Roboto Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogin.ForeColor = System.Drawing.Color.White;
+            this.btnlogin.Image = ((System.Drawing.Image)(resources.GetObject("btnlogin.Image")));
+            this.btnlogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnlogin.Location = new System.Drawing.Point(0, 180);
+            this.btnlogin.Name = "btnlogin";
+            this.btnlogin.Size = new System.Drawing.Size(251, 40);
+            this.btnlogin.TabIndex = 27;
+            this.btnlogin.Text = "Login";
+            this.btnlogin.TextColor = System.Drawing.Color.White;
+            this.btnlogin.UseVisualStyleBackColor = false;
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
+            // 
             // btnQR
             // 
+            this.btnQR.BackColor = System.Drawing.Color.White;
+            this.btnQR.BackgroundColor = System.Drawing.Color.White;
+            this.btnQR.BorderColor = System.Drawing.Color.Black;
+            this.btnQR.BorderRadius = 8;
+            this.btnQR.BorderSize = 1;
+            this.btnQR.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnQR.FlatAppearance.BorderSize = 0;
             this.btnQR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQR.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQR.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQR.ForeColor = System.Drawing.Color.Black;
             this.btnQR.Image = ((System.Drawing.Image)(resources.GetObject("btnQR.Image")));
             this.btnQR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQR.Location = new System.Drawing.Point(46, 355);
+            this.btnQR.Location = new System.Drawing.Point(46, 342);
             this.btnQR.Name = "btnQR";
             this.btnQR.Size = new System.Drawing.Size(251, 40);
-            this.btnQR.TabIndex = 3;
+            this.btnQR.TabIndex = 28;
             this.btnQR.Text = "Login with QR";
-            this.btnQR.UseVisualStyleBackColor = true;
+            this.btnQR.TextColor = System.Drawing.Color.Black;
+            this.btnQR.UseVisualStyleBackColor = false;
             this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 516);
+            this.ClientSize = new System.Drawing.Size(634, 466);
+            this.Controls.Add(this.materialCard1);
             this.Controls.Add(this.bluebackround);
             this.MaximizeBox = false;
             this.Name = "Login";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Login";
             this.bluebackround.ResumeLayout(false);
+            this.bluebackround.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
             this.metroPanel1.ResumeLayout(false);
@@ -249,16 +290,18 @@
 
         private System.Windows.Forms.Panel bluebackround;
         private System.Windows.Forms.PictureBox piclogo;
-        private System.Windows.Forms.Button btnlogin;
-        private System.Windows.Forms.Button btnQR;
-        private System.Windows.Forms.Label lblhedder;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroPanel metroPanel1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button resetBtn;
         private MaterialSkin.Controls.MaterialTextBox txtPass;
         private MaterialSkin.Controls.MaterialTextBox txtmail;
         private MaterialSkin.Controls.MaterialCard materialCard1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private View.Custom_Controls.RJButton btnlogin;
+        private View.Custom_Controls.RJButton btnQR;
     }
 }

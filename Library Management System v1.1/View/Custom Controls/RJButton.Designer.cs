@@ -1,5 +1,5 @@
 ﻿
-namespace Library_Management_System_v1._1
+namespace Library_Management_System_v1._1.View.Custom_Controls
 {
     partial class RJButton
     {

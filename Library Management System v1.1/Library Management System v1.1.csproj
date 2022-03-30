@@ -173,6 +173,12 @@
     <Compile Include="View\BookTile.Designer.cs">
       <DependentUpon>BookTile.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Custom Controls\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Custom Controls\RJButton.Designer.cs">
+      <DependentUpon>RJButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Custom Controls\RJCircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
