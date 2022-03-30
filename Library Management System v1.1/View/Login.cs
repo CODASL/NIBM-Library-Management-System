@@ -21,13 +21,14 @@ namespace Library_Management_System_v1._1
         Constant.IconClass icons = new Constant.IconClass();
         Controller.LoginController loginController = new Controller.LoginController();
         Model.DatabaseService database = new Model.DatabaseService();
-       
+        MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+
         [Obsolete]
         public Login()
         {
             InitializeComponent();
             //new Controller.MaterialController().addStyle(this);
- 
+            //materialSkinManager.EnforceBackcolorOnAllComponents = false;
            
 
 
@@ -78,8 +79,10 @@ namespace Library_Management_System_v1._1
             new View.ResetPassword().ShowDialog();
         }
 
+        [Obsolete]
         private void btnlogin_Click(object sender, EventArgs e)
         {
+            Console.WriteLine(txtmail.Text);
             try
             {
                 database.Con.Open();
