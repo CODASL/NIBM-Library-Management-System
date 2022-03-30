@@ -26,13 +26,7 @@ namespace Library_Management_System_v1._1
         [Obsolete]
         public Login()
         {
-            InitializeComponent();
-            //new Controller.MaterialController().addStyle(this);
-            //materialSkinManager.EnforceBackcolorOnAllComponents = false;
-           
-
-
-
+            InitializeComponent(); 
         }
 
 
@@ -50,68 +44,74 @@ namespace Library_Management_System_v1._1
             f.Show();
         }
 
-       
-
-       
-        
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void hideShowPass_Click(object sender, EventArgs e)
-        {
-            //if (hideShowPass.Image == Image.FromFile(icons.showPass))
-            //{
-            //    //txtpass.UseSystemPasswordChar = false;
-            //    hideShowPass.Image = Image.FromFile(icons.hidePass);
-            //}
-            //else
-            //{
-            //    //txtpass.UseSystemPasswordChar = true;
-            //    hideShowPass.Image = Image.FromFile(icons.showPass);
-            //}
-        }
 
         private void resetBtn_Click(object sender, EventArgs e)
         {
             new View.ResetPassword().ShowDialog();
         }
 
+
+
+
+        //====================Login Button Event=======================================================
         [Obsolete]
         private void btnlogin_Click(object sender, EventArgs e)
         {
+            if(txtmail.Text == "") 
+            {
+                MessageBox.Show("Please Enter Employee Id");
+            }else if(txtPass.Text == "")
+            {
+                MessageBox.Show("Please Enter Password");
+            }
+            else {
+                try
+                {
+                    database.Con.Open();
+                    LoginProgress.Increment(10);
+                    SqlDataReader sdr = database.readData("Select * From AppUser where Emp_Id = '" + txtmail.Text + "'");
+                    LoginProgress.Increment(30);
+                    sdr.Read();
+                    LoginProgress.Increment(20);
+                    loginController.onLoggedIn(sdr, txtPass.Text, this);
+                    LoginProgress.Increment(30);
+                    database.Con.Close();
+                    LoginProgress.Increment(10);
+                    LoginProgress.Equals(0);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+            }
       
-            try
-            {
-                database.Con.Open();
-                LoginProgress.Increment(10);
-                SqlDataReader sdr = database.readData("Select * From AppUser where Emp_Id = '" + txtmail.Text + "'");
-                LoginProgress.Increment(30);
-                sdr.Read();
-                LoginProgress.Increment(20);
-                loginController.onLoggedIn(sdr, txtPass.Text, this);
-                LoginProgress.Increment(30);
-                database.Con.Close();
-                LoginProgress.Increment(10);
-                LoginProgress.Equals(0);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            
         }
 
         private void btnQR_Click(object sender, EventArgs e)
         {
             txtPass.Hide();
             txtmail.Hide();
-            //lblforgotpass.Hide();
             btnlogin.Hide();
-            //hideShowPass.Hide();
             Loadform(new QRlogin());
             
+        }
+
+
+        //===================Password Show hide btn ===================
+        private void passwordShowHide_Click(object sender, EventArgs e)
+        {
+            if (txtPass.PasswordChar)
+            {
+                passwordShowHide.Image = Image.FromFile(icons.hidePass);
+                txtPass.PasswordChar = false;
+            }
+            else
+            {
+                passwordShowHide.Image = Image.FromFile(icons.showPass);
+                txtPass.PasswordChar = true;
+            }
         }
     }
 }

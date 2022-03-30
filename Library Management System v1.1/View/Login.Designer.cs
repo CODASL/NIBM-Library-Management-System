@@ -47,11 +47,13 @@
             this.resetBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LoginProgress = new MaterialSkin.Controls.MaterialProgressBar();
+            this.passwordShowHide = new System.Windows.Forms.PictureBox();
             this.bluebackround.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).BeginInit();
             this.materialCard1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordShowHide)).BeginInit();
             this.SuspendLayout();
             // 
             // bluebackround
@@ -165,6 +167,7 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.passwordShowHide);
             this.metroPanel1.Controls.Add(this.txtPass);
             this.metroPanel1.Controls.Add(this.txtmail);
             this.metroPanel1.Controls.Add(this.btnlogin);
@@ -195,7 +198,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Padding = new System.Windows.Forms.Padding(7);
             this.txtPass.PasswordChar = true;
-            this.txtPass.Size = new System.Drawing.Size(250, 28);
+            this.txtPass.Size = new System.Drawing.Size(222, 28);
             this.txtPass.TabIndex = 28;
             this.txtPass.UnderlinedStyle = true;
             // 
@@ -293,6 +296,17 @@
             this.LoginProgress.Size = new System.Drawing.Size(188, 5);
             this.LoginProgress.TabIndex = 15;
             // 
+            // passwordShowHide
+            // 
+            this.passwordShowHide.Image = ((System.Drawing.Image)(resources.GetObject("passwordShowHide.Image")));
+            this.passwordShowHide.Location = new System.Drawing.Point(227, 135);
+            this.passwordShowHide.Name = "passwordShowHide";
+            this.passwordShowHide.Size = new System.Drawing.Size(20, 20);
+            this.passwordShowHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.passwordShowHide.TabIndex = 29;
+            this.passwordShowHide.TabStop = false;
+            this.passwordShowHide.Click += new System.EventHandler(this.passwordShowHide_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,6 +326,7 @@
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordShowHide)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -335,5 +350,6 @@
         private CustomControls.RJControls.RJTextBox txtPass;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialProgressBar LoginProgress;
+        private System.Windows.Forms.PictureBox passwordShowHide;
     }
 }
