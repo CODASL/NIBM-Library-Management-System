@@ -82,14 +82,20 @@ namespace Library_Management_System_v1._1
         [Obsolete]
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(txtmail.Text);
+      
             try
             {
                 database.Con.Open();
+                LoginProgress.Increment(10);
                 SqlDataReader sdr = database.readData("Select * From AppUser where Emp_Id = '" + txtmail.Text + "'");
+                LoginProgress.Increment(30);
                 sdr.Read();
+                LoginProgress.Increment(20);
                 loginController.onLoggedIn(sdr, txtPass.Text, this);
+                LoginProgress.Increment(30);
                 database.Con.Close();
+                LoginProgress.Increment(10);
+                LoginProgress.Equals(0);
             }
             catch (Exception ex)
             {
@@ -99,12 +105,13 @@ namespace Library_Management_System_v1._1
 
         private void btnQR_Click(object sender, EventArgs e)
         {
-            txtmail.Hide();
             txtPass.Hide();
+            txtmail.Hide();
             //lblforgotpass.Hide();
             btnlogin.Hide();
             //hideShowPass.Hide();
             Loadform(new QRlogin());
+            
         }
     }
 }
