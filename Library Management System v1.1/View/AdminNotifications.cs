@@ -34,10 +34,11 @@ namespace Library_Management_System_v1._1.View
                     notificationTile nTile = new notificationTile(
                             sdr["LID"].ToString(),
                             sdr["Description"].ToString(),
-                            sdr["Received_time"].ToString()
+                            sdr["Received_time"].ToString(),
+                            Convert.ToInt32(sdr["notification_id"])
                         );
                     notificationList.Controls.Add(nTile);
-                    nTile.Click += (sender , e) => notification_Click(sender , e ,Convert.ToInt32(sdr["notification_id"]));
+                    
                 }
 
                 database.Con.Close();
@@ -54,22 +55,7 @@ namespace Library_Management_System_v1._1.View
         private void notification_Click(object sender, EventArgs e , int id)
         {
             
-            DialogResult dialogResult = MessageBox.Show("Approve Request", "", MessageBoxButtons.YesNoCancel);
-            if (dialogResult.Equals(DialogResult.Yes))
-            {
-                MessageBox.Show("Approved");
-                acceptOrReject(true , id);
-               
-            }
-            else if (dialogResult.Equals(DialogResult.No))
-            {
-                MessageBox.Show("Rejected");
-                acceptOrReject(false, id);
-            }
-            else
-            {
-                this.Hide();
-            }
+            
         }
 
         public void acceptOrReject(bool isAccepted , int id)

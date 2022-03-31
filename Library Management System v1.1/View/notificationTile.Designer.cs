@@ -54,6 +54,7 @@ namespace Library_Management_System_v1._1.View
             this.notification.Padding = new System.Windows.Forms.Padding(14);
             this.notification.Size = new System.Drawing.Size(617, 74);
             this.notification.TabIndex = 2;
+            this.notification.Click += new System.EventHandler(this.notification_Click);
             // 
             // lbl_recievedTime
             // 

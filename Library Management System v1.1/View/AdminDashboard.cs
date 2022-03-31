@@ -197,6 +197,7 @@ namespace Library_Management_System_v1._1.View
             {
                 cmb_filterLibrarians.Visible = true;
                 txt_searchLibrariyans.Visible = false;
+                cmb_filterLibrarians.BringToFront();
                 
             }
             else
