@@ -38,6 +38,11 @@ namespace Library_Management_System_v1._1.View
             timer1.Start();
             adminName.Text = adminDashboardCtrl.setName(emp_id);
             lblNumberOfLibrariyans.Text = librariyanList.Items.Count.ToString();
+            lbl_welcomeTxt.Text = "Hello "+ adminDashboardCtrl.setName(emp_id).Split(' ')[0] + ", How're you today?";
+            lbl_libraryUpdated.Text = adminDashboardCtrl.setUpdatedTime(emp_id);
+            dateTime_librariyanSelect.Visible = false;
+            txt_searchLibrariyans.ReadOnly = true;
+
         }
 
 
@@ -176,6 +181,28 @@ namespace Library_Management_System_v1._1.View
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             loadLibrariyanList();
+        }
+
+        private void cmb_filterLibrarians_SelectedIndexChanged(object sender, EventArgs e)
+        {
+             if(cmb_filterLibrarians.SelectedIndex == 0)
+            {
+                txt_searchLibrariyans.ReadOnly = false;
+
+            }else if(cmb_filterLibrarians.SelectedIndex == 1)
+            {
+                txt_searchLibrariyans.ReadOnly = false;
+            }
+            else if(cmb_filterLibrarians.SelectedIndex == 2)
+            {
+                cmb_filterLibrarians.Visible = true;
+                txt_searchLibrariyans.Visible = false;
+                
+            }
+            else
+            {
+                txt_searchLibrariyans.ReadOnly = true;
+            }
         }
     }
 }

@@ -34,11 +34,30 @@ namespace Library_Management_System_v1._1.Controller
             }
         }
 
-        
 
-       
+        public String setUpdatedTime(String emp_id)
+        {
+            try
+            {
+                database.Con.Open();
+                SqlDataReader sdr = database.readData("SELECT TOP 1 updated_date FROM Librarian ORDER BY Librarian_Id DESC");
+                sdr.Read();
+                String date = sdr["updated_date"].ToString();
+                database.Con.Close();
+                return date;
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
 
-       //=========================Chart Codes========================================
+            }
+        }
+
+
+
+
+
+        //=========================Chart Codes========================================
         private Random rand = new Random(0);
         private double[] RandomWalk(int points = 5, double start = 100, double mult = 50)
         {

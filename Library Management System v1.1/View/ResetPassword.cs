@@ -47,7 +47,7 @@ namespace Library_Management_System_v1._1.View
             
         }
 
-        public String generateNotificationID()
+        public int generateNotificationID()
         {
             String id;
             try {
@@ -56,14 +56,14 @@ namespace Library_Management_System_v1._1.View
                 sdr.Read();
                 id = sdr["notification_id"].ToString();
                 database.Con.Close();
-                return (Convert.ToInt32(id) + 1).ToString(); 
+                return (Convert.ToInt32(id) + 1); 
 
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-            return "";
+            return 0;
         }
 
         private void requestBtn_Click(object sender, EventArgs e)
