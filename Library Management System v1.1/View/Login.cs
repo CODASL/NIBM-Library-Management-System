@@ -16,12 +16,12 @@ using MetroFramework.Forms;
 namespace Library_Management_System_v1._1
 {
     
-    public partial class Login : MaterialForm
+    public partial class Login : MetroForm
     {
         Constant.IconClass icons = new Constant.IconClass();
         Controller.LoginController loginController = new Controller.LoginController();
         Model.DatabaseService database = new Model.DatabaseService();
-        MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+       
 
         [Obsolete]
         public Login()

@@ -15,6 +15,7 @@ namespace Library_Management_System_v1._1.View
     public partial class AddLibrariyan : MaterialForm
     {
         Controller.AddLibrarianController addLibrarianObj = new Controller.AddLibrarianController();
+  
         public AddLibrariyan()
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace Library_Management_System_v1._1.View
                 {
                     this.Hide();
                     MessageBox.Show("Record Added");
+                   
                     
                 }
                 else

@@ -28,15 +28,8 @@ namespace Library_Management_System_v1._1.View
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
             this.emp_id = emp_id;
+            loadLibrariyanList();
         }
-
-        public AdminDashboard()
-        {
-
-        }
-
-
-
 
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
@@ -44,7 +37,6 @@ namespace Library_Management_System_v1._1.View
             adminDashboardCtrl.loadCategoriesPieChart(categoriesPieChart);
             timer1.Start();
             adminName.Text = adminDashboardCtrl.setName(emp_id);
-            loadLibrariyanList();
             lblNumberOfLibrariyans.Text = librariyanList.Items.Count.ToString();
         }
 
@@ -127,8 +119,8 @@ namespace Library_Management_System_v1._1.View
 
         private void addLibrarianBtn_Click(object sender, EventArgs e)
         {
-            new AddLibrariyan().Show();
-
+            AddLibrariyan  addLib  = new AddLibrariyan();
+            addLib.Show();   
         }
 
         //=======================Delete Librarian===================================
@@ -179,6 +171,11 @@ namespace Library_Management_System_v1._1.View
             else{
                 MessageBox.Show("Deletation Cancelled");
             }
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            loadLibrariyanList();
         }
     }
 }

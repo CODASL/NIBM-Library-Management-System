@@ -155,11 +155,6 @@ namespace Library_Management_System_v1._1.View
             this.materialComboBox3 = new MaterialSkin.Controls.MaterialComboBox();
             this.PayMemberFee = new MaterialSkin.Controls.MaterialButton();
             this.materialTextBox5 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialCard15 = new MaterialSkin.Controls.MaterialCard();
-            this.materialFloatingActionButton20 = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.materialFloatingActionButton21 = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.materialLabel34 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel35 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard16 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton18 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialFloatingActionButton19 = new MaterialSkin.Controls.MaterialFloatingActionButton();
@@ -220,7 +215,6 @@ namespace Library_Management_System_v1._1.View
             this.materialCard13.SuspendLayout();
             this.materialCard14.SuspendLayout();
             this.LibManageFee.SuspendLayout();
-            this.materialCard15.SuspendLayout();
             this.materialCard16.SuspendLayout();
             this.LibMyProfile.SuspendLayout();
             this.materialCard17.SuspendLayout();
@@ -1526,7 +1520,7 @@ namespace Library_Management_System_v1._1.View
             // materialFloatingActionButton10
             // 
             this.materialFloatingActionButton10.AnimateShowHideButton = false;
-            this.materialFloatingActionButton10.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.materialFloatingActionButton10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.materialFloatingActionButton10.Depth = 0;
             this.materialFloatingActionButton10.DrawShadows = true;
             this.materialFloatingActionButton10.Icon = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton10.Icon")));
@@ -1789,6 +1783,7 @@ namespace Library_Management_System_v1._1.View
             this.materialFloatingActionButton16.DrawShadows = true;
             this.materialFloatingActionButton16.Icon = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton16.Icon")));
             this.materialFloatingActionButton16.Image = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton16.Image")));
+            this.materialFloatingActionButton16.ImageKey = "icons8-knowledge-sharing-32.png";
             this.materialFloatingActionButton16.Location = new System.Drawing.Point(307, 24);
             this.materialFloatingActionButton16.Mini = false;
             this.materialFloatingActionButton16.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1926,7 +1921,6 @@ namespace Library_Management_System_v1._1.View
             this.LibManageFee.Controls.Add(this.materialComboBox3);
             this.LibManageFee.Controls.Add(this.PayMemberFee);
             this.LibManageFee.Controls.Add(this.materialTextBox5);
-            this.LibManageFee.Controls.Add(this.materialCard15);
             this.LibManageFee.Controls.Add(this.materialCard16);
             this.LibManageFee.ImageKey = "icons8-debt-32.png";
             this.LibManageFee.Location = new System.Drawing.Point(4, 39);
@@ -2074,83 +2068,6 @@ namespace Library_Management_System_v1._1.View
             this.materialTextBox5.TabIndex = 24;
             this.materialTextBox5.Text = "";
             this.materialTextBox5.UseTallSize = false;
-            // 
-            // materialCard15
-            // 
-            this.materialCard15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard15.Controls.Add(this.materialFloatingActionButton20);
-            this.materialCard15.Controls.Add(this.materialFloatingActionButton21);
-            this.materialCard15.Controls.Add(this.materialLabel34);
-            this.materialCard15.Controls.Add(this.materialLabel35);
-            this.materialCard15.Depth = 0;
-            this.materialCard15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard15.Location = new System.Drawing.Point(491, 33);
-            this.materialCard15.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard15.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard15.Name = "materialCard15";
-            this.materialCard15.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard15.Size = new System.Drawing.Size(395, 103);
-            this.materialCard15.TabIndex = 19;
-            // 
-            // materialFloatingActionButton20
-            // 
-            this.materialFloatingActionButton20.AnimateShowHideButton = false;
-            this.materialFloatingActionButton20.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.materialFloatingActionButton20.Depth = 0;
-            this.materialFloatingActionButton20.DrawShadows = true;
-            this.materialFloatingActionButton20.Icon = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton20.Icon")));
-            this.materialFloatingActionButton20.Image = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton20.Image")));
-            this.materialFloatingActionButton20.Location = new System.Drawing.Point(310, 24);
-            this.materialFloatingActionButton20.Mini = false;
-            this.materialFloatingActionButton20.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFloatingActionButton20.Name = "materialFloatingActionButton20";
-            this.materialFloatingActionButton20.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton20.TabIndex = 12;
-            this.materialFloatingActionButton20.Text = "materialFloatingActionButton20";
-            this.materialFloatingActionButton20.UseVisualStyleBackColor = false;
-            // 
-            // materialFloatingActionButton21
-            // 
-            this.materialFloatingActionButton21.AnimateShowHideButton = false;
-            this.materialFloatingActionButton21.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.materialFloatingActionButton21.Depth = 0;
-            this.materialFloatingActionButton21.DrawShadows = true;
-            this.materialFloatingActionButton21.Icon = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton21.Icon")));
-            this.materialFloatingActionButton21.Image = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton21.Image")));
-            this.materialFloatingActionButton21.Location = new System.Drawing.Point(311, 24);
-            this.materialFloatingActionButton21.Mini = false;
-            this.materialFloatingActionButton21.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFloatingActionButton21.Name = "materialFloatingActionButton21";
-            this.materialFloatingActionButton21.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton21.TabIndex = 11;
-            this.materialFloatingActionButton21.Text = "materialFloatingActionButton21";
-            this.materialFloatingActionButton21.UseVisualStyleBackColor = false;
-            // 
-            // materialLabel34
-            // 
-            this.materialLabel34.AutoSize = true;
-            this.materialLabel34.Depth = 0;
-            this.materialLabel34.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel34.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.materialLabel34.Location = new System.Drawing.Point(28, 14);
-            this.materialLabel34.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel34.Name = "materialLabel34";
-            this.materialLabel34.Size = new System.Drawing.Size(209, 17);
-            this.materialLabel34.TabIndex = 9;
-            this.materialLabel34.Text = "Total Amount Of Money Collected";
-            // 
-            // materialLabel35
-            // 
-            this.materialLabel35.AutoSize = true;
-            this.materialLabel35.Depth = 0;
-            this.materialLabel35.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel35.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel35.Location = new System.Drawing.Point(26, 51);
-            this.materialLabel35.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel35.Name = "materialLabel35";
-            this.materialLabel35.Size = new System.Drawing.Size(115, 29);
-            this.materialLabel35.TabIndex = 8;
-            this.materialLabel35.Text = "LKR 45000";
             // 
             // materialCard16
             // 
@@ -2716,8 +2633,6 @@ namespace Library_Management_System_v1._1.View
             this.materialCard14.PerformLayout();
             this.LibManageFee.ResumeLayout(false);
             this.LibManageFee.PerformLayout();
-            this.materialCard15.ResumeLayout(false);
-            this.materialCard15.PerformLayout();
             this.materialCard16.ResumeLayout(false);
             this.materialCard16.PerformLayout();
             this.LibMyProfile.ResumeLayout(false);
@@ -2827,9 +2742,6 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialComboBox materialComboBox3;
         private MaterialSkin.Controls.MaterialButton PayMemberFee;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox5;
-        private MaterialSkin.Controls.MaterialCard materialCard15;
-        private MaterialSkin.Controls.MaterialLabel materialLabel34;
-        private MaterialSkin.Controls.MaterialLabel materialLabel35;
         private MaterialSkin.Controls.MaterialCard materialCard16;
         private MaterialSkin.Controls.MaterialLabel materialLabel36;
         private MaterialSkin.Controls.MaterialLabel materialLabel37;
@@ -2866,8 +2778,6 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton15;
         private MaterialSkin.Controls.MaterialLabel materialLabel31;
         private MaterialSkin.Controls.MaterialLabel materialLabel32;
-        private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton20;
-        private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton21;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton18;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton19;
         private System.Windows.Forms.ColumnHeader MID;
