@@ -16,6 +16,18 @@ namespace Library_Management_System_v1._1.Controller
     {
         Model.DatabaseService database = new Model.DatabaseService();
 
+        public String setNotificationCount()
+        {
+            database.Con.Open();
+            SqlDataReader sdr = database.readData("Select * FROM Notification WHERE Status = ''");
+            int count = 0;
+            while (sdr.Read())
+            {
+                count = count + 1;
+            }
+            return count.ToString();
+            
+        }
         public String setName(String emp_id)
         {
             try
@@ -35,7 +47,7 @@ namespace Library_Management_System_v1._1.Controller
         }
 
 
-        public String setUpdatedTime(String emp_id)
+        public String setUpdatedTime()
         {
             try
             {

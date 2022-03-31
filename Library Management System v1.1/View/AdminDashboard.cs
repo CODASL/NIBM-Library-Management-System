@@ -39,9 +39,10 @@ namespace Library_Management_System_v1._1.View
             adminName.Text = adminDashboardCtrl.setName(emp_id);
             lblNumberOfLibrariyans.Text = librariyanList.Items.Count.ToString();
             lbl_welcomeTxt.Text = "Hello "+ adminDashboardCtrl.setName(emp_id).Split(' ')[0] + ", How're you today?";
-            lbl_libraryUpdated.Text = adminDashboardCtrl.setUpdatedTime(emp_id);
+            lbl_libraryUpdated.Text = adminDashboardCtrl.setUpdatedTime();
             dateTime_librariyanSelect.Visible = false;
             txt_searchLibrariyans.ReadOnly = true;
+            lbl_notification_count.Text = adminDashboardCtrl.setNotificationCount();
 
         }
 

@@ -54,6 +54,8 @@ namespace Library_Management_System_v1._1.View
             this.Activity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateTimeActivity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ManageLibrariyans = new System.Windows.Forms.TabPage();
+            this.dateTime_librariyanSelect = new MetroFramework.Controls.MetroDateTime();
+            this.refreshBtn = new MaterialSkin.Controls.MaterialButton();
             this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
             this.updateLibrariyanBtn = new MaterialSkin.Controls.MaterialButton();
             this.deleteLibrariyanBtn = new MaterialSkin.Controls.MaterialButton();
@@ -98,15 +100,13 @@ namespace Library_Management_System_v1._1.View
             this.todayDateAdmin = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_welcomeTxt = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.label1 = new System.Windows.Forms.Label();
             this.adminNotifications = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.adminName = new MaterialSkin.Controls.MaterialLabel();
             this.adminAvatar = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.refreshBtn = new MaterialSkin.Controls.MaterialButton();
-            this.dateTime_librariyanSelect = new MetroFramework.Controls.MetroDateTime();
+            this.lbl_notification_count = new System.Windows.Forms.Label();
             this.adminSettings.SuspendLayout();
             this.materialCard9.SuspendLayout();
             this.materialCard7.SuspendLayout();
@@ -415,7 +415,7 @@ namespace Library_Management_System_v1._1.View
             // metroDateTime2
             // 
             this.metroDateTime2.Location = new System.Drawing.Point(761, 91);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime2.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTime2.Name = "metroDateTime2";
             this.metroDateTime2.Size = new System.Drawing.Size(200, 29);
             this.metroDateTime2.TabIndex = 12;
@@ -476,6 +476,35 @@ namespace Library_Management_System_v1._1.View
             this.ManageLibrariyans.TabIndex = 2;
             this.ManageLibrariyans.Text = "Manage Librariyans";
             this.ManageLibrariyans.UseVisualStyleBackColor = true;
+            // 
+            // dateTime_librariyanSelect
+            // 
+            this.dateTime_librariyanSelect.Location = new System.Drawing.Point(37, 131);
+            this.dateTime_librariyanSelect.MinimumSize = new System.Drawing.Size(4, 29);
+            this.dateTime_librariyanSelect.Name = "dateTime_librariyanSelect";
+            this.dateTime_librariyanSelect.Size = new System.Drawing.Size(417, 29);
+            this.dateTime_librariyanSelect.TabIndex = 21;
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.refreshBtn.Depth = 0;
+            this.refreshBtn.DrawShadows = true;
+            this.refreshBtn.HighEmphasis = true;
+            this.refreshBtn.Icon = null;
+            this.refreshBtn.Location = new System.Drawing.Point(910, 130);
+            this.refreshBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.refreshBtn.MaximumSize = new System.Drawing.Size(100, 35);
+            this.refreshBtn.MinimumSize = new System.Drawing.Size(100, 35);
+            this.refreshBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(100, 35);
+            this.refreshBtn.TabIndex = 20;
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.refreshBtn.UseAccentColor = false;
+            this.refreshBtn.UseVisualStyleBackColor = true;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // materialButton6
             // 
@@ -671,7 +700,6 @@ namespace Library_Management_System_v1._1.View
             this.libLastUpdate});
             this.librariyanList.Depth = 0;
             this.librariyanList.FullRowSelect = true;
-            this.librariyanList.GridLines = true;
             this.librariyanList.HideSelection = false;
             this.librariyanList.Location = new System.Drawing.Point(24, 177);
             this.librariyanList.MinimumSize = new System.Drawing.Size(200, 100);
@@ -1091,7 +1119,7 @@ namespace Library_Management_System_v1._1.View
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.label1);
+            this.materialCard1.Controls.Add(this.lbl_notification_count);
             this.materialCard1.Controls.Add(this.adminNotifications);
             this.materialCard1.Controls.Add(this.materialLabel2);
             this.materialCard1.Controls.Add(this.adminName);
@@ -1105,15 +1133,6 @@ namespace Library_Management_System_v1._1.View
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(175, 245);
             this.materialCard1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(150, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "1";
             // 
             // adminNotifications
             // 
@@ -1196,34 +1215,14 @@ namespace Library_Management_System_v1._1.View
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // refreshBtn
+            // lbl_notification_count
             // 
-            this.refreshBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.refreshBtn.Depth = 0;
-            this.refreshBtn.DrawShadows = true;
-            this.refreshBtn.HighEmphasis = true;
-            this.refreshBtn.Icon = null;
-            this.refreshBtn.Location = new System.Drawing.Point(910, 130);
-            this.refreshBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.refreshBtn.MaximumSize = new System.Drawing.Size(100, 35);
-            this.refreshBtn.MinimumSize = new System.Drawing.Size(100, 35);
-            this.refreshBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(100, 35);
-            this.refreshBtn.TabIndex = 20;
-            this.refreshBtn.Text = "Refresh";
-            this.refreshBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.refreshBtn.UseAccentColor = false;
-            this.refreshBtn.UseVisualStyleBackColor = true;
-            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
-            // 
-            // dateTime_librariyanSelect
-            // 
-            this.dateTime_librariyanSelect.Location = new System.Drawing.Point(37, 131);
-            this.dateTime_librariyanSelect.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dateTime_librariyanSelect.Name = "dateTime_librariyanSelect";
-            this.dateTime_librariyanSelect.Size = new System.Drawing.Size(417, 29);
-            this.dateTime_librariyanSelect.TabIndex = 21;
+            this.lbl_notification_count.AutoSize = true;
+            this.lbl_notification_count.Location = new System.Drawing.Point(150, 9);
+            this.lbl_notification_count.Name = "lbl_notification_count";
+            this.lbl_notification_count.Size = new System.Drawing.Size(13, 13);
+            this.lbl_notification_count.TabIndex = 10;
+            this.lbl_notification_count.Text = "1";
             // 
             // AdminDashboard
             // 
@@ -1339,7 +1338,6 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
         private MaterialSkin.Controls.MaterialLabel materialLabel11;
         private MaterialSkin.Controls.MaterialButton materialButton7;
-        private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialFloatingActionButton adminNotifications;
         private MaterialSkin.Controls.MaterialCard materialCard9;
         private MaterialSkin.Controls.MaterialButton switchtoLibrariyanBtn;
@@ -1348,5 +1346,6 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialButton adminLogout;
         private MaterialSkin.Controls.MaterialButton refreshBtn;
         private MetroFramework.Controls.MetroDateTime dateTime_librariyanSelect;
+        private System.Windows.Forms.Label lbl_notification_count;
     }
 }

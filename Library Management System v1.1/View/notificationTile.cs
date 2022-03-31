@@ -21,6 +21,20 @@ namespace Library_Management_System_v1._1.View
             lbl_Reason.Text = reason;
             lbl_recievedTime.Text = dateTime;
             this.notification_id = notification_id;
+            readOrNot();
+        }
+
+        public void readOrNot() {
+             Model.DatabaseService database =  new Model.DatabaseService();
+            database.Con.Open();
+            SqlDataReader sdr = database.readData("SELECT Status From Notification WHERE notification_id = '" + notification_id + "' ");
+            sdr.Read();
+            if(sdr["Status"].ToString() != "")
+            {
+                notification_read.CheckState = CheckState.Checked;
+                this.Click -= notification_Click;
+            }
+            database.Con.Close();
         }
         public void acceptOrReject(bool isAccepted, int id)
         {
@@ -46,12 +60,15 @@ namespace Library_Management_System_v1._1.View
             {
                 MessageBox.Show("Approved");
                 acceptOrReject(true, notification_id);
+                readOrNot();
 
             }
             else if (dialogResult.Equals(DialogResult.No))
             {
                 MessageBox.Show("Rejected");
                 acceptOrReject(false, notification_id);
+                notification_read.CheckState = CheckState.Checked;
+                readOrNot();
             }
             else
             {
