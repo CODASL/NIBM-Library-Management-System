@@ -28,7 +28,7 @@ namespace Library_Management_System_v1._1.View
             try {
 
                 database.Con.Open();
-                SqlDataReader sdr = database.readData("SELECT * FROM Notification");
+                SqlDataReader sdr = database.readData("SELECT * FROM Notification WHERE Status = '"+""+"'");
                 while (sdr.Read())
                 {
                     notificationTile nTile = new notificationTile(

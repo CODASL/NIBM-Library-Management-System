@@ -79,9 +79,14 @@ namespace Library_Management_System_v1._1
                     LoginProgress.Increment(10);
                     LoginProgress.Equals(0);
                 }
-                catch (Exception ex)
+                catch (SqlException ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show(ex.Message);
+                    LoginProgress.Equals(0);
+                }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    LoginProgress.Equals(0);
                 }
 
             }

@@ -19,6 +19,7 @@ namespace Library_Management_System_v1._1
         Timer t;
         BackgroundWorker worker;
         Bitmap CapImage;
+
         
         public QRlogin()
         {
@@ -46,11 +47,12 @@ namespace Library_Management_System_v1._1
             try
             {
                 Controller.LoginController.currentUserId = Decoder.decode(new QRCodeBitmapImage(CapImage));
+               
                 MessageBox.Show(Decoder.decode(new QRCodeBitmapImage(CapImage)));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 

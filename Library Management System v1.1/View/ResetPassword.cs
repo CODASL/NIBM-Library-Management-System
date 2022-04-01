@@ -79,8 +79,7 @@ namespace Library_Management_System_v1._1.View
             {
                 try
                 {
-                    int line = database.insertData("INSERT INTO Notification VALUES ('" + "A01" + "','" + cmb_libID.SelectedItem.ToString() + "'," +
-                        "'" + txt_reason.Text + "','" + DateTime.Now.ToString() + "',,'"+generateNotificationID()+"')");
+                    int line = database.insertData("INSERT INTO Notification VALUES ('" + "A01" + "','" + cmb_libID.SelectedItem.ToString() + "','" + txt_reason.Text + "','" + DateTime.Now.ToString() + "','"+""+"','"+generateNotificationID()+"')");
                     if (line > 0)
                     {
                         MessageBox.Show("Request Sent Successfully");

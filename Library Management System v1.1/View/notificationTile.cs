@@ -72,7 +72,7 @@ namespace Library_Management_System_v1._1.View
             }
             else
             {
-                this.Hide();
+                MessageBox.Show("Cancelled");
             }
         }
     }
