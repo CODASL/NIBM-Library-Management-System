@@ -23,7 +23,7 @@ namespace Library_Management_System_v1._1.View
         {
 
         }
-=
+
         private void addRackNoBtnAddBook_Click(object sender, EventArgs e)
         {
             new Add_RackNo().ShowDialog();

@@ -49,19 +49,29 @@ namespace Library_Management_System_v1._1.View
 
         public int generateNotificationID()
         {
-            String id;
+            int id;
             try {
                 database.Con.Open();
                 SqlDataReader sdr = database.readData("SELECT TOP 1 notification_id FROM Notification ORDER BY notification_id DESC");
-                sdr.Read();
-                id = sdr["notification_id"].ToString();
-                database.Con.Close();
-                return (Convert.ToInt32(id) + 1); 
+                if (sdr.HasRows)
+                {
+                    sdr.Read();
+                    id = Convert.ToInt32(sdr["notification_id"])+1;
+                    database.Con.Close();
+
+                }
+                else
+                {
+                    id = 1;
+                    database.Con.Close();
+                }
+                return id; 
 
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
+                database.Con.Close();
             }
             return 0;
         }
@@ -79,10 +89,11 @@ namespace Library_Management_System_v1._1.View
             {
                 try
                 {
-                    int line = database.insertData("INSERT INTO Notification VALUES ('" + "A01" + "','" + cmb_libID.SelectedItem.ToString() + "','" + txt_reason.Text + "','" + DateTime.Now.ToString() + "','"+""+"','"+generateNotificationID()+"')");
+                    int line = database.insertData("INSERT INTO Notification VALUES ('" + generateNotificationID() + "','" + "A01" + "','" + cmb_libID.SelectedItem.ToString() + "','" + txt_reason.Text + "','" + DateTime.Now.ToString() + "','"+""+"')");
                     if (line > 0)
                     {
                         MessageBox.Show("Request Sent Successfully");
+                        this.Hide();
                     }
                     else
                     {
