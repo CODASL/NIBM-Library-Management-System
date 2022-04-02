@@ -18,6 +18,7 @@ namespace Library_Management_System_v1._1.View
     {
 
         Controller.MaterialController material = new Controller.MaterialController();
+        Controller.LibrariyanDashboardController librariyandash = new Controller.LibrariyanDashboardController();
         String emp_Id;
         
         public LibrariyanHome(String emp_Id)
@@ -33,8 +34,9 @@ namespace Library_Management_System_v1._1.View
        
         private void LibrariyanHome_Load(object sender, EventArgs e)
         {
-       
-            
+            lbl_librariyan_name.Text = librariyandash.setName(emp_Id);
+            lbl_welcome_note.Text = "Hello " + librariyandash.setName(emp_Id).Split(' ')[0] + ", How're you today?";
+
         }
 
         
@@ -140,6 +142,24 @@ namespace Library_Management_System_v1._1.View
         private void addAuthorDashboard_Click(object sender, EventArgs e)
         {
             new Add_Author().Show();
+        }
+
+        [Obsolete]
+        private void btn_librariyanLogout_Click(object sender, EventArgs e)
+        {
+            int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_Id + "'");
+            if (line > 0)
+            {
+                this.Hide();
+                Login lg = new Login();
+                lg.Closed += (s, args) => this.Close();
+                lg.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Logout Failed");
+            }
         }
     }
 }

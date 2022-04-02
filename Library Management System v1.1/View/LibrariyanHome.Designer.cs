@@ -46,11 +46,12 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_welcome_note = new MaterialSkin.Controls.MaterialLabel();
             this.SecondDashboardRow = new System.Windows.Forms.FlowLayoutPanel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_librariyan_name = new MaterialSkin.Controls.MaterialLabel();
+            this.rjCircularPictureBox1 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton2 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
@@ -180,24 +181,22 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel40 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel39 = new MaterialSkin.Controls.MaterialLabel();
+            this.rjCircularPictureBox2 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.LibSettings = new System.Windows.Forms.TabPage();
-            this.materialCard8 = new MaterialSkin.Controls.MaterialCard();
-            this.materialLabel18 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialFloatingActionButton8 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton7 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.swtSwitchTheme = new MaterialSkin.Controls.MaterialSwitch();
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.rjCircularPictureBox1 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
-            this.rjCircularPictureBox2 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
+            this.btn_librariyanLogout = new MaterialSkin.Controls.MaterialButton();
             this.LibrariyanTabController.SuspendLayout();
             this.LibrariyanDashBoard.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SecondDashboardRow.SuspendLayout();
             this.materialCard1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.materialCard3.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.materialCard5.SuspendLayout();
@@ -217,12 +216,10 @@ namespace Library_Management_System_v1._1.View
             this.materialCard16.SuspendLayout();
             this.LibMyProfile.SuspendLayout();
             this.materialCard17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).BeginInit();
             this.LibSettings.SuspendLayout();
-            this.materialCard8.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.materialCard7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // LibrariyanTabController
@@ -254,7 +251,7 @@ namespace Library_Management_System_v1._1.View
             this.LibrariyanDashBoard.Controls.Add(this.materialLabel9);
             this.LibrariyanDashBoard.Controls.Add(this.metroDateTime1);
             this.LibrariyanDashBoard.Controls.Add(this.materialLabel8);
-            this.LibrariyanDashBoard.Controls.Add(this.materialLabel7);
+            this.LibrariyanDashBoard.Controls.Add(this.lbl_welcome_note);
             this.LibrariyanDashBoard.Controls.Add(this.SecondDashboardRow);
             this.LibrariyanDashBoard.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LibrariyanDashBoard.ImageKey = "icons8-dashboard-layout-32.png";
@@ -486,17 +483,17 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel8.TabIndex = 2;
             this.materialLabel8.Text = "Today 2022-02- 05  07:05 AM";
             // 
-            // materialLabel7
+            // lbl_welcome_note
             // 
-            this.materialLabel7.AutoSize = true;
-            this.materialLabel7.Depth = 0;
-            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel7.Location = new System.Drawing.Point(14, 13);
-            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel7.Name = "materialLabel7";
-            this.materialLabel7.Size = new System.Drawing.Size(251, 19);
-            this.materialLabel7.TabIndex = 1;
-            this.materialLabel7.Text = "Hello Carolina , How are you today?";
+            this.lbl_welcome_note.AutoSize = true;
+            this.lbl_welcome_note.Depth = 0;
+            this.lbl_welcome_note.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_welcome_note.Location = new System.Drawing.Point(14, 13);
+            this.lbl_welcome_note.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_welcome_note.Name = "lbl_welcome_note";
+            this.lbl_welcome_note.Size = new System.Drawing.Size(251, 19);
+            this.lbl_welcome_note.TabIndex = 1;
+            this.lbl_welcome_note.Text = "Hello Carolina , How are you today?";
             // 
             // SecondDashboardRow
             // 
@@ -515,7 +512,7 @@ namespace Library_Management_System_v1._1.View
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard1.Controls.Add(this.materialLabel2);
-            this.materialCard1.Controls.Add(this.materialLabel1);
+            this.materialCard1.Controls.Add(this.lbl_librariyan_name);
             this.materialCard1.Controls.Add(this.rjCircularPictureBox1);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -540,18 +537,34 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel2.TabIndex = 2;
             this.materialLabel2.Text = "Librariyan";
             // 
-            // materialLabel1
+            // lbl_librariyan_name
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel1.Location = new System.Drawing.Point(124, 38);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(140, 24);
-            this.materialLabel1.TabIndex = 1;
-            this.materialLabel1.Text = "Carolina James";
+            this.lbl_librariyan_name.AutoSize = true;
+            this.lbl_librariyan_name.Depth = 0;
+            this.lbl_librariyan_name.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_librariyan_name.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            this.lbl_librariyan_name.Location = new System.Drawing.Point(124, 38);
+            this.lbl_librariyan_name.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_librariyan_name.Name = "lbl_librariyan_name";
+            this.lbl_librariyan_name.Size = new System.Drawing.Size(140, 24);
+            this.lbl_librariyan_name.TabIndex = 1;
+            this.lbl_librariyan_name.Text = "Carolina James";
+            // 
+            // rjCircularPictureBox1
+            // 
+            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox1.BorderSize = 0;
+            this.rjCircularPictureBox1.GradientAngle = 50F;
+            this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
+            this.rjCircularPictureBox1.Location = new System.Drawing.Point(17, 14);
+            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
+            this.rjCircularPictureBox1.Size = new System.Drawing.Size(85, 85);
+            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox1.TabIndex = 0;
+            this.rjCircularPictureBox1.TabStop = false;
             // 
             // materialCard3
             // 
@@ -2404,9 +2417,25 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel39.TabIndex = 3;
             this.materialLabel39.Text = "Carolina James";
             // 
+            // rjCircularPictureBox2
+            // 
+            this.rjCircularPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox2.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.rjCircularPictureBox2.BorderColor2 = System.Drawing.Color.HotPink;
+            this.rjCircularPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox2.BorderSize = 0;
+            this.rjCircularPictureBox2.GradientAngle = 50F;
+            this.rjCircularPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox2.Image")));
+            this.rjCircularPictureBox2.Location = new System.Drawing.Point(32, 17);
+            this.rjCircularPictureBox2.Name = "rjCircularPictureBox2";
+            this.rjCircularPictureBox2.Size = new System.Drawing.Size(85, 85);
+            this.rjCircularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox2.TabIndex = 1;
+            this.rjCircularPictureBox2.TabStop = false;
+            // 
             // LibSettings
             // 
-            this.LibSettings.Controls.Add(this.materialCard8);
+            this.LibSettings.Controls.Add(this.btn_librariyanLogout);
             this.LibSettings.Controls.Add(this.flowLayoutPanel2);
             this.LibSettings.ImageKey = "icons8-settings-32.png";
             this.LibSettings.Location = new System.Drawing.Point(4, 39);
@@ -2417,50 +2446,6 @@ namespace Library_Management_System_v1._1.View
             this.LibSettings.TabIndex = 6;
             this.LibSettings.Text = "Settings";
             this.LibSettings.UseVisualStyleBackColor = true;
-            // 
-            // materialCard8
-            // 
-            this.materialCard8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard8.Controls.Add(this.materialLabel18);
-            this.materialCard8.Controls.Add(this.materialFloatingActionButton8);
-            this.materialCard8.Depth = 0;
-            this.materialCard8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard8.Location = new System.Drawing.Point(806, 559);
-            this.materialCard8.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard8.Name = "materialCard8";
-            this.materialCard8.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard8.Size = new System.Drawing.Size(158, 55);
-            this.materialCard8.TabIndex = 5;
-            // 
-            // materialLabel18
-            // 
-            this.materialLabel18.AutoSize = true;
-            this.materialLabel18.Depth = 0;
-            this.materialLabel18.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel18.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel18.Location = new System.Drawing.Point(22, 18);
-            this.materialLabel18.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel18.Name = "materialLabel18";
-            this.materialLabel18.Size = new System.Drawing.Size(63, 24);
-            this.materialLabel18.TabIndex = 4;
-            this.materialLabel18.Text = "Logout";
-            // 
-            // materialFloatingActionButton8
-            // 
-            this.materialFloatingActionButton8.AnimateShowHideButton = false;
-            this.materialFloatingActionButton8.Depth = 0;
-            this.materialFloatingActionButton8.DrawShadows = true;
-            this.materialFloatingActionButton8.Icon = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton8.Icon")));
-            this.materialFloatingActionButton8.Image = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton8.Image")));
-            this.materialFloatingActionButton8.Location = new System.Drawing.Point(97, 8);
-            this.materialFloatingActionButton8.Mini = true;
-            this.materialFloatingActionButton8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFloatingActionButton8.Name = "materialFloatingActionButton8";
-            this.materialFloatingActionButton8.Size = new System.Drawing.Size(40, 40);
-            this.materialFloatingActionButton8.TabIndex = 3;
-            this.materialFloatingActionButton8.Text = "materialFloatingActionButton8";
-            this.materialFloatingActionButton8.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel2
             // 
@@ -2543,37 +2528,24 @@ namespace Library_Management_System_v1._1.View
             this.imageList1.Images.SetKeyName(5, "icons8-people-32.png");
             this.imageList1.Images.SetKeyName(6, "icons8-settings-32.png");
             // 
-            // rjCircularPictureBox1
+            // btn_librariyanLogout
             // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 0;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(17, 14);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(85, 85);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 0;
-            this.rjCircularPictureBox1.TabStop = false;
-            // 
-            // rjCircularPictureBox2
-            // 
-            this.rjCircularPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox2.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox2.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox2.BorderSize = 0;
-            this.rjCircularPictureBox2.GradientAngle = 50F;
-            this.rjCircularPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox2.Image")));
-            this.rjCircularPictureBox2.Location = new System.Drawing.Point(32, 17);
-            this.rjCircularPictureBox2.Name = "rjCircularPictureBox2";
-            this.rjCircularPictureBox2.Size = new System.Drawing.Size(85, 85);
-            this.rjCircularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox2.TabIndex = 1;
-            this.rjCircularPictureBox2.TabStop = false;
+            this.btn_librariyanLogout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_librariyanLogout.Depth = 0;
+            this.btn_librariyanLogout.DrawShadows = true;
+            this.btn_librariyanLogout.HighEmphasis = true;
+            this.btn_librariyanLogout.Icon = ((System.Drawing.Image)(resources.GetObject("btn_librariyanLogout.Icon")));
+            this.btn_librariyanLogout.Location = new System.Drawing.Point(845, 563);
+            this.btn_librariyanLogout.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_librariyanLogout.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_librariyanLogout.Name = "btn_librariyanLogout";
+            this.btn_librariyanLogout.Size = new System.Drawing.Size(106, 36);
+            this.btn_librariyanLogout.TabIndex = 8;
+            this.btn_librariyanLogout.Text = "Logout";
+            this.btn_librariyanLogout.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_librariyanLogout.UseAccentColor = false;
+            this.btn_librariyanLogout.UseVisualStyleBackColor = true;
+            this.btn_librariyanLogout.Click += new System.EventHandler(this.btn_librariyanLogout_Click);
             // 
             // LibrariyanHome
             // 
@@ -2600,6 +2572,7 @@ namespace Library_Management_System_v1._1.View
             this.SecondDashboardRow.ResumeLayout(false);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             this.materialCard3.ResumeLayout(false);
             this.materialCard3.PerformLayout();
             this.materialCard2.ResumeLayout(false);
@@ -2637,14 +2610,12 @@ namespace Library_Management_System_v1._1.View
             this.LibMyProfile.PerformLayout();
             this.materialCard17.ResumeLayout(false);
             this.materialCard17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).EndInit();
             this.LibSettings.ResumeLayout(false);
-            this.materialCard8.ResumeLayout(false);
-            this.materialCard8.PerformLayout();
+            this.LibSettings.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.materialCard7.ResumeLayout(false);
             this.materialCard7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2663,7 +2634,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel lbl_librariyan_name;
         private Custom_Controls.RJCircularPictureBox rjCircularPictureBox1;
         
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
@@ -2673,7 +2644,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton3;
-        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialLabel lbl_welcome_note;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private MetroFramework.Controls.MetroDateTime metroDateTime1;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
@@ -2697,9 +2668,6 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton7;
         private MaterialSkin.Controls.MaterialSwitch swtSwitchTheme;
         private MaterialSkin.Controls.MaterialLabel materialLabel17;
-        private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton8;
-        private MaterialSkin.Controls.MaterialLabel materialLabel18;
-        private MaterialSkin.Controls.MaterialCard materialCard8;
         private MaterialSkin.Controls.MaterialCard materialCard9;
         private MaterialSkin.Controls.MaterialCard materialCard10;
         private MaterialSkin.Controls.MaterialListView userListView;
@@ -2813,5 +2781,6 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialListView materialListView4;
         private System.Windows.Forms.ColumnHeader Activity;
         private System.Windows.Forms.ColumnHeader DateTimeActivity;
+        private MaterialSkin.Controls.MaterialButton btn_librariyanLogout;
     }
 }

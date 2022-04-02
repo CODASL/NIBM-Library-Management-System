@@ -29,28 +29,28 @@ namespace Library_Management_System_v1._1.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_authorName = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.txt_authorId = new MaterialSkin.Controls.MaterialTextBox();
+            this.btn_reset = new MaterialSkin.Controls.MaterialButton();
+            this.btn_addAuthor = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
-            // materialTextBox2
+            // txt_authorName
             // 
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox2.Location = new System.Drawing.Point(153, 149);
-            this.materialTextBox2.MaxLength = 50;
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(235, 36);
-            this.materialTextBox2.TabIndex = 11;
-            this.materialTextBox2.Text = "";
-            this.materialTextBox2.UseTallSize = false;
+            this.txt_authorName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_authorName.Depth = 0;
+            this.txt_authorName.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_authorName.Location = new System.Drawing.Point(153, 149);
+            this.txt_authorName.MaxLength = 50;
+            this.txt_authorName.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_authorName.Multiline = false;
+            this.txt_authorName.Name = "txt_authorName";
+            this.txt_authorName.Size = new System.Drawing.Size(235, 36);
+            this.txt_authorName.TabIndex = 11;
+            this.txt_authorName.Text = "";
+            this.txt_authorName.UseTallSize = false;
             // 
             // materialLabel2
             // 
@@ -76,68 +76,70 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel1.TabIndex = 9;
             this.materialLabel1.Text = "Author ID";
             // 
-            // materialTextBox1
+            // txt_authorId
             // 
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox1.Location = new System.Drawing.Point(153, 94);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(100, 36);
-            this.materialTextBox1.TabIndex = 8;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.UseTallSize = false;
+            this.txt_authorId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_authorId.Depth = 0;
+            this.txt_authorId.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_authorId.Location = new System.Drawing.Point(153, 94);
+            this.txt_authorId.MaxLength = 50;
+            this.txt_authorId.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_authorId.Multiline = false;
+            this.txt_authorId.Name = "txt_authorId";
+            this.txt_authorId.Size = new System.Drawing.Size(100, 36);
+            this.txt_authorId.TabIndex = 8;
+            this.txt_authorId.Text = "";
+            this.txt_authorId.UseTallSize = false;
             // 
-            // materialButton2
+            // btn_reset
             // 
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.DrawShadows = true;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(296, 205);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.Size = new System.Drawing.Size(65, 36);
-            this.materialButton2.TabIndex = 13;
-            this.materialButton2.Text = "Reset";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
+            this.btn_reset.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_reset.Depth = 0;
+            this.btn_reset.DrawShadows = true;
+            this.btn_reset.HighEmphasis = true;
+            this.btn_reset.Icon = null;
+            this.btn_reset.Location = new System.Drawing.Point(296, 205);
+            this.btn_reset.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_reset.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(65, 36);
+            this.btn_reset.TabIndex = 13;
+            this.btn_reset.Text = "Reset";
+            this.btn_reset.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_reset.UseAccentColor = false;
+            this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
-            // materialButton1
+            // btn_addAuthor
             // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.DrawShadows = true;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(238, 205);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(50, 36);
-            this.materialButton1.TabIndex = 12;
-            this.materialButton1.Text = "Add";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.btn_addAuthor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_addAuthor.Depth = 0;
+            this.btn_addAuthor.DrawShadows = true;
+            this.btn_addAuthor.HighEmphasis = true;
+            this.btn_addAuthor.Icon = null;
+            this.btn_addAuthor.Location = new System.Drawing.Point(238, 205);
+            this.btn_addAuthor.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_addAuthor.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_addAuthor.Name = "btn_addAuthor";
+            this.btn_addAuthor.Size = new System.Drawing.Size(50, 36);
+            this.btn_addAuthor.TabIndex = 12;
+            this.btn_addAuthor.Text = "Add";
+            this.btn_addAuthor.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_addAuthor.UseAccentColor = false;
+            this.btn_addAuthor.UseVisualStyleBackColor = true;
+            this.btn_addAuthor.Click += new System.EventHandler(this.btn_addAuthor_Click);
             // 
             // Add_Author
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 256);
-            this.Controls.Add(this.materialButton2);
-            this.Controls.Add(this.materialButton1);
-            this.Controls.Add(this.materialTextBox2);
+            this.Controls.Add(this.btn_reset);
+            this.Controls.Add(this.btn_addAuthor);
+            this.Controls.Add(this.txt_authorName);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.materialTextBox1);
+            this.Controls.Add(this.txt_authorId);
             this.Name = "Add_Author";
             this.Text = "Add Author";
             this.ResumeLayout(false);
@@ -147,11 +149,11 @@ namespace Library_Management_System_v1._1.View
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
+        private MaterialSkin.Controls.MaterialTextBox txt_authorName;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialTextBox txt_authorId;
+        private MaterialSkin.Controls.MaterialButton btn_reset;
+        private MaterialSkin.Controls.MaterialButton btn_addAuthor;
     }
 }

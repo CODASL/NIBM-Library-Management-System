@@ -110,8 +110,9 @@ namespace Library_Management_System_v1._1.View
             int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_id + "'");
             if (line > 0)
             {
-                this.Hide();
-                new Login().Show();
+                Login lg = new Login();
+                lg.Closed += (s, args) => this.Close();
+                lg.Show();
 
             }
             else
@@ -184,6 +185,7 @@ namespace Library_Management_System_v1._1.View
             loadLibrariyanList();
         }
 
+        //==========================filter Librarian Search
         private void cmb_filterLibrarians_SelectedIndexChanged(object sender, EventArgs e)
         {
              if(cmb_filterLibrarians.SelectedIndex == 0)

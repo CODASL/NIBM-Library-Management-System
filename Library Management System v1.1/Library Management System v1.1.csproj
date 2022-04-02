@@ -87,8 +87,10 @@
   <ItemGroup>
     <Compile Include="Constant\IconClass.cs" />
     <Compile Include="Constant\ImageClass.cs" />
+    <Compile Include="Controller\AddAuthorController.cs" />
     <Compile Include="Controller\AddLibrariyanController.cs" />
     <Compile Include="Controller\AdminDashboardController.cs" />
+    <Compile Include="Controller\LibrariyanDashboardController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\MaterialController.cs" />
     <Compile Include="Controller\SplashController.cs" />
