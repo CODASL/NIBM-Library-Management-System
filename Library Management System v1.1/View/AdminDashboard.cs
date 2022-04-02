@@ -105,7 +105,9 @@ namespace Library_Management_System_v1._1.View
             if (line > 0)
             {
                 this.Hide();
-                new Login().Show();
+                var lg = new Login();
+                lg.Closed += (s, args) => this.Close();
+                lg.Show();
 
             }
             else

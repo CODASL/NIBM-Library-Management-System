@@ -185,7 +185,7 @@ namespace Library_Management_System_v1._1.View
             this.LibSettings = new System.Windows.Forms.TabPage();
             this.materialCard8 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel18 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialFloatingActionButton8 = new MaterialSkin.Controls.MaterialFloatingActionButton();
+            this.btn_logout = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton7 = new MaterialSkin.Controls.MaterialFloatingActionButton();
@@ -1782,7 +1782,6 @@ namespace Library_Management_System_v1._1.View
             this.materialFloatingActionButton16.Depth = 0;
             this.materialFloatingActionButton16.DrawShadows = true;
             this.materialFloatingActionButton16.Icon = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton16.Icon")));
-            this.materialFloatingActionButton16.Image = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton16.Image")));
             this.materialFloatingActionButton16.ImageKey = "icons8-knowledge-sharing-32.png";
             this.materialFloatingActionButton16.Location = new System.Drawing.Point(307, 24);
             this.materialFloatingActionButton16.Mini = false;
@@ -2455,7 +2454,7 @@ namespace Library_Management_System_v1._1.View
             // 
             this.materialCard8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard8.Controls.Add(this.materialLabel18);
-            this.materialCard8.Controls.Add(this.materialFloatingActionButton8);
+            this.materialCard8.Controls.Add(this.btn_logout);
             this.materialCard8.Depth = 0;
             this.materialCard8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard8.Location = new System.Drawing.Point(806, 559);
@@ -2479,21 +2478,22 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel18.TabIndex = 4;
             this.materialLabel18.Text = "Logout";
             // 
-            // materialFloatingActionButton8
+            // btn_logout
             // 
-            this.materialFloatingActionButton8.AnimateShowHideButton = false;
-            this.materialFloatingActionButton8.Depth = 0;
-            this.materialFloatingActionButton8.DrawShadows = true;
-            this.materialFloatingActionButton8.Icon = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton8.Icon")));
-            this.materialFloatingActionButton8.Image = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton8.Image")));
-            this.materialFloatingActionButton8.Location = new System.Drawing.Point(97, 8);
-            this.materialFloatingActionButton8.Mini = true;
-            this.materialFloatingActionButton8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFloatingActionButton8.Name = "materialFloatingActionButton8";
-            this.materialFloatingActionButton8.Size = new System.Drawing.Size(40, 40);
-            this.materialFloatingActionButton8.TabIndex = 3;
-            this.materialFloatingActionButton8.Text = "materialFloatingActionButton8";
-            this.materialFloatingActionButton8.UseVisualStyleBackColor = true;
+            this.btn_logout.AnimateShowHideButton = false;
+            this.btn_logout.Depth = 0;
+            this.btn_logout.DrawShadows = true;
+            this.btn_logout.Icon = ((System.Drawing.Image)(resources.GetObject("btn_logout.Icon")));
+            this.btn_logout.Image = ((System.Drawing.Image)(resources.GetObject("btn_logout.Image")));
+            this.btn_logout.Location = new System.Drawing.Point(97, 8);
+            this.btn_logout.Mini = true;
+            this.btn_logout.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(40, 40);
+            this.btn_logout.TabIndex = 3;
+            this.btn_logout.Text = "materialFloatingActionButton8";
+            this.btn_logout.UseVisualStyleBackColor = true;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -2698,7 +2698,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton7;
         private MaterialSkin.Controls.MaterialSwitch swtSwitchTheme;
         private MaterialSkin.Controls.MaterialLabel materialLabel17;
-        private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton8;
+        private MaterialSkin.Controls.MaterialFloatingActionButton btn_logout;
         private MaterialSkin.Controls.MaterialLabel materialLabel18;
         private MaterialSkin.Controls.MaterialCard materialCard8;
         private MaterialSkin.Controls.MaterialCard materialCard9;

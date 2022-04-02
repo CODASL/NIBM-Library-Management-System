@@ -141,5 +141,22 @@ namespace Library_Management_System_v1._1.View
         {
             new Add_Author().Show();
         }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_Id + "'");
+            if (line > 0)
+            {
+                this.Hide();
+                var lg = new Login();
+                lg.Closed += (s, args) => this.Close();
+                lg.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Logout Failed");
+            }
+        }
     }
 }
