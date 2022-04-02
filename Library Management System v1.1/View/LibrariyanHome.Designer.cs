@@ -45,7 +45,7 @@ namespace Library_Management_System_v1._1.View
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
-            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_librarianDateTime = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_welcome_note = new MaterialSkin.Controls.MaterialLabel();
             this.SecondDashboardRow = new System.Windows.Forms.FlowLayoutPanel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
@@ -190,6 +190,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_librariyanLogout = new MaterialSkin.Controls.MaterialButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.LibrariyanTabController.SuspendLayout();
             this.LibrariyanDashBoard.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
@@ -250,7 +251,7 @@ namespace Library_Management_System_v1._1.View
             this.LibrariyanDashBoard.Controls.Add(this.materialListView1);
             this.LibrariyanDashBoard.Controls.Add(this.materialLabel9);
             this.LibrariyanDashBoard.Controls.Add(this.metroDateTime1);
-            this.LibrariyanDashBoard.Controls.Add(this.materialLabel8);
+            this.LibrariyanDashBoard.Controls.Add(this.lbl_librarianDateTime);
             this.LibrariyanDashBoard.Controls.Add(this.lbl_welcome_note);
             this.LibrariyanDashBoard.Controls.Add(this.SecondDashboardRow);
             this.LibrariyanDashBoard.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -471,17 +472,17 @@ namespace Library_Management_System_v1._1.View
             this.metroDateTime1.Size = new System.Drawing.Size(208, 29);
             this.metroDateTime1.TabIndex = 4;
             // 
-            // materialLabel8
+            // lbl_librarianDateTime
             // 
-            this.materialLabel8.AutoSize = true;
-            this.materialLabel8.Depth = 0;
-            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel8.Location = new System.Drawing.Point(387, 14);
-            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel8.Name = "materialLabel8";
-            this.materialLabel8.Size = new System.Drawing.Size(210, 19);
-            this.materialLabel8.TabIndex = 2;
-            this.materialLabel8.Text = "Today 2022-02- 05  07:05 AM";
+            this.lbl_librarianDateTime.AutoSize = true;
+            this.lbl_librarianDateTime.Depth = 0;
+            this.lbl_librarianDateTime.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_librarianDateTime.Location = new System.Drawing.Point(387, 14);
+            this.lbl_librarianDateTime.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_librarianDateTime.Name = "lbl_librarianDateTime";
+            this.lbl_librarianDateTime.Size = new System.Drawing.Size(210, 19);
+            this.lbl_librarianDateTime.TabIndex = 2;
+            this.lbl_librarianDateTime.Text = "Today 2022-02- 05  07:05 AM";
             // 
             // lbl_welcome_note
             // 
@@ -2547,6 +2548,10 @@ namespace Library_Management_System_v1._1.View
             this.btn_librariyanLogout.UseVisualStyleBackColor = true;
             this.btn_librariyanLogout.Click += new System.EventHandler(this.btn_librariyanLogout_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // LibrariyanHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2645,7 +2650,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton3;
         private MaterialSkin.Controls.MaterialLabel lbl_welcome_note;
-        private MaterialSkin.Controls.MaterialLabel materialLabel8;
+        private MaterialSkin.Controls.MaterialLabel lbl_librarianDateTime;
         private MetroFramework.Controls.MetroDateTime metroDateTime1;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
         private MaterialSkin.Controls.MaterialCard materialCard5;
@@ -2782,5 +2787,6 @@ namespace Library_Management_System_v1._1.View
         private System.Windows.Forms.ColumnHeader Activity;
         private System.Windows.Forms.ColumnHeader DateTimeActivity;
         private MaterialSkin.Controls.MaterialButton btn_librariyanLogout;
+        private System.Windows.Forms.Timer timer1;
     }
 }

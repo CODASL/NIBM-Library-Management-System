@@ -28,12 +28,14 @@ namespace Library_Management_System_v1._1.View
             material.addStyle(this);
             cmbFilterAvalibility.SelectedIndex = 0;
             this.emp_Id = emp_Id;
-          
+            timer1.Start();
+
         }
         
        
         private void LibrariyanHome_Load(object sender, EventArgs e)
         {
+            
             lbl_librariyan_name.Text = librariyandash.setName(emp_Id);
             lbl_welcome_note.Text = "Hello " + librariyandash.setName(emp_Id).Split(' ')[0] + ", How're you today?";
 
@@ -160,6 +162,11 @@ namespace Library_Management_System_v1._1.View
             {
                 MessageBox.Show("Logout Failed");
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbl_librarianDateTime.Text = DateTime.Now.ToString("yyy-MM-dd ") + DateTime.Now.ToString(" h:mm:ss tt");
         }
     }
 }
