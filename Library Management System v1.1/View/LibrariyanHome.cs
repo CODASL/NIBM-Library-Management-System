@@ -34,6 +34,9 @@ namespace Library_Management_System_v1._1.View
        
         private void LibrariyanHome_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+            
+            //lbldate.Text = "Date :- " + DateTime.Now.ToString("dd-MMM-yyy");
             lbl_librariyan_name.Text = librariyandash.setName(emp_Id);
             lbl_welcome_note.Text = "Hello "+librariyandash.setName(emp_Id)+ ", How are you today?";
             
@@ -159,6 +162,12 @@ namespace Library_Management_System_v1._1.View
             {
                 MessageBox.Show("Logout Failed");
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Start();
+            lbl_time_date.Text = "Today  " + DateTime.Now.ToString("yyy-MM-dd ") + DateTime.Now.ToString(" h:mm:ss tt");
         }
     }
 }
