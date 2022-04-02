@@ -18,6 +18,7 @@ namespace Library_Management_System_v1._1.View
     {
 
         Controller.MaterialController material = new Controller.MaterialController();
+        Controller.LibrariyanDashboardController librariyandash = new Controller.LibrariyanDashboardController();
         String emp_Id;
         
         public LibrariyanHome(String emp_Id)
@@ -33,7 +34,8 @@ namespace Library_Management_System_v1._1.View
        
         private void LibrariyanHome_Load(object sender, EventArgs e)
         {
-       
+            lbl_librariyan_name.Text = librariyandash.setName(emp_Id);
+            lbl_welcome_note.Text = "Hello "+librariyandash.setName(emp_Id)+ ", How are you today?";
             
         }
 
