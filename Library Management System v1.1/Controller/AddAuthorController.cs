@@ -19,20 +19,24 @@ namespace Library_Management_System_v1._1.Controller
             return row > 0;
         }
 
-        public void setid(String textBoxData)
+        public String setid()
         {
             Model.DatabaseService obj = new Model.DatabaseService();
-            String id;
+            String id = "ATR1";
             try
             {
                 obj.Con.Open();
                 SqlDataReader sdr = obj.readData("SELECT TOP 1 Author_ID FROM Author ORDER BY Author_ID DESC");
                 sdr.Read();
-                id = sdr["Author_ID"].ToString();
-                obj.Con.Close();
+                if (sdr.HasRows)
+                {
+                    id = sdr["Author_ID"].ToString();
+                    id = "ATR" + (Convert.ToInt32(id.Remove(0, 3)) + 1).ToString();
+                    obj.Con.Close();
+                }
 
-                id = "ATR" + (Convert.ToInt32(id.Remove(0, 3)) + 1).ToString();
-                textBoxData = id;
+                obj.Con.Close();
+                return id;
 
             }
             catch (SqlException ex)
@@ -44,7 +48,7 @@ namespace Library_Management_System_v1._1.Controller
                 MaterialMessageBox.Show(ex.Message);
             }
 
-           
+            return id;
 
         }
     }

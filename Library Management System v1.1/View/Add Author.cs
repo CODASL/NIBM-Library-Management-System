@@ -18,7 +18,7 @@ namespace Library_Management_System_v1._1.View
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
-            ATR.setid(txt_authorId.Text);
+            txt_authorId.Text = ATR.setid();
             txt_authorId.Focus();
         }
 
@@ -37,18 +37,17 @@ namespace Library_Management_System_v1._1.View
                 if (isAdded)
                 {
                     this.Hide();
-                    MaterialMessageBox.Show("Record Added");
-
+                   MessageBox.Show("Record Added");
 
                 }
                 else
                 {
-                    MaterialMessageBox.Show("Something went wrong try again");
+                   MessageBox.Show("Something went wrong try again");
                 }
             }
             catch (Exception ex)
             {
-                MaterialMessageBox.Show(ex.Message);
+               MessageBox.Show(ex.Message);
             }
         }
     }
