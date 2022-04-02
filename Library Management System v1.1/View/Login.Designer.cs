@@ -158,7 +158,7 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(100, 58);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(165, 18);
+            this.label6.Size = new System.Drawing.Size(160, 18);
             this.label6.TabIndex = 26;
             this.label6.Text = "Hello Welcome Again !";
             // 
@@ -198,7 +198,7 @@
             this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(-1, 99);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 14);
+            this.label2.Size = new System.Drawing.Size(60, 14);
             this.label2.TabIndex = 19;
             this.label2.Text = "Password";
             // 
@@ -208,7 +208,7 @@
             this.label1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 14);
+            this.label1.Size = new System.Drawing.Size(74, 14);
             this.label1.TabIndex = 17;
             this.label1.Text = "Employee ID";
             // 
@@ -220,7 +220,7 @@
             this.resetBtn.Location = new System.Drawing.Point(113, 401);
             this.resetBtn.Name = "resetBtn";
             this.resetBtn.Size = new System.Drawing.Size(109, 23);
-            this.resetBtn.TabIndex = 25;
+            this.resetBtn.TabIndex = 4;
             this.resetBtn.Text = "Reset Password";
             this.resetBtn.UseVisualStyleBackColor = true;
             this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
@@ -242,7 +242,7 @@
             this.btnQR.Location = new System.Drawing.Point(46, 342);
             this.btnQR.Name = "btnQR";
             this.btnQR.Size = new System.Drawing.Size(251, 40);
-            this.btnQR.TabIndex = 28;
+            this.btnQR.TabIndex = 3;
             this.btnQR.Text = "Login with QR";
             this.btnQR.TextColor = System.Drawing.Color.Black;
             this.btnQR.UseVisualStyleBackColor = false;
@@ -263,8 +263,9 @@
             this.txtPass.Padding = new System.Windows.Forms.Padding(7);
             this.txtPass.PasswordChar = true;
             this.txtPass.Size = new System.Drawing.Size(222, 28);
-            this.txtPass.TabIndex = 28;
+            this.txtPass.TabIndex = 1;
             this.txtPass.UnderlinedStyle = true;
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // txtmail
             // 
@@ -281,8 +282,9 @@
             this.txtmail.Padding = new System.Windows.Forms.Padding(7);
             this.txtmail.PasswordChar = false;
             this.txtmail.Size = new System.Drawing.Size(250, 28);
-            this.txtmail.TabIndex = 15;
+            this.txtmail.TabIndex = 0;
             this.txtmail.UnderlinedStyle = true;
+            this.txtmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmail_KeyPress);
             // 
             // btnlogin
             // 
@@ -301,7 +303,7 @@
             this.btnlogin.Location = new System.Drawing.Point(0, 180);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(251, 40);
-            this.btnlogin.TabIndex = 27;
+            this.btnlogin.TabIndex = 2;
             this.btnlogin.Text = "Login";
             this.btnlogin.TextColor = System.Drawing.Color.White;
             this.btnlogin.UseVisualStyleBackColor = false;
@@ -321,6 +323,8 @@
             this.Style = MetroFramework.MetroColorStyle.White;
             this.Tag = "hello";
             this.Text = "Login";
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.Login_Load);
             this.bluebackround.ResumeLayout(false);
             this.bluebackround.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).EndInit();
