@@ -57,7 +57,7 @@ namespace Library_Management_System_v1._1.View
             if (dialogResult.Equals(DialogResult.Yes))
             {
                 MessageBox.Show("Approved");
-                database.insertData("UPDATE Notification")
+                database.insertData("UPDATE Notification");
             }
             else if (dialogResult.Equals(DialogResult.No))
             {

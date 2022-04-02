@@ -38,7 +38,7 @@
   <ItemGroup>
     <Reference Include="BasselTech CamCapture, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Downloads\BasselTech CamCapture.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\BasselTech CamCapture\BasselTech CamCapture.dll</HintPath>
     </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
@@ -54,7 +54,7 @@
     </Reference>
     <Reference Include="MessagingToolkit.QRCode, Version=1.0.3541.23206, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Downloads\MessagingToolkit.QRCode.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\MessagingToolkit.QRCode\MessagingToolkit.QRCode.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
