@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Library_Management_System_v1._1.View
 {
@@ -19,6 +20,7 @@ namespace Library_Management_System_v1._1.View
 
         Controller.MaterialController material = new Controller.MaterialController();
         Controller.LibrariyanDashboardController librariyandash = new Controller.LibrariyanDashboardController();
+        Model.DatabaseService DB = new Model.DatabaseService();
         String emp_Id;
         
         public LibrariyanHome(String emp_Id)
@@ -35,14 +37,32 @@ namespace Library_Management_System_v1._1.View
         private void LibrariyanHome_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            
-            //lbldate.Text = "Date :- " + DateTime.Now.ToString("dd-MMM-yyy");
             lbl_librariyan_name.Text = librariyandash.setName(emp_Id);
             lbl_welcome_note.Text = "Hello "+librariyandash.setName(emp_Id)+ ", How are you today?";
-            
+            lbl_members_tot.Text = member_count().ToString();
+            lbl_member_count.Text = member_count().ToString();
+            lbl_book_count_ds.Text = book_count().ToString();
+            lbl_tot_books.Text = book_count().ToString();
         }
 
-        
+        public int member_count()
+        {
+            DB.Con.Open();
+            SqlCommand sdr = new SqlCommand ("SELECT Count (*) FROM Member",DB.Con);
+            int name = Convert.ToInt32(sdr.ExecuteScalar());
+            DB.Con.Close();
+            return name;
+        }
+
+        public int book_count()
+        {
+            DB.Con.Open();
+            SqlCommand sdr = new SqlCommand("SELECT Count (*) FROM Book", DB.Con);
+            int name = Convert.ToInt32(sdr.ExecuteScalar());
+            DB.Con.Close();
+            return name;
+        }
+
 
         private void swtSwitchTheme_CheckedChanged(object sender, EventArgs e)
         {

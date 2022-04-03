@@ -14,6 +14,7 @@ namespace Library_Management_System_v1._1
         [STAThread]
         static void Main()
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Splash());
