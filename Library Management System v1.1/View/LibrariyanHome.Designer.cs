@@ -170,16 +170,16 @@ namespace Library_Management_System_v1._1.View
             this.materialCard17 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel48 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel49 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel46 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_phone = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel47 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel44 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_address = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel45 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel42 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_empid = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel43 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel41 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_nic = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel40 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel39 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_member_name = new MaterialSkin.Controls.MaterialLabel();
             this.LibSettings = new System.Windows.Forms.TabPage();
             this.materialCard8 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel18 = new MaterialSkin.Controls.MaterialLabel();
@@ -2163,7 +2163,7 @@ namespace Library_Management_System_v1._1.View
             // metroDateTime2
             // 
             this.metroDateTime2.Location = new System.Drawing.Point(772, 269);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime2.Name = "metroDateTime2";
             this.metroDateTime2.Size = new System.Drawing.Size(200, 29);
             this.metroDateTime2.TabIndex = 4;
@@ -2233,16 +2233,16 @@ namespace Library_Management_System_v1._1.View
             this.materialCard17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard17.Controls.Add(this.materialLabel48);
             this.materialCard17.Controls.Add(this.materialLabel49);
-            this.materialCard17.Controls.Add(this.materialLabel46);
+            this.materialCard17.Controls.Add(this.lbl_phone);
             this.materialCard17.Controls.Add(this.materialLabel47);
-            this.materialCard17.Controls.Add(this.materialLabel44);
+            this.materialCard17.Controls.Add(this.lbl_address);
             this.materialCard17.Controls.Add(this.materialLabel45);
-            this.materialCard17.Controls.Add(this.materialLabel42);
+            this.materialCard17.Controls.Add(this.lbl_empid);
             this.materialCard17.Controls.Add(this.materialLabel43);
-            this.materialCard17.Controls.Add(this.materialLabel41);
+            this.materialCard17.Controls.Add(this.lbl_nic);
             this.materialCard17.Controls.Add(this.materialLabel40);
             this.materialCard17.Controls.Add(this.materialLabel33);
-            this.materialCard17.Controls.Add(this.materialLabel39);
+            this.materialCard17.Controls.Add(this.lbl_member_name);
             this.materialCard17.Controls.Add(this.rjCircularPictureBox2);
             this.materialCard17.Depth = 0;
             this.materialCard17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -2279,18 +2279,18 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel49.TabIndex = 13;
             this.materialLabel49.Text = "Time Shift";
             // 
-            // materialLabel46
+            // lbl_phone
             // 
-            this.materialLabel46.AutoSize = true;
-            this.materialLabel46.Depth = 0;
-            this.materialLabel46.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel46.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.materialLabel46.Location = new System.Drawing.Point(783, 35);
-            this.materialLabel46.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel46.Name = "materialLabel46";
-            this.materialLabel46.Size = new System.Drawing.Size(89, 17);
-            this.materialLabel46.TabIndex = 12;
-            this.materialLabel46.Text = "+9478457897";
+            this.lbl_phone.AutoSize = true;
+            this.lbl_phone.Depth = 0;
+            this.lbl_phone.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_phone.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
+            this.lbl_phone.Location = new System.Drawing.Point(783, 35);
+            this.lbl_phone.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_phone.Name = "lbl_phone";
+            this.lbl_phone.Size = new System.Drawing.Size(89, 17);
+            this.lbl_phone.TabIndex = 12;
+            this.lbl_phone.Text = "+9478457897";
             // 
             // materialLabel47
             // 
@@ -2304,18 +2304,18 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel47.TabIndex = 11;
             this.materialLabel47.Text = "Phone Number";
             // 
-            // materialLabel44
+            // lbl_address
             // 
-            this.materialLabel44.AutoSize = true;
-            this.materialLabel44.Depth = 0;
-            this.materialLabel44.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel44.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.materialLabel44.Location = new System.Drawing.Point(405, 159);
-            this.materialLabel44.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel44.Name = "materialLabel44";
-            this.materialLabel44.Size = new System.Drawing.Size(181, 17);
-            this.materialLabel44.TabIndex = 10;
-            this.materialLabel44.Text = "45/7,Galle road , Colombo 06";
+            this.lbl_address.AutoSize = true;
+            this.lbl_address.Depth = 0;
+            this.lbl_address.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_address.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
+            this.lbl_address.Location = new System.Drawing.Point(405, 159);
+            this.lbl_address.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_address.Name = "lbl_address";
+            this.lbl_address.Size = new System.Drawing.Size(181, 17);
+            this.lbl_address.TabIndex = 10;
+            this.lbl_address.Text = "45/7,Galle road , Colombo 06";
             // 
             // materialLabel45
             // 
@@ -2329,18 +2329,18 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel45.TabIndex = 9;
             this.materialLabel45.Text = "Address";
             // 
-            // materialLabel42
+            // lbl_empid
             // 
-            this.materialLabel42.AutoSize = true;
-            this.materialLabel42.Depth = 0;
-            this.materialLabel42.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel42.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.materialLabel42.Location = new System.Drawing.Point(405, 37);
-            this.materialLabel42.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel42.Name = "materialLabel42";
-            this.materialLabel42.Size = new System.Drawing.Size(25, 17);
-            this.materialLabel42.TabIndex = 8;
-            this.materialLabel42.Text = "L01";
+            this.lbl_empid.AutoSize = true;
+            this.lbl_empid.Depth = 0;
+            this.lbl_empid.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_empid.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
+            this.lbl_empid.Location = new System.Drawing.Point(405, 37);
+            this.lbl_empid.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_empid.Name = "lbl_empid";
+            this.lbl_empid.Size = new System.Drawing.Size(25, 17);
+            this.lbl_empid.TabIndex = 8;
+            this.lbl_empid.Text = "L01";
             // 
             // materialLabel43
             // 
@@ -2354,18 +2354,18 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel43.TabIndex = 7;
             this.materialLabel43.Text = "Empoyee ID";
             // 
-            // materialLabel41
+            // lbl_nic
             // 
-            this.materialLabel41.AutoSize = true;
-            this.materialLabel41.Depth = 0;
-            this.materialLabel41.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel41.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.materialLabel41.Location = new System.Drawing.Point(405, 97);
-            this.materialLabel41.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel41.Name = "materialLabel41";
-            this.materialLabel41.Size = new System.Drawing.Size(81, 17);
-            this.materialLabel41.TabIndex = 6;
-            this.materialLabel41.Text = "1995878689";
+            this.lbl_nic.AutoSize = true;
+            this.lbl_nic.Depth = 0;
+            this.lbl_nic.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_nic.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
+            this.lbl_nic.Location = new System.Drawing.Point(405, 97);
+            this.lbl_nic.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_nic.Name = "lbl_nic";
+            this.lbl_nic.Size = new System.Drawing.Size(81, 17);
+            this.lbl_nic.TabIndex = 6;
+            this.lbl_nic.Text = "1995878689";
             // 
             // materialLabel40
             // 
@@ -2392,18 +2392,18 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel33.TabIndex = 4;
             this.materialLabel33.Text = "Librariyan";
             // 
-            // materialLabel39
+            // lbl_member_name
             // 
-            this.materialLabel39.AutoSize = true;
-            this.materialLabel39.Depth = 0;
-            this.materialLabel39.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel39.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel39.Location = new System.Drawing.Point(28, 132);
-            this.materialLabel39.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel39.Name = "materialLabel39";
-            this.materialLabel39.Size = new System.Drawing.Size(140, 24);
-            this.materialLabel39.TabIndex = 3;
-            this.materialLabel39.Text = "Carolina James";
+            this.lbl_member_name.AutoSize = true;
+            this.lbl_member_name.Depth = 0;
+            this.lbl_member_name.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_member_name.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            this.lbl_member_name.Location = new System.Drawing.Point(28, 132);
+            this.lbl_member_name.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_member_name.Name = "lbl_member_name";
+            this.lbl_member_name.Size = new System.Drawing.Size(140, 24);
+            this.lbl_member_name.TabIndex = 3;
+            this.lbl_member_name.Text = "Carolina James";
             // 
             // LibSettings
             // 
@@ -2803,16 +2803,16 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialCard materialCard17;
         private MaterialSkin.Controls.MaterialLabel materialLabel48;
         private MaterialSkin.Controls.MaterialLabel materialLabel49;
-        private MaterialSkin.Controls.MaterialLabel materialLabel46;
+        private MaterialSkin.Controls.MaterialLabel lbl_phone;
         private MaterialSkin.Controls.MaterialLabel materialLabel47;
-        private MaterialSkin.Controls.MaterialLabel materialLabel44;
+        private MaterialSkin.Controls.MaterialLabel lbl_address;
         private MaterialSkin.Controls.MaterialLabel materialLabel45;
-        private MaterialSkin.Controls.MaterialLabel materialLabel42;
+        private MaterialSkin.Controls.MaterialLabel lbl_empid;
         private MaterialSkin.Controls.MaterialLabel materialLabel43;
-        private MaterialSkin.Controls.MaterialLabel materialLabel41;
+        private MaterialSkin.Controls.MaterialLabel lbl_nic;
         private MaterialSkin.Controls.MaterialLabel materialLabel40;
         private MaterialSkin.Controls.MaterialLabel materialLabel33;
-        private MaterialSkin.Controls.MaterialLabel materialLabel39;
+        private MaterialSkin.Controls.MaterialLabel lbl_member_name;
         private Custom_Controls.RJCircularPictureBox rjCircularPictureBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel52;
         private MetroFramework.Controls.MetroDateTime metroDateTime2;

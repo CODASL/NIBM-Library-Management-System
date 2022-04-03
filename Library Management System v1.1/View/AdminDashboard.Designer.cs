@@ -54,6 +54,7 @@ namespace Library_Management_System_v1._1.View
             this.Activity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateTimeActivity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ManageLibrariyans = new System.Windows.Forms.TabPage();
+            this.refreshBtn = new MaterialSkin.Controls.MaterialButton();
             this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
             this.updateLibrariyanBtn = new MaterialSkin.Controls.MaterialButton();
             this.deleteLibrariyanBtn = new MaterialSkin.Controls.MaterialButton();
@@ -105,7 +106,6 @@ namespace Library_Management_System_v1._1.View
             this.adminAvatar = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.refreshBtn = new MaterialSkin.Controls.MaterialButton();
             this.adminSettings.SuspendLayout();
             this.materialCard9.SuspendLayout();
             this.materialCard7.SuspendLayout();
@@ -475,6 +475,27 @@ namespace Library_Management_System_v1._1.View
             this.ManageLibrariyans.Text = "Manage Librariyans";
             this.ManageLibrariyans.UseVisualStyleBackColor = true;
             // 
+            // refreshBtn
+            // 
+            this.refreshBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.refreshBtn.Depth = 0;
+            this.refreshBtn.DrawShadows = true;
+            this.refreshBtn.HighEmphasis = true;
+            this.refreshBtn.Icon = null;
+            this.refreshBtn.Location = new System.Drawing.Point(910, 130);
+            this.refreshBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.refreshBtn.MaximumSize = new System.Drawing.Size(100, 35);
+            this.refreshBtn.MinimumSize = new System.Drawing.Size(100, 35);
+            this.refreshBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(100, 35);
+            this.refreshBtn.TabIndex = 20;
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.refreshBtn.UseAccentColor = false;
+            this.refreshBtn.UseVisualStyleBackColor = true;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
             // materialButton6
             // 
             this.materialButton6.AutoSize = false;
@@ -669,7 +690,6 @@ namespace Library_Management_System_v1._1.View
             this.libLastUpdate});
             this.librariyanList.Depth = 0;
             this.librariyanList.FullRowSelect = true;
-            this.librariyanList.GridLines = true;
             this.librariyanList.HideSelection = false;
             this.librariyanList.Location = new System.Drawing.Point(24, 177);
             this.librariyanList.MinimumSize = new System.Drawing.Size(200, 100);
@@ -1187,27 +1207,6 @@ namespace Library_Management_System_v1._1.View
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // refreshBtn
-            // 
-            this.refreshBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.refreshBtn.Depth = 0;
-            this.refreshBtn.DrawShadows = true;
-            this.refreshBtn.HighEmphasis = true;
-            this.refreshBtn.Icon = null;
-            this.refreshBtn.Location = new System.Drawing.Point(910, 130);
-            this.refreshBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.refreshBtn.MaximumSize = new System.Drawing.Size(100, 35);
-            this.refreshBtn.MinimumSize = new System.Drawing.Size(100, 35);
-            this.refreshBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(100, 35);
-            this.refreshBtn.TabIndex = 20;
-            this.refreshBtn.Text = "Refresh";
-            this.refreshBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.refreshBtn.UseAccentColor = false;
-            this.refreshBtn.UseVisualStyleBackColor = true;
-            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // AdminDashboard
             // 

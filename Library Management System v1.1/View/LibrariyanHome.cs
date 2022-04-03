@@ -43,6 +43,11 @@ namespace Library_Management_System_v1._1.View
             lbl_member_count.Text = member_count().ToString();
             lbl_book_count_ds.Text = book_count().ToString();
             lbl_tot_books.Text = book_count().ToString();
+            lbl_member_name.Text = librariyandash.setName(emp_Id);
+            lbl_empid.Text = librariyandash.l_id(emp_Id);
+            lbl_nic.Text = librariyandash.nic(emp_Id);
+            lbl_phone.Text = librariyandash.phn(emp_Id);
+            lbl_address.Text = librariyandash.adress(emp_Id);
         }
 
         public int member_count()
