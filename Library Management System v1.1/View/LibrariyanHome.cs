@@ -39,7 +39,7 @@ namespace Library_Management_System_v1._1.View
             timer1.Start();
             lbl_librariyan_name.Text = librariyandash.setName(emp_Id);
             lbl_welcome_note.Text = "Hello "+librariyandash.setName(emp_Id)+ ", How are you today?";
-            lbl_members_tot.Text = member_count().ToString();
+            //lbl_members_tot.Text = member_count().ToString();
             lbl_member_count.Text = member_count().ToString();
             lbl_book_count_ds.Text = book_count().ToString();
             lbl_tot_books.Text = book_count().ToString();
@@ -48,6 +48,7 @@ namespace Library_Management_System_v1._1.View
             lbl_nic.Text = librariyandash.nic(emp_Id);
             lbl_phone.Text = librariyandash.phn(emp_Id);
             lbl_address.Text = librariyandash.adress(emp_Id);
+            loadMembers();
         }
 
         public int member_count()
@@ -193,6 +194,50 @@ namespace Library_Management_System_v1._1.View
         {
             timer1.Start();
             lbl_time_date.Text = "Today  " + DateTime.Now.ToString("yyy-MM-dd ") + DateTime.Now.ToString(" h:mm:ss tt");
+        }
+
+        public void loadMembers()
+        {
+            userListView.Items.Clear();
+            try
+            {
+                DB.Con.Open();
+                SqlDataReader sdr = DB.readData("Select * From Member");
+                if (sdr.HasRows)
+                {
+
+                    while (sdr.Read())
+                    {
+                        ListViewItem item = new ListViewItem(sdr["MID"].ToString());
+                        item.SubItems.Add(sdr["Name"].ToString());
+                        item.SubItems.Add(sdr["Guardian_Id"].ToString());
+                        item.SubItems.Add(sdr["Address"].ToString());
+                        item.SubItems.Add(sdr["Phone_No"].ToString());
+                        item.SubItems.Add(sdr["NIC"].ToString());
+                        item.SubItems.Add(sdr["Updated_date"].ToString());
+
+                        userListView.Items.Add(item);
+                    }
+                    DB.Con.Close();
+                    lbl_members_tot.Text = userListView.Items.Count.ToString();
+
+                }
+                else
+                {
+                    Console.WriteLine("No Data to Show");
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            if (userListView != null)
+            {
+                userListView.MultiSelect = false;
+            }
+
         }
     }
 }

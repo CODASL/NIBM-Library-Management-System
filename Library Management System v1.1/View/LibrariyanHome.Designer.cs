@@ -51,6 +51,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_librariyan_name = new MaterialSkin.Controls.MaterialLabel();
+            this.rjCircularPictureBox1 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton2 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
@@ -77,11 +78,11 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel23 = new MaterialSkin.Controls.MaterialLabel();
             this.userListView = new MaterialSkin.Controls.MaterialListView();
             this.MIDAddMember = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Phone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NIC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.GuardianID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Guardian_Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Phone_No = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LastUpdated = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cmbUserFilte = new MaterialSkin.Controls.MaterialComboBox();
             this.LibaddMemberBtn = new MaterialSkin.Controls.MaterialButton();
@@ -180,6 +181,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel40 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_member_name = new MaterialSkin.Controls.MaterialLabel();
+            this.rjCircularPictureBox2 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.LibSettings = new System.Windows.Forms.TabPage();
             this.materialCard8 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel18 = new MaterialSkin.Controls.MaterialLabel();
@@ -191,14 +193,13 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.rjCircularPictureBox1 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
-            this.rjCircularPictureBox2 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.LibrariyanTabController.SuspendLayout();
             this.LibrariyanDashBoard.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SecondDashboardRow.SuspendLayout();
             this.materialCard1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.materialCard3.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.materialCard5.SuspendLayout();
@@ -218,12 +219,11 @@ namespace Library_Management_System_v1._1.View
             this.materialCard16.SuspendLayout();
             this.LibMyProfile.SuspendLayout();
             this.materialCard17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).BeginInit();
             this.LibSettings.SuspendLayout();
             this.materialCard8.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.materialCard7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // LibrariyanTabController
@@ -553,6 +553,22 @@ namespace Library_Management_System_v1._1.View
             this.lbl_librariyan_name.Size = new System.Drawing.Size(84, 24);
             this.lbl_librariyan_name.TabIndex = 1;
             this.lbl_librariyan_name.Text = "No Name";
+            // 
+            // rjCircularPictureBox1
+            // 
+            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox1.BorderSize = 0;
+            this.rjCircularPictureBox1.GradientAngle = 50F;
+            this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
+            this.rjCircularPictureBox1.Location = new System.Drawing.Point(17, 14);
+            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
+            this.rjCircularPictureBox1.Size = new System.Drawing.Size(85, 85);
+            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox1.TabIndex = 0;
+            this.rjCircularPictureBox1.TabStop = false;
             // 
             // materialCard3
             // 
@@ -929,11 +945,11 @@ namespace Library_Management_System_v1._1.View
             this.userListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.MIDAddMember,
-            this.name,
-            this.Address,
-            this.Phone,
             this.NIC,
-            this.GuardianID,
+            this.Address,
+            this.name,
+            this.Guardian_Id,
+            this.Phone_No,
             this.LastUpdated});
             this.userListView.Depth = 0;
             this.userListView.FullRowSelect = true;
@@ -944,7 +960,7 @@ namespace Library_Management_System_v1._1.View
             this.userListView.MouseState = MaterialSkin.MouseState.OUT;
             this.userListView.Name = "userListView";
             this.userListView.OwnerDraw = true;
-            this.userListView.Size = new System.Drawing.Size(865, 355);
+            this.userListView.Size = new System.Drawing.Size(904, 414);
             this.userListView.TabIndex = 12;
             this.userListView.UseCompatibleStateImageBehavior = false;
             this.userListView.View = System.Windows.Forms.View.Details;
@@ -953,6 +969,19 @@ namespace Library_Management_System_v1._1.View
             // 
             this.MIDAddMember.Text = "MID";
             // 
+            // NIC
+            // 
+            this.NIC.Text = "NIC";
+            this.NIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NIC.Width = 203;
+            // 
+            // Address
+            // 
+            this.Address.DisplayIndex = 4;
+            this.Address.Text = "Address";
+            this.Address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Address.Width = 127;
+            // 
             // name
             // 
             this.name.DisplayIndex = 2;
@@ -960,32 +989,17 @@ namespace Library_Management_System_v1._1.View
             this.name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.name.Width = 120;
             // 
-            // Address
+            // Guardian_Id
             // 
-            this.Address.DisplayIndex = 3;
-            this.Address.Text = "Address";
-            this.Address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Address.Width = 140;
+            this.Guardian_Id.DisplayIndex = 3;
+            this.Guardian_Id.Text = "GID";
+            this.Guardian_Id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Phone
+            // Phone_No
             // 
-            this.Phone.DisplayIndex = 4;
-            this.Phone.Text = "Phone";
-            this.Phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Phone.Width = 127;
-            // 
-            // NIC
-            // 
-            this.NIC.DisplayIndex = 5;
-            this.NIC.Text = "NIC";
-            this.NIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.NIC.Width = 156;
-            // 
-            // GuardianID
-            // 
-            this.GuardianID.DisplayIndex = 1;
-            this.GuardianID.Text = "GID";
-            this.GuardianID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Phone_No.Text = "Phone";
+            this.Phone_No.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Phone_No.Width = 156;
             // 
             // LastUpdated
             // 
@@ -2405,6 +2419,22 @@ namespace Library_Management_System_v1._1.View
             this.lbl_member_name.TabIndex = 3;
             this.lbl_member_name.Text = "Carolina James";
             // 
+            // rjCircularPictureBox2
+            // 
+            this.rjCircularPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox2.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.rjCircularPictureBox2.BorderColor2 = System.Drawing.Color.HotPink;
+            this.rjCircularPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox2.BorderSize = 0;
+            this.rjCircularPictureBox2.GradientAngle = 50F;
+            this.rjCircularPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox2.Image")));
+            this.rjCircularPictureBox2.Location = new System.Drawing.Point(32, 17);
+            this.rjCircularPictureBox2.Name = "rjCircularPictureBox2";
+            this.rjCircularPictureBox2.Size = new System.Drawing.Size(85, 85);
+            this.rjCircularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox2.TabIndex = 1;
+            this.rjCircularPictureBox2.TabStop = false;
+            // 
             // LibSettings
             // 
             this.LibSettings.Controls.Add(this.materialCard8);
@@ -2549,38 +2579,6 @@ namespace Library_Management_System_v1._1.View
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // rjCircularPictureBox1
-            // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 0;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(17, 14);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(85, 85);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 0;
-            this.rjCircularPictureBox1.TabStop = false;
-            // 
-            // rjCircularPictureBox2
-            // 
-            this.rjCircularPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox2.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox2.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox2.BorderSize = 0;
-            this.rjCircularPictureBox2.GradientAngle = 50F;
-            this.rjCircularPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox2.Image")));
-            this.rjCircularPictureBox2.Location = new System.Drawing.Point(32, 17);
-            this.rjCircularPictureBox2.Name = "rjCircularPictureBox2";
-            this.rjCircularPictureBox2.Size = new System.Drawing.Size(85, 85);
-            this.rjCircularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox2.TabIndex = 1;
-            this.rjCircularPictureBox2.TabStop = false;
-            // 
             // LibrariyanHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2606,6 +2604,7 @@ namespace Library_Management_System_v1._1.View
             this.SecondDashboardRow.ResumeLayout(false);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             this.materialCard3.ResumeLayout(false);
             this.materialCard3.PerformLayout();
             this.materialCard2.ResumeLayout(false);
@@ -2643,14 +2642,13 @@ namespace Library_Management_System_v1._1.View
             this.LibMyProfile.PerformLayout();
             this.materialCard17.ResumeLayout(false);
             this.materialCard17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).EndInit();
             this.LibSettings.ResumeLayout(false);
             this.materialCard8.ResumeLayout(false);
             this.materialCard8.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.materialCard7.ResumeLayout(false);
             this.materialCard7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2711,10 +2709,10 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialListView userListView;
         private System.Windows.Forms.ColumnHeader MIDAddMember;
         private System.Windows.Forms.ColumnHeader name;
+        private System.Windows.Forms.ColumnHeader Guardian_Id;
         private System.Windows.Forms.ColumnHeader Address;
-        private System.Windows.Forms.ColumnHeader Phone;
+        private System.Windows.Forms.ColumnHeader Phone_No;
         private System.Windows.Forms.ColumnHeader NIC;
-        private System.Windows.Forms.ColumnHeader GuardianID;
         private System.Windows.Forms.ColumnHeader LastUpdated;
         private MaterialSkin.Controls.MaterialComboBox cmbUserFilte;
         private MaterialSkin.Controls.MaterialButton LibaddMemberBtn;
