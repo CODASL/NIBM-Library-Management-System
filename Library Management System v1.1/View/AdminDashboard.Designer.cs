@@ -54,7 +54,7 @@ namespace Library_Management_System_v1._1.View
             this.Activity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateTimeActivity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ManageLibrariyans = new System.Windows.Forms.TabPage();
-            this.searchPanel = new System.Windows.Forms.Panel();
+            this.searchTxtBox = new MaterialSkin.Controls.MaterialTextBox();
             this.refreshBtn = new MaterialSkin.Controls.MaterialButton();
             this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
             this.updateLibrariyanBtn = new MaterialSkin.Controls.MaterialButton();
@@ -414,7 +414,7 @@ namespace Library_Management_System_v1._1.View
             // metroDateTime2
             // 
             this.metroDateTime2.Location = new System.Drawing.Point(761, 91);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime2.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTime2.Name = "metroDateTime2";
             this.metroDateTime2.Size = new System.Drawing.Size(200, 29);
             this.metroDateTime2.TabIndex = 12;
@@ -457,7 +457,7 @@ namespace Library_Management_System_v1._1.View
             // 
             // ManageLibrariyans
             // 
-            this.ManageLibrariyans.Controls.Add(this.searchPanel);
+            this.ManageLibrariyans.Controls.Add(this.searchTxtBox);
             this.ManageLibrariyans.Controls.Add(this.refreshBtn);
             this.ManageLibrariyans.Controls.Add(this.materialButton6);
             this.ManageLibrariyans.Controls.Add(this.updateLibrariyanBtn);
@@ -475,12 +475,21 @@ namespace Library_Management_System_v1._1.View
             this.ManageLibrariyans.Text = "Manage Librariyans";
             this.ManageLibrariyans.UseVisualStyleBackColor = true;
             // 
-            // searchPanel
+            // searchTxtBox
             // 
-            this.searchPanel.Location = new System.Drawing.Point(24, 130);
-            this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(385, 35);
-            this.searchPanel.TabIndex = 21;
+            this.searchTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchTxtBox.Depth = 0;
+            this.searchTxtBox.Font = new System.Drawing.Font("Roboto", 12F);
+            this.searchTxtBox.Location = new System.Drawing.Point(24, 130);
+            this.searchTxtBox.MaxLength = 50;
+            this.searchTxtBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.searchTxtBox.Multiline = false;
+            this.searchTxtBox.Name = "searchTxtBox";
+            this.searchTxtBox.Size = new System.Drawing.Size(386, 36);
+            this.searchTxtBox.TabIndex = 21;
+            this.searchTxtBox.Text = "";
+            this.searchTxtBox.UseTallSize = false;
+            this.searchTxtBox.TextChanged += new System.EventHandler(this.searchTxtBox_TextChanged_1);
             // 
             // refreshBtn
             // 
@@ -699,7 +708,6 @@ namespace Library_Management_System_v1._1.View
             this.librariyanList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.librariyanList.Depth = 0;
             this.librariyanList.FullRowSelect = true;
-            this.librariyanList.GridLines = true;
             this.librariyanList.HideSelection = false;
             this.librariyanList.Location = new System.Drawing.Point(24, 177);
             this.librariyanList.MinimumSize = new System.Drawing.Size(200, 100);
@@ -777,7 +785,6 @@ namespace Library_Management_System_v1._1.View
             this.cmb_filterLibrarians.Size = new System.Drawing.Size(131, 35);
             this.cmb_filterLibrarians.TabIndex = 13;
             this.cmb_filterLibrarians.UseTallSize = false;
-            this.cmb_filterLibrarians.SelectedIndexChanged += new System.EventHandler(this.cmb_filterLibrarians_SelectedIndexChanged);
             // 
             // addLibrarianBtn
             // 
@@ -1329,6 +1336,6 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialButton adminLogout;
         private MaterialSkin.Controls.MaterialButton refreshBtn;
         private System.Windows.Forms.Label lbl_notification_count;
-        private System.Windows.Forms.Panel searchPanel;
+        private MaterialSkin.Controls.MaterialTextBox searchTxtBox;
     }
 }
