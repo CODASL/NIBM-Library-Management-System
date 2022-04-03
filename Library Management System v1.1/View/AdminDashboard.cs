@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Data.SqlClient;
+using MetroFramework.Controls;
 
 namespace Library_Management_System_v1._1.View
 {
@@ -40,11 +41,11 @@ namespace Library_Management_System_v1._1.View
             lblNumberOfLibrariyans.Text = librariyanList.Items.Count.ToString();
             lbl_welcomeTxt.Text = "Hello "+ adminDashboardCtrl.setName(emp_id).Split(' ')[0] + ", How're you today?";
             lbl_libraryUpdated.Text = adminDashboardCtrl.setUpdatedTime();
-            dateTime_librariyanSelect.Visible = false;
-            txt_searchLibrariyans.ReadOnly = true;
             lbl_notification_count.Text = adminDashboardCtrl.setNotificationCount();
-
+            cmb_filterLibrarians.SelectedIndex = 0;
         }
+
+        
 
 
         public void loadLibrariyanList()
@@ -188,25 +189,23 @@ namespace Library_Management_System_v1._1.View
         //==========================filter Librarian Search
         private void cmb_filterLibrarians_SelectedIndexChanged(object sender, EventArgs e)
         {
-             if(cmb_filterLibrarians.SelectedIndex == 0)
-            {
-                txt_searchLibrariyans.ReadOnly = false;
+            MetroDateTime dateTimeBox = new MetroDateTime();
+            MaterialTextBox mTxtBox = new MaterialTextBox();
 
-            }else if(cmb_filterLibrarians.SelectedIndex == 1)
+            if(cmb_filterLibrarians.SelectedIndex == 2)
             {
-                txt_searchLibrariyans.ReadOnly = false;
-            }
-            else if(cmb_filterLibrarians.SelectedIndex == 2)
-            {
-                cmb_filterLibrarians.Visible = true;
-                txt_searchLibrariyans.Visible = false;
-                cmb_filterLibrarians.BringToFront();
-                
+                searchPanel.Controls.Clear();
+                searchPanel.Controls.Add(dateTimeBox);
+                dateTimeBox.Dock = DockStyle.Fill;
             }
             else
             {
-                txt_searchLibrariyans.ReadOnly = true;
+                searchPanel.Controls.Clear();
+                searchPanel.Controls.Add(mTxtBox);
+                mTxtBox.Dock = DockStyle.Fill;
+                mTxtBox.UseTallSize = false;
             }
+            
         }
 
         private void updateLibrariyanBtn_Click(object sender, EventArgs e)
