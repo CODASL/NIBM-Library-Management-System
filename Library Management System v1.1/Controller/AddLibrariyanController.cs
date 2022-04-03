@@ -36,12 +36,15 @@ namespace Library_Management_System_v1._1.Controller
 
                 id = "L" + (Convert.ToInt32(id.Remove(0, 1))+1).ToString();
                 textBox.Text = id;
-            }catch(SqlException ex)
+            }
+            catch (SqlException ex)
             {
-                
-            }catch(Exception ex)
-            {
+                database.Con.Close();
 
+            }
+            catch(Exception ex)
+            {
+                database.Con.Close();
             }
         }
 

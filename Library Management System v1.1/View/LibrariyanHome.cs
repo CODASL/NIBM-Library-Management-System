@@ -26,7 +26,6 @@ namespace Library_Management_System_v1._1.View
         public LibrariyanHome(String emp_Id)
         {
             InitializeComponent();
-
             material.addStyle(this);
             cmbFilterAvalibility.SelectedIndex = 0;
             this.emp_Id = emp_Id;
@@ -39,7 +38,6 @@ namespace Library_Management_System_v1._1.View
             timer1.Start();
             lbl_librariyan_name.Text = librariyandash.setName(emp_Id);
             lbl_welcome_note.Text = "Hello "+librariyandash.setName(emp_Id)+ ", How are you today?";
-            //lbl_members_tot.Text = member_count().ToString();
             lbl_member_count.Text = member_count().ToString();
             lbl_book_count_ds.Text = book_count().ToString();
             lbl_tot_books.Text = book_count().ToString();
@@ -225,11 +223,13 @@ namespace Library_Management_System_v1._1.View
                 else
                 {
                     Console.WriteLine("No Data to Show");
+                    DB.Con.Close();
                 }
 
             }
             catch (SqlException ex)
             {
+                DB.Con.Close();
                 MessageBox.Show(ex.ToString());
             }
 

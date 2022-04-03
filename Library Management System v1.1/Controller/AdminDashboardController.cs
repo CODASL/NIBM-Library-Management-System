@@ -29,6 +29,7 @@ namespace Library_Management_System_v1._1.Controller
             }
             catch (Exception ex)
             {
+                database.Con.Close();
                 return ex.ToString();
                
             }
