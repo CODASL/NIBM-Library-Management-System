@@ -12,20 +12,32 @@ namespace Library_Management_System_v1._1.Controller
         Model.DatabaseService database = new Model.DatabaseService();
 
 
-        public String setName(String emp_id)
+        public Model.Librarian setLibrariyan(String emp_id)
         {
+            Model.Librarian librarian;
             try
             {
                 database.Con.Open();
-                SqlDataReader sdr = database.readData("Select Name From Librarian WHERE Librarian_Id = '" + emp_id + "'");
+                SqlDataReader sdr = database.readData("Select * From Librarian WHERE Librarian_Id = '" + emp_id + "'");
                 sdr.Read();
-                String name = sdr["Name"].ToString();
+                if (sdr.HasRows)
+                {
+                    librarian = new Model.Librarian(
+                        emp_id, sdr["Name"].ToString(), sdr["Address"].ToString(), sdr["Email"].ToString(),
+                        sdr["NIC"].ToString(), sdr["Phone"].ToString(),Convert.ToDateTime(sdr["updated_date"]),
+                        Convert.ToDateTime(sdr["date_added"]));
+                }
+                else
+                {
+                    librarian = null;
+                }
                 database.Con.Close();
-                return name;
+                return librarian;
             }
             catch (Exception ex)
             {
-                return ex.ToString();
+                database.Con.Close();
+                return null;
 
             }
 

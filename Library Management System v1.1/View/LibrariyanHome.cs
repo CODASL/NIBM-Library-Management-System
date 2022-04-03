@@ -21,6 +21,7 @@ namespace Library_Management_System_v1._1.View
         Controller.MaterialController material = new Controller.MaterialController();
         Controller.LibrariyanDashboardController librariyandash = new Controller.LibrariyanDashboardController();
         Model.DatabaseService DB = new Model.DatabaseService();
+        Model.Librarian librarian;
         String emp_Id;
         
         public LibrariyanHome(String emp_Id)
@@ -37,12 +38,13 @@ namespace Library_Management_System_v1._1.View
        //=========================On Load Librarian Home ==========================================
         private void LibrariyanHome_Load(object sender, EventArgs e)
         {
-            
-            lbl_librariyan_name.Text = librariyandash.setName(emp_Id);
-            lbl_welcome_note.Text = "Hello " + librariyandash.setName(emp_Id).Split(' ')[0] + ", How're you today?";
+            librarian = librariyandash.setLibrariyan(emp_Id);
+            lbl_librariyan_name.Text = librarian.Name;
+            lbl_welcome_note.Text = "Hello " + librarian.Name.Split(' ')[0] + ", How're you today?";
             lbl_members_count.Text = tile_count("SELECT * FROM Member").ToString();
             lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
             loadMembers();
+            profileDetailUpdate();
 
         }
 
@@ -237,7 +239,19 @@ namespace Library_Management_System_v1._1.View
             new Add_Author().Show();
         }
 
-        //========Librarian Logout ========================================
+        //========Librarian Profile Detail Update ================================
+
+        public void profileDetailUpdate()
+        {
+            lbl_librarianProfileName.Text = librarian.Name;
+            lbl_librarianProfileId.Text = librarian.Id;
+            lbl_librarianProfileNIC.Text = librarian.NIC1;
+            lbl_librarianProfileAddress.Text = librarian.Address;
+            lbl_librarianProfilePhone.Text = librarian.Phone;
+            
+        }
+
+        //========Librarian Logout ==============================================
         [Obsolete]
         private void btn_librariyanLogout_Click(object sender, EventArgs e)
         {
