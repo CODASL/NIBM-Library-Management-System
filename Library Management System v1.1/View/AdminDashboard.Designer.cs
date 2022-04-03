@@ -414,7 +414,7 @@ namespace Library_Management_System_v1._1.View
             // metroDateTime2
             // 
             this.metroDateTime2.Location = new System.Drawing.Point(761, 91);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime2.Name = "metroDateTime2";
             this.metroDateTime2.Size = new System.Drawing.Size(200, 29);
             this.metroDateTime2.TabIndex = 12;
@@ -1036,8 +1036,10 @@ namespace Library_Management_System_v1._1.View
             this.libActivityListAdmin.MinimumSize = new System.Drawing.Size(200, 100);
             this.libActivityListAdmin.MouseLocation = new System.Drawing.Point(-1, -1);
             this.libActivityListAdmin.MouseState = MaterialSkin.MouseState.OUT;
+            this.libActivityListAdmin.MultiSelect = false;
             this.libActivityListAdmin.Name = "libActivityListAdmin";
             this.libActivityListAdmin.OwnerDraw = true;
+            this.libActivityListAdmin.ShowItemToolTips = true;
             this.libActivityListAdmin.Size = new System.Drawing.Size(891, 120);
             this.libActivityListAdmin.TabIndex = 0;
             this.libActivityListAdmin.UseCompatibleStateImageBehavior = false;

@@ -37,7 +37,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.btn_AddBookDialog = new MaterialSkin.Controls.MaterialButton();
             this.clearBtnAddBook = new MaterialSkin.Controls.MaterialButton();
             this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
             this.materialComboBox2 = new MaterialSkin.Controls.MaterialComboBox();
@@ -46,10 +46,10 @@ namespace Library_Management_System_v1._1.View
             this.addRackNoBtnAddBook = new MaterialSkin.Controls.MaterialButton();
             this.materialComboBox3 = new MaterialSkin.Controls.MaterialComboBox();
             this.qrPanelBookAdd = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
             this.isbnQrBtnAddBook = new MaterialSkin.Controls.MaterialButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.qrPanelBookAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -144,24 +144,25 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel6.TabIndex = 13;
             this.materialLabel6.Text = "Rack No";
             // 
-            // materialButton1
+            // btn_AddBookDialog
             // 
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.DrawShadows = true;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(27, 400);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(158, 36);
-            this.materialButton1.TabIndex = 16;
-            this.materialButton1.Text = "Add";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.btn_AddBookDialog.AutoSize = false;
+            this.btn_AddBookDialog.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_AddBookDialog.Depth = 0;
+            this.btn_AddBookDialog.DrawShadows = true;
+            this.btn_AddBookDialog.HighEmphasis = true;
+            this.btn_AddBookDialog.Icon = null;
+            this.btn_AddBookDialog.Location = new System.Drawing.Point(27, 400);
+            this.btn_AddBookDialog.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_AddBookDialog.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_AddBookDialog.Name = "btn_AddBookDialog";
+            this.btn_AddBookDialog.Size = new System.Drawing.Size(158, 36);
+            this.btn_AddBookDialog.TabIndex = 16;
+            this.btn_AddBookDialog.Text = "Add";
+            this.btn_AddBookDialog.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_AddBookDialog.UseAccentColor = false;
+            this.btn_AddBookDialog.UseVisualStyleBackColor = true;
+            this.btn_AddBookDialog.Click += new System.EventHandler(this.btn_AddBookDialog_Click);
             // 
             // clearBtnAddBook
             // 
@@ -181,6 +182,7 @@ namespace Library_Management_System_v1._1.View
             this.clearBtnAddBook.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.clearBtnAddBook.UseAccentColor = false;
             this.clearBtnAddBook.UseVisualStyleBackColor = true;
+            this.clearBtnAddBook.Click += new System.EventHandler(this.clearBtnAddBook_Click);
             // 
             // materialComboBox1
             // 
@@ -314,6 +316,18 @@ namespace Library_Management_System_v1._1.View
             this.qrPanelBookAdd.Size = new System.Drawing.Size(334, 295);
             this.qrPanelBookAdd.TabIndex = 30;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(334, 295);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // materialLabel4
             // 
             this.materialLabel4.AutoSize = true;
@@ -360,18 +374,6 @@ namespace Library_Management_System_v1._1.View
             this.isbnQrBtnAddBook.UseVisualStyleBackColor = true;
             this.isbnQrBtnAddBook.Click += new System.EventHandler(this.isbnQrBtnAddBook_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(334, 295);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // AddBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,7 +389,7 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.addCategoryBtnAddBook);
             this.Controls.Add(this.materialComboBox2);
             this.Controls.Add(this.materialComboBox1);
-            this.Controls.Add(this.materialButton1);
+            this.Controls.Add(this.btn_AddBookDialog);
             this.Controls.Add(this.clearBtnAddBook);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.materialLabel5);
@@ -415,7 +417,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialButton btn_AddBookDialog;
         private MaterialSkin.Controls.MaterialButton clearBtnAddBook;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox2;

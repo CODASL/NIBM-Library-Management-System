@@ -49,22 +49,22 @@ namespace Library_Management_System_v1._1.View
             cmb_filterLibrarians.SelectedIndex = 0;
         }
 
-        //================Load Librarian Activities =================================
+        //================Load Librarian Activities =====================================
         public void loadLibrarianActivities()
         {
             libActivityListAdmin.Items.Clear();
             try
             {
                 database.Con.Open();
-                SqlDataReader sdr = database.readData("SELECT * FROM Activity WHERE Emp_Type=Librarian");
+                SqlDataReader sdr = database.readData("SELECT * FROM Activity WHERE Emp_Type= '"+"Librarian"+"'");
                 if (sdr.HasRows)
                 {
                      
                     while (sdr.Read())
                     {
-                        ListViewItem item = new ListViewItem(sdr["Activity_Id"].ToString());
+                        ListViewItem item = new ListViewItem(sdr["Emp_Id"].ToString());
                         item.SubItems.Add(sdr["Description"].ToString());
-                        item.SubItems.Add(sdr["Updated_Date"].ToString());
+                        item.SubItems.Add(sdr["Updated_Time"].ToString());
 
                         libActivityListAdmin.Items.Add(item);
                     }

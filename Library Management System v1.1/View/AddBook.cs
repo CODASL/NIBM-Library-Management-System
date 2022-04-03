@@ -52,5 +52,15 @@ namespace Library_Management_System_v1._1.View
             f.Show();
             
         }
+
+        private void btn_AddBookDialog_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clearBtnAddBook_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
