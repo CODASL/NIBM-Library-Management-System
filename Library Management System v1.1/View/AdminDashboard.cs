@@ -23,6 +23,8 @@ namespace Library_Management_System_v1._1.View
 
         Controller.AdminDashboardController adminDashboardCtrl = new Controller.AdminDashboardController();
         Model.DatabaseService database = new Model.DatabaseService();
+        MetroDateTime dateTimeBox;
+        MaterialTextBox searchTxtBox;
         String emp_id;
         public AdminDashboard(String emp_id)
         {
@@ -30,6 +32,7 @@ namespace Library_Management_System_v1._1.View
             new Controller.MaterialController().addStyle(this);
             this.emp_id = emp_id;
             loadLibrariyanList();
+           
         }
 
         private void AdminDashboard_Load(object sender, EventArgs e)
@@ -189,8 +192,8 @@ namespace Library_Management_System_v1._1.View
         //==========================filter Librarian Search
         private void cmb_filterLibrarians_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MetroDateTime dateTimeBox = new MetroDateTime();
-            MaterialTextBox mTxtBox = new MaterialTextBox();
+             dateTimeBox= new MetroDateTime();
+             searchTxtBox = new MaterialTextBox();
 
             if(cmb_filterLibrarians.SelectedIndex == 2)
             {
@@ -201,12 +204,30 @@ namespace Library_Management_System_v1._1.View
             else
             {
                 searchPanel.Controls.Clear();
-                searchPanel.Controls.Add(mTxtBox);
-                mTxtBox.Dock = DockStyle.Fill;
-                mTxtBox.UseTallSize = false;
+                searchPanel.Controls.Add(searchTxtBox);
+                searchTxtBox.Dock = DockStyle.Fill;
+                searchTxtBox.UseTallSize = false;
+                searchTxtBox.TextChanged += new EventHandler(searchTxtBox_TextChanged);
             }
             
         }
+
+        private void searchTxtBox_TextChanged(object sender , EventArgs e)
+        {
+            if(cmb_filterLibrarians.SelectedIndex == 0)
+            {
+                adminDashboardCtrl.searchFunction(librariyanList, 0 , searchTxtBox);
+            }
+            else if(cmb_filterLibrarians.SelectedIndex == 1)
+            {
+               adminDashboardCtrl.searchFunction(librariyanList , 1 , searchTxtBox);
+            }
+            else
+            {
+               
+            }
+        }
+
 
         private void updateLibrariyanBtn_Click(object sender, EventArgs e)
         {

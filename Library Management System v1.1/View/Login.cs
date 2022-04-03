@@ -83,10 +83,12 @@ namespace Library_Management_System_v1._1
                 {
                     MessageBox.Show(ex.Message);
                     LoginProgress.Equals(0);
+                    database.Con.Close();
                 }catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                     LoginProgress.Equals(0);
+                    database.Con.Close();
                 }
 
             }

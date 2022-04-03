@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Drawing;
+using MaterialSkin.Controls;
 
 namespace Library_Management_System_v1._1.Controller
 {
@@ -16,6 +17,38 @@ namespace Library_Management_System_v1._1.Controller
     {
         Model.DatabaseService database = new Model.DatabaseService();
 
+        //=============Search Function ==========================
+
+        public void searchFunction(MaterialListView list, int itemIndex, MaterialTextBox inputBox)
+        {
+            if (itemIndex == 0)
+            {
+                if (inputBox.Text != "")
+                {
+                    for (int i = list.Items.Count - 1; i >= 0; i--)
+                    {
+                        var item = list.Items[i];
+
+                        if (item.Text.ToLower().Contains(inputBox.Text.ToLower()))
+                        {
+
+                        }
+                        else
+                        {
+                            list.Items.Remove(item);
+                        }
+                    }
+                    if (list.SelectedItems.Count == 1)
+                    {
+                        list.Focus();
+                    }
+                }
+                else
+                    new View.AdminDashboard(LoginController.currentUserId).loadLibrariyanList();
+            }
+        }
+
+        //=============Set Notification Count Label==============
         public String setNotificationCount()
         {
             database.Con.Open();
@@ -28,6 +61,8 @@ namespace Library_Management_System_v1._1.Controller
             return count.ToString();
             
         }
+
+        //============Set Admin Name ============================
         public String setName(String emp_id)
         {
             try
@@ -47,6 +82,7 @@ namespace Library_Management_System_v1._1.Controller
         }
 
 
+        //===========Set Librarian Update Time==============================
         public String setUpdatedTime()
         {
             try

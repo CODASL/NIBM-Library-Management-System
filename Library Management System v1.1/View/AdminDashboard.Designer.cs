@@ -54,6 +54,7 @@ namespace Library_Management_System_v1._1.View
             this.Activity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateTimeActivity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ManageLibrariyans = new System.Windows.Forms.TabPage();
+            this.searchPanel = new System.Windows.Forms.Panel();
             this.refreshBtn = new MaterialSkin.Controls.MaterialButton();
             this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
             this.updateLibrariyanBtn = new MaterialSkin.Controls.MaterialButton();
@@ -102,10 +103,9 @@ namespace Library_Management_System_v1._1.View
             this.adminNotifications = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.adminName = new MaterialSkin.Controls.MaterialLabel();
+            this.adminAvatar = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.searchPanel = new System.Windows.Forms.Panel();
-            this.adminAvatar = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.adminSettings.SuspendLayout();
             this.materialCard9.SuspendLayout();
             this.materialCard7.SuspendLayout();
@@ -120,8 +120,8 @@ namespace Library_Management_System_v1._1.View
             this.materialCard6.SuspendLayout();
             this.materialCard3.SuspendLayout();
             this.materialCard1.SuspendLayout();
-            this.materialTabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminAvatar)).BeginInit();
+            this.materialTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList1
@@ -414,7 +414,7 @@ namespace Library_Management_System_v1._1.View
             // metroDateTime2
             // 
             this.metroDateTime2.Location = new System.Drawing.Point(761, 91);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime2.Name = "metroDateTime2";
             this.metroDateTime2.Size = new System.Drawing.Size(200, 29);
             this.metroDateTime2.TabIndex = 12;
@@ -474,6 +474,13 @@ namespace Library_Management_System_v1._1.View
             this.ManageLibrariyans.TabIndex = 2;
             this.ManageLibrariyans.Text = "Manage Librariyans";
             this.ManageLibrariyans.UseVisualStyleBackColor = true;
+            // 
+            // searchPanel
+            // 
+            this.searchPanel.Location = new System.Drawing.Point(24, 130);
+            this.searchPanel.Name = "searchPanel";
+            this.searchPanel.Size = new System.Drawing.Size(385, 35);
+            this.searchPanel.TabIndex = 21;
             // 
             // refreshBtn
             // 
@@ -689,15 +696,19 @@ namespace Library_Management_System_v1._1.View
             this.libPhone,
             this.libNIC,
             this.libLastUpdate});
+            this.librariyanList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.librariyanList.Depth = 0;
             this.librariyanList.FullRowSelect = true;
+            this.librariyanList.GridLines = true;
             this.librariyanList.HideSelection = false;
             this.librariyanList.Location = new System.Drawing.Point(24, 177);
             this.librariyanList.MinimumSize = new System.Drawing.Size(200, 100);
             this.librariyanList.MouseLocation = new System.Drawing.Point(-1, -1);
             this.librariyanList.MouseState = MaterialSkin.MouseState.OUT;
+            this.librariyanList.MultiSelect = false;
             this.librariyanList.Name = "librariyanList";
             this.librariyanList.OwnerDraw = true;
+            this.librariyanList.ShowItemToolTips = true;
             this.librariyanList.Size = new System.Drawing.Size(986, 355);
             this.librariyanList.TabIndex = 14;
             this.librariyanList.UseCompatibleStateImageBehavior = false;
@@ -754,8 +765,8 @@ namespace Library_Management_System_v1._1.View
             this.cmb_filterLibrarians.IntegralHeight = false;
             this.cmb_filterLibrarians.ItemHeight = 29;
             this.cmb_filterLibrarians.Items.AddRange(new object[] {
-            "Name",
             "ID",
+            "Name",
             "Added Date"});
             this.cmb_filterLibrarians.Location = new System.Drawing.Point(424, 130);
             this.cmb_filterLibrarians.MaxDropDownItems = 4;
@@ -1059,7 +1070,7 @@ namespace Library_Management_System_v1._1.View
             // metroDateTime1
             // 
             this.metroDateTime1.Location = new System.Drawing.Point(699, 6);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(200, 29);
             this.metroDateTime1.TabIndex = 3;
@@ -1159,6 +1170,22 @@ namespace Library_Management_System_v1._1.View
             this.adminName.TabIndex = 1;
             this.adminName.Text = "No Name";
             // 
+            // adminAvatar
+            // 
+            this.adminAvatar.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.adminAvatar.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.adminAvatar.BorderColor2 = System.Drawing.Color.HotPink;
+            this.adminAvatar.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.adminAvatar.BorderSize = 0;
+            this.adminAvatar.GradientAngle = 50F;
+            this.adminAvatar.Image = ((System.Drawing.Image)(resources.GetObject("adminAvatar.Image")));
+            this.adminAvatar.Location = new System.Drawing.Point(40, 61);
+            this.adminAvatar.Name = "adminAvatar";
+            this.adminAvatar.Size = new System.Drawing.Size(85, 85);
+            this.adminAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.adminAvatar.TabIndex = 0;
+            this.adminAvatar.TabStop = false;
+            // 
             // materialTabControl1
             // 
             this.materialTabControl1.Controls.Add(this.adminDashboardBtn);
@@ -1180,29 +1207,6 @@ namespace Library_Management_System_v1._1.View
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // searchPanel
-            // 
-            this.searchPanel.Location = new System.Drawing.Point(24, 130);
-            this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(385, 35);
-            this.searchPanel.TabIndex = 21;
-            // 
-            // adminAvatar
-            // 
-            this.adminAvatar.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.adminAvatar.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.adminAvatar.BorderColor2 = System.Drawing.Color.HotPink;
-            this.adminAvatar.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.adminAvatar.BorderSize = 0;
-            this.adminAvatar.GradientAngle = 50F;
-            this.adminAvatar.Image = ((System.Drawing.Image)(resources.GetObject("adminAvatar.Image")));
-            this.adminAvatar.Location = new System.Drawing.Point(40, 61);
-            this.adminAvatar.Name = "adminAvatar";
-            this.adminAvatar.Size = new System.Drawing.Size(85, 85);
-            this.adminAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.adminAvatar.TabIndex = 0;
-            this.adminAvatar.TabStop = false;
             // 
             // AdminDashboard
             // 
@@ -1244,8 +1248,8 @@ namespace Library_Management_System_v1._1.View
             this.materialCard3.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            this.materialTabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.adminAvatar)).EndInit();
+            this.materialTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
