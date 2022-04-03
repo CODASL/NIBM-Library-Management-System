@@ -208,5 +208,18 @@ namespace Library_Management_System_v1._1.View
                 txt_searchLibrariyans.ReadOnly = true;
             }
         }
+
+        private void updateLibrariyanBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String selectedRowId = librariyanList.SelectedItems[0].SubItems[0].Text;
+                new AddLibrariyan(true, selectedRowId).Show();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
     }
 }

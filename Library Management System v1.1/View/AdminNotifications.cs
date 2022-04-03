@@ -31,24 +31,26 @@ namespace Library_Management_System_v1._1.View
                 SqlDataReader sdr = database.readData("SELECT * FROM Notification WHERE Status = '"+""+"'");
                 while (sdr.Read())
                 {
-                    notificationTile nTile = new notificationTile(
+                    if (sdr.HasRows)
+                    {
+                        notificationTile nTile = new notificationTile(
                             sdr["LID"].ToString(),
                             sdr["Description"].ToString(),
-                            sdr["Received_time"].ToString(),
+                            sdr["Recieved_time"].ToString(),
                             Convert.ToInt32(sdr["notification_id"])
                         );
-                    notificationList.Controls.Add(nTile);
-                    
+                        notificationList.Controls.Add(nTile);
+                    }     
                 }
 
                 database.Con.Close();
 
             }
             catch(SqlException ex) {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -58,21 +60,6 @@ namespace Library_Management_System_v1._1.View
             
         }
 
-        public void acceptOrReject(bool isAccepted , int id)
-        {
-            try
-            {
-                int line = database.insertData("UPDATE Notification SET Status = '"+isAccepted+"' WHERE notification_id = '" + id + "'");
-                Console.WriteLine(line);
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+       
     }
 }

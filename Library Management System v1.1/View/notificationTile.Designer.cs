@@ -34,14 +34,12 @@ namespace Library_Management_System_v1._1.View
             this.lbl_Reason = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_LibId = new MaterialSkin.Controls.MaterialLabel();
-            this.notification_read = new MaterialSkin.Controls.MaterialCheckbox();
             this.notification.SuspendLayout();
             this.SuspendLayout();
             // 
             // notification
             // 
             this.notification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.notification.Controls.Add(this.notification_read);
             this.notification.Controls.Add(this.lbl_recievedTime);
             this.notification.Controls.Add(this.lbl_Reason);
             this.notification.Controls.Add(this.materialLabel2);
@@ -64,7 +62,7 @@ namespace Library_Management_System_v1._1.View
             this.lbl_recievedTime.Depth = 0;
             this.lbl_recievedTime.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lbl_recievedTime.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.lbl_recievedTime.Location = new System.Drawing.Point(454, 31);
+            this.lbl_recievedTime.Location = new System.Drawing.Point(441, 33);
             this.lbl_recievedTime.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbl_recievedTime.Name = "lbl_recievedTime";
             this.lbl_recievedTime.Size = new System.Drawing.Size(135, 17);
@@ -109,20 +107,6 @@ namespace Library_Management_System_v1._1.View
             this.lbl_LibId.TabIndex = 0;
             this.lbl_LibId.Text = "L01";
             // 
-            // notification_read
-            // 
-            this.notification_read.AutoSize = true;
-            this.notification_read.Depth = 0;
-            this.notification_read.Location = new System.Drawing.Point(365, 21);
-            this.notification_read.Margin = new System.Windows.Forms.Padding(0);
-            this.notification_read.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.notification_read.MouseState = MaterialSkin.MouseState.HOVER;
-            this.notification_read.Name = "notification_read";
-            this.notification_read.Ripple = true;
-            this.notification_read.Size = new System.Drawing.Size(35, 37);
-            this.notification_read.TabIndex = 4;
-            this.notification_read.UseVisualStyleBackColor = true;
-            // 
             // notificationTile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,6 +127,5 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialLabel lbl_Reason;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel lbl_LibId;
-        private MaterialSkin.Controls.MaterialCheckbox notification_read;
     }
 }
