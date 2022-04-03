@@ -1,6 +1,4 @@
-﻿
-
-using LiveCharts.Wpf;
+﻿using LiveCharts.Wpf;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -108,15 +106,11 @@ namespace Library_Management_System_v1._1.View
                 var lg = new Login();
                 lg.Closed += (s, args) => this.Close();
                 lg.Show();
-
             }
             else
             {
                 MessageBox.Show("Logout Failed");
             }
-
-
-
         }
 
         private void addLibrarianBtn_Click(object sender, EventArgs e)
