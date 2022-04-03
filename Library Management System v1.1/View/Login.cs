@@ -30,7 +30,7 @@ namespace Library_Management_System_v1._1
         }
 
 
-        
+        //==============Switch between  Login with Credentials and QR=========
         public void Loadform(object Form)
         {
             if (this.metroPanel1.Controls.Count > 0)
@@ -45,6 +45,7 @@ namespace Library_Management_System_v1._1
         }
 
 
+        //============Open Reset Window ======================
         private void resetBtn_Click(object sender, EventArgs e)
         {
             new View.ResetPassword().ShowDialog();
@@ -95,7 +96,7 @@ namespace Library_Management_System_v1._1
       
             
         }
-        //=================Login With QR ======================
+        //=================Login With QR ===========================
         private void btnQR_Click(object sender, EventArgs e)
         {
             txtPass.Hide();
@@ -121,11 +122,13 @@ namespace Library_Management_System_v1._1
             }
         }
 
+        //===========Login page onload =================================
         private void Login_Load(object sender, EventArgs e)
         {
             txtmail.Focus();
         }
 
+        //===========focus keys =======================================
         private void txtmail_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)

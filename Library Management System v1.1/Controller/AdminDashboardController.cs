@@ -51,14 +51,24 @@ namespace Library_Management_System_v1._1.Controller
         //=============Set Notification Count Label==============
         public String setNotificationCount()
         {
-            database.Con.Open();
-            SqlDataReader sdr = database.readData("Select * FROM Notification WHERE Status = ''");
-            int count = 0;
-            while (sdr.Read())
+            try
             {
-                count = count + 1;
+                database.Con.Open();
+                SqlDataReader sdr = database.readData("Select * FROM Notification WHERE Status = ''");
+                int count = 0;
+                while (sdr.Read())
+                {
+                    count = count + 1;
+                }
+
+                database.Con.Close();
+                return count.ToString();
+            }catch(Exception ex)
+            {
+                database.Con.Close();
+                return ex.ToString();
             }
-            return count.ToString();
+            
             
         }
 
@@ -76,6 +86,7 @@ namespace Library_Management_System_v1._1.Controller
             }
             catch (Exception ex)
             {
+                database.Con.Close();
                 return ex.ToString();
                
             }
@@ -96,7 +107,9 @@ namespace Library_Management_System_v1._1.Controller
             }
             catch (Exception ex)
             {
+                database.Con.Close();
                 return ex.ToString();
+
 
             }
         }

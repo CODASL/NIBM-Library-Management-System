@@ -30,7 +30,8 @@ namespace Library_Management_System_v1._1.View
             new Controller.MaterialController().addStyle(this);
             this.emp_id = emp_id;
             loadLibrariyanList();
-           
+            loadLibrarianActivities();
+
         }
 
         //=============On Load Admin Home =============================
@@ -48,9 +49,47 @@ namespace Library_Management_System_v1._1.View
             cmb_filterLibrarians.SelectedIndex = 0;
         }
 
+        //================Load Librarian Activities =================================
+        public void loadLibrarianActivities()
+        {
+            libActivityListAdmin.Items.Clear();
+            try
+            {
+                database.Con.Open();
+                SqlDataReader sdr = database.readData("SELECT * FROM Activity WHERE Emp_Type=Librarian");
+                if (sdr.HasRows)
+                {
+                     
+                    while (sdr.Read())
+                    {
+                        ListViewItem item = new ListViewItem(sdr["Activity_Id"].ToString());
+                        item.SubItems.Add(sdr["Description"].ToString());
+                        item.SubItems.Add(sdr["Updated_Date"].ToString());
 
+                        libActivityListAdmin.Items.Add(item);
+                    }
+                    database.Con.Close();
+                }
+                else
+                {
+                    Console.WriteLine("No Data to Show");
+                    database.Con.Close();
+                }
 
-        //=============Load Librarian List=============================
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+                database.Con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                database.Con.Close();
+            }
+        }
+
+        //=============Load Librarian List=====================================
         public void loadLibrariyanList()
         {
             librariyanList.Items.Clear();
@@ -78,16 +117,17 @@ namespace Library_Management_System_v1._1.View
                 else
                 {
                     Console.WriteLine("No Data to Show");
+                    database.Con.Close();
                 }
                 
             }catch(SqlException ex)
             {
                 MessageBox.Show(ex.ToString());
-            }
-
-            if (librariyanList != null)
+                database.Con.Close();
+            }catch(Exception ex)
             {
-                librariyanList.MultiSelect = false;
+                MessageBox.Show(ex.Message);
+                database.Con.Close();
             }
 
         }
@@ -98,10 +138,11 @@ namespace Library_Management_System_v1._1.View
             new AdminNotifications().ShowDialog();
         }
 
-        //============Live Date Time ====================================
+        //============Refresh every second ====================================
         private void timer1_Tick(object sender, EventArgs e)
         {
             todayDateAdmin.Text = DateTime.Now.ToString();
+            
         }
 
         //============Switch to Librarian Btn====================================

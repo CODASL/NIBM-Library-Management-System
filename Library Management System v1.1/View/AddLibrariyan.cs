@@ -111,6 +111,7 @@ namespace Library_Management_System_v1._1.View
         //===================Load Existing data when Open Update Dialog==================
         private void AddLibrariyan_Load(object sender, EventArgs e)
         {
+            txt_LibName.Focus();
             if (isUpdate)
             {
                 Model.DatabaseService database = new Model.DatabaseService();

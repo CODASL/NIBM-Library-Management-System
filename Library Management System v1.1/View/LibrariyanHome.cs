@@ -34,26 +34,71 @@ namespace Library_Management_System_v1._1.View
 
         }
         
-       
+       //=========================On Load Librarian Home ==========================================
         private void LibrariyanHome_Load(object sender, EventArgs e)
         {
             
             lbl_librariyan_name.Text = librariyandash.setName(emp_Id);
             lbl_welcome_note.Text = "Hello " + librariyandash.setName(emp_Id).Split(' ')[0] + ", How're you today?";
-            lbl_members_count.Text = tile_count("Member").ToString();
-            lbl_books_count.Text = tile_count("Book").ToString();
+            lbl_members_count.Text = tile_count("SELECT * FROM Member").ToString();
+            lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
+            loadMembers();
 
         }
 
-       
+        //=====================Load Members to Member List view =====================================
+        public void loadMembers()
+        {
+            userListView.Items.Clear();
+            try
+            {
+                DB.Con.Open();
+                SqlDataReader sdr = DB.readData("Select * From Member");
+                if (sdr.HasRows)
+                {
 
-        public int tile_count(String tableName)
+                    while (sdr.Read())
+                    {
+                        ListViewItem item = new ListViewItem(sdr["MID"].ToString());
+                        item.SubItems.Add(sdr["Guardian_Id"].ToString());
+                        item.SubItems.Add(sdr["Name"].ToString());
+                        item.SubItems.Add(sdr["Address"].ToString());
+                        item.SubItems.Add(sdr["Phone_No"].ToString());
+                        item.SubItems.Add(sdr["NIC"].ToString());
+                        item.SubItems.Add(sdr["Updated_date"].ToString());
+
+                        userListView.Items.Add(item);
+                    }
+                    DB.Con.Close();
+                    lbl_members_tot.Text = userListView.Items.Count.ToString();
+
+                }
+                else
+                {
+                    Console.WriteLine("No Data to Show");
+                    DB.Con.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+                DB.Con.Close();
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                DB.Con.Close();
+            }
+        }
+
+        //=======================set Dashboard tile Counts ========================================
+        public int tile_count(String query)
         {
             int count = 0;
             try
             {
                 DB.Con.Open();
-                SqlDataReader sdr = DB.readData("SELECT * FROM "+tableName);
+                SqlDataReader sdr = DB.readData(query);
               
                 if (sdr.HasRows)
                 {
@@ -77,6 +122,7 @@ namespace Library_Management_System_v1._1.View
             return count;
         }
 
+        //===============Switch Dark Theme Light Theme ===========================
         private void swtSwitchTheme_CheckedChanged(object sender, EventArgs e)
         {
             if (swtSwitchTheme.Checked) {
@@ -93,36 +139,43 @@ namespace Library_Management_System_v1._1.View
 
         }
 
+        //=================Add Book Btn =======================
         private void LibAddBook_Click(object sender, EventArgs e)
         {
             new View.AddBook().ShowDialog();
         }
 
+        //=================Add Members Btn =======================
         private void LibaddMemberBtn_Click(object sender, EventArgs e)
         {
             new AddMember().ShowDialog();
         }
 
+        //=================Add Member Dashboard Btn =======================
         private void addMemberDashboard_Click(object sender, EventArgs e)
         {
             new AddMember().ShowDialog();
         }
 
+        //=================Add Book Dashboard Btn =======================
         private void addBookDashboardBtn_Click(object sender, EventArgs e)
         {
             new AddBook().ShowDialog();
         }
 
+        //=================Add Book Issue Dashboard Btn =======================
         private void addBorrowDashBoardBtn_Click(object sender, EventArgs e)
         {
             new Add_Book_Borrowing_Details().ShowDialog();
         }
 
+        //================Add Book Issue Btn =============================
         private void borrowBookBtn_Click(object sender, EventArgs e)
         {
             new Add_Book_Borrowing_Details().ShowDialog();
         }
 
+        //=================Return Book Btn ==============================
         private void returnBookBtn_Click(object sender, EventArgs e)
         {
             DialogResult dialogresult  = MessageBox.Show("Have Any Damages in Book ?","" , MessageBoxButtons.YesNoCancel);
@@ -152,6 +205,7 @@ namespace Library_Management_System_v1._1.View
            
         }
 
+        //============Pay Member Fee =================================================
         private void PayMemberFee_Click(object sender, EventArgs e)
         {
             DialogResult dialogresult = MessageBox.Show("Are you sure That Member Paid Fee ?", "", MessageBoxButtons.YesNo);
@@ -165,21 +219,25 @@ namespace Library_Management_System_v1._1.View
             }
         }
 
+        //============Add Book  Dashboard Btn ======================================
         private void addBookDashBoard_Click(object sender, EventArgs e)
         {
             new AddBook().Show();
         }
 
+        //===========Add Category Dashboard Btn ====================================
         private void addCategoryDashboard_Click(object sender, EventArgs e)
         {
             new Add_Category().Show();
         }
 
+        //==============Add Author Dashboard Btn ====================================
         private void addAuthorDashboard_Click(object sender, EventArgs e)
         {
             new Add_Author().Show();
         }
 
+        //========Librarian Logout ========================================
         [Obsolete]
         private void btn_librariyanLogout_Click(object sender, EventArgs e)
         {
@@ -198,6 +256,7 @@ namespace Library_Management_System_v1._1.View
             }
         }
 
+        //====Refresh every second =======================================
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbl_librarianDateTime.Text = DateTime.Now.ToString("yyy-MM-dd ") + DateTime.Now.ToString(" h:mm:ss tt");

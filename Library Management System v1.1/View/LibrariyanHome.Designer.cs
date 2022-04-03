@@ -90,7 +90,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard9 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton6 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel21 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel22 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_members_tot = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard10 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton9 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
@@ -942,11 +942,11 @@ namespace Library_Management_System_v1._1.View
             this.userListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.MIDAddMember,
+            this.GuardianID,
             this.name,
             this.Address,
             this.Phone,
             this.NIC,
-            this.GuardianID,
             this.LastUpdated});
             this.userListView.Depth = 0;
             this.userListView.FullRowSelect = true;
@@ -955,8 +955,10 @@ namespace Library_Management_System_v1._1.View
             this.userListView.MinimumSize = new System.Drawing.Size(200, 100);
             this.userListView.MouseLocation = new System.Drawing.Point(-1, -1);
             this.userListView.MouseState = MaterialSkin.MouseState.OUT;
+            this.userListView.MultiSelect = false;
             this.userListView.Name = "userListView";
             this.userListView.OwnerDraw = true;
+            this.userListView.ShowItemToolTips = true;
             this.userListView.Size = new System.Drawing.Size(865, 355);
             this.userListView.TabIndex = 12;
             this.userListView.UseCompatibleStateImageBehavior = false;
@@ -1077,7 +1079,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard9.Controls.Add(this.materialFloatingActionButton6);
             this.materialCard9.Controls.Add(this.materialLabel21);
-            this.materialCard9.Controls.Add(this.materialLabel22);
+            this.materialCard9.Controls.Add(this.lbl_members_tot);
             this.materialCard9.Depth = 0;
             this.materialCard9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard9.Location = new System.Drawing.Point(477, 31);
@@ -1118,18 +1120,18 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel21.TabIndex = 9;
             this.materialLabel21.Text = "Total Number Of Members";
             // 
-            // materialLabel22
+            // lbl_members_tot
             // 
-            this.materialLabel22.AutoSize = true;
-            this.materialLabel22.Depth = 0;
-            this.materialLabel22.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel22.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel22.Location = new System.Drawing.Point(26, 51);
-            this.materialLabel22.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel22.Name = "materialLabel22";
-            this.materialLabel22.Size = new System.Drawing.Size(40, 29);
-            this.materialLabel22.TabIndex = 8;
-            this.materialLabel22.Text = "250";
+            this.lbl_members_tot.AutoSize = true;
+            this.lbl_members_tot.Depth = 0;
+            this.lbl_members_tot.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_members_tot.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.lbl_members_tot.Location = new System.Drawing.Point(26, 51);
+            this.lbl_members_tot.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_members_tot.Name = "lbl_members_tot";
+            this.lbl_members_tot.Size = new System.Drawing.Size(40, 29);
+            this.lbl_members_tot.TabIndex = 8;
+            this.lbl_members_tot.Text = "250";
             // 
             // materialCard10
             // 
@@ -2688,7 +2690,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel23;
         private MaterialSkin.Controls.MaterialLabel materialLabel21;
-        private MaterialSkin.Controls.MaterialLabel materialLabel22;
+        private MaterialSkin.Controls.MaterialLabel lbl_members_tot;
         private MaterialSkin.Controls.MaterialLabel materialLabel19;
         private MaterialSkin.Controls.MaterialLabel materialLabel20;
         private MaterialSkin.Controls.MaterialButton LibAddBook;
