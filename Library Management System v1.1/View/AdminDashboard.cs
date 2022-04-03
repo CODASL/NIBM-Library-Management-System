@@ -33,6 +33,8 @@ namespace Library_Management_System_v1._1.View
            
         }
 
+        //=============On Load Admin Home =============================
+
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
             adminDashboardCtrl.loadCartChart(memberRegistrationChart);
@@ -46,9 +48,9 @@ namespace Library_Management_System_v1._1.View
             cmb_filterLibrarians.SelectedIndex = 0;
         }
 
-        
 
 
+        //=============Load Librarian List=============================
         public void loadLibrariyanList()
         {
             librariyanList.Items.Clear();
@@ -90,22 +92,26 @@ namespace Library_Management_System_v1._1.View
 
         }
 
+        //=============Admin Notification Btn =============================
         private void adminNotifications_Click(object sender, EventArgs e)
         {
             new AdminNotifications().ShowDialog();
         }
 
+        //============Live Date Time ====================================
         private void timer1_Tick(object sender, EventArgs e)
         {
             todayDateAdmin.Text = DateTime.Now.ToString();
         }
 
+        //============Switch to Librarian Btn====================================
         private void switchtoLibrariyanBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             new LibrariyanHome(emp_id).Show();
         }
 
+        //===============Admin Logout ========================
         [Obsolete]
         private void adminLogout_Click(object sender, EventArgs e)
         {
@@ -113,6 +119,7 @@ namespace Library_Management_System_v1._1.View
             if (line > 0)
             {
                 Login lg = new Login();
+                this.Hide();
                 lg.Closed += (s, args) => this.Close();
                 lg.Show();
 
@@ -121,18 +128,17 @@ namespace Library_Management_System_v1._1.View
             {
                 MessageBox.Show("Logout Failed");
             }
-
-
-
         }
 
+        //======================= Add Btn Manage Librarians ====================================
         private void addLibrarianBtn_Click(object sender, EventArgs e)
         {
             AddLibrariyan  addLib  = new AddLibrariyan();
             addLib.Show();   
         }
 
-        //=======================Delete Librarian===================================
+
+        //======================= Delete Btn Manage Librarians===================================
 
         private void deleteLibrariyanBtn_Click(object sender, EventArgs e)
         {
@@ -182,11 +188,13 @@ namespace Library_Management_System_v1._1.View
             }
         }
 
+        //=================Refresh Btn Manage Librarians=====================
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             loadLibrariyanList();
         }
 
+        //==================Update Btn Manage Librarians=================
         private void updateLibrariyanBtn_Click(object sender, EventArgs e)
         {
             try
@@ -200,6 +208,7 @@ namespace Library_Management_System_v1._1.View
             
         }
 
+        //==================Search Librarians=================
         private void searchTxtBox_TextChanged_1(object sender, EventArgs e)
         {
             if (cmb_filterLibrarians.SelectedIndex == 0)

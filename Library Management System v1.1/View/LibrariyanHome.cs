@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace Library_Management_System_v1._1.View
 
         Controller.MaterialController material = new Controller.MaterialController();
         Controller.LibrariyanDashboardController librariyandash = new Controller.LibrariyanDashboardController();
+        Model.DatabaseService DB = new Model.DatabaseService();
         String emp_Id;
         
         public LibrariyanHome(String emp_Id)
@@ -38,10 +40,42 @@ namespace Library_Management_System_v1._1.View
             
             lbl_librariyan_name.Text = librariyandash.setName(emp_Id);
             lbl_welcome_note.Text = "Hello " + librariyandash.setName(emp_Id).Split(' ')[0] + ", How're you today?";
+            lbl_members_count.Text = tile_count("Member").ToString();
+            lbl_books_count.Text = tile_count("Book").ToString();
 
         }
 
-        
+       
+
+        public int tile_count(String tableName)
+        {
+            int count = 0;
+            try
+            {
+                DB.Con.Open();
+                SqlDataReader sdr = DB.readData("SELECT * FROM "+tableName);
+              
+                if (sdr.HasRows)
+                {
+                    while (sdr.Read())
+                    {
+                        count = count + 1;
+                    }
+                }
+                DB.Con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                DB.Con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                DB.Con.Close();
+            }
+            return count;
+        }
 
         private void swtSwitchTheme_CheckedChanged(object sender, EventArgs e)
         {
