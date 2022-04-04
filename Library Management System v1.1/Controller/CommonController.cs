@@ -84,6 +84,36 @@ namespace Library_Management_System_v1._1.Controller
             txt.Text = phone;
         }
 
+        //===========Set Update Time==============================
+        public String setUpdatedTime(String column_name, String table_name, String primary_key,String whereCommand)
+        {
+            Model.DatabaseService database = new Model.DatabaseService();
+            try
+            {
+                database.Con.Open();
+                SqlDataReader sdr = database.readData("SELECT TOP 1 " + column_name + " FROM " + table_name + whereCommand+" ORDER BY " + primary_key + " DESC");
+                sdr.Read();
+                if (sdr.HasRows)
+                {
+                    String date = sdr[column_name].ToString();
+                    database.Con.Close();
+                    return date;
+                }
+                else
+                {
+                    database.Con.Close();
+                    return "NO DATA";
+                }
+            }
+            catch (Exception ex)
+            {
+                database.Con.Close();
+                MessageBox.Show(ex.ToString());
+                return "";
+            }
+        }
+
+
         //===============Custom Code For loadActivities =====================================
         public void loadActivities(MaterialListView listView, String Emp_No)
         {

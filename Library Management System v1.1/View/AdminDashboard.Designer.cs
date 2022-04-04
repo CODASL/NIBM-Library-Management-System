@@ -47,7 +47,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard8 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton2 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_AdminActivity_LastUpdate = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel52 = new MaterialSkin.Controls.MaterialLabel();
             this.metroDateTime2 = new MetroFramework.Controls.MetroDateTime();
             this.listview_MyActivitiesAdmin = new MaterialSkin.Controls.MaterialListView();
@@ -344,7 +344,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard8.Controls.Add(this.materialFloatingActionButton2);
             this.materialCard8.Controls.Add(this.materialLabel10);
-            this.materialCard8.Controls.Add(this.materialLabel11);
+            this.materialCard8.Controls.Add(this.lbl_AdminActivity_LastUpdate);
             this.materialCard8.Depth = 0;
             this.materialCard8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialCard8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -386,18 +386,18 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel10.TabIndex = 7;
             this.materialLabel10.Text = "Last Updated On";
             // 
-            // materialLabel11
+            // lbl_AdminActivity_LastUpdate
             // 
-            this.materialLabel11.AutoSize = true;
-            this.materialLabel11.Depth = 0;
-            this.materialLabel11.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel11.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel11.Location = new System.Drawing.Point(18, 43);
-            this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel11.Name = "materialLabel11";
-            this.materialLabel11.Size = new System.Drawing.Size(119, 29);
-            this.materialLabel11.TabIndex = 6;
-            this.materialLabel11.Text = "2021-05-14";
+            this.lbl_AdminActivity_LastUpdate.AutoSize = true;
+            this.lbl_AdminActivity_LastUpdate.Depth = 0;
+            this.lbl_AdminActivity_LastUpdate.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_AdminActivity_LastUpdate.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.lbl_AdminActivity_LastUpdate.Location = new System.Drawing.Point(18, 43);
+            this.lbl_AdminActivity_LastUpdate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_AdminActivity_LastUpdate.Name = "lbl_AdminActivity_LastUpdate";
+            this.lbl_AdminActivity_LastUpdate.Size = new System.Drawing.Size(119, 29);
+            this.lbl_AdminActivity_LastUpdate.TabIndex = 6;
+            this.lbl_AdminActivity_LastUpdate.Text = "2021-05-14";
             // 
             // materialLabel52
             // 
@@ -1076,7 +1076,7 @@ namespace Library_Management_System_v1._1.View
             // metroDateTime1
             // 
             this.metroDateTime1.Location = new System.Drawing.Point(699, 6);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(200, 29);
             this.metroDateTime1.TabIndex = 3;
@@ -1325,7 +1325,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialCard materialCard8;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton2;
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
-        private MaterialSkin.Controls.MaterialLabel materialLabel11;
+        private MaterialSkin.Controls.MaterialLabel lbl_AdminActivity_LastUpdate;
         private MaterialSkin.Controls.MaterialButton materialButton7;
         private MaterialSkin.Controls.MaterialFloatingActionButton adminNotifications;
         private MaterialSkin.Controls.MaterialCard materialCard9;

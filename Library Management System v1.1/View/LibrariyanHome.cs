@@ -20,6 +20,7 @@ namespace Library_Management_System_v1._1.View
 
         Controller.MaterialController material = new Controller.MaterialController();
         Controller.LibrariyanDashboardController librariyandash = new Controller.LibrariyanDashboardController();
+        Controller.CommonController commonController = new Controller.CommonController();
         Model.DatabaseService DB = new Model.DatabaseService();
         Model.Librarian librarian;
         String emp_Id;
@@ -45,7 +46,11 @@ namespace Library_Management_System_v1._1.View
             lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
             loadMembers();
             profileDetailUpdate();
-            new Controller.CommonController().loadActivities(listview_librarian, emp_Id);//Method from Common Controller Class
+            commonController.loadActivities(listview_librarian, emp_Id);//Method from Common Controller Class
+            lbl_membersLastUpdate.Text = commonController.setUpdatedTime("Updated_Date", "Member", "MID", "");
+            lbl_BooksLastUpdate.Text = commonController.setUpdatedTime("Date_Updated", "Book", "BID","");
+            lbl_AccountingLastUpdate.Text = commonController.setUpdatedTime("Updated_Date", "Accounting", "Fine_Id", "");
+            lbl_IssueBookLastUpdate.Text = commonController.setUpdatedTime("Updated_date", "Book_Issue", "ID", "");
 
         }
 
