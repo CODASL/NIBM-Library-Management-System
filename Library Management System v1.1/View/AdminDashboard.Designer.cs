@@ -103,9 +103,9 @@ namespace Library_Management_System_v1._1.View
             this.adminNotifications = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.adminName = new MaterialSkin.Controls.MaterialLabel();
-            this.adminAvatar = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.adminAvatar = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.adminSettings.SuspendLayout();
             this.materialCard9.SuspendLayout();
             this.materialCard7.SuspendLayout();
@@ -120,8 +120,8 @@ namespace Library_Management_System_v1._1.View
             this.materialCard6.SuspendLayout();
             this.materialCard3.SuspendLayout();
             this.materialCard1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.adminAvatar)).BeginInit();
             this.materialTabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adminAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -443,14 +443,12 @@ namespace Library_Management_System_v1._1.View
             // 
             // Activity
             // 
-            this.Activity.DisplayIndex = 1;
             this.Activity.Text = "Activity";
             this.Activity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Activity.Width = 647;
             // 
             // DateTimeActivity
             // 
-            this.DateTimeActivity.DisplayIndex = 0;
             this.DateTimeActivity.Text = "Date & Time";
             this.DateTimeActivity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.DateTimeActivity.Width = 281;
@@ -774,8 +772,7 @@ namespace Library_Management_System_v1._1.View
             this.cmb_filterLibrarians.ItemHeight = 29;
             this.cmb_filterLibrarians.Items.AddRange(new object[] {
             "ID",
-            "Name",
-            "Added Date"});
+            "Name"});
             this.cmb_filterLibrarians.Location = new System.Drawing.Point(424, 130);
             this.cmb_filterLibrarians.MaxDropDownItems = 4;
             this.cmb_filterLibrarians.MaximumSize = new System.Drawing.Size(131, 0);
@@ -1079,7 +1076,7 @@ namespace Library_Management_System_v1._1.View
             // metroDateTime1
             // 
             this.metroDateTime1.Location = new System.Drawing.Point(699, 6);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(200, 29);
             this.metroDateTime1.TabIndex = 3;
@@ -1179,22 +1176,6 @@ namespace Library_Management_System_v1._1.View
             this.adminName.TabIndex = 1;
             this.adminName.Text = "No Name";
             // 
-            // adminAvatar
-            // 
-            this.adminAvatar.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.adminAvatar.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.adminAvatar.BorderColor2 = System.Drawing.Color.HotPink;
-            this.adminAvatar.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.adminAvatar.BorderSize = 0;
-            this.adminAvatar.GradientAngle = 50F;
-            this.adminAvatar.Image = ((System.Drawing.Image)(resources.GetObject("adminAvatar.Image")));
-            this.adminAvatar.Location = new System.Drawing.Point(40, 61);
-            this.adminAvatar.Name = "adminAvatar";
-            this.adminAvatar.Size = new System.Drawing.Size(85, 85);
-            this.adminAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.adminAvatar.TabIndex = 0;
-            this.adminAvatar.TabStop = false;
-            // 
             // materialTabControl1
             // 
             this.materialTabControl1.Controls.Add(this.adminDashboardBtn);
@@ -1216,6 +1197,22 @@ namespace Library_Management_System_v1._1.View
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // adminAvatar
+            // 
+            this.adminAvatar.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.adminAvatar.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.adminAvatar.BorderColor2 = System.Drawing.Color.HotPink;
+            this.adminAvatar.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.adminAvatar.BorderSize = 0;
+            this.adminAvatar.GradientAngle = 50F;
+            this.adminAvatar.Image = ((System.Drawing.Image)(resources.GetObject("adminAvatar.Image")));
+            this.adminAvatar.Location = new System.Drawing.Point(40, 61);
+            this.adminAvatar.Name = "adminAvatar";
+            this.adminAvatar.Size = new System.Drawing.Size(85, 85);
+            this.adminAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.adminAvatar.TabIndex = 0;
+            this.adminAvatar.TabStop = false;
             // 
             // AdminDashboard
             // 
@@ -1257,8 +1254,8 @@ namespace Library_Management_System_v1._1.View
             this.materialCard3.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.adminAvatar)).EndInit();
             this.materialTabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.adminAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }

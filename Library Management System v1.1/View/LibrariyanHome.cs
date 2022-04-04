@@ -45,6 +45,7 @@ namespace Library_Management_System_v1._1.View
             lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
             loadMembers();
             profileDetailUpdate();
+            new Controller.CommonController().loadActivities(listview_librarian, emp_Id);//Method from Common Controller Class
 
         }
 

@@ -98,10 +98,8 @@ namespace Library_Management_System_v1._1.Controller
 
                     while (sdr.Read())
                     {
-                        ListViewItem item = new ListViewItem(sdr["Emp_Id"].ToString());
-                        item.SubItems.Add(sdr["Description"].ToString());
+                        ListViewItem item = new ListViewItem(sdr["Description"].ToString());
                         item.SubItems.Add(sdr["Updated_Time"].ToString());
-
                         listView.Items.Add(item);
                     }
                     database.Con.Close();
