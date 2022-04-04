@@ -27,25 +27,57 @@ namespace Library_Management_System_v1._1.View
         public LibrariyanHome(String emp_Id)
         {
             InitializeComponent();
-
             material.addStyle(this);
             cmbFilterAvalibility.SelectedIndex = 0;
             this.emp_Id = emp_Id;
             timer1.Start();
-
+            this.FormClosing += Form_FormClosing;
         }
-        
-       //=========================On Load Librarian Home ==========================================
+
+        //=====form x or F4 click logout user =====
+        void Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_Id + "'");
+                if (line > 0)
+                {
+                    this.Hide();
+                    Login lg = new Login();
+                    lg.Closed += (s, args) => this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Application Cannot Logout " , emp_Id);
+                }
+            }
+            if (e.CloseReason == CloseReason.WindowsShutDown)
+            {
+                int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_Id + "'");
+                if (line > 0)
+                {
+                    this.Hide();
+                    Login lg = new Login();
+                    lg.Closed += (s, args) => this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Application Cannot Logout ", emp_Id);
+                }
+            }
+                
+        }
+
+        //=========================On Load Librarian Home ==========================================
         private void LibrariyanHome_Load(object sender, EventArgs e)
         {
             librarian = librariyandash.setLibrariyan(emp_Id);
             lbl_librariyan_name.Text = librarian.Name;
             lbl_welcome_note.Text = "Hello " + librarian.Name.Split(' ')[0] + ", How're you today?";
-            lbl_members_count.Text = tile_count("SELECT * FROM Member").ToString();
-            lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
+            dashtilecount();
             loadMembers();
+            last_update_date();
             profileDetailUpdate();
-
         }
 
         //=====================Load Members to Member List view =====================================
@@ -123,6 +155,89 @@ namespace Library_Management_System_v1._1.View
             }
             return count;
         }
+
+
+        //======dashbord tile counts====
+        private void dashtilecount()
+        {
+            lbl_members_count.Text = tile_count("SELECT * FROM Member").ToString();
+            lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
+            lbl_members_book.Text = tile_count("SELECT * FROM Book").ToString();
+            lbl_borrow_book_count.Text = tile_count("SELECT * FROM Book_Issue WHERE Status = 0").ToString();
+
+        }
+        //==================get last update time ==========================
+        public string tile(String q, String t, String pk)
+        {
+            String s = DateTime.Now.ToString();
+            try
+            {
+                DB.Con.Open();
+                SqlDataReader sdr = DB.readData("SELECT TOP 1 "+ q + " FROM " + t + " ORDER BY  " + pk + " DESC");
+                if (sdr.HasRows)
+                {
+
+                    while (sdr.Read())
+                    {
+                        s = sdr[q].ToString();
+                    }
+                }
+                DB.Con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                DB.Con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                DB.Con.Close();
+            }
+            return s;
+        }
+        //================== last update time  ==========================
+        public string lastupdate(String q, String t)
+        {
+            String s = DateTime.Now.ToString();
+            try
+            {
+                DB.Con.Open();
+                SqlDataReader sdr = DB.readData("SELECT "+q+" FROM "+t+ " WHERE " + q + " = (SELECT MAX(" + q + ") FROM " + t + ") ");
+                if (sdr.HasRows)
+                {
+
+                    while(sdr.Read())
+                    {
+                        s = sdr[q].ToString();                        
+                    }
+                }               
+                DB.Con.Close();                
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                DB.Con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                DB.Con.Close();
+            }
+            return s;
+        }
+
+
+        //=====================last update date ==================================
+        private void last_update_date()
+        {
+                lbl_memebr_lastupdate.Text = tile("Updated_date", "Member", "MID");
+                lbl_lastupdated_books.Text = tile("Date_Updated", "Book", "BID");
+                lbl_borrow_books_lastupdate.Text = lastupdate("Updated_date", "Book_Issue");
+                lbl_memberfee_lastupdate.Text = lastupdate("Last_updated", "MemberFee");
+        }
+
+       
 
         //===============Switch Dark Theme Light Theme ===========================
         private void swtSwitchTheme_CheckedChanged(object sender, EventArgs e)
@@ -275,5 +390,6 @@ namespace Library_Management_System_v1._1.View
         {
             lbl_librarianDateTime.Text = DateTime.Now.ToString("yyy-MM-dd ") + DateTime.Now.ToString(" h:mm:ss tt");
         }
+
     }
 }
