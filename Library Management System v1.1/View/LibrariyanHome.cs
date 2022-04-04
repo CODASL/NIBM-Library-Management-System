@@ -45,10 +45,11 @@ namespace Library_Management_System_v1._1.View
             lbl_members_count.Text = tile_count("SELECT * FROM Member").ToString();
             lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
             loadMembers();
+            loadBooks();
             profileDetailUpdate();
             commonController.loadActivities(listview_librarian, emp_Id);//Method from Common Controller Class
-            lbl_membersLastUpdate.Text = commonController.setUpdatedTime("Updated_Date", "Member", "MID", "");
-            lbl_BooksLastUpdate.Text = commonController.setUpdatedTime("Date_Updated", "Book", "BID","");
+            
+            
             lbl_AccountingLastUpdate.Text = commonController.setUpdatedTime("Updated_Date", "Accounting", "Fine_Id", "");
             lbl_IssueBookLastUpdate.Text = commonController.setUpdatedTime("Updated_date", "Book_Issue", "ID", "");
 
@@ -79,7 +80,7 @@ namespace Library_Management_System_v1._1.View
                     }
                     DB.Con.Close();
                     lbl_members_tot.Text = userListView.Items.Count.ToString();
-
+                    lbl_membersLastUpdate.Text = commonController.setUpdatedTime("Updated_Date", "Member", "MID", "");
                 }
                 else
                 {
@@ -93,6 +94,100 @@ namespace Library_Management_System_v1._1.View
                 DB.Con.Close();
 
             }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                DB.Con.Close();
+            }
+        }
+
+        //=====================Load Books to Book List view =====================================
+        public void loadBooks()
+        {
+            LibBookList.Items.Clear();
+            try
+            {
+                DB.Con.Open();
+                SqlDataReader sdr = DB.readData("Select * From Book");
+                if (sdr.HasRows)
+                {
+
+                    while (sdr.Read())
+                    {
+                        ListViewItem item = new ListViewItem(sdr["ISBN"].ToString());
+                        item.SubItems.Add(sdr["Name"].ToString());
+                        item.SubItems.Add(sdr["Category"].ToString());
+                        item.SubItems.Add(sdr["Author"].ToString());
+                        item.SubItems.Add(sdr["Availability"].ToString());
+                        item.SubItems.Add(sdr["Rack_No"].ToString());
+                        item.SubItems.Add(sdr["Date_Updated"].ToString());
+
+                        LibBookList.Items.Add(item);
+                    }
+                    DB.Con.Close();
+                    lbl_totalBookCount.Text = LibBookList.Items.Count.ToString();
+                    lbl_BooksLastUpdate.Text = commonController.setUpdatedTime("Date_Updated", "Book", "BID", "");
+
+                }
+                else
+                {
+                    Console.WriteLine("No Data to Show");
+                    DB.Con.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+                DB.Con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                DB.Con.Close();
+            }
+        }
+
+        //=====================Load Book_Issues to Book Issue List view =====================================
+        public void loadBookIssues()
+        {
+            listView_issueBooks.Items.Clear();
+            try
+            {
+                DB.Con.Open();
+                SqlDataReader sdr = DB.readData("Select * From Book");
+                if (sdr.HasRows)
+                {
+
+                    while (sdr.Read())
+                    {
+                        ListViewItem item = new ListViewItem(sdr["ISBN"].ToString());
+                        item.SubItems.Add(sdr["Name"].ToString());
+                        item.SubItems.Add(sdr["Category"].ToString());
+                        item.SubItems.Add(sdr["Author"].ToString());
+                        item.SubItems.Add(sdr["Availability"].ToString());
+                        item.SubItems.Add(sdr["Rack_No"].ToString());
+                        item.SubItems.Add(sdr["Date_Updated"].ToString());
+
+                        listView_issueBooks.Items.Add(item);
+                    }
+                    DB.Con.Close();
+                    lbl_totalBookCount.Text = LibBookList.Items.Count.ToString();
+                    lbl_BooksLastUpdate.Text = commonController.setUpdatedTime("Date_Updated", "Book", "BID", "");
+
+                }
+                else
+                {
+                    Console.WriteLine("No Data to Show");
+                    DB.Con.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+                DB.Con.Close();
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
                 DB.Con.Close();
