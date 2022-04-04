@@ -44,7 +44,7 @@ namespace Library_Management_System_v1._1.View
             this.cmbFilterAvalibility = new MaterialSkin.Controls.MaterialComboBox();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
-            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
+            this.dateTimeLibrarian = new MetroFramework.Controls.MetroDateTime();
             this.lbl_librarianDateTime = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_welcome_note = new MaterialSkin.Controls.MaterialLabel();
             this.SecondDashboardRow = new System.Windows.Forms.FlowLayoutPanel();
@@ -63,11 +63,11 @@ namespace Library_Management_System_v1._1.View
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton4 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_BookIssuedCount = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton5 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_BooksReturnedCount = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton1 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
@@ -250,7 +250,7 @@ namespace Library_Management_System_v1._1.View
             this.LibrariyanDashBoard.Controls.Add(this.flowLayoutPanel1);
             this.LibrariyanDashBoard.Controls.Add(this.materialListView1);
             this.LibrariyanDashBoard.Controls.Add(this.materialLabel9);
-            this.LibrariyanDashBoard.Controls.Add(this.metroDateTime1);
+            this.LibrariyanDashBoard.Controls.Add(this.dateTimeLibrarian);
             this.LibrariyanDashBoard.Controls.Add(this.lbl_librarianDateTime);
             this.LibrariyanDashBoard.Controls.Add(this.lbl_welcome_note);
             this.LibrariyanDashBoard.Controls.Add(this.SecondDashboardRow);
@@ -464,13 +464,14 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel9.TabIndex = 5;
             this.materialLabel9.Text = "Filter By Date:";
             // 
-            // metroDateTime1
+            // dateTimeLibrarian
             // 
-            this.metroDateTime1.Location = new System.Drawing.Point(767, 8);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(208, 29);
-            this.metroDateTime1.TabIndex = 4;
+            this.dateTimeLibrarian.Location = new System.Drawing.Point(767, 8);
+            this.dateTimeLibrarian.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dateTimeLibrarian.Name = "dateTimeLibrarian";
+            this.dateTimeLibrarian.Size = new System.Drawing.Size(208, 29);
+            this.dateTimeLibrarian.TabIndex = 4;
+            this.dateTimeLibrarian.ValueChanged += new System.EventHandler(this.dateTimeLibrarian_ValueChanged);
             // 
             // lbl_librarianDateTime
             // 
@@ -534,9 +535,9 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel2.Location = new System.Drawing.Point(126, 65);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(64, 17);
+            this.materialLabel2.Size = new System.Drawing.Size(57, 17);
             this.materialLabel2.TabIndex = 2;
-            this.materialLabel2.Text = "Librariyan";
+            this.materialLabel2.Text = "Librarian";
             // 
             // lbl_librariyan_name
             // 
@@ -622,9 +623,9 @@ namespace Library_Management_System_v1._1.View
             this.lbl_members_count.Location = new System.Drawing.Point(17, 18);
             this.lbl_members_count.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbl_members_count.Name = "lbl_members_count";
-            this.lbl_members_count.Size = new System.Drawing.Size(58, 41);
+            this.lbl_members_count.Size = new System.Drawing.Size(20, 41);
             this.lbl_members_count.TabIndex = 3;
-            this.lbl_members_count.Text = "100";
+            this.lbl_members_count.Text = "0";
             // 
             // materialCard2
             // 
@@ -681,16 +682,16 @@ namespace Library_Management_System_v1._1.View
             this.lbl_books_count.Location = new System.Drawing.Point(17, 18);
             this.lbl_books_count.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbl_books_count.Name = "lbl_books_count";
-            this.lbl_books_count.Size = new System.Drawing.Size(58, 41);
+            this.lbl_books_count.Size = new System.Drawing.Size(20, 41);
             this.lbl_books_count.TabIndex = 3;
-            this.lbl_books_count.Text = "250";
+            this.lbl_books_count.Text = "0";
             // 
             // materialCard5
             // 
             this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard5.Controls.Add(this.materialFloatingActionButton4);
             this.materialCard5.Controls.Add(this.materialLabel12);
-            this.materialCard5.Controls.Add(this.materialLabel13);
+            this.materialCard5.Controls.Add(this.lbl_BookIssuedCount);
             this.materialCard5.Depth = 0;
             this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard5.Location = new System.Drawing.Point(14, 174);
@@ -731,25 +732,25 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel12.TabIndex = 3;
             this.materialLabel12.Text = "Books Issued";
             // 
-            // materialLabel13
+            // lbl_BookIssuedCount
             // 
-            this.materialLabel13.AutoSize = true;
-            this.materialLabel13.Depth = 0;
-            this.materialLabel13.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel13.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-            this.materialLabel13.Location = new System.Drawing.Point(17, 18);
-            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel13.Name = "materialLabel13";
-            this.materialLabel13.Size = new System.Drawing.Size(39, 41);
-            this.materialLabel13.TabIndex = 3;
-            this.materialLabel13.Text = "25";
+            this.lbl_BookIssuedCount.AutoSize = true;
+            this.lbl_BookIssuedCount.Depth = 0;
+            this.lbl_BookIssuedCount.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_BookIssuedCount.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
+            this.lbl_BookIssuedCount.Location = new System.Drawing.Point(17, 18);
+            this.lbl_BookIssuedCount.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_BookIssuedCount.Name = "lbl_BookIssuedCount";
+            this.lbl_BookIssuedCount.Size = new System.Drawing.Size(20, 41);
+            this.lbl_BookIssuedCount.TabIndex = 3;
+            this.lbl_BookIssuedCount.Text = "0";
             // 
             // materialCard6
             // 
             this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard6.Controls.Add(this.materialFloatingActionButton5);
             this.materialCard6.Controls.Add(this.materialLabel14);
-            this.materialCard6.Controls.Add(this.materialLabel15);
+            this.materialCard6.Controls.Add(this.lbl_BooksReturnedCount);
             this.materialCard6.Depth = 0;
             this.materialCard6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard6.Location = new System.Drawing.Point(356, 174);
@@ -790,18 +791,18 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel14.TabIndex = 3;
             this.materialLabel14.Text = "Books Returned";
             // 
-            // materialLabel15
+            // lbl_BooksReturnedCount
             // 
-            this.materialLabel15.AutoSize = true;
-            this.materialLabel15.Depth = 0;
-            this.materialLabel15.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel15.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-            this.materialLabel15.Location = new System.Drawing.Point(17, 18);
-            this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel15.Name = "materialLabel15";
-            this.materialLabel15.Size = new System.Drawing.Size(39, 41);
-            this.materialLabel15.TabIndex = 3;
-            this.materialLabel15.Text = "14";
+            this.lbl_BooksReturnedCount.AutoSize = true;
+            this.lbl_BooksReturnedCount.Depth = 0;
+            this.lbl_BooksReturnedCount.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_BooksReturnedCount.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
+            this.lbl_BooksReturnedCount.Location = new System.Drawing.Point(17, 18);
+            this.lbl_BooksReturnedCount.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_BooksReturnedCount.Name = "lbl_BooksReturnedCount";
+            this.lbl_BooksReturnedCount.Size = new System.Drawing.Size(20, 41);
+            this.lbl_BooksReturnedCount.TabIndex = 3;
+            this.lbl_BooksReturnedCount.Text = "0";
             // 
             // materialCard4
             // 
@@ -845,9 +846,9 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel10.Location = new System.Drawing.Point(21, 66);
             this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel10.Name = "materialLabel10";
-            this.materialLabel10.Size = new System.Drawing.Size(126, 17);
+            this.materialLabel10.Size = new System.Drawing.Size(82, 17);
             this.materialLabel10.TabIndex = 3;
-            this.materialLabel10.Text = "Books Not Returned";
+            this.materialLabel10.Text = "Reservations";
             // 
             // materialLabel11
             // 
@@ -858,9 +859,9 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel11.Location = new System.Drawing.Point(17, 18);
             this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel11.Name = "materialLabel11";
-            this.materialLabel11.Size = new System.Drawing.Size(39, 41);
+            this.materialLabel11.Size = new System.Drawing.Size(20, 41);
             this.materialLabel11.TabIndex = 3;
-            this.materialLabel11.Text = "11";
+            this.materialLabel11.Text = "0";
             // 
             // LibMembersTab
             // 
@@ -2563,7 +2564,7 @@ namespace Library_Management_System_v1._1.View
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LibrariyanHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NIBM LIBRARY MANAGEMENT SYSTEM - LIBRARIYAN";
+            this.Text = "NIBM LIBRARY MANAGEMENT SYSTEM - LIBRARIAN";
             this.Load += new System.EventHandler(this.LibrariyanHome_Load);
             this.LibrariyanTabController.ResumeLayout(false);
             this.LibrariyanDashBoard.ResumeLayout(false);
@@ -2647,12 +2648,12 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton3;
         private MaterialSkin.Controls.MaterialLabel lbl_welcome_note;
         private MaterialSkin.Controls.MaterialLabel lbl_librarianDateTime;
-        private MetroFramework.Controls.MetroDateTime metroDateTime1;
+        private MetroFramework.Controls.MetroDateTime dateTimeLibrarian;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
         private MaterialSkin.Controls.MaterialCard materialCard5;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton4;
         private MaterialSkin.Controls.MaterialLabel materialLabel12;
-        private MaterialSkin.Controls.MaterialLabel materialLabel13;
+        private MaterialSkin.Controls.MaterialLabel lbl_BookIssuedCount;
         private MaterialSkin.Controls.MaterialCard materialCard4;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton1;
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
@@ -2660,7 +2661,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialCard materialCard6;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton5;
         private MaterialSkin.Controls.MaterialLabel materialLabel14;
-        private MaterialSkin.Controls.MaterialLabel materialLabel15;
+        private MaterialSkin.Controls.MaterialLabel lbl_BooksReturnedCount;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
         private MaterialSkin.Controls.MaterialListView materialListView1;
         private MaterialSkin.Controls.MaterialComboBox cmbFilterAvalibility;
