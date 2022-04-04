@@ -138,7 +138,7 @@ namespace Library_Management_System_v1._1.View
             this.materialFloatingActionButton16 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialFloatingActionButton17 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel29 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel30 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_totalBookIssueCount = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard14 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton14 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialFloatingActionButton15 = new MaterialSkin.Controls.MaterialFloatingActionButton();
@@ -1756,7 +1756,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard13.Controls.Add(this.materialFloatingActionButton16);
             this.materialCard13.Controls.Add(this.materialFloatingActionButton17);
             this.materialCard13.Controls.Add(this.materialLabel29);
-            this.materialCard13.Controls.Add(this.materialLabel30);
+            this.materialCard13.Controls.Add(this.lbl_totalBookIssueCount);
             this.materialCard13.Depth = 0;
             this.materialCard13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard13.Location = new System.Drawing.Point(487, 23);
@@ -1814,18 +1814,18 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel29.TabIndex = 9;
             this.materialLabel29.Text = "Total Books to Return";
             // 
-            // materialLabel30
+            // lbl_totalBookIssueCount
             // 
-            this.materialLabel30.AutoSize = true;
-            this.materialLabel30.Depth = 0;
-            this.materialLabel30.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel30.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel30.Location = new System.Drawing.Point(26, 51);
-            this.materialLabel30.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel30.Name = "materialLabel30";
-            this.materialLabel30.Size = new System.Drawing.Size(40, 29);
-            this.materialLabel30.TabIndex = 8;
-            this.materialLabel30.Text = "150";
+            this.lbl_totalBookIssueCount.AutoSize = true;
+            this.lbl_totalBookIssueCount.Depth = 0;
+            this.lbl_totalBookIssueCount.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_totalBookIssueCount.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.lbl_totalBookIssueCount.Location = new System.Drawing.Point(26, 51);
+            this.lbl_totalBookIssueCount.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_totalBookIssueCount.Name = "lbl_totalBookIssueCount";
+            this.lbl_totalBookIssueCount.Size = new System.Drawing.Size(40, 29);
+            this.lbl_totalBookIssueCount.TabIndex = 8;
+            this.lbl_totalBookIssueCount.Text = "150";
             // 
             // materialCard14
             // 
@@ -2740,7 +2740,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton16;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton17;
         private MaterialSkin.Controls.MaterialLabel materialLabel29;
-        private MaterialSkin.Controls.MaterialLabel materialLabel30;
+        private MaterialSkin.Controls.MaterialLabel lbl_totalBookIssueCount;
         private MaterialSkin.Controls.MaterialCard materialCard14;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton14;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton15;
