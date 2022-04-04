@@ -50,7 +50,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel52 = new MaterialSkin.Controls.MaterialLabel();
             this.metroDateTime2 = new MetroFramework.Controls.MetroDateTime();
-            this.materialListView4 = new MaterialSkin.Controls.MaterialListView();
+            this.listview_MyActivitiesAdmin = new MaterialSkin.Controls.MaterialListView();
             this.Activity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateTimeActivity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ManageLibrariyans = new System.Windows.Forms.TabPage();
@@ -103,9 +103,9 @@ namespace Library_Management_System_v1._1.View
             this.adminNotifications = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.adminName = new MaterialSkin.Controls.MaterialLabel();
+            this.adminAvatar = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.adminAvatar = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.adminSettings.SuspendLayout();
             this.materialCard9.SuspendLayout();
             this.materialCard7.SuspendLayout();
@@ -120,8 +120,8 @@ namespace Library_Management_System_v1._1.View
             this.materialCard6.SuspendLayout();
             this.materialCard3.SuspendLayout();
             this.materialCard1.SuspendLayout();
-            this.materialTabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminAvatar)).BeginInit();
+            this.materialTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList1
@@ -310,7 +310,7 @@ namespace Library_Management_System_v1._1.View
             this.adminActivity.Controls.Add(this.materialCard8);
             this.adminActivity.Controls.Add(this.materialLabel52);
             this.adminActivity.Controls.Add(this.metroDateTime2);
-            this.adminActivity.Controls.Add(this.materialListView4);
+            this.adminActivity.Controls.Add(this.listview_MyActivitiesAdmin);
             this.adminActivity.ImageKey = "activity.png";
             this.adminActivity.Location = new System.Drawing.Point(4, 39);
             this.adminActivity.Name = "adminActivity";
@@ -419,27 +419,27 @@ namespace Library_Management_System_v1._1.View
             this.metroDateTime2.Size = new System.Drawing.Size(200, 29);
             this.metroDateTime2.TabIndex = 12;
             // 
-            // materialListView4
+            // listview_MyActivitiesAdmin
             // 
-            this.materialListView4.AutoSizeTable = false;
-            this.materialListView4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialListView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listview_MyActivitiesAdmin.AutoSizeTable = false;
+            this.listview_MyActivitiesAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.listview_MyActivitiesAdmin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listview_MyActivitiesAdmin.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Activity,
             this.DateTimeActivity});
-            this.materialListView4.Depth = 0;
-            this.materialListView4.FullRowSelect = true;
-            this.materialListView4.HideSelection = false;
-            this.materialListView4.Location = new System.Drawing.Point(29, 141);
-            this.materialListView4.MinimumSize = new System.Drawing.Size(200, 100);
-            this.materialListView4.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView4.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView4.Name = "materialListView4";
-            this.materialListView4.OwnerDraw = true;
-            this.materialListView4.Size = new System.Drawing.Size(932, 399);
-            this.materialListView4.TabIndex = 11;
-            this.materialListView4.UseCompatibleStateImageBehavior = false;
-            this.materialListView4.View = System.Windows.Forms.View.Details;
+            this.listview_MyActivitiesAdmin.Depth = 0;
+            this.listview_MyActivitiesAdmin.FullRowSelect = true;
+            this.listview_MyActivitiesAdmin.HideSelection = false;
+            this.listview_MyActivitiesAdmin.Location = new System.Drawing.Point(29, 141);
+            this.listview_MyActivitiesAdmin.MinimumSize = new System.Drawing.Size(200, 100);
+            this.listview_MyActivitiesAdmin.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.listview_MyActivitiesAdmin.MouseState = MaterialSkin.MouseState.OUT;
+            this.listview_MyActivitiesAdmin.Name = "listview_MyActivitiesAdmin";
+            this.listview_MyActivitiesAdmin.OwnerDraw = true;
+            this.listview_MyActivitiesAdmin.Size = new System.Drawing.Size(932, 399);
+            this.listview_MyActivitiesAdmin.TabIndex = 11;
+            this.listview_MyActivitiesAdmin.UseCompatibleStateImageBehavior = false;
+            this.listview_MyActivitiesAdmin.View = System.Windows.Forms.View.Details;
             // 
             // Activity
             // 
@@ -1179,6 +1179,22 @@ namespace Library_Management_System_v1._1.View
             this.adminName.TabIndex = 1;
             this.adminName.Text = "No Name";
             // 
+            // adminAvatar
+            // 
+            this.adminAvatar.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.adminAvatar.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.adminAvatar.BorderColor2 = System.Drawing.Color.HotPink;
+            this.adminAvatar.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.adminAvatar.BorderSize = 0;
+            this.adminAvatar.GradientAngle = 50F;
+            this.adminAvatar.Image = ((System.Drawing.Image)(resources.GetObject("adminAvatar.Image")));
+            this.adminAvatar.Location = new System.Drawing.Point(40, 61);
+            this.adminAvatar.Name = "adminAvatar";
+            this.adminAvatar.Size = new System.Drawing.Size(85, 85);
+            this.adminAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.adminAvatar.TabIndex = 0;
+            this.adminAvatar.TabStop = false;
+            // 
             // materialTabControl1
             // 
             this.materialTabControl1.Controls.Add(this.adminDashboardBtn);
@@ -1200,22 +1216,6 @@ namespace Library_Management_System_v1._1.View
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // adminAvatar
-            // 
-            this.adminAvatar.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.adminAvatar.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.adminAvatar.BorderColor2 = System.Drawing.Color.HotPink;
-            this.adminAvatar.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.adminAvatar.BorderSize = 0;
-            this.adminAvatar.GradientAngle = 50F;
-            this.adminAvatar.Image = ((System.Drawing.Image)(resources.GetObject("adminAvatar.Image")));
-            this.adminAvatar.Location = new System.Drawing.Point(40, 61);
-            this.adminAvatar.Name = "adminAvatar";
-            this.adminAvatar.Size = new System.Drawing.Size(85, 85);
-            this.adminAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.adminAvatar.TabIndex = 0;
-            this.adminAvatar.TabStop = false;
             // 
             // AdminDashboard
             // 
@@ -1257,8 +1257,8 @@ namespace Library_Management_System_v1._1.View
             this.materialCard3.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            this.materialTabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.adminAvatar)).EndInit();
+            this.materialTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1322,7 +1322,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialButton deleteLibrariyanBtn;
         private MaterialSkin.Controls.MaterialLabel materialLabel52;
         private MetroFramework.Controls.MetroDateTime metroDateTime2;
-        private MaterialSkin.Controls.MaterialListView materialListView4;
+        private MaterialSkin.Controls.MaterialListView listview_MyActivitiesAdmin;
         private System.Windows.Forms.ColumnHeader Activity;
         private System.Windows.Forms.ColumnHeader DateTimeActivity;
         private MaterialSkin.Controls.MaterialCard materialCard8;

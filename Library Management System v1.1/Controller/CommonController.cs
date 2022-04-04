@@ -1,11 +1,13 @@
 ﻿using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Library_Management_System_v1._1.Controller
 {
@@ -80,6 +82,47 @@ namespace Library_Management_System_v1._1.Controller
             Console.WriteLine(countrycode + phone);
             cmb.Text = countrycode;
             txt.Text = phone;
+        }
+
+        //===============Custom Code For loadActivities =====================================
+        public void loadActivities(MaterialListView listView, String Emp_No)
+        {
+            Model.DatabaseService database = new Model.DatabaseService();
+            listView.Items.Clear();
+            try
+            {
+                database.Con.Open();
+                SqlDataReader sdr = database.readData("SELECT * FROM Activity WHERE Emp_Id= '" + Emp_No + "'");
+                if (sdr.HasRows)
+                {
+
+                    while (sdr.Read())
+                    {
+                        ListViewItem item = new ListViewItem(sdr["Emp_Id"].ToString());
+                        item.SubItems.Add(sdr["Description"].ToString());
+                        item.SubItems.Add(sdr["Updated_Time"].ToString());
+
+                        listView.Items.Add(item);
+                    }
+                    database.Con.Close();
+                }
+                else
+                {
+                    Console.WriteLine("No Data to Show");
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                database.Con.Close();
+            }
         }
     }
 }
