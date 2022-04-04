@@ -38,16 +38,16 @@
             this.piclogo = new System.Windows.Forms.PictureBox();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnQR = new Library_Management_System_v1._1.View.Custom_Controls.RJButton();
             this.label6 = new System.Windows.Forms.Label();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.passwordShowHide = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.resetBtn = new System.Windows.Forms.Button();
-            this.btnQR = new Library_Management_System_v1._1.View.Custom_Controls.RJButton();
             this.txtPass = new CustomControls.RJControls.RJTextBox();
             this.txtmail = new CustomControls.RJControls.RJTextBox();
             this.btnlogin = new Library_Management_System_v1._1.View.Custom_Controls.RJButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.resetBtn = new System.Windows.Forms.Button();
             this.bluebackround.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).BeginInit();
             this.materialCard1.SuspendLayout();
@@ -151,6 +151,29 @@
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
             // 
+            // btnQR
+            // 
+            this.btnQR.BackColor = System.Drawing.Color.White;
+            this.btnQR.BackgroundColor = System.Drawing.Color.White;
+            this.btnQR.BorderColor = System.Drawing.Color.Black;
+            this.btnQR.BorderRadius = 8;
+            this.btnQR.BorderSize = 1;
+            this.btnQR.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnQR.FlatAppearance.BorderSize = 0;
+            this.btnQR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQR.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQR.ForeColor = System.Drawing.Color.Black;
+            this.btnQR.Image = ((System.Drawing.Image)(resources.GetObject("btnQR.Image")));
+            this.btnQR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQR.Location = new System.Drawing.Point(46, 342);
+            this.btnQR.Name = "btnQR";
+            this.btnQR.Size = new System.Drawing.Size(251, 40);
+            this.btnQR.TabIndex = 28;
+            this.btnQR.Text = "Login with QR";
+            this.btnQR.TextColor = System.Drawing.Color.Black;
+            this.btnQR.UseVisualStyleBackColor = false;
+            this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -192,6 +215,67 @@
             this.passwordShowHide.TabStop = false;
             this.passwordShowHide.Click += new System.EventHandler(this.passwordShowHide_Click);
             // 
+            // txtPass
+            // 
+            this.txtPass.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPass.BorderColor = System.Drawing.Color.Black;
+            this.txtPass.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.txtPass.BorderSize = 2;
+            this.txtPass.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.ForeColor = System.Drawing.Color.Black;
+            this.txtPass.Location = new System.Drawing.Point(0, 128);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPass.Multiline = false;
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Padding = new System.Windows.Forms.Padding(7);
+            this.txtPass.PasswordChar = true;
+            this.txtPass.Size = new System.Drawing.Size(222, 28);
+            this.txtPass.TabIndex = 28;
+            this.txtPass.UnderlinedStyle = true;
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
+            // 
+            // txtmail
+            // 
+            this.txtmail.BackColor = System.Drawing.SystemColors.Window;
+            this.txtmail.BorderColor = System.Drawing.Color.Black;
+            this.txtmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.txtmail.BorderSize = 2;
+            this.txtmail.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmail.ForeColor = System.Drawing.Color.Black;
+            this.txtmail.Location = new System.Drawing.Point(0, 47);
+            this.txtmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtmail.Multiline = false;
+            this.txtmail.Name = "txtmail";
+            this.txtmail.Padding = new System.Windows.Forms.Padding(7);
+            this.txtmail.PasswordChar = false;
+            this.txtmail.Size = new System.Drawing.Size(250, 28);
+            this.txtmail.TabIndex = 15;
+            this.txtmail.UnderlinedStyle = true;
+            this.txtmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmail_KeyPress);
+            // 
+            // btnlogin
+            // 
+            this.btnlogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnlogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnlogin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnlogin.BorderRadius = 8;
+            this.btnlogin.BorderSize = 0;
+            this.btnlogin.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnlogin.FlatAppearance.BorderSize = 0;
+            this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlogin.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogin.ForeColor = System.Drawing.Color.White;
+            this.btnlogin.Image = ((System.Drawing.Image)(resources.GetObject("btnlogin.Image")));
+            this.btnlogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnlogin.Location = new System.Drawing.Point(0, 180);
+            this.btnlogin.Name = "btnlogin";
+            this.btnlogin.Size = new System.Drawing.Size(251, 40);
+            this.btnlogin.TabIndex = 27;
+            this.btnlogin.Text = "Login";
+            this.btnlogin.TextColor = System.Drawing.Color.White;
+            this.btnlogin.UseVisualStyleBackColor = false;
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -220,94 +304,10 @@
             this.resetBtn.Location = new System.Drawing.Point(113, 401);
             this.resetBtn.Name = "resetBtn";
             this.resetBtn.Size = new System.Drawing.Size(109, 23);
-            this.resetBtn.TabIndex = 4;
+            this.resetBtn.TabIndex = 25;
             this.resetBtn.Text = "Reset Password";
             this.resetBtn.UseVisualStyleBackColor = true;
             this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
-            // 
-            // btnQR
-            // 
-            this.btnQR.BackColor = System.Drawing.Color.White;
-            this.btnQR.BackgroundColor = System.Drawing.Color.White;
-            this.btnQR.BorderColor = System.Drawing.Color.Black;
-            this.btnQR.BorderRadius = 8;
-            this.btnQR.BorderSize = 1;
-            this.btnQR.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnQR.FlatAppearance.BorderSize = 0;
-            this.btnQR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQR.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQR.ForeColor = System.Drawing.Color.Black;
-            this.btnQR.Image = ((System.Drawing.Image)(resources.GetObject("btnQR.Image")));
-            this.btnQR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQR.Location = new System.Drawing.Point(46, 342);
-            this.btnQR.Name = "btnQR";
-            this.btnQR.Size = new System.Drawing.Size(251, 40);
-            this.btnQR.TabIndex = 3;
-            this.btnQR.Text = "Login with QR";
-            this.btnQR.TextColor = System.Drawing.Color.Black;
-            this.btnQR.UseVisualStyleBackColor = false;
-            this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
-            // 
-            // txtPass
-            // 
-            this.txtPass.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPass.BorderColor = System.Drawing.Color.Black;
-            this.txtPass.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.txtPass.BorderSize = 2;
-            this.txtPass.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.ForeColor = System.Drawing.Color.Black;
-            this.txtPass.Location = new System.Drawing.Point(0, 128);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPass.Multiline = false;
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Padding = new System.Windows.Forms.Padding(7);
-            this.txtPass.PasswordChar = true;
-            this.txtPass.Size = new System.Drawing.Size(222, 28);
-            this.txtPass.TabIndex = 1;
-            this.txtPass.UnderlinedStyle = true;
-            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
-            // 
-            // txtmail
-            // 
-            this.txtmail.BackColor = System.Drawing.SystemColors.Window;
-            this.txtmail.BorderColor = System.Drawing.Color.Black;
-            this.txtmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.txtmail.BorderSize = 2;
-            this.txtmail.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmail.ForeColor = System.Drawing.Color.Black;
-            this.txtmail.Location = new System.Drawing.Point(0, 47);
-            this.txtmail.Margin = new System.Windows.Forms.Padding(4);
-            this.txtmail.Multiline = false;
-            this.txtmail.Name = "txtmail";
-            this.txtmail.Padding = new System.Windows.Forms.Padding(7);
-            this.txtmail.PasswordChar = false;
-            this.txtmail.Size = new System.Drawing.Size(250, 28);
-            this.txtmail.TabIndex = 0;
-            this.txtmail.UnderlinedStyle = true;
-            this.txtmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmail_KeyPress);
-            // 
-            // btnlogin
-            // 
-            this.btnlogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.btnlogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.btnlogin.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnlogin.BorderRadius = 8;
-            this.btnlogin.BorderSize = 0;
-            this.btnlogin.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnlogin.FlatAppearance.BorderSize = 0;
-            this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnlogin.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogin.ForeColor = System.Drawing.Color.White;
-            this.btnlogin.Image = ((System.Drawing.Image)(resources.GetObject("btnlogin.Image")));
-            this.btnlogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnlogin.Location = new System.Drawing.Point(0, 180);
-            this.btnlogin.Name = "btnlogin";
-            this.btnlogin.Size = new System.Drawing.Size(251, 40);
-            this.btnlogin.TabIndex = 2;
-            this.btnlogin.Text = "Login";
-            this.btnlogin.TextColor = System.Drawing.Color.White;
-            this.btnlogin.UseVisualStyleBackColor = false;
-            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // Login
             // 
@@ -323,7 +323,6 @@
             this.Style = MetroFramework.MetroColorStyle.White;
             this.Tag = "hello";
             this.Text = "Login";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.Login_Load);
             this.bluebackround.ResumeLayout(false);
             this.bluebackround.PerformLayout();

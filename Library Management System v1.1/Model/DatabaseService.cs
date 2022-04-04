@@ -49,9 +49,9 @@ namespace Library_Management_System_v1._1.Model
             return i;
         }
 
-        public SqlDataReader readData(String quey)
+        public SqlDataReader readData(String query)
         {
-            cmd = new SqlCommand(quey, con);
+            cmd = new SqlCommand(query, con);
             cmd.CommandType = System.Data.CommandType.Text;
             SqlDataReader sdr;
             sdr = cmd.ExecuteReader();

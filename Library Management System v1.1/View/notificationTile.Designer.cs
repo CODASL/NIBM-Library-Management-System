@@ -54,6 +54,7 @@ namespace Library_Management_System_v1._1.View
             this.notification.Padding = new System.Windows.Forms.Padding(14);
             this.notification.Size = new System.Drawing.Size(617, 74);
             this.notification.TabIndex = 2;
+            this.notification.Click += new System.EventHandler(this.notification_Click);
             // 
             // lbl_recievedTime
             // 
@@ -61,7 +62,7 @@ namespace Library_Management_System_v1._1.View
             this.lbl_recievedTime.Depth = 0;
             this.lbl_recievedTime.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lbl_recievedTime.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.lbl_recievedTime.Location = new System.Drawing.Point(454, 31);
+            this.lbl_recievedTime.Location = new System.Drawing.Point(441, 33);
             this.lbl_recievedTime.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbl_recievedTime.Name = "lbl_recievedTime";
             this.lbl_recievedTime.Size = new System.Drawing.Size(135, 17);

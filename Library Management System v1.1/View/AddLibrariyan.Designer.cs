@@ -43,6 +43,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_LibPhone = new MaterialSkin.Controls.MaterialTextBox();
             this.addLibrariyanDialogBtn = new MaterialSkin.Controls.MaterialButton();
             this.clearLibrarianBtnDialog = new MaterialSkin.Controls.MaterialButton();
+            this.cmb_countrycodes = new MaterialSkin.Controls.MaterialComboBox();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -59,6 +60,7 @@ namespace Library_Management_System_v1._1.View
             // 
             // txt_LibID
             // 
+            this.txt_LibID.BackColor = System.Drawing.Color.White;
             this.txt_LibID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_LibID.Depth = 0;
             this.txt_LibID.Font = new System.Drawing.Font("Roboto", 12F);
@@ -87,6 +89,7 @@ namespace Library_Management_System_v1._1.View
             // 
             // txt_LibName
             // 
+            this.txt_LibName.BackColor = System.Drawing.SystemColors.Control;
             this.txt_LibName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_LibName.Depth = 0;
             this.txt_LibName.Font = new System.Drawing.Font("Roboto", 12F);
@@ -114,6 +117,7 @@ namespace Library_Management_System_v1._1.View
             // 
             // txt_LibNIC
             // 
+            this.txt_LibNIC.BackColor = System.Drawing.SystemColors.Control;
             this.txt_LibNIC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_LibNIC.Depth = 0;
             this.txt_LibNIC.Font = new System.Drawing.Font("Roboto", 12F);
@@ -142,6 +146,7 @@ namespace Library_Management_System_v1._1.View
             // 
             // txt_LibAddress
             // 
+            this.txt_LibAddress.BackColor = System.Drawing.SystemColors.Control;
             this.txt_LibAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_LibAddress.Depth = 0;
             this.txt_LibAddress.Font = new System.Drawing.Font("Roboto", 12F);
@@ -170,6 +175,7 @@ namespace Library_Management_System_v1._1.View
             // 
             // txt_LibEmail
             // 
+            this.txt_LibEmail.BackColor = System.Drawing.SystemColors.Control;
             this.txt_LibEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_LibEmail.Depth = 0;
             this.txt_LibEmail.Font = new System.Drawing.Font("Roboto", 12F);
@@ -198,15 +204,16 @@ namespace Library_Management_System_v1._1.View
             // 
             // txt_LibPhone
             // 
+            this.txt_LibPhone.BackColor = System.Drawing.SystemColors.Control;
             this.txt_LibPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_LibPhone.Depth = 0;
             this.txt_LibPhone.Font = new System.Drawing.Font("Roboto", 12F);
-            this.txt_LibPhone.Location = new System.Drawing.Point(151, 346);
-            this.txt_LibPhone.MaxLength = 50;
+            this.txt_LibPhone.Location = new System.Drawing.Point(233, 346);
+            this.txt_LibPhone.MaxLength = 9;
             this.txt_LibPhone.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_LibPhone.Multiline = false;
             this.txt_LibPhone.Name = "txt_LibPhone";
-            this.txt_LibPhone.Size = new System.Drawing.Size(312, 36);
+            this.txt_LibPhone.Size = new System.Drawing.Size(230, 36);
             this.txt_LibPhone.TabIndex = 12;
             this.txt_LibPhone.Text = "";
             this.txt_LibPhone.UseTallSize = false;
@@ -251,11 +258,40 @@ namespace Library_Management_System_v1._1.View
             this.clearLibrarianBtnDialog.UseVisualStyleBackColor = true;
             this.clearLibrarianBtnDialog.Click += new System.EventHandler(this.clearLibrarianBtnDialog_Click);
             // 
+            // cmb_countrycodes
+            // 
+            this.cmb_countrycodes.AutoResize = false;
+            this.cmb_countrycodes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmb_countrycodes.Depth = 0;
+            this.cmb_countrycodes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmb_countrycodes.DropDownHeight = 118;
+            this.cmb_countrycodes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_countrycodes.DropDownWidth = 121;
+            this.cmb_countrycodes.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmb_countrycodes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmb_countrycodes.FormattingEnabled = true;
+            this.cmb_countrycodes.IntegralHeight = false;
+            this.cmb_countrycodes.ItemHeight = 29;
+            this.cmb_countrycodes.Items.AddRange(new object[] {
+            "+1",
+            "+94",
+            "+91",
+            "+97",
+            "+64"});
+            this.cmb_countrycodes.Location = new System.Drawing.Point(151, 346);
+            this.cmb_countrycodes.MaxDropDownItems = 4;
+            this.cmb_countrycodes.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmb_countrycodes.Name = "cmb_countrycodes";
+            this.cmb_countrycodes.Size = new System.Drawing.Size(76, 35);
+            this.cmb_countrycodes.TabIndex = 17;
+            this.cmb_countrycodes.UseTallSize = false;
+            // 
             // AddLibrariyan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 468);
+            this.Controls.Add(this.cmb_countrycodes);
             this.Controls.Add(this.addLibrariyanDialogBtn);
             this.Controls.Add(this.clearLibrarianBtnDialog);
             this.Controls.Add(this.materialLabel6);
@@ -272,6 +308,7 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.txt_LibID);
             this.Name = "AddLibrariyan";
             this.Text = "Add Librarian";
+            this.Load += new System.EventHandler(this.AddLibrariyan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,5 +330,6 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialTextBox txt_LibPhone;
         private MaterialSkin.Controls.MaterialButton addLibrariyanDialogBtn;
         private MaterialSkin.Controls.MaterialButton clearLibrarianBtnDialog;
+        private MaterialSkin.Controls.MaterialComboBox cmb_countrycodes;
     }
 }

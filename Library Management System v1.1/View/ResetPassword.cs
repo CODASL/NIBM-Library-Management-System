@@ -47,25 +47,37 @@ namespace Library_Management_System_v1._1.View
             
         }
 
-        public String generateNotificationID()
+        public int generateNotificationID()
         {
-            String id;
+            int id;
             try {
                 database.Con.Open();
                 SqlDataReader sdr = database.readData("SELECT TOP 1 notification_id FROM Notification ORDER BY notification_id DESC");
-                sdr.Read();
-                id = sdr["notification_id"].ToString();
-                database.Con.Close();
-                return (Convert.ToInt32(id) + 1).ToString(); 
+                if (sdr.HasRows)
+                {
+                    sdr.Read();
+                    id = Convert.ToInt32(sdr["notification_id"])+1;
+                    database.Con.Close();
+
+                }
+                else
+                {
+                    id = 1;
+                    database.Con.Close();
+                }
+                return id; 
 
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
+                database.Con.Close();
             }
-            return "";
+            return 0;
         }
 
+
+        //==============================Request Btn=====================
         private void requestBtn_Click(object sender, EventArgs e)
         {
             if (cmb_libID.SelectedItem == null)
@@ -79,11 +91,11 @@ namespace Library_Management_System_v1._1.View
             {
                 try
                 {
-                    int line = database.insertData("INSERT INTO Notification VALUES ('" + "A01" + "','" + cmb_libID.SelectedItem.ToString() + "'," +
-                        "'" + txt_reason.Text + "','" + DateTime.Now.ToString() + "',,'"+generateNotificationID()+"')");
+                    int line = database.insertData("INSERT INTO Notification VALUES ('" + generateNotificationID() + "','" + "A01" + "','" + cmb_libID.SelectedItem.ToString() + "','" + txt_reason.Text + "','" + DateTime.Now.ToString() + "','"+""+"')");
                     if (line > 0)
                     {
                         MessageBox.Show("Request Sent Successfully");
+                        this.Hide();
                     }
                     else
                     {

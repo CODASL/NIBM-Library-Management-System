@@ -11,102 +11,36 @@ namespace Library_Management_System_v1._1.Controller
     {
         Model.DatabaseService database = new Model.DatabaseService();
 
-        public String setName(String emp_id)
+
+        public Model.Librarian setLibrariyan(String emp_id)
         {
+            Model.Librarian librarian;
             try
             {
                 database.Con.Open();
                 SqlDataReader sdr = database.readData("Select * From Librarian WHERE Librarian_Id = '" + emp_id + "'");
                 sdr.Read();
-                String name = sdr["Name"].ToString().Split(' ')[0];
-                //String name = sdr["Name"].ToString();
+                if (sdr.HasRows)
+                {
+                    librarian = new Model.Librarian(
+                        emp_id, sdr["Name"].ToString(), sdr["Address"].ToString(), sdr["Email"].ToString(),
+                        sdr["NIC"].ToString(), sdr["Phone"].ToString(),Convert.ToDateTime(sdr["updated_date"]),
+                        Convert.ToDateTime(sdr["date_added"]));
+                }
+                else
+                {
+                    librarian = null;
+                }
                 database.Con.Close();
-                return name;
+                return librarian;
             }
             catch (Exception ex)
             {
                 database.Con.Close();
-                return ex.ToString();
+                return null;
 
             }
 
         }
-        public String l_id(String emp_id)
-        {
-            try
-            {
-                database.Con.Open();
-                SqlDataReader sdr = database.readData("Select * From Librarian WHERE Librarian_Id = '" + emp_id + "'");
-                sdr.Read();              
-                String empid = sdr["Librarian_Id"].ToString();
-                database.Con.Close();
-                return empid;
-            }
-            catch (Exception ex)
-            {
-                database.Con.Close();
-                return ex.ToString();
-
-            }
-
-        }
-        public String nic(String emp_id)
-        {
-            try
-            {
-                database.Con.Open();
-                SqlDataReader sdr = database.readData("Select * From Librarian WHERE Librarian_Id = '" + emp_id + "'");
-                sdr.Read();
-                String nic = sdr["NIC"].ToString();
-                database.Con.Close();
-                return nic;
-            }
-            catch (Exception ex)
-            {
-                database.Con.Close();
-                return ex.ToString();
-
-            }
-
-        }
-        public String adress(String emp_id)
-        {
-            try
-            {
-                database.Con.Open();
-                SqlDataReader sdr = database.readData("Select * From Librarian WHERE Librarian_Id = '" + emp_id + "'");
-                sdr.Read();
-                String address = sdr["Address"].ToString();
-                database.Con.Close();
-                return address;
-            }
-            catch (Exception ex)
-            {
-                database.Con.Close();
-                return ex.ToString();
-
-            }
-
-        }
-        public String phn(String emp_id)
-        {
-            try
-            {
-                database.Con.Open();
-                SqlDataReader sdr = database.readData("Select * From Librarian WHERE Librarian_Id = '" + emp_id + "'");
-                sdr.Read();
-                String pn = sdr["Phone"].ToString();
-                database.Con.Close();
-                return pn;
-            }
-            catch (Exception ex)
-            {
-                database.Con.Close();
-                return ex.ToString();
-
-            }
-
-        }
-
     }
 }

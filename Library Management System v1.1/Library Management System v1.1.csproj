@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5FFE9F40-A4B7-48A2-8B06-3368399DE08A}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Library_Management_System_v1._1</RootNamespace>
     <AssemblyName>Library Management System v1.1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -38,7 +38,7 @@
   <ItemGroup>
     <Reference Include="BasselTech CamCapture, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Downloads\BasselTech CamCapture\BasselTech CamCapture.dll</HintPath>
+      <HintPath>..\..\..\Downloads\BasselTech CamCapture.dll</HintPath>
     </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
@@ -54,7 +54,7 @@
     </Reference>
     <Reference Include="MessagingToolkit.QRCode, Version=1.0.3541.23206, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Downloads\MessagingToolkit.QRCode\MessagingToolkit.QRCode.dll</HintPath>
+      <HintPath>..\..\..\Downloads\MessagingToolkit.QRCode.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -87,8 +87,10 @@
   <ItemGroup>
     <Compile Include="Constant\IconClass.cs" />
     <Compile Include="Constant\ImageClass.cs" />
+    <Compile Include="Controller\AddAuthorController.cs" />
     <Compile Include="Controller\AddLibrariyanController.cs" />
     <Compile Include="Controller\AdminDashboardController.cs" />
+    <Compile Include="Controller\CommonController.cs" />
     <Compile Include="Controller\LibrariyanDashboardController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\MaterialController.cs" />

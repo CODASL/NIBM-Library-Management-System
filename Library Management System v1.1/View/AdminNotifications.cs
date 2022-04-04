@@ -28,45 +28,38 @@ namespace Library_Management_System_v1._1.View
             try {
 
                 database.Con.Open();
-                SqlDataReader sdr = database.readData("SELECT * FROM Notification");
+                SqlDataReader sdr = database.readData("SELECT * FROM Notification WHERE Status = '"+""+"'");
                 while (sdr.Read())
                 {
-                    notificationTile nTile = new notificationTile(
+                    if (sdr.HasRows)
+                    {
+                        notificationTile nTile = new notificationTile(
                             sdr["LID"].ToString(),
                             sdr["Description"].ToString(),
-                            sdr["Received_time"].ToString()
+                            sdr["Recieved_time"].ToString(),
+                            Convert.ToInt32(sdr["notification_id"])
                         );
-                    notificationList.Controls.Add(nTile);
-                    nTile.Click += (sender , e) => notification_Click(sender , e , 1);
+                        notificationList.Controls.Add(nTile);
+                    }     
                 }
 
                 database.Con.Close();
 
             }
             catch(SqlException ex) {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
             
         }
         private void notification_Click(object sender, EventArgs e , int id)
         {
-            DialogResult dialogResult = MessageBox.Show("Approve Request", "", MessageBoxButtons.YesNoCancel);
-            if (dialogResult.Equals(DialogResult.Yes))
-            {
-                MessageBox.Show("Approved");
-                database.insertData("UPDATE Notification");
-            }
-            else if (dialogResult.Equals(DialogResult.No))
-            {
-                MessageBox.Show("Rejected");
-            }
-            else
-            {
-                this.Hide();
-            }
+            
+            
         }
+
+       
     }
 }

@@ -6,12 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace Library_Management_System_v1._1.View
 {
@@ -21,53 +21,110 @@ namespace Library_Management_System_v1._1.View
         Controller.MaterialController material = new Controller.MaterialController();
         Controller.LibrariyanDashboardController librariyandash = new Controller.LibrariyanDashboardController();
         Model.DatabaseService DB = new Model.DatabaseService();
+        Model.Librarian librarian;
         String emp_Id;
         
         public LibrariyanHome(String emp_Id)
         {
             InitializeComponent();
+
             material.addStyle(this);
             cmbFilterAvalibility.SelectedIndex = 0;
             this.emp_Id = emp_Id;
-          
+            timer1.Start();
+
         }
         
-       
+       //=========================On Load Librarian Home ==========================================
         private void LibrariyanHome_Load(object sender, EventArgs e)
         {
-            timer1.Start();
-            lbl_librariyan_name.Text = librariyandash.setName(emp_Id);
-            lbl_welcome_note.Text = "Hello "+librariyandash.setName(emp_Id)+ ", How are you today?";
-            lbl_member_count.Text = member_count().ToString();
-            lbl_book_count_ds.Text = book_count().ToString();
-            lbl_tot_books.Text = book_count().ToString();
-            lbl_member_name.Text = librariyandash.setName(emp_Id);
-            lbl_empid.Text = librariyandash.l_id(emp_Id);
-            lbl_nic.Text = librariyandash.nic(emp_Id);
-            lbl_phone.Text = librariyandash.phn(emp_Id);
-            lbl_address.Text = librariyandash.adress(emp_Id);
+            librarian = librariyandash.setLibrariyan(emp_Id);
+            lbl_librariyan_name.Text = librarian.Name;
+            lbl_welcome_note.Text = "Hello " + librarian.Name.Split(' ')[0] + ", How're you today?";
+            lbl_members_count.Text = tile_count("SELECT * FROM Member").ToString();
+            lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
             loadMembers();
+            profileDetailUpdate();
+
         }
 
-        public int member_count()
+        //=====================Load Members to Member List view =====================================
+        public void loadMembers()
         {
-            DB.Con.Open();
-            SqlCommand sdr = new SqlCommand ("SELECT Count (*) FROM Member",DB.Con);
-            int name = Convert.ToInt32(sdr.ExecuteScalar());
-            DB.Con.Close();
-            return name;
+            userListView.Items.Clear();
+            try
+            {
+                DB.Con.Open();
+                SqlDataReader sdr = DB.readData("Select * From Member");
+                if (sdr.HasRows)
+                {
+
+                    while (sdr.Read())
+                    {
+                        ListViewItem item = new ListViewItem(sdr["MID"].ToString());
+                        item.SubItems.Add(sdr["Guardian_Id"].ToString());
+                        item.SubItems.Add(sdr["Name"].ToString());
+                        item.SubItems.Add(sdr["Address"].ToString());
+                        item.SubItems.Add(sdr["Phone_No"].ToString());
+                        item.SubItems.Add(sdr["NIC"].ToString());
+                        item.SubItems.Add(sdr["Updated_date"].ToString());
+
+                        userListView.Items.Add(item);
+                    }
+                    DB.Con.Close();
+                    lbl_members_tot.Text = userListView.Items.Count.ToString();
+
+                }
+                else
+                {
+                    Console.WriteLine("No Data to Show");
+                    DB.Con.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+                DB.Con.Close();
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                DB.Con.Close();
+            }
         }
 
-        public int book_count()
+        //=======================set Dashboard tile Counts ========================================
+        public int tile_count(String query)
         {
-            DB.Con.Open();
-            SqlCommand sdr = new SqlCommand("SELECT Count (*) FROM Book", DB.Con);
-            int name = Convert.ToInt32(sdr.ExecuteScalar());
-            DB.Con.Close();
-            return name;
+            int count = 0;
+            try
+            {
+                DB.Con.Open();
+                SqlDataReader sdr = DB.readData(query);
+              
+                if (sdr.HasRows)
+                {
+                    while (sdr.Read())
+                    {
+                        count = count + 1;
+                    }
+                }
+                DB.Con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                DB.Con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                DB.Con.Close();
+            }
+            return count;
         }
 
-
+        //===============Switch Dark Theme Light Theme ===========================
         private void swtSwitchTheme_CheckedChanged(object sender, EventArgs e)
         {
             if (swtSwitchTheme.Checked) {
@@ -84,36 +141,43 @@ namespace Library_Management_System_v1._1.View
 
         }
 
+        //=================Add Book Btn =======================
         private void LibAddBook_Click(object sender, EventArgs e)
         {
             new View.AddBook().ShowDialog();
         }
 
+        //=================Add Members Btn =======================
         private void LibaddMemberBtn_Click(object sender, EventArgs e)
         {
             new AddMember().ShowDialog();
         }
 
+        //=================Add Member Dashboard Btn =======================
         private void addMemberDashboard_Click(object sender, EventArgs e)
         {
             new AddMember().ShowDialog();
         }
 
+        //=================Add Book Dashboard Btn =======================
         private void addBookDashboardBtn_Click(object sender, EventArgs e)
         {
             new AddBook().ShowDialog();
         }
 
+        //=================Add Book Issue Dashboard Btn =======================
         private void addBorrowDashBoardBtn_Click(object sender, EventArgs e)
         {
             new Add_Book_Borrowing_Details().ShowDialog();
         }
 
+        //================Add Book Issue Btn =============================
         private void borrowBookBtn_Click(object sender, EventArgs e)
         {
             new Add_Book_Borrowing_Details().ShowDialog();
         }
 
+        //=================Return Book Btn ==============================
         private void returnBookBtn_Click(object sender, EventArgs e)
         {
             DialogResult dialogresult  = MessageBox.Show("Have Any Damages in Book ?","" , MessageBoxButtons.YesNoCancel);
@@ -143,6 +207,7 @@ namespace Library_Management_System_v1._1.View
            
         }
 
+        //============Pay Member Fee =================================================
         private void PayMemberFee_Click(object sender, EventArgs e)
         {
             DialogResult dialogresult = MessageBox.Show("Are you sure That Member Paid Fee ?", "", MessageBoxButtons.YesNo);
@@ -156,28 +221,45 @@ namespace Library_Management_System_v1._1.View
             }
         }
 
+        //============Add Book  Dashboard Btn ======================================
         private void addBookDashBoard_Click(object sender, EventArgs e)
         {
             new AddBook().Show();
         }
 
+        //===========Add Category Dashboard Btn ====================================
         private void addCategoryDashboard_Click(object sender, EventArgs e)
         {
             new Add_Category().Show();
         }
 
+        //==============Add Author Dashboard Btn ====================================
         private void addAuthorDashboard_Click(object sender, EventArgs e)
         {
             new Add_Author().Show();
         }
 
-        private void btn_logout_Click(object sender, EventArgs e)
+        //========Librarian Profile Detail Update ================================
+
+        public void profileDetailUpdate()
+        {
+            lbl_librarianProfileName.Text = librarian.Name;
+            lbl_librarianProfileId.Text = librarian.Id;
+            lbl_librarianProfileNIC.Text = librarian.NIC1;
+            lbl_librarianProfileAddress.Text = librarian.Address;
+            lbl_librarianProfilePhone.Text = librarian.Phone;
+            
+        }
+
+        //========Librarian Logout ==============================================
+        [Obsolete]
+        private void btn_librariyanLogout_Click(object sender, EventArgs e)
         {
             int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_Id + "'");
             if (line > 0)
             {
                 this.Hide();
-                var lg = new Login();
+                Login lg = new Login();
                 lg.Closed += (s, args) => this.Close();
                 lg.Show();
 
@@ -188,56 +270,10 @@ namespace Library_Management_System_v1._1.View
             }
         }
 
+        //====Refresh every second =======================================
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Start();
-            lbl_time_date.Text = "Today  " + DateTime.Now.ToString("yyy-MM-dd ") + DateTime.Now.ToString(" h:mm:ss tt");
-        }
-
-        public void loadMembers()
-        {
-            userListView.Items.Clear();
-            try
-            {
-                DB.Con.Open();
-                SqlDataReader sdr = DB.readData("Select * From Member");
-                if (sdr.HasRows)
-                {
-
-                    while (sdr.Read())
-                    {
-                        ListViewItem item = new ListViewItem(sdr["MID"].ToString());
-                        item.SubItems.Add(sdr["Name"].ToString());
-                        item.SubItems.Add(sdr["Guardian_Id"].ToString());
-                        item.SubItems.Add(sdr["Address"].ToString());
-                        item.SubItems.Add(sdr["Phone_No"].ToString());
-                        item.SubItems.Add(sdr["NIC"].ToString());
-                        item.SubItems.Add(sdr["Updated_date"].ToString());
-
-                        userListView.Items.Add(item);
-                    }
-                    DB.Con.Close();
-                    lbl_members_tot.Text = userListView.Items.Count.ToString();
-
-                }
-                else
-                {
-                    Console.WriteLine("No Data to Show");
-                    DB.Con.Close();
-                }
-
-            }
-            catch (SqlException ex)
-            {
-                DB.Con.Close();
-                MessageBox.Show(ex.ToString());
-            }
-
-            if (userListView != null)
-            {
-                userListView.MultiSelect = false;
-            }
-
+            lbl_librarianDateTime.Text = DateTime.Now.ToString("yyy-MM-dd ") + DateTime.Now.ToString(" h:mm:ss tt");
         }
     }
 }

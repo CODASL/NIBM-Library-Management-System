@@ -13,10 +13,42 @@ namespace Library_Management_System_v1._1.View
 {
     public partial class Add_Author : MaterialForm
     {
+        Controller.AddAuthorController ATR = new Controller.AddAuthorController();
         public Add_Author()
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
+            txt_authorId.Text = ATR.setid();
+            txt_authorId.Focus();
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            txt_authorName.Clear();
+        }
+
+        private void btn_addAuthor_Click(object sender, EventArgs e)
+        {
+            Model.Author author = new Model.Author(txt_authorId.Text, txt_authorName.Text, DateTime.Now);
+            try
+            {
+                Boolean isAdded = ATR.addauthor(author);
+
+                if (isAdded)
+                {
+                    this.Hide();
+                   MessageBox.Show("Record Added");
+
+                }
+                else
+                {
+                   MessageBox.Show("Something went wrong try again");
+                }
+            }
+            catch (Exception ex)
+            {
+               MessageBox.Show(ex.Message);
+            }
         }
     }
 }

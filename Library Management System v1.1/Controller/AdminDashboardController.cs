@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Drawing;
+using MaterialSkin.Controls;
 
 namespace Library_Management_System_v1._1.Controller
 {
@@ -16,6 +17,62 @@ namespace Library_Management_System_v1._1.Controller
     {
         Model.DatabaseService database = new Model.DatabaseService();
 
+        //=============Search Function ==========================
+
+        public void searchFunction(MaterialListView list, int itemIndex, MaterialTextBox inputBox)
+        {
+            if (itemIndex == 0)
+            {
+                if (inputBox.Text != "")
+                {
+                    for (int i = list.Items.Count - 1; i >= 0; i--)
+                    {
+                        var item = list.Items[i];
+
+                        if (item.Text.ToLower().Contains(inputBox.Text.ToLower()))
+                        {
+
+                        }
+                        else
+                        {
+                            list.Items.Remove(item);
+                        }
+                    }
+                    if (list.SelectedItems.Count == 1)
+                    {
+                        list.Focus();
+                    }
+                }
+                else
+                    new View.AdminDashboard(LoginController.currentUserId).loadLibrariyanList();
+            }
+        }
+
+        //=============Set Notification Count Label==============
+        public String setNotificationCount()
+        {
+            try
+            {
+                database.Con.Open();
+                SqlDataReader sdr = database.readData("Select * FROM Notification WHERE Status = ''");
+                int count = 0;
+                while (sdr.Read())
+                {
+                    count = count + 1;
+                }
+
+                database.Con.Close();
+                return count.ToString();
+            }catch(Exception ex)
+            {
+                database.Con.Close();
+                return ex.ToString();
+            }
+            
+            
+        }
+
+        //============Set Admin Name ============================
         public String setName(String emp_id)
         {
             try
@@ -35,11 +92,30 @@ namespace Library_Management_System_v1._1.Controller
             }
         }
 
-        
 
-       
+        //===========Set Librarian Update Time==============================
+        public String setUpdatedTime()
+        {
+            try
+            {
+                database.Con.Open();
+                SqlDataReader sdr = database.readData("SELECT TOP 1 updated_date FROM Librarian ORDER BY Librarian_Id DESC");
+                sdr.Read();
+                String date = sdr["updated_date"].ToString();
+                database.Con.Close();
+                return date;
+            }
+            catch (Exception ex)
+            {
+                database.Con.Close();
+                return ex.ToString();
 
-       //=========================Chart Codes========================================
+
+            }
+        }
+
+
+        //=========================Chart Codes========================================
         private Random rand = new Random(0);
         private double[] RandomWalk(int points = 5, double start = 100, double mult = 50)
         {
