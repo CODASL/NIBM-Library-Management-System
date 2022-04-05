@@ -43,10 +43,7 @@ namespace Library_Management_System_v1._1.View
             librarian = librariyandash.setLibrariyan(emp_Id);
             lbl_librariyan_name.Text = librarian.Name;
             lbl_welcome_note.Text = "Hello " + librarian.Name.Split(' ')[0] + ", How're you today?";
-            lbl_members_count.Text = tile_count("SELECT * FROM Member").ToString();
-            lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
-            lbl_BookIssuedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date+"' AND Status='"+true+"'").ToString();
-            lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + false + "'").ToString();
+            loadDashboardTileCounts();
             loadMembers();
             loadBooks();
             loadBookIssues();
@@ -55,6 +52,13 @@ namespace Library_Management_System_v1._1.View
             lbl_AccountingLastUpdate.Text = commonController.setUpdatedTime("Updated_Date", "Accounting", "Fine_Id", "");
         }
 
+        public void loadDashboardTileCounts()
+        {
+            lbl_members_count.Text = tile_count("SELECT * FROM Member").ToString();
+            lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
+            lbl_BookIssuedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + true + "'").ToString();
+            lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + false + "'").ToString();
+        }
         //============ form x or F4 click logout user ================================
         [Obsolete]
         void Form_FormClosing(object sender, FormClosingEventArgs e)
