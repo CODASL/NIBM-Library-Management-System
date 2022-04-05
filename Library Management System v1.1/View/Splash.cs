@@ -43,8 +43,6 @@ namespace Library_Management_System_v1._1
                 timer1.Enabled = false;
                 frm.Closed += (s, args) => this.Close();
                 frm.ShowDialog();
-                
-               
             }
         }
     }

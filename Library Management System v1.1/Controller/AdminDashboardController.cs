@@ -156,7 +156,29 @@ namespace Library_Management_System_v1._1.Controller
             colors.SetValue(System.Windows.Media.Brushes.BlueViolet, 2);
             colors.SetValue(System.Windows.Media.Brushes.CornflowerBlue, 3);
             colors.SetValue(System.Windows.Media.Brushes.Cyan, 4);
-            
+            //SqlDataReader sdr = database.readData("SELECT * FROM Category");
+            //int i = 0;
+            //while (sdr.Read())
+            //{
+            //    if (sdr.HasRows)
+            //    {
+            //        piechartData.Add(
+            //            new PieSeries
+            //            {
+            //                Title = "Fourth Item",
+            //                Values = new ChartValues<double> { 25 },
+            //                DataLabels = true,
+            //                LabelPoint = labelPoint,
+            //                Fill = colors[i],
+            //            }
+            //        );
+            //       i++;
+            //    }
+            //    else
+            //    {
+
+            //    }
+            //}
 
             for (int i = 0; i < 5; i++)
             {
@@ -169,7 +191,7 @@ namespace Library_Management_System_v1._1.Controller
                      LabelPoint = labelPoint,
                      Fill = colors[i],
                  }
-             ); ;
+                ); 
             }
            
 

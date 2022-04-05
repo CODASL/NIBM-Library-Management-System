@@ -33,6 +33,7 @@ namespace Library_Management_System_v1._1.View
             cmbFilterAvalibility.SelectedIndex = 0;
             this.emp_Id = emp_Id;
             timer1.Start();
+            this.FormClosing += Form_FormClosing;
 
         }
         
@@ -44,20 +45,50 @@ namespace Library_Management_System_v1._1.View
             lbl_welcome_note.Text = "Hello " + librarian.Name.Split(' ')[0] + ", How're you today?";
             lbl_members_count.Text = tile_count("SELECT * FROM Member").ToString();
             lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
-            
             lbl_BookIssuedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date+"' AND Status='"+true+"'").ToString();
             lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + false + "'").ToString();
             loadMembers();
             loadBooks();
             loadBookIssues();
             profileDetailUpdate();
-            commonController.loadActivities(listview_librarian, emp_Id);//Method from Common Controller Class
-
+            commonController.loadActivities(listview_librarianActivities, emp_Id);//Method from Common Controller Class
             lbl_AccountingLastUpdate.Text = commonController.setUpdatedTime("Updated_Date", "Accounting", "Fine_Id", "");
-            
-
         }
 
+        //============ form x or F4 click logout user ================================
+        [Obsolete]
+        void Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_Id + "'");
+                if (line > 0)
+                {
+                    this.Hide();
+                    Login lg = new Login();
+                    lg.Closed += (s, args) => this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Application Cannot Logout ", emp_Id);
+                }
+            }
+            if (e.CloseReason == CloseReason.WindowsShutDown)
+            {
+                int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_Id + "'");
+                if (line > 0)
+                {
+                    this.Hide();
+                    Login lg = new Login();
+                    lg.Closed += (s, args) => this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Application Cannot Logout ", emp_Id);
+                }
+            }
+
+        }
         //=====================Load Members to Member List view =====================================
         public void loadMembers()
         {

@@ -103,13 +103,13 @@ namespace Library_Management_System_v1._1.View
             this.materialTextBox6 = new MaterialSkin.Controls.MaterialTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LibBookList = new MaterialSkin.Controls.MaterialListView();
+            this.isbnNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LibbookName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bookcategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bookAuthor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bookAvalability = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.bookLastUpdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LblBookRack = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.isbnNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.bookLastUpdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LibAddBook = new MaterialSkin.Controls.MaterialButton();
             this.materialCard11 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton12 = new MaterialSkin.Controls.MaterialFloatingActionButton();
@@ -163,7 +163,7 @@ namespace Library_Management_System_v1._1.View
             this.LibMyProfile = new System.Windows.Forms.TabPage();
             this.materialLabel52 = new MaterialSkin.Controls.MaterialLabel();
             this.metroDateTime2 = new MetroFramework.Controls.MetroDateTime();
-            this.listview_librarian = new MaterialSkin.Controls.MaterialListView();
+            this.listview_librarianActivities = new MaterialSkin.Controls.MaterialListView();
             this.Activity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateTimeActivity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
@@ -1350,6 +1350,12 @@ namespace Library_Management_System_v1._1.View
             this.LibBookList.UseCompatibleStateImageBehavior = false;
             this.LibBookList.View = System.Windows.Forms.View.Details;
             // 
+            // isbnNo
+            // 
+            this.isbnNo.Text = "ISBN";
+            this.isbnNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.isbnNo.Width = 88;
+            // 
             // LibbookName
             // 
             this.LibbookName.Text = "Name";
@@ -1374,23 +1380,17 @@ namespace Library_Management_System_v1._1.View
             this.bookAvalability.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.bookAvalability.Width = 103;
             // 
-            // bookLastUpdate
-            // 
-            this.bookLastUpdate.Text = "Last Update";
-            this.bookLastUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bookLastUpdate.Width = 196;
-            // 
             // LblBookRack
             // 
             this.LblBookRack.Text = "Rack No";
             this.LblBookRack.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.LblBookRack.Width = 86;
             // 
-            // isbnNo
+            // bookLastUpdate
             // 
-            this.isbnNo.Text = "ISBN";
-            this.isbnNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.isbnNo.Width = 88;
+            this.bookLastUpdate.Text = "Last Update";
+            this.bookLastUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bookLastUpdate.Width = 196;
             // 
             // LibAddBook
             // 
@@ -2145,7 +2145,7 @@ namespace Library_Management_System_v1._1.View
             // 
             this.LibMyProfile.Controls.Add(this.materialLabel52);
             this.LibMyProfile.Controls.Add(this.metroDateTime2);
-            this.LibMyProfile.Controls.Add(this.listview_librarian);
+            this.LibMyProfile.Controls.Add(this.listview_librarianActivities);
             this.LibMyProfile.Controls.Add(this.materialDivider1);
             this.LibMyProfile.Controls.Add(this.materialLabel50);
             this.LibMyProfile.Controls.Add(this.materialCard17);
@@ -2178,29 +2178,29 @@ namespace Library_Management_System_v1._1.View
             this.metroDateTime2.Size = new System.Drawing.Size(200, 29);
             this.metroDateTime2.TabIndex = 4;
             // 
-            // listview_librarian
+            // listview_librarianActivities
             // 
-            this.listview_librarian.AutoSizeTable = false;
-            this.listview_librarian.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.listview_librarian.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listview_librarian.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listview_librarianActivities.AutoSizeTable = false;
+            this.listview_librarianActivities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.listview_librarianActivities.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listview_librarianActivities.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Activity,
             this.DateTimeActivity});
-            this.listview_librarian.Depth = 0;
-            this.listview_librarian.FullRowSelect = true;
-            this.listview_librarian.HideSelection = false;
-            this.listview_librarian.Location = new System.Drawing.Point(40, 319);
-            this.listview_librarian.MinimumSize = new System.Drawing.Size(200, 100);
-            this.listview_librarian.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.listview_librarian.MouseState = MaterialSkin.MouseState.OUT;
-            this.listview_librarian.MultiSelect = false;
-            this.listview_librarian.Name = "listview_librarian";
-            this.listview_librarian.OwnerDraw = true;
-            this.listview_librarian.ShowItemToolTips = true;
-            this.listview_librarian.Size = new System.Drawing.Size(932, 301);
-            this.listview_librarian.TabIndex = 3;
-            this.listview_librarian.UseCompatibleStateImageBehavior = false;
-            this.listview_librarian.View = System.Windows.Forms.View.Details;
+            this.listview_librarianActivities.Depth = 0;
+            this.listview_librarianActivities.FullRowSelect = true;
+            this.listview_librarianActivities.HideSelection = false;
+            this.listview_librarianActivities.Location = new System.Drawing.Point(40, 319);
+            this.listview_librarianActivities.MinimumSize = new System.Drawing.Size(200, 100);
+            this.listview_librarianActivities.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.listview_librarianActivities.MouseState = MaterialSkin.MouseState.OUT;
+            this.listview_librarianActivities.MultiSelect = false;
+            this.listview_librarianActivities.Name = "listview_librarianActivities";
+            this.listview_librarianActivities.OwnerDraw = true;
+            this.listview_librarianActivities.ShowItemToolTips = true;
+            this.listview_librarianActivities.Size = new System.Drawing.Size(932, 301);
+            this.listview_librarianActivities.TabIndex = 3;
+            this.listview_librarianActivities.UseCompatibleStateImageBehavior = false;
+            this.listview_librarianActivities.View = System.Windows.Forms.View.Details;
             // 
             // Activity
             // 
@@ -2780,7 +2780,7 @@ namespace Library_Management_System_v1._1.View
         private Custom_Controls.RJCircularPictureBox rjCircularPictureBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel52;
         private MetroFramework.Controls.MetroDateTime metroDateTime2;
-        private MaterialSkin.Controls.MaterialListView listview_librarian;
+        private MaterialSkin.Controls.MaterialListView listview_librarianActivities;
         private System.Windows.Forms.ColumnHeader Activity;
         private System.Windows.Forms.ColumnHeader DateTimeActivity;
         private MaterialSkin.Controls.MaterialButton btn_librariyanLogout;

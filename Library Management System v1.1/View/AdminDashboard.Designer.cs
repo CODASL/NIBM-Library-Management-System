@@ -101,11 +101,11 @@ namespace Library_Management_System_v1._1.View
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.lbl_notification_count = new System.Windows.Forms.Label();
             this.adminNotifications = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_userTypeAdmin = new MaterialSkin.Controls.MaterialLabel();
             this.adminName = new MaterialSkin.Controls.MaterialLabel();
+            this.adminAvatar = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.adminAvatar = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.adminSettings.SuspendLayout();
             this.materialCard9.SuspendLayout();
             this.materialCard7.SuspendLayout();
@@ -120,8 +120,8 @@ namespace Library_Management_System_v1._1.View
             this.materialCard6.SuspendLayout();
             this.materialCard3.SuspendLayout();
             this.materialCard1.SuspendLayout();
-            this.materialTabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminAvatar)).BeginInit();
+            this.materialTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList1
@@ -414,7 +414,7 @@ namespace Library_Management_System_v1._1.View
             // metroDateTime2
             // 
             this.metroDateTime2.Location = new System.Drawing.Point(761, 91);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime2.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTime2.Name = "metroDateTime2";
             this.metroDateTime2.Size = new System.Drawing.Size(200, 29);
             this.metroDateTime2.TabIndex = 12;
@@ -1111,7 +1111,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard1.Controls.Add(this.lbl_notification_count);
             this.materialCard1.Controls.Add(this.adminNotifications);
-            this.materialCard1.Controls.Add(this.materialLabel2);
+            this.materialCard1.Controls.Add(this.lbl_userTypeAdmin);
             this.materialCard1.Controls.Add(this.adminName);
             this.materialCard1.Controls.Add(this.adminAvatar);
             this.materialCard1.Depth = 0;
@@ -1150,18 +1150,18 @@ namespace Library_Management_System_v1._1.View
             this.adminNotifications.UseVisualStyleBackColor = false;
             this.adminNotifications.Click += new System.EventHandler(this.adminNotifications_Click);
             // 
-            // materialLabel2
+            // lbl_userTypeAdmin
             // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.materialLabel2.Location = new System.Drawing.Point(62, 192);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(41, 17);
-            this.materialLabel2.TabIndex = 2;
-            this.materialLabel2.Text = "Admin";
+            this.lbl_userTypeAdmin.AutoSize = true;
+            this.lbl_userTypeAdmin.Depth = 0;
+            this.lbl_userTypeAdmin.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_userTypeAdmin.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
+            this.lbl_userTypeAdmin.Location = new System.Drawing.Point(62, 192);
+            this.lbl_userTypeAdmin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_userTypeAdmin.Name = "lbl_userTypeAdmin";
+            this.lbl_userTypeAdmin.Size = new System.Drawing.Size(41, 17);
+            this.lbl_userTypeAdmin.TabIndex = 2;
+            this.lbl_userTypeAdmin.Text = "Admin";
             // 
             // adminName
             // 
@@ -1175,6 +1175,22 @@ namespace Library_Management_System_v1._1.View
             this.adminName.Size = new System.Drawing.Size(84, 24);
             this.adminName.TabIndex = 1;
             this.adminName.Text = "No Name";
+            // 
+            // adminAvatar
+            // 
+            this.adminAvatar.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.adminAvatar.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.adminAvatar.BorderColor2 = System.Drawing.Color.HotPink;
+            this.adminAvatar.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.adminAvatar.BorderSize = 0;
+            this.adminAvatar.GradientAngle = 50F;
+            this.adminAvatar.Image = ((System.Drawing.Image)(resources.GetObject("adminAvatar.Image")));
+            this.adminAvatar.Location = new System.Drawing.Point(40, 61);
+            this.adminAvatar.Name = "adminAvatar";
+            this.adminAvatar.Size = new System.Drawing.Size(85, 85);
+            this.adminAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.adminAvatar.TabIndex = 0;
+            this.adminAvatar.TabStop = false;
             // 
             // materialTabControl1
             // 
@@ -1197,22 +1213,6 @@ namespace Library_Management_System_v1._1.View
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // adminAvatar
-            // 
-            this.adminAvatar.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.adminAvatar.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.adminAvatar.BorderColor2 = System.Drawing.Color.HotPink;
-            this.adminAvatar.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.adminAvatar.BorderSize = 0;
-            this.adminAvatar.GradientAngle = 50F;
-            this.adminAvatar.Image = ((System.Drawing.Image)(resources.GetObject("adminAvatar.Image")));
-            this.adminAvatar.Location = new System.Drawing.Point(40, 61);
-            this.adminAvatar.Name = "adminAvatar";
-            this.adminAvatar.Size = new System.Drawing.Size(85, 85);
-            this.adminAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.adminAvatar.TabIndex = 0;
-            this.adminAvatar.TabStop = false;
             // 
             // AdminDashboard
             // 
@@ -1254,8 +1254,8 @@ namespace Library_Management_System_v1._1.View
             this.materialCard3.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            this.materialTabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.adminAvatar)).EndInit();
+            this.materialTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1281,7 +1281,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialSwitch swtSwitchTheme;
         private MaterialSkin.Controls.MaterialLabel materialLabel17;
         private MaterialSkin.Controls.MaterialCard materialCard1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel lbl_userTypeAdmin;
         private MaterialSkin.Controls.MaterialLabel adminName;
         private Custom_Controls.RJCircularPictureBox adminAvatar;
         private MaterialSkin.Controls.MaterialCard materialCard3;

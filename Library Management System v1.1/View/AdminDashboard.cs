@@ -44,13 +44,12 @@ namespace Library_Management_System_v1._1.View
             adminName.Text = adminDashboardCtrl.setName(emp_id);
             lblNumberOfLibrariyans.Text = librariyanList.Items.Count.ToString();
             lbl_welcomeTxt.Text = "Hello "+ adminDashboardCtrl.setName(emp_id).Split(' ')[0] + ", How're you today?";
-            lbl_libraryUpdated.Text = commonController.setUpdatedTime("updated_date","Librarian","Librarian_Id","");
             lbl_AdminActivity_LastUpdate.Text = commonController.setUpdatedTime("Updated_Time", "Activity", "Emp_Id", " WHERE Emp_Id= '"+emp_id+"'");
             lbl_notification_count.Text = adminDashboardCtrl.setNotificationCount();
             cmb_filterLibrarians.SelectedIndex = 0;
             loadLibrariyanList();
             loadLibrarianActivities();//Admin Dashboard only All Librarians Activities
-            new Controller.CommonController().loadActivities(listview_MyActivitiesAdmin, emp_id);//Method from Common Controller Class
+            commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);//Method from Common Controller Class
         }
 
         //================Load Librarian Activities =====================================
@@ -116,6 +115,7 @@ namespace Library_Management_System_v1._1.View
                     }
                     database.Con.Close();
                     lblNumberOfLibrariyans.Text = librariyanList.Items.Count.ToString();
+                    lbl_libraryUpdated.Text = commonController.setUpdatedTime("updated_date", "Librarian", "Librarian_Id", "");
 
                 }
                 else
