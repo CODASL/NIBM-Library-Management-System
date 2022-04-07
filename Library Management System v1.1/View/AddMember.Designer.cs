@@ -29,44 +29,47 @@ namespace Library_Management_System_v1._1.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_mid = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_mname = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_Maddress = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox4 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_MNIC = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox5 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_GID = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox6 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.txt_Gname = new MaterialSkin.Controls.MaterialTextBox();
+            this.btn_MemberClear = new MaterialSkin.Controls.MaterialButton();
+            this.btn_AddMember = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox7 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_GNIC = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox8 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_GAddress = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox9 = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox10 = new MaterialSkin.Controls.MaterialTextBox();
+            this.cmb_Mcountrycodes = new MaterialSkin.Controls.MaterialComboBox();
+            this.txt_MPhone = new MaterialSkin.Controls.MaterialTextBox();
+            this.cmb_GCountryCodes = new MaterialSkin.Controls.MaterialComboBox();
+            this.txt_GPhone = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
             // 
-            // materialTextBox1
+            // txt_mid
             // 
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox1.Location = new System.Drawing.Point(151, 98);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(100, 36);
-            this.materialTextBox1.TabIndex = 0;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.UseTallSize = false;
+            this.txt_mid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_mid.Depth = 0;
+            this.txt_mid.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_mid.Location = new System.Drawing.Point(151, 98);
+            this.txt_mid.MaxLength = 50;
+            this.txt_mid.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_mid.Multiline = false;
+            this.txt_mid.Name = "txt_mid";
+            this.txt_mid.ReadOnly = true;
+            this.txt_mid.Size = new System.Drawing.Size(100, 36);
+            this.txt_mid.TabIndex = 0;
+            this.txt_mid.Text = "";
+            this.txt_mid.UseTallSize = false;
             // 
             // materialLabel1
             // 
@@ -92,20 +95,20 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel2.TabIndex = 3;
             this.materialLabel2.Text = "Member Name";
             // 
-            // materialTextBox2
+            // txt_mname
             // 
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox2.Location = new System.Drawing.Point(524, 98);
-            this.materialTextBox2.MaxLength = 50;
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(337, 36);
-            this.materialTextBox2.TabIndex = 2;
-            this.materialTextBox2.Text = "";
-            this.materialTextBox2.UseTallSize = false;
+            this.txt_mname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_mname.Depth = 0;
+            this.txt_mname.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_mname.Location = new System.Drawing.Point(524, 98);
+            this.txt_mname.MaxLength = 50;
+            this.txt_mname.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_mname.Multiline = false;
+            this.txt_mname.Name = "txt_mname";
+            this.txt_mname.Size = new System.Drawing.Size(337, 36);
+            this.txt_mname.TabIndex = 2;
+            this.txt_mname.Text = "";
+            this.txt_mname.UseTallSize = false;
             // 
             // materialLabel3
             // 
@@ -120,20 +123,20 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel3.TabIndex = 5;
             this.materialLabel3.Text = "Member Address";
             // 
-            // materialTextBox3
+            // txt_Maddress
             // 
-            this.materialTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox3.Depth = 0;
-            this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox3.Location = new System.Drawing.Point(151, 147);
-            this.materialTextBox3.MaxLength = 50;
-            this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox3.Multiline = false;
-            this.materialTextBox3.Name = "materialTextBox3";
-            this.materialTextBox3.Size = new System.Drawing.Size(710, 36);
-            this.materialTextBox3.TabIndex = 4;
-            this.materialTextBox3.Text = "";
-            this.materialTextBox3.UseTallSize = false;
+            this.txt_Maddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Maddress.Depth = 0;
+            this.txt_Maddress.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_Maddress.Location = new System.Drawing.Point(151, 147);
+            this.txt_Maddress.MaxLength = 50;
+            this.txt_Maddress.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_Maddress.Multiline = false;
+            this.txt_Maddress.Name = "txt_Maddress";
+            this.txt_Maddress.Size = new System.Drawing.Size(710, 36);
+            this.txt_Maddress.TabIndex = 4;
+            this.txt_Maddress.Text = "";
+            this.txt_Maddress.UseTallSize = false;
             // 
             // materialLabel4
             // 
@@ -148,20 +151,20 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel4.TabIndex = 7;
             this.materialLabel4.Text = "Member NIC";
             // 
-            // materialTextBox4
+            // txt_MNIC
             // 
-            this.materialTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox4.Depth = 0;
-            this.materialTextBox4.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox4.Location = new System.Drawing.Point(151, 193);
-            this.materialTextBox4.MaxLength = 50;
-            this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox4.Multiline = false;
-            this.materialTextBox4.Name = "materialTextBox4";
-            this.materialTextBox4.Size = new System.Drawing.Size(200, 36);
-            this.materialTextBox4.TabIndex = 6;
-            this.materialTextBox4.Text = "";
-            this.materialTextBox4.UseTallSize = false;
+            this.txt_MNIC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_MNIC.Depth = 0;
+            this.txt_MNIC.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_MNIC.Location = new System.Drawing.Point(151, 193);
+            this.txt_MNIC.MaxLength = 50;
+            this.txt_MNIC.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_MNIC.Multiline = false;
+            this.txt_MNIC.Name = "txt_MNIC";
+            this.txt_MNIC.Size = new System.Drawing.Size(200, 36);
+            this.txt_MNIC.TabIndex = 6;
+            this.txt_MNIC.Text = "";
+            this.txt_MNIC.UseTallSize = false;
             // 
             // materialLabel5
             // 
@@ -176,20 +179,21 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel5.TabIndex = 9;
             this.materialLabel5.Text = "Gurdian ID";
             // 
-            // materialTextBox5
+            // txt_GID
             // 
-            this.materialTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox5.Depth = 0;
-            this.materialTextBox5.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox5.Location = new System.Drawing.Point(151, 242);
-            this.materialTextBox5.MaxLength = 50;
-            this.materialTextBox5.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox5.Multiline = false;
-            this.materialTextBox5.Name = "materialTextBox5";
-            this.materialTextBox5.Size = new System.Drawing.Size(100, 36);
-            this.materialTextBox5.TabIndex = 8;
-            this.materialTextBox5.Text = "";
-            this.materialTextBox5.UseTallSize = false;
+            this.txt_GID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_GID.Depth = 0;
+            this.txt_GID.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_GID.Location = new System.Drawing.Point(151, 242);
+            this.txt_GID.MaxLength = 50;
+            this.txt_GID.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_GID.Multiline = false;
+            this.txt_GID.Name = "txt_GID";
+            this.txt_GID.ReadOnly = true;
+            this.txt_GID.Size = new System.Drawing.Size(100, 36);
+            this.txt_GID.TabIndex = 8;
+            this.txt_GID.Text = "";
+            this.txt_GID.UseTallSize = false;
             // 
             // materialLabel6
             // 
@@ -204,58 +208,58 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel6.TabIndex = 11;
             this.materialLabel6.Text = "Gurdian Name";
             // 
-            // materialTextBox6
+            // txt_Gname
             // 
-            this.materialTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox6.Depth = 0;
-            this.materialTextBox6.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox6.Location = new System.Drawing.Point(524, 242);
-            this.materialTextBox6.MaxLength = 50;
-            this.materialTextBox6.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox6.Multiline = false;
-            this.materialTextBox6.Name = "materialTextBox6";
-            this.materialTextBox6.Size = new System.Drawing.Size(200, 36);
-            this.materialTextBox6.TabIndex = 10;
-            this.materialTextBox6.Text = "";
-            this.materialTextBox6.UseTallSize = false;
+            this.txt_Gname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Gname.Depth = 0;
+            this.txt_Gname.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_Gname.Location = new System.Drawing.Point(524, 242);
+            this.txt_Gname.MaxLength = 50;
+            this.txt_Gname.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_Gname.Multiline = false;
+            this.txt_Gname.Name = "txt_Gname";
+            this.txt_Gname.Size = new System.Drawing.Size(200, 36);
+            this.txt_Gname.TabIndex = 10;
+            this.txt_Gname.Text = "";
+            this.txt_Gname.UseTallSize = false;
             // 
-            // materialButton2
+            // btn_MemberClear
             // 
-            this.materialButton2.AutoSize = false;
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.DrawShadows = true;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(449, 434);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.Size = new System.Drawing.Size(158, 36);
-            this.materialButton2.TabIndex = 13;
-            this.materialButton2.Text = "Clear";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
+            this.btn_MemberClear.AutoSize = false;
+            this.btn_MemberClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_MemberClear.Depth = 0;
+            this.btn_MemberClear.DrawShadows = true;
+            this.btn_MemberClear.HighEmphasis = true;
+            this.btn_MemberClear.Icon = null;
+            this.btn_MemberClear.Location = new System.Drawing.Point(449, 434);
+            this.btn_MemberClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_MemberClear.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_MemberClear.Name = "btn_MemberClear";
+            this.btn_MemberClear.Size = new System.Drawing.Size(158, 36);
+            this.btn_MemberClear.TabIndex = 13;
+            this.btn_MemberClear.Text = "Clear";
+            this.btn_MemberClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_MemberClear.UseAccentColor = false;
+            this.btn_MemberClear.UseVisualStyleBackColor = true;
             // 
-            // materialButton1
+            // btn_AddMember
             // 
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.DrawShadows = true;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(252, 434);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(158, 36);
-            this.materialButton1.TabIndex = 14;
-            this.materialButton1.Text = "Add";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.btn_AddMember.AutoSize = false;
+            this.btn_AddMember.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_AddMember.Depth = 0;
+            this.btn_AddMember.DrawShadows = true;
+            this.btn_AddMember.HighEmphasis = true;
+            this.btn_AddMember.Icon = null;
+            this.btn_AddMember.Location = new System.Drawing.Point(252, 434);
+            this.btn_AddMember.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_AddMember.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_AddMember.Name = "btn_AddMember";
+            this.btn_AddMember.Size = new System.Drawing.Size(158, 36);
+            this.btn_AddMember.TabIndex = 14;
+            this.btn_AddMember.Text = "Add";
+            this.btn_AddMember.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_AddMember.UseAccentColor = false;
+            this.btn_AddMember.UseVisualStyleBackColor = true;
             // 
             // materialLabel7
             // 
@@ -270,20 +274,20 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel7.TabIndex = 18;
             this.materialLabel7.Text = "Guardian NIC";
             // 
-            // materialTextBox7
+            // txt_GNIC
             // 
-            this.materialTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox7.Depth = 0;
-            this.materialTextBox7.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox7.Location = new System.Drawing.Point(151, 341);
-            this.materialTextBox7.MaxLength = 50;
-            this.materialTextBox7.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox7.Multiline = false;
-            this.materialTextBox7.Name = "materialTextBox7";
-            this.materialTextBox7.Size = new System.Drawing.Size(200, 36);
-            this.materialTextBox7.TabIndex = 17;
-            this.materialTextBox7.Text = "";
-            this.materialTextBox7.UseTallSize = false;
+            this.txt_GNIC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_GNIC.Depth = 0;
+            this.txt_GNIC.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_GNIC.Location = new System.Drawing.Point(151, 341);
+            this.txt_GNIC.MaxLength = 50;
+            this.txt_GNIC.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_GNIC.Multiline = false;
+            this.txt_GNIC.Name = "txt_GNIC";
+            this.txt_GNIC.Size = new System.Drawing.Size(200, 36);
+            this.txt_GNIC.TabIndex = 17;
+            this.txt_GNIC.Text = "";
+            this.txt_GNIC.UseTallSize = false;
             // 
             // materialLabel8
             // 
@@ -298,20 +302,20 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel8.TabIndex = 16;
             this.materialLabel8.Text = "Gurdian Address";
             // 
-            // materialTextBox8
+            // txt_GAddress
             // 
-            this.materialTextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox8.Depth = 0;
-            this.materialTextBox8.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox8.Location = new System.Drawing.Point(151, 294);
-            this.materialTextBox8.MaxLength = 50;
-            this.materialTextBox8.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox8.Multiline = false;
-            this.materialTextBox8.Name = "materialTextBox8";
-            this.materialTextBox8.Size = new System.Drawing.Size(710, 36);
-            this.materialTextBox8.TabIndex = 15;
-            this.materialTextBox8.Text = "";
-            this.materialTextBox8.UseTallSize = false;
+            this.txt_GAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_GAddress.Depth = 0;
+            this.txt_GAddress.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_GAddress.Location = new System.Drawing.Point(151, 294);
+            this.txt_GAddress.MaxLength = 50;
+            this.txt_GAddress.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_GAddress.Multiline = false;
+            this.txt_GAddress.Name = "txt_GAddress";
+            this.txt_GAddress.Size = new System.Drawing.Size(710, 36);
+            this.txt_GAddress.TabIndex = 15;
+            this.txt_GAddress.Text = "";
+            this.txt_GAddress.UseTallSize = false;
             // 
             // materialLabel9
             // 
@@ -326,21 +330,6 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel9.TabIndex = 20;
             this.materialLabel9.Text = "Guardian Phone";
             // 
-            // materialTextBox9
-            // 
-            this.materialTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox9.Depth = 0;
-            this.materialTextBox9.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox9.Location = new System.Drawing.Point(524, 336);
-            this.materialTextBox9.MaxLength = 50;
-            this.materialTextBox9.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox9.Multiline = false;
-            this.materialTextBox9.Name = "materialTextBox9";
-            this.materialTextBox9.Size = new System.Drawing.Size(200, 36);
-            this.materialTextBox9.TabIndex = 19;
-            this.materialTextBox9.Text = "";
-            this.materialTextBox9.UseTallSize = false;
-            // 
             // materialLabel10
             // 
             this.materialLabel10.AutoSize = true;
@@ -354,50 +343,126 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel10.TabIndex = 22;
             this.materialLabel10.Text = "Member Phone";
             // 
-            // materialTextBox10
+            // cmb_Mcountrycodes
             // 
-            this.materialTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox10.Depth = 0;
-            this.materialTextBox10.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox10.Location = new System.Drawing.Point(524, 193);
-            this.materialTextBox10.MaxLength = 50;
-            this.materialTextBox10.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox10.Multiline = false;
-            this.materialTextBox10.Name = "materialTextBox10";
-            this.materialTextBox10.Size = new System.Drawing.Size(200, 36);
-            this.materialTextBox10.TabIndex = 21;
-            this.materialTextBox10.Text = "";
-            this.materialTextBox10.UseTallSize = false;
+            this.cmb_Mcountrycodes.AutoResize = false;
+            this.cmb_Mcountrycodes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmb_Mcountrycodes.Depth = 0;
+            this.cmb_Mcountrycodes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmb_Mcountrycodes.DropDownHeight = 118;
+            this.cmb_Mcountrycodes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Mcountrycodes.DropDownWidth = 121;
+            this.cmb_Mcountrycodes.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmb_Mcountrycodes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmb_Mcountrycodes.FormattingEnabled = true;
+            this.cmb_Mcountrycodes.IntegralHeight = false;
+            this.cmb_Mcountrycodes.ItemHeight = 29;
+            this.cmb_Mcountrycodes.Items.AddRange(new object[] {
+            "+1",
+            "+94",
+            "+91",
+            "+97",
+            "+64"});
+            this.cmb_Mcountrycodes.Location = new System.Drawing.Point(521, 193);
+            this.cmb_Mcountrycodes.MaxDropDownItems = 4;
+            this.cmb_Mcountrycodes.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmb_Mcountrycodes.Name = "cmb_Mcountrycodes";
+            this.cmb_Mcountrycodes.Size = new System.Drawing.Size(76, 35);
+            this.cmb_Mcountrycodes.TabIndex = 24;
+            this.cmb_Mcountrycodes.UseTallSize = false;
+            // 
+            // txt_MPhone
+            // 
+            this.txt_MPhone.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_MPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_MPhone.Depth = 0;
+            this.txt_MPhone.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_MPhone.Location = new System.Drawing.Point(603, 193);
+            this.txt_MPhone.MaxLength = 9;
+            this.txt_MPhone.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_MPhone.Multiline = false;
+            this.txt_MPhone.Name = "txt_MPhone";
+            this.txt_MPhone.Size = new System.Drawing.Size(230, 36);
+            this.txt_MPhone.TabIndex = 23;
+            this.txt_MPhone.Text = "";
+            this.txt_MPhone.UseTallSize = false;
+            // 
+            // cmb_GCountryCodes
+            // 
+            this.cmb_GCountryCodes.AutoResize = false;
+            this.cmb_GCountryCodes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmb_GCountryCodes.Depth = 0;
+            this.cmb_GCountryCodes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmb_GCountryCodes.DropDownHeight = 118;
+            this.cmb_GCountryCodes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_GCountryCodes.DropDownWidth = 121;
+            this.cmb_GCountryCodes.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmb_GCountryCodes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmb_GCountryCodes.FormattingEnabled = true;
+            this.cmb_GCountryCodes.IntegralHeight = false;
+            this.cmb_GCountryCodes.ItemHeight = 29;
+            this.cmb_GCountryCodes.Items.AddRange(new object[] {
+            "+1",
+            "+94",
+            "+91",
+            "+97",
+            "+64"});
+            this.cmb_GCountryCodes.Location = new System.Drawing.Point(521, 336);
+            this.cmb_GCountryCodes.MaxDropDownItems = 4;
+            this.cmb_GCountryCodes.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmb_GCountryCodes.Name = "cmb_GCountryCodes";
+            this.cmb_GCountryCodes.Size = new System.Drawing.Size(76, 35);
+            this.cmb_GCountryCodes.TabIndex = 26;
+            this.cmb_GCountryCodes.UseTallSize = false;
+            // 
+            // txt_GPhone
+            // 
+            this.txt_GPhone.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_GPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_GPhone.Depth = 0;
+            this.txt_GPhone.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_GPhone.Location = new System.Drawing.Point(603, 336);
+            this.txt_GPhone.MaxLength = 9;
+            this.txt_GPhone.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_GPhone.Multiline = false;
+            this.txt_GPhone.Name = "txt_GPhone";
+            this.txt_GPhone.Size = new System.Drawing.Size(230, 36);
+            this.txt_GPhone.TabIndex = 25;
+            this.txt_GPhone.Text = "";
+            this.txt_GPhone.UseTallSize = false;
             // 
             // AddMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 505);
+            this.Controls.Add(this.cmb_GCountryCodes);
+            this.Controls.Add(this.txt_GPhone);
+            this.Controls.Add(this.cmb_Mcountrycodes);
+            this.Controls.Add(this.txt_MPhone);
             this.Controls.Add(this.materialLabel10);
-            this.Controls.Add(this.materialTextBox10);
             this.Controls.Add(this.materialLabel9);
-            this.Controls.Add(this.materialTextBox9);
             this.Controls.Add(this.materialLabel7);
-            this.Controls.Add(this.materialTextBox7);
+            this.Controls.Add(this.txt_GNIC);
             this.Controls.Add(this.materialLabel8);
-            this.Controls.Add(this.materialTextBox8);
-            this.Controls.Add(this.materialButton1);
-            this.Controls.Add(this.materialButton2);
+            this.Controls.Add(this.txt_GAddress);
+            this.Controls.Add(this.btn_AddMember);
+            this.Controls.Add(this.btn_MemberClear);
             this.Controls.Add(this.materialLabel6);
-            this.Controls.Add(this.materialTextBox6);
+            this.Controls.Add(this.txt_Gname);
             this.Controls.Add(this.materialLabel5);
-            this.Controls.Add(this.materialTextBox5);
+            this.Controls.Add(this.txt_GID);
             this.Controls.Add(this.materialLabel4);
-            this.Controls.Add(this.materialTextBox4);
+            this.Controls.Add(this.txt_MNIC);
             this.Controls.Add(this.materialLabel3);
-            this.Controls.Add(this.materialTextBox3);
+            this.Controls.Add(this.txt_Maddress);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.materialTextBox2);
+            this.Controls.Add(this.txt_mname);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.materialTextBox1);
+            this.Controls.Add(this.txt_mid);
             this.Name = "AddMember";
             this.Text = "Add Member";
+            this.Load += new System.EventHandler(this.AddMember_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,27 +470,29 @@ namespace Library_Management_System_v1._1.View
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox txt_mid;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
+        private MaterialSkin.Controls.MaterialTextBox txt_mname;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox3;
+        private MaterialSkin.Controls.MaterialTextBox txt_Maddress;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox4;
+        private MaterialSkin.Controls.MaterialTextBox txt_MNIC;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox5;
+        private MaterialSkin.Controls.MaterialTextBox txt_GID;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox6;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialTextBox txt_Gname;
+        private MaterialSkin.Controls.MaterialButton btn_MemberClear;
+        private MaterialSkin.Controls.MaterialButton btn_AddMember;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox7;
+        private MaterialSkin.Controls.MaterialTextBox txt_GNIC;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox8;
+        private MaterialSkin.Controls.MaterialTextBox txt_GAddress;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox9;
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox10;
+        private MaterialSkin.Controls.MaterialComboBox cmb_Mcountrycodes;
+        private MaterialSkin.Controls.MaterialTextBox txt_MPhone;
+        private MaterialSkin.Controls.MaterialComboBox cmb_GCountryCodes;
+        private MaterialSkin.Controls.MaterialTextBox txt_GPhone;
     }
 }

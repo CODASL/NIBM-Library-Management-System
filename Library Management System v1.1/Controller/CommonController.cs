@@ -1,7 +1,7 @@
 ﻿using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -91,7 +91,7 @@ namespace Library_Management_System_v1._1.Controller
             try
             {
                 database.Con.Open();
-                SqlDataReader sdr = database.readData("SELECT TOP 1 " + column_name + " FROM " + table_name + whereCommand+" ORDER BY " + primary_key + " DESC");
+                MySqlDataReader sdr = database.readData("SELECT TOP 1 " + column_name + " FROM " + table_name + whereCommand+" ORDER BY " + primary_key + " DESC");
                 sdr.Read();
                 if (sdr.HasRows)
                 {
@@ -122,7 +122,7 @@ namespace Library_Management_System_v1._1.Controller
             try
             {
                 database.Con.Open();
-                SqlDataReader sdr = database.readData("SELECT * FROM Activity WHERE Emp_Id= '" + Emp_No + "'");
+                MySqlDataReader sdr = database.readData("SELECT * FROM Activity WHERE Emp_Id= '" + Emp_No + "'");
                 if (sdr.HasRows)
                 {
 
@@ -139,7 +139,7 @@ namespace Library_Management_System_v1._1.Controller
                     Console.WriteLine("No Data to Show");
                 }
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -148,6 +148,41 @@ namespace Library_Management_System_v1._1.Controller
                 MessageBox.Show(ex.Message);
             }
             finally
+            {
+                database.Con.Close();
+            }
+        }
+
+        //==================Generate Id ==============================================
+
+        public void setId(MaterialTextBox textBox, String IDColumn, String tableName, String firstLetter)
+        {
+            Model.DatabaseService database = new Model.DatabaseService();
+            String id;
+            try
+            {
+                database.Con.Open();
+                MySqlDataReader sdr = database.readData("SELECT TOP 1 " + IDColumn + " FROM " + tableName + " ORDER BY " + IDColumn + " DESC");
+                sdr.Read();
+                if (sdr.HasRows)
+                {
+                    id = sdr[IDColumn].ToString();
+                    database.Con.Close();
+                    id = firstLetter.ToUpper() + (Convert.ToInt32(id.Remove(0, 1)) + 1).ToString();
+                }
+                else
+                {
+                    database.Con.Close();
+                    id = firstLetter.ToUpper() + "1";
+                }
+
+                textBox.Text = id;
+            }
+            catch (MySqlException ex)
+            {
+                database.Con.Close();
+            }
+            catch (Exception ex)
             {
                 database.Con.Close();
             }

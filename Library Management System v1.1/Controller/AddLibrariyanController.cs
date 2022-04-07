@@ -1,7 +1,7 @@
 ﻿using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,7 +38,7 @@ namespace Library_Management_System_v1._1.Controller
             try
             {
                 database.Con.Open();
-                SqlDataReader sdr =  database.readData("SELECT TOP 1 Librarian_Id FROM Librarian ORDER BY Librarian_Id DESC");
+                MySqlDataReader sdr = database.readData("SELECT TOP 1 Librarian_Id FROM Librarian ORDER BY Librarian_Id DESC");
                 sdr.Read();
                 if (sdr.HasRows)
                 {
@@ -54,7 +54,7 @@ namespace Library_Management_System_v1._1.Controller
                 
                 
                 textBox.Text = id;
-            }catch(SqlException ex)
+            }catch(MySqlException ex)
             {
                 database.Con.Close();
             }
@@ -63,7 +63,5 @@ namespace Library_Management_System_v1._1.Controller
                 database.Con.Close();
             }
         }
-
-
     }
 }

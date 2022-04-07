@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using MetroFramework.Controls;
 
 namespace Library_Management_System_v1._1.View
@@ -59,7 +59,7 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 database.Con.Open();
-                SqlDataReader sdr = database.readData("SELECT * FROM Activity WHERE Emp_Type= '"+"Librarian"+"'");
+                MySqlDataReader sdr = database.readData("SELECT * FROM Activity WHERE Emp_Type= '"+"Librarian"+"'");
                 if (sdr.HasRows)
                 {
                      
@@ -78,7 +78,7 @@ namespace Library_Management_System_v1._1.View
                     Console.WriteLine("No Data to Show");
                 }
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -99,7 +99,7 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 database.Con.Open();
-                SqlDataReader sdr = database.readData("Select * From Librarian");
+                MySqlDataReader sdr = database.readData("Select * From Librarian");
                 if (sdr.HasRows) {
 
                     while (sdr.Read())
@@ -124,7 +124,7 @@ namespace Library_Management_System_v1._1.View
                     database.Con.Close();
                 }
                 
-            }catch(SqlException ex)
+            }catch(MySqlException ex)
             {
                 MessageBox.Show(ex.ToString());
                 database.Con.Close();
@@ -216,7 +216,7 @@ namespace Library_Management_System_v1._1.View
                         }
 
                     }
-                    catch (SqlException ex)
+                    catch (MySqlException ex)
                     {
                         MessageBox.Show(ex.ToString());
                     }

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -88,7 +88,7 @@ namespace Library_Management_System_v1._1.View
                     }
                 }
                 
-            }catch(SqlException ex)
+            }catch(MySqlException ex)
             {
                 MessageBox.Show("Please check your internet connection \n"+ex.Message);
             }catch(Exception ex)
@@ -120,7 +120,7 @@ namespace Library_Management_System_v1._1.View
                 try
                 {
                     database.Con.Open();
-                    SqlDataReader sdr = database.readData("SELECT * FROM Librarian WHERE Librarian_Id = '" + selectedRowID + "'");
+                    MySqlDataReader sdr = database.readData("SELECT * FROM Librarian WHERE Librarian_Id = '" + selectedRowID + "'");
                     sdr.Read();
                     if (sdr.HasRows)
                     {
@@ -133,7 +133,7 @@ namespace Library_Management_System_v1._1.View
                     }
                     database.Con.Close();
                 }
-                catch(SqlException ex)
+                catch(MySqlException ex)
                 {
                     MessageBox.Show("Please check your internet connection \n" + ex.Message);
                 }catch(Exception ex)

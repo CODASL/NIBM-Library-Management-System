@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,7 +24,8 @@ namespace Library_Management_System_v1._1.View
         Model.DatabaseService DB = new Model.DatabaseService();
         Model.Librarian librarian;
         String emp_Id;
-        
+
+        [Obsolete]
         public LibrariyanHome(String emp_Id)
         {
             InitializeComponent();
@@ -34,22 +35,21 @@ namespace Library_Management_System_v1._1.View
             this.emp_Id = emp_Id;
             timer1.Start();
             this.FormClosing += Form_FormClosing;
-
         }
         
        //=========================On Load Librarian Home ==========================================
         private void LibrariyanHome_Load(object sender, EventArgs e)
         {
-            librarian = librariyandash.setLibrariyan(emp_Id);
-            lbl_librariyan_name.Text = librarian.Name;
-            lbl_welcome_note.Text = "Hello " + librarian.Name.Split(' ')[0] + ", How're you today?";
-            loadDashboardTileCounts();
-            loadMembers();
-            loadBooks();
-            loadBookIssues();
-            profileDetailUpdate();
-            commonController.loadActivities(listview_librarianActivities, emp_Id);//Method from Common Controller Class
-            lbl_AccountingLastUpdate.Text = commonController.setUpdatedTime("Updated_Date", "Accounting", "Fine_Id", "");
+            //librarian = librariyandash.setLibrariyan(emp_Id);
+            //lbl_librariyan_name.Text = librarian.Name;
+            //lbl_welcome_note.Text = "Hello " + librarian.Name.Split(' ')[0] + ", How're you today?";
+            //loadDashboardTileCounts();
+            //loadMembers();
+            //loadBooks();
+            //loadBookIssues();
+            //profileDetailUpdate();
+            //commonController.loadActivities(listview_librarianActivities, emp_Id);//Method from Common Controller Class
+            //lbl_AccountingLastUpdate.Text = commonController.setUpdatedTime("Updated_Date", "Accounting", "Fine_Id", "");
         }
 
         public void loadDashboardTileCounts()
@@ -59,6 +59,7 @@ namespace Library_Management_System_v1._1.View
             lbl_BookIssuedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + true + "'").ToString();
             lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + false + "'").ToString();
         }
+
         //============ form x or F4 click logout user ================================
         [Obsolete]
         void Form_FormClosing(object sender, FormClosingEventArgs e)
@@ -100,7 +101,7 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 DB.Con.Open();
-                SqlDataReader sdr = DB.readData("Select * From Member");
+                MySqlDataReader sdr = DB.readData("Select * From Member");
                 if (sdr.HasRows)
                 {
 
@@ -126,7 +127,7 @@ namespace Library_Management_System_v1._1.View
                     DB.Con.Close();
                 }
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.ToString());
                 DB.Con.Close();
@@ -145,7 +146,7 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 DB.Con.Open();
-                SqlDataReader sdr = DB.readData("Select * From Book");
+                MySqlDataReader sdr = DB.readData("Select * From Book");
                 if (sdr.HasRows)
                 {
 
@@ -172,7 +173,7 @@ namespace Library_Management_System_v1._1.View
                     DB.Con.Close();
                 }
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.ToString());
                 DB.Con.Close();
@@ -192,7 +193,7 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 DB.Con.Open();
-                SqlDataReader sdr = DB.readData("Select * From Book_Issue");
+                MySqlDataReader sdr = DB.readData("Select * From Book_Issue");
                 if (sdr.HasRows)
                 {
 
@@ -219,7 +220,7 @@ namespace Library_Management_System_v1._1.View
                     DB.Con.Close();
                 }
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.ToString());
                 DB.Con.Close();
@@ -239,7 +240,7 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 DB.Con.Open();
-                SqlDataReader sdr = DB.readData(query);
+                MySqlDataReader sdr = DB.readData(query);
               
                 if (sdr.HasRows)
                 {
@@ -250,7 +251,7 @@ namespace Library_Management_System_v1._1.View
                 }
                 DB.Con.Close();
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
                 DB.Con.Close();

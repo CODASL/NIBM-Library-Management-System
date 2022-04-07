@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -69,7 +69,7 @@ namespace Library_Management_System_v1._1
                 {
                     database.Con.Open();
                     LoginProgress.Increment(10);
-                    SqlDataReader sdr = database.readData("Select * From AppUser where Emp_Id = '" + txtmail.Text + "'");
+                    MySqlDataReader sdr = database.readData("Select * From AppUser where Emp_Id = '" + txtmail.Text + "'");
                     LoginProgress.Increment(30);
                     sdr.Read();
                     LoginProgress.Increment(20);
@@ -79,7 +79,7 @@ namespace Library_Management_System_v1._1
                     LoginProgress.Increment(10);
                     LoginProgress.Equals(0);
                 }
-                catch (SqlException ex)
+                catch (MySqlException ex)
                 {
                     MessageBox.Show(ex.Message);
                     LoginProgress.Equals(0);

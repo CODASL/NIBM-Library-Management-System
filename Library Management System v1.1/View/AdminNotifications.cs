@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,7 +28,7 @@ namespace Library_Management_System_v1._1.View
             try {
 
                 database.Con.Open();
-                SqlDataReader sdr = database.readData("SELECT * FROM Notification WHERE Status = '"+""+"'");
+                MySqlDataReader sdr = database.readData("SELECT * FROM Notification WHERE Status = '"+""+"'");
                 while (sdr.Read())
                 {
                     if (sdr.HasRows)
@@ -46,7 +46,7 @@ namespace Library_Management_System_v1._1.View
                 database.Con.Close();
 
             }
-            catch(SqlException ex) {
+            catch(MySqlException ex) {
                 MessageBox.Show(ex.Message);
             }catch(Exception ex)
             {
