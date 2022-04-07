@@ -6,10 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Drawing;
 using MaterialSkin.Controls;
+using MySql.Data.MySqlClient;
 
 namespace Library_Management_System_v1._1.Controller
 {
@@ -54,7 +54,7 @@ namespace Library_Management_System_v1._1.Controller
             try
             {
                 database.Con.Open();
-                SqlDataReader sdr = database.readData("Select * FROM Notification WHERE Status = ''");
+                MySqlDataReader sdr = database.readData("Select * FROM Notification WHERE Status = ''");
                 int count = 0;
                 while (sdr.Read())
                 {
@@ -78,7 +78,7 @@ namespace Library_Management_System_v1._1.Controller
             try
             {
                 database.Con.Open();
-                SqlDataReader sdr = database.readData("Select Name From admin WHERE Id = '" + emp_id + "'");
+                MySqlDataReader sdr = database.readData("Select Name From admin WHERE Id = '" + emp_id + "'");
                 sdr.Read();
                 String name =  sdr["Name"].ToString();
                 database.Con.Close();
@@ -99,7 +99,7 @@ namespace Library_Management_System_v1._1.Controller
             try
             {
                 database.Con.Open();
-                SqlDataReader sdr = database.readData("SELECT TOP 1 updated_date FROM Librarian ORDER BY Librarian_Id DESC");
+                MySqlDataReader sdr = database.readData("SELECT TOP 1 updated_date FROM Librarian ORDER BY Librarian_Id DESC");
                 sdr.Read();
                 String date = sdr["updated_date"].ToString();
                 database.Con.Close();

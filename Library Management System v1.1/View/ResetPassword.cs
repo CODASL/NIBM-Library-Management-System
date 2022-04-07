@@ -1,9 +1,9 @@
 ﻿using MaterialSkin.Controls;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -30,14 +30,14 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 database.Con.Open();
-                SqlDataReader sdr = database.readData("SELECT Librarian_Id FROM Librarian");
+                MySqlDataReader sdr = database.readData("SELECT Librarian_Id FROM Librarian");
                 while (sdr.Read())
                 {
 
                     cmb_libID.Items.Add(sdr["Librarian_Id"]);
                 }
                 database.Con.Close();
-            }catch(SqlException ex)
+            }catch(MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }catch(Exception ex)
@@ -52,7 +52,7 @@ namespace Library_Management_System_v1._1.View
             int id;
             try {
                 database.Con.Open();
-                SqlDataReader sdr = database.readData("SELECT TOP 1 notification_id FROM Notification ORDER BY notification_id DESC");
+                MySqlDataReader sdr = database.readData("SELECT TOP 1 notification_id FROM Notification ORDER BY notification_id DESC");
                 if (sdr.HasRows)
                 {
                     sdr.Read();
@@ -102,7 +102,7 @@ namespace Library_Management_System_v1._1.View
                         MessageBox.Show("Something Went Wrong. Try Again Later");
                     }
                 }
-                catch (SqlException ex)
+                catch (MySqlException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }

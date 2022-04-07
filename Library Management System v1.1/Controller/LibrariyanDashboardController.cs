@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Library_Management_System_v1._1.Controller
             try
             {
                 database.Con.Open();
-                SqlDataReader sdr = database.readData("Select * From Librarian WHERE Librarian_Id = '" + emp_id + "'");
+                MySqlDataReader sdr = database.readData("Select * From Librarian WHERE Librarian_Id = '" + emp_id + "'");
                 sdr.Read();
                 if (sdr.HasRows)
                 {
@@ -34,7 +35,9 @@ namespace Library_Management_System_v1._1.Controller
                 database.Con.Close();
                 return librarian;
             }
+#pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
             {
                 database.Con.Close();
                 return null;

@@ -112,7 +112,9 @@ namespace CustomControls.RJControls
         }
 
         [Category("RJ Code Advance")]
+#pragma warning disable CS0114 // Member hides inherited member; missing override keyword
         public string Text
+#pragma warning restore CS0114 // Member hides inherited member; missing override keyword
         {
             get { return textBox1.Text; }
             set { textBox1.Text = value; }

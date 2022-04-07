@@ -17,7 +17,9 @@ namespace Library_Management_System_v1._1
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+#pragma warning disable CS0612 // Type or member is obsolete
             Application.Run(new Splash());
+#pragma warning restore CS0612 // Type or member is obsolete
         }
     }
 }

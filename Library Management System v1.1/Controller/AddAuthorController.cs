@@ -1,7 +1,7 @@
 ﻿using MaterialSkin.Controls;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +26,7 @@ namespace Library_Management_System_v1._1.Controller
             try
             {
                 obj.Con.Open();
-                SqlDataReader sdr = obj.readData("SELECT TOP 1 Author_ID FROM Author ORDER BY Author_ID DESC");
+                MySqlDataReader sdr = obj.readData("SELECT TOP 1 Author_ID FROM Author ORDER BY Author_ID DESC");
                 sdr.Read();
                 if (sdr.HasRows)
                 {
@@ -39,7 +39,7 @@ namespace Library_Management_System_v1._1.Controller
                 return id;
 
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
                 MaterialMessageBox.Show(ex.Message);
 

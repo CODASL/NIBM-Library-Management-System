@@ -1,6 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +14,7 @@ namespace Library_Management_System_v1._1.Controller
         public static String currentUserId;
         
         [Obsolete]
-        public void onLoggedIn(SqlDataReader sdr , String password , Form form) {
+        public void onLoggedIn(MySqlDataReader sdr , String password , Form form) {
 
 
             if (sdr.HasRows)

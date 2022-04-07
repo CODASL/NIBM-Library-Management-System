@@ -2,11 +2,11 @@
 using LiveCharts.Wpf;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -71,13 +71,13 @@ namespace Library_Management_System_v1._1.View
         //=========================On Load Librarian Home ==========================================
         private void LibrariyanHome_Load(object sender, EventArgs e)
         {
-            librarian = librariyandash.setLibrariyan(emp_Id);
-            lbl_librariyan_name.Text = librarian.Name;
-            lbl_welcome_note.Text = "Hello " + librarian.Name.Split(' ')[0] + ", How're you today?";
-            dashtilecount();
-            loadMembers();
-            last_update_date();
-            profileDetailUpdate();
+           // librarian = librariyandash.setLibrariyan(emp_Id);
+            //lbl_librariyan_name.Text = librarian.Name;
+            //lbl_welcome_note.Text = "Hello " + librarian.Name.Split(' ')[0] + ", How're you today?";
+            //dashtilecount();
+            //loadMembers();
+            //last_update_date();
+            //profileDetailUpdate();
         }
 
         //=====================Load Members to Member List view =====================================
@@ -87,7 +87,7 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 DB.Con.Open();
-                SqlDataReader sdr = DB.readData("Select * From Member");
+                MySqlDataReader sdr = DB.readData("Select * From Member");
                 if (sdr.HasRows)
                 {
 
@@ -113,7 +113,7 @@ namespace Library_Management_System_v1._1.View
                     DB.Con.Close();
                 }
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.ToString());
                 DB.Con.Close();
@@ -132,7 +132,7 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 DB.Con.Open();
-                SqlDataReader sdr = DB.readData(query);
+                MySqlDataReader sdr = DB.readData(query);
               
                 if (sdr.HasRows)
                 {
@@ -143,7 +143,7 @@ namespace Library_Management_System_v1._1.View
                 }
                 DB.Con.Close();
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
                 DB.Con.Close();
@@ -173,7 +173,7 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 DB.Con.Open();
-                SqlDataReader sdr = DB.readData("SELECT TOP 1 "+ q + " FROM " + t + " ORDER BY  " + pk + " DESC");
+                MySqlDataReader sdr = DB.readData("SELECT TOP 1 "+ q + " FROM " + t + " ORDER BY  " + pk + " DESC");
                 if (sdr.HasRows)
                 {
 
@@ -184,7 +184,7 @@ namespace Library_Management_System_v1._1.View
                 }
                 DB.Con.Close();
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
                 DB.Con.Close();
@@ -203,7 +203,7 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 DB.Con.Open();
-                SqlDataReader sdr = DB.readData("SELECT "+q+" FROM "+t+ " WHERE " + q + " = (SELECT MAX(" + q + ") FROM " + t + ") ");
+                MySqlDataReader sdr = DB.readData("SELECT "+q+" FROM "+t+ " WHERE " + q + " = (SELECT MAX(" + q + ") FROM " + t + ") ");
                 if (sdr.HasRows)
                 {
 
@@ -214,7 +214,7 @@ namespace Library_Management_System_v1._1.View
                 }               
                 DB.Con.Close();                
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
                 DB.Con.Close();
