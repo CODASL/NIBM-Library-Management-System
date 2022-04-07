@@ -2,11 +2,11 @@
 using LiveCharts.Wpf;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,21 +20,48 @@ namespace Library_Management_System_v1._1.View
 
         Controller.MaterialController material = new Controller.MaterialController();
         Controller.LibrariyanDashboardController librariyandash = new Controller.LibrariyanDashboardController();
+        Controller.CommonController commonController = new Controller.CommonController();
         Model.DatabaseService DB = new Model.DatabaseService();
         Model.Librarian librarian;
         String emp_Id;
-        
+
+        [Obsolete]
         public LibrariyanHome(String emp_Id)
         {
             InitializeComponent();
+
             material.addStyle(this);
             cmbFilterAvalibility.SelectedIndex = 0;
             this.emp_Id = emp_Id;
             timer1.Start();
             this.FormClosing += Form_FormClosing;
         }
+        
+       //=========================On Load Librarian Home ==========================================
+        private void LibrariyanHome_Load(object sender, EventArgs e)
+        {
+            //librarian = librariyandash.setLibrariyan(emp_Id);
+            //lbl_librariyan_name.Text = librarian.Name;
+            //lbl_welcome_note.Text = "Hello " + librarian.Name.Split(' ')[0] + ", How're you today?";
+            //loadDashboardTileCounts();
+            //loadMembers();
+            //loadBooks();
+            //loadBookIssues();
+            //profileDetailUpdate();
+            //commonController.loadActivities(listview_librarianActivities, emp_Id);//Method from Common Controller Class
+            //lbl_AccountingLastUpdate.Text = commonController.setUpdatedTime("Updated_Date", "Accounting", "Fine_Id", "");
+        }
 
-        //=====form x or F4 click logout user =====
+        public void loadDashboardTileCounts()
+        {
+            lbl_members_count.Text = tile_count("SELECT * FROM Member").ToString();
+            lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
+            lbl_BookIssuedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + true + "'").ToString();
+            lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + false + "'").ToString();
+        }
+
+        //============ form x or F4 click logout user ================================
+        [Obsolete]
         void Form_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -48,7 +75,7 @@ namespace Library_Management_System_v1._1.View
                 }
                 else
                 {
-                    MessageBox.Show("Application Cannot Logout " , emp_Id);
+                    MessageBox.Show("Application Cannot Logout ", emp_Id);
                 }
             }
             if (e.CloseReason == CloseReason.WindowsShutDown)
@@ -65,21 +92,8 @@ namespace Library_Management_System_v1._1.View
                     MessageBox.Show("Application Cannot Logout ", emp_Id);
                 }
             }
-                
-        }
 
-        //=========================On Load Librarian Home ==========================================
-        private void LibrariyanHome_Load(object sender, EventArgs e)
-        {
-           // librarian = librariyandash.setLibrariyan(emp_Id);
-            //lbl_librariyan_name.Text = librarian.Name;
-            //lbl_welcome_note.Text = "Hello " + librarian.Name.Split(' ')[0] + ", How're you today?";
-            //dashtilecount();
-            //loadMembers();
-            //last_update_date();
-            //profileDetailUpdate();
         }
-
         //=====================Load Members to Member List view =====================================
         public void loadMembers()
         {
@@ -105,7 +119,7 @@ namespace Library_Management_System_v1._1.View
                     }
                     DB.Con.Close();
                     lbl_members_tot.Text = userListView.Items.Count.ToString();
-
+                    lbl_membersLastUpdate.Text = commonController.setUpdatedTime("Updated_Date", "Member", "MID", "");
                 }
                 else
                 {
@@ -119,6 +133,100 @@ namespace Library_Management_System_v1._1.View
                 DB.Con.Close();
 
             }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                DB.Con.Close();
+            }
+        }
+
+        //=====================Load Books to Book List view =====================================
+        public void loadBooks()
+        {
+            LibBookList.Items.Clear();
+            try
+            {
+                DB.Con.Open();
+                MySqlDataReader sdr = DB.readData("Select * From Book");
+                if (sdr.HasRows)
+                {
+
+                    while (sdr.Read())
+                    {
+                        ListViewItem item = new ListViewItem(sdr["ISBN"].ToString());
+                        item.SubItems.Add(sdr["Name"].ToString());
+                        item.SubItems.Add(sdr["Category"].ToString());
+                        item.SubItems.Add(sdr["Author"].ToString());
+                        item.SubItems.Add(sdr["Availability"].ToString());
+                        item.SubItems.Add(sdr["Rack_No"].ToString());
+                        item.SubItems.Add(sdr["Date_Updated"].ToString());
+
+                        LibBookList.Items.Add(item);
+                    }
+                    DB.Con.Close();
+                    lbl_totalBookCount.Text = LibBookList.Items.Count.ToString();
+                    lbl_BooksLastUpdate.Text = commonController.setUpdatedTime("Date_Updated", "Book", "BID", "");
+
+                }
+                else
+                {
+                    Console.WriteLine("No Data to Show");
+                    DB.Con.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+                DB.Con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                DB.Con.Close();
+            }
+        }
+
+        //=====================Load Book_Issues to Book Issue List view =====================================
+        public void loadBookIssues()
+        {
+            listView_issueBooks.Items.Clear();
+            try
+            {
+                DB.Con.Open();
+                MySqlDataReader sdr = DB.readData("Select * From Book_Issue");
+                if (sdr.HasRows)
+                {
+
+                    while (sdr.Read())
+                    {
+                        ListViewItem item = new ListViewItem(sdr["BID"].ToString());
+                        item.SubItems.Add(sdr["MID"].ToString());
+                        item.SubItems.Add(sdr["LID"].ToString());
+                        item.SubItems.Add(sdr["issued_dateTime"].ToString());
+                        item.SubItems.Add(sdr["Return_date"].ToString());
+                        item.SubItems.Add(sdr["Status"].ToString());
+                        
+
+                        listView_issueBooks.Items.Add(item);
+                    }
+                    DB.Con.Close();
+                    lbl_totalBookIssueCount.Text = listView_issueBooks.Items.Count.ToString();
+                    lbl_IssueBookLastUpdate.Text = commonController.setUpdatedTime("Updated_date", "Book_Issue", "ID", "");
+
+                }
+                else
+                {
+                    Console.WriteLine("No Data to Show");
+                    DB.Con.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+                DB.Con.Close();
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
                 DB.Con.Close();
@@ -155,89 +263,6 @@ namespace Library_Management_System_v1._1.View
             }
             return count;
         }
-
-
-        //======dashbord tile counts====
-        private void dashtilecount()
-        {
-            lbl_members_count.Text = tile_count("SELECT * FROM Member").ToString();
-            lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
-            lbl_members_book.Text = tile_count("SELECT * FROM Book").ToString();
-            lbl_borrow_book_count.Text = tile_count("SELECT * FROM Book_Issue WHERE Status = 0").ToString();
-
-        }
-        //==================get last update time ==========================
-        public string tile(String q, String t, String pk)
-        {
-            String s = DateTime.Now.ToString();
-            try
-            {
-                DB.Con.Open();
-                MySqlDataReader sdr = DB.readData("SELECT TOP 1 "+ q + " FROM " + t + " ORDER BY  " + pk + " DESC");
-                if (sdr.HasRows)
-                {
-
-                    while (sdr.Read())
-                    {
-                        s = sdr[q].ToString();
-                    }
-                }
-                DB.Con.Close();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-                DB.Con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                DB.Con.Close();
-            }
-            return s;
-        }
-        //================== last update time  ==========================
-        public string lastupdate(String q, String t)
-        {
-            String s = DateTime.Now.ToString();
-            try
-            {
-                DB.Con.Open();
-                MySqlDataReader sdr = DB.readData("SELECT "+q+" FROM "+t+ " WHERE " + q + " = (SELECT MAX(" + q + ") FROM " + t + ") ");
-                if (sdr.HasRows)
-                {
-
-                    while(sdr.Read())
-                    {
-                        s = sdr[q].ToString();                        
-                    }
-                }               
-                DB.Con.Close();                
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-                DB.Con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                DB.Con.Close();
-            }
-            return s;
-        }
-
-
-        //=====================last update date ==================================
-        private void last_update_date()
-        {
-                lbl_memebr_lastupdate.Text = tile("Updated_date", "Member", "MID");
-                lbl_lastupdated_books.Text = tile("Date_Updated", "Book", "BID");
-                lbl_borrow_books_lastupdate.Text = lastupdate("Updated_date", "Book_Issue");
-                lbl_memberfee_lastupdate.Text = lastupdate("Last_updated", "MemberFee");
-        }
-
-       
 
         //===============Switch Dark Theme Light Theme ===========================
         private void swtSwitchTheme_CheckedChanged(object sender, EventArgs e)
@@ -391,5 +416,10 @@ namespace Library_Management_System_v1._1.View
             lbl_librarianDateTime.Text = DateTime.Now.ToString("yyy-MM-dd ") + DateTime.Now.ToString(" h:mm:ss tt");
         }
 
+        private void dateTimeLibrarian_ValueChanged(object sender, EventArgs e)
+        {
+            lbl_BookIssuedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE  CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + true + "'").ToString();
+            lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE  CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + false + "'").ToString();
+        }
     }
 }

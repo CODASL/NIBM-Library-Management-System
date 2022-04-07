@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,14 +11,13 @@ using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using MetroFramework.Forms;
-using MySql.Data.MySqlClient;
+
 
 namespace Library_Management_System_v1._1
 {
     
     public partial class Login : MetroForm
     {
-        Constant.IconClass icons = new Constant.IconClass();
         Controller.LoginController loginController = new Controller.LoginController();
         Model.DatabaseService database = new Model.DatabaseService();
        
@@ -111,12 +111,12 @@ namespace Library_Management_System_v1._1
         {
             if (txtPass.PasswordChar)
             {
-                passwordShowHide.Image = Image.FromFile(icons.hidePass);
+                passwordShowHide.Image = Image.FromFile(Constant.IconClass.hidePass);
                 txtPass.PasswordChar = false;
             }
             else
             {
-                passwordShowHide.Image = Image.FromFile(icons.showPass);
+                passwordShowHide.Image = Image.FromFile(Constant.IconClass.showPass);
                 txtPass.PasswordChar = true;
             }
         }

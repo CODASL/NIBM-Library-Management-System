@@ -1,4 +1,6 @@
-﻿using LiveCharts.Wpf;
+﻿
+
+using LiveCharts.Wpf;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -11,8 +13,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using MetroFramework.Controls;
 using MySql.Data.MySqlClient;
+using MetroFramework.Controls;
 
 namespace Library_Management_System_v1._1.View
 {
@@ -20,6 +22,9 @@ namespace Library_Management_System_v1._1.View
     {
 
         Controller.AdminDashboardController adminDashboardCtrl = new Controller.AdminDashboardController();
+        Controller.CommonController commonController = new Controller.CommonController();
+        
+       
         Model.DatabaseService database = new Model.DatabaseService();
         String emp_id;
         public AdminDashboard(String emp_id)
@@ -27,9 +32,6 @@ namespace Library_Management_System_v1._1.View
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
             this.emp_id = emp_id;
-            loadLibrariyanList();
-            loadLibrarianActivities();
-
         }
 
         //=============On Load Admin Home =============================
@@ -42,9 +44,12 @@ namespace Library_Management_System_v1._1.View
             adminName.Text = adminDashboardCtrl.setName(emp_id);
             lblNumberOfLibrariyans.Text = librariyanList.Items.Count.ToString();
             lbl_welcomeTxt.Text = "Hello "+ adminDashboardCtrl.setName(emp_id).Split(' ')[0] + ", How're you today?";
-            lbl_libraryUpdated.Text = adminDashboardCtrl.setUpdatedTime();
+            lbl_AdminActivity_LastUpdate.Text = commonController.setUpdatedTime("Updated_Time", "Activity", "Emp_Id", " WHERE Emp_Id= '"+emp_id+"'");
             lbl_notification_count.Text = adminDashboardCtrl.setNotificationCount();
             cmb_filterLibrarians.SelectedIndex = 0;
+            loadLibrariyanList();
+            loadLibrarianActivities();//Admin Dashboard only All Librarians Activities
+            commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);//Method from Common Controller Class
         }
 
         //================Load Librarian Activities =====================================
@@ -71,22 +76,22 @@ namespace Library_Management_System_v1._1.View
                 else
                 {
                     Console.WriteLine("No Data to Show");
-                    database.Con.Close();
                 }
-
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.ToString());
-                database.Con.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
                 database.Con.Close();
             }
         }
-
+        
         //=============Load Librarian List=====================================
         public void loadLibrariyanList()
         {
@@ -110,6 +115,7 @@ namespace Library_Management_System_v1._1.View
                     }
                     database.Con.Close();
                     lblNumberOfLibrariyans.Text = librariyanList.Items.Count.ToString();
+                    lbl_libraryUpdated.Text = commonController.setUpdatedTime("updated_date", "Librarian", "Librarian_Id", "");
 
                 }
                 else

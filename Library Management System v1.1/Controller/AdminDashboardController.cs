@@ -6,10 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Drawing;
 using MaterialSkin.Controls;
-using MySql.Data.MySqlClient;
 
 namespace Library_Management_System_v1._1.Controller
 {
@@ -93,28 +93,6 @@ namespace Library_Management_System_v1._1.Controller
         }
 
 
-        //===========Set Librarian Update Time==============================
-        public String setUpdatedTime()
-        {
-            try
-            {
-                database.Con.Open();
-                MySqlDataReader sdr = database.readData("SELECT TOP 1 updated_date FROM Librarian ORDER BY Librarian_Id DESC");
-                sdr.Read();
-                String date = sdr["updated_date"].ToString();
-                database.Con.Close();
-                return date;
-            }
-            catch (Exception ex)
-            {
-                database.Con.Close();
-                return ex.ToString();
-
-
-            }
-        }
-
-
         //=========================Chart Codes========================================
         private Random rand = new Random(0);
         private double[] RandomWalk(int points = 5, double start = 100, double mult = 50)
@@ -175,7 +153,29 @@ namespace Library_Management_System_v1._1.Controller
             colors.SetValue(System.Windows.Media.Brushes.BlueViolet, 2);
             colors.SetValue(System.Windows.Media.Brushes.CornflowerBlue, 3);
             colors.SetValue(System.Windows.Media.Brushes.Cyan, 4);
-            
+            //SqlDataReader sdr = database.readData("SELECT * FROM Category");
+            //int i = 0;
+            //while (sdr.Read())
+            //{
+            //    if (sdr.HasRows)
+            //    {
+            //        piechartData.Add(
+            //            new PieSeries
+            //            {
+            //                Title = "Fourth Item",
+            //                Values = new ChartValues<double> { 25 },
+            //                DataLabels = true,
+            //                LabelPoint = labelPoint,
+            //                Fill = colors[i],
+            //            }
+            //        );
+            //       i++;
+            //    }
+            //    else
+            //    {
+
+            //    }
+            //}
 
             for (int i = 0; i < 5; i++)
             {
@@ -188,7 +188,7 @@ namespace Library_Management_System_v1._1.Controller
                      LabelPoint = labelPoint,
                      Fill = colors[i],
                  }
-             ); ;
+                ); 
             }
            
 

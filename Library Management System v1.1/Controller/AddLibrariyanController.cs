@@ -1,7 +1,7 @@
 ﻿using MaterialSkin.Controls;
-using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using MySql.Data.MySqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,7 +38,7 @@ namespace Library_Management_System_v1._1.Controller
             try
             {
                 database.Con.Open();
-                MySqlDataReader sdr =  database.readData("SELECT TOP 1 Librarian_Id FROM Librarian ORDER BY Librarian_Id DESC");
+                MySqlDataReader sdr = database.readData("SELECT TOP 1 Librarian_Id FROM Librarian ORDER BY Librarian_Id DESC");
                 sdr.Read();
                 if (sdr.HasRows)
                 {
@@ -54,20 +54,14 @@ namespace Library_Management_System_v1._1.Controller
                 
                 
                 textBox.Text = id;
-#pragma warning disable CS0168 // Variable is declared but never used
-            }
-            catch (MySqlException ex)
-
+            }catch(MySqlException ex)
             {
                 database.Con.Close();
             }
-
             catch(Exception ex)
             {
                 database.Con.Close();
             }
         }
-
-
     }
 }

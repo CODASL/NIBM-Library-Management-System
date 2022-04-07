@@ -19,12 +19,11 @@ namespace Library_Management_System_v1._1.Model
         public DatabaseService()
         {
             con = new MySqlConnection("Server=98.142.97.194;Port=3306;Database=irixsolu_coda;Uid=irixsolu_irix;Pwd=Mot413654*;");
-            
         }
 
         public int insertData(String query) {
             con.Open();
-            cmd = new MySqlCommand(query , con);
+            cmd = new MySqlCommand(query, con);
             int i = cmd.ExecuteNonQuery();
             con.Close();
             return 1;
@@ -52,15 +51,12 @@ namespace Library_Management_System_v1._1.Model
 
         public MySqlDataReader readData(String query)
         {
-            
             cmd = new MySqlCommand(query, con);
             cmd.CommandType = System.Data.CommandType.Text;
             MySqlDataReader sdr;
             sdr = cmd.ExecuteReader();
-            return sdr; 
+            return sdr;
         }
-
-       
     }
    
 }

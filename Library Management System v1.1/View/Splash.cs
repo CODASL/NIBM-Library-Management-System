@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Library_Management_System_v1._1
 {
@@ -24,15 +25,11 @@ namespace Library_Management_System_v1._1
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
-            
-            
-        
         }
 
         private void Splash_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
-
         }
 
         [Obsolete]
@@ -46,8 +43,6 @@ namespace Library_Management_System_v1._1
                 timer1.Enabled = false;
                 frm.Closed += (s, args) => this.Close();
                 frm.ShowDialog();
-                
-               
             }
         }
     }
