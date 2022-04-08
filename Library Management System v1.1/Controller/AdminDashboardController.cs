@@ -64,12 +64,19 @@ namespace Library_Management_System_v1._1.Controller
 
                 database.Con.Close();
                 return count.ToString();
+            }catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                
             }catch(Exception ex)
             {
-                database.Con.Close();
-                return ex.ToString();
+                MessageBox.Show(ex.Message);
             }
- 
+            finally
+            {
+                database.Con.Close();
+            }
+            return "";
         }
 
         //============Set Admin Name ============================

@@ -18,7 +18,7 @@ namespace Library_Management_System_v1._1.Model
 
         public DatabaseService()
         {
-            con = new MySqlConnection("Server=98.142.97.194;Port=3306;Database=irixsolu_coda;Uid=irixsolu_irix;Pwd=Mot413654*;");
+            con = new MySqlConnection("Server=98.142.97.194;Port=3306;Database=irixsolu_coda;Uid=irixsolu_irix;Pwd=Mot413654*;Convert Zero Datetime=True;");
         }
 
         public int insertData(String query) {
