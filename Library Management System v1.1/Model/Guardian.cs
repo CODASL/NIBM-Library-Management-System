@@ -12,10 +12,10 @@ namespace Library_Management_System_v1._1.Model
         String name;
         String NIC;
         String address;
-        int phone;
+        String phone;
         DateTime updateDate;
 
-        public Guardian(string id, string name, string nIC, string address, int phone, DateTime updateDate)
+        public Guardian(string id, string name, string nIC, string address, String phone, DateTime updateDate)
         {
             this.id = id;
             this.name = name;
@@ -29,7 +29,7 @@ namespace Library_Management_System_v1._1.Model
         public string Name { get => name; set => name = value; }
         public string NIC1 { get => NIC; set => NIC = value; }
         public string Address { get => address; set => address = value; }
-        public int Phone { get => phone; set => phone = value; }
+        public String Phone { get => phone; set => phone = value; }
         public DateTime UpdateDate { get => updateDate; set => updateDate = value; }
     }
 }

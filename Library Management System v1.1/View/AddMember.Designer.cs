@@ -218,7 +218,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_Gname.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_Gname.Multiline = false;
             this.txt_Gname.Name = "txt_Gname";
-            this.txt_Gname.Size = new System.Drawing.Size(200, 36);
+            this.txt_Gname.Size = new System.Drawing.Size(337, 36);
             this.txt_Gname.TabIndex = 10;
             this.txt_Gname.Text = "";
             this.txt_Gname.UseTallSize = false;
@@ -260,6 +260,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_AddMember.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_AddMember.UseAccentColor = false;
             this.btn_AddMember.UseVisualStyleBackColor = true;
+            this.btn_AddMember.Click += new System.EventHandler(this.btn_AddMember_Click);
             // 
             // materialLabel7
             // 
@@ -382,7 +383,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_MPhone.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_MPhone.Multiline = false;
             this.txt_MPhone.Name = "txt_MPhone";
-            this.txt_MPhone.Size = new System.Drawing.Size(230, 36);
+            this.txt_MPhone.Size = new System.Drawing.Size(258, 36);
             this.txt_MPhone.TabIndex = 23;
             this.txt_MPhone.Text = "";
             this.txt_MPhone.UseTallSize = false;
@@ -426,7 +427,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_GPhone.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_GPhone.Multiline = false;
             this.txt_GPhone.Name = "txt_GPhone";
-            this.txt_GPhone.Size = new System.Drawing.Size(230, 36);
+            this.txt_GPhone.Size = new System.Drawing.Size(258, 36);
             this.txt_GPhone.TabIndex = 25;
             this.txt_GPhone.Text = "";
             this.txt_GPhone.UseTallSize = false;

@@ -44,12 +44,12 @@ namespace Library_Management_System_v1._1.View
             adminName.Text = adminDashboardCtrl.setName(emp_id);
             lblNumberOfLibrariyans.Text = librariyanList.Items.Count.ToString();
             lbl_welcomeTxt.Text = "Hello "+ adminDashboardCtrl.setName(emp_id).Split(' ')[0] + ", How're you today?";
-            lbl_AdminActivity_LastUpdate.Text = commonController.setUpdatedTime("Updated_Time", "Activity", "Emp_Id", " WHERE Emp_Id= '"+emp_id+"'");
-            lbl_notification_count.Text = adminDashboardCtrl.setNotificationCount();
+            //lbl_AdminActivity_LastUpdate.Text = commonController.setUpdatedTime("Updated_Time", "Activity", "Emp_Id", " WHERE Emp_Id= '"+emp_id+"'");
+            //lbl_notification_count.Text = adminDashboardCtrl.setNotificationCount();
             cmb_filterLibrarians.SelectedIndex = 0;
             loadLibrariyanList();
-            loadLibrarianActivities();//Admin Dashboard only All Librarians Activities
-            commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);//Method from Common Controller Class
+            //loadLibrarianActivities();//Admin Dashboard only All Librarians Activities
+            //commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);//Method from Common Controller Class
         }
 
         //================Load Librarian Activities =====================================
@@ -65,9 +65,9 @@ namespace Library_Management_System_v1._1.View
                      
                     while (sdr.Read())
                     {
-                        ListViewItem item = new ListViewItem(sdr["Emp_Id"].ToString());
+                        ListViewItem item = new ListViewItem(sdr["ID"].ToString());
                         item.SubItems.Add(sdr["Description"].ToString());
-                        item.SubItems.Add(sdr["Updated_Time"].ToString());
+                        item.SubItems.Add(sdr["Updated_date"].ToString());
 
                         libActivityListAdmin.Items.Add(item);
                     }

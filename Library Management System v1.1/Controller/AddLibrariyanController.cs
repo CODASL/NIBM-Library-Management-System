@@ -51,14 +51,16 @@ namespace Library_Management_System_v1._1.Controller
                     database.Con.Close();
                     id = "L1";
                 }
-                
-                
                 textBox.Text = id;
             }catch(MySqlException ex)
             {
-                database.Con.Close();
+                MessageBox.Show(ex.Message);
             }
             catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
             {
                 database.Con.Close();
             }

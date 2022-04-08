@@ -77,7 +77,7 @@ namespace Library_Management_System_v1._1.View
         }
 
 
-        //==============================Request Btn=====================
+        //==============================Request Button=============================
         private void requestBtn_Click(object sender, EventArgs e)
         {
             if (cmb_libID.SelectedItem == null)

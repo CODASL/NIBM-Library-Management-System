@@ -73,10 +73,10 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
             this.LibMembersTab = new System.Windows.Forms.TabPage();
-            this.materialButton8 = new MaterialSkin.Controls.MaterialButton();
+            this.btn_updateMember = new MaterialSkin.Controls.MaterialButton();
             this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel23 = new MaterialSkin.Controls.MaterialLabel();
-            this.userListView = new MaterialSkin.Controls.MaterialListView();
+            this.memberListview = new MaterialSkin.Controls.MaterialListView();
             this.MIDAddMember = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.GuardianID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -865,10 +865,10 @@ namespace Library_Management_System_v1._1.View
             // 
             // LibMembersTab
             // 
-            this.LibMembersTab.Controls.Add(this.materialButton8);
+            this.LibMembersTab.Controls.Add(this.btn_updateMember);
             this.LibMembersTab.Controls.Add(this.materialButton3);
             this.LibMembersTab.Controls.Add(this.materialLabel23);
-            this.LibMembersTab.Controls.Add(this.userListView);
+            this.LibMembersTab.Controls.Add(this.memberListview);
             this.LibMembersTab.Controls.Add(this.cmbUserFilte);
             this.LibMembersTab.Controls.Add(this.LibaddMemberBtn);
             this.LibMembersTab.Controls.Add(this.materialTextBox2);
@@ -884,25 +884,26 @@ namespace Library_Management_System_v1._1.View
             this.LibMembersTab.Text = "Members";
             this.LibMembersTab.UseVisualStyleBackColor = true;
             // 
-            // materialButton8
+            // btn_updateMember
             // 
-            this.materialButton8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton8.Depth = 0;
-            this.materialButton8.DrawShadows = true;
-            this.materialButton8.HighEmphasis = true;
-            this.materialButton8.Icon = null;
-            this.materialButton8.Location = new System.Drawing.Point(689, 184);
-            this.materialButton8.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton8.MaximumSize = new System.Drawing.Size(100, 35);
-            this.materialButton8.MinimumSize = new System.Drawing.Size(100, 35);
-            this.materialButton8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton8.Name = "materialButton8";
-            this.materialButton8.Size = new System.Drawing.Size(100, 35);
-            this.materialButton8.TabIndex = 15;
-            this.materialButton8.Text = "Update";
-            this.materialButton8.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton8.UseAccentColor = false;
-            this.materialButton8.UseVisualStyleBackColor = true;
+            this.btn_updateMember.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_updateMember.Depth = 0;
+            this.btn_updateMember.DrawShadows = true;
+            this.btn_updateMember.HighEmphasis = true;
+            this.btn_updateMember.Icon = null;
+            this.btn_updateMember.Location = new System.Drawing.Point(689, 184);
+            this.btn_updateMember.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_updateMember.MaximumSize = new System.Drawing.Size(100, 35);
+            this.btn_updateMember.MinimumSize = new System.Drawing.Size(100, 35);
+            this.btn_updateMember.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_updateMember.Name = "btn_updateMember";
+            this.btn_updateMember.Size = new System.Drawing.Size(100, 35);
+            this.btn_updateMember.TabIndex = 15;
+            this.btn_updateMember.Text = "Update";
+            this.btn_updateMember.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_updateMember.UseAccentColor = false;
+            this.btn_updateMember.UseVisualStyleBackColor = true;
+            this.btn_updateMember.Click += new System.EventHandler(this.btn_updateMember_Click);
             // 
             // materialButton3
             // 
@@ -936,12 +937,12 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel23.TabIndex = 13;
             this.materialLabel23.Text = "Search By :";
             // 
-            // userListView
+            // memberListview
             // 
-            this.userListView.AutoSizeTable = false;
-            this.userListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.userListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.userListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.memberListview.AutoSizeTable = false;
+            this.memberListview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.memberListview.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.memberListview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.MIDAddMember,
             this.GuardianID,
             this.name,
@@ -949,21 +950,21 @@ namespace Library_Management_System_v1._1.View
             this.Phone,
             this.NIC,
             this.LastUpdated});
-            this.userListView.Depth = 0;
-            this.userListView.FullRowSelect = true;
-            this.userListView.HideSelection = false;
-            this.userListView.Location = new System.Drawing.Point(27, 235);
-            this.userListView.MinimumSize = new System.Drawing.Size(200, 100);
-            this.userListView.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.userListView.MouseState = MaterialSkin.MouseState.OUT;
-            this.userListView.MultiSelect = false;
-            this.userListView.Name = "userListView";
-            this.userListView.OwnerDraw = true;
-            this.userListView.ShowItemToolTips = true;
-            this.userListView.Size = new System.Drawing.Size(865, 355);
-            this.userListView.TabIndex = 12;
-            this.userListView.UseCompatibleStateImageBehavior = false;
-            this.userListView.View = System.Windows.Forms.View.Details;
+            this.memberListview.Depth = 0;
+            this.memberListview.FullRowSelect = true;
+            this.memberListview.HideSelection = false;
+            this.memberListview.Location = new System.Drawing.Point(27, 235);
+            this.memberListview.MinimumSize = new System.Drawing.Size(200, 100);
+            this.memberListview.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.memberListview.MouseState = MaterialSkin.MouseState.OUT;
+            this.memberListview.MultiSelect = false;
+            this.memberListview.Name = "memberListview";
+            this.memberListview.OwnerDraw = true;
+            this.memberListview.ShowItemToolTips = true;
+            this.memberListview.Size = new System.Drawing.Size(865, 355);
+            this.memberListview.TabIndex = 12;
+            this.memberListview.UseCompatibleStateImageBehavior = false;
+            this.memberListview.View = System.Windows.Forms.View.Details;
             // 
             // MIDAddMember
             // 
@@ -2173,7 +2174,7 @@ namespace Library_Management_System_v1._1.View
             // metroDateTime2
             // 
             this.metroDateTime2.Location = new System.Drawing.Point(772, 269);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime2.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTime2.Name = "metroDateTime2";
             this.metroDateTime2.Size = new System.Drawing.Size(200, 29);
             this.metroDateTime2.TabIndex = 4;
@@ -2672,7 +2673,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialLabel materialLabel17;
         private MaterialSkin.Controls.MaterialCard materialCard9;
         private MaterialSkin.Controls.MaterialCard materialCard10;
-        private MaterialSkin.Controls.MaterialListView userListView;
+        private MaterialSkin.Controls.MaterialListView memberListview;
         private System.Windows.Forms.ColumnHeader MIDAddMember;
         private System.Windows.Forms.ColumnHeader name;
         private System.Windows.Forms.ColumnHeader Address;
@@ -2759,7 +2760,7 @@ namespace Library_Management_System_v1._1.View
         private System.Windows.Forms.ColumnHeader feeLastUpdated;
         private MaterialSkin.Controls.MaterialButton addBookDashBoard;
         private MaterialSkin.Controls.MaterialButton addAuthorDashboard;
-        private MaterialSkin.Controls.MaterialButton materialButton8;
+        private MaterialSkin.Controls.MaterialButton btn_updateMember;
         private MaterialSkin.Controls.MaterialButton materialButton9;
         private MaterialSkin.Controls.MaterialButton returnBookBtn;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;

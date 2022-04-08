@@ -44,7 +44,7 @@ namespace Library_Management_System_v1._1.View
             //lbl_librariyan_name.Text = librarian.Name;
             //lbl_welcome_note.Text = "Hello " + librarian.Name.Split(' ')[0] + ", How're you today?";
             //loadDashboardTileCounts();
-            //loadMembers();
+            loadMembers();
             //loadBooks();
             //loadBookIssues();
             //profileDetailUpdate();
@@ -97,7 +97,7 @@ namespace Library_Management_System_v1._1.View
         //=====================Load Members to Member List view =====================================
         public void loadMembers()
         {
-            userListView.Items.Clear();
+            memberListview.Items.Clear();
             try
             {
                 DB.Con.Open();
@@ -115,10 +115,10 @@ namespace Library_Management_System_v1._1.View
                         item.SubItems.Add(sdr["NIC"].ToString());
                         item.SubItems.Add(sdr["Updated_date"].ToString());
 
-                        userListView.Items.Add(item);
+                        memberListview.Items.Add(item);
                     }
                     DB.Con.Close();
-                    lbl_members_tot.Text = userListView.Items.Count.ToString();
+                    lbl_members_tot.Text = memberListview.Items.Count.ToString();
                     lbl_membersLastUpdate.Text = commonController.setUpdatedTime("Updated_Date", "Member", "MID", "");
                 }
                 else
@@ -416,10 +416,26 @@ namespace Library_Management_System_v1._1.View
             lbl_librarianDateTime.Text = DateTime.Now.ToString("yyy-MM-dd ") + DateTime.Now.ToString(" h:mm:ss tt");
         }
 
+        //===============Librarian Home Dashboard Datetimepicker Controller ==============================
         private void dateTimeLibrarian_ValueChanged(object sender, EventArgs e)
         {
             lbl_BookIssuedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE  CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + true + "'").ToString();
             lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE  CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + false + "'").ToString();
+        }
+
+
+        //================Update Member Btn===================================================
+        private void btn_updateMember_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String selectedRowId = memberListview.SelectedItems[0].SubItems[0].Text;
+                new AddMember(true, selectedRowId).Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

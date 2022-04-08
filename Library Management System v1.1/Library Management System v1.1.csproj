@@ -137,6 +137,7 @@
     <Compile Include="Controller\LibrariyanDashboardController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\MaterialController.cs" />
+    <Compile Include="Controller\MemberController.cs" />
     <Compile Include="Controller\SplashController.cs" />
     <Compile Include="Model\Activity.cs" />
     <Compile Include="Model\Author.cs" />

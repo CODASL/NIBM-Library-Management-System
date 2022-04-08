@@ -10,6 +10,7 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Drawing;
 using MaterialSkin.Controls;
+using System.Windows;
 
 namespace Library_Management_System_v1._1.Controller
 {
@@ -68,8 +69,7 @@ namespace Library_Management_System_v1._1.Controller
                 database.Con.Close();
                 return ex.ToString();
             }
-            
-            
+ 
         }
 
         //============Set Admin Name ============================
@@ -78,18 +78,25 @@ namespace Library_Management_System_v1._1.Controller
             try
             {
                 database.Con.Open();
-                MySqlDataReader sdr = database.readData("Select Name From admin WHERE Id = '" + emp_id + "'");
+                MySqlDataReader sdr = database.readData("Select Name From Admin WHERE emp_id = '" + emp_id + "'");
                 sdr.Read();
                 String name =  sdr["Name"].ToString();
                 database.Con.Close();
                 return name;
             }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
             catch (Exception ex)
             {
-                database.Con.Close();
-                return ex.ToString();
-               
+                MessageBox.Show(ex.ToString());
             }
+            finally
+            {
+                database.Con.Close();
+            }
+            return "";
         }
 
 
