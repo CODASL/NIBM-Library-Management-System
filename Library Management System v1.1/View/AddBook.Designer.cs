@@ -31,7 +31,7 @@ namespace Library_Management_System_v1._1.View
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBook));
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_bookIdAddBook = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -66,20 +66,20 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel1.TabIndex = 3;
             this.materialLabel1.Text = "Book ID";
             // 
-            // materialTextBox1
+            // txt_bookIdAddBook
             // 
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox1.Location = new System.Drawing.Point(158, 84);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(100, 36);
-            this.materialTextBox1.TabIndex = 2;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.UseTallSize = false;
+            this.txt_bookIdAddBook.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_bookIdAddBook.Depth = 0;
+            this.txt_bookIdAddBook.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_bookIdAddBook.Location = new System.Drawing.Point(158, 84);
+            this.txt_bookIdAddBook.MaxLength = 50;
+            this.txt_bookIdAddBook.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_bookIdAddBook.Multiline = false;
+            this.txt_bookIdAddBook.Name = "txt_bookIdAddBook";
+            this.txt_bookIdAddBook.Size = new System.Drawing.Size(100, 36);
+            this.txt_bookIdAddBook.TabIndex = 2;
+            this.txt_bookIdAddBook.Text = "";
+            this.txt_bookIdAddBook.UseTallSize = false;
             // 
             // materialLabel2
             // 
@@ -397,7 +397,7 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialTextBox2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.materialTextBox1);
+            this.Controls.Add(this.txt_bookIdAddBook);
             this.Name = "AddBook";
             this.Text = "Add Book";
             this.Load += new System.EventHandler(this.AddBook_Load);
@@ -411,7 +411,7 @@ namespace Library_Management_System_v1._1.View
         #endregion
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox txt_bookIdAddBook;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;

@@ -32,6 +32,7 @@ namespace Library_Management_System_v1._1.View
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
             this.emp_id = emp_id;
+            this.FormClosing += Form_FormClosing;
         }
 
         //=============On Load Admin Home =============================
@@ -49,7 +50,42 @@ namespace Library_Management_System_v1._1.View
             cmb_filterLibrarians.SelectedIndex = 0;
             loadLibrariyanList();
             loadLibrarianActivities();//Admin Dashboard only All Librarians Activities
-            commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);//Method from Common Controller Class
+            commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);
+        }
+
+
+        //============ form x or F4 click logout user ================================
+        [Obsolete]
+        private void Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_id + "'");
+                if (line > 0)
+                {
+                    this.Hide();
+                    Login lg = new Login();
+                    lg.Closed += (s, args) => this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Application Cannot Logout ", emp_id);
+                }
+            }
+            if (e.CloseReason == CloseReason.WindowsShutDown)
+            {
+                int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_id + "'");
+                if (line > 0)
+                {
+                    this.Hide();
+                    Login lg = new Login();
+                    lg.Closed += (s, args) => this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Application Cannot Logout ", emp_id);
+                }
+            }
         }
 
         //================Load Librarian Activities =====================================

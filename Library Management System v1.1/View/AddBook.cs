@@ -13,6 +13,7 @@ namespace Library_Management_System_v1._1.View
 {
     public partial class AddBook : MaterialForm
     {
+        Controller.CommonController commonController = new Controller.CommonController();
         public AddBook()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace Library_Management_System_v1._1.View
 
         private void AddBook_Load(object sender, EventArgs e)
         {
-
+            commonController.setId(txt_bookIdAddBook, "BID", "Book", "B");
         }
 
         private void addRackNoBtnAddBook_Click(object sender, EventArgs e)

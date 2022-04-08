@@ -162,18 +162,26 @@ namespace Library_Management_System_v1._1.Controller
             try
             {
                 database.Con.Open();
-                MySqlDataReader sdr = database.readData("SELECT TOP 1 " + IDColumn + " FROM " + tableName + " ORDER BY " + IDColumn + " DESC");
+                MySqlDataReader sdr = database.readData("SELECT " + IDColumn + " FROM " + tableName + " ORDER BY " + IDColumn + " DESC LIMIT 1");
                 sdr.Read();
                 if (sdr.HasRows)
                 {
                     id = sdr[IDColumn].ToString();
                     database.Con.Close();
-                    id = firstLetter.ToUpper() + (Convert.ToInt32(id.Remove(0, 1)) + 1).ToString();
+                    if(firstLetter == "")
+                    {
+                        id = (Convert.ToInt32(id) + 1).ToString();
+                    }
+                    else
+                    {
+                        id = firstLetter.ToUpper() + (Convert.ToInt32(id.Remove(0, 1)) + 1).ToString();
+                    }
+                   
                 }
                 else
                 {
                     database.Con.Close();
-                    id = firstLetter.ToUpper() + "1";
+                    id = firstLetter == "" ?1.ToString() : firstLetter.ToUpper() + "1";
                 }
 
                 textBox.Text = id;

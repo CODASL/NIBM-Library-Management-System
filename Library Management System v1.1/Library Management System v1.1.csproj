@@ -238,12 +238,6 @@
     <Compile Include="View\Custom Controls\RJTextBox.designer.cs">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DeleteUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\DeleteUser.Designer.cs">
-      <DependentUpon>DeleteUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\AdminActivityListTile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -333,9 +327,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Custom Controls\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\DeleteUser.resx">
-      <DependentUpon>DeleteUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LibrariyanHome.resx">
       <DependentUpon>LibrariyanHome.cs</DependentUpon>

@@ -19,6 +19,13 @@ namespace Library_Management_System_v1._1.Model
         DateTime addedDate;
         DateTime updatedDate;
 
+        public Book(string name, string category, string author)
+        {
+            this.name = name;
+            this.category = category;
+            this.author = author;
+        }
+
         public Book(string id, string name, string category, string author, string isbn, string availibility, string rackNo, DateTime addedDate, DateTime updatedDate)
         {
             this.id = id;

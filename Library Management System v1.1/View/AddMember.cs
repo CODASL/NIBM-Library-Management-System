@@ -28,7 +28,7 @@ namespace Library_Management_System_v1._1.View
 
         private void AddMember_Load(object sender, EventArgs e)
         {
-            //commonController.setId(txt_mid , Member_Id)
+            commonController.setId(txt_mid, "MID", "Member", "M");
             loadAllFields();
         }
 

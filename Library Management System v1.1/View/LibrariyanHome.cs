@@ -24,6 +24,7 @@ namespace Library_Management_System_v1._1.View
         Model.DatabaseService DB = new Model.DatabaseService();
         Model.Librarian librarian;
         String emp_Id;
+        int avCount = 0;
 
         [Obsolete]
         public LibrariyanHome(String emp_Id)
@@ -64,7 +65,7 @@ namespace Library_Management_System_v1._1.View
 
         //============ form x or F4 click logout user ================================
         [Obsolete]
-        void Form_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
@@ -203,6 +204,7 @@ namespace Library_Management_System_v1._1.View
                         if (Convert.ToBoolean(sdr["Availability"]))
                         {
                             item.SubItems.Add("Available");
+                            avCount = avCount + 1;
                         }
                         else
                         {
@@ -368,22 +370,31 @@ namespace Library_Management_System_v1._1.View
             new AddMember().ShowDialog();
         }
 
-        //=================Add Book Dashboard Btn =======================
-        private void addBookDashboardBtn_Click(object sender, EventArgs e)
-        {
-            new AddBook().ShowDialog();
-        }
-
         //=================Add Book Issue Dashboard Btn =======================
         private void addBorrowDashBoardBtn_Click(object sender, EventArgs e)
         {
-            new Add_Book_Borrowing_Details().ShowDialog();
+            if(avCount > 0)
+            {
+                new Add_Book_Borrowing_Details(librarian).ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No Books Available");
+            }
+            
         }
 
         //================Add Book Issue Btn =============================
         private void borrowBookBtn_Click(object sender, EventArgs e)
         {
-            new Add_Book_Borrowing_Details().ShowDialog();
+            if (avCount > 0)
+            {
+                new Add_Book_Borrowing_Details(librarian).ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No Books Available");
+            }
         }
 
         //=================Return Book Btn ==============================
@@ -433,7 +444,7 @@ namespace Library_Management_System_v1._1.View
         //============Add Book  Dashboard Btn ======================================
         private void addBookDashBoard_Click(object sender, EventArgs e)
         {
-            new AddBook().Show();
+            new View.AddBook().ShowDialog();
         }
 
         //===========Add Category Dashboard Btn ====================================
@@ -505,6 +516,57 @@ namespace Library_Management_System_v1._1.View
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_deleteMember_Click(object sender, EventArgs e)
+        {
+            Model.DatabaseService database = new Model.DatabaseService();
+            DialogResult res = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
+            if (res.Equals(DialogResult.Yes))
+            {
+                ListView.SelectedIndexCollection selectedIndex = memberListview.SelectedIndices;
+                if (selectedIndex.Count > 0)
+                {
+                    foreach (int index in selectedIndex)
+                    {
+                        Console.WriteLine(index);
+
+                    }
+                    String selectedRowId = memberListview.SelectedItems[0].SubItems[0].Text;
+
+                    try
+                    {
+                        int line = database.deleteData("DELETE FROM Member WHERE MID = '" + selectedRowId + "'");
+
+                        int line1 = database.deleteData("DELETE FROM Guardian WHERE GID = (SELECT GID FROM Member WHERE MID = '" + selectedRowId + "')");
+
+                        if (line > 0 && line1 > 0)
+                        {
+                            MessageBox.Show("Member Removed Successfully");
+                            loadMembers();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Something Went Wrong");
+                        }
+
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("No Rows Selected");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Deletation Cancelled");
             }
         }
     }
