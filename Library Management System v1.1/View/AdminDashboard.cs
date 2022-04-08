@@ -48,8 +48,8 @@ namespace Library_Management_System_v1._1.View
             lbl_notification_count.Text = adminDashboardCtrl.setNotificationCount();
             cmb_filterLibrarians.SelectedIndex = 0;
             loadLibrariyanList();
-            //loadLibrarianActivities();//Admin Dashboard only All Librarians Activities
-            //commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);//Method from Common Controller Class
+            loadLibrarianActivities();//Admin Dashboard only All Librarians Activities
+            commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);//Method from Common Controller Class
         }
 
         //================Load Librarian Activities =====================================
@@ -59,16 +59,15 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 database.Con.Open();
-                MySqlDataReader sdr = database.readData("SELECT * FROM Activity WHERE Emp_Type= '"+"Librarian"+"'");
+                MySqlDataReader sdr = database.readData("SELECT * FROM Activity WHERE Emp_type= '"+"Librarian"+"'");
                 if (sdr.HasRows)
                 {
                      
                     while (sdr.Read())
                     {
-                        ListViewItem item = new ListViewItem(sdr["ID"].ToString());
+                        ListViewItem item = new ListViewItem(sdr["Emp_id"].ToString());
                         item.SubItems.Add(sdr["Description"].ToString());
-                        item.SubItems.Add(sdr["Updated_date"].ToString());
-
+                        item.SubItems.Add(sdr["Updated_Time"].ToString());
                         libActivityListAdmin.Items.Add(item);
                     }
                     database.Con.Close();
