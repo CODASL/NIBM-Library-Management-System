@@ -4,6 +4,7 @@ using MySql.Data.MySqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Library_Management_System_v1._1.Controller
 {
@@ -36,9 +37,14 @@ namespace Library_Management_System_v1._1.Controller
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 database.Con.Close();
                 return null;
 
+            }
+            finally
+            {
+                database.Con.Close();
             }
 
         }

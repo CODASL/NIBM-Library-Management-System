@@ -102,7 +102,7 @@ namespace Library_Management_System_v1._1.Controller
                 else
                 {
                     database.Con.Close();
-                    return "NO DATA";
+                    return DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
                 }
             }
             catch (Exception ex)

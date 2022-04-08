@@ -40,24 +40,26 @@ namespace Library_Management_System_v1._1.View
        //=========================On Load Librarian Home ==========================================
         private void LibrariyanHome_Load(object sender, EventArgs e)
         {
-            //librarian = librariyandash.setLibrariyan(emp_Id);
-            //lbl_librariyan_name.Text = librarian.Name;
-            //lbl_welcome_note.Text = "Hello " + librarian.Name.Split(' ')[0] + ", How're you today?";
-            //loadDashboardTileCounts();
+            librarian = librariyandash.setLibrariyan(emp_Id);
+            lbl_librariyan_name.Text = librarian.Name.Split(' ')[0] + " " + librarian.Name.Split(' ')[1];
+            lbl_welcome_note.Text = "Hello " + librarian.Name.Split(' ')[0] + ", How're you today?";
+            loadDashboardTileCounts();
             loadMembers();
-            //loadBooks();
-            //loadBookIssues();
-            //profileDetailUpdate();
-            //commonController.loadActivities(listview_librarianActivities, emp_Id);//Method from Common Controller Class
-            //lbl_AccountingLastUpdate.Text = commonController.setUpdatedTime("Updated_Date", "Accounting", "Fine_Id", "");
+            loadBooks();
+            loadBookIssues();
+            profileDetailUpdate();
+            loadAccounting();
+            commonController.loadActivities(listview_librarianActivities, emp_Id);
         }
 
+
+        //========================load Dashboard Tile Counts ===============================
         public void loadDashboardTileCounts()
         {
             lbl_members_count.Text = tile_count("SELECT * FROM Member").ToString();
             lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
-            lbl_BookIssuedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + true + "'").ToString();
-            lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + false + "'").ToString();
+            lbl_BookIssuedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + 1 + "'").ToString();
+            lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + 0 + "'").ToString();
         }
 
         //============ form x or F4 click logout user ================================
@@ -93,6 +95,48 @@ namespace Library_Management_System_v1._1.View
                 }
             }
 
+        }
+        //=====================Load Member Fee table to Accounting List view =====================================
+        public void loadAccounting()
+        {
+            accountingListview.Items.Clear();
+            try
+            {
+                DB.Con.Open();
+                MySqlDataReader sdr = DB.readData("Select * From MemberFee");
+                if (sdr.HasRows)
+                {
+
+                    while (sdr.Read())
+                    {
+                        ListViewItem item = new ListViewItem(sdr["Fee_Id"].ToString());
+                        item.SubItems.Add(sdr["MID"].ToString());
+                        item.SubItems.Add(sdr["Fine_Count"].ToString());
+                        item.SubItems.Add("Paid");
+                        item.SubItems.Add(sdr["Last_Updated"].ToString());
+
+                        memberListview.Items.Add(item);
+                    }
+                    DB.Con.Close();
+                    lbl_AccountingLastUpdate.Text = commonController.setUpdatedTime("Last_Updated", "MemberFee", "Fee_Id", "");
+                }
+                else
+                {
+                    Console.WriteLine("No Data to Show");
+                    DB.Con.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+                DB.Con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                DB.Con.Close();
+            }
         }
         //=====================Load Members to Member List view =====================================
         public void loadMembers()
@@ -156,7 +200,15 @@ namespace Library_Management_System_v1._1.View
                         item.SubItems.Add(sdr["Name"].ToString());
                         item.SubItems.Add(sdr["Category"].ToString());
                         item.SubItems.Add(sdr["Author"].ToString());
-                        item.SubItems.Add(sdr["Availability"].ToString());
+                        if (Convert.ToBoolean(sdr["Availability"]))
+                        {
+                            item.SubItems.Add("Available");
+                        }
+                        else
+                        {
+                            item.SubItems.Add("Unavailable");
+                        }
+                        
                         item.SubItems.Add(sdr["Rack_No"].ToString());
                         item.SubItems.Add(sdr["Date_Updated"].ToString());
 
@@ -184,6 +236,10 @@ namespace Library_Management_System_v1._1.View
                 MessageBox.Show(ex.ToString());
                 DB.Con.Close();
             }
+            finally
+            {
+                DB.Con.Close();
+            }
         }
 
         //=====================Load Book_Issues to Book Issue List view =====================================
@@ -204,9 +260,14 @@ namespace Library_Management_System_v1._1.View
                         item.SubItems.Add(sdr["LID"].ToString());
                         item.SubItems.Add(sdr["issued_dateTime"].ToString());
                         item.SubItems.Add(sdr["Return_date"].ToString());
-                        item.SubItems.Add(sdr["Status"].ToString());
-                        
-
+                        if(Convert.ToBoolean(sdr["Status"]))
+                        {
+                            item.SubItems.Add("Issued");
+                        }
+                        else
+                        {
+                            item.SubItems.Add("Returned");
+                        }
                         listView_issueBooks.Items.Add(item);
                     }
                     DB.Con.Close();
@@ -229,6 +290,10 @@ namespace Library_Management_System_v1._1.View
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                DB.Con.Close();
+            }
+            finally
+            {
                 DB.Con.Close();
             }
         }
@@ -259,6 +324,10 @@ namespace Library_Management_System_v1._1.View
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                DB.Con.Close();
+            }
+            finally
+            {
                 DB.Con.Close();
             }
             return count;
@@ -419,8 +488,9 @@ namespace Library_Management_System_v1._1.View
         //===============Librarian Home Dashboard Datetimepicker Controller ==============================
         private void dateTimeLibrarian_ValueChanged(object sender, EventArgs e)
         {
-            lbl_BookIssuedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE  CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + true + "'").ToString();
-            lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM [dbo].[Book_Issue] WHERE  CONVERT(DATE, Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + false + "'").ToString();
+
+            lbl_BookIssuedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + 1 + "'").ToString();
+            lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + 0 + "'").ToString();
         }
 
 
