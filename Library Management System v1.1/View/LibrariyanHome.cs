@@ -50,9 +50,64 @@ namespace Library_Management_System_v1._1.View
             loadBookIssues();
             profileDetailUpdate();
             loadAccounting();
+            loadBookAvailability();
             commonController.loadActivities(listview_librarianActivities, emp_Id);
         }
+        //========================load Book Availability ====================================
 
+        public void loadBookAvailability()
+        {
+            listview_BookAvailability.Items.Clear();
+            try
+            {
+                DB.Con.Open();
+                MySqlDataReader sdr = DB.readData("Select * From Book");
+                if (sdr.HasRows)
+                {
+
+                    while (sdr.Read())
+                    {
+                        ListViewItem item = new ListViewItem(sdr["BID"].ToString());
+                        item.SubItems.Add(sdr["Name"].ToString());
+                        item.SubItems.Add(sdr["Author"].ToString());
+                        if (Convert.ToBoolean(sdr["Availability"]))
+                        {
+                            item.SubItems.Add("Available");
+                        }
+                        else
+                        {
+                            item.SubItems.Add("Unavailable");
+                        }
+                        
+                        
+
+                        listview_BookAvailability.Items.Add(item);
+                    }
+                    DB.Con.Close();
+                    
+                }
+                else
+                {
+                    Console.WriteLine("No Data to Show");
+                    DB.Con.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+               
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                
+            }
+            finally
+            {
+                DB.Con.Close();
+            }
+        }
 
         //========================load Dashboard Tile Counts ===============================
         public void loadDashboardTileCounts()
@@ -104,7 +159,7 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 DB.Con.Open();
-                MySqlDataReader sdr = DB.readData("Select * From MemberFee");
+                MySqlDataReader sdr = DB.readData("Select * From Accounting");
                 if (sdr.HasRows)
                 {
 
@@ -119,7 +174,7 @@ namespace Library_Management_System_v1._1.View
                         memberListview.Items.Add(item);
                     }
                     DB.Con.Close();
-                    lbl_AccountingLastUpdate.Text = commonController.setUpdatedTime("Last_Updated", "MemberFee", "Fee_Id", "");
+                    lbl_AccountingLastUpdate.Text = commonController.setUpdatedTime("Last_Updated", "Accounting", "Fee_Id", "");
                 }
                 else
                 {

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,7 +30,9 @@ namespace Library_Management_System_v1._1.View
         private void AddMember_Load(object sender, EventArgs e)
         {
             commonController.setId(txt_mid, "MID", "Member", "M");
+            commonController.setId(txt_GID, "GID", "Guardian", "G");
             loadAllFields();
+            txt_mname.Focus();
         }
 
         //=================if update loadallfields ======================================================
@@ -88,6 +91,7 @@ namespace Library_Management_System_v1._1.View
         [Obsolete]
         private void btn_AddMember_Click(object sender, EventArgs e)
         {
+            //Model.DatabaseService database = new Model.DatabaseService();
             try
             {
                 if (txt_mname.Text == null || txt_MNIC.Text == null || txt_Maddress.Text == null)
@@ -133,12 +137,17 @@ namespace Library_Management_System_v1._1.View
                         {
                             new LibrariyanHome(Controller.LoginController.currentUserId).loadMembers();
                             MessageBox.Show("Record Updated");
+                           
 
                         }
                         else
                         {
                             MessageBox.Show("Record Added");
                         }
+                        
+                        //database.Con.Open();
+                        //SqlCommand cmd = new SqlCommand("Alter Table Member_Fee ADD " + txt_mid.Text + " Boolean");
+                        //cmd.ExecuteNonQuery();
                     }
                     else
                     {
@@ -153,7 +162,51 @@ namespace Library_Management_System_v1._1.View
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                //database.Con.Close();
+            }
         
+        }
+
+        private void txt_Gname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_GPhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_GCountryCodes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_GNIC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_GAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
