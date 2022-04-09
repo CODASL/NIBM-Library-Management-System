@@ -400,31 +400,65 @@ namespace Library_Management_System_v1._1.View
         //=================Return Book Btn ==============================
         private void returnBookBtn_Click(object sender, EventArgs e)
         {
-            DialogResult dialogresult  = MessageBox.Show("Have Any Damages in Book ?","" , MessageBoxButtons.YesNoCancel);
-            if (dialogresult.Equals(DialogResult.Yes))
+            String BID = listView_issueBooks.SelectedItems[0].SubItems[0].Text;
+            String MID = listView_issueBooks.SelectedItems[0].SubItems[1].Text;
+            if (listView_issueBooks.SelectedItems.Count > 0)
             {
-                Console.WriteLine(dialogresult.ToString());
-                new AddfineWindow().ShowDialog();
-                
-            }
-            else if(dialogresult.Equals(DialogResult.No))
-            {
-                Console.WriteLine(dialogresult.ToString());
-                DialogResult dialogresult1 = MessageBox.Show("Are you sure that member retured Book?", "", MessageBoxButtons.YesNo);
-                if (dialogresult1.Equals(DialogResult.Yes))
+                DialogResult dialogresult = MessageBox.Show("Have any Damages/Late return in Book ?", "", MessageBoxButtons.YesNoCancel);
+                if (dialogresult.Equals(DialogResult.Yes))
                 {
-                    Console.WriteLine("Database should update Status into returned");
+                    
+                    new AddfineWindow(BID,MID , emp_Id).ShowDialog();
+
+                }
+                else if (dialogresult.Equals(DialogResult.No))
+                {
+                    Console.WriteLine(dialogresult.ToString());
+                    DialogResult dialogresult1 = MessageBox.Show("Are you sure that member retured Book?", "", MessageBoxButtons.YesNo);
+                    if (dialogresult1.Equals(DialogResult.Yes))
+                    {
+                        try
+                        {
+                            Console.WriteLine(listView_issueBooks.SelectedItems[0].Index+1);
+                            String ID = (listView_issueBooks.SelectedItems[0].Index + 1).ToString();
+                            int row = DB.updateData("UPDATE Book_Issue SET Status = 0 WHERE ID = '" + ID + "'");
+                            if(row > 0)
+                            {
+                                
+                                int row1 = DB.updateData("UPDATE Book SET Availability = 1 WHERE BID = '" + BID + "'");
+                                if (row1 > 0)
+                                {
+                                    MessageBox.Show("Book Returned successfully");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Book status update failed");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Book_issue status update failed");
+                            }
+
+                        }catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                    }
+                    else
+                    {
+                        this.Hide();
+                    }
                 }
                 else
                 {
-                    this.Close();
+                    this.Hide();
                 }
             }
             else
             {
-                this.Close();
+                MessageBox.Show("Please Select a record");
             }
-           
         }
 
         //============Pay Member Fee =================================================
@@ -519,6 +553,7 @@ namespace Library_Management_System_v1._1.View
             }
         }
 
+        //===================Delete Member Btn ========================================
         private void btn_deleteMember_Click(object sender, EventArgs e)
         {
             Model.DatabaseService database = new Model.DatabaseService();
