@@ -20,7 +20,5 @@ namespace Library_Management_System_v1._1.Controller
 
             return row > 0;
         }
-
-        
     }
 }
