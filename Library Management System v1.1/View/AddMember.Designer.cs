@@ -76,7 +76,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(23, 110);
+            this.materialLabel1.Location = new System.Drawing.Point(20, 110);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(76, 19);
@@ -222,7 +222,6 @@ namespace Library_Management_System_v1._1.View
             this.txt_Gname.TabIndex = 7;
             this.txt_Gname.Text = "";
             this.txt_Gname.UseTallSize = false;
-            this.txt_Gname.TextChanged += new System.EventHandler(this.txt_Gname_TextChanged);
             // 
             // btn_MemberClear
             // 
@@ -275,7 +274,6 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel7.Size = new System.Drawing.Size(95, 19);
             this.materialLabel7.TabIndex = 18;
             this.materialLabel7.Text = "Guardian NIC";
-            this.materialLabel7.Click += new System.EventHandler(this.materialLabel7_Click);
             // 
             // txt_GNIC
             // 
@@ -291,7 +289,6 @@ namespace Library_Management_System_v1._1.View
             this.txt_GNIC.TabIndex = 9;
             this.txt_GNIC.Text = "";
             this.txt_GNIC.UseTallSize = false;
-            this.txt_GNIC.TextChanged += new System.EventHandler(this.txt_GNIC_TextChanged);
             // 
             // materialLabel8
             // 
@@ -305,7 +302,6 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel8.Size = new System.Drawing.Size(118, 19);
             this.materialLabel8.TabIndex = 16;
             this.materialLabel8.Text = "Gurdian Address";
-            this.materialLabel8.Click += new System.EventHandler(this.materialLabel8_Click);
             // 
             // txt_GAddress
             // 
@@ -321,7 +317,6 @@ namespace Library_Management_System_v1._1.View
             this.txt_GAddress.TabIndex = 8;
             this.txt_GAddress.Text = "";
             this.txt_GAddress.UseTallSize = false;
-            this.txt_GAddress.TextChanged += new System.EventHandler(this.txt_GAddress_TextChanged);
             // 
             // materialLabel9
             // 
@@ -335,7 +330,6 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel9.Size = new System.Drawing.Size(115, 19);
             this.materialLabel9.TabIndex = 20;
             this.materialLabel9.Text = "Guardian Phone";
-            this.materialLabel9.Click += new System.EventHandler(this.materialLabel9_Click);
             // 
             // materialLabel10
             // 
@@ -421,7 +415,6 @@ namespace Library_Management_System_v1._1.View
             this.cmb_GCountryCodes.Size = new System.Drawing.Size(76, 35);
             this.cmb_GCountryCodes.TabIndex = 10;
             this.cmb_GCountryCodes.UseTallSize = false;
-            this.cmb_GCountryCodes.SelectedIndexChanged += new System.EventHandler(this.cmb_GCountryCodes_SelectedIndexChanged);
             // 
             // txt_GPhone
             // 
@@ -438,7 +431,6 @@ namespace Library_Management_System_v1._1.View
             this.txt_GPhone.TabIndex = 11;
             this.txt_GPhone.Text = "";
             this.txt_GPhone.UseTallSize = false;
-            this.txt_GPhone.TextChanged += new System.EventHandler(this.txt_GPhone_TextChanged);
             // 
             // AddMember
             // 

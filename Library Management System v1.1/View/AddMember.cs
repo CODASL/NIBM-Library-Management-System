@@ -169,44 +169,5 @@ namespace Library_Management_System_v1._1.View
         
         }
 
-        private void txt_Gname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_GPhone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmb_GCountryCodes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialLabel9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_GNIC_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialLabel7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_GAddress_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialLabel8_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
