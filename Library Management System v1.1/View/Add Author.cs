@@ -13,13 +13,13 @@ namespace Library_Management_System_v1._1.View
 {
     public partial class Add_Author : MaterialForm
     {
-        Controller.AddAuthorController ATR = new Controller.AddAuthorController();
+        Controller.AuthorController ATR = new Controller.AuthorController();
         public Add_Author()
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
-            txt_authorId.Text = ATR.setid();
-            txt_authorId.Focus();
+            new Controller.CommonController().setId(txt_authorId, "Author_Id", "Author", "");
+            txt_authorName.Focus();
         }
 
         private void btn_reset_Click(object sender, EventArgs e)

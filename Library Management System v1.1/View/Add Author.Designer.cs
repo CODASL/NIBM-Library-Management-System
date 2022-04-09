@@ -86,6 +86,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_authorId.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_authorId.Multiline = false;
             this.txt_authorId.Name = "txt_authorId";
+            this.txt_authorId.ReadOnly = true;
             this.txt_authorId.Size = new System.Drawing.Size(100, 36);
             this.txt_authorId.TabIndex = 8;
             this.txt_authorId.Text = "";

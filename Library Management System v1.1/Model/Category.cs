@@ -10,9 +10,9 @@ namespace Library_Management_System_v1._1.Model
     {
         String id;
         String name;
-        String dateAdded;
+        DateTime dateAdded;
 
-        public Category(string id, string name, string dateAdded)
+        public Category(string id, string name, DateTime dateAdded)
         {
             this.id = id;
             this.name = name;
@@ -21,6 +21,6 @@ namespace Library_Management_System_v1._1.Model
 
         public string Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
-        public string DateAdded { get => dateAdded; set => dateAdded = value; }
+        public DateTime DateAdded { get => dateAdded; set => dateAdded = value; }
     }
 }

@@ -130,9 +130,10 @@
   <ItemGroup>
     <Compile Include="Constant\IconClass.cs" />
     <Compile Include="Constant\ImageClass.cs" />
-    <Compile Include="Controller\AddAuthorController.cs" />
+    <Compile Include="Controller\AuthorController.cs" />
     <Compile Include="Controller\AddLibrariyanController.cs" />
     <Compile Include="Controller\AdminDashboardController.cs" />
+    <Compile Include="Controller\CategoryController.cs" />
     <Compile Include="Controller\CommonController.cs" />
     <Compile Include="Controller\LibrariyanDashboardController.cs" />
     <Compile Include="Controller\LoginController.cs" />
