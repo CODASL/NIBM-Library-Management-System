@@ -300,5 +300,10 @@ namespace Library_Management_System_v1._1.View
                 adminDashboardCtrl.searchFunction(librariyanList, 1, searchTxtBox);
             }
         }
+
+        private void btn_refreshLibrarianList_Click(object sender, EventArgs e)
+        {
+            loadLibrariyanList();
+        }
     }
 }

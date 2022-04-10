@@ -17,7 +17,7 @@ namespace Library_Management_System_v1._1.Controller
             Model.DatabaseService database = new Model.DatabaseService();
             
             int row = database.insertData("INSERT INTO Librarian VALUES('" + librarian.Id + "','" + librarian.Name + "','" + librarian.NIC1 + "'," +
-                                "'" + librarian.Address + "','" + librarian.Email + "','" + librarian.UpdatedDate.ToString("yyyy-MM-dd HH:mm:ss") + "','" + librarian.AddedDate.ToString("yyyy-MM-dd HH:mm:ss") + "','" + librarian.Phone + "')");
+                                "'" + librarian.Address + "','" + librarian.Email + "','"+librarian.Phone+"','" + librarian.UpdatedDate.ToString("yyyy-MM-dd HH:mm:ss") + "','" + librarian.AddedDate.ToString("yyyy-MM-dd HH:mm:ss") + "')");
 
             int row2 = database.insertData("INSERT INTO AppUser VALUES('" + appUser.EmpID + "','" + appUser.Password + "','" + appUser.EmpType + "','" + 0 + "')");
             return  row > 0 && row2>0;
@@ -29,42 +29,6 @@ namespace Library_Management_System_v1._1.Controller
             int row = database.updateData("UPDATE Librarian SET Name = '" + librarian.Name + "',NIC = '" + librarian.NIC1 + "'" +
                 ", Address = '" + librarian.Address + "', Email = '" + librarian.Email + "' , Phone = '" + librarian.Phone + "',updated_date = '"+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  WHERE Librarian_Id = '" + librarian.Id + "'");
             return row > 0;
-        }
-
-
-        public void setLibId(MaterialTextBox textBox)
-        {
-            Model.DatabaseService database = new Model.DatabaseService();
-            String id;
-            try
-            {
-                database.Con.Open();
-                MySqlDataReader sdr = database.readData("SELECT TOP 1 Librarian_Id FROM Librarian ORDER BY Librarian_Id DESC");
-                sdr.Read();
-                if (sdr.HasRows)
-                {
-                    id = sdr["Librarian_Id"].ToString();
-                    database.Con.Close();
-                    id = "L" + (Convert.ToInt32(id.Remove(0, 1)) + 1).ToString();
-                }
-                else
-                {
-                    database.Con.Close();
-                    id = "L1";
-                }
-                textBox.Text = id;
-            }catch(MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                database.Con.Close();
-            }
         }
     }
 }
