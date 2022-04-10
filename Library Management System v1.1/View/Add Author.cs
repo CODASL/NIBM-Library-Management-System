@@ -14,12 +14,14 @@ namespace Library_Management_System_v1._1.View
     public partial class Add_Author : MaterialForm
     {
         Controller.AuthorController ATR = new Controller.AuthorController();
-        public Add_Author()
+        MaterialComboBox cmb_BookAuthors;
+        public Add_Author(MaterialComboBox cmb_BookAuthors = null)
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
             new Controller.CommonController().setId(txt_authorId, "Author_ID", "Author", "");
             txt_authorName.Focus();
+            this.cmb_BookAuthors = cmb_BookAuthors;
         }
 
         private void btn_reset_Click(object sender, EventArgs e)
@@ -38,6 +40,10 @@ namespace Library_Management_System_v1._1.View
                 {
                     this.Hide();
                    MessageBox.Show("Record Added");
+                    if (cmb_BookAuthors != null)
+                    {
+                        Controller.BookController.loadComboBoxes(cmb_BookAuthors, "Author", "Author_Name");
+                    }
 
                 }
                 else

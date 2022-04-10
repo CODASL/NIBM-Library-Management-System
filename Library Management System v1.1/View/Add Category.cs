@@ -14,14 +14,16 @@ namespace Library_Management_System_v1._1.View
     public partial class Add_Category : MaterialForm
     {
         Controller.CategoryController category = new Controller.CategoryController();
-        public Add_Category()
+        MaterialComboBox cmb_bookCategories;
+        public Add_Category(MaterialComboBox cmb_bookCategories = null)
         {
             InitializeComponent();
-            new Controller.MaterialController().addStyle(this);
-            new Controller.CommonController().setId(txt_categoryId, "Category_Id", "Category", "C");
-            txt_categoryName.Focus();
+            
+            this.cmb_bookCategories = cmb_bookCategories;
 
         }
+
+        
 
         private void btn_addCategory_Click(object sender, EventArgs e)
         {
@@ -31,8 +33,11 @@ namespace Library_Management_System_v1._1.View
                 Boolean isAdded = category.addCategory(new Model.Category(txt_categoryId.Text, txt_categoryName.Text, DateTime.Now));
                 if (isAdded)
                 {
-                    MessageBox.Show("Category Added Successfully");
                     this.Hide();
+                    MessageBox.Show("Category Added Successfully");
+                    if(cmb_bookCategories != null) {
+                        Controller.BookController.loadComboBoxes(cmb_bookCategories, "Category", "Category_Name");
+                    }
                 }
                 else
                 {
@@ -42,6 +47,13 @@ namespace Library_Management_System_v1._1.View
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Add_Category_Load(object sender, EventArgs e)
+        {
+            new Controller.MaterialController().addStyle(this);
+            new Controller.CommonController().setId(txt_categoryId, "Category_Id", "Category", "C");
+            txt_categoryName.Focus();
         }
     }
 }

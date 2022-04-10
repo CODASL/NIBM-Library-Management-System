@@ -95,7 +95,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_clearCategory.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_clearCategory.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_clearCategory.Name = "btn_clearCategory";
-            this.btn_clearCategory.Size = new System.Drawing.Size(65, 36);
+            this.btn_clearCategory.Size = new System.Drawing.Size(66, 36);
             this.btn_clearCategory.TabIndex = 5;
             this.btn_clearCategory.Text = "Clear";
             this.btn_clearCategory.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -142,6 +142,7 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.txt_categoryId);
             this.Name = "Add_Category";
             this.Text = "Add Category";
+            this.Load += new System.EventHandler(this.Add_Category_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,26 +21,36 @@ namespace Library_Management_System_v1._1.View
             new Controller.MaterialController().addStyle(this);
         }
 
+
+        //===============On load Add Book Dialog =====================
+
         private void AddBook_Load(object sender, EventArgs e)
         {
             commonController.setId(txt_bookIdAddBook, "BID", "Book", "B");
+            Controller.BookController.loadComboBoxes(cmb_bookCategories, "Category", "Category_Name");
+            Controller.BookController.loadComboBoxes(cmb_BookAuthors, "Author", "Author_Name");
+            Controller.BookController.loadComboBoxes(cmb_bookRacks, "Rack", "Rack_NO");
         }
 
+        //================Add New Rack No ===============================
         private void addRackNoBtnAddBook_Click(object sender, EventArgs e)
         {
-            new Add_RackNo().ShowDialog();
+            new Add_RackNo(cmb_bookRacks).ShowDialog();
         }
 
+        //================Add New Author ================================
         private void addAuthorBtnAddBook_Click(object sender, EventArgs e)
         {
-            new Add_Author().ShowDialog();
+            new Add_Author(cmb_BookAuthors).ShowDialog();
         }
 
+        //================Add New Category ===============================
         private void addCategoryBtnAddBook_Click(object sender, EventArgs e)
         {
-            new Add_Category().ShowDialog();
+            new Add_Category(cmb_bookCategories).ShowDialog();
         }
 
+        //=============Show ISBN QR Scanner ===========================
         private void isbnQrBtnAddBook_Click(object sender, EventArgs e)
         {
             if (this.qrPanelBookAdd.Controls.Count > 0)

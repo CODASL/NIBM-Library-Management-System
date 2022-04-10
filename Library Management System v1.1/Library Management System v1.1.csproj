@@ -133,6 +133,7 @@
     <Compile Include="Controller\AuthorController.cs" />
     <Compile Include="Controller\AddLibrariyanController.cs" />
     <Compile Include="Controller\AdminDashboardController.cs" />
+    <Compile Include="Controller\BookController.cs" />
     <Compile Include="Controller\CategoryController.cs" />
     <Compile Include="Controller\CommonController.cs" />
     <Compile Include="Controller\LibrariyanDashboardController.cs" />

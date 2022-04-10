@@ -159,6 +159,7 @@ namespace Library_Management_System_v1._1.Controller
         public void loadCategoriesPieChart(LiveCharts.WinForms.PieChart pieChart)
         {
             Func<ChartPoint, string> labelPoint = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+            Model.DatabaseService database = new Model.DatabaseService();
 
             LiveCharts.SeriesCollection piechartData = new LiveCharts.SeriesCollection();
             System.Windows.Media.Brush[] colors = new System.Windows.Media.Brush[5];
@@ -167,43 +168,9 @@ namespace Library_Management_System_v1._1.Controller
             colors.SetValue(System.Windows.Media.Brushes.BlueViolet, 2);
             colors.SetValue(System.Windows.Media.Brushes.CornflowerBlue, 3);
             colors.SetValue(System.Windows.Media.Brushes.Cyan, 4);
-            //SqlDataReader sdr = database.readData("SELECT * FROM Category");
-            //int i = 0;
-            //while (sdr.Read())
-            //{
-            //    if (sdr.HasRows)
-            //    {
-            //        piechartData.Add(
-            //            new PieSeries
-            //            {
-            //                Title = "Fourth Item",
-            //                Values = new ChartValues<double> { 25 },
-            //                DataLabels = true,
-            //                LabelPoint = labelPoint,
-            //                Fill = colors[i],
-            //            }
-            //        );
-            //       i++;
-            //    }
-            //    else
-            //    {
 
-            //    }
-            //}
 
-            for (int i = 0; i < 5; i++)
-            {
-                piechartData.Add(
-                 new PieSeries
-                 {
-                     Title = "Fourth Item",
-                     Values = new ChartValues<double> { 25 },
-                     DataLabels = true,
-                     LabelPoint = labelPoint,
-                     Fill = colors[i],
-                 }
-                ); 
-            }
+            setPiechartData(piechartData, labelPoint, colors);
            
 
             // Define the collection of Values to display in the Pie Chart
@@ -211,6 +178,70 @@ namespace Library_Management_System_v1._1.Controller
 
             // Set the legend location to appear in the bottom of the chart
             pieChart.LegendLocation = LegendLocation.Right;
+        }
+
+        //===================Get Category Count ===================
+
+        public int setBookCount()
+        {
+            int a = 0;
+            Model.DatabaseService database = new Model.DatabaseService();
+            try
+            {
+                database.Con.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT Count(*) FROM Book", database.Con);
+                a = Convert.ToInt32( cmd.ExecuteScalar().ToString());
+                
+            }
+            catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                database.Con.Close();
+            }
+            return a;
+        }
+
+        
+
+        //==============
+        public void setPiechartData(LiveCharts.SeriesCollection piechartData, Func<ChartPoint, string> labelPoint, System.Windows.Media.Brush[] colors)
+        {
+            Model.DatabaseService database = new Model.DatabaseService();
+            try
+            {
+                int i = 0;
+                database.Con.Open();
+                MySqlDataReader sdr = database.readData("SELECT * FROM Category");
+                while (sdr.Read())
+                {
+                 piechartData.Add(
+                    new PieSeries
+                    {
+                        Title = sdr["Category_Name"].ToString(),
+                        Values = new ChartValues<double> {(Convert.ToInt32(sdr["Book_Count"])/setBookCount())*100},
+                        DataLabels = true,
+                        LabelPoint = labelPoint,
+                        Fill = colors[i],
+                        
+                    }
+
+                  );
+                  i = i + 1;
+                }
+                
+
+            }
+            catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                database.Con.Close();
+            }
         }
     }
 }

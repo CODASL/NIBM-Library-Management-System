@@ -75,11 +75,13 @@ namespace Library_Management_System_v1._1.View
                         {
                             new AdminDashboard(Controller.LoginController.currentUserId).loadLibrariyanList();
                             MessageBox.Show("Record Updated");
+                            commonController.setActivity(new Model.Activity("", "Updated " + librarian.Id + " Data","Admin", Controller.LoginController.currentUserId));
 
                         }
                         else
                         {
                             MessageBox.Show("Record Added");
+                            commonController.setActivity(new Model.Activity("", "Added New Librarian " + librarian.Id + " Data", "Admin", Controller.LoginController.currentUserId));
                         }
                     }
                     else

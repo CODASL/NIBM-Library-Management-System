@@ -51,6 +51,7 @@ namespace Library_Management_System_v1._1.View
             loadLibrariyanList();
             loadLibrarianActivities();//Admin Dashboard only All Librarians Activities
             commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);
+            lbl_categoryCount.Text = adminDashboardCtrl.setBookCount().ToString();
         }
 
 
@@ -304,6 +305,19 @@ namespace Library_Management_System_v1._1.View
         private void btn_refreshLibrarianList_Click(object sender, EventArgs e)
         {
             loadLibrariyanList();
+        }
+
+        private void refreshAdminActivties_Click(object sender, EventArgs e)
+        {
+            commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);
+        }
+
+        private void btn_refreshAdminDashboard_Click(object sender, EventArgs e)
+        {
+            adminDashboardCtrl.loadCartChart(memberRegistrationChart);
+            adminDashboardCtrl.loadCategoriesPieChart(categoriesPieChart);
+            loadLibrarianActivities();
+            lbl_notification_count.Text = adminDashboardCtrl.setNotificationCount();
         }
     }
 }

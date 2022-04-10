@@ -13,7 +13,63 @@ namespace Library_Management_System_v1._1.Controller
 {
     class CommonController
     {
+        //================= Add Activty =====================================
+        public void setActivity(Model.Activity activity) {
+            Model.DatabaseService database = new Model.DatabaseService();
+            
+            try
+            {
+                
+                int row = database.insertData("INSERT INTO Activity VALUES('"+ setActivityId("Id", "Activity") +"','"+activity.Emp_id+"','"+activity.Description+"','"+activity.Emp_type+"','"+ DateTime.Now.ToString("MM/dd/yyyy hh:mm:tt") + "')");
+                if (row > 0)
+                {
+                    Console.Write("Added Activitiy " + activity.Description);
+                }
+                else
+                {
+                    Console.Write("Failed to add Activity + " + setActivityId("Id", "Activity") + activity.Emp_id + activity.Description + activity.Emp_type);
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        public int setActivityId( String IDColumn, String tableName)
+        {
+            Model.DatabaseService database = new Model.DatabaseService();
+            String id;
+            try
+            {
+                database.Con.Open();
+                MySqlDataReader sdr = database.readData("SELECT " + IDColumn + " FROM " + tableName + " ORDER BY " + IDColumn + " DESC LIMIT 1");
+                sdr.Read();
+                if (sdr.HasRows)
+                {
+                    id = sdr[IDColumn].ToString();
+                    database.Con.Close();
+                    id = (Convert.ToInt32(id) + 1).ToString();
+                }
+                else
+                {
+                    database.Con.Close();
+                    id = 1.ToString();
+                }
+
+                return Convert.ToInt32(id);
+            }
+            catch (MySqlException ex)
+            {
+                database.Con.Close();
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                database.Con.Close();
+                return 0;
+            }
+           
+        }
         //==================Field Validations=============================
         public Boolean isEmailValid(String email)
         {
@@ -52,7 +108,7 @@ namespace Library_Management_System_v1._1.Controller
             return true;
         }
 
-        //============================Building Random Passwords==============================
+        //============================Building Random Passwords=============================
         public string RandomPassword(int size, bool lowerCase)
         {
             StringBuilder builder = new StringBuilder();
