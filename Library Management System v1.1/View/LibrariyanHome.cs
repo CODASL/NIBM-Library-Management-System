@@ -32,7 +32,7 @@ namespace Library_Management_System_v1._1.View
             InitializeComponent();
 
             material.addStyle(this);
-            cmbFilterAvalibility.SelectedIndex = 0;
+            cmbFilterAvailability.SelectedIndex = 0;
             this.emp_Id = emp_Id;
             timer1.Start();
             this.FormClosing += Form_FormClosing;
@@ -78,8 +78,7 @@ namespace Library_Management_System_v1._1.View
                         {
                             item.SubItems.Add("Unavailable");
                         }
-                        
-                        
+                        item.SubItems.Add(sdr["Rack_No"].ToString());
 
                         listview_BookAvailability.Items.Add(item);
                     }
@@ -114,8 +113,8 @@ namespace Library_Management_System_v1._1.View
         {
             lbl_members_count.Text = tile_count("SELECT * FROM Member").ToString();
             lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
-            lbl_BookIssuedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + 1 + "'").ToString();
-            lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + 0 + "'").ToString();
+            lbl_BookIssuedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + dateTimeLibrarian.Value.Date.ToString("yyyy-MM-dd") + "' AND Status='" + 1 + "'").ToString();
+            lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + dateTimeLibrarian.Value.Date.ToString("yyyy-MM-dd") + "' AND Status='" + 0 + "'").ToString();
         }
 
         //============ form x or F4 click logout user ================================

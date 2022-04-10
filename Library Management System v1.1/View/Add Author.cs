@@ -18,7 +18,7 @@ namespace Library_Management_System_v1._1.View
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
-            new Controller.CommonController().setId(txt_authorId, "Author_Id", "Author", "");
+            new Controller.CommonController().setId(txt_authorId, "Author_ID", "Author", "");
             txt_authorName.Focus();
         }
 
