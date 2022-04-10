@@ -16,7 +16,7 @@ namespace Library_Management_System_v1._1.Controller
         {
             Model.DatabaseService db = new Model.DatabaseService();
 
-            int row = db.insertData("INSERT INTO Author VALUES('" + author.Id + "','" + author.Name + "','" + author.AddedDate + "')");
+            int row = db.insertData("INSERT INTO Author VALUES('" + author.Id + "','" + author.Name + "','" + author.AddedDate.ToString("yyyy-MM-dd HH:mm:ss") + "')");
 
             return row > 0;
         }
