@@ -91,7 +91,7 @@ namespace Library_Management_System_v1._1.View
             {
                 try
                 {
-                    int line = database.insertData("INSERT INTO Notification VALUES ('" + generateNotificationID() + "','" + "A1" + "','" + cmb_libID.SelectedItem.ToString() + "','" + txt_reason.Text + "','" + DateTime.Now + "','')");
+                    int line = database.insertData("INSERT INTO Notification VALUES ('" + generateNotificationID() + "','" + "A1" + "','" + cmb_libID.SelectedItem.ToString() + "','" + txt_reason.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','')");
                     if (line > 0)
                     {
                         MessageBox.Show("Request Sent Successfully");

@@ -159,7 +159,7 @@ namespace Library_Management_System_v1._1.View
             Model.DatabaseService database = new Model.DatabaseService();
             try
             {
-                int row = database.insertData("INSERT INTO Book_Issue VALUES('" + txt_issueId.Text + "','" + BID + "','" + cmb_MemberId.SelectedItem + "','" + txt_issuingLibId.Text + "','" + DateTime.Now + "','" + DateTime.Now.AddDays(14) + "','" + DateTime.Now + "','" + 1 + "')");
+                int row = database.insertData("INSERT INTO Book_Issue VALUES('" + txt_issueId.Text + "','" + BID + "','" + cmb_MemberId.SelectedItem + "','" + txt_issuingLibId.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','" + DateTime.Now.AddDays(14).ToString("yyyy-MM-dd HH:mm:ss") + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','" + 1 + "')");
                 if(row > 0)
                 {
                     int row1 = database.updateData("UPDATE Book SET Availability = 0 WHERE BID = '" + BID + "'");
