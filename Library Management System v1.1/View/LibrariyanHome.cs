@@ -409,7 +409,7 @@ namespace Library_Management_System_v1._1.View
         //=================Add Book Btn =======================
         private void LibAddBook_Click(object sender, EventArgs e)
         {
-            new View.AddBook().ShowDialog();
+            new View.AddBook(false).ShowDialog();
         }
 
         //=================Add Members Btn =======================
@@ -532,7 +532,7 @@ namespace Library_Management_System_v1._1.View
         //============Add Book  Dashboard Btn ======================================
         private void addBookDashBoard_Click(object sender, EventArgs e)
         {
-            new View.AddBook().ShowDialog();
+            new View.AddBook(false).ShowDialog();
         }
 
         //===========Add Category Dashboard Btn ====================================
@@ -656,6 +656,20 @@ namespace Library_Management_System_v1._1.View
             else
             {
                 MessageBox.Show("Deletation Cancelled");
+            }
+        }
+
+        private void btn_updateBook_Click(object sender, EventArgs e)
+        {
+            if (LibBookList.SelectedItems.Count > 0)
+            {
+                try
+                {
+                    new AddBook(true , LibBookList.SelectedItems[0].SubItems[0].Text).Show();
+                }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

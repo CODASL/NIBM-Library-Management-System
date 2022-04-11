@@ -15,10 +15,14 @@ namespace Library_Management_System_v1._1.View
     public partial class AddBook : MaterialForm
     {
         Controller.CommonController commonController = new Controller.CommonController();
-        public AddBook()
+        Controller.BookController bookcontroller = new Controller.BookController();
+        Boolean isUpdate;
+        String selectedISBN;
+        public AddBook(Boolean isUpdate, String selectedISBN = null)
         {
             InitializeComponent();
-            new Controller.MaterialController().addStyle(this);
+            this.isUpdate = isUpdate;
+            this.selectedISBN = selectedISBN;
         }
 
 
@@ -26,12 +30,71 @@ namespace Library_Management_System_v1._1.View
 
         private void AddBook_Load(object sender, EventArgs e)
         {
-            commonController.setId(txt_bookIdAddBook, "BID", "Book", "B");
+            onUpdate();
+            new Controller.MaterialController().addStyle(this);
+           
             Controller.BookController.loadComboBoxes(cmb_bookCategories, "Category", "Category_Name");
             Controller.BookController.loadComboBoxes(cmb_BookAuthors, "Author", "Author_Name");
             Controller.BookController.loadComboBoxes(cmb_bookRacks, "Rack", "Rack_NO");
+            
         }
 
+
+         //==================On Update ==================================
+         public void onUpdate()
+        {
+            if (isUpdate)
+            {
+                this.Text = "Update Book";
+                this.btn_AddBookDialog.Text = "Update";
+                
+                if(selectedISBN != null)
+                {
+                    Model.DatabaseService database = new Model.DatabaseService();
+                    try
+                    {
+                        
+                        database.Con.Open();
+                        MySqlDataReader sdr = database.readData("SELECT * FROM Book WHERE ISBN = '"+selectedISBN+"'");
+                        sdr.Read();
+                        if (sdr.HasRows)
+                        {
+                            txt_bookIdAddBook.Text = sdr["BID"].ToString();
+                            txt_BookName.Text = sdr["Name"].ToString();
+                            txt_bookISBN.Text = sdr["ISBN"].ToString();
+                            cmb_BookAuthors.SelectedValue = sdr["Author"].ToString();
+                            cmb_bookCategories.SelectedValue = sdr["Category"].ToString();
+                            cmb_bookRacks.SelectedValue = sdr["Rack_No"].ToString();
+                        }
+                        
+                    }catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        database.Con.Close();
+                    }
+                }
+            }
+            else
+            {
+                commonController.setId(txt_bookIdAddBook, "BID", "Book", "B");
+            }
+        }
+
+        //==================Set Value to combo box ======================
+        public int setValuestoCombo(String value , MaterialComboBox cmb)
+        {
+            int index = 0;
+            for (int i = 0; i < cmb.Items.Count; i++)
+            {
+                if (cmb.Items[i].ToString() == value) {
+                    index = i;           
+                }
+            }
+            return index;
+        }
         //================Add New Rack No ===============================
         private void addRackNoBtnAddBook_Click(object sender, EventArgs e)
         {
@@ -62,13 +125,81 @@ namespace Library_Management_System_v1._1.View
             qrPanelBookAdd.Controls.Add(f);
             qrPanelBookAdd.Tag = f;
             f.Show();
-            
+
         }
 
         private void btn_AddBookDialog_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (txt_bookISBN.Text == null)
+                {
+                    MessageBox.Show("Please Scan or type ISBN Code");
+                }
+                else if (txt_BookName.Text == null)
+                {
+                    MessageBox.Show("Please Enter Book Name");
+                }
+                else if (cmb_bookCategories.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select a category");
+                }
+                else if (cmb_BookAuthors.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select a author");
+                }
+                else if (cmb_bookRacks.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select a book rack");
+                }
+                else
+                {
+                    Model.Book book = new Model.Book(txt_bookIdAddBook.Text,txt_BookName.Text,cmb_bookCategories.SelectedItem.ToString(),
+                        cmb_BookAuthors.SelectedItem.ToString(),txt_bookISBN.Text,1.ToString(),cmb_bookRacks.SelectedItem.ToString(), DateTime.Now,DateTime.Now);
+                    
 
-        }
+                    Boolean isAdded;
+                    if (!isUpdate)
+                    {
+                        isAdded = bookcontroller.addBook(book);
+                    }
+                    else
+                    {
+                        isAdded = bookcontroller.updateBook(book);
+                    }
+
+                    if (isAdded)
+                    {
+                        this.Hide();
+                        if (isUpdate)
+                        {
+                            new AdminDashboard(Controller.LoginController.currentUserId).loadLibrariyanList();
+                            MessageBox.Show("Record Updated");
+                            commonController.setActivity(new Model.Activity("", "Updated " + book.Id + " Data", "Librarian", Controller.LoginController.currentUserId));
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Record Added");
+                            commonController.setActivity(new Model.Activity("", "Added New Book " + book.Id + " Data", "Librarian", Controller.LoginController.currentUserId));
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong try again");
+                    }
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Please check your internet connection \n" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+    }
 
         private void clearBtnAddBook_Click(object sender, EventArgs e)
         {

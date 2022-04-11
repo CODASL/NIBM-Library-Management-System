@@ -12,6 +12,7 @@ namespace Library_Management_System_v1._1
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+        [Obsolete]
         static void Main()
         {
             Application.EnableVisualStyles();
