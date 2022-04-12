@@ -57,7 +57,6 @@ namespace Library_Management_System_v1._1.View
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_librariyan_name = new MaterialSkin.Controls.MaterialLabel();
-            this.rjCircularPictureBox1 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton2 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
@@ -91,9 +90,9 @@ namespace Library_Management_System_v1._1.View
             this.Phone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NIC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LastUpdated = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cmbUserFilte = new MaterialSkin.Controls.MaterialComboBox();
+            this.cmb_MemberFilter = new MaterialSkin.Controls.MaterialComboBox();
             this.LibaddMemberBtn = new MaterialSkin.Controls.MaterialButton();
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_memberSearch = new MaterialSkin.Controls.MaterialTextBox();
             this.materialCard9 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton6 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel21 = new MaterialSkin.Controls.MaterialLabel();
@@ -190,7 +189,6 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel40 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_librarianProfileName = new MaterialSkin.Controls.MaterialLabel();
-            this.rjCircularPictureBox2 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.LibSettings = new System.Windows.Forms.TabPage();
             this.btn_librariyanLogout = new MaterialSkin.Controls.MaterialButton();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -200,12 +198,13 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.rjCircularPictureBox1 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
+            this.rjCircularPictureBox2 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.LibrariyanTabController.SuspendLayout();
             this.LibrariyanDashBoard.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.SecondDashboardRow.SuspendLayout();
             this.materialCard1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.materialCard3.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.materialCard5.SuspendLayout();
@@ -224,10 +223,11 @@ namespace Library_Management_System_v1._1.View
             this.materialCard16.SuspendLayout();
             this.LibMyProfile.SuspendLayout();
             this.materialCard17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).BeginInit();
             this.LibSettings.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.materialCard7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // LibrariyanTabController
@@ -613,22 +613,6 @@ namespace Library_Management_System_v1._1.View
             this.lbl_librariyan_name.TabIndex = 1;
             this.lbl_librariyan_name.Text = "Carolina James";
             // 
-            // rjCircularPictureBox1
-            // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 0;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(17, 14);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(85, 85);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 0;
-            this.rjCircularPictureBox1.TabStop = false;
-            // 
             // materialCard3
             // 
             this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -931,9 +915,9 @@ namespace Library_Management_System_v1._1.View
             this.LibMembersTab.Controls.Add(this.btn_deleteMember);
             this.LibMembersTab.Controls.Add(this.materialLabel23);
             this.LibMembersTab.Controls.Add(this.memberListview);
-            this.LibMembersTab.Controls.Add(this.cmbUserFilte);
+            this.LibMembersTab.Controls.Add(this.cmb_MemberFilter);
             this.LibMembersTab.Controls.Add(this.LibaddMemberBtn);
-            this.LibMembersTab.Controls.Add(this.materialTextBox2);
+            this.LibMembersTab.Controls.Add(this.txt_memberSearch);
             this.LibMembersTab.Controls.Add(this.materialCard9);
             this.LibMembersTab.Controls.Add(this.materialCard10);
             this.LibMembersTab.ImageKey = "icons8-people-32.png";
@@ -1085,31 +1069,32 @@ namespace Library_Management_System_v1._1.View
             this.LastUpdated.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.LastUpdated.Width = 201;
             // 
-            // cmbUserFilte
+            // cmb_MemberFilter
             // 
-            this.cmbUserFilte.AutoResize = false;
-            this.cmbUserFilte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbUserFilte.Depth = 0;
-            this.cmbUserFilte.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cmbUserFilte.DropDownHeight = 118;
-            this.cmbUserFilte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUserFilte.DropDownWidth = 150;
-            this.cmbUserFilte.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cmbUserFilte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmbUserFilte.FormattingEnabled = true;
-            this.cmbUserFilte.IntegralHeight = false;
-            this.cmbUserFilte.ItemHeight = 29;
-            this.cmbUserFilte.Items.AddRange(new object[] {
-            "Date Added"});
-            this.cmbUserFilte.Location = new System.Drawing.Point(449, 184);
-            this.cmbUserFilte.MaxDropDownItems = 4;
-            this.cmbUserFilte.MaximumSize = new System.Drawing.Size(121, 0);
-            this.cmbUserFilte.MinimumSize = new System.Drawing.Size(121, 0);
-            this.cmbUserFilte.MouseState = MaterialSkin.MouseState.OUT;
-            this.cmbUserFilte.Name = "cmbUserFilte";
-            this.cmbUserFilte.Size = new System.Drawing.Size(121, 35);
-            this.cmbUserFilte.TabIndex = 11;
-            this.cmbUserFilte.UseTallSize = false;
+            this.cmb_MemberFilter.AutoResize = false;
+            this.cmb_MemberFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmb_MemberFilter.Depth = 0;
+            this.cmb_MemberFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmb_MemberFilter.DropDownHeight = 118;
+            this.cmb_MemberFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_MemberFilter.DropDownWidth = 150;
+            this.cmb_MemberFilter.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmb_MemberFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmb_MemberFilter.FormattingEnabled = true;
+            this.cmb_MemberFilter.IntegralHeight = false;
+            this.cmb_MemberFilter.ItemHeight = 29;
+            this.cmb_MemberFilter.Items.AddRange(new object[] {
+            "Member ID",
+            "Name"});
+            this.cmb_MemberFilter.Location = new System.Drawing.Point(449, 184);
+            this.cmb_MemberFilter.MaxDropDownItems = 4;
+            this.cmb_MemberFilter.MaximumSize = new System.Drawing.Size(121, 0);
+            this.cmb_MemberFilter.MinimumSize = new System.Drawing.Size(121, 0);
+            this.cmb_MemberFilter.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmb_MemberFilter.Name = "cmb_MemberFilter";
+            this.cmb_MemberFilter.Size = new System.Drawing.Size(121, 35);
+            this.cmb_MemberFilter.TabIndex = 11;
+            this.cmb_MemberFilter.UseTallSize = false;
             // 
             // LibaddMemberBtn
             // 
@@ -1132,24 +1117,25 @@ namespace Library_Management_System_v1._1.View
             this.LibaddMemberBtn.UseVisualStyleBackColor = true;
             this.LibaddMemberBtn.Click += new System.EventHandler(this.LibaddMemberBtn_Click);
             // 
-            // materialTextBox2
+            // txt_memberSearch
             // 
-            this.materialTextBox2.BackColor = System.Drawing.Color.White;
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox2.ForeColor = System.Drawing.Color.Black;
-            this.materialTextBox2.Location = new System.Drawing.Point(27, 179);
-            this.materialTextBox2.MaximumSize = new System.Drawing.Size(330, 40);
-            this.materialTextBox2.MaxLength = 50;
-            this.materialTextBox2.MinimumSize = new System.Drawing.Size(330, 40);
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(330, 40);
-            this.materialTextBox2.TabIndex = 9;
-            this.materialTextBox2.Text = "";
-            this.materialTextBox2.UseTallSize = false;
+            this.txt_memberSearch.BackColor = System.Drawing.Color.White;
+            this.txt_memberSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_memberSearch.Depth = 0;
+            this.txt_memberSearch.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_memberSearch.ForeColor = System.Drawing.Color.Black;
+            this.txt_memberSearch.Location = new System.Drawing.Point(27, 179);
+            this.txt_memberSearch.MaximumSize = new System.Drawing.Size(330, 40);
+            this.txt_memberSearch.MaxLength = 50;
+            this.txt_memberSearch.MinimumSize = new System.Drawing.Size(330, 40);
+            this.txt_memberSearch.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_memberSearch.Multiline = false;
+            this.txt_memberSearch.Name = "txt_memberSearch";
+            this.txt_memberSearch.Size = new System.Drawing.Size(330, 40);
+            this.txt_memberSearch.TabIndex = 9;
+            this.txt_memberSearch.Text = "";
+            this.txt_memberSearch.UseTallSize = false;
+            this.txt_memberSearch.TextChanged += new System.EventHandler(this.txt_memberSearch_TextChanged);
             // 
             // materialCard9
             // 
@@ -2544,21 +2530,6 @@ namespace Library_Management_System_v1._1.View
             this.lbl_librarianProfileName.TabIndex = 3;
             this.lbl_librarianProfileName.Text = "Carolina James";
             // 
-            // rjCircularPictureBox2
-            // 
-            this.rjCircularPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox2.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox2.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox2.BorderSize = 0;
-            this.rjCircularPictureBox2.GradientAngle = 50F;
-            this.rjCircularPictureBox2.Location = new System.Drawing.Point(32, 17);
-            this.rjCircularPictureBox2.Name = "rjCircularPictureBox2";
-            this.rjCircularPictureBox2.Size = new System.Drawing.Size(85, 85);
-            this.rjCircularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox2.TabIndex = 1;
-            this.rjCircularPictureBox2.TabStop = false;
-            // 
             // LibSettings
             // 
             this.LibSettings.Controls.Add(this.btn_librariyanLogout);
@@ -2677,6 +2648,37 @@ namespace Library_Management_System_v1._1.View
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // rjCircularPictureBox1
+            // 
+            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox1.BorderSize = 0;
+            this.rjCircularPictureBox1.GradientAngle = 50F;
+            this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
+            this.rjCircularPictureBox1.Location = new System.Drawing.Point(17, 14);
+            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
+            this.rjCircularPictureBox1.Size = new System.Drawing.Size(85, 85);
+            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox1.TabIndex = 0;
+            this.rjCircularPictureBox1.TabStop = false;
+            // 
+            // rjCircularPictureBox2
+            // 
+            this.rjCircularPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox2.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.rjCircularPictureBox2.BorderColor2 = System.Drawing.Color.HotPink;
+            this.rjCircularPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox2.BorderSize = 0;
+            this.rjCircularPictureBox2.GradientAngle = 50F;
+            this.rjCircularPictureBox2.Location = new System.Drawing.Point(32, 17);
+            this.rjCircularPictureBox2.Name = "rjCircularPictureBox2";
+            this.rjCircularPictureBox2.Size = new System.Drawing.Size(85, 85);
+            this.rjCircularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox2.TabIndex = 1;
+            this.rjCircularPictureBox2.TabStop = false;
+            // 
             // LibrariyanHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2701,7 +2703,6 @@ namespace Library_Management_System_v1._1.View
             this.SecondDashboardRow.ResumeLayout(false);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             this.materialCard3.ResumeLayout(false);
             this.materialCard3.PerformLayout();
             this.materialCard2.ResumeLayout(false);
@@ -2738,12 +2739,13 @@ namespace Library_Management_System_v1._1.View
             this.LibMyProfile.PerformLayout();
             this.materialCard17.ResumeLayout(false);
             this.materialCard17.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).EndInit();
             this.LibSettings.ResumeLayout(false);
             this.LibSettings.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.materialCard7.ResumeLayout(false);
             this.materialCard7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2805,9 +2807,9 @@ namespace Library_Management_System_v1._1.View
         private System.Windows.Forms.ColumnHeader NIC;
         private System.Windows.Forms.ColumnHeader GuardianID;
         private System.Windows.Forms.ColumnHeader LastUpdated;
-        private MaterialSkin.Controls.MaterialComboBox cmbUserFilte;
+        private MaterialSkin.Controls.MaterialComboBox cmb_MemberFilter;
         private MaterialSkin.Controls.MaterialButton LibaddMemberBtn;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
+        private MaterialSkin.Controls.MaterialTextBox txt_memberSearch;
         private MaterialSkin.Controls.MaterialLabel materialLabel23;
         private MaterialSkin.Controls.MaterialLabel materialLabel21;
         private MaterialSkin.Controls.MaterialLabel lbl_members_tot;

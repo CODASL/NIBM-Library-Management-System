@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,63 @@ using System.Threading.Tasks;
 
 namespace Library_Management_System_v1._1.Controller
 {
+    
     class MemberController
     {
+
+        public static  void memberSearchFunction(MaterialListView list, int itemIndex, MaterialTextBox inputBox)
+        {
+
+            if (itemIndex == 0)
+            {
+
+                for (int i = list.Items.Count - 1; i >= 0; i--)
+                {
+                    var item = list.Items[i];
+
+                    if (item.Text.ToLower().Contains(inputBox.Text.ToLower()))
+                    {
+
+                    }
+                    else
+                    {
+                        list.Items.Remove(item);
+                    }
+                }
+                if (list.SelectedItems.Count == 1)
+                {
+                    list.Focus();
+                }
+            }
+            else if (itemIndex == 1)
+            {
+                for (int i = list.Items.Count - 1; i >= 0; i--)
+                {
+                    var item = list.Items[i];
+
+                    if (item.SubItems[2].Text.ToLower().Contains(inputBox.Text.ToLower()))
+                    {
+
+                    }
+                    else
+                    {
+                        list.Items.Remove(item);
+                    }
+                }
+                if (list.SelectedItems.Count == 1)
+                {
+                    list.Focus();
+                }
+
+            }
+            else
+            {
+
+            }
+
+        }
+
+        //=====================Add Member =================================================
         public Boolean addMember(Model.Member member , Model.Guardian guardian)
         {
             Model.DatabaseService database = new Model.DatabaseService();
@@ -22,6 +78,7 @@ namespace Library_Management_System_v1._1.Controller
         }
 
 
+        //=============================Update Member ===========================================
         public Boolean updateMember(Model.Member member ,  Model.Guardian guardian)
         {
             Model.DatabaseService database = new Model.DatabaseService();

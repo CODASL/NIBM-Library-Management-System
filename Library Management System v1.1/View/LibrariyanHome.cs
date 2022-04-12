@@ -52,6 +52,7 @@ namespace Library_Management_System_v1._1.View
             loadAccounting();
             loadBookAvailability();
             commonController.loadActivities(listview_librarianActivities, emp_Id);
+            cmb_MemberFilter.SelectedIndex = 0;
         }
         //========================load Book Availability ====================================
 
@@ -724,6 +725,18 @@ namespace Library_Management_System_v1._1.View
         private void btn_refreshBooks_Click(object sender, EventArgs e)
         {
             loadBooks();
+        }
+
+        private void txt_memberSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_memberSearch.Text != "")
+            {
+                Controller.MemberController.memberSearchFunction(memberListview, cmb_MemberFilter.SelectedIndex, txt_memberSearch);
+            }
+            else
+            {
+                loadMembers();
+            }
         }
     }
 }

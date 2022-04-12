@@ -10,22 +10,70 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Drawing;
 using MaterialSkin.Controls;
+using System.Windows.Forms;
 using System.Windows;
+
 
 namespace Library_Management_System_v1._1.Controller
 {
     class AdminDashboardController
     {
-        Model.DatabaseService database = new Model.DatabaseService();
+        static Model.DatabaseService database = new Model.DatabaseService();
+
+        public static void loadLibrariyanList(MaterialListView listView , MaterialLabel NOF)
+        {
+            listView.Items.Clear();
+            try
+            {
+                database.Con.Open();
+                MySqlDataReader sdr = database.readData("Select * From Librarian");
+                if (sdr.HasRows)
+                {
+
+                    while (sdr.Read())
+                    {
+                        ListViewItem item = new ListViewItem(sdr["Librarian_Id"].ToString());
+                        item.SubItems.Add(sdr["Name"].ToString());
+                        item.SubItems.Add(sdr["Address"].ToString());
+                        item.SubItems.Add(sdr["Phone"].ToString());
+                        item.SubItems.Add(sdr["NIC"].ToString());
+                        item.SubItems.Add(sdr["updated_date"].ToString());
+
+                        listView.Items.Add(item);
+                    }
+                    database.Con.Close();
+                    NOF.Text = listView.Items.Count.ToString();
+                    
+
+                }
+                else
+                {
+                    Console.WriteLine("No Data to Show");
+                    database.Con.Close();
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                System.Windows.MessageBox.Show(ex.ToString());
+                database.Con.Close();
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+                database.Con.Close();
+            }
+
+        }
 
         //=============Search Function ==========================
 
         public void searchFunction(MaterialListView list, int itemIndex, MaterialTextBox inputBox)
         {
-            if (itemIndex == 0)
-            {
-                if (inputBox.Text != "")
+          
+                if (itemIndex == 0)
                 {
+
                     for (int i = list.Items.Count - 1; i >= 0; i--)
                     {
                         var item = list.Items[i];
@@ -44,9 +92,32 @@ namespace Library_Management_System_v1._1.Controller
                         list.Focus();
                     }
                 }
+                else if(itemIndex == 1)
+                {
+                    for (int i = list.Items.Count - 1; i >= 0; i--)
+                    {
+                        var item = list.Items[i];
+
+                        if (item.SubItems[1].Text.ToLower().Contains(inputBox.Text.ToLower()))
+                        {
+
+                        }
+                        else
+                        {
+                            list.Items.Remove(item);
+                        }
+                    }
+                    if (list.SelectedItems.Count == 1)
+                    {
+                        list.Focus();
+                    }
+
+                }
                 else
-                    new View.AdminDashboard(LoginController.currentUserId).loadLibrariyanList();
-            }
+                {
+
+                }
+
         }
 
         //=============Set Notification Count Label==============
@@ -66,11 +137,11 @@ namespace Library_Management_System_v1._1.Controller
                 return count.ToString();
             }catch(MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                System.Windows.MessageBox.Show(ex.Message);
                 
             }catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                System.Windows.MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -93,11 +164,11 @@ namespace Library_Management_System_v1._1.Controller
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.ToString());
+                System.Windows.MessageBox.Show(ex.ToString());
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                System.Windows.MessageBox.Show(ex.ToString());
             }
             finally
             {

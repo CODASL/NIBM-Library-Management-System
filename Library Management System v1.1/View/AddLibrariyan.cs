@@ -18,8 +18,9 @@ namespace Library_Management_System_v1._1.View
         Controller.CommonController commonController = new Controller.CommonController();
         Boolean isUpdate;
         String selectedRowID;
+        MaterialLabel lblLastUpdate;
   
-        public AddLibrariyan(Boolean isUpdate = false  , String selectedRowID = "")
+        public AddLibrariyan(Boolean isUpdate = false  , String selectedRowID = "", MaterialLabel lblLastUpdate = null)
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
@@ -27,6 +28,7 @@ namespace Library_Management_System_v1._1.View
             this.isUpdate = isUpdate;
             this.selectedRowID = selectedRowID;
             cmb_countrycodes.SelectedIndex = 1;
+            this.lblLastUpdate = lblLastUpdate;
         }
 
 
@@ -73,15 +75,17 @@ namespace Library_Management_System_v1._1.View
                         this.Hide();
                         if (isUpdate)
                         {
-                            new AdminDashboard(Controller.LoginController.currentUserId).loadLibrariyanList();
+                            
                             MessageBox.Show("Record Updated");
                             commonController.setActivity(new Model.Activity("", "Updated " + librarian.Id + " Data","Admin", Controller.LoginController.currentUserId));
+                            lblLastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
                         }
                         else
                         {
                             MessageBox.Show("Record Added");
                             commonController.setActivity(new Model.Activity("", "Added New Librarian " + librarian.Id + " Data", "Admin", Controller.LoginController.currentUserId));
+                            lblLastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                         }
                     }
                     else
