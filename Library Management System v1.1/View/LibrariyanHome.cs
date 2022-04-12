@@ -170,7 +170,14 @@ namespace Library_Management_System_v1._1.View
                         ListViewItem item = new ListViewItem(sdr["Fee_Id"].ToString());
                         item.SubItems.Add(sdr["MID"].ToString());
                         item.SubItems.Add(sdr["Fine_Count"].ToString());
-                        item.SubItems.Add("Paid");
+                        if (Convert.ToBoolean(sdr["Status"]))
+                        {
+                            item.SubItems.Add("Paid");
+                        }
+                        else
+                        {
+                            item.SubItems.Add("Not Paid");
+                        }
                         item.SubItems.Add(sdr["Last_Updated"].ToString());
 
                         accountingListview.Items.Add(item);
@@ -457,79 +464,107 @@ namespace Library_Management_System_v1._1.View
         //=================Return Book Btn ==============================
         private void returnBookBtn_Click(object sender, EventArgs e)
         {
-            String BID = listView_issueBooks.SelectedItems[0].SubItems[0].Text;
-            String MID = listView_issueBooks.SelectedItems[0].SubItems[1].Text;
-            if (listView_issueBooks.SelectedItems.Count > 0)
-            {
-                DialogResult dialogresult = MessageBox.Show("Have any Damages/Late return in Book ?", "", MessageBoxButtons.YesNoCancel);
-                if (dialogresult.Equals(DialogResult.Yes))
+            
+            
+                String BID = listView_issueBooks.SelectedItems[0].SubItems[0].Text;
+                String MID = listView_issueBooks.SelectedItems[0].SubItems[1].Text;
+                if (listView_issueBooks.SelectedItems.Count > 0)
                 {
-                    
-                    new AddfineWindow(BID,MID , emp_Id).ShowDialog();
-
-                }
-                else if (dialogresult.Equals(DialogResult.No))
-                {
-                    Console.WriteLine(dialogresult.ToString());
-                    DialogResult dialogresult1 = MessageBox.Show("Are you sure that member retured Book?", "", MessageBoxButtons.YesNo);
-                    if (dialogresult1.Equals(DialogResult.Yes))
+                    if(listView_issueBooks.SelectedItems[0].SubItems[5].Text != "Returned")
                     {
-                        try
-                        {
-                            Console.WriteLine(listView_issueBooks.SelectedItems[0].Index+1);
-                            String ID = (listView_issueBooks.SelectedItems[0].Index + 1).ToString();
-                            int row = DB.updateData("UPDATE Book_Issue SET Status = 0 WHERE ID = '" + ID + "'");
-                            if(row > 0)
+                        DialogResult dialogresult = MessageBox.Show("Have any Damages/Late return in Book ?", "", MessageBoxButtons.YesNoCancel);
+                            if (dialogresult.Equals(DialogResult.Yes))
                             {
-                                
-                                int row1 = DB.updateData("UPDATE Book SET Availability = 1 WHERE BID = '" + BID + "'");
-                                if (row1 > 0)
-                                {
-                                    MessageBox.Show("Book Returned successfully");
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Book status update failed");
-                                }
+
+                                new AddfineWindow(BID, MID, emp_Id).ShowDialog();
+
                             }
+                            else if (dialogresult.Equals(DialogResult.No))
+                            {
+                                Console.WriteLine(dialogresult.ToString());
+                                DialogResult dialogresult1 = MessageBox.Show("Are you sure that member retured Book?", "", MessageBoxButtons.YesNo);
+                                if (dialogresult1.Equals(DialogResult.Yes))
+                                {
+                                    try
+                                    {
+                                        Console.WriteLine(listView_issueBooks.SelectedItems[0].Index + 1);
+                                        String ID = (listView_issueBooks.SelectedItems[0].Index + 1).ToString();
+                                        int row = DB.updateData("UPDATE Book_Issue SET Status = 0 WHERE ID = '" + ID + "'");
+                                        if (row > 0)
+                                        {
+
+                                            int row1 = DB.updateData("UPDATE Book SET Availability = 1 WHERE BID = '" + BID + "'");
+                                            if (row1 > 0)
+                                            {
+                                                MessageBox.Show("Book Returned successfully");
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Book status update failed");
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Book_issue status update failed");
+                                        }
+
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show(ex.ToString());
+                                    }
+                                }
                             else
                             {
-                                MessageBox.Show("Book_issue status update failed");
+                                this.Hide();
                             }
-
-                        }catch(Exception ex)
+                        }
+                        else
                         {
-                            MessageBox.Show(ex.ToString());
+                            this.Hide();
                         }
                     }
                     else
                     {
-                        this.Hide();
+                    MessageBox.Show("Book Already Returned");
                     }
+                    
                 }
                 else
                 {
-                    this.Hide();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please Select a record");
-            }
+                    MessageBox.Show("Please Select a record");
+                } 
         }
 
         //============Pay Member Fee =================================================
         private void PayMemberFee_Click(object sender, EventArgs e)
         {
-            DialogResult dialogresult = MessageBox.Show("Are you sure That Member Paid Fee ?", "", MessageBoxButtons.YesNo);
-            if (dialogresult.Equals(DialogResult.Yes))
+            if (accountingListview.SelectedItems.Count > 0)
             {
-                MessageBox.Show("Member Fee Updated");
+                DialogResult dialogresult = MessageBox.Show("Are you sure That Member Paid Fee ?", "", MessageBoxButtons.YesNo);
+                if (dialogresult.Equals(DialogResult.Yes))
+                {
+                    if (Controller.MemberFeeController.isPaid(accountingListview.SelectedItems[0].SubItems[1].Text))
+                    {
+                        MessageBox.Show("Member Fee Updated");
+                        lbl_AccountingLastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                        loadAccounting();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something Went Wrong");
+                    }      
+                }
+                else
+                {
+                    MessageBox.Show("Cancelled");
+                }
             }
             else
             {
-                this.Hide();
+                MessageBox.Show("Please Select a Record");
             }
+            
         }
 
         //============Add Book  Dashboard Btn ======================================

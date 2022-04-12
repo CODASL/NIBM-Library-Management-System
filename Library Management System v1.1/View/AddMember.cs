@@ -32,7 +32,8 @@ namespace Library_Management_System_v1._1.View
             commonController.setId(txt_mid, "MID", "Member", "M");
             commonController.setId(txt_GID, "GID", "Guardian", "G");
             loadAllFields();
-            txt_mname.Focus();
+            cmb_GCountryCodes.SelectedIndex = 1;
+            cmb_Mcountrycodes.SelectedIndex = 1;
         }
 
         //=================if update loadallfields ======================================================
@@ -72,7 +73,6 @@ namespace Library_Management_System_v1._1.View
                         }
                     }
 
-                    
                     database.Con.Close();
                 }
                 catch (MySqlException ex)
@@ -95,7 +95,6 @@ namespace Library_Management_System_v1._1.View
         [Obsolete]
         private void btn_AddMember_Click(object sender, EventArgs e)
         {
-            //Model.DatabaseService database = new Model.DatabaseService();
             try
             {
                 if (txt_mname.Text == null || txt_MNIC.Text == null || txt_Maddress.Text == null)
@@ -147,8 +146,6 @@ namespace Library_Management_System_v1._1.View
                             Controller.MemberFeeController.AddAccountingRecord(memberFee);
                             MessageBox.Show("Record Added");
                         }
-                        
-                        
                     }
                     else
                     {
@@ -170,5 +167,18 @@ namespace Library_Management_System_v1._1.View
         
         }
 
+        private void btn_MemberClear_Click(object sender, EventArgs e)
+        {
+            txt_mname.Clear();
+            txt_Maddress.Clear();
+            txt_MNIC.Clear();
+            cmb_Mcountrycodes.SelectedIndex = 1;
+            txt_MPhone.Clear();
+            txt_Gname.Clear();
+            txt_GAddress.Clear();
+            txt_GNIC.Clear();
+            cmb_GCountryCodes.SelectedIndex = 2;
+            txt_GPhone.Clear();
+        }
     }
 }

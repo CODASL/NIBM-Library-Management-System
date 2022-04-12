@@ -39,8 +39,10 @@ namespace Library_Management_System_v1._1.View
             {
                 Model.DatabaseService database = new Model.DatabaseService();
                 int row = database.insertData("INSERT INTO Fine VALUES ('" + txt_fineId.Text + "','" + txt_MIDAddFine.Text + "','" + txt_BIDAddFine.Text + "','" + Emp_Id + "','" + txt_FineReason.Text + "','" + txt_fineAmount.Text + "')");
-                if (row > 0)
+                int row1 = database.updateData("UPDATE Accounting SET Fine_Count = Fine_Count + 1 WHERE MID = '" + MID + "'");
+                if (row > 0 && row1>0)
                 {
+                    this.Hide();
                     MessageBox.Show("Fine paid Successfully");
                 }
                 else

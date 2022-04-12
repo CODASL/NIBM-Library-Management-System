@@ -2051,9 +2051,9 @@ namespace Library_Management_System_v1._1.View
             this.accountingListview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.accountingListview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.feeId,
+            this.MIDFee,
             this.fineCount,
             this.memberFeeStatus,
-            this.MIDFee,
             this.feeLastUpdated});
             this.accountingListview.Depth = 0;
             this.accountingListview.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2080,21 +2080,18 @@ namespace Library_Management_System_v1._1.View
             // 
             // fineCount
             // 
-            this.fineCount.DisplayIndex = 2;
             this.fineCount.Text = "Fine Count";
             this.fineCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.fineCount.Width = 198;
             // 
             // memberFeeStatus
             // 
-            this.memberFeeStatus.DisplayIndex = 3;
             this.memberFeeStatus.Text = "Member Fee Status";
             this.memberFeeStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.memberFeeStatus.Width = 235;
             // 
             // MIDFee
             // 
-            this.MIDFee.DisplayIndex = 1;
             this.MIDFee.Text = "MID";
             this.MIDFee.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MIDFee.Width = 127;

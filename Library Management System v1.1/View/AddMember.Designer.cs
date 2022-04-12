@@ -241,6 +241,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_MemberClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_MemberClear.UseAccentColor = false;
             this.btn_MemberClear.UseVisualStyleBackColor = true;
+            this.btn_MemberClear.Click += new System.EventHandler(this.btn_MemberClear_Click);
             // 
             // btn_AddMember
             // 

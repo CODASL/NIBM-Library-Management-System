@@ -14,6 +14,12 @@ namespace Library_Management_System_v1._1.Model
         String fineCount;
         DateTime lastUpdated;
 
+        public MemberFee(string isPaid, DateTime lastUpdated)
+        {
+            this.isPaid = isPaid;
+            this.lastUpdated = lastUpdated;
+        }
+
         public MemberFee(string id, string mID, string isPaid, string fineCount, DateTime lastUpdated)
         {
             this.id = id;

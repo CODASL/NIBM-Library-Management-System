@@ -9,6 +9,14 @@ namespace Library_Management_System_v1._1.Controller
 {
     class MemberFeeController
     {
+        //============================Pay Member Fee ============================================================
+        public static bool isPaid(String mID)
+        {
+            Console.WriteLine(mID);
+            Model.DatabaseService database = new Model.DatabaseService();
+            int row = database.updateData("UPDATE Accounting SET Status = 1 , Last_Updated = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE MID = '"+mID+"'");
+            return row>0;
+        }
         //=========================== Accounting Search Function ================================================= 
         public static void memberFeeSearchFunction(MaterialListView list, int itemIndex, MaterialTextBox inputBox)
         {
