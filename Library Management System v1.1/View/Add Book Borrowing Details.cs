@@ -166,6 +166,7 @@ namespace Library_Management_System_v1._1.View
                     if(row1 > 0)
                     {
                         this.Hide();
+                        Controller.CommonController.setActivity("Added " + txt_issueId + " Book Issue");
                         MessageBox.Show("Book Issue Data Added Successfully");
                         
                     }

@@ -121,7 +121,7 @@ namespace Library_Management_System_v1._1.View
                     //Define models
                     Model.Member member = new Model.Member(txt_mid.Text, txt_mname.Text, txt_Maddress.Text, Mphone, txt_MNIC.Text, txt_GID.Text, DateTime.Now, DateTime.Now);
                     Model.Guardian guardian = new Model.Guardian(txt_GID.Text, txt_Gname.Text, txt_GNIC.Text, txt_GAddress.Text, Gphone, DateTime.Now);
-                    Model.MemberFee memberFee = new Model.MemberFee(new Controller.CommonController().setActivityId("Fee_Id", "Accounting").ToString(), txt_mid.Text, "0", "0", DateTime.Now);
+                    Model.MemberFee memberFee = new Model.MemberFee(Controller.CommonController.setActivityId("Fee_Id", "Accounting").ToString(), txt_mid.Text, "0", "0", DateTime.Now);
 
                     Boolean isAdded;
                     if (!isUpdate)
@@ -138,12 +138,15 @@ namespace Library_Management_System_v1._1.View
                         this.Hide();
                         if (isUpdate)
                         {
+                            Controller.CommonController.setActivity("Updated " + member.MemberId + " Data");
                             MessageBox.Show("Record Updated");
 
                         }
                         else
                         {
+
                             Controller.MemberFeeController.AddAccountingRecord(memberFee);
+                            Controller.CommonController.setActivity("Added " + member.MemberId + " Data and "+memberFee.Id + " Accounting record");
                             MessageBox.Show("Record Added");
                         }
                     }

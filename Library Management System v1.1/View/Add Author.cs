@@ -38,8 +38,9 @@ namespace Library_Management_System_v1._1.View
 
                 if (isAdded)
                 {
-                    this.Hide();
-                   MessageBox.Show("Record Added");
+                   this.Hide();
+                    Controller.CommonController.setActivity("Added Id=" + author.Id + " Author Data");
+                    MessageBox.Show("Record Added");
                     if (cmb_BookAuthors != null)
                     {
                         Controller.BookController.loadComboBoxes(cmb_BookAuthors, "Author", "Author_Name");

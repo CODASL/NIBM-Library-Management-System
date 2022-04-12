@@ -14,20 +14,23 @@ namespace Library_Management_System_v1._1.Controller
     class CommonController
     {
         //================= Add Activty =====================================
-        public void setActivity(Model.Activity activity) {
+        public static void setActivity(String description) {
             Model.DatabaseService database = new Model.DatabaseService();
             
             try
             {
-                
-                int row = database.insertData("INSERT INTO Activity VALUES('"+ setActivityId("Id", "Activity") +"','"+activity.Emp_id+"','"+activity.Description+"','"+activity.Emp_type+"','"+ DateTime.Now.ToString("MM/dd/yyyy hh:mm:tt") + "')");
+                int id = setActivityId("Id", "Activity");
+                String Emp_Id = LoginController.currentUserId;
+                String Emp_type = LoginController.currentEmpType;
+                Console.WriteLine(id);
+                int row = database.insertData("INSERT INTO Activity VALUES ('" + id +"','"+Emp_Id+"','"+description+"','"+Emp_type+"','"+ DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "')");
                 if (row > 0)
                 {
-                    Console.Write("Added Activitiy " + activity.Description);
+                    Console.Write("Added Activitiy ");
                 }
                 else
                 {
-                    Console.Write("Failed to add Activity + " + setActivityId("Id", "Activity") + activity.Emp_id + activity.Description + activity.Emp_type);
+                    Console.Write("Failed to add Activity");
                 }
             }catch(Exception ex)
             {
@@ -35,7 +38,7 @@ namespace Library_Management_System_v1._1.Controller
             }
         }
 
-        public int setActivityId( String IDColumn, String tableName)
+        public static int setActivityId( String IDColumn, String tableName)
         {
             Model.DatabaseService database = new Model.DatabaseService();
             String id;

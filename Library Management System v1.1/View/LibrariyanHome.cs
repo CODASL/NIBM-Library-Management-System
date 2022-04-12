@@ -57,6 +57,7 @@ namespace Library_Management_System_v1._1.View
             cmb_bookIssueFilter.SelectedIndex = 0;
             cmb_filterAccounting.SelectedIndex = 0;
         }
+        
         //========================load Book Availability ====================================
 
         public void loadBookAvailability()
@@ -465,8 +466,7 @@ namespace Library_Management_System_v1._1.View
         //=================Return Book Btn ==============================
         private void returnBookBtn_Click(object sender, EventArgs e)
         {
-            
-            
+
                 String BID = listView_issueBooks.SelectedItems[0].SubItems[0].Text;
                 String MID = listView_issueBooks.SelectedItems[0].SubItems[1].Text;
                 if (listView_issueBooks.SelectedItems.Count > 0)
@@ -482,7 +482,7 @@ namespace Library_Management_System_v1._1.View
                             }
                             else if (dialogresult.Equals(DialogResult.No))
                             {
-                                Console.WriteLine(dialogresult.ToString());
+                                
                                 DialogResult dialogresult1 = MessageBox.Show("Are you sure that member retured Book?", "", MessageBoxButtons.YesNo);
                                 if (dialogresult1.Equals(DialogResult.Yes))
                                 {
@@ -497,6 +497,7 @@ namespace Library_Management_System_v1._1.View
                                             int row1 = DB.updateData("UPDATE Book SET Availability = 1 WHERE BID = '" + BID + "'");
                                             if (row1 > 0)
                                             {
+                                                Controller.CommonController.setActivity("Handeled book returning from " + ID );
                                                 MessageBox.Show("Book Returned successfully");
                                             }
                                             else
@@ -547,6 +548,7 @@ namespace Library_Management_System_v1._1.View
                 {
                     if (Controller.MemberFeeController.isPaid(accountingListview.SelectedItems[0].SubItems[1].Text))
                     {
+                        Controller.CommonController.setActivity("Recieved monthly fee from " + accountingListview.SelectedItems[0].SubItems[1].Text);
                         MessageBox.Show("Member Fee Updated");
                         lbl_AccountingLastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                         loadAccounting();
@@ -671,6 +673,7 @@ namespace Library_Management_System_v1._1.View
 
                         if (line > 0 && line1 > 0 && line3>0)
                         {
+                            Controller.CommonController.setActivity("Deleted " + selectedRowId + " Member Data");
                             MessageBox.Show("Member Removed Successfully");
                             loadMembers();
                         }
@@ -734,6 +737,7 @@ namespace Library_Management_System_v1._1.View
 
                         if (line > 0)
                         {
+                            Controller.CommonController.setActivity("Deleted " + selectedRowId + " Book Data");
                             MessageBox.Show("Book Removed Successfully");
                             loadBooks();
                         }
@@ -826,6 +830,32 @@ namespace Library_Management_System_v1._1.View
             {
                 loadAccounting();
             }
+        }
+
+        private void datetime_activityFilter_ValueChanged(object sender, EventArgs e)
+        {
+            for (int i = listview_librarianActivities.Items.Count - 1; i >= 0; i--)
+            {
+                var item = listview_librarianActivities.Items[i];
+
+                if (item.SubItems[1].Text.ToLower().Contains(datetime_activityFilter.Value.ToString("yyyy-MM-dd HH:mm:ss").ToLower()))
+                {
+
+                }
+                else
+                {
+                    listview_librarianActivities.Items.Remove(item);
+                }
+            }
+            if (listview_librarianActivities.SelectedItems.Count == 1)
+            {
+                listview_librarianActivities.Focus();
+            }
+        }
+
+        private void btn_refreshLibrarianActivities_Click(object sender, EventArgs e)
+        {
+            commonController.loadActivities(listview_librarianActivities, emp_Id);
         }
     }
 }

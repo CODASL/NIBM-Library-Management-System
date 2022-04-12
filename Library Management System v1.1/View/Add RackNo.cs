@@ -32,6 +32,7 @@ namespace Library_Management_System_v1._1.View
                 if (row > 0)
                 {
                     this.Hide();
+                    Controller.CommonController.setActivity("Added " + txt_rackId + " Rack No ");
                     MessageBox.Show("Rack No Added Successfully");
                     if (cmb_bookRacks != null)
                     {

@@ -43,6 +43,7 @@ namespace Library_Management_System_v1._1.View
                 if (row > 0 && row1>0)
                 {
                     this.Hide();
+                    Controller.CommonController.setActivity("Recieved fine from " + MID + " For "+ BID +" Book");
                     MessageBox.Show("Fine paid Successfully");
                 }
                 else

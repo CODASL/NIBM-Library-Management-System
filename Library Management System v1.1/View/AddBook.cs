@@ -65,9 +65,9 @@ namespace Library_Management_System_v1._1.View
                             txt_bookIdAddBook.Text = sdr["BID"].ToString();
                             txt_BookName.Text = sdr["Name"].ToString();
                             txt_bookISBN.Text = sdr["ISBN"].ToString();
-                            cmb_BookAuthors.SelectedValue = sdr["Author"].ToString();
-                            cmb_bookCategories.SelectedValue = sdr["Category"].ToString();
-                            cmb_bookRacks.SelectedValue = sdr["Rack_No"].ToString();
+                            cmb_BookAuthors.SelectedText = sdr["Author"].ToString();
+                            cmb_bookCategories.SelectedText = sdr["Category"].ToString();
+                            cmb_bookRacks.SelectedText = sdr["Rack_No"].ToString();
                         }
                         
                     }catch(Exception ex)
@@ -178,14 +178,14 @@ namespace Library_Management_System_v1._1.View
                         {
                          
                             MessageBox.Show("Record Updated");
-                            commonController.setActivity(new Model.Activity("", "Updated " + book.Id + " Data", "Librarian", Controller.LoginController.currentUserId));
+                            Controller.CommonController.setActivity("Updated " + book.Id + " Data");
                             lastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
                         }
                         else
                         {
                             MessageBox.Show("Record Added");
-                            commonController.setActivity(new Model.Activity("", "Added New Book " + book.Id + " Data", "Librarian", Controller.LoginController.currentUserId));
+                             Controller.CommonController.setActivity("Added New Book " + book.Id + " Data");
                             lastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                         }
                     }
@@ -208,7 +208,12 @@ namespace Library_Management_System_v1._1.View
 
         private void clearBtnAddBook_Click(object sender, EventArgs e)
         {
-
+            txt_bookISBN.Clear();
+            txt_BookName.Clear();
+            cmb_BookAuthors.ResetText();
+            cmb_bookCategories.ResetText();
+            cmb_bookRacks.ResetText();
+            
         }
     }
 }
