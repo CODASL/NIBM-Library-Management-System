@@ -53,6 +53,8 @@ namespace Library_Management_System_v1._1.View
             loadBookAvailability();
             commonController.loadActivities(listview_librarianActivities, emp_Id);
             cmb_MemberFilter.SelectedIndex = 0;
+            cmb_filterBooks.SelectedIndex = 0;
+            cmb_bookIssueFilter.SelectedIndex = 0;
         }
         //========================load Book Availability ====================================
 
@@ -171,7 +173,7 @@ namespace Library_Management_System_v1._1.View
                         item.SubItems.Add("Paid");
                         item.SubItems.Add(sdr["Last_Updated"].ToString());
 
-                        memberListview.Items.Add(item);
+                        accountingListview.Items.Add(item);
                     }
                     DB.Con.Close();
                     lbl_AccountingLastUpdate.Text = commonController.setUpdatedTime("Last_Updated", "Accounting", "Fee_Id", "");
@@ -618,20 +620,20 @@ namespace Library_Management_System_v1._1.View
                 ListView.SelectedIndexCollection selectedIndex = memberListview.SelectedIndices;
                 if (selectedIndex.Count > 0)
                 {
-                    foreach (int index in selectedIndex)
-                    {
-                        Console.WriteLine(index);
-
-                    }
+                    
                     String selectedRowId = memberListview.SelectedItems[0].SubItems[0].Text;
+                    String GID = memberListview.SelectedItems[0].SubItems[1].Text;
 
                     try
                     {
+                        int line3 = database.deleteData("DELETE FROM Accounting WHERE MID = '" + selectedRowId + "'");
+                        int line1 = database.deleteData("DELETE FROM Guardian WHERE GID = '"+GID+"'");
                         int line = database.deleteData("DELETE FROM Member WHERE MID = '" + selectedRowId + "'");
+                        
 
-                        int line1 = database.deleteData("DELETE FROM Guardian WHERE GID = (SELECT GID FROM Member WHERE MID = '" + selectedRowId + "')");
+                        Console.WriteLine(line + " " + line1 + " " + line3);
 
-                        if (line > 0 && line1 > 0)
+                        if (line > 0 && line1 > 0 && line3>0)
                         {
                             MessageBox.Show("Member Removed Successfully");
                             loadMembers();
@@ -736,6 +738,57 @@ namespace Library_Management_System_v1._1.View
             else
             {
                 loadMembers();
+            }
+        }
+
+        private void txt_bookSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_bookSearch.Text != "")
+            {
+                Controller.BookController.bookSearchFunction(LibBookList, cmb_filterBooks.SelectedIndex, txt_bookSearch);
+            }
+            else
+            {
+                loadBooks();
+            }
+        }
+
+        private void txt_searchBookIssue_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_searchBookIssue.Text != "")
+            {
+                Controller.BookIssueReturnController.bookIssueSearchFunction(listView_issueBooks, cmb_bookIssueFilter.SelectedIndex, txt_searchBookIssue);
+            }
+            else
+            {
+                loadBookIssues();
+            }
+        }
+
+        private void btn_refreshMember_Click(object sender, EventArgs e)
+        {
+            loadMembers();
+        }
+
+        private void btn_refreshBookIssues_Click(object sender, EventArgs e)
+        {
+            loadBookIssues();
+        }
+
+        private void btn_refreshAccounting_Click(object sender, EventArgs e)
+        {
+            loadAccounting();
+        }
+
+        private void txt_searchAccounting_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_searchAccounting.Text != "")
+            {
+                Controller.MemberFeeController.memberFeeSearchFunction(accountingListview, cmb_filterAccounting.SelectedIndex, txt_searchAccounting);
+            }
+            else
+            {
+                loadAccounting();
             }
         }
     }

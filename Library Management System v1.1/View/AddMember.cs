@@ -83,6 +83,10 @@ namespace Library_Management_System_v1._1.View
                 {
                     MessageBox.Show(ex.ToString());
                 }
+                finally
+                {
+                    database.Con.Close();
+                }
             }
         }
 
@@ -118,7 +122,7 @@ namespace Library_Management_System_v1._1.View
                     //Define models
                     Model.Member member = new Model.Member(txt_mid.Text, txt_mname.Text, txt_Maddress.Text, Mphone, txt_MNIC.Text, txt_GID.Text, DateTime.Now, DateTime.Now);
                     Model.Guardian guardian = new Model.Guardian(txt_GID.Text, txt_Gname.Text, txt_GNIC.Text, txt_GAddress.Text, Gphone, DateTime.Now);
-
+                    Model.MemberFee memberFee = new Model.MemberFee(new Controller.CommonController().setActivityId("Fee_Id", "Accounting").ToString(), txt_mid.Text, "0", "0", DateTime.Now);
 
                     Boolean isAdded;
                     if (!isUpdate)
@@ -135,19 +139,16 @@ namespace Library_Management_System_v1._1.View
                         this.Hide();
                         if (isUpdate)
                         {
-                            new LibrariyanHome(Controller.LoginController.currentUserId).loadMembers();
                             MessageBox.Show("Record Updated");
-                           
 
                         }
                         else
                         {
+                            Controller.MemberFeeController.AddAccountingRecord(memberFee);
                             MessageBox.Show("Record Added");
                         }
                         
-                        //database.Con.Open();
-                        //SqlCommand cmd = new SqlCommand("Alter Table Member_Fee ADD " + txt_mid.Text + " Boolean");
-                        //cmd.ExecuteNonQuery();
+                        
                     }
                     else
                     {
@@ -164,7 +165,7 @@ namespace Library_Management_System_v1._1.View
             }
             finally
             {
-                //database.Con.Close();
+               
             }
         
         }

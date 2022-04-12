@@ -114,8 +114,8 @@ namespace Library_Management_System_v1._1.View
             this.btn_updateBook = new MaterialSkin.Controls.MaterialButton();
             this.btn_DeleteBook = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialComboBox4 = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialTextBox6 = new MaterialSkin.Controls.MaterialTextBox();
+            this.cmb_filterBooks = new MaterialSkin.Controls.MaterialComboBox();
+            this.txt_bookSearch = new MaterialSkin.Controls.MaterialTextBox();
             this.LibAddBook = new MaterialSkin.Controls.MaterialButton();
             this.materialCard11 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton12 = new MaterialSkin.Controls.MaterialFloatingActionButton();
@@ -131,8 +131,8 @@ namespace Library_Management_System_v1._1.View
             this.btn_refreshBookIssues = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.returnBookBtn = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel24 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
+            this.cmb_bookIssueFilter = new MaterialSkin.Controls.MaterialComboBox();
+            this.txt_searchBookIssue = new MaterialSkin.Controls.MaterialTextBox();
             this.borrowBookBtn = new MaterialSkin.Controls.MaterialButton();
             this.listView_issueBooks = new MaterialSkin.Controls.MaterialListView();
             this.BID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -160,9 +160,9 @@ namespace Library_Management_System_v1._1.View
             this.MIDFee = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.feeLastUpdated = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialLabel38 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialComboBox3 = new MaterialSkin.Controls.MaterialComboBox();
-            this.PayMemberFee = new MaterialSkin.Controls.MaterialButton();
-            this.materialTextBox5 = new MaterialSkin.Controls.MaterialTextBox();
+            this.cmb_filterAccounting = new MaterialSkin.Controls.MaterialComboBox();
+            this.btn_paymemberfee = new MaterialSkin.Controls.MaterialButton();
+            this.txt_searchAccounting = new MaterialSkin.Controls.MaterialTextBox();
             this.materialCard16 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton18 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialFloatingActionButton19 = new MaterialSkin.Controls.MaterialFloatingActionButton();
@@ -170,7 +170,7 @@ namespace Library_Management_System_v1._1.View
             this.lbl_AccountingLastUpdate = new MaterialSkin.Controls.MaterialLabel();
             this.LibMyProfile = new System.Windows.Forms.TabPage();
             this.materialLabel52 = new MaterialSkin.Controls.MaterialLabel();
-            this.metroDateTime2 = new MetroFramework.Controls.MetroDateTime();
+            this.datetime_activityFilter = new MetroFramework.Controls.MetroDateTime();
             this.listview_librarianActivities = new MaterialSkin.Controls.MaterialListView();
             this.Activity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateTimeActivity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -528,7 +528,7 @@ namespace Library_Management_System_v1._1.View
             // dateTimeLibrarian
             // 
             this.dateTimeLibrarian.Location = new System.Drawing.Point(767, 8);
-            this.dateTimeLibrarian.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dateTimeLibrarian.MinimumSize = new System.Drawing.Size(4, 29);
             this.dateTimeLibrarian.Name = "dateTimeLibrarian";
             this.dateTimeLibrarian.Size = new System.Drawing.Size(208, 29);
             this.dateTimeLibrarian.TabIndex = 4;
@@ -946,6 +946,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_refreshMember.TabIndex = 16;
             this.btn_refreshMember.Text = "materialFloatingActionButton8";
             this.btn_refreshMember.UseVisualStyleBackColor = false;
+            this.btn_refreshMember.Click += new System.EventHandler(this.btn_refreshMember_Click);
             // 
             // btn_updateMember
             // 
@@ -1264,8 +1265,8 @@ namespace Library_Management_System_v1._1.View
             this.LibBooks.Controls.Add(this.btn_updateBook);
             this.LibBooks.Controls.Add(this.btn_DeleteBook);
             this.LibBooks.Controls.Add(this.materialLabel16);
-            this.LibBooks.Controls.Add(this.materialComboBox4);
-            this.LibBooks.Controls.Add(this.materialTextBox6);
+            this.LibBooks.Controls.Add(this.cmb_filterBooks);
+            this.LibBooks.Controls.Add(this.txt_bookSearch);
             this.LibBooks.Controls.Add(this.LibAddBook);
             this.LibBooks.Controls.Add(this.materialCard11);
             this.LibBooks.Controls.Add(this.materialCard12);
@@ -1423,53 +1424,54 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel16.TabIndex = 24;
             this.materialLabel16.Text = "Search By :";
             // 
-            // materialComboBox4
+            // cmb_filterBooks
             // 
-            this.materialComboBox4.AutoResize = false;
-            this.materialComboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox4.Depth = 0;
-            this.materialComboBox4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox4.DropDownHeight = 118;
-            this.materialComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox4.DropDownWidth = 150;
-            this.materialComboBox4.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox4.FormattingEnabled = true;
-            this.materialComboBox4.IntegralHeight = false;
-            this.materialComboBox4.ItemHeight = 29;
-            this.materialComboBox4.Items.AddRange(new object[] {
+            this.cmb_filterBooks.AutoResize = false;
+            this.cmb_filterBooks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmb_filterBooks.Depth = 0;
+            this.cmb_filterBooks.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmb_filterBooks.DropDownHeight = 118;
+            this.cmb_filterBooks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_filterBooks.DropDownWidth = 150;
+            this.cmb_filterBooks.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmb_filterBooks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmb_filterBooks.FormattingEnabled = true;
+            this.cmb_filterBooks.IntegralHeight = false;
+            this.cmb_filterBooks.ItemHeight = 29;
+            this.cmb_filterBooks.Items.AddRange(new object[] {
             "Name",
             "Category",
             "Author",
             "Rack No"});
-            this.materialComboBox4.Location = new System.Drawing.Point(436, 168);
-            this.materialComboBox4.MaxDropDownItems = 4;
-            this.materialComboBox4.MaximumSize = new System.Drawing.Size(121, 0);
-            this.materialComboBox4.MinimumSize = new System.Drawing.Size(121, 0);
-            this.materialComboBox4.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox4.Name = "materialComboBox4";
-            this.materialComboBox4.Size = new System.Drawing.Size(121, 35);
-            this.materialComboBox4.TabIndex = 23;
-            this.materialComboBox4.UseTallSize = false;
+            this.cmb_filterBooks.Location = new System.Drawing.Point(436, 168);
+            this.cmb_filterBooks.MaxDropDownItems = 4;
+            this.cmb_filterBooks.MaximumSize = new System.Drawing.Size(121, 0);
+            this.cmb_filterBooks.MinimumSize = new System.Drawing.Size(121, 0);
+            this.cmb_filterBooks.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmb_filterBooks.Name = "cmb_filterBooks";
+            this.cmb_filterBooks.Size = new System.Drawing.Size(121, 35);
+            this.cmb_filterBooks.TabIndex = 23;
+            this.cmb_filterBooks.UseTallSize = false;
             // 
-            // materialTextBox6
+            // txt_bookSearch
             // 
-            this.materialTextBox6.BackColor = System.Drawing.Color.White;
-            this.materialTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox6.Depth = 0;
-            this.materialTextBox6.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox6.ForeColor = System.Drawing.Color.Black;
-            this.materialTextBox6.Location = new System.Drawing.Point(18, 168);
-            this.materialTextBox6.MaximumSize = new System.Drawing.Size(330, 40);
-            this.materialTextBox6.MaxLength = 50;
-            this.materialTextBox6.MinimumSize = new System.Drawing.Size(330, 40);
-            this.materialTextBox6.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox6.Multiline = false;
-            this.materialTextBox6.Name = "materialTextBox6";
-            this.materialTextBox6.Size = new System.Drawing.Size(330, 40);
-            this.materialTextBox6.TabIndex = 22;
-            this.materialTextBox6.Text = "";
-            this.materialTextBox6.UseTallSize = false;
+            this.txt_bookSearch.BackColor = System.Drawing.Color.White;
+            this.txt_bookSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_bookSearch.Depth = 0;
+            this.txt_bookSearch.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_bookSearch.ForeColor = System.Drawing.Color.Black;
+            this.txt_bookSearch.Location = new System.Drawing.Point(18, 168);
+            this.txt_bookSearch.MaximumSize = new System.Drawing.Size(330, 40);
+            this.txt_bookSearch.MaxLength = 50;
+            this.txt_bookSearch.MinimumSize = new System.Drawing.Size(330, 40);
+            this.txt_bookSearch.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_bookSearch.Multiline = false;
+            this.txt_bookSearch.Name = "txt_bookSearch";
+            this.txt_bookSearch.Size = new System.Drawing.Size(330, 40);
+            this.txt_bookSearch.TabIndex = 22;
+            this.txt_bookSearch.Text = "";
+            this.txt_bookSearch.UseTallSize = false;
+            this.txt_bookSearch.TextChanged += new System.EventHandler(this.txt_bookSearch_TextChanged);
             // 
             // LibAddBook
             // 
@@ -1652,8 +1654,8 @@ namespace Library_Management_System_v1._1.View
             this.LibBookBorrowings.Controls.Add(this.btn_refreshBookIssues);
             this.LibBookBorrowings.Controls.Add(this.returnBookBtn);
             this.LibBookBorrowings.Controls.Add(this.materialLabel24);
-            this.LibBookBorrowings.Controls.Add(this.materialComboBox1);
-            this.LibBookBorrowings.Controls.Add(this.materialTextBox3);
+            this.LibBookBorrowings.Controls.Add(this.cmb_bookIssueFilter);
+            this.LibBookBorrowings.Controls.Add(this.txt_searchBookIssue);
             this.LibBookBorrowings.Controls.Add(this.borrowBookBtn);
             this.LibBookBorrowings.Controls.Add(this.listView_issueBooks);
             this.LibBookBorrowings.Controls.Add(this.materialCard13);
@@ -1683,6 +1685,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_refreshBookIssues.TabIndex = 31;
             this.btn_refreshBookIssues.Text = "materialFloatingActionButton8";
             this.btn_refreshBookIssues.UseVisualStyleBackColor = false;
+            this.btn_refreshBookIssues.Click += new System.EventHandler(this.btn_refreshBookIssues_Click);
             // 
             // returnBookBtn
             // 
@@ -1718,51 +1721,53 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel24.TabIndex = 29;
             this.materialLabel24.Text = "Search By :";
             // 
-            // materialComboBox1
+            // cmb_bookIssueFilter
             // 
-            this.materialComboBox1.AutoResize = false;
-            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox1.Depth = 0;
-            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox1.DropDownHeight = 118;
-            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox1.DropDownWidth = 150;
-            this.materialComboBox1.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox1.FormattingEnabled = true;
-            this.materialComboBox1.IntegralHeight = false;
-            this.materialComboBox1.ItemHeight = 29;
-            this.materialComboBox1.Items.AddRange(new object[] {
-            "Issued Date",
-            "Return Date"});
-            this.materialComboBox1.Location = new System.Drawing.Point(492, 156);
-            this.materialComboBox1.MaxDropDownItems = 4;
-            this.materialComboBox1.MaximumSize = new System.Drawing.Size(121, 0);
-            this.materialComboBox1.MinimumSize = new System.Drawing.Size(121, 0);
-            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.Size = new System.Drawing.Size(121, 35);
-            this.materialComboBox1.TabIndex = 28;
-            this.materialComboBox1.UseTallSize = false;
+            this.cmb_bookIssueFilter.AutoResize = false;
+            this.cmb_bookIssueFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmb_bookIssueFilter.Depth = 0;
+            this.cmb_bookIssueFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmb_bookIssueFilter.DropDownHeight = 118;
+            this.cmb_bookIssueFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_bookIssueFilter.DropDownWidth = 150;
+            this.cmb_bookIssueFilter.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmb_bookIssueFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmb_bookIssueFilter.FormattingEnabled = true;
+            this.cmb_bookIssueFilter.IntegralHeight = false;
+            this.cmb_bookIssueFilter.ItemHeight = 29;
+            this.cmb_bookIssueFilter.Items.AddRange(new object[] {
+            "Book ID",
+            "Member ID",
+            "Status"});
+            this.cmb_bookIssueFilter.Location = new System.Drawing.Point(492, 156);
+            this.cmb_bookIssueFilter.MaxDropDownItems = 4;
+            this.cmb_bookIssueFilter.MaximumSize = new System.Drawing.Size(121, 0);
+            this.cmb_bookIssueFilter.MinimumSize = new System.Drawing.Size(121, 0);
+            this.cmb_bookIssueFilter.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmb_bookIssueFilter.Name = "cmb_bookIssueFilter";
+            this.cmb_bookIssueFilter.Size = new System.Drawing.Size(121, 35);
+            this.cmb_bookIssueFilter.TabIndex = 28;
+            this.cmb_bookIssueFilter.UseTallSize = false;
             // 
-            // materialTextBox3
+            // txt_searchBookIssue
             // 
-            this.materialTextBox3.BackColor = System.Drawing.Color.White;
-            this.materialTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox3.Depth = 0;
-            this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox3.ForeColor = System.Drawing.Color.Black;
-            this.materialTextBox3.Location = new System.Drawing.Point(40, 156);
-            this.materialTextBox3.MaximumSize = new System.Drawing.Size(330, 40);
-            this.materialTextBox3.MaxLength = 50;
-            this.materialTextBox3.MinimumSize = new System.Drawing.Size(330, 40);
-            this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox3.Multiline = false;
-            this.materialTextBox3.Name = "materialTextBox3";
-            this.materialTextBox3.Size = new System.Drawing.Size(330, 40);
-            this.materialTextBox3.TabIndex = 27;
-            this.materialTextBox3.Text = "";
-            this.materialTextBox3.UseTallSize = false;
+            this.txt_searchBookIssue.BackColor = System.Drawing.Color.White;
+            this.txt_searchBookIssue.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_searchBookIssue.Depth = 0;
+            this.txt_searchBookIssue.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_searchBookIssue.ForeColor = System.Drawing.Color.Black;
+            this.txt_searchBookIssue.Location = new System.Drawing.Point(40, 156);
+            this.txt_searchBookIssue.MaximumSize = new System.Drawing.Size(330, 40);
+            this.txt_searchBookIssue.MaxLength = 50;
+            this.txt_searchBookIssue.MinimumSize = new System.Drawing.Size(330, 40);
+            this.txt_searchBookIssue.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_searchBookIssue.Multiline = false;
+            this.txt_searchBookIssue.Name = "txt_searchBookIssue";
+            this.txt_searchBookIssue.Size = new System.Drawing.Size(330, 40);
+            this.txt_searchBookIssue.TabIndex = 27;
+            this.txt_searchBookIssue.Text = "";
+            this.txt_searchBookIssue.UseTallSize = false;
+            this.txt_searchBookIssue.TextChanged += new System.EventHandler(this.txt_searchBookIssue_TextChanged);
             // 
             // borrowBookBtn
             // 
@@ -2008,9 +2013,9 @@ namespace Library_Management_System_v1._1.View
             this.LibManageFee.Controls.Add(this.btn_refreshAccounting);
             this.LibManageFee.Controls.Add(this.accountingListview);
             this.LibManageFee.Controls.Add(this.materialLabel38);
-            this.LibManageFee.Controls.Add(this.materialComboBox3);
-            this.LibManageFee.Controls.Add(this.PayMemberFee);
-            this.LibManageFee.Controls.Add(this.materialTextBox5);
+            this.LibManageFee.Controls.Add(this.cmb_filterAccounting);
+            this.LibManageFee.Controls.Add(this.btn_paymemberfee);
+            this.LibManageFee.Controls.Add(this.txt_searchAccounting);
             this.LibManageFee.Controls.Add(this.materialCard16);
             this.LibManageFee.ImageKey = "icons8-debt-32.png";
             this.LibManageFee.Location = new System.Drawing.Point(4, 39);
@@ -2037,6 +2042,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_refreshAccounting.TabIndex = 29;
             this.btn_refreshAccounting.Text = "materialFloatingActionButton8";
             this.btn_refreshAccounting.UseVisualStyleBackColor = false;
+            this.btn_refreshAccounting.Click += new System.EventHandler(this.btn_refreshAccounting_Click);
             // 
             // accountingListview
             // 
@@ -2110,73 +2116,73 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel38.TabIndex = 27;
             this.materialLabel38.Text = "Search By :";
             // 
-            // materialComboBox3
+            // cmb_filterAccounting
             // 
-            this.materialComboBox3.AutoResize = false;
-            this.materialComboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox3.Depth = 0;
-            this.materialComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox3.DropDownHeight = 118;
-            this.materialComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox3.DropDownWidth = 150;
-            this.materialComboBox3.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox3.FormattingEnabled = true;
-            this.materialComboBox3.IntegralHeight = false;
-            this.materialComboBox3.ItemHeight = 29;
-            this.materialComboBox3.Items.AddRange(new object[] {
-            "Date",
-            "Fine Count",
+            this.cmb_filterAccounting.AutoResize = false;
+            this.cmb_filterAccounting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmb_filterAccounting.Depth = 0;
+            this.cmb_filterAccounting.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmb_filterAccounting.DropDownHeight = 118;
+            this.cmb_filterAccounting.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_filterAccounting.DropDownWidth = 150;
+            this.cmb_filterAccounting.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmb_filterAccounting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmb_filterAccounting.FormattingEnabled = true;
+            this.cmb_filterAccounting.IntegralHeight = false;
+            this.cmb_filterAccounting.ItemHeight = 29;
+            this.cmb_filterAccounting.Items.AddRange(new object[] {
+            "MID",
             "Status"});
-            this.materialComboBox3.Location = new System.Drawing.Point(619, 164);
-            this.materialComboBox3.MaxDropDownItems = 4;
-            this.materialComboBox3.MaximumSize = new System.Drawing.Size(121, 0);
-            this.materialComboBox3.MinimumSize = new System.Drawing.Size(121, 0);
-            this.materialComboBox3.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox3.Name = "materialComboBox3";
-            this.materialComboBox3.Size = new System.Drawing.Size(121, 35);
-            this.materialComboBox3.TabIndex = 26;
-            this.materialComboBox3.UseTallSize = false;
+            this.cmb_filterAccounting.Location = new System.Drawing.Point(619, 164);
+            this.cmb_filterAccounting.MaxDropDownItems = 4;
+            this.cmb_filterAccounting.MaximumSize = new System.Drawing.Size(121, 0);
+            this.cmb_filterAccounting.MinimumSize = new System.Drawing.Size(121, 0);
+            this.cmb_filterAccounting.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmb_filterAccounting.Name = "cmb_filterAccounting";
+            this.cmb_filterAccounting.Size = new System.Drawing.Size(121, 35);
+            this.cmb_filterAccounting.TabIndex = 26;
+            this.cmb_filterAccounting.UseTallSize = false;
             // 
-            // PayMemberFee
+            // btn_paymemberfee
             // 
-            this.PayMemberFee.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.PayMemberFee.Depth = 0;
-            this.PayMemberFee.DrawShadows = true;
-            this.PayMemberFee.HighEmphasis = true;
-            this.PayMemberFee.Icon = null;
-            this.PayMemberFee.Location = new System.Drawing.Point(782, 164);
-            this.PayMemberFee.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.PayMemberFee.MaximumSize = new System.Drawing.Size(100, 35);
-            this.PayMemberFee.MinimumSize = new System.Drawing.Size(100, 35);
-            this.PayMemberFee.MouseState = MaterialSkin.MouseState.HOVER;
-            this.PayMemberFee.Name = "PayMemberFee";
-            this.PayMemberFee.Size = new System.Drawing.Size(100, 35);
-            this.PayMemberFee.TabIndex = 25;
-            this.PayMemberFee.Text = "Pay Fee";
-            this.PayMemberFee.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.PayMemberFee.UseAccentColor = false;
-            this.PayMemberFee.UseVisualStyleBackColor = true;
-            this.PayMemberFee.Click += new System.EventHandler(this.PayMemberFee_Click);
+            this.btn_paymemberfee.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_paymemberfee.Depth = 0;
+            this.btn_paymemberfee.DrawShadows = true;
+            this.btn_paymemberfee.HighEmphasis = true;
+            this.btn_paymemberfee.Icon = null;
+            this.btn_paymemberfee.Location = new System.Drawing.Point(782, 164);
+            this.btn_paymemberfee.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_paymemberfee.MaximumSize = new System.Drawing.Size(100, 35);
+            this.btn_paymemberfee.MinimumSize = new System.Drawing.Size(100, 35);
+            this.btn_paymemberfee.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_paymemberfee.Name = "btn_paymemberfee";
+            this.btn_paymemberfee.Size = new System.Drawing.Size(100, 35);
+            this.btn_paymemberfee.TabIndex = 25;
+            this.btn_paymemberfee.Text = "Pay Fee";
+            this.btn_paymemberfee.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_paymemberfee.UseAccentColor = false;
+            this.btn_paymemberfee.UseVisualStyleBackColor = true;
+            this.btn_paymemberfee.Click += new System.EventHandler(this.PayMemberFee_Click);
             // 
-            // materialTextBox5
+            // txt_searchAccounting
             // 
-            this.materialTextBox5.BackColor = System.Drawing.Color.White;
-            this.materialTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox5.Depth = 0;
-            this.materialTextBox5.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox5.ForeColor = System.Drawing.Color.Black;
-            this.materialTextBox5.Location = new System.Drawing.Point(41, 164);
-            this.materialTextBox5.MaximumSize = new System.Drawing.Size(430, 40);
-            this.materialTextBox5.MaxLength = 50;
-            this.materialTextBox5.MinimumSize = new System.Drawing.Size(430, 40);
-            this.materialTextBox5.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox5.Multiline = false;
-            this.materialTextBox5.Name = "materialTextBox5";
-            this.materialTextBox5.Size = new System.Drawing.Size(430, 40);
-            this.materialTextBox5.TabIndex = 24;
-            this.materialTextBox5.Text = "";
-            this.materialTextBox5.UseTallSize = false;
+            this.txt_searchAccounting.BackColor = System.Drawing.Color.White;
+            this.txt_searchAccounting.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_searchAccounting.Depth = 0;
+            this.txt_searchAccounting.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_searchAccounting.ForeColor = System.Drawing.Color.Black;
+            this.txt_searchAccounting.Location = new System.Drawing.Point(41, 164);
+            this.txt_searchAccounting.MaximumSize = new System.Drawing.Size(430, 40);
+            this.txt_searchAccounting.MaxLength = 50;
+            this.txt_searchAccounting.MinimumSize = new System.Drawing.Size(430, 40);
+            this.txt_searchAccounting.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_searchAccounting.Multiline = false;
+            this.txt_searchAccounting.Name = "txt_searchAccounting";
+            this.txt_searchAccounting.Size = new System.Drawing.Size(430, 40);
+            this.txt_searchAccounting.TabIndex = 24;
+            this.txt_searchAccounting.Text = "";
+            this.txt_searchAccounting.UseTallSize = false;
+            this.txt_searchAccounting.TextChanged += new System.EventHandler(this.txt_searchAccounting_TextChanged);
             // 
             // materialCard16
             // 
@@ -2259,7 +2265,7 @@ namespace Library_Management_System_v1._1.View
             // LibMyProfile
             // 
             this.LibMyProfile.Controls.Add(this.materialLabel52);
-            this.LibMyProfile.Controls.Add(this.metroDateTime2);
+            this.LibMyProfile.Controls.Add(this.datetime_activityFilter);
             this.LibMyProfile.Controls.Add(this.listview_librarianActivities);
             this.LibMyProfile.Controls.Add(this.materialDivider1);
             this.LibMyProfile.Controls.Add(this.materialLabel50);
@@ -2285,13 +2291,13 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel52.TabIndex = 10;
             this.materialLabel52.Text = "Filter By ";
             // 
-            // metroDateTime2
+            // datetime_activityFilter
             // 
-            this.metroDateTime2.Location = new System.Drawing.Point(772, 269);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(4, 29);
-            this.metroDateTime2.Name = "metroDateTime2";
-            this.metroDateTime2.Size = new System.Drawing.Size(200, 29);
-            this.metroDateTime2.TabIndex = 4;
+            this.datetime_activityFilter.Location = new System.Drawing.Point(772, 269);
+            this.datetime_activityFilter.MinimumSize = new System.Drawing.Size(4, 29);
+            this.datetime_activityFilter.Name = "datetime_activityFilter";
+            this.datetime_activityFilter.Size = new System.Drawing.Size(200, 29);
+            this.datetime_activityFilter.TabIndex = 4;
             // 
             // listview_librarianActivities
             // 
@@ -2827,9 +2833,9 @@ namespace Library_Management_System_v1._1.View
         private System.Windows.Forms.ColumnHeader fineCount;
         private System.Windows.Forms.ColumnHeader memberFeeStatus;
         private MaterialSkin.Controls.MaterialLabel materialLabel38;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox3;
-        private MaterialSkin.Controls.MaterialButton PayMemberFee;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox5;
+        private MaterialSkin.Controls.MaterialComboBox cmb_filterAccounting;
+        private MaterialSkin.Controls.MaterialButton btn_paymemberfee;
+        private MaterialSkin.Controls.MaterialTextBox txt_searchAccounting;
         private MaterialSkin.Controls.MaterialCard materialCard16;
         private MaterialSkin.Controls.MaterialLabel materialLabel36;
         private MaterialSkin.Controls.MaterialLabel lbl_AccountingLastUpdate;
@@ -2842,16 +2848,16 @@ namespace Library_Management_System_v1._1.View
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private MaterialSkin.Controls.MaterialButton btn_DeleteBook;
         private MaterialSkin.Controls.MaterialLabel materialLabel16;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox4;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox6;
+        private MaterialSkin.Controls.MaterialComboBox cmb_filterBooks;
+        private MaterialSkin.Controls.MaterialTextBox txt_bookSearch;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton12;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton13;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton10;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton11;
         private System.Windows.Forms.TabPage LibBookBorrowings;
         private MaterialSkin.Controls.MaterialLabel materialLabel24;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox3;
+        private MaterialSkin.Controls.MaterialComboBox cmb_bookIssueFilter;
+        private MaterialSkin.Controls.MaterialTextBox txt_searchBookIssue;
         private MaterialSkin.Controls.MaterialButton borrowBookBtn;
         private MaterialSkin.Controls.MaterialListView listView_issueBooks;
         private System.Windows.Forms.ColumnHeader BID;
@@ -2896,7 +2902,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialLabel lbl_librarianProfileName;
         private Custom_Controls.RJCircularPictureBox rjCircularPictureBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel52;
-        private MetroFramework.Controls.MetroDateTime metroDateTime2;
+        private MetroFramework.Controls.MetroDateTime datetime_activityFilter;
         private MaterialSkin.Controls.MaterialListView listview_librarianActivities;
         private System.Windows.Forms.ColumnHeader Activity;
         private System.Windows.Forms.ColumnHeader DateTimeActivity;

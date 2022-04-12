@@ -60,11 +60,13 @@ namespace Library_Management_System_v1._1.Controller
             }
             catch (MySqlException ex)
             {
+                Console.WriteLine(ex.ToString());
                 database.Con.Close();
                 return 0;
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.ToString());
                 database.Con.Close();
                 return 0;
             }
