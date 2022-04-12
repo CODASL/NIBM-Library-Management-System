@@ -30,8 +30,8 @@ namespace Library_Management_System_v1._1.Controller
         {
             Model.DatabaseService database = new Model.DatabaseService();
 
-            int row = database.updateData("UPDATE FROM Book SET Name = '"+book.Name+"', Category='"+book.Category+"',Author ='"+book.Author+"'," +
-                "ISBN ='"+book.Isbn+ "',Availability = '" + book.Availibility+ "',Rack_No='"+book.RackNo+ "',Date_updated = '"+book.UpdatedDate+"'");
+            int row = database.updateData("UPDATE Book SET Name = '"+book.Name+"', Category='"+book.Category+"',Author ='"+book.Author+"'," +
+                "ISBN ='"+book.Isbn+ "',Availability = '" + book.Availibility+ "',Rack_No='"+book.RackNo+ "',Date_updated = '"+book.UpdatedDate.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE BID = '"+book.Id+"'");
 
             return row > 0;
         }

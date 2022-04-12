@@ -272,7 +272,7 @@ namespace Library_Management_System_v1._1.View
                     }
                     DB.Con.Close();
                     lbl_totalBookCount.Text = LibBookList.Items.Count.ToString();
-                    lbl_BooksLastUpdate.Text = commonController.setUpdatedTime("Date_Updated", "Book", "BID", "");
+                    
 
                 }
                 else
@@ -409,7 +409,7 @@ namespace Library_Management_System_v1._1.View
         //=================Add Book Btn =======================
         private void LibAddBook_Click(object sender, EventArgs e)
         {
-            new View.AddBook(false).ShowDialog();
+            new View.AddBook(false ,null ,lbl_BooksLastUpdate).ShowDialog();
         }
 
         //=================Add Members Btn =======================
@@ -532,7 +532,7 @@ namespace Library_Management_System_v1._1.View
         //============Add Book  Dashboard Btn ======================================
         private void addBookDashBoard_Click(object sender, EventArgs e)
         {
-            new View.AddBook(false).ShowDialog();
+            new View.AddBook(false ,null, lbl_BooksLastUpdate).ShowDialog();
         }
 
         //===========Add Category Dashboard Btn ====================================
@@ -665,12 +665,65 @@ namespace Library_Management_System_v1._1.View
             {
                 try
                 {
-                    new AddBook(true , LibBookList.SelectedItems[0].SubItems[0].Text).Show();
+                    new AddBook(true , LibBookList.SelectedItems[0].SubItems[0].Text,lbl_BooksLastUpdate).Show();
                 }catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
+            else
+            {
+                MessageBox.Show("Please Select a Book to update");
+            }
+        }
+
+        //========================Delete Book ================================================
+        private void btn_DeleteBook_Click(object sender, EventArgs e)
+        {
+            Model.DatabaseService database = new Model.DatabaseService();
+            DialogResult res = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
+            if (res.Equals(DialogResult.Yes))
+            {
+                ListView.SelectedIndexCollection selectedIndex = LibBookList.SelectedIndices;
+                if (selectedIndex.Count > 0)
+                {
+                    String selectedRowId = memberListview.SelectedItems[0].SubItems[0].Text;
+
+                    try
+                    {
+                        int line = database.deleteData("DELETE FROM Book WHERE ISBN = '" + selectedRowId + "'");
+
+                        if (line > 0)
+                        {
+                            MessageBox.Show("Book Removed Successfully");
+                            loadBooks();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Something Went Wrong");
+                        }
+
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No Rows Selected");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Deletation Cancelled");
+            }
+        }
+
+        private void btn_refreshBooks_Click(object sender, EventArgs e)
+        {
+            loadBooks();
         }
     }
 }

@@ -113,7 +113,7 @@ namespace Library_Management_System_v1._1.View
             this.bookLastUpdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_refreshBooks = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.btn_updateBook = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
+            this.btn_DeleteBook = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
             this.materialComboBox4 = new MaterialSkin.Controls.MaterialComboBox();
             this.materialTextBox6 = new MaterialSkin.Controls.MaterialTextBox();
@@ -621,6 +621,7 @@ namespace Library_Management_System_v1._1.View
             this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.rjCircularPictureBox1.BorderSize = 0;
             this.rjCircularPictureBox1.GradientAngle = 50F;
+            this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
             this.rjCircularPictureBox1.Location = new System.Drawing.Point(17, 14);
             this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
             this.rjCircularPictureBox1.Size = new System.Drawing.Size(85, 85);
@@ -1275,7 +1276,7 @@ namespace Library_Management_System_v1._1.View
             this.LibBooks.Controls.Add(this.LibBookList);
             this.LibBooks.Controls.Add(this.btn_refreshBooks);
             this.LibBooks.Controls.Add(this.btn_updateBook);
-            this.LibBooks.Controls.Add(this.materialButton4);
+            this.LibBooks.Controls.Add(this.btn_DeleteBook);
             this.LibBooks.Controls.Add(this.materialLabel16);
             this.LibBooks.Controls.Add(this.materialComboBox4);
             this.LibBooks.Controls.Add(this.materialTextBox6);
@@ -1380,6 +1381,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_refreshBooks.TabIndex = 27;
             this.btn_refreshBooks.Text = "materialFloatingActionButton8";
             this.btn_refreshBooks.UseVisualStyleBackColor = false;
+            this.btn_refreshBooks.Click += new System.EventHandler(this.btn_refreshBooks_Click);
             // 
             // btn_updateBook
             // 
@@ -1402,25 +1404,26 @@ namespace Library_Management_System_v1._1.View
             this.btn_updateBook.UseVisualStyleBackColor = true;
             this.btn_updateBook.Click += new System.EventHandler(this.btn_updateBook_Click);
             // 
-            // materialButton4
+            // btn_DeleteBook
             // 
-            this.materialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton4.Depth = 0;
-            this.materialButton4.DrawShadows = true;
-            this.materialButton4.HighEmphasis = true;
-            this.materialButton4.Icon = null;
-            this.materialButton4.Location = new System.Drawing.Point(770, 168);
-            this.materialButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton4.MaximumSize = new System.Drawing.Size(100, 35);
-            this.materialButton4.MinimumSize = new System.Drawing.Size(100, 35);
-            this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton4.Name = "materialButton4";
-            this.materialButton4.Size = new System.Drawing.Size(100, 35);
-            this.materialButton4.TabIndex = 25;
-            this.materialButton4.Text = "Delete";
-            this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton4.UseAccentColor = false;
-            this.materialButton4.UseVisualStyleBackColor = true;
+            this.btn_DeleteBook.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_DeleteBook.Depth = 0;
+            this.btn_DeleteBook.DrawShadows = true;
+            this.btn_DeleteBook.HighEmphasis = true;
+            this.btn_DeleteBook.Icon = null;
+            this.btn_DeleteBook.Location = new System.Drawing.Point(770, 168);
+            this.btn_DeleteBook.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_DeleteBook.MaximumSize = new System.Drawing.Size(100, 35);
+            this.btn_DeleteBook.MinimumSize = new System.Drawing.Size(100, 35);
+            this.btn_DeleteBook.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_DeleteBook.Name = "btn_DeleteBook";
+            this.btn_DeleteBook.Size = new System.Drawing.Size(100, 35);
+            this.btn_DeleteBook.TabIndex = 25;
+            this.btn_DeleteBook.Text = "Delete";
+            this.btn_DeleteBook.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_DeleteBook.UseAccentColor = false;
+            this.btn_DeleteBook.UseVisualStyleBackColor = true;
+            this.btn_DeleteBook.Click += new System.EventHandler(this.btn_DeleteBook_Click);
             // 
             // materialLabel16
             // 
@@ -2835,7 +2838,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialButton addMemberDashboard;
         private MaterialSkin.Controls.MaterialButton addCategoryDashboard;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private MaterialSkin.Controls.MaterialButton materialButton4;
+        private MaterialSkin.Controls.MaterialButton btn_DeleteBook;
         private MaterialSkin.Controls.MaterialLabel materialLabel16;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox4;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox6;

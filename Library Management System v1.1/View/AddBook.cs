@@ -18,11 +18,13 @@ namespace Library_Management_System_v1._1.View
         Controller.BookController bookcontroller = new Controller.BookController();
         Boolean isUpdate;
         String selectedISBN;
-        public AddBook(Boolean isUpdate, String selectedISBN = null)
+        MaterialLabel lastUpdate;
+        public AddBook(Boolean isUpdate, String selectedISBN = null , MaterialLabel lastUpdate = null)
         {
             InitializeComponent();
             this.isUpdate = isUpdate;
             this.selectedISBN = selectedISBN;
+            this.lastUpdate = lastUpdate;
         }
 
 
@@ -47,6 +49,7 @@ namespace Library_Management_System_v1._1.View
             {
                 this.Text = "Update Book";
                 this.btn_AddBookDialog.Text = "Update";
+                txt_bookISBN.ReadOnly = true;
                 
                 if(selectedISBN != null)
                 {
@@ -173,15 +176,17 @@ namespace Library_Management_System_v1._1.View
                         this.Hide();
                         if (isUpdate)
                         {
-                            new AdminDashboard(Controller.LoginController.currentUserId).loadLibrariyanList();
+                         
                             MessageBox.Show("Record Updated");
                             commonController.setActivity(new Model.Activity("", "Updated " + book.Id + " Data", "Librarian", Controller.LoginController.currentUserId));
+                            lastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
                         }
                         else
                         {
                             MessageBox.Show("Record Added");
                             commonController.setActivity(new Model.Activity("", "Added New Book " + book.Id + " Data", "Librarian", Controller.LoginController.currentUserId));
+                            lastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                         }
                     }
                     else
