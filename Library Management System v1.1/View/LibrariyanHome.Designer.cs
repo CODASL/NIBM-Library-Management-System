@@ -1089,11 +1089,11 @@ namespace Library_Management_System_v1._1.View
             "Name"});
             this.cmb_MemberFilter.Location = new System.Drawing.Point(449, 184);
             this.cmb_MemberFilter.MaxDropDownItems = 4;
-            this.cmb_MemberFilter.MaximumSize = new System.Drawing.Size(121, 0);
-            this.cmb_MemberFilter.MinimumSize = new System.Drawing.Size(121, 0);
+            this.cmb_MemberFilter.MaximumSize = new System.Drawing.Size(127, 0);
+            this.cmb_MemberFilter.MinimumSize = new System.Drawing.Size(127, 0);
             this.cmb_MemberFilter.MouseState = MaterialSkin.MouseState.OUT;
             this.cmb_MemberFilter.Name = "cmb_MemberFilter";
-            this.cmb_MemberFilter.Size = new System.Drawing.Size(121, 35);
+            this.cmb_MemberFilter.Size = new System.Drawing.Size(127, 35);
             this.cmb_MemberFilter.TabIndex = 11;
             this.cmb_MemberFilter.UseTallSize = false;
             // 
@@ -2058,6 +2058,7 @@ namespace Library_Management_System_v1._1.View
             this.accountingListview.Depth = 0;
             this.accountingListview.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountingListview.FullRowSelect = true;
+            this.accountingListview.GridLines = true;
             this.accountingListview.HideSelection = false;
             this.accountingListview.Location = new System.Drawing.Point(45, 232);
             this.accountingListview.MinimumSize = new System.Drawing.Size(200, 100);
@@ -2099,7 +2100,7 @@ namespace Library_Management_System_v1._1.View
             // feeLastUpdated
             // 
             this.feeLastUpdated.Text = "Last Updated";
-            this.feeLastUpdated.Width = 126;
+            this.feeLastUpdated.Width = 180;
             // 
             // materialLabel38
             // 
@@ -2675,6 +2676,7 @@ namespace Library_Management_System_v1._1.View
             this.rjCircularPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.rjCircularPictureBox2.BorderSize = 0;
             this.rjCircularPictureBox2.GradientAngle = 50F;
+            this.rjCircularPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox2.Image")));
             this.rjCircularPictureBox2.Location = new System.Drawing.Point(32, 17);
             this.rjCircularPictureBox2.Name = "rjCircularPictureBox2";
             this.rjCircularPictureBox2.Size = new System.Drawing.Size(85, 85);

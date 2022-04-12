@@ -55,6 +55,7 @@ namespace Library_Management_System_v1._1.View
             cmb_MemberFilter.SelectedIndex = 0;
             cmb_filterBooks.SelectedIndex = 0;
             cmb_bookIssueFilter.SelectedIndex = 0;
+            cmb_filterAccounting.SelectedIndex = 0;
         }
         //========================load Book Availability ====================================
 
