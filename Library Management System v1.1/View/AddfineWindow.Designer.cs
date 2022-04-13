@@ -30,17 +30,17 @@ namespace Library_Management_System_v1._1.View
         private void InitializeComponent()
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_BIDAddFine = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_fineId = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_MIDAddFine = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox4 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_fineAmount = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.txt_FineReason = new MaterialSkin.Controls.MaterialMultiLineTextBox();
+            this.btn_PayFine = new MaterialSkin.Controls.MaterialButton();
+            this.btn_clearBtnAddFine = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -55,21 +55,22 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel1.TabIndex = 5;
             this.materialLabel1.Text = "Book ID";
             // 
-            // materialTextBox1
+            // txt_BIDAddFine
             // 
-            this.materialTextBox1.BackColor = System.Drawing.Color.White;
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox1.Location = new System.Drawing.Point(154, 93);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(100, 36);
-            this.materialTextBox1.TabIndex = 4;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.UseTallSize = false;
+            this.txt_BIDAddFine.BackColor = System.Drawing.Color.White;
+            this.txt_BIDAddFine.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_BIDAddFine.Depth = 0;
+            this.txt_BIDAddFine.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_BIDAddFine.Location = new System.Drawing.Point(154, 93);
+            this.txt_BIDAddFine.MaxLength = 50;
+            this.txt_BIDAddFine.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_BIDAddFine.Multiline = false;
+            this.txt_BIDAddFine.Name = "txt_BIDAddFine";
+            this.txt_BIDAddFine.ReadOnly = true;
+            this.txt_BIDAddFine.Size = new System.Drawing.Size(100, 36);
+            this.txt_BIDAddFine.TabIndex = 4;
+            this.txt_BIDAddFine.Text = "";
+            this.txt_BIDAddFine.UseTallSize = false;
             // 
             // materialLabel2
             // 
@@ -83,20 +84,20 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel2.TabIndex = 7;
             this.materialLabel2.Text = "Fine ID";
             // 
-            // materialTextBox2
+            // txt_fineId
             // 
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox2.Location = new System.Drawing.Point(480, 93);
-            this.materialTextBox2.MaxLength = 50;
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(100, 36);
-            this.materialTextBox2.TabIndex = 6;
-            this.materialTextBox2.Text = "";
-            this.materialTextBox2.UseTallSize = false;
+            this.txt_fineId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_fineId.Depth = 0;
+            this.txt_fineId.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_fineId.Location = new System.Drawing.Point(480, 93);
+            this.txt_fineId.MaxLength = 50;
+            this.txt_fineId.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_fineId.Multiline = false;
+            this.txt_fineId.Name = "txt_fineId";
+            this.txt_fineId.Size = new System.Drawing.Size(100, 36);
+            this.txt_fineId.TabIndex = 6;
+            this.txt_fineId.Text = "";
+            this.txt_fineId.UseTallSize = false;
             // 
             // materialLabel3
             // 
@@ -110,20 +111,21 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel3.TabIndex = 9;
             this.materialLabel3.Text = "Member ID";
             // 
-            // materialTextBox3
+            // txt_MIDAddFine
             // 
-            this.materialTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox3.Depth = 0;
-            this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox3.Location = new System.Drawing.Point(154, 153);
-            this.materialTextBox3.MaxLength = 50;
-            this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox3.Multiline = false;
-            this.materialTextBox3.Name = "materialTextBox3";
-            this.materialTextBox3.Size = new System.Drawing.Size(100, 36);
-            this.materialTextBox3.TabIndex = 8;
-            this.materialTextBox3.Text = "";
-            this.materialTextBox3.UseTallSize = false;
+            this.txt_MIDAddFine.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_MIDAddFine.Depth = 0;
+            this.txt_MIDAddFine.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_MIDAddFine.Location = new System.Drawing.Point(154, 153);
+            this.txt_MIDAddFine.MaxLength = 50;
+            this.txt_MIDAddFine.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_MIDAddFine.Multiline = false;
+            this.txt_MIDAddFine.Name = "txt_MIDAddFine";
+            this.txt_MIDAddFine.ReadOnly = true;
+            this.txt_MIDAddFine.Size = new System.Drawing.Size(100, 36);
+            this.txt_MIDAddFine.TabIndex = 8;
+            this.txt_MIDAddFine.Text = "";
+            this.txt_MIDAddFine.UseTallSize = false;
             // 
             // materialLabel4
             // 
@@ -137,20 +139,20 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel4.TabIndex = 11;
             this.materialLabel4.Text = "Fine Amount";
             // 
-            // materialTextBox4
+            // txt_fineAmount
             // 
-            this.materialTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox4.Depth = 0;
-            this.materialTextBox4.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox4.Location = new System.Drawing.Point(480, 153);
-            this.materialTextBox4.MaxLength = 50;
-            this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox4.Multiline = false;
-            this.materialTextBox4.Name = "materialTextBox4";
-            this.materialTextBox4.Size = new System.Drawing.Size(100, 36);
-            this.materialTextBox4.TabIndex = 10;
-            this.materialTextBox4.Text = "";
-            this.materialTextBox4.UseTallSize = false;
+            this.txt_fineAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_fineAmount.Depth = 0;
+            this.txt_fineAmount.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_fineAmount.Location = new System.Drawing.Point(480, 153);
+            this.txt_fineAmount.MaxLength = 50;
+            this.txt_fineAmount.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_fineAmount.Multiline = false;
+            this.txt_fineAmount.Name = "txt_fineAmount";
+            this.txt_fineAmount.Size = new System.Drawing.Size(100, 36);
+            this.txt_fineAmount.TabIndex = 10;
+            this.txt_fineAmount.Text = "";
+            this.txt_fineAmount.UseTallSize = false;
             // 
             // materialLabel5
             // 
@@ -164,76 +166,78 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel5.TabIndex = 13;
             this.materialLabel5.Text = "Reason";
             // 
-            // materialMultiLineTextBox1
+            // txt_FineReason
             // 
-            this.materialMultiLineTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialMultiLineTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialMultiLineTextBox1.Depth = 0;
-            this.materialMultiLineTextBox1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialMultiLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialMultiLineTextBox1.Hint = "";
-            this.materialMultiLineTextBox1.Location = new System.Drawing.Point(154, 215);
-            this.materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
-            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(426, 115);
-            this.materialMultiLineTextBox1.TabIndex = 14;
-            this.materialMultiLineTextBox1.Text = "";
+            this.txt_FineReason.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txt_FineReason.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_FineReason.Depth = 0;
+            this.txt_FineReason.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_FineReason.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txt_FineReason.Hint = "";
+            this.txt_FineReason.Location = new System.Drawing.Point(154, 215);
+            this.txt_FineReason.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_FineReason.Name = "txt_FineReason";
+            this.txt_FineReason.Size = new System.Drawing.Size(426, 115);
+            this.txt_FineReason.TabIndex = 14;
+            this.txt_FineReason.Text = "";
             // 
-            // materialButton1
+            // btn_PayFine
             // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.DrawShadows = true;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(405, 369);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(84, 36);
-            this.materialButton1.TabIndex = 15;
-            this.materialButton1.Text = "Pay Fine";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.btn_PayFine.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_PayFine.Depth = 0;
+            this.btn_PayFine.DrawShadows = true;
+            this.btn_PayFine.HighEmphasis = true;
+            this.btn_PayFine.Icon = null;
+            this.btn_PayFine.Location = new System.Drawing.Point(405, 369);
+            this.btn_PayFine.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_PayFine.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_PayFine.Name = "btn_PayFine";
+            this.btn_PayFine.Size = new System.Drawing.Size(84, 36);
+            this.btn_PayFine.TabIndex = 15;
+            this.btn_PayFine.Text = "Pay Fine";
+            this.btn_PayFine.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_PayFine.UseAccentColor = false;
+            this.btn_PayFine.UseVisualStyleBackColor = true;
+            this.btn_PayFine.Click += new System.EventHandler(this.btn_PayFine_Click);
             // 
-            // materialButton2
+            // btn_clearBtnAddFine
             // 
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.DrawShadows = true;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(514, 369);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.Size = new System.Drawing.Size(66, 36);
-            this.materialButton2.TabIndex = 16;
-            this.materialButton2.Text = "Clear";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
+            this.btn_clearBtnAddFine.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_clearBtnAddFine.Depth = 0;
+            this.btn_clearBtnAddFine.DrawShadows = true;
+            this.btn_clearBtnAddFine.HighEmphasis = true;
+            this.btn_clearBtnAddFine.Icon = null;
+            this.btn_clearBtnAddFine.Location = new System.Drawing.Point(514, 369);
+            this.btn_clearBtnAddFine.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_clearBtnAddFine.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_clearBtnAddFine.Name = "btn_clearBtnAddFine";
+            this.btn_clearBtnAddFine.Size = new System.Drawing.Size(66, 36);
+            this.btn_clearBtnAddFine.TabIndex = 16;
+            this.btn_clearBtnAddFine.Text = "Clear";
+            this.btn_clearBtnAddFine.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_clearBtnAddFine.UseAccentColor = false;
+            this.btn_clearBtnAddFine.UseVisualStyleBackColor = true;
             // 
             // AddfineWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(619, 425);
-            this.Controls.Add(this.materialButton2);
-            this.Controls.Add(this.materialButton1);
-            this.Controls.Add(this.materialMultiLineTextBox1);
+            this.Controls.Add(this.btn_clearBtnAddFine);
+            this.Controls.Add(this.btn_PayFine);
+            this.Controls.Add(this.txt_FineReason);
             this.Controls.Add(this.materialLabel5);
             this.Controls.Add(this.materialLabel4);
-            this.Controls.Add(this.materialTextBox4);
+            this.Controls.Add(this.txt_fineAmount);
             this.Controls.Add(this.materialLabel3);
-            this.Controls.Add(this.materialTextBox3);
+            this.Controls.Add(this.txt_MIDAddFine);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.materialTextBox2);
+            this.Controls.Add(this.txt_fineId);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.materialTextBox1);
+            this.Controls.Add(this.txt_BIDAddFine);
             this.Name = "AddfineWindow";
             this.Text = "Add Fine";
+            this.Load += new System.EventHandler(this.AddfineWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,16 +246,16 @@ namespace Library_Management_System_v1._1.View
         #endregion
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox txt_BIDAddFine;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
+        private MaterialSkin.Controls.MaterialTextBox txt_fineId;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox3;
+        private MaterialSkin.Controls.MaterialTextBox txt_MIDAddFine;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox4;
+        private MaterialSkin.Controls.MaterialTextBox txt_fineAmount;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox txt_FineReason;
+        private MaterialSkin.Controls.MaterialButton btn_PayFine;
+        private MaterialSkin.Controls.MaterialButton btn_clearBtnAddFine;
     }
 }

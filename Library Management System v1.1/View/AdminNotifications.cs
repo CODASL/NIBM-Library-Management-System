@@ -28,7 +28,7 @@ namespace Library_Management_System_v1._1.View
             try {
 
                 database.Con.Open();
-                MySqlDataReader sdr = database.readData("SELECT * FROM Notification WHERE Status = '"+""+"'");
+                MySqlDataReader sdr = database.readData("SELECT * FROM Notification WHERE Status = ''");
                 while (sdr.Read())
                 {
                     if (sdr.HasRows)
@@ -52,13 +52,13 @@ namespace Library_Management_System_v1._1.View
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                database.Con.Close();
+            }
             
         }
-        private void notification_Click(object sender, EventArgs e , int id)
-        {
-            
-            
-        }
+       
 
        
     }

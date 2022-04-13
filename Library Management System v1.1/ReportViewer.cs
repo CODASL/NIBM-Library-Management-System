@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Library_Management_System_v1._1
 {
-    public partial class DeleteUser: Form
+    public partial class ReportViewer : Form
     {
-        public DeleteUser()
+        public ReportViewer()
         {
             InitializeComponent();
         }

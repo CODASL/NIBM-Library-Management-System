@@ -43,9 +43,10 @@ namespace Library_Management_System_v1._1.View
             this.swtSwitchTheme = new MaterialSkin.Controls.MaterialSwitch();
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
             this.adminActivity = new System.Windows.Forms.TabPage();
+            this.refreshAdminActivties = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialButton7 = new MaterialSkin.Controls.MaterialButton();
             this.materialCard8 = new MaterialSkin.Controls.MaterialCard();
-            this.materialFloatingActionButton2 = new MaterialSkin.Controls.MaterialFloatingActionButton();
+            this.materialFloatingActionButton4 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_AdminActivity_LastUpdate = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel52 = new MaterialSkin.Controls.MaterialLabel();
@@ -54,8 +55,9 @@ namespace Library_Management_System_v1._1.View
             this.Activity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateTimeActivity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ManageLibrariyans = new System.Windows.Forms.TabPage();
+            this.cmb_filterLibrarians = new MaterialSkin.Controls.MaterialComboBox();
+            this.btn_refreshLibrarianList = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.searchTxtBox = new MaterialSkin.Controls.MaterialTextBox();
-            this.refreshBtn = new MaterialSkin.Controls.MaterialButton();
             this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
             this.updateLibrariyanBtn = new MaterialSkin.Controls.MaterialButton();
             this.deleteLibrariyanBtn = new MaterialSkin.Controls.MaterialButton();
@@ -64,7 +66,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.lblNumberOfLibrariyans = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
-            this.materialFloatingActionButton9 = new MaterialSkin.Controls.MaterialFloatingActionButton();
+            this.materialFloatingActionButton18 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_libraryUpdated = new MaterialSkin.Controls.MaterialLabel();
             this.librariyanList = new MaterialSkin.Controls.MaterialListView();
@@ -74,9 +76,9 @@ namespace Library_Management_System_v1._1.View
             this.libPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.libNIC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.libLastUpdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cmb_filterLibrarians = new MaterialSkin.Controls.MaterialComboBox();
             this.addLibrarianBtn = new MaterialSkin.Controls.MaterialButton();
             this.adminDashboardBtn = new System.Windows.Forms.TabPage();
+            this.btn_refreshAdminDashboard = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialCard13 = new MaterialSkin.Controls.MaterialCard();
             this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
             this.materialComboBox2 = new MaterialSkin.Controls.MaterialComboBox();
@@ -85,7 +87,7 @@ namespace Library_Management_System_v1._1.View
             this.memberRegistrationChart = new LiveCharts.WinForms.CartesianChart();
             this.materialCard12 = new MaterialSkin.Controls.MaterialCard();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
-            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_categoryCount = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.categoriesPieChart = new LiveCharts.WinForms.PieChart();
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
@@ -157,7 +159,7 @@ namespace Library_Management_System_v1._1.View
             this.adminSettings.ImageKey = "icons8-settings-32.png";
             this.adminSettings.Location = new System.Drawing.Point(4, 39);
             this.adminSettings.Name = "adminSettings";
-            this.adminSettings.Size = new System.Drawing.Size(1192, 657);
+            this.adminSettings.Size = new System.Drawing.Size(1238, 657);
             this.adminSettings.TabIndex = 6;
             this.adminSettings.Text = "Settings";
             this.adminSettings.UseVisualStyleBackColor = true;
@@ -306,6 +308,7 @@ namespace Library_Management_System_v1._1.View
             // 
             // adminActivity
             // 
+            this.adminActivity.Controls.Add(this.refreshAdminActivties);
             this.adminActivity.Controls.Add(this.materialButton7);
             this.adminActivity.Controls.Add(this.materialCard8);
             this.adminActivity.Controls.Add(this.materialLabel52);
@@ -315,10 +318,28 @@ namespace Library_Management_System_v1._1.View
             this.adminActivity.Location = new System.Drawing.Point(4, 39);
             this.adminActivity.Name = "adminActivity";
             this.adminActivity.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.adminActivity.Size = new System.Drawing.Size(1192, 657);
+            this.adminActivity.Size = new System.Drawing.Size(1238, 657);
             this.adminActivity.TabIndex = 4;
             this.adminActivity.Text = "My Activities";
             this.adminActivity.UseVisualStyleBackColor = true;
+            // 
+            // refreshAdminActivties
+            // 
+            this.refreshAdminActivties.AnimateShowHideButton = false;
+            this.refreshAdminActivties.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.refreshAdminActivties.Depth = 0;
+            this.refreshAdminActivties.DrawShadows = true;
+            this.refreshAdminActivties.Icon = ((System.Drawing.Image)(resources.GetObject("refreshAdminActivties.Icon")));
+            this.refreshAdminActivties.Image = ((System.Drawing.Image)(resources.GetObject("refreshAdminActivties.Image")));
+            this.refreshAdminActivties.Location = new System.Drawing.Point(991, 458);
+            this.refreshAdminActivties.Mini = false;
+            this.refreshAdminActivties.MouseState = MaterialSkin.MouseState.HOVER;
+            this.refreshAdminActivties.Name = "refreshAdminActivties";
+            this.refreshAdminActivties.Size = new System.Drawing.Size(56, 56);
+            this.refreshAdminActivties.TabIndex = 23;
+            this.refreshAdminActivties.Text = "materialFloatingActionButton8";
+            this.refreshAdminActivties.UseVisualStyleBackColor = false;
+            this.refreshAdminActivties.Click += new System.EventHandler(this.refreshAdminActivties_Click);
             // 
             // materialButton7
             // 
@@ -342,7 +363,7 @@ namespace Library_Management_System_v1._1.View
             // materialCard8
             // 
             this.materialCard8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard8.Controls.Add(this.materialFloatingActionButton2);
+            this.materialCard8.Controls.Add(this.materialFloatingActionButton4);
             this.materialCard8.Controls.Add(this.materialLabel10);
             this.materialCard8.Controls.Add(this.lbl_AdminActivity_LastUpdate);
             this.materialCard8.Depth = 0;
@@ -356,22 +377,22 @@ namespace Library_Management_System_v1._1.View
             this.materialCard8.Size = new System.Drawing.Size(395, 85);
             this.materialCard8.TabIndex = 16;
             // 
-            // materialFloatingActionButton2
+            // materialFloatingActionButton4
             // 
-            this.materialFloatingActionButton2.AnimateShowHideButton = false;
-            this.materialFloatingActionButton2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.materialFloatingActionButton2.Depth = 0;
-            this.materialFloatingActionButton2.DrawShadows = true;
-            this.materialFloatingActionButton2.Icon = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton2.Icon")));
-            this.materialFloatingActionButton2.Image = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton2.Image")));
-            this.materialFloatingActionButton2.Location = new System.Drawing.Point(306, 14);
-            this.materialFloatingActionButton2.Mini = false;
-            this.materialFloatingActionButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFloatingActionButton2.Name = "materialFloatingActionButton2";
-            this.materialFloatingActionButton2.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton2.TabIndex = 8;
-            this.materialFloatingActionButton2.Text = "materialFloatingActionButton2";
-            this.materialFloatingActionButton2.UseVisualStyleBackColor = false;
+            this.materialFloatingActionButton4.AnimateShowHideButton = false;
+            this.materialFloatingActionButton4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.materialFloatingActionButton4.Depth = 0;
+            this.materialFloatingActionButton4.DrawShadows = true;
+            this.materialFloatingActionButton4.Icon = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton4.Icon")));
+            this.materialFloatingActionButton4.Image = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton4.Image")));
+            this.materialFloatingActionButton4.Location = new System.Drawing.Point(309, 12);
+            this.materialFloatingActionButton4.Mini = false;
+            this.materialFloatingActionButton4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFloatingActionButton4.Name = "materialFloatingActionButton4";
+            this.materialFloatingActionButton4.Size = new System.Drawing.Size(56, 56);
+            this.materialFloatingActionButton4.TabIndex = 13;
+            this.materialFloatingActionButton4.Text = "materialFloatingActionButton4";
+            this.materialFloatingActionButton4.UseVisualStyleBackColor = false;
             // 
             // materialLabel10
             // 
@@ -455,23 +476,70 @@ namespace Library_Management_System_v1._1.View
             // 
             // ManageLibrariyans
             // 
+            this.ManageLibrariyans.Controls.Add(this.cmb_filterLibrarians);
+            this.ManageLibrariyans.Controls.Add(this.btn_refreshLibrarianList);
             this.ManageLibrariyans.Controls.Add(this.searchTxtBox);
-            this.ManageLibrariyans.Controls.Add(this.refreshBtn);
             this.ManageLibrariyans.Controls.Add(this.materialButton6);
             this.ManageLibrariyans.Controls.Add(this.updateLibrariyanBtn);
             this.ManageLibrariyans.Controls.Add(this.deleteLibrariyanBtn);
             this.ManageLibrariyans.Controls.Add(this.materialCard5);
             this.ManageLibrariyans.Controls.Add(this.materialCard4);
             this.ManageLibrariyans.Controls.Add(this.librariyanList);
-            this.ManageLibrariyans.Controls.Add(this.cmb_filterLibrarians);
             this.ManageLibrariyans.Controls.Add(this.addLibrarianBtn);
             this.ManageLibrariyans.ImageKey = "userDark.png";
             this.ManageLibrariyans.Location = new System.Drawing.Point(4, 39);
             this.ManageLibrariyans.Name = "ManageLibrariyans";
-            this.ManageLibrariyans.Size = new System.Drawing.Size(1192, 657);
+            this.ManageLibrariyans.Size = new System.Drawing.Size(1238, 657);
             this.ManageLibrariyans.TabIndex = 2;
             this.ManageLibrariyans.Text = "Manage Librariyans";
             this.ManageLibrariyans.UseVisualStyleBackColor = true;
+            // 
+            // cmb_filterLibrarians
+            // 
+            this.cmb_filterLibrarians.AutoResize = false;
+            this.cmb_filterLibrarians.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmb_filterLibrarians.Depth = 0;
+            this.cmb_filterLibrarians.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmb_filterLibrarians.DropDownHeight = 118;
+            this.cmb_filterLibrarians.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_filterLibrarians.DropDownWidth = 150;
+            this.cmb_filterLibrarians.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmb_filterLibrarians.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmb_filterLibrarians.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmb_filterLibrarians.FormattingEnabled = true;
+            this.cmb_filterLibrarians.Hint = "Search By";
+            this.cmb_filterLibrarians.IntegralHeight = false;
+            this.cmb_filterLibrarians.ItemHeight = 29;
+            this.cmb_filterLibrarians.Items.AddRange(new object[] {
+            "ID",
+            "Name"});
+            this.cmb_filterLibrarians.Location = new System.Drawing.Point(466, 128);
+            this.cmb_filterLibrarians.MaxDropDownItems = 4;
+            this.cmb_filterLibrarians.MaximumSize = new System.Drawing.Size(131, 0);
+            this.cmb_filterLibrarians.MinimumSize = new System.Drawing.Size(131, 0);
+            this.cmb_filterLibrarians.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmb_filterLibrarians.Name = "cmb_filterLibrarians";
+            this.cmb_filterLibrarians.Size = new System.Drawing.Size(131, 35);
+            this.cmb_filterLibrarians.TabIndex = 13;
+            this.cmb_filterLibrarians.UseTallSize = false;
+            // 
+            // btn_refreshLibrarianList
+            // 
+            this.btn_refreshLibrarianList.AnimateShowHideButton = false;
+            this.btn_refreshLibrarianList.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_refreshLibrarianList.Depth = 0;
+            this.btn_refreshLibrarianList.DrawShadows = true;
+            this.btn_refreshLibrarianList.Icon = ((System.Drawing.Image)(resources.GetObject("btn_refreshLibrarianList.Icon")));
+            this.btn_refreshLibrarianList.Image = ((System.Drawing.Image)(resources.GetObject("btn_refreshLibrarianList.Image")));
+            this.btn_refreshLibrarianList.Location = new System.Drawing.Point(1043, 444);
+            this.btn_refreshLibrarianList.Mini = false;
+            this.btn_refreshLibrarianList.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_refreshLibrarianList.Name = "btn_refreshLibrarianList";
+            this.btn_refreshLibrarianList.Size = new System.Drawing.Size(56, 56);
+            this.btn_refreshLibrarianList.TabIndex = 22;
+            this.btn_refreshLibrarianList.Text = "materialFloatingActionButton8";
+            this.btn_refreshLibrarianList.UseVisualStyleBackColor = false;
+            this.btn_refreshLibrarianList.Click += new System.EventHandler(this.btn_refreshLibrarianList_Click);
             // 
             // searchTxtBox
             // 
@@ -488,27 +556,6 @@ namespace Library_Management_System_v1._1.View
             this.searchTxtBox.Text = "";
             this.searchTxtBox.UseTallSize = false;
             this.searchTxtBox.TextChanged += new System.EventHandler(this.searchTxtBox_TextChanged_1);
-            // 
-            // refreshBtn
-            // 
-            this.refreshBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.refreshBtn.Depth = 0;
-            this.refreshBtn.DrawShadows = true;
-            this.refreshBtn.HighEmphasis = true;
-            this.refreshBtn.Icon = null;
-            this.refreshBtn.Location = new System.Drawing.Point(910, 130);
-            this.refreshBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.refreshBtn.MaximumSize = new System.Drawing.Size(100, 35);
-            this.refreshBtn.MinimumSize = new System.Drawing.Size(100, 35);
-            this.refreshBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(100, 35);
-            this.refreshBtn.TabIndex = 20;
-            this.refreshBtn.Text = "Refresh";
-            this.refreshBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.refreshBtn.UseAccentColor = false;
-            this.refreshBtn.UseVisualStyleBackColor = true;
-            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // materialButton6
             // 
@@ -536,7 +583,7 @@ namespace Library_Management_System_v1._1.View
             this.updateLibrariyanBtn.DrawShadows = true;
             this.updateLibrariyanBtn.HighEmphasis = true;
             this.updateLibrariyanBtn.Icon = null;
-            this.updateLibrariyanBtn.Location = new System.Drawing.Point(704, 130);
+            this.updateLibrariyanBtn.Location = new System.Drawing.Point(807, 123);
             this.updateLibrariyanBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.updateLibrariyanBtn.MaximumSize = new System.Drawing.Size(100, 35);
             this.updateLibrariyanBtn.MinimumSize = new System.Drawing.Size(100, 35);
@@ -557,7 +604,7 @@ namespace Library_Management_System_v1._1.View
             this.deleteLibrariyanBtn.DrawShadows = true;
             this.deleteLibrariyanBtn.HighEmphasis = true;
             this.deleteLibrariyanBtn.Icon = null;
-            this.deleteLibrariyanBtn.Location = new System.Drawing.Point(807, 130);
+            this.deleteLibrariyanBtn.Location = new System.Drawing.Point(910, 123);
             this.deleteLibrariyanBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deleteLibrariyanBtn.MaximumSize = new System.Drawing.Size(100, 35);
             this.deleteLibrariyanBtn.MinimumSize = new System.Drawing.Size(100, 35);
@@ -634,7 +681,7 @@ namespace Library_Management_System_v1._1.View
             // materialCard4
             // 
             this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard4.Controls.Add(this.materialFloatingActionButton9);
+            this.materialCard4.Controls.Add(this.materialFloatingActionButton18);
             this.materialCard4.Controls.Add(this.materialLabel19);
             this.materialCard4.Controls.Add(this.lbl_libraryUpdated);
             this.materialCard4.Depth = 0;
@@ -648,22 +695,22 @@ namespace Library_Management_System_v1._1.View
             this.materialCard4.Size = new System.Drawing.Size(457, 85);
             this.materialCard4.TabIndex = 15;
             // 
-            // materialFloatingActionButton9
+            // materialFloatingActionButton18
             // 
-            this.materialFloatingActionButton9.AnimateShowHideButton = false;
-            this.materialFloatingActionButton9.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.materialFloatingActionButton9.Depth = 0;
-            this.materialFloatingActionButton9.DrawShadows = true;
-            this.materialFloatingActionButton9.Icon = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton9.Icon")));
-            this.materialFloatingActionButton9.Image = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton9.Image")));
-            this.materialFloatingActionButton9.Location = new System.Drawing.Point(374, 14);
-            this.materialFloatingActionButton9.Mini = false;
-            this.materialFloatingActionButton9.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFloatingActionButton9.Name = "materialFloatingActionButton9";
-            this.materialFloatingActionButton9.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton9.TabIndex = 8;
-            this.materialFloatingActionButton9.Text = "materialFloatingActionButton9";
-            this.materialFloatingActionButton9.UseVisualStyleBackColor = false;
+            this.materialFloatingActionButton18.AnimateShowHideButton = false;
+            this.materialFloatingActionButton18.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.materialFloatingActionButton18.Depth = 0;
+            this.materialFloatingActionButton18.DrawShadows = true;
+            this.materialFloatingActionButton18.Icon = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton18.Icon")));
+            this.materialFloatingActionButton18.Image = ((System.Drawing.Image)(resources.GetObject("materialFloatingActionButton18.Image")));
+            this.materialFloatingActionButton18.Location = new System.Drawing.Point(376, 12);
+            this.materialFloatingActionButton18.Mini = false;
+            this.materialFloatingActionButton18.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFloatingActionButton18.Name = "materialFloatingActionButton18";
+            this.materialFloatingActionButton18.Size = new System.Drawing.Size(56, 56);
+            this.materialFloatingActionButton18.TabIndex = 13;
+            this.materialFloatingActionButton18.Text = "materialFloatingActionButton18";
+            this.materialFloatingActionButton18.UseVisualStyleBackColor = false;
             // 
             // materialLabel19
             // 
@@ -754,35 +801,6 @@ namespace Library_Management_System_v1._1.View
             this.libLastUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.libLastUpdate.Width = 198;
             // 
-            // cmb_filterLibrarians
-            // 
-            this.cmb_filterLibrarians.AutoResize = false;
-            this.cmb_filterLibrarians.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmb_filterLibrarians.Depth = 0;
-            this.cmb_filterLibrarians.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cmb_filterLibrarians.DropDownHeight = 118;
-            this.cmb_filterLibrarians.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_filterLibrarians.DropDownWidth = 150;
-            this.cmb_filterLibrarians.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmb_filterLibrarians.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cmb_filterLibrarians.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmb_filterLibrarians.FormattingEnabled = true;
-            this.cmb_filterLibrarians.Hint = "Search By";
-            this.cmb_filterLibrarians.IntegralHeight = false;
-            this.cmb_filterLibrarians.ItemHeight = 29;
-            this.cmb_filterLibrarians.Items.AddRange(new object[] {
-            "ID",
-            "Name"});
-            this.cmb_filterLibrarians.Location = new System.Drawing.Point(424, 130);
-            this.cmb_filterLibrarians.MaxDropDownItems = 4;
-            this.cmb_filterLibrarians.MaximumSize = new System.Drawing.Size(131, 0);
-            this.cmb_filterLibrarians.MinimumSize = new System.Drawing.Size(131, 0);
-            this.cmb_filterLibrarians.MouseState = MaterialSkin.MouseState.OUT;
-            this.cmb_filterLibrarians.Name = "cmb_filterLibrarians";
-            this.cmb_filterLibrarians.Size = new System.Drawing.Size(131, 35);
-            this.cmb_filterLibrarians.TabIndex = 13;
-            this.cmb_filterLibrarians.UseTallSize = false;
-            // 
             // addLibrarianBtn
             // 
             this.addLibrarianBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -790,7 +808,7 @@ namespace Library_Management_System_v1._1.View
             this.addLibrarianBtn.DrawShadows = true;
             this.addLibrarianBtn.HighEmphasis = true;
             this.addLibrarianBtn.Icon = null;
-            this.addLibrarianBtn.Location = new System.Drawing.Point(602, 130);
+            this.addLibrarianBtn.Location = new System.Drawing.Point(705, 123);
             this.addLibrarianBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.addLibrarianBtn.MaximumSize = new System.Drawing.Size(100, 35);
             this.addLibrarianBtn.MinimumSize = new System.Drawing.Size(100, 35);
@@ -806,6 +824,7 @@ namespace Library_Management_System_v1._1.View
             // 
             // adminDashboardBtn
             // 
+            this.adminDashboardBtn.Controls.Add(this.btn_refreshAdminDashboard);
             this.adminDashboardBtn.Controls.Add(this.materialCard13);
             this.adminDashboardBtn.Controls.Add(this.materialCard12);
             this.adminDashboardBtn.Controls.Add(this.materialCard6);
@@ -815,10 +834,28 @@ namespace Library_Management_System_v1._1.View
             this.adminDashboardBtn.Location = new System.Drawing.Point(4, 39);
             this.adminDashboardBtn.Name = "adminDashboardBtn";
             this.adminDashboardBtn.Padding = new System.Windows.Forms.Padding(3);
-            this.adminDashboardBtn.Size = new System.Drawing.Size(1192, 657);
+            this.adminDashboardBtn.Size = new System.Drawing.Size(1238, 657);
             this.adminDashboardBtn.TabIndex = 0;
             this.adminDashboardBtn.Text = "Dashboard";
             this.adminDashboardBtn.UseVisualStyleBackColor = true;
+            // 
+            // btn_refreshAdminDashboard
+            // 
+            this.btn_refreshAdminDashboard.AnimateShowHideButton = false;
+            this.btn_refreshAdminDashboard.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_refreshAdminDashboard.Depth = 0;
+            this.btn_refreshAdminDashboard.DrawShadows = true;
+            this.btn_refreshAdminDashboard.Icon = ((System.Drawing.Image)(resources.GetObject("btn_refreshAdminDashboard.Icon")));
+            this.btn_refreshAdminDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btn_refreshAdminDashboard.Image")));
+            this.btn_refreshAdminDashboard.Location = new System.Drawing.Point(1132, 575);
+            this.btn_refreshAdminDashboard.Mini = false;
+            this.btn_refreshAdminDashboard.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_refreshAdminDashboard.Name = "btn_refreshAdminDashboard";
+            this.btn_refreshAdminDashboard.Size = new System.Drawing.Size(56, 56);
+            this.btn_refreshAdminDashboard.TabIndex = 23;
+            this.btn_refreshAdminDashboard.Text = "materialFloatingActionButton8";
+            this.btn_refreshAdminDashboard.UseVisualStyleBackColor = false;
+            this.btn_refreshAdminDashboard.Click += new System.EventHandler(this.btn_refreshAdminDashboard_Click);
             // 
             // materialCard13
             // 
@@ -919,7 +956,7 @@ namespace Library_Management_System_v1._1.View
             // 
             this.materialCard12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard12.Controls.Add(this.materialButton2);
-            this.materialCard12.Controls.Add(this.materialLabel7);
+            this.materialCard12.Controls.Add(this.lbl_categoryCount);
             this.materialCard12.Controls.Add(this.materialLabel6);
             this.materialCard12.Controls.Add(this.categoriesPieChart);
             this.materialCard12.Depth = 0;
@@ -951,17 +988,17 @@ namespace Library_Management_System_v1._1.View
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
             // 
-            // materialLabel7
+            // lbl_categoryCount
             // 
-            this.materialLabel7.AutoSize = true;
-            this.materialLabel7.Depth = 0;
-            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel7.Location = new System.Drawing.Point(323, 16);
-            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel7.Name = "materialLabel7";
-            this.materialLabel7.Size = new System.Drawing.Size(19, 19);
-            this.materialLabel7.TabIndex = 2;
-            this.materialLabel7.Text = "15";
+            this.lbl_categoryCount.AutoSize = true;
+            this.lbl_categoryCount.Depth = 0;
+            this.lbl_categoryCount.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_categoryCount.Location = new System.Drawing.Point(323, 16);
+            this.lbl_categoryCount.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_categoryCount.Name = "lbl_categoryCount";
+            this.lbl_categoryCount.Size = new System.Drawing.Size(19, 19);
+            this.lbl_categoryCount.TabIndex = 2;
+            this.lbl_categoryCount.Text = "15";
             // 
             // materialLabel6
             // 
@@ -1206,7 +1243,7 @@ namespace Library_Management_System_v1._1.View
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1200, 700);
+            this.materialTabControl1.Size = new System.Drawing.Size(1246, 700);
             this.materialTabControl1.TabIndex = 0;
             // 
             // timer1
@@ -1218,7 +1255,7 @@ namespace Library_Management_System_v1._1.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.ClientSize = new System.Drawing.Size(1246, 700);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.materialTabControl1;
@@ -1297,7 +1334,7 @@ namespace Library_Management_System_v1._1.View
         private LiveCharts.WinForms.CartesianChart memberRegistrationChart;
         private MaterialSkin.Controls.MaterialCard materialCard12;
         private MaterialSkin.Controls.MaterialButton materialButton2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialLabel lbl_categoryCount;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private LiveCharts.WinForms.PieChart categoriesPieChart;
         private MaterialSkin.Controls.MaterialCard materialCard6;
@@ -1311,7 +1348,6 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel lblNumberOfLibrariyans;
         private MaterialSkin.Controls.MaterialCard materialCard4;
-        private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton9;
         private MaterialSkin.Controls.MaterialLabel materialLabel19;
         private MaterialSkin.Controls.MaterialLabel lbl_libraryUpdated;
         private MaterialSkin.Controls.MaterialButton materialButton6;
@@ -1323,7 +1359,6 @@ namespace Library_Management_System_v1._1.View
         private System.Windows.Forms.ColumnHeader Activity;
         private System.Windows.Forms.ColumnHeader DateTimeActivity;
         private MaterialSkin.Controls.MaterialCard materialCard8;
-        private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton2;
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
         private MaterialSkin.Controls.MaterialLabel lbl_AdminActivity_LastUpdate;
         private MaterialSkin.Controls.MaterialButton materialButton7;
@@ -1333,8 +1368,12 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton3;
         private MaterialSkin.Controls.MaterialLabel materialLabel12;
         private MaterialSkin.Controls.MaterialButton adminLogout;
-        private MaterialSkin.Controls.MaterialButton refreshBtn;
         private System.Windows.Forms.Label lbl_notification_count;
         private MaterialSkin.Controls.MaterialTextBox searchTxtBox;
+        private MaterialSkin.Controls.MaterialFloatingActionButton btn_refreshLibrarianList;
+        private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton18;
+        private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton4;
+        private MaterialSkin.Controls.MaterialFloatingActionButton refreshAdminActivties;
+        private MaterialSkin.Controls.MaterialFloatingActionButton btn_refreshAdminDashboard;
     }
 }

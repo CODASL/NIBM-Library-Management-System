@@ -13,7 +13,68 @@ namespace Library_Management_System_v1._1.Controller
 {
     class CommonController
     {
+        //================= Add Activty =====================================
+        public static void setActivity(String description) {
+            Model.DatabaseService database = new Model.DatabaseService();
+            
+            try
+            {
+                int id = setActivityId("Id", "Activity");
+                String Emp_Id = LoginController.currentUserId;
+                String Emp_type = LoginController.currentEmpType;
+                Console.WriteLine(id);
+                int row = database.insertData("INSERT INTO Activity VALUES ('" + id +"','"+Emp_Id+"','"+description+"','"+Emp_type+"','"+ DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "')");
+                if (row > 0)
+                {
+                    Console.Write("Added Activitiy ");
+                }
+                else
+                {
+                    Console.Write("Failed to add Activity");
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        public static int setActivityId( String IDColumn, String tableName)
+        {
+            Model.DatabaseService database = new Model.DatabaseService();
+            String id;
+            try
+            {
+                database.Con.Open();
+                MySqlDataReader sdr = database.readData("SELECT " + IDColumn + " FROM " + tableName + " ORDER BY " + IDColumn + " DESC LIMIT 1");
+                sdr.Read();
+                if (sdr.HasRows)
+                {
+                    id = sdr[IDColumn].ToString();
+                    database.Con.Close();
+                    id = (Convert.ToInt32(id) + 1).ToString();
+                }
+                else
+                {
+                    database.Con.Close();
+                    id = 1.ToString();
+                }
+
+                return Convert.ToInt32(id);
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                database.Con.Close();
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                database.Con.Close();
+                return 0;
+            }
+           
+        }
         //==================Field Validations=============================
         public Boolean isEmailValid(String email)
         {
@@ -52,7 +113,7 @@ namespace Library_Management_System_v1._1.Controller
             return true;
         }
 
-        //============================Building Random Passwords==============================
+        //============================Building Random Passwords=============================
         public string RandomPassword(int size, bool lowerCase)
         {
             StringBuilder builder = new StringBuilder();
@@ -91,7 +152,7 @@ namespace Library_Management_System_v1._1.Controller
             try
             {
                 database.Con.Open();
-                MySqlDataReader sdr = database.readData("SELECT TOP 1 " + column_name + " FROM " + table_name + whereCommand+" ORDER BY " + primary_key + " DESC");
+                MySqlDataReader sdr = database.readData("SELECT " + column_name + " FROM " + table_name + whereCommand+" ORDER BY " + primary_key + " DESC LIMIT 1");
                 sdr.Read();
                 if (sdr.HasRows)
                 {
@@ -102,7 +163,7 @@ namespace Library_Management_System_v1._1.Controller
                 else
                 {
                     database.Con.Close();
-                    return "NO DATA";
+                    return DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
                 }
             }
             catch (Exception ex)
@@ -162,18 +223,26 @@ namespace Library_Management_System_v1._1.Controller
             try
             {
                 database.Con.Open();
-                MySqlDataReader sdr = database.readData("SELECT TOP 1 " + IDColumn + " FROM " + tableName + " ORDER BY " + IDColumn + " DESC");
+                MySqlDataReader sdr = database.readData("SELECT " + IDColumn + " FROM " + tableName + " ORDER BY " + IDColumn + " DESC LIMIT 1");
                 sdr.Read();
                 if (sdr.HasRows)
                 {
                     id = sdr[IDColumn].ToString();
                     database.Con.Close();
-                    id = firstLetter.ToUpper() + (Convert.ToInt32(id.Remove(0, 1)) + 1).ToString();
+                    if(firstLetter == "")
+                    {
+                        id = (Convert.ToInt32(id) + 1).ToString();
+                    }
+                    else
+                    {
+                        id = firstLetter.ToUpper() + (Convert.ToInt32(id.Remove(0, 1)) + 1).ToString();
+                    }
+                   
                 }
                 else
                 {
                     database.Con.Close();
-                    id = firstLetter.ToUpper() + "1";
+                    id = firstLetter == "" ?1.ToString() : firstLetter.ToUpper() + "1";
                 }
 
                 textBox.Text = id;

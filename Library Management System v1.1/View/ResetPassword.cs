@@ -1,4 +1,4 @@
-﻿using MaterialSkin.Controls;
+﻿ using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,7 +52,7 @@ namespace Library_Management_System_v1._1.View
             int id;
             try {
                 database.Con.Open();
-                MySqlDataReader sdr = database.readData("SELECT TOP 1 notification_id FROM Notification ORDER BY notification_id DESC");
+                MySqlDataReader sdr = database.readData("SELECT notification_id FROM Notification ORDER BY notification_id DESC LIMIT 1");
                 if (sdr.HasRows)
                 {
                     sdr.Read();
@@ -77,7 +77,7 @@ namespace Library_Management_System_v1._1.View
         }
 
 
-        //==============================Request Btn=====================
+        //==============================Request Button=============================
         private void requestBtn_Click(object sender, EventArgs e)
         {
             if (cmb_libID.SelectedItem == null)
@@ -91,7 +91,7 @@ namespace Library_Management_System_v1._1.View
             {
                 try
                 {
-                    int line = database.insertData("INSERT INTO Notification VALUES ('" + generateNotificationID() + "','" + "A01" + "','" + cmb_libID.SelectedItem.ToString() + "','" + txt_reason.Text + "','" + DateTime.Now.ToString() + "','"+""+"')");
+                    int line = database.insertData("INSERT INTO Notification VALUES ('" + generateNotificationID() + "','" + "A1" + "','" + cmb_libID.SelectedItem.ToString() + "','" + txt_reason.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','')");
                     if (line > 0)
                     {
                         MessageBox.Show("Request Sent Successfully");
@@ -109,6 +109,10 @@ namespace Library_Management_System_v1._1.View
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    database.Con.Close();
                 }
             }
             

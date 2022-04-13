@@ -27,11 +27,14 @@ namespace Library_Management_System_v1._1.View
        
         Model.DatabaseService database = new Model.DatabaseService();
         String emp_id;
+
+        [Obsolete]
         public AdminDashboard(String emp_id)
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
             this.emp_id = emp_id;
+            this.FormClosing += Form_FormClosing;
         }
 
         //=============On Load Admin Home =============================
@@ -47,9 +50,45 @@ namespace Library_Management_System_v1._1.View
             lbl_AdminActivity_LastUpdate.Text = commonController.setUpdatedTime("Updated_Time", "Activity", "Emp_Id", " WHERE Emp_Id= '"+emp_id+"'");
             lbl_notification_count.Text = adminDashboardCtrl.setNotificationCount();
             cmb_filterLibrarians.SelectedIndex = 0;
-            loadLibrariyanList();
+            Controller.AdminDashboardController.loadLibrariyanList(librariyanList, lblNumberOfLibrariyans);
             loadLibrarianActivities();//Admin Dashboard only All Librarians Activities
-            commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);//Method from Common Controller Class
+            commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);
+            lbl_categoryCount.Text = adminDashboardCtrl.setBookCount().ToString();
+        }
+
+
+        //============ form x or F4 click logout user ================================
+        [Obsolete]
+        private void Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_id + "'");
+                if (line > 0)
+                {
+                    this.Hide();
+                    Login lg = new Login();
+                    lg.Closed += (s, args) => this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Application Cannot Logout ", emp_id);
+                }
+            }
+            if (e.CloseReason == CloseReason.WindowsShutDown)
+            {
+                int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_id + "'");
+                if (line > 0)
+                {
+                    this.Hide();
+                    Login lg = new Login();
+                    lg.Closed += (s, args) => this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Application Cannot Logout ", emp_id);
+                }
+            }
         }
 
         //================Load Librarian Activities =====================================
@@ -59,16 +98,15 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 database.Con.Open();
-                MySqlDataReader sdr = database.readData("SELECT * FROM Activity WHERE Emp_Type= '"+"Librarian"+"'");
+                MySqlDataReader sdr = database.readData("SELECT * FROM Activity WHERE Emp_type= '"+"Librarian"+"'");
                 if (sdr.HasRows)
                 {
                      
                     while (sdr.Read())
                     {
-                        ListViewItem item = new ListViewItem(sdr["Emp_Id"].ToString());
+                        ListViewItem item = new ListViewItem(sdr["Emp_id"].ToString());
                         item.SubItems.Add(sdr["Description"].ToString());
                         item.SubItems.Add(sdr["Updated_Time"].ToString());
-
                         libActivityListAdmin.Items.Add(item);
                     }
                     database.Con.Close();
@@ -92,49 +130,7 @@ namespace Library_Management_System_v1._1.View
             }
         }
         
-        //=============Load Librarian List=====================================
-        public void loadLibrariyanList()
-        {
-            librariyanList.Items.Clear();
-            try
-            {
-                database.Con.Open();
-                MySqlDataReader sdr = database.readData("Select * From Librarian");
-                if (sdr.HasRows) {
-
-                    while (sdr.Read())
-                    {
-                        ListViewItem item = new ListViewItem(sdr["Librarian_Id"].ToString());
-                        item.SubItems.Add(sdr["Name"].ToString());
-                        item.SubItems.Add(sdr["Address"].ToString());
-                        item.SubItems.Add(sdr["Phone"].ToString());
-                        item.SubItems.Add(sdr["NIC"].ToString());
-                        item.SubItems.Add(sdr["updated_date"].ToString());
-                        
-                        librariyanList.Items.Add(item);
-                    }
-                    database.Con.Close();
-                    lblNumberOfLibrariyans.Text = librariyanList.Items.Count.ToString();
-                    lbl_libraryUpdated.Text = commonController.setUpdatedTime("updated_date", "Librarian", "Librarian_Id", "");
-
-                }
-                else
-                {
-                    Console.WriteLine("No Data to Show");
-                    database.Con.Close();
-                }
-                
-            }catch(MySqlException ex)
-            {
-                MessageBox.Show(ex.ToString());
-                database.Con.Close();
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                database.Con.Close();
-            }
-
-        }
+       
 
         //=============Admin Notification Btn =============================
         private void adminNotifications_Click(object sender, EventArgs e)
@@ -178,7 +174,7 @@ namespace Library_Management_System_v1._1.View
         //======================= Add Btn Manage Librarians ====================================
         private void addLibrarianBtn_Click(object sender, EventArgs e)
         {
-            AddLibrariyan  addLib  = new AddLibrariyan();
+            AddLibrariyan  addLib  = new AddLibrariyan(false,null,lbl_libraryUpdated);
             addLib.Show();   
         }
 
@@ -208,7 +204,7 @@ namespace Library_Management_System_v1._1.View
                         if (line > 0 && line1 > 0)
                         {
                             MessageBox.Show("Data Deleted Successfully");
-                            loadLibrariyanList();
+                            Controller.AdminDashboardController.loadLibrariyanList(librariyanList, lblNumberOfLibrariyans);
                         }
                         else
                         {
@@ -236,34 +232,62 @@ namespace Library_Management_System_v1._1.View
         //=================Refresh Btn Manage Librarians=====================
         private void refreshBtn_Click(object sender, EventArgs e)
         {
-            loadLibrariyanList();
+            Controller.AdminDashboardController.loadLibrariyanList(librariyanList, lblNumberOfLibrariyans);
         }
 
         //==================Update Btn Manage Librarians=================
         private void updateLibrariyanBtn_Click(object sender, EventArgs e)
         {
-            try
+            if (librariyanList.SelectedItems.Count > 0)
             {
-                String selectedRowId = librariyanList.SelectedItems[0].SubItems[0].Text;
-                new AddLibrariyan(true, selectedRowId).Show();
-            }catch(Exception ex)
+                try
+                {
+                    String selectedRowId = librariyanList.SelectedItems[0].SubItems[0].Text;
+                    new AddLibrariyan(true, selectedRowId, lbl_libraryUpdated).Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please Select a Librarian");
+            }
+            
+            
+        }
+
+        //==================Search Librarians================================
+        private void searchTxtBox_TextChanged_1(object sender, EventArgs e)
+        {
+            if(searchTxtBox.Text != "")
+            {
+                adminDashboardCtrl.searchFunction(librariyanList, cmb_filterLibrarians.SelectedIndex, searchTxtBox);
+            }
+            else
+            {
+                Controller.AdminDashboardController.loadLibrariyanList(librariyanList, lblNumberOfLibrariyans);
             }
             
         }
 
-        //==================Search Librarians=================
-        private void searchTxtBox_TextChanged_1(object sender, EventArgs e)
+        private void btn_refreshLibrarianList_Click(object sender, EventArgs e)
         {
-            if (cmb_filterLibrarians.SelectedIndex == 0)
-            {
-                adminDashboardCtrl.searchFunction(librariyanList, 0, searchTxtBox);
-            }
-            else if (cmb_filterLibrarians.SelectedIndex == 1)
-            {
-                adminDashboardCtrl.searchFunction(librariyanList, 1, searchTxtBox);
-            }
+            Controller.AdminDashboardController.loadLibrariyanList(librariyanList, lblNumberOfLibrariyans);
+        }
+
+        private void refreshAdminActivties_Click(object sender, EventArgs e)
+        {
+            commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);
+        }
+
+        private void btn_refreshAdminDashboard_Click(object sender, EventArgs e)
+        {
+            adminDashboardCtrl.loadCartChart(memberRegistrationChart);
+            adminDashboardCtrl.loadCategoriesPieChart(categoriesPieChart);
+            loadLibrarianActivities();
+            lbl_notification_count.Text = adminDashboardCtrl.setNotificationCount();
         }
     }
 }

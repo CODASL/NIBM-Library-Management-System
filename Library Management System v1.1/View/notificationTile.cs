@@ -24,7 +24,7 @@ namespace Library_Management_System_v1._1.View
         }
 
        
-        public void acceptOrReject(bool isAccepted, int id)
+        public void acceptOrReject(String isAccepted, int id)
         {
             try
             {
@@ -47,14 +47,14 @@ namespace Library_Management_System_v1._1.View
             if (dialogResult.Equals(DialogResult.Yes))
             {
                 MessageBox.Show("Approved");
-                acceptOrReject(true, notification_id);
+                acceptOrReject("Approved", notification_id);
                 new AdminNotifications().loadNotifications();
 
             }
             else if (dialogResult.Equals(DialogResult.No))
             {
                 MessageBox.Show("Rejected");
-                acceptOrReject(false, notification_id);
+                acceptOrReject("Rejected", notification_id);
                 new AdminNotifications().loadNotifications();
             }
             else

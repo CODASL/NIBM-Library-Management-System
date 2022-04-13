@@ -60,7 +60,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_mid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_mid.Depth = 0;
             this.txt_mid.Font = new System.Drawing.Font("Roboto", 12F);
-            this.txt_mid.Location = new System.Drawing.Point(151, 98);
+            this.txt_mid.Location = new System.Drawing.Point(147, 98);
             this.txt_mid.MaxLength = 50;
             this.txt_mid.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_mid.Multiline = false;
@@ -76,7 +76,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(23, 110);
+            this.materialLabel1.Location = new System.Drawing.Point(20, 110);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(76, 19);
@@ -88,7 +88,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(396, 110);
+            this.materialLabel2.Location = new System.Drawing.Point(19, 158);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(105, 19);
@@ -100,13 +100,13 @@ namespace Library_Management_System_v1._1.View
             this.txt_mname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_mname.Depth = 0;
             this.txt_mname.Font = new System.Drawing.Font("Roboto", 12F);
-            this.txt_mname.Location = new System.Drawing.Point(524, 98);
+            this.txt_mname.Location = new System.Drawing.Point(147, 146);
             this.txt_mname.MaxLength = 50;
             this.txt_mname.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_mname.Multiline = false;
             this.txt_mname.Name = "txt_mname";
             this.txt_mname.Size = new System.Drawing.Size(337, 36);
-            this.txt_mname.TabIndex = 2;
+            this.txt_mname.TabIndex = 1;
             this.txt_mname.Text = "";
             this.txt_mname.UseTallSize = false;
             // 
@@ -116,7 +116,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.materialLabel3.Location = new System.Drawing.Point(23, 159);
+            this.materialLabel3.Location = new System.Drawing.Point(19, 206);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(120, 19);
@@ -128,13 +128,13 @@ namespace Library_Management_System_v1._1.View
             this.txt_Maddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Maddress.Depth = 0;
             this.txt_Maddress.Font = new System.Drawing.Font("Roboto", 12F);
-            this.txt_Maddress.Location = new System.Drawing.Point(151, 147);
-            this.txt_Maddress.MaxLength = 50;
+            this.txt_Maddress.Location = new System.Drawing.Point(147, 194);
+            this.txt_Maddress.MaxLength = 100;
             this.txt_Maddress.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_Maddress.Multiline = false;
             this.txt_Maddress.Name = "txt_Maddress";
             this.txt_Maddress.Size = new System.Drawing.Size(710, 36);
-            this.txt_Maddress.TabIndex = 4;
+            this.txt_Maddress.TabIndex = 2;
             this.txt_Maddress.Text = "";
             this.txt_Maddress.UseTallSize = false;
             // 
@@ -144,7 +144,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.materialLabel4.Location = new System.Drawing.Point(23, 205);
+            this.materialLabel4.Location = new System.Drawing.Point(19, 252);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(88, 19);
@@ -156,13 +156,13 @@ namespace Library_Management_System_v1._1.View
             this.txt_MNIC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_MNIC.Depth = 0;
             this.txt_MNIC.Font = new System.Drawing.Font("Roboto", 12F);
-            this.txt_MNIC.Location = new System.Drawing.Point(151, 193);
-            this.txt_MNIC.MaxLength = 50;
+            this.txt_MNIC.Location = new System.Drawing.Point(147, 240);
+            this.txt_MNIC.MaxLength = 12;
             this.txt_MNIC.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_MNIC.Multiline = false;
             this.txt_MNIC.Name = "txt_MNIC";
             this.txt_MNIC.Size = new System.Drawing.Size(200, 36);
-            this.txt_MNIC.TabIndex = 6;
+            this.txt_MNIC.TabIndex = 3;
             this.txt_MNIC.Text = "";
             this.txt_MNIC.UseTallSize = false;
             // 
@@ -172,7 +172,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.materialLabel5.Location = new System.Drawing.Point(23, 254);
+            this.materialLabel5.Location = new System.Drawing.Point(20, 357);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(76, 19);
@@ -184,14 +184,14 @@ namespace Library_Management_System_v1._1.View
             this.txt_GID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_GID.Depth = 0;
             this.txt_GID.Font = new System.Drawing.Font("Roboto", 12F);
-            this.txt_GID.Location = new System.Drawing.Point(151, 242);
+            this.txt_GID.Location = new System.Drawing.Point(148, 345);
             this.txt_GID.MaxLength = 50;
             this.txt_GID.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_GID.Multiline = false;
             this.txt_GID.Name = "txt_GID";
             this.txt_GID.ReadOnly = true;
             this.txt_GID.Size = new System.Drawing.Size(100, 36);
-            this.txt_GID.TabIndex = 8;
+            this.txt_GID.TabIndex = 6;
             this.txt_GID.Text = "";
             this.txt_GID.UseTallSize = false;
             // 
@@ -201,7 +201,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.materialLabel6.Location = new System.Drawing.Point(396, 254);
+            this.materialLabel6.Location = new System.Drawing.Point(19, 399);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(103, 19);
@@ -213,13 +213,13 @@ namespace Library_Management_System_v1._1.View
             this.txt_Gname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Gname.Depth = 0;
             this.txt_Gname.Font = new System.Drawing.Font("Roboto", 12F);
-            this.txt_Gname.Location = new System.Drawing.Point(524, 242);
+            this.txt_Gname.Location = new System.Drawing.Point(147, 387);
             this.txt_Gname.MaxLength = 50;
             this.txt_Gname.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_Gname.Multiline = false;
             this.txt_Gname.Name = "txt_Gname";
-            this.txt_Gname.Size = new System.Drawing.Size(200, 36);
-            this.txt_Gname.TabIndex = 10;
+            this.txt_Gname.Size = new System.Drawing.Size(337, 36);
+            this.txt_Gname.TabIndex = 7;
             this.txt_Gname.Text = "";
             this.txt_Gname.UseTallSize = false;
             // 
@@ -231,7 +231,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_MemberClear.DrawShadows = true;
             this.btn_MemberClear.HighEmphasis = true;
             this.btn_MemberClear.Icon = null;
-            this.btn_MemberClear.Location = new System.Drawing.Point(449, 434);
+            this.btn_MemberClear.Location = new System.Drawing.Point(703, 615);
             this.btn_MemberClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_MemberClear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_MemberClear.Name = "btn_MemberClear";
@@ -241,6 +241,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_MemberClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_MemberClear.UseAccentColor = false;
             this.btn_MemberClear.UseVisualStyleBackColor = true;
+            this.btn_MemberClear.Click += new System.EventHandler(this.btn_MemberClear_Click);
             // 
             // btn_AddMember
             // 
@@ -250,7 +251,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_AddMember.DrawShadows = true;
             this.btn_AddMember.HighEmphasis = true;
             this.btn_AddMember.Icon = null;
-            this.btn_AddMember.Location = new System.Drawing.Point(252, 434);
+            this.btn_AddMember.Location = new System.Drawing.Point(537, 615);
             this.btn_AddMember.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_AddMember.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_AddMember.Name = "btn_AddMember";
@@ -260,6 +261,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_AddMember.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_AddMember.UseAccentColor = false;
             this.btn_AddMember.UseVisualStyleBackColor = true;
+            this.btn_AddMember.Click += new System.EventHandler(this.btn_AddMember_Click);
             // 
             // materialLabel7
             // 
@@ -267,7 +269,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.materialLabel7.Location = new System.Drawing.Point(23, 353);
+            this.materialLabel7.Location = new System.Drawing.Point(20, 496);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
             this.materialLabel7.Size = new System.Drawing.Size(95, 19);
@@ -279,13 +281,13 @@ namespace Library_Management_System_v1._1.View
             this.txt_GNIC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_GNIC.Depth = 0;
             this.txt_GNIC.Font = new System.Drawing.Font("Roboto", 12F);
-            this.txt_GNIC.Location = new System.Drawing.Point(151, 341);
-            this.txt_GNIC.MaxLength = 50;
+            this.txt_GNIC.Location = new System.Drawing.Point(148, 484);
+            this.txt_GNIC.MaxLength = 12;
             this.txt_GNIC.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_GNIC.Multiline = false;
             this.txt_GNIC.Name = "txt_GNIC";
             this.txt_GNIC.Size = new System.Drawing.Size(200, 36);
-            this.txt_GNIC.TabIndex = 17;
+            this.txt_GNIC.TabIndex = 9;
             this.txt_GNIC.Text = "";
             this.txt_GNIC.UseTallSize = false;
             // 
@@ -295,7 +297,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel8.Depth = 0;
             this.materialLabel8.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel8.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.materialLabel8.Location = new System.Drawing.Point(23, 306);
+            this.materialLabel8.Location = new System.Drawing.Point(20, 449);
             this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel8.Name = "materialLabel8";
             this.materialLabel8.Size = new System.Drawing.Size(118, 19);
@@ -307,13 +309,13 @@ namespace Library_Management_System_v1._1.View
             this.txt_GAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_GAddress.Depth = 0;
             this.txt_GAddress.Font = new System.Drawing.Font("Roboto", 12F);
-            this.txt_GAddress.Location = new System.Drawing.Point(151, 294);
-            this.txt_GAddress.MaxLength = 50;
+            this.txt_GAddress.Location = new System.Drawing.Point(148, 437);
+            this.txt_GAddress.MaxLength = 100;
             this.txt_GAddress.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_GAddress.Multiline = false;
             this.txt_GAddress.Name = "txt_GAddress";
             this.txt_GAddress.Size = new System.Drawing.Size(710, 36);
-            this.txt_GAddress.TabIndex = 15;
+            this.txt_GAddress.TabIndex = 8;
             this.txt_GAddress.Text = "";
             this.txt_GAddress.UseTallSize = false;
             // 
@@ -323,7 +325,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel9.Depth = 0;
             this.materialLabel9.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.materialLabel9.Location = new System.Drawing.Point(396, 348);
+            this.materialLabel9.Location = new System.Drawing.Point(22, 543);
             this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel9.Name = "materialLabel9";
             this.materialLabel9.Size = new System.Drawing.Size(115, 19);
@@ -336,7 +338,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel10.Depth = 0;
             this.materialLabel10.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel10.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.materialLabel10.Location = new System.Drawing.Point(396, 205);
+            this.materialLabel10.Location = new System.Drawing.Point(18, 305);
             this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel10.Name = "materialLabel10";
             this.materialLabel10.Size = new System.Drawing.Size(108, 19);
@@ -363,12 +365,12 @@ namespace Library_Management_System_v1._1.View
             "+91",
             "+97",
             "+64"});
-            this.cmb_Mcountrycodes.Location = new System.Drawing.Point(521, 193);
+            this.cmb_Mcountrycodes.Location = new System.Drawing.Point(147, 293);
             this.cmb_Mcountrycodes.MaxDropDownItems = 4;
             this.cmb_Mcountrycodes.MouseState = MaterialSkin.MouseState.OUT;
             this.cmb_Mcountrycodes.Name = "cmb_Mcountrycodes";
             this.cmb_Mcountrycodes.Size = new System.Drawing.Size(76, 35);
-            this.cmb_Mcountrycodes.TabIndex = 24;
+            this.cmb_Mcountrycodes.TabIndex = 4;
             this.cmb_Mcountrycodes.UseTallSize = false;
             // 
             // txt_MPhone
@@ -377,13 +379,13 @@ namespace Library_Management_System_v1._1.View
             this.txt_MPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_MPhone.Depth = 0;
             this.txt_MPhone.Font = new System.Drawing.Font("Roboto", 12F);
-            this.txt_MPhone.Location = new System.Drawing.Point(603, 193);
+            this.txt_MPhone.Location = new System.Drawing.Point(229, 293);
             this.txt_MPhone.MaxLength = 9;
             this.txt_MPhone.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_MPhone.Multiline = false;
             this.txt_MPhone.Name = "txt_MPhone";
-            this.txt_MPhone.Size = new System.Drawing.Size(230, 36);
-            this.txt_MPhone.TabIndex = 23;
+            this.txt_MPhone.Size = new System.Drawing.Size(258, 36);
+            this.txt_MPhone.TabIndex = 5;
             this.txt_MPhone.Text = "";
             this.txt_MPhone.UseTallSize = false;
             // 
@@ -407,12 +409,12 @@ namespace Library_Management_System_v1._1.View
             "+91",
             "+97",
             "+64"});
-            this.cmb_GCountryCodes.Location = new System.Drawing.Point(521, 336);
+            this.cmb_GCountryCodes.Location = new System.Drawing.Point(147, 531);
             this.cmb_GCountryCodes.MaxDropDownItems = 4;
             this.cmb_GCountryCodes.MouseState = MaterialSkin.MouseState.OUT;
             this.cmb_GCountryCodes.Name = "cmb_GCountryCodes";
             this.cmb_GCountryCodes.Size = new System.Drawing.Size(76, 35);
-            this.cmb_GCountryCodes.TabIndex = 26;
+            this.cmb_GCountryCodes.TabIndex = 10;
             this.cmb_GCountryCodes.UseTallSize = false;
             // 
             // txt_GPhone
@@ -421,13 +423,13 @@ namespace Library_Management_System_v1._1.View
             this.txt_GPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_GPhone.Depth = 0;
             this.txt_GPhone.Font = new System.Drawing.Font("Roboto", 12F);
-            this.txt_GPhone.Location = new System.Drawing.Point(603, 336);
+            this.txt_GPhone.Location = new System.Drawing.Point(229, 531);
             this.txt_GPhone.MaxLength = 9;
             this.txt_GPhone.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_GPhone.Multiline = false;
             this.txt_GPhone.Name = "txt_GPhone";
-            this.txt_GPhone.Size = new System.Drawing.Size(230, 36);
-            this.txt_GPhone.TabIndex = 25;
+            this.txt_GPhone.Size = new System.Drawing.Size(258, 36);
+            this.txt_GPhone.TabIndex = 11;
             this.txt_GPhone.Text = "";
             this.txt_GPhone.UseTallSize = false;
             // 
@@ -435,7 +437,7 @@ namespace Library_Management_System_v1._1.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 505);
+            this.ClientSize = new System.Drawing.Size(907, 677);
             this.Controls.Add(this.cmb_GCountryCodes);
             this.Controls.Add(this.txt_GPhone);
             this.Controls.Add(this.cmb_Mcountrycodes);

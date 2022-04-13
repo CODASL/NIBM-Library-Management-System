@@ -18,34 +18,69 @@ namespace Library_Management_System_v1._1.Model
 
         public DatabaseService()
         {
-            con = new MySqlConnection("Server=98.142.97.194;Port=3306;Database=irixsolu_coda;Uid=irixsolu_irix;Pwd=Mot413654*;");
+            con = new MySqlConnection("Server=98.142.97.194;Port=3306;Database=irixsolu_coda;Uid=irixsolu_irix;Pwd=Mot413654*;Convert Zero Datetime=True;");
         }
 
         public int insertData(String query) {
-            con.Open();
-            cmd = new MySqlCommand(query, con);
-            int i = cmd.ExecuteNonQuery();
-            con.Close();
-            return 1;
+            int i = 0;
+            
+            try
+            {
+                con.Open();
+                cmd = new MySqlCommand(query, con);
+                i = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally {
+                con.Close();
+            }
+            return i;
         }
 
 
         public int updateData(String query)
         {
-            con.Open();
-            cmd = new MySqlCommand(query, con);
-            int i = cmd.ExecuteNonQuery();
-            con.Close();
-            return 1;
+            int i = 0;
+            
+            try
+            {
+                con.Open();
+                cmd = new MySqlCommand(query, con);
+                i = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
+            return i;
         }
 
 
         public int deleteData(String query)
         {
-            con.Open();
-            cmd = new MySqlCommand(query, con);
-            int i = cmd.ExecuteNonQuery();
-            con.Close();
+            int i = 0;
+            
+            try
+            {
+                con.Open();
+                cmd = new MySqlCommand(query, con);
+                i = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
             return i;
         }
 

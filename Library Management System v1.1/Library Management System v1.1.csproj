@@ -130,13 +130,18 @@
   <ItemGroup>
     <Compile Include="Constant\IconClass.cs" />
     <Compile Include="Constant\ImageClass.cs" />
-    <Compile Include="Controller\AddAuthorController.cs" />
+    <Compile Include="Controller\AuthorController.cs" />
     <Compile Include="Controller\AddLibrariyanController.cs" />
     <Compile Include="Controller\AdminDashboardController.cs" />
+    <Compile Include="Controller\BookController.cs" />
+    <Compile Include="Controller\BookIssueReturnController.cs" />
+    <Compile Include="Controller\CategoryController.cs" />
     <Compile Include="Controller\CommonController.cs" />
     <Compile Include="Controller\LibrariyanDashboardController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\MaterialController.cs" />
+    <Compile Include="Controller\MemberController.cs" />
+    <Compile Include="Controller\MemberFeeController.cs" />
     <Compile Include="Controller\SplashController.cs" />
     <Compile Include="Model\Activity.cs" />
     <Compile Include="Model\Author.cs" />
@@ -153,6 +158,12 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Add Author.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,12 +248,6 @@
     <Compile Include="View\Custom Controls\RJTextBox.designer.cs">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DeleteUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\DeleteUser.Designer.cs">
-      <DependentUpon>DeleteUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\AdminActivityListTile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -294,6 +299,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Add Author.resx">
       <DependentUpon>Add Author.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,9 +340,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Custom Controls\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\DeleteUser.resx">
-      <DependentUpon>DeleteUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LibrariyanHome.resx">
       <DependentUpon>LibrariyanHome.cs</DependentUpon>
