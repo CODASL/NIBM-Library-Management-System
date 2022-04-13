@@ -207,6 +207,7 @@ namespace Library_Management_System_v1._1.View
 
                         if (line > 0 && line1 > 0)
                         {
+                            Controller.CommonController.setActivity("Deleted Librarian " + selectedRowId + " Data");
                             MessageBox.Show("Data Deleted Successfully");
                             Controller.AdminDashboardController.loadLibrariyanList(librariyanList, lblNumberOfLibrariyans);
                         }

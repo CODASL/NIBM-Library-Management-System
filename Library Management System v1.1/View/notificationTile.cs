@@ -48,6 +48,7 @@ namespace Library_Management_System_v1._1.View
             {
                 MessageBox.Show("Approved");
                 acceptOrReject("Approved", notification_id);
+                Controller.CommonController.setActivity("Approved Id = " + notification_id + " Password Reset Request");
                 new AdminNotifications().loadNotifications();
 
             }
@@ -55,7 +56,10 @@ namespace Library_Management_System_v1._1.View
             {
                 MessageBox.Show("Rejected");
                 acceptOrReject("Rejected", notification_id);
+                Controller.CommonController.setActivity("Rejected" +
+                    " Id = " + notification_id + " Password Reset Request");
                 new AdminNotifications().loadNotifications();
+                
             }
             else
             {
