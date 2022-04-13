@@ -31,7 +31,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.bluebackround = new System.Windows.Forms.Panel();
-            this.LoginProgress = new MaterialSkin.Controls.MaterialProgressBar();
+            this.progressBar_LoginProgress = new MaterialSkin.Controls.MaterialProgressBar();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,6 +44,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.resetBtn = new System.Windows.Forms.Button();
+            this.lbl_LoginMessage = new System.Windows.Forms.Label();
+            this.lbl_LoginProgress = new System.Windows.Forms.Label();
             this.btnQR = new Library_Management_System_v1._1.View.Custom_Controls.RJButton();
             this.txtPass = new CustomControls.RJControls.RJTextBox();
             this.txtmail = new CustomControls.RJControls.RJTextBox();
@@ -60,7 +62,9 @@
             // 
             this.bluebackround.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.bluebackround.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bluebackround.Controls.Add(this.LoginProgress);
+            this.bluebackround.Controls.Add(this.lbl_LoginProgress);
+            this.bluebackround.Controls.Add(this.lbl_LoginMessage);
+            this.bluebackround.Controls.Add(this.progressBar_LoginProgress);
             this.bluebackround.Controls.Add(this.label5);
             this.bluebackround.Controls.Add(this.label4);
             this.bluebackround.Controls.Add(this.label3);
@@ -70,15 +74,15 @@
             this.bluebackround.Size = new System.Drawing.Size(300, 450);
             this.bluebackround.TabIndex = 10;
             // 
-            // LoginProgress
+            // progressBar_LoginProgress
             // 
-            this.LoginProgress.BackColor = System.Drawing.Color.White;
-            this.LoginProgress.Depth = 0;
-            this.LoginProgress.Location = new System.Drawing.Point(21, 410);
-            this.LoginProgress.MouseState = MaterialSkin.MouseState.HOVER;
-            this.LoginProgress.Name = "LoginProgress";
-            this.LoginProgress.Size = new System.Drawing.Size(188, 5);
-            this.LoginProgress.TabIndex = 15;
+            this.progressBar_LoginProgress.BackColor = System.Drawing.Color.White;
+            this.progressBar_LoginProgress.Depth = 0;
+            this.progressBar_LoginProgress.Location = new System.Drawing.Point(21, 410);
+            this.progressBar_LoginProgress.MouseState = MaterialSkin.MouseState.HOVER;
+            this.progressBar_LoginProgress.Name = "progressBar_LoginProgress";
+            this.progressBar_LoginProgress.Size = new System.Drawing.Size(232, 5);
+            this.progressBar_LoginProgress.TabIndex = 15;
             // 
             // label5
             // 
@@ -158,7 +162,7 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(100, 58);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(160, 18);
+            this.label6.Size = new System.Drawing.Size(165, 18);
             this.label6.TabIndex = 26;
             this.label6.Text = "Hello Welcome Again !";
             // 
@@ -184,7 +188,7 @@
             // passwordShowHide
             // 
             this.passwordShowHide.Image = ((System.Drawing.Image)(resources.GetObject("passwordShowHide.Image")));
-            this.passwordShowHide.Location = new System.Drawing.Point(227, 136);
+            this.passwordShowHide.Location = new System.Drawing.Point(219, 133);
             this.passwordShowHide.Name = "passwordShowHide";
             this.passwordShowHide.Size = new System.Drawing.Size(20, 20);
             this.passwordShowHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -198,7 +202,7 @@
             this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(-1, 103);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 14);
+            this.label2.Size = new System.Drawing.Size(53, 14);
             this.label2.TabIndex = 19;
             this.label2.Text = "Password";
             // 
@@ -208,7 +212,7 @@
             this.label1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 14);
+            this.label1.Size = new System.Drawing.Size(77, 14);
             this.label1.TabIndex = 17;
             this.label1.Text = "Employee ID";
             // 
@@ -224,6 +228,24 @@
             this.resetBtn.Text = "Reset Password";
             this.resetBtn.UseVisualStyleBackColor = true;
             this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
+            // 
+            // lbl_LoginMessage
+            // 
+            this.lbl_LoginMessage.AutoSize = true;
+            this.lbl_LoginMessage.ForeColor = System.Drawing.Color.White;
+            this.lbl_LoginMessage.Location = new System.Drawing.Point(23, 394);
+            this.lbl_LoginMessage.Name = "lbl_LoginMessage";
+            this.lbl_LoginMessage.Size = new System.Drawing.Size(0, 13);
+            this.lbl_LoginMessage.TabIndex = 16;
+            // 
+            // lbl_LoginProgress
+            // 
+            this.lbl_LoginProgress.AutoSize = true;
+            this.lbl_LoginProgress.ForeColor = System.Drawing.Color.White;
+            this.lbl_LoginProgress.Location = new System.Drawing.Point(217, 391);
+            this.lbl_LoginProgress.Name = "lbl_LoginProgress";
+            this.lbl_LoginProgress.Size = new System.Drawing.Size(0, 13);
+            this.lbl_LoginProgress.TabIndex = 17;
             // 
             // btnQR
             // 
@@ -253,20 +275,20 @@
             this.txtPass.BackColor = System.Drawing.SystemColors.Window;
             this.txtPass.BorderColor = System.Drawing.Color.Black;
             this.txtPass.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.txtPass.BorderSize = 1;
+            this.txtPass.BorderSize = 2;
             this.txtPass.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.ForeColor = System.Drawing.Color.Black;
             this.txtPass.Location = new System.Drawing.Point(0, 128);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPass.MaximumSize = new System.Drawing.Size(222, 33);
-            this.txtPass.MinimumSize = new System.Drawing.Size(222, 33);
+            this.txtPass.MaximumSize = new System.Drawing.Size(251, 33);
+            this.txtPass.MinimumSize = new System.Drawing.Size(251, 33);
             this.txtPass.Multiline = false;
             this.txtPass.Name = "txtPass";
             this.txtPass.Padding = new System.Windows.Forms.Padding(7);
             this.txtPass.PasswordChar = true;
-            this.txtPass.Size = new System.Drawing.Size(222, 33);
+            this.txtPass.Size = new System.Drawing.Size(251, 33);
             this.txtPass.TabIndex = 28;
-            this.txtPass.UnderlinedStyle = false;
+            this.txtPass.UnderlinedStyle = true;
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // txtmail
@@ -274,20 +296,20 @@
             this.txtmail.BackColor = System.Drawing.SystemColors.Window;
             this.txtmail.BorderColor = System.Drawing.Color.Black;
             this.txtmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.txtmail.BorderSize = 1;
+            this.txtmail.BorderSize = 2;
             this.txtmail.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmail.ForeColor = System.Drawing.Color.Black;
             this.txtmail.Location = new System.Drawing.Point(0, 47);
             this.txtmail.Margin = new System.Windows.Forms.Padding(4);
-            this.txtmail.MaximumSize = new System.Drawing.Size(222, 33);
-            this.txtmail.MinimumSize = new System.Drawing.Size(222, 33);
+            this.txtmail.MaximumSize = new System.Drawing.Size(251, 33);
+            this.txtmail.MinimumSize = new System.Drawing.Size(251, 33);
             this.txtmail.Multiline = false;
             this.txtmail.Name = "txtmail";
             this.txtmail.Padding = new System.Windows.Forms.Padding(7);
             this.txtmail.PasswordChar = false;
-            this.txtmail.Size = new System.Drawing.Size(222, 33);
+            this.txtmail.Size = new System.Drawing.Size(251, 33);
             this.txtmail.TabIndex = 15;
-            this.txtmail.UnderlinedStyle = false;
+            this.txtmail.UnderlinedStyle = true;
             this.txtmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmail_KeyPress);
             // 
             // btnlogin
@@ -359,7 +381,9 @@
         private CustomControls.RJControls.RJTextBox txtmail;
         private CustomControls.RJControls.RJTextBox txtPass;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MaterialSkin.Controls.MaterialProgressBar LoginProgress;
+        private MaterialSkin.Controls.MaterialProgressBar progressBar_LoginProgress;
         private System.Windows.Forms.PictureBox passwordShowHide;
+        private System.Windows.Forms.Label lbl_LoginProgress;
+        private System.Windows.Forms.Label lbl_LoginMessage;
     }
 }

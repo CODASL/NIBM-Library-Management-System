@@ -67,28 +67,34 @@ namespace Library_Management_System_v1._1
             else {
                 try
                 {
+                    
+
+                    progressBar_LoginProgress.Value += 20;
                     database.Con.Open();
-                    LoginProgress.Increment(10);
+                    progressBar_LoginProgress.Value += 20;
                     MySqlDataReader sdr = database.readData("Select * From AppUser where Emp_Id = '" + txtmail.Text + "'");
-                    LoginProgress.Increment(30);
+                    progressBar_LoginProgress.Value += 20;
                     sdr.Read();
-                    LoginProgress.Increment(20);
+                    progressBar_LoginProgress.Value += 20;
                     loginController.onLoggedIn(sdr, txtPass.Text, this);
-                    LoginProgress.Increment(30);
+                    progressBar_LoginProgress.Value += 20;
                     database.Con.Close();
-                    LoginProgress.Increment(10);
-                    LoginProgress.Equals(0);
+                    
                 }
                 catch (MySqlException ex)
                 {
                     MessageBox.Show(ex.Message);
-                    LoginProgress.Equals(0);
+                    progressBar_LoginProgress.Value = 0;
                     database.Con.Close();
                 }catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    LoginProgress.Equals(0);
+                    progressBar_LoginProgress.Value = 0;
                     database.Con.Close();
+                }
+                finally
+                {
+                    progressBar_LoginProgress.Value = 0;
                 }
 
             }
