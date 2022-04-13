@@ -12,7 +12,7 @@ using System.Drawing;
 using MaterialSkin.Controls;
 using System.Windows.Forms;
 using System.Windows;
-
+using System.Reflection;
 
 namespace Library_Management_System_v1._1.Controller
 {
@@ -182,8 +182,10 @@ namespace Library_Management_System_v1._1.Controller
         private Random rand = new Random(0);
         private double[] RandomWalk(int points = 5, double start = 100, double mult = 50)
         {
-            // return an array of difting random numbers
+            
             double[] values = new double[points];
+            Model.DatabaseService database = new Model.DatabaseService();
+            
             values[0] = start;
             for (int i = 1; i < points; i++)
                 values[i] = values[i - 1] + (rand.NextDouble() - .5) * mult;
@@ -204,27 +206,25 @@ namespace Library_Management_System_v1._1.Controller
             //    PointGeometry = null
             //});
 
-            int pointCount = 5;
+           
+
+            int pointCount = 7;
             double[] ys1 = RandomWalk(pointCount);
-            double[] ys2 = RandomWalk(pointCount);
+            //double[] ys2 = RandomWalk(pointCount);
 
             // create series and populate them with data
             var series1 = new LiveCharts.Wpf.ColumnSeries
             {
                 Title = "Group A",
-                Values = new LiveCharts.ChartValues<double>(ys1)
+                Values = new LiveCharts.ChartValues<double>{ 1, 1, 2, 3, 5 },
             };
 
-            var series2 = new LiveCharts.Wpf.ColumnSeries()
-            {
-                Title = "Group B",
-                Values = new LiveCharts.ChartValues<double>(ys2)
-            };
+           
 
             // display the series in the chart control
             chart.Series.Clear();
             chart.Series.Add(series1);
-            chart.Series.Add(series2);
+        
         }
 
         public void loadCategoriesPieChart(LiveCharts.WinForms.PieChart pieChart)
@@ -233,16 +233,42 @@ namespace Library_Management_System_v1._1.Controller
             Model.DatabaseService database = new Model.DatabaseService();
 
             LiveCharts.SeriesCollection piechartData = new LiveCharts.SeriesCollection();
-            System.Windows.Media.Brush[] colors = new System.Windows.Media.Brush[5];
-            colors.SetValue(System.Windows.Media.Brushes.Fuchsia , 0);
-            colors.SetValue(System.Windows.Media.Brushes.DarkViolet, 1);
-            colors.SetValue(System.Windows.Media.Brushes.BlueViolet, 2);
-            colors.SetValue(System.Windows.Media.Brushes.CornflowerBlue, 3);
-            colors.SetValue(System.Windows.Media.Brushes.Cyan, 4);
+            List<System.Windows.Media.Brush> colors = new List<System.Windows.Media.Brush>();
+            colors.Add(System.Windows.Media.Brushes.Fuchsia);
+            colors.Add(System.Windows.Media.Brushes.DarkViolet);
+            colors.Add(System.Windows.Media.Brushes.BlueViolet);
+            colors.Add(System.Windows.Media.Brushes.CornflowerBlue);
+            colors.Add(System.Windows.Media.Brushes.Cyan);
+            colors.Add(System.Windows.Media.Brushes.Azure);
+            colors.Add(System.Windows.Media.Brushes.Brown);
+            int i = 0;
+            try
+            {
 
-
-            setPiechartData(piechartData, labelPoint, colors);
-           
+                List<Model.PiechartDataModel> piechartItems = setPiechartData();
+                if (piechartItems.Count > 0)
+                {
+                    
+                    foreach(Model.PiechartDataModel mod in piechartItems)
+                    {
+                        
+                        piechartData.Add(
+                            new PieSeries
+                            {
+                                Title = mod.Name,
+                                Values = new ChartValues<double> {Math.Round(mod.Percentage,2)},
+                                DataLabels = true,
+                                LabelPoint = labelPoint,
+                                Fill = colors[i],
+                            }
+                        );
+                        i++;
+                    }
+                }
+            }catch(Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
 
             // Define the collection of Values to display in the Pie Chart
             pieChart.Series = piechartData;
@@ -251,68 +277,42 @@ namespace Library_Management_System_v1._1.Controller
             pieChart.LegendLocation = LegendLocation.Right;
         }
 
+       
+
         //===================Get Category Count ===================
 
         public int setBookCount()
         {
             int a = 0;
             Model.DatabaseService database = new Model.DatabaseService();
-            try
-            {
+            
                 database.Con.Open();
                 MySqlCommand cmd = new MySqlCommand("SELECT Count(*) FROM Book", database.Con);
                 a = Convert.ToInt32( cmd.ExecuteScalar().ToString());
-                
-            }
-            catch(Exception ex)
-            {
-
-            }
-            finally
-            {
                 database.Con.Close();
-            }
             return a;
         }
 
         
 
-        //==============
-        public void setPiechartData(LiveCharts.SeriesCollection piechartData, Func<ChartPoint, string> labelPoint, System.Windows.Media.Brush[] colors)
+        //============== set Piechart Data ==================================
+        public List<Model.PiechartDataModel> setPiechartData()
         {
             Model.DatabaseService database = new Model.DatabaseService();
-            try
-            {
-                int i = 0;
-                database.Con.Open();
-                MySqlDataReader sdr = database.readData("SELECT * FROM Category");
-                while (sdr.Read())
+            List<Model.PiechartDataModel> piechartItems = new List<Model.PiechartDataModel>();
+            database.Con.Open();
+            MySqlDataReader sdr = database.readData("SELECT * FROM Category");
+            while (sdr.Read())
+            {   
+                double bookCount = Convert.ToDouble(sdr["Book_Count"]);
+                if (bookCount > 0)
                 {
-                 piechartData.Add(
-                    new PieSeries
-                    {
-                        Title = sdr["Category_Name"].ToString(),
-                        Values = new ChartValues<double> {(Convert.ToInt32(sdr["Book_Count"])/setBookCount())*100},
-                        DataLabels = true,
-                        LabelPoint = labelPoint,
-                        Fill = colors[i],
-                        
-                    }
-
-                  );
-                  i = i + 1;
-                }
-                
-
+                    piechartItems.Add(new Model.PiechartDataModel(sdr["Category_Name"].ToString(), bookCount));
+                } 
             }
-            catch(Exception ex)
-            {
-
-            }
-            finally
-            {
-                database.Con.Close();
-            }
+            database.Con.Close();
+            return piechartItems;
         }
+
     }
 }

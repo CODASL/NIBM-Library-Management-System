@@ -294,5 +294,10 @@ namespace Library_Management_System_v1._1.View
             loadLibrarianActivities();
             lbl_notification_count.Text = adminDashboardCtrl.setNotificationCount();
         }
+
+        private void datePicker_AdminDashboard_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

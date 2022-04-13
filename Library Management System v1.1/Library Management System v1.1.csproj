@@ -155,6 +155,7 @@
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\MemberFee.cs" />
     <Compile Include="Model\Notification.cs" />
+    <Compile Include="Model\PiechartDataModel.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
