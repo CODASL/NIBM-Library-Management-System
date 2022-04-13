@@ -51,7 +51,7 @@ namespace Library_Management_System_v1._1.View
             lbl_notification_count.Text = adminDashboardCtrl.setNotificationCount();
             cmb_filterLibrarians.SelectedIndex = 0;
             Controller.AdminDashboardController.loadLibrariyanList(librariyanList, lblNumberOfLibrariyans);
-            loadLibrarianActivities();//Admin Dashboard only All Librarians Activities
+            loadLibrarianActivities();
             commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);
             lbl_categoryCount.Text = adminDashboardCtrl.setBookCount().ToString();
         }
@@ -157,12 +157,16 @@ namespace Library_Management_System_v1._1.View
         private void adminLogout_Click(object sender, EventArgs e)
         {
             int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_id + "'");
+            
             if (line > 0)
             {
                 Login lg = new Login();
                 this.Hide();
                 lg.Closed += (s, args) => this.Close();
                 lg.Show();
+                Controller.CommonController.setActivity("Logout");
+                Controller.LoginController.currentEmpType = null;
+                Controller.LoginController.currentUserId = null;
 
             }
             else
