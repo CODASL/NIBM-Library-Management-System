@@ -41,21 +41,26 @@ namespace Library_Management_System_v1._1.View
 
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
-            adminDashboardCtrl.loadCartChart(memberRegistrationChart);
+            Controller.AdminDashboardController.loadCartChart(memberRegistrationChart);
             adminDashboardCtrl.loadCategoriesPieChart(categoriesPieChart);
             timer1.Start();
             adminName.Text = adminDashboardCtrl.setName(emp_id);
             lblNumberOfLibrariyans.Text = librariyanList.Items.Count.ToString();
             lbl_welcomeTxt.Text = "Hello "+ adminDashboardCtrl.setName(emp_id).Split(' ')[0] + ", How're you today?";
-            lbl_AdminActivity_LastUpdate.Text = commonController.setUpdatedTime("Updated_Time", "Activity", "Emp_Id", " WHERE Emp_Id= '"+emp_id+"'");
+            lbl_AdminActivity_LastUpdate.Text = commonController.setUpdatedTime("Updated_Time", "Activity", "Id", " WHERE Emp_id= '"+emp_id+"'");
             lbl_notification_count.Text = adminDashboardCtrl.setNotificationCount();
             cmb_filterLibrarians.SelectedIndex = 0;
             Controller.AdminDashboardController.loadLibrariyanList(librariyanList, lblNumberOfLibrariyans);
             loadLibrarianActivities();
             commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);
             lbl_categoryCount.Text = adminDashboardCtrl.setBookCount().ToString();
+            lbl_memberCount.Text = Controller.AdminDashboardController.memberCount.ToString();
+            
+           
+            
         }
 
+        
 
         //============ form x or F4 click logout user ================================
         [Obsolete]
@@ -289,7 +294,7 @@ namespace Library_Management_System_v1._1.View
 
         private void btn_refreshAdminDashboard_Click(object sender, EventArgs e)
         {
-            adminDashboardCtrl.loadCartChart(memberRegistrationChart);
+            Controller.AdminDashboardController.loadCartChart(memberRegistrationChart);
             adminDashboardCtrl.loadCategoriesPieChart(categoriesPieChart);
             loadLibrarianActivities();
             lbl_notification_count.Text = adminDashboardCtrl.setNotificationCount();
@@ -297,7 +302,46 @@ namespace Library_Management_System_v1._1.View
 
         private void datePicker_AdminDashboard_ValueChanged(object sender, EventArgs e)
         {
+            loadLibrarianActivities();
+            for (int i = libActivityListAdmin.Items.Count - 1; i >= 0; i--)
+            {
+                var item = libActivityListAdmin.Items[i];
 
+                if (Convert.ToDateTime(item.SubItems[2].Text).Date.ToString().ToLower().Contains(datePicker_AdminDashboard.Value.Date.ToString().ToLower()))
+                {
+
+                }
+                else
+                {
+                    libActivityListAdmin.Items.Remove(item);
+                }
+            }
+            if (libActivityListAdmin.SelectedItems.Count == 1)
+            {
+                libActivityListAdmin.Focus();
+            }
+        }
+
+        private void datePicker_AdminActivities_ValueChanged(object sender, EventArgs e)
+        {
+            commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);
+            for (int i = listview_MyActivitiesAdmin.Items.Count - 1; i >= 0; i--)
+            {
+                var item = listview_MyActivitiesAdmin.Items[i];
+
+                if (Convert.ToDateTime(item.SubItems[1].Text).Date.ToString().ToLower().Contains(datePicker_AdminActivities.Value.Date.ToString().ToLower()))
+                {
+
+                }
+                else
+                {
+                    listview_MyActivitiesAdmin.Items.Remove(item);
+                }
+            }
+            if (listview_MyActivitiesAdmin.SelectedItems.Count == 1)
+            {
+                listview_MyActivitiesAdmin.Focus();
+            }
         }
     }
 }

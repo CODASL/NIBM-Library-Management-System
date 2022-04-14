@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BasselTech_CamCapture;
+using MessagingToolkit.QRCode.Codec;
+using MessagingToolkit.QRCode.Codec.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +19,7 @@ namespace Library_Management_System_v1._1
 {
     public partial class QRlogin : Form
     {
+
         FilterInfoCollection getdata;
         VideoCaptureDevice camera;
         Model.DatabaseService database = new Model.DatabaseService();
@@ -31,15 +35,14 @@ namespace Library_Management_System_v1._1
                 comboBox1.Items.Add(info.Name);
                 comboBox1.SelectedIndex = 0;
             }
-
-            
-
         }
 
         private void Camera_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             pictureBox1.Image = (Bitmap)eventArgs.Frame.Clone();
         }
+
+
 
         private void QRlogin_Load(object sender, EventArgs e)
         {
@@ -58,6 +61,7 @@ namespace Library_Management_System_v1._1
             }
 
         }
+
         private void load(object sender, EventArgs e)
         {
             this.Hide();
@@ -68,45 +72,52 @@ namespace Library_Management_System_v1._1
             }
         }
 
-
+        [Obsolete]
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (pictureBox1.Image != null)
             {
                 BarcodeReader br = new BarcodeReader();
 
-                        Result ans = br.Decode((Bitmap) pictureBox1.Image);
+                Result ans = br.Decode((Bitmap)pictureBox1.Image);
 
-                        if (ans != null)
+                if (ans != null)
+                {
+                    try
+                    {
+                        String emp_id;
+                        database.Con.Open();
+                        emp_id = ans.ToString();
+                        MySqlDataReader sdr = database.readData("Select * From AppUser where Emp_Id = '" + ans.ToString() + "'");
+                        sdr.Read();
+                        if (sdr.HasRows)
                         {
-                            String emp_id;
-                            database.Con.Open();
-                            emp_id = ans.ToString();
-                            MySqlDataReader sdr = database.readData("Select * From AppUser where Emp_Id = '" + ans.ToString() + "'");
-                            sdr.Read();
-                            if (sdr.HasRows)
-                            {
-                                int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 1 WHERE Emp_Id= '" + emp_id + "'");
-                                if (line > 0)
-                                {
-                                    database.Con.Close();
-                                    timer1.Stop();
-                                    camera.Stop();
-                                    var lg = new View.LibrariyanHome(emp_id);
-                                    lg.Shown += load;
-                                    lg.Show();
-                                }
-                            }
-                            else
+                            int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 1 WHERE Emp_Id= '" + emp_id + "'");
+                            if (line > 0)
                             {
                                 database.Con.Close();
-                                MessageBox.Show("user Does not exist ", MessageBoxIcon.Warning.ToString());
+                                timer1.Stop();
+                                camera.Stop();
+                                var lg = new View.LibrariyanHome(emp_id);
+                                lg.Shown += load;
+                                lg.Show();
                             }
                         }
+                        else
+                        {
+                            database.Con.Close();
+                            MessageBox.Show("user Does not exist ", MessageBoxIcon.Warning.ToString());
+                        }
                     }
-
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    
                 }
+            }
 
-
+        
+        }
     }
 }

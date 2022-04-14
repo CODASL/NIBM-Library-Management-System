@@ -47,6 +47,7 @@ namespace Library_Management_System_v1._1.View
             this.ClientSize = new System.Drawing.Size(686, 450);
             this.Controls.Add(this.notificationList);
             this.Name = "AdminNotifications";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Notifications";
             this.ResumeLayout(false);
 

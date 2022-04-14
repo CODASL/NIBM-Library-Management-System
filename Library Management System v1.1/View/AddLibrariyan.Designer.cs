@@ -307,6 +307,7 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.txt_LibID);
             this.Name = "AddLibrariyan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Librarian";
             this.Load += new System.EventHandler(this.AddLibrariyan_Load);
             this.ResumeLayout(false);

@@ -135,6 +135,7 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.cmb_libID);
             this.Controls.Add(this.materialLabel1);
             this.Name = "ResetPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Reset Password";
             this.ResumeLayout(false);
             this.PerformLayout();

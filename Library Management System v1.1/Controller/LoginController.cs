@@ -38,13 +38,16 @@ namespace Library_Management_System_v1._1.Controller
                             new View.AdminDashboard(emp_id).Show();
                             currentUserId = emp_id;
                             currentEmpType = emp_type;
-                            
+                            Controller.CommonController.setActivity("Logged In ");
+
                         }
                         else
                         {
                             new View.LibrariyanHome(emp_id).Show();
                             currentUserId = emp_id;
                             currentEmpType = emp_type;
+                            Controller.CommonController.setActivity("Logged In ");
+
                         }
                     }
                     else

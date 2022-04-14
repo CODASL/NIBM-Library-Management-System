@@ -399,6 +399,7 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.txt_bookIdAddBook);
             this.Name = "AddBook";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Book";
             this.Load += new System.EventHandler(this.AddBook_Load);
             this.qrPanelBookAdd.ResumeLayout(false);

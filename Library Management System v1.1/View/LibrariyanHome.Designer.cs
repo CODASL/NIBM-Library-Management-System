@@ -170,7 +170,6 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel36 = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_AccountingLastUpdate = new MaterialSkin.Controls.MaterialLabel();
             this.LibMyProfile = new System.Windows.Forms.TabPage();
-            this.btn_refreshLibrarianActivities = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel52 = new MaterialSkin.Controls.MaterialLabel();
             this.datetime_activityFilter = new MetroFramework.Controls.MetroDateTime();
             this.listview_librarianActivities = new MaterialSkin.Controls.MaterialListView();
@@ -179,6 +178,7 @@ namespace Library_Management_System_v1._1.View
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.materialLabel50 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard17 = new MaterialSkin.Controls.MaterialCard();
+            this.btn_refreshLibrarianActivities = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel48 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel49 = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_librarianProfilePhone = new MaterialSkin.Controls.MaterialLabel();
@@ -292,6 +292,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_refreshDashboard.TabIndex = 6;
             this.btn_refreshDashboard.Text = "materialFloatingActionButton8";
             this.btn_refreshDashboard.UseVisualStyleBackColor = false;
+            this.btn_refreshDashboard.Click += new System.EventHandler(this.btn_refreshDashboard_Click);
             // 
             // materialTextBox1
             // 
@@ -593,11 +594,11 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
+            this.materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
             this.materialLabel2.Location = new System.Drawing.Point(126, 65);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(57, 17);
+            this.materialLabel2.Size = new System.Drawing.Size(49, 14);
             this.materialLabel2.TabIndex = 2;
             this.materialLabel2.Text = "Librarian";
             // 
@@ -605,12 +606,12 @@ namespace Library_Management_System_v1._1.View
             // 
             this.lbl_librariyan_name.AutoSize = true;
             this.lbl_librariyan_name.Depth = 0;
-            this.lbl_librariyan_name.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lbl_librariyan_name.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            this.lbl_librariyan_name.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_librariyan_name.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
             this.lbl_librariyan_name.Location = new System.Drawing.Point(124, 38);
             this.lbl_librariyan_name.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbl_librariyan_name.Name = "lbl_librariyan_name";
-            this.lbl_librariyan_name.Size = new System.Drawing.Size(140, 24);
+            this.lbl_librariyan_name.Size = new System.Drawing.Size(112, 19);
             this.lbl_librariyan_name.TabIndex = 1;
             this.lbl_librariyan_name.Text = "Carolina James";
             // 
@@ -2293,23 +2294,6 @@ namespace Library_Management_System_v1._1.View
             this.LibMyProfile.Text = "My Profile";
             this.LibMyProfile.UseVisualStyleBackColor = true;
             // 
-            // btn_refreshLibrarianActivities
-            // 
-            this.btn_refreshLibrarianActivities.AnimateShowHideButton = false;
-            this.btn_refreshLibrarianActivities.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_refreshLibrarianActivities.Depth = 0;
-            this.btn_refreshLibrarianActivities.DrawShadows = true;
-            this.btn_refreshLibrarianActivities.Icon = ((System.Drawing.Image)(resources.GetObject("btn_refreshLibrarianActivities.Icon")));
-            this.btn_refreshLibrarianActivities.Image = ((System.Drawing.Image)(resources.GetObject("btn_refreshLibrarianActivities.Image")));
-            this.btn_refreshLibrarianActivities.Location = new System.Drawing.Point(864, 159);
-            this.btn_refreshLibrarianActivities.Mini = true;
-            this.btn_refreshLibrarianActivities.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btn_refreshLibrarianActivities.Name = "btn_refreshLibrarianActivities";
-            this.btn_refreshLibrarianActivities.Size = new System.Drawing.Size(40, 40);
-            this.btn_refreshLibrarianActivities.TabIndex = 17;
-            this.btn_refreshLibrarianActivities.UseVisualStyleBackColor = false;
-            this.btn_refreshLibrarianActivities.Click += new System.EventHandler(this.btn_refreshLibrarianActivities_Click);
-            // 
             // materialLabel52
             // 
             this.materialLabel52.AutoSize = true;
@@ -2417,6 +2401,23 @@ namespace Library_Management_System_v1._1.View
             this.materialCard17.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard17.Size = new System.Drawing.Size(921, 208);
             this.materialCard17.TabIndex = 0;
+            // 
+            // btn_refreshLibrarianActivities
+            // 
+            this.btn_refreshLibrarianActivities.AnimateShowHideButton = false;
+            this.btn_refreshLibrarianActivities.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_refreshLibrarianActivities.Depth = 0;
+            this.btn_refreshLibrarianActivities.DrawShadows = true;
+            this.btn_refreshLibrarianActivities.Icon = ((System.Drawing.Image)(resources.GetObject("btn_refreshLibrarianActivities.Icon")));
+            this.btn_refreshLibrarianActivities.Image = ((System.Drawing.Image)(resources.GetObject("btn_refreshLibrarianActivities.Image")));
+            this.btn_refreshLibrarianActivities.Location = new System.Drawing.Point(864, 159);
+            this.btn_refreshLibrarianActivities.Mini = true;
+            this.btn_refreshLibrarianActivities.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_refreshLibrarianActivities.Name = "btn_refreshLibrarianActivities";
+            this.btn_refreshLibrarianActivities.Size = new System.Drawing.Size(40, 40);
+            this.btn_refreshLibrarianActivities.TabIndex = 17;
+            this.btn_refreshLibrarianActivities.UseVisualStyleBackColor = false;
+            this.btn_refreshLibrarianActivities.Click += new System.EventHandler(this.btn_refreshLibrarianActivities_Click);
             // 
             // materialLabel48
             // 
