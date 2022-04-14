@@ -74,13 +74,13 @@ namespace Library_Management_System_v1._1.View
             this.libLastUpdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addLibrarianBtn = new MaterialSkin.Controls.MaterialButton();
             this.adminDashboardBtn = new System.Windows.Forms.TabPage();
-            this.btn_refreshAdminDashboard = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.libActivityListAdmin = new MaterialSkin.Controls.MaterialListView();
             this.LIDAdminDashboard = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ActivityAdminDashBoard = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.libActivityTimeAdminDashboard = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialCard13 = new MaterialSkin.Controls.MaterialCard();
             this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.lbl_memberCount = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.memberRegistrationChart = new LiveCharts.WinForms.CartesianChart();
             this.materialCard12 = new MaterialSkin.Controls.MaterialCard();
@@ -95,6 +95,7 @@ namespace Library_Management_System_v1._1.View
             this.todayDateAdmin = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_welcomeTxt = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.btn_refreshAdminDashboard = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.lbl_notification_count = new System.Windows.Forms.Label();
             this.adminNotifications = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.lbl_userTypeAdmin = new MaterialSkin.Controls.MaterialLabel();
@@ -102,7 +103,6 @@ namespace Library_Management_System_v1._1.View
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.adminAvatar = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
-            this.lbl_memberCount = new MaterialSkin.Controls.MaterialLabel();
             this.adminSettings.SuspendLayout();
             this.materialCard7.SuspendLayout();
             this.adminActivity.SuspendLayout();
@@ -769,24 +769,6 @@ namespace Library_Management_System_v1._1.View
             this.adminDashboardBtn.Text = "Dashboard";
             this.adminDashboardBtn.UseVisualStyleBackColor = true;
             // 
-            // btn_refreshAdminDashboard
-            // 
-            this.btn_refreshAdminDashboard.AnimateShowHideButton = false;
-            this.btn_refreshAdminDashboard.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_refreshAdminDashboard.Depth = 0;
-            this.btn_refreshAdminDashboard.DrawShadows = true;
-            this.btn_refreshAdminDashboard.Icon = ((System.Drawing.Image)(resources.GetObject("btn_refreshAdminDashboard.Icon")));
-            this.btn_refreshAdminDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btn_refreshAdminDashboard.Image")));
-            this.btn_refreshAdminDashboard.Location = new System.Drawing.Point(121, 195);
-            this.btn_refreshAdminDashboard.Mini = true;
-            this.btn_refreshAdminDashboard.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btn_refreshAdminDashboard.Name = "btn_refreshAdminDashboard";
-            this.btn_refreshAdminDashboard.Size = new System.Drawing.Size(40, 40);
-            this.btn_refreshAdminDashboard.TabIndex = 23;
-            this.btn_refreshAdminDashboard.Text = "materialFloatingActionButton8";
-            this.btn_refreshAdminDashboard.UseVisualStyleBackColor = false;
-            this.btn_refreshAdminDashboard.Click += new System.EventHandler(this.btn_refreshAdminDashboard_Click);
-            // 
             // libActivityListAdmin
             // 
             this.libActivityListAdmin.AutoSizeTable = false;
@@ -863,6 +845,18 @@ namespace Library_Management_System_v1._1.View
             this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton3.UseAccentColor = false;
             this.materialButton3.UseVisualStyleBackColor = true;
+            // 
+            // lbl_memberCount
+            // 
+            this.lbl_memberCount.AutoSize = true;
+            this.lbl_memberCount.Depth = 0;
+            this.lbl_memberCount.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_memberCount.Location = new System.Drawing.Point(703, 12);
+            this.lbl_memberCount.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_memberCount.Name = "lbl_memberCount";
+            this.lbl_memberCount.Size = new System.Drawing.Size(10, 19);
+            this.lbl_memberCount.TabIndex = 3;
+            this.lbl_memberCount.Text = "4";
             // 
             // materialLabel8
             // 
@@ -1053,6 +1047,24 @@ namespace Library_Management_System_v1._1.View
             this.materialCard1.Size = new System.Drawing.Size(175, 245);
             this.materialCard1.TabIndex = 1;
             // 
+            // btn_refreshAdminDashboard
+            // 
+            this.btn_refreshAdminDashboard.AnimateShowHideButton = false;
+            this.btn_refreshAdminDashboard.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_refreshAdminDashboard.Depth = 0;
+            this.btn_refreshAdminDashboard.DrawShadows = true;
+            this.btn_refreshAdminDashboard.Icon = ((System.Drawing.Image)(resources.GetObject("btn_refreshAdminDashboard.Icon")));
+            this.btn_refreshAdminDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btn_refreshAdminDashboard.Image")));
+            this.btn_refreshAdminDashboard.Location = new System.Drawing.Point(121, 195);
+            this.btn_refreshAdminDashboard.Mini = true;
+            this.btn_refreshAdminDashboard.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_refreshAdminDashboard.Name = "btn_refreshAdminDashboard";
+            this.btn_refreshAdminDashboard.Size = new System.Drawing.Size(40, 40);
+            this.btn_refreshAdminDashboard.TabIndex = 23;
+            this.btn_refreshAdminDashboard.Text = "materialFloatingActionButton8";
+            this.btn_refreshAdminDashboard.UseVisualStyleBackColor = false;
+            this.btn_refreshAdminDashboard.Click += new System.EventHandler(this.btn_refreshAdminDashboard_Click);
+            // 
             // lbl_notification_count
             // 
             this.lbl_notification_count.AutoSize = true;
@@ -1141,18 +1153,6 @@ namespace Library_Management_System_v1._1.View
             this.adminAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.adminAvatar.TabIndex = 0;
             this.adminAvatar.TabStop = false;
-            // 
-            // lbl_memberCount
-            // 
-            this.lbl_memberCount.AutoSize = true;
-            this.lbl_memberCount.Depth = 0;
-            this.lbl_memberCount.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lbl_memberCount.Location = new System.Drawing.Point(703, 12);
-            this.lbl_memberCount.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lbl_memberCount.Name = "lbl_memberCount";
-            this.lbl_memberCount.Size = new System.Drawing.Size(10, 19);
-            this.lbl_memberCount.TabIndex = 3;
-            this.lbl_memberCount.Text = "4";
             // 
             // AdminDashboard
             // 

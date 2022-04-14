@@ -41,6 +41,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_FineReason = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.btn_PayFine = new MaterialSkin.Controls.MaterialButton();
             this.btn_clearBtnAddFine = new MaterialSkin.Controls.MaterialButton();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -94,6 +95,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_fineId.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_fineId.Multiline = false;
             this.txt_fineId.Name = "txt_fineId";
+            this.txt_fineId.ReadOnly = true;
             this.txt_fineId.Size = new System.Drawing.Size(100, 36);
             this.txt_fineId.TabIndex = 6;
             this.txt_fineId.Text = "";
@@ -144,12 +146,12 @@ namespace Library_Management_System_v1._1.View
             this.txt_fineAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_fineAmount.Depth = 0;
             this.txt_fineAmount.Font = new System.Drawing.Font("Roboto", 12F);
-            this.txt_fineAmount.Location = new System.Drawing.Point(480, 153);
+            this.txt_fineAmount.Location = new System.Drawing.Point(513, 153);
             this.txt_fineAmount.MaxLength = 50;
             this.txt_fineAmount.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_fineAmount.Multiline = false;
             this.txt_fineAmount.Name = "txt_fineAmount";
-            this.txt_fineAmount.Size = new System.Drawing.Size(100, 36);
+            this.txt_fineAmount.Size = new System.Drawing.Size(67, 36);
             this.txt_fineAmount.TabIndex = 10;
             this.txt_fineAmount.Text = "";
             this.txt_fineAmount.UseTallSize = false;
@@ -218,11 +220,24 @@ namespace Library_Management_System_v1._1.View
             this.btn_clearBtnAddFine.UseAccentColor = false;
             this.btn_clearBtnAddFine.UseVisualStyleBackColor = true;
             // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel6.Location = new System.Drawing.Point(477, 165);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(30, 19);
+            this.materialLabel6.TabIndex = 17;
+            this.materialLabel6.Text = "LKR";
+            // 
             // AddfineWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(619, 425);
+            this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.btn_clearBtnAddFine);
             this.Controls.Add(this.btn_PayFine);
             this.Controls.Add(this.txt_FineReason);
@@ -258,5 +273,6 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialMultiLineTextBox txt_FineReason;
         private MaterialSkin.Controls.MaterialButton btn_PayFine;
         private MaterialSkin.Controls.MaterialButton btn_clearBtnAddFine;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
     }
 }

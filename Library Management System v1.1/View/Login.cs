@@ -100,6 +100,7 @@ namespace Library_Management_System_v1._1
                 finally
                 {
                     progressBar_LoginProgress.Value = 0;
+                    database.Con.Close();
                 }
 
             }
