@@ -13,12 +13,14 @@ using MaterialSkin.Controls;
 using System.Windows.Forms;
 using System.Windows;
 using System.Reflection;
+using Axis = LiveCharts.Wpf.Axis;
 
 namespace Library_Management_System_v1._1.Controller
 {
     class AdminDashboardController
     {
         static Model.DatabaseService database = new Model.DatabaseService();
+        static public int memberCount = 0;
 
         public static void loadLibrariyanList(MaterialListView listView , MaterialLabel NOF)
         {
@@ -179,51 +181,80 @@ namespace Library_Management_System_v1._1.Controller
 
 
         //=========================Chart Codes========================================
-        private Random rand = new Random(0);
-        private double[] RandomWalk(int points = 5, double start = 100, double mult = 50)
+        
+        public static List<Model.BarChartModel> getBarchartData()
         {
-            
-            double[] values = new double[points];
-            Model.DatabaseService database = new Model.DatabaseService();
-            
-            values[0] = start;
-            for (int i = 1; i < points; i++)
-                values[i] = values[i - 1] + (rand.NextDouble() - .5) * mult;
-            return values;
-        }
-
-
-        public void loadCartChart(LiveCharts.WinForms.CartesianChart chart)
-        {
-            //chart.Series.Add(new LineSeries
-            //{
-            //    Values = new ChartValues { 3, 4, 6, 3, 2, 6 },
-            //    StrokeThickness = 4,
-            //    StrokeDashArray = new System.Windows.Media.DoubleCollection(50),
-            //    Stroke = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(107, 185, 79)),
-            //    Fill = System.Windows.Media.Brushes.Transparent,
-            //    LineSmoothness = 0,
-            //    PointGeometry = null
-            //});
-
-           
-
-            int pointCount = 7;
-            double[] ys1 = RandomWalk(pointCount);
-            //double[] ys2 = RandomWalk(pointCount);
-
-            // create series and populate them with data
-            var series1 = new LiveCharts.Wpf.ColumnSeries
+            List<Model.BarChartModel> barchartData = new List<Model.BarChartModel>();
+            database.Con.Open();
+            MySqlDataReader sdr = database.readData("SELECT Count(*), DAY(Date_Added) FROM Member WHERE Month(Date_Added) = '"+DateTime.Now.Month+"' GROUP BY DAY(Date_Added)");
+            while (sdr.Read())
             {
-                Title = "Group A",
-                Values = new LiveCharts.ChartValues<double>{ 1, 1, 2, 3, 5 },
-            };
-
+                if (sdr.HasRows)
+                {
+                    int AxisXDay = Convert.ToInt32(sdr["Count(*)"]);
+                    int AxisYMemberCount = Convert.ToInt32( sdr["DAY(Date_Added)"]);
+                    barchartData.Add(new Model.BarChartModel(AxisXDay, AxisYMemberCount ));
+                    memberCount = memberCount + AxisXDay;
+                }
+            }
+            database.Con.Close();
+            return barchartData;
+        }
+        public static void  loadCartChart(LiveCharts.WinForms.CartesianChart chart)
+        {
            
-
-            // display the series in the chart control
-            chart.Series.Clear();
-            chart.Series.Add(series1);
+            try
+            {
+                List<Model.BarChartModel> barchartData = getBarchartData();
+                //Create columns chart
+                ColumnSeries col = new ColumnSeries()
+                {
+                    Title = "Member Count",
+                    
+                    DataLabels = true,
+                    Values = new ChartValues<int>(),
+                    LabelPoint = point => point.Y.ToString()
+                    
+                };
+                Axis ax = new Axis()
+                {
+                    Separator = new Separator()
+                    {
+                        Step = 1,
+                        IsEnabled = false
+                        
+                    }
+                };
+                ax.Labels = new List<string>();
+                if (barchartData.Count > 0)
+                {
+                    //Add data to your chart
+                    foreach (var x in barchartData)
+                    {
+                        col.Values.Add(x.ValueX);
+                        ax.Labels.Add(x.ValueY.ToString());
+                    }
+                    chart.Series.Clear();
+                    chart.AxisX.Clear();
+                    chart.AxisY.Clear();
+                    chart.Series.Add(col);
+                    chart.AxisX.Add(ax);
+                    chart.AxisY.Add(new Axis
+                    {
+                        LabelFormatter = value => value.ToString(),
+                        Separator = new Separator()
+                    });
+                }
+                else
+                {
+                    Console.WriteLine("No Data");
+                }
+                
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                database.Con.Close();
+            }
         
         }
 
