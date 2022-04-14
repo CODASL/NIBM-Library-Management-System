@@ -317,10 +317,10 @@ namespace Library_Management_System_v1._1.Controller
             int a = 0;
             Model.DatabaseService database = new Model.DatabaseService();
             
-                database.Con.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT Count(*) FROM Book", database.Con);
-                a = Convert.ToInt32( cmd.ExecuteScalar().ToString());
-                database.Con.Close();
+             database.Con.Open();
+             MySqlCommand cmd = new MySqlCommand("SELECT Count(*) FROM Book", database.Con);
+             a = Convert.ToInt32( cmd.ExecuteScalar().ToString());
+             database.Con.Close();
             return a;
         }
 

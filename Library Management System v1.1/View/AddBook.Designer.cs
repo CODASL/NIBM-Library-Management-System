@@ -76,6 +76,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_bookIdAddBook.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_bookIdAddBook.Multiline = false;
             this.txt_bookIdAddBook.Name = "txt_bookIdAddBook";
+            this.txt_bookIdAddBook.ReadOnly = true;
             this.txt_bookIdAddBook.Size = new System.Drawing.Size(100, 36);
             this.txt_bookIdAddBook.TabIndex = 2;
             this.txt_bookIdAddBook.Text = "";
@@ -196,6 +197,7 @@ namespace Library_Management_System_v1._1.View
             this.cmb_bookCategories.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmb_bookCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmb_bookCategories.FormattingEnabled = true;
+            this.cmb_bookCategories.Hint = "Choose Category";
             this.cmb_bookCategories.IntegralHeight = false;
             this.cmb_bookCategories.ItemHeight = 29;
             this.cmb_bookCategories.Location = new System.Drawing.Point(158, 218);
@@ -218,6 +220,7 @@ namespace Library_Management_System_v1._1.View
             this.cmb_BookAuthors.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmb_BookAuthors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmb_BookAuthors.FormattingEnabled = true;
+            this.cmb_BookAuthors.Hint = "Choose Author";
             this.cmb_BookAuthors.IntegralHeight = false;
             this.cmb_BookAuthors.ItemHeight = 29;
             this.cmb_BookAuthors.Location = new System.Drawing.Point(158, 270);
@@ -297,6 +300,7 @@ namespace Library_Management_System_v1._1.View
             this.cmb_bookRacks.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmb_bookRacks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmb_bookRacks.FormattingEnabled = true;
+            this.cmb_bookRacks.Hint = "Choose Rack No";
             this.cmb_bookRacks.IntegralHeight = false;
             this.cmb_bookRacks.ItemHeight = 29;
             this.cmb_bookRacks.Location = new System.Drawing.Point(158, 320);

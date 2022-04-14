@@ -66,33 +66,42 @@ namespace Library_Management_System_v1._1.View
         [Obsolete]
         private void Form_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing)
+            try
             {
-                int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_id + "'");
-                if (line > 0)
+                if (e.CloseReason == CloseReason.UserClosing)
                 {
-                    this.Hide();
-                    Login lg = new Login();
-                    lg.Closed += (s, args) => this.Close();
+                    int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_id + "'");
+                    if (line > 0)
+                    {
+                        this.Hide();
+                        Login lg = new Login();
+                        lg.Closed += (s, args) => this.Close();
+                        Controller.CommonController.setActivity("Logout");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Application Cannot Logout ", emp_id);
+                    }
                 }
-                else
+                if (e.CloseReason == CloseReason.WindowsShutDown)
                 {
-                    MessageBox.Show("Application Cannot Logout ", emp_id);
+                    int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_id + "'");
+                    if (line > 0)
+                    {
+                        this.Hide();
+                        Login lg = new Login();
+                        lg.Closed += (s, args) => this.Close();
+                        Controller.CommonController.setActivity("Logout");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Application Cannot Logout ", emp_id);
+                    }
                 }
-            }
-            if (e.CloseReason == CloseReason.WindowsShutDown)
+            
+            }catch(Exception ex)
             {
-                int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_id + "'");
-                if (line > 0)
-                {
-                    this.Hide();
-                    Login lg = new Login();
-                    lg.Closed += (s, args) => this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Application Cannot Logout ", emp_id);
-                }
+                MessageBox.Show(ex.Message);
             }
         }
 

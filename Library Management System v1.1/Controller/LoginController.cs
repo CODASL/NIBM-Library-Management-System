@@ -30,12 +30,12 @@ namespace Library_Management_System_v1._1.Controller
                     int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 1 Where Emp_Id = '" + emp_id + "'");
                     if (line > 0)
                     {
+
                         form.Hide();
-                        
                         if (emp_type == "Admin")
                         {
                             
-                            new View.AdminDashboard(emp_id).Show();
+                            new View.AdminDashboard(emp_id).ShowDialog();
                             currentUserId = emp_id;
                             currentEmpType = emp_type;
                             Controller.CommonController.setActivity("Logged In ");

@@ -609,7 +609,7 @@ namespace Library_Management_System_v1._1.View
             
         }
 
-        //========Librarian Logout ==============================================
+        //=============================Librarian Logout ==============================================
         [Obsolete]
         private void btn_librariyanLogout_Click(object sender, EventArgs e)
         {
@@ -629,22 +629,21 @@ namespace Library_Management_System_v1._1.View
             }
         }
 
-        //====Refresh every second =======================================
+        //============================Refresh every second =======================================
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lbl_librarianDateTime.Text = DateTime.Now.ToString("yyy-MM-dd ") + DateTime.Now.ToString(" h:mm:ss tt");
+            lbl_librarianDateTime.Text = DateTime.Now.ToString("yyy-MM-dd ") + DateTime.Now.ToString("h:mm:ss tt");
         }
 
         //===============Librarian Home Dashboard Datetimepicker Controller ==============================
         private void dateTimeLibrarian_ValueChanged(object sender, EventArgs e)
         {
-
             lbl_BookIssuedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + 1 + "'").ToString();
             lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + 0 + "'").ToString();
         }
 
 
-        //================Update Member Btn===================================================
+        //============================Update Member Btn===================================================
         private void btn_updateMember_Click(object sender, EventArgs e)
         {
             try
@@ -711,6 +710,7 @@ namespace Library_Management_System_v1._1.View
             }
         }
 
+        //====================Update Books Button ====================================
         private void btn_updateBook_Click(object sender, EventArgs e)
         {
             if (LibBookList.SelectedItems.Count > 0)
@@ -759,7 +759,7 @@ namespace Library_Management_System_v1._1.View
                     }
                     catch (MySqlException ex)
                     {
-                        MessageBox.Show(ex.ToString());
+                        MessageBox.Show(ex.Message);
                     }
                 }
                 else
@@ -774,11 +774,14 @@ namespace Library_Management_System_v1._1.View
             }
         }
 
+        //=================Refresh books =================================
         private void btn_refreshBooks_Click(object sender, EventArgs e)
         {
             loadBooks();
         }
 
+
+        //===================Search Members ======================================
         private void txt_memberSearch_TextChanged(object sender, EventArgs e)
         {
             if (txt_memberSearch.Text != "")
@@ -791,6 +794,8 @@ namespace Library_Management_System_v1._1.View
             }
         }
 
+
+        //============== Search Books ============================================
         private void txt_bookSearch_TextChanged(object sender, EventArgs e)
         {
             if (txt_bookSearch.Text != "")
@@ -802,6 +807,8 @@ namespace Library_Management_System_v1._1.View
                 loadBooks();
             }
         }
+
+        //================== Search Books ======================================
 
         private void txt_searchBookIssue_TextChanged(object sender, EventArgs e)
         {
@@ -815,21 +822,25 @@ namespace Library_Management_System_v1._1.View
             }
         }
 
+        //==========Refresh Members ===================================
         private void btn_refreshMember_Click(object sender, EventArgs e)
         {
             loadMembers();
         }
 
+        //=======Refresh Book Issues ======================================
         private void btn_refreshBookIssues_Click(object sender, EventArgs e)
         {
             loadBookIssues();
         }
 
+        //=======Refresh Accounting ========================================
         private void btn_refreshAccounting_Click(object sender, EventArgs e)
         {
             loadAccounting();
         }
 
+        //================Search Accounting ==============================
         private void txt_searchAccounting_TextChanged(object sender, EventArgs e)
         {
             if (txt_searchAccounting.Text != "")
@@ -842,6 +853,7 @@ namespace Library_Management_System_v1._1.View
             }
         }
 
+        //=============Filter Activity By date ========================================
         private void datetime_activityFilter_ValueChanged(object sender, EventArgs e)
         {
             commonController.loadActivities(listview_librarianActivities, emp_Id);
@@ -865,11 +877,13 @@ namespace Library_Management_System_v1._1.View
             }
         }
 
+        //==================Refresh Librarian Activities =================================
         private void btn_refreshLibrarianActivities_Click(object sender, EventArgs e)
         {
             commonController.loadActivities(listview_librarianActivities, emp_Id);
         }
 
+        //==================Refresh Book Availibility =================================
         private void btn_refreshDashboard_Click(object sender, EventArgs e)
         {
             loadBookAvailability();

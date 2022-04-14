@@ -133,7 +133,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_Maddress.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_Maddress.Multiline = false;
             this.txt_Maddress.Name = "txt_Maddress";
-            this.txt_Maddress.Size = new System.Drawing.Size(710, 36);
+            this.txt_Maddress.Size = new System.Drawing.Size(340, 36);
             this.txt_Maddress.TabIndex = 2;
             this.txt_Maddress.Text = "";
             this.txt_Maddress.UseTallSize = false;
@@ -231,7 +231,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_MemberClear.DrawShadows = true;
             this.btn_MemberClear.HighEmphasis = true;
             this.btn_MemberClear.Icon = null;
-            this.btn_MemberClear.Location = new System.Drawing.Point(703, 615);
+            this.btn_MemberClear.Location = new System.Drawing.Point(202, 615);
             this.btn_MemberClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_MemberClear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_MemberClear.Name = "btn_MemberClear";
@@ -251,7 +251,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_AddMember.DrawShadows = true;
             this.btn_AddMember.HighEmphasis = true;
             this.btn_AddMember.Icon = null;
-            this.btn_AddMember.Location = new System.Drawing.Point(537, 615);
+            this.btn_AddMember.Location = new System.Drawing.Point(21, 615);
             this.btn_AddMember.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_AddMember.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_AddMember.Name = "btn_AddMember";
@@ -314,7 +314,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_GAddress.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_GAddress.Multiline = false;
             this.txt_GAddress.Name = "txt_GAddress";
-            this.txt_GAddress.Size = new System.Drawing.Size(710, 36);
+            this.txt_GAddress.Size = new System.Drawing.Size(339, 36);
             this.txt_GAddress.TabIndex = 8;
             this.txt_GAddress.Text = "";
             this.txt_GAddress.UseTallSize = false;
@@ -437,7 +437,7 @@ namespace Library_Management_System_v1._1.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 677);
+            this.ClientSize = new System.Drawing.Size(554, 677);
             this.Controls.Add(this.cmb_GCountryCodes);
             this.Controls.Add(this.txt_GPhone);
             this.Controls.Add(this.cmb_Mcountrycodes);

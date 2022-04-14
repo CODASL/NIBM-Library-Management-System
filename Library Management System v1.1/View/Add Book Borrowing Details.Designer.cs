@@ -304,13 +304,14 @@ namespace Library_Management_System_v1._1.View
             this.cmb_ISBN.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmb_ISBN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmb_ISBN.FormattingEnabled = true;
+            this.cmb_ISBN.Hint = "Choose ISBN";
             this.cmb_ISBN.IntegralHeight = false;
             this.cmb_ISBN.ItemHeight = 29;
             this.cmb_ISBN.Location = new System.Drawing.Point(156, 140);
             this.cmb_ISBN.MaxDropDownItems = 4;
             this.cmb_ISBN.MouseState = MaterialSkin.MouseState.OUT;
             this.cmb_ISBN.Name = "cmb_ISBN";
-            this.cmb_ISBN.Size = new System.Drawing.Size(121, 35);
+            this.cmb_ISBN.Size = new System.Drawing.Size(140, 35);
             this.cmb_ISBN.TabIndex = 24;
             this.cmb_ISBN.UseTallSize = false;
             this.cmb_ISBN.SelectedIndexChanged += new System.EventHandler(this.cmb_ISBN_SelectedIndexChanged);
@@ -327,13 +328,14 @@ namespace Library_Management_System_v1._1.View
             this.cmb_MemberId.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmb_MemberId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmb_MemberId.FormattingEnabled = true;
+            this.cmb_MemberId.Hint = "Choose MID";
             this.cmb_MemberId.IntegralHeight = false;
             this.cmb_MemberId.ItemHeight = 29;
             this.cmb_MemberId.Location = new System.Drawing.Point(156, 260);
             this.cmb_MemberId.MaxDropDownItems = 4;
             this.cmb_MemberId.MouseState = MaterialSkin.MouseState.OUT;
             this.cmb_MemberId.Name = "cmb_MemberId";
-            this.cmb_MemberId.Size = new System.Drawing.Size(121, 35);
+            this.cmb_MemberId.Size = new System.Drawing.Size(140, 35);
             this.cmb_MemberId.TabIndex = 25;
             this.cmb_MemberId.UseTallSize = false;
             this.cmb_MemberId.SelectedIndexChanged += new System.EventHandler(this.cmb_MemberId_SelectedIndexChanged);
@@ -366,7 +368,7 @@ namespace Library_Management_System_v1._1.View
             this.isbnQrBtnissueBook.DrawShadows = true;
             this.isbnQrBtnissueBook.HighEmphasis = true;
             this.isbnQrBtnissueBook.Icon = ((System.Drawing.Image)(resources.GetObject("isbnQrBtnissueBook.Icon")));
-            this.isbnQrBtnissueBook.Location = new System.Drawing.Point(284, 140);
+            this.isbnQrBtnissueBook.Location = new System.Drawing.Point(309, 140);
             this.isbnQrBtnissueBook.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.isbnQrBtnissueBook.MouseState = MaterialSkin.MouseState.HOVER;
             this.isbnQrBtnissueBook.Name = "isbnQrBtnissueBook";
@@ -387,6 +389,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_issuingLibId.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_issuingLibId.Multiline = false;
             this.txt_issuingLibId.Name = "txt_issuingLibId";
+            this.txt_issuingLibId.ReadOnly = true;
             this.txt_issuingLibId.Size = new System.Drawing.Size(121, 36);
             this.txt_issuingLibId.TabIndex = 37;
             this.txt_issuingLibId.Text = "";
@@ -400,7 +403,7 @@ namespace Library_Management_System_v1._1.View
             this.memberIdbtnIssueBook.DrawShadows = true;
             this.memberIdbtnIssueBook.HighEmphasis = true;
             this.memberIdbtnIssueBook.Icon = ((System.Drawing.Image)(resources.GetObject("memberIdbtnIssueBook.Icon")));
-            this.memberIdbtnIssueBook.Location = new System.Drawing.Point(285, 259);
+            this.memberIdbtnIssueBook.Location = new System.Drawing.Point(309, 260);
             this.memberIdbtnIssueBook.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.memberIdbtnIssueBook.MouseState = MaterialSkin.MouseState.HOVER;
             this.memberIdbtnIssueBook.Name = "memberIdbtnIssueBook";
