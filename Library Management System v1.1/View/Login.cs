@@ -22,9 +22,6 @@ namespace Library_Management_System_v1._1
         Model.DatabaseService database = new Model.DatabaseService();
         QRlogin qr = new QRlogin();
 
-        
-       
-
         [Obsolete]
         public Login()
         {
@@ -56,8 +53,6 @@ namespace Library_Management_System_v1._1
         }
 
 
-
-
         //====================Login Button Event=======================================================
         [Obsolete]
         private void btnlogin_Click(object sender, EventArgs e)
@@ -72,7 +67,6 @@ namespace Library_Management_System_v1._1
             else {
                 try
                 {
-                    
 
                     progressBar_LoginProgress.Value += 20;
                     database.Con.Open();
