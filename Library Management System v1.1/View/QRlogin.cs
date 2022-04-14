@@ -20,8 +20,7 @@ namespace Library_Management_System_v1._1
         VideoCaptureDevice camera;
         Model.DatabaseService database = new Model.DatabaseService();
         Controller.LoginController loginController = new Controller.LoginController();
-        
-        
+
 
         public QRlogin()
         {
@@ -32,7 +31,9 @@ namespace Library_Management_System_v1._1
                 comboBox1.Items.Add(info.Name);
                 comboBox1.SelectedIndex = 0;
             }
+
             
+
         }
 
         private void Camera_NewFrame(object sender, NewFrameEventArgs eventArgs)
@@ -73,39 +74,39 @@ namespace Library_Management_System_v1._1
             if (pictureBox1.Image != null)
             {
                 BarcodeReader br = new BarcodeReader();
-                Result ans = br.Decode((Bitmap)pictureBox1.Image);
 
-                if (ans != null)
-                {
-                    String emp_id;
-                    database.Con.Open();
-                    emp_id = ans.ToString();
-                    MySqlDataReader sdr = database.readData("Select * From AppUser where Emp_Id = '" + ans.ToString() + "'");
-                    sdr.Read();
-                    if (sdr.HasRows)
-                    {
-                        int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 1 WHERE Emp_Id= '" + emp_id + "'");
-                        if (line > 0)
+                        Result ans = br.Decode((Bitmap) pictureBox1.Image);
+
+                        if (ans != null)
                         {
-                            database.Con.Close();
-                            timer1.Stop();
-                            camera.Stop();
-                            var lg = new View.LibrariyanHome(emp_id);
-                            lg.Shown += load;
-                            lg.Show();
+                            String emp_id;
+                            database.Con.Open();
+                            emp_id = ans.ToString();
+                            MySqlDataReader sdr = database.readData("Select * From AppUser where Emp_Id = '" + ans.ToString() + "'");
+                            sdr.Read();
+                            if (sdr.HasRows)
+                            {
+                                int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 1 WHERE Emp_Id= '" + emp_id + "'");
+                                if (line > 0)
+                                {
+                                    database.Con.Close();
+                                    timer1.Stop();
+                                    camera.Stop();
+                                    var lg = new View.LibrariyanHome(emp_id);
+                                    lg.Shown += load;
+                                    lg.Show();
+                                }
+                            }
+                            else
+                            {
+                                database.Con.Close();
+                                MessageBox.Show("user Does not exist ", MessageBoxIcon.Warning.ToString());
+                            }
                         }
                     }
-                    else
-                    {
-                        database.Con.Close();
-                        MessageBox.Show("user Does not exist ", MessageBoxIcon.Warning.ToString());
-                    }
-                    
 
                 }
 
-            }
-        }
 
     }
 }
