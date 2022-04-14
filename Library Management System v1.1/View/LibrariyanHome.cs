@@ -126,34 +126,43 @@ namespace Library_Management_System_v1._1.View
         [Obsolete]
         private void Form_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing)
+            try
             {
-                int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_Id + "'");
-                if (line > 0)
+                if (e.CloseReason == CloseReason.UserClosing)
                 {
-                    this.Hide();
-                    Login lg = new Login();
-                    lg.Closed += (s, args) => this.Close();
+                    int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_Id + "'");
+                    if (line > 0)
+                    {
+                        this.Hide();
+                        Login lg = new Login();
+                        lg.Closed += (s, args) => this.Close();
+                        Controller.CommonController.setActivity("Logged out ");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Application Cannot Logout ", emp_Id);
+                    }
                 }
-                else
+                if (e.CloseReason == CloseReason.WindowsShutDown)
                 {
-                    MessageBox.Show("Application Cannot Logout ", emp_Id);
+                    int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_Id + "'");
+                    if (line > 0)
+                    {
+                        this.Hide();
+                        Login lg = new Login();
+                        lg.Closed += (s, args) => this.Close();
+                        Controller.CommonController.setActivity("Logged out ");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Application Cannot Logout ", emp_Id);
+                    }
                 }
-            }
-            if (e.CloseReason == CloseReason.WindowsShutDown)
+            }catch(Exception ex)
             {
-                int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 0 WHERE Emp_Id= '" + emp_Id + "'");
-                if (line > 0)
-                {
-                    this.Hide();
-                    Login lg = new Login();
-                    lg.Closed += (s, args) => this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Application Cannot Logout ", emp_Id);
-                }
+                MessageBox.Show(ex.Message);
             }
+            
 
         }
         //=====================Load Member Fee table to Accounting List view =====================================
@@ -497,7 +506,7 @@ namespace Library_Management_System_v1._1.View
                                             int row1 = DB.updateData("UPDATE Book SET Availability = 1 WHERE BID = '" + BID + "'");
                                             if (row1 > 0)
                                             {
-                                                Controller.CommonController.setActivity("Handeled book returning from " + ID );
+                                                Controller.CommonController.setActivity("Handeled book returning from Book issue Id =" + ID );
                                                 MessageBox.Show("Book Returned successfully");
                                             }
                                             else
@@ -611,6 +620,7 @@ namespace Library_Management_System_v1._1.View
                 Login lg = new Login();
                 lg.Closed += (s, args) => this.Close();
                 lg.Show();
+                Controller.CommonController.setActivity("Logout");
 
             }
             else
@@ -834,11 +844,13 @@ namespace Library_Management_System_v1._1.View
 
         private void datetime_activityFilter_ValueChanged(object sender, EventArgs e)
         {
+            commonController.loadActivities(listview_librarianActivities, emp_Id);
+
             for (int i = listview_librarianActivities.Items.Count - 1; i >= 0; i--)
             {
                 var item = listview_librarianActivities.Items[i];
 
-                if (item.SubItems[1].Text.ToLower().Contains(datetime_activityFilter.Value.ToString("yyyy-MM-dd HH:mm:ss").ToLower()))
+                if (Convert.ToDateTime(item.SubItems[1].Text).Date.ToString().ToLower().Contains(datetime_activityFilter.Value.Date.ToString().ToLower()))
                 {
 
                 }
@@ -856,6 +868,11 @@ namespace Library_Management_System_v1._1.View
         private void btn_refreshLibrarianActivities_Click(object sender, EventArgs e)
         {
             commonController.loadActivities(listview_librarianActivities, emp_Id);
+        }
+
+        private void btn_refreshDashboard_Click(object sender, EventArgs e)
+        {
+            loadBookAvailability();
         }
     }
 }

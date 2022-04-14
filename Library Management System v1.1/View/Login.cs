@@ -20,12 +20,16 @@ namespace Library_Management_System_v1._1
     {
         Controller.LoginController loginController = new Controller.LoginController();
         Model.DatabaseService database = new Model.DatabaseService();
+        QRlogin qr = new QRlogin();
+
+        
        
 
         [Obsolete]
         public Login()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            btnretry.Hide();
         }
 
 
@@ -41,6 +45,7 @@ namespace Library_Management_System_v1._1
             metroPanel1.Controls.Add(f);
             metroPanel1.Tag = f;
             f.Show();
+            
         }
 
 
@@ -107,8 +112,8 @@ namespace Library_Management_System_v1._1
             txtPass.Hide();
             txtmail.Hide();
             btnlogin.Hide();
-            Loadform(new QRlogin());
-            
+            btnretry.Show();
+            Loadform(new QRlogin());  
         }
 
 
@@ -144,6 +149,18 @@ namespace Library_Management_System_v1._1
         {
             if (e.KeyChar == (char)13)
                 btnlogin.PerformClick();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnretry_Click(object sender, EventArgs e)
+        {
+            
+           
+
         }
     }
 }

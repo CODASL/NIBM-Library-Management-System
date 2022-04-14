@@ -463,6 +463,7 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.txt_mid);
             this.Name = "AddMember";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Member";
             this.Load += new System.EventHandler(this.AddMember_Load);
             this.ResumeLayout(false);

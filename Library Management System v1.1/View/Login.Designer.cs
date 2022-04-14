@@ -29,6 +29,7 @@
         [System.Obsolete]
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.bluebackround = new System.Windows.Forms.Panel();
             this.lbl_LoginProgress = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.piclogo = new System.Windows.Forms.PictureBox();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.btnretry = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnQR = new Library_Management_System_v1._1.View.Custom_Controls.RJButton();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.resetBtn = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bluebackround.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).BeginInit();
             this.materialCard1.SuspendLayout();
@@ -148,11 +151,12 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.btnretry);
             this.materialCard1.Controls.Add(this.pictureBox1);
             this.materialCard1.Controls.Add(this.btnQR);
             this.materialCard1.Controls.Add(this.label6);
-            this.materialCard1.Controls.Add(this.metroPanel1);
             this.materialCard1.Controls.Add(this.resetBtn);
+            this.materialCard1.Controls.Add(this.metroPanel1);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard1.Location = new System.Drawing.Point(292, 23);
@@ -162,6 +166,19 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(343, 450);
             this.materialCard1.TabIndex = 26;
+            // 
+            // btnretry
+            // 
+            this.btnretry.FlatAppearance.BorderSize = 0;
+            this.btnretry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnretry.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnretry.Location = new System.Drawing.Point(113, 391);
+            this.btnretry.Name = "btnretry";
+            this.btnretry.Size = new System.Drawing.Size(109, 23);
+            this.btnretry.TabIndex = 30;
+            this.btnretry.Text = "Retry Login";
+            this.btnretry.UseVisualStyleBackColor = true;
+            this.btnretry.Click += new System.EventHandler(this.btnretry_Click);
             // 
             // pictureBox1
             // 
@@ -190,7 +207,7 @@
             this.btnQR.Location = new System.Drawing.Point(46, 342);
             this.btnQR.Name = "btnQR";
             this.btnQR.Size = new System.Drawing.Size(251, 40);
-            this.btnQR.TabIndex = 28;
+            this.btnQR.TabIndex = 3;
             this.btnQR.Text = "Login with QR";
             this.btnQR.TextColor = System.Drawing.Color.Black;
             this.btnQR.UseVisualStyleBackColor = false;
@@ -203,18 +220,18 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(100, 58);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(160, 18);
+            this.label6.Size = new System.Drawing.Size(165, 18);
             this.label6.TabIndex = 26;
             this.label6.Text = "Hello Welcome Again !";
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.btnlogin);
             this.metroPanel1.Controls.Add(this.passwordShowHide);
             this.metroPanel1.Controls.Add(this.txtPass);
-            this.metroPanel1.Controls.Add(this.txtmail);
-            this.metroPanel1.Controls.Add(this.btnlogin);
             this.metroPanel1.Controls.Add(this.label2);
             this.metroPanel1.Controls.Add(this.label1);
+            this.metroPanel1.Controls.Add(this.txtmail);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
@@ -254,7 +271,7 @@
             this.txtPass.Padding = new System.Windows.Forms.Padding(7);
             this.txtPass.PasswordChar = true;
             this.txtPass.Size = new System.Drawing.Size(251, 33);
-            this.txtPass.TabIndex = 28;
+            this.txtPass.TabIndex = 1;
             this.txtPass.UnderlinedStyle = true;
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
@@ -275,7 +292,7 @@
             this.txtmail.Padding = new System.Windows.Forms.Padding(7);
             this.txtmail.PasswordChar = false;
             this.txtmail.Size = new System.Drawing.Size(251, 33);
-            this.txtmail.TabIndex = 15;
+            this.txtmail.TabIndex = 0;
             this.txtmail.UnderlinedStyle = true;
             this.txtmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmail_KeyPress);
             // 
@@ -296,7 +313,7 @@
             this.btnlogin.Location = new System.Drawing.Point(0, 180);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(251, 40);
-            this.btnlogin.TabIndex = 27;
+            this.btnlogin.TabIndex = 2;
             this.btnlogin.Text = "Login";
             this.btnlogin.TextColor = System.Drawing.Color.White;
             this.btnlogin.UseVisualStyleBackColor = false;
@@ -308,7 +325,7 @@
             this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(-1, 103);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 14);
+            this.label2.Size = new System.Drawing.Size(53, 14);
             this.label2.TabIndex = 19;
             this.label2.Text = "Password";
             // 
@@ -318,7 +335,7 @@
             this.label1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 14);
+            this.label1.Size = new System.Drawing.Size(77, 14);
             this.label1.TabIndex = 17;
             this.label1.Text = "Employee ID";
             // 
@@ -327,13 +344,17 @@
             this.resetBtn.FlatAppearance.BorderSize = 0;
             this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resetBtn.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetBtn.Location = new System.Drawing.Point(113, 401);
+            this.resetBtn.Location = new System.Drawing.Point(113, 410);
             this.resetBtn.Name = "resetBtn";
-            this.resetBtn.Size = new System.Drawing.Size(121, 23);
-            this.resetBtn.TabIndex = 25;
+            this.resetBtn.Size = new System.Drawing.Size(109, 23);
+            this.resetBtn.TabIndex = 4;
             this.resetBtn.Text = "Reset Password";
             this.resetBtn.UseVisualStyleBackColor = true;
             this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Login
             // 
@@ -385,5 +406,7 @@
         private System.Windows.Forms.PictureBox passwordShowHide;
         private System.Windows.Forms.Label lbl_LoginProgress;
         private System.Windows.Forms.Label lbl_LoginMessage;
+        private System.Windows.Forms.Button btnretry;
+        private System.Windows.Forms.Timer timer1;
     }
 }

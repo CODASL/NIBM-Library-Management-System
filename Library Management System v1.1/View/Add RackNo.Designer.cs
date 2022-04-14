@@ -141,6 +141,7 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.txt_rackId);
             this.Name = "Add_RackNo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Rack No";
             this.ResumeLayout(false);
             this.PerformLayout();
