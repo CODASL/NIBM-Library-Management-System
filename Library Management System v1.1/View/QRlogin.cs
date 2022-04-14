@@ -17,8 +17,8 @@ namespace Library_Management_System_v1._1
     public partial class QRlogin : Form
     {
 
-        public static String currentUserId;
-        public static String currentEmpType;
+        //public static String currentUserId;
+        //public static String currentEmpType;
         FilterInfoCollection getdata;
         VideoCaptureDevice camera;
         Model.DatabaseService database = new Model.DatabaseService();
@@ -95,10 +95,10 @@ namespace Library_Management_System_v1._1
                             {
                                 if (emp_type == "Admin")
                                 {
-                                    currentUserId = emp_id;
+                                    Controller.LoginController.currentUserId = emp_id;
                                     timer1.Stop();
                                     camera.Stop();
-                                    currentEmpType = emp_type;
+                                    Controller.LoginController.currentEmpType = emp_type;
                                     database.Con.Close();
                                     var lg = new View.AdminDashboard(emp_id);
                                     lg.Shown += load;
@@ -107,11 +107,11 @@ namespace Library_Management_System_v1._1
                                 }
                                 else
                                 {
-                                    currentUserId = emp_id;
+                                    Controller.LoginController.currentUserId = emp_id;
                                     timer1.Stop();
                                     camera.Stop();
                                     database.Con.Close();
-                                    currentEmpType = emp_type;
+                                    Controller.LoginController.currentEmpType = emp_type;
                                     var lg = new View.LibrariyanHome(emp_id);
                                     lg.Shown += load;
                                     lg.Show();
