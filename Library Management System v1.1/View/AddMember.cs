@@ -146,7 +146,7 @@ namespace Library_Management_System_v1._1.View
                         {
 
                             Controller.MemberFeeController.AddAccountingRecord(memberFee);
-                            Controller.CommonController.setActivity("Added " + member.MemberId + " Data and "+memberFee.Id + " Accounting record");
+                            Controller.CommonController.setActivity("Added " + member.MemberId + " Data and Id = "+memberFee.Id + " Accounting record");
                             MessageBox.Show("Record Added");
                         }
                     }

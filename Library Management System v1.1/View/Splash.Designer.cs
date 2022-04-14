@@ -56,7 +56,7 @@
             // 
             this.progressBar1.Depth = 0;
             this.progressBar1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.progressBar1.Location = new System.Drawing.Point(0, 342);
+            this.progressBar1.Location = new System.Drawing.Point(-1, 345);
             this.progressBar1.MinimumSize = new System.Drawing.Size(586, 8);
             this.progressBar1.MouseState = MaterialSkin.MouseState.HOVER;
             this.progressBar1.Name = "progressBar1";

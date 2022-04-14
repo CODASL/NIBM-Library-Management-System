@@ -176,15 +176,10 @@
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\MemberFee.cs" />
     <Compile Include="Model\Notification.cs" />
+    <Compile Include="Model\PiechartDataModel.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportViewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportViewer.Designer.cs">
-      <DependentUpon>ReportViewer.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Add Author.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,9 +315,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReportViewer.resx">
-      <DependentUpon>ReportViewer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Add Author.resx">
       <DependentUpon>Add Author.cs</DependentUpon>
     </EmbeddedResource>
