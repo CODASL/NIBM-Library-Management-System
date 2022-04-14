@@ -23,17 +23,16 @@ namespace Library_Management_System_v1._1.View
         Controller.CommonController commonController = new Controller.CommonController();
         Model.DatabaseService DB = new Model.DatabaseService();
         Model.Librarian librarian;
-        String emp_Id;
+        String emp_Id = Controller.LoginController.currentUserId;
         int avCount = 0;
 
         [Obsolete]
-        public LibrariyanHome(String emp_Id)
+        public LibrariyanHome()
         {
             InitializeComponent();
 
             material.addStyle(this);
             cmbFilterAvailability.SelectedIndex = 0;
-            this.emp_Id = emp_Id;
             timer1.Start();
             this.FormClosing += Form_FormClosing;
         }
