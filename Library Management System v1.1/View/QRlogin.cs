@@ -1,7 +1,4 @@
-﻿using BasselTech_CamCapture;
-using MessagingToolkit.QRCode.Codec;
-using MessagingToolkit.QRCode.Codec.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,8 +40,6 @@ namespace Library_Management_System_v1._1
         {
             pictureBox1.Image = (Bitmap)eventArgs.Frame.Clone();
         }
-
-
 
         private void QRlogin_Load(object sender, EventArgs e)
         {
