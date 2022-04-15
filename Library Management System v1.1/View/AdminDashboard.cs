@@ -26,13 +26,14 @@ namespace Library_Management_System_v1._1.View
         
        
         Model.DatabaseService database = new Model.DatabaseService();
-        String emp_id = Controller.LoginController.currentUserId;
+        String emp_id;
 
         [Obsolete]
-        public AdminDashboard()
+        public AdminDashboard(String emp_id)
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
+            this.emp_id = emp_id;
             this.FormClosing += Form_FormClosing;
         }
 
@@ -162,7 +163,7 @@ namespace Library_Management_System_v1._1.View
         private void switchtoLibrariyanBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new LibrariyanHome().Show();
+            new LibrariyanHome(emp_id).Show();
         }
 
         //===============Admin Logout ========================

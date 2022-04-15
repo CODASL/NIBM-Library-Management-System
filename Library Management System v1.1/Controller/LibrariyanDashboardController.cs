@@ -10,44 +10,11 @@ namespace Library_Management_System_v1._1.Controller
 {
     class LibrariyanDashboardController
     {
-        static Model.DatabaseService db = new Model.DatabaseService();
-        public static List<Model.Member> members;
-        public static List<Model.Book> books;
-        public static List<Model.BookIssue> bookIssue;
-        public static Model.Librarian librarian;
-        public static List<Model.MemberFee> accounting;
-        
-
-        public static void loadMembers()
-        {
-            members = new List<Model.Member>();
-            db.Con.Open();
-            MySqlDataReader sdr = db.readData("SELECT * FROM Member");
-            while (sdr.Read())
-            {
-                if (sdr.HasRows)
-                {
-                    members.Add(
-                        new Model.Member(
-                            sdr["MID"].ToString(),
-                            sdr["Name"].ToString(),
-                            sdr["Address"].ToString(), 
-                            sdr["Phone_No"].ToString(),
-                            sdr["NIC"].ToString(),
-                            sdr["Guardian_Id"].ToString(),
-                            Convert.ToDateTime(sdr["Updated_date"]),
-                            Convert.ToDateTime(sdr["Date_Added"])
-                        )
-                    );
-                }
-            }
-            db.Con.Close();
-        }
+        Model.DatabaseService database = new Model.DatabaseService();
 
 
         public Model.Librarian setLibrariyan(String emp_id)
         {
-            Model.DatabaseService database = new Model.DatabaseService();
             Model.Librarian librarian;
             try
             {
