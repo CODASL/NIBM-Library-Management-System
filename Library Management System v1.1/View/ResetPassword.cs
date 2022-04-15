@@ -96,6 +96,7 @@ namespace Library_Management_System_v1._1.View
                     {
                         MessageBox.Show("Request Sent Successfully");
                         this.Hide();
+                        this.FormClosed += (s, args) => this.Close();
                     }
                     else
                     {

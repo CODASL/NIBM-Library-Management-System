@@ -23,17 +23,16 @@ namespace Library_Management_System_v1._1.View
 
         Controller.AdminDashboardController adminDashboardCtrl = new Controller.AdminDashboardController();
         Controller.CommonController commonController = new Controller.CommonController();
-        
-       
+        Controller.MaterialController material = new Controller.MaterialController();
+
         Model.DatabaseService database = new Model.DatabaseService();
-        String emp_id;
+        String emp_id = Controller.LoginController.currentUserId;
 
         [Obsolete]
-        public AdminDashboard(String emp_id)
+        public AdminDashboard()
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
-            this.emp_id = emp_id;
             this.FormClosing += Form_FormClosing;
         }
 
@@ -77,6 +76,7 @@ namespace Library_Management_System_v1._1.View
                         Login lg = new Login();
                         lg.Closed += (s, args) => this.Close();
                         Controller.CommonController.setActivity("Logout");
+                        Application.Exit();
                     }
                     else
                     {
@@ -92,6 +92,7 @@ namespace Library_Management_System_v1._1.View
                         Login lg = new Login();
                         lg.Closed += (s, args) => this.Close();
                         Controller.CommonController.setActivity("Logout");
+                        Application.Exit();
                     }
                     else
                     {
@@ -159,12 +160,7 @@ namespace Library_Management_System_v1._1.View
             
         }
 
-        //============Switch to Librarian Btn====================================
-        private void switchtoLibrariyanBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new LibrariyanHome(emp_id).Show();
-        }
+       
 
         //===============Admin Logout ========================
         [Obsolete]
@@ -179,6 +175,9 @@ namespace Library_Management_System_v1._1.View
                 lg.Closed += (s, args) => this.Close();
                 lg.Show();
                 Controller.CommonController.setActivity("Logout");
+                swtSwitchTheme.Text = "Dark Mode";
+                material.Thememode = MaterialSkinManager.Themes.LIGHT;
+                material.MaterialSkinManager.Theme = material.Thememode;
                 Controller.LoginController.currentEmpType = null;
                 Controller.LoginController.currentUserId = null;
 
@@ -351,6 +350,22 @@ namespace Library_Management_System_v1._1.View
             {
                 listview_MyActivitiesAdmin.Focus();
             }
+        }
+
+        private void swtSwitchTheme_CheckedChanged(object sender, EventArgs e)
+        {
+            if (swtSwitchTheme.Checked)
+            {
+                swtSwitchTheme.Text = "Light Mode";
+                material.Thememode = MaterialSkinManager.Themes.DARK;
+
+            }
+            else
+            {
+                swtSwitchTheme.Text = "Dark Mode";
+                material.Thememode = MaterialSkinManager.Themes.LIGHT;
+            }
+            material.MaterialSkinManager.Theme = material.Thememode;
         }
     }
 }

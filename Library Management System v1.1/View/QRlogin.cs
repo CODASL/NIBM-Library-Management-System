@@ -17,8 +17,7 @@ namespace Library_Management_System_v1._1
     public partial class QRlogin : Form
     {
 
-        //public static String currentUserId;
-        //public static String currentEmpType;
+     
         FilterInfoCollection getdata;
         VideoCaptureDevice camera;
         Model.DatabaseService database = new Model.DatabaseService();
@@ -100,7 +99,7 @@ namespace Library_Management_System_v1._1
                                     camera.Stop();
                                     Controller.LoginController.currentEmpType = emp_type;
                                     database.Con.Close();
-                                    var lg = new View.AdminDashboard(emp_id);
+                                    var lg = new View.AdminDashboard();
                                     lg.Shown += load;
                                     lg.Show();
                                     Controller.CommonController.setActivity("Logged In ");
@@ -112,13 +111,13 @@ namespace Library_Management_System_v1._1
                                     camera.Stop();
                                     database.Con.Close();
                                     Controller.LoginController.currentEmpType = emp_type;
-                                    var lg = new View.LibrariyanHome(emp_id);
+                                    var lg = new View.LibrariyanHome();
                                     lg.Shown += load;
                                     lg.Show();
                                     Controller.CommonController.setActivity("Logged In ");
-                                }   
+                                }
                             }
-                            
+
                         }
                         else
                         {
@@ -126,7 +125,7 @@ namespace Library_Management_System_v1._1
                         }
 
                     }
-                    catch(MySqlException ex)
+                    catch (MySqlException ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
@@ -134,11 +133,11 @@ namespace Library_Management_System_v1._1
                     {
                         database.Con.Close();
                     }
-                    
+
                 }
             }
 
-        
+
         }
     }
 }

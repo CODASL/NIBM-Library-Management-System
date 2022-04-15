@@ -177,16 +177,19 @@ namespace Library_Management_System_v1._1.View
                         if (isUpdate)
                         {
                          
-                            MessageBox.Show("Record Updated");
+                            
                             Controller.CommonController.setActivity("Updated " + book.Id + " Data");
                             lastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                            MessageBox.Show("Record Updated");
 
                         }
                         else
                         {
-                            MessageBox.Show("Record Added");
-                             Controller.CommonController.setActivity("Added New Book " + book.Id + " Data");
+                            
+                            Controller.CommonController.setActivity("Added New Book " + book.Id + " Data");
                             lastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                            new Model.DatabaseService().updateData("UPDATE Category SET Book_Count = Book_Count+1 WHERE Category_Name = '" + cmb_bookCategories.SelectedItem + "'");
+                            MessageBox.Show("Record Added");
                         }
                     }
                     else

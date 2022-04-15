@@ -41,7 +41,7 @@ namespace Library_Management_System_v1._1.View
                 {
                     MessageBox.Show("Please fill All fields");
                 }
-                else if(txt_LibPhone.Text.Length != 9)
+                else if(commonController.isPhoneNumberValid(txt_LibPhone.Text))
                 {
                     MessageBox.Show("Please Enter valid Phone number");
                 }

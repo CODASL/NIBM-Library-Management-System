@@ -23,17 +23,16 @@ namespace Library_Management_System_v1._1.View
         Controller.CommonController commonController = new Controller.CommonController();
         Model.DatabaseService DB = new Model.DatabaseService();
         Model.Librarian librarian;
-        String emp_Id;
+        String emp_Id = Controller.LoginController.currentUserId;
         int avCount = 0;
 
         [Obsolete]
-        public LibrariyanHome(String emp_Id)
+        public LibrariyanHome()
         {
             InitializeComponent();
 
             material.addStyle(this);
             cmbFilterAvailability.SelectedIndex = 0;
-            this.emp_Id = emp_Id;
             timer1.Start();
             this.FormClosing += Form_FormClosing;
         }
@@ -118,8 +117,8 @@ namespace Library_Management_System_v1._1.View
         {
             lbl_members_count.Text = tile_count("SELECT * FROM Member").ToString();
             lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
-            lbl_BookIssuedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + dateTimeLibrarian.Value.Date.ToString("yyyy-MM-dd") + "' AND Status='" + 1 + "'").ToString();
-            lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + dateTimeLibrarian.Value.Date.ToString("yyyy-MM-dd") + "' AND Status='" + 0 + "'").ToString();
+            lbl_BookIssuedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" +DateTime.Now.Date.ToString("yyyy-MM-dd") + "' AND Status='" + 1 + "'").ToString();
+            lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "' AND Status='" + 0 + "'").ToString();
         }
 
         //============ form x or F4 click logout user ================================
@@ -137,6 +136,7 @@ namespace Library_Management_System_v1._1.View
                         Login lg = new Login();
                         lg.Closed += (s, args) => this.Close();
                         Controller.CommonController.setActivity("Logged out ");
+                        Application.Exit();
                     }
                     else
                     {
@@ -152,6 +152,7 @@ namespace Library_Management_System_v1._1.View
                         Login lg = new Login();
                         lg.Closed += (s, args) => this.Close();
                         Controller.CommonController.setActivity("Logged out ");
+                        Application.Exit();
                     }
                     else
                     {
@@ -621,6 +622,11 @@ namespace Library_Management_System_v1._1.View
                 lg.Closed += (s, args) => this.Close();
                 lg.Show();
                 Controller.CommonController.setActivity("Logout");
+                swtSwitchTheme.Text = "Dark Mode";
+                material.Thememode = MaterialSkinManager.Themes.LIGHT;
+                material.MaterialSkinManager.Theme = material.Thememode;
+                Controller.LoginController.currentEmpType = null;
+                Controller.LoginController.currentUserId = null;
 
             }
             else
@@ -635,12 +641,7 @@ namespace Library_Management_System_v1._1.View
             lbl_librarianDateTime.Text = DateTime.Now.ToString("yyy-MM-dd ") + DateTime.Now.ToString("h:mm:ss tt");
         }
 
-        //===============Librarian Home Dashboard Datetimepicker Controller ==============================
-        private void dateTimeLibrarian_ValueChanged(object sender, EventArgs e)
-        {
-            lbl_BookIssuedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + 1 + "'").ToString();
-            lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + dateTimeLibrarian.Value.Date + "' AND Status='" + 0 + "'").ToString();
-        }
+       
 
 
         //============================Update Member Btn===================================================

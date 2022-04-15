@@ -49,8 +49,6 @@ namespace Library_Management_System_v1._1.View
             this.addBookDashBoard = new MaterialSkin.Controls.MaterialButton();
             this.addCategoryDashboard = new MaterialSkin.Controls.MaterialButton();
             this.addAuthorDashboard = new MaterialSkin.Controls.MaterialButton();
-            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
-            this.dateTimeLibrarian = new MetroFramework.Controls.MetroDateTime();
             this.lbl_librarianDateTime = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_welcome_note = new MaterialSkin.Controls.MaterialLabel();
             this.SecondDashboardRow = new System.Windows.Forms.FlowLayoutPanel();
@@ -260,8 +258,6 @@ namespace Library_Management_System_v1._1.View
             this.LibrariyanDashBoard.Controls.Add(this.listview_BookAvailability);
             this.LibrariyanDashBoard.Controls.Add(this.cmbFilterAvailability);
             this.LibrariyanDashBoard.Controls.Add(this.flowLayoutPanel3);
-            this.LibrariyanDashBoard.Controls.Add(this.materialLabel9);
-            this.LibrariyanDashBoard.Controls.Add(this.dateTimeLibrarian);
             this.LibrariyanDashBoard.Controls.Add(this.lbl_librarianDateTime);
             this.LibrariyanDashBoard.Controls.Add(this.lbl_welcome_note);
             this.LibrariyanDashBoard.Controls.Add(this.SecondDashboardRow);
@@ -513,28 +509,6 @@ namespace Library_Management_System_v1._1.View
             this.addAuthorDashboard.UseAccentColor = false;
             this.addAuthorDashboard.UseVisualStyleBackColor = true;
             this.addAuthorDashboard.Click += new System.EventHandler(this.addAuthorDashboard_Click);
-            // 
-            // materialLabel9
-            // 
-            this.materialLabel9.AutoSize = true;
-            this.materialLabel9.Depth = 0;
-            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel9.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
-            this.materialLabel9.Location = new System.Drawing.Point(662, 13);
-            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel9.Name = "materialLabel9";
-            this.materialLabel9.Size = new System.Drawing.Size(99, 19);
-            this.materialLabel9.TabIndex = 5;
-            this.materialLabel9.Text = "Filter By Date:";
-            // 
-            // dateTimeLibrarian
-            // 
-            this.dateTimeLibrarian.Location = new System.Drawing.Point(767, 8);
-            this.dateTimeLibrarian.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dateTimeLibrarian.Name = "dateTimeLibrarian";
-            this.dateTimeLibrarian.Size = new System.Drawing.Size(208, 29);
-            this.dateTimeLibrarian.TabIndex = 4;
-            this.dateTimeLibrarian.ValueChanged += new System.EventHandler(this.dateTimeLibrarian_ValueChanged);
             // 
             // lbl_librarianDateTime
             // 
@@ -2309,7 +2283,7 @@ namespace Library_Management_System_v1._1.View
             // datetime_activityFilter
             // 
             this.datetime_activityFilter.Location = new System.Drawing.Point(762, 269);
-            this.datetime_activityFilter.MinimumSize = new System.Drawing.Size(0, 29);
+            this.datetime_activityFilter.MinimumSize = new System.Drawing.Size(4, 29);
             this.datetime_activityFilter.Name = "datetime_activityFilter";
             this.datetime_activityFilter.Size = new System.Drawing.Size(200, 29);
             this.datetime_activityFilter.TabIndex = 4;
@@ -2801,8 +2775,6 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton3;
         private MaterialSkin.Controls.MaterialLabel lbl_welcome_note;
         private MaterialSkin.Controls.MaterialLabel lbl_librarianDateTime;
-        private MetroFramework.Controls.MetroDateTime dateTimeLibrarian;
-        private MaterialSkin.Controls.MaterialLabel materialLabel9;
         private MaterialSkin.Controls.MaterialCard materialCard5;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton4;
         private MaterialSkin.Controls.MaterialLabel materialLabel12;

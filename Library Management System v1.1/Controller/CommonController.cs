@@ -104,9 +104,10 @@ namespace Library_Management_System_v1._1.Controller
             }
         }
         
-        public Boolean isPhoneNumberValid(int phone)
+        public Boolean isPhoneNumberValid(String phone)
         {
-            if(phone.ToString().Length != 9)
+            int n;
+            if(phone.Length != 9 && !int.TryParse(phone , out n ))
             {
                 return false;
             }
