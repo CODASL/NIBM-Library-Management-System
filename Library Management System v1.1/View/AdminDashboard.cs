@@ -160,12 +160,7 @@ namespace Library_Management_System_v1._1.View
             
         }
 
-        //============Switch to Librarian Btn====================================
-        private void switchtoLibrariyanBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new LibrariyanHome().Show();
-        }
+       
 
         //===============Admin Logout ========================
         [Obsolete]
