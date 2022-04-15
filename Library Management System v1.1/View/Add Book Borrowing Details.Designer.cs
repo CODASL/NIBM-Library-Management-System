@@ -29,6 +29,7 @@ namespace Library_Management_System_v1._1.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Book_Borrowing_Details));
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -54,8 +55,13 @@ namespace Library_Management_System_v1._1.View
             this.isbnQrBtnissueBook = new MaterialSkin.Controls.MaterialButton();
             this.txt_issuingLibId = new MaterialSkin.Controls.MaterialTextBox();
             this.memberIdbtnIssueBook = new MaterialSkin.Controls.MaterialButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblsrc = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.qrPanelBookBorrow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -343,6 +349,7 @@ namespace Library_Management_System_v1._1.View
             // qrPanelBookBorrow
             // 
             this.qrPanelBookBorrow.BackColor = System.Drawing.SystemColors.Control;
+            this.qrPanelBookBorrow.Controls.Add(this.pictureBox2);
             this.qrPanelBookBorrow.Controls.Add(this.pictureBox1);
             this.qrPanelBookBorrow.Location = new System.Drawing.Point(487, 152);
             this.qrPanelBookBorrow.Name = "qrPanelBookBorrow";
@@ -414,11 +421,43 @@ namespace Library_Management_System_v1._1.View
             this.memberIdbtnIssueBook.UseVisualStyleBackColor = true;
             this.memberIdbtnIssueBook.Click += new System.EventHandler(this.memberIdbtnIssueBook_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(9, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(235, 212);
+            this.pictureBox2.TabIndex = 39;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lblsrc
+            // 
+            this.lblsrc.AutoSize = true;
+            this.lblsrc.Location = new System.Drawing.Point(493, 136);
+            this.lblsrc.Name = "lblsrc";
+            this.lblsrc.Size = new System.Drawing.Size(41, 13);
+            this.lblsrc.TabIndex = 40;
+            this.lblsrc.Text = "Source";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(540, 132);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(191, 21);
+            this.comboBox1.TabIndex = 41;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Add_Book_Borrowing_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 515);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lblsrc);
             this.Controls.Add(this.memberIdbtnIssueBook);
             this.Controls.Add(this.txt_issuingLibId);
             this.Controls.Add(this.isbnQrBtnissueBook);
@@ -448,6 +487,7 @@ namespace Library_Management_System_v1._1.View
             this.Load += new System.EventHandler(this.Add_Book_Borrowing_Details_Load);
             this.qrPanelBookBorrow.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,5 +519,9 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialTextBox txt_issuingLibId;
         private MaterialSkin.Controls.MaterialButton memberIdbtnIssueBook;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblsrc;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
