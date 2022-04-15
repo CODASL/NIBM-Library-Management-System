@@ -98,7 +98,7 @@ namespace Library_Management_System_v1._1
                                 database.Con.Close();
                                 timer1.Stop();
                                 camera.Stop();
-                                var lg = new View.LibrariyanHome(emp_id);
+                                var lg = new View.LibrariyanHome();
                                 lg.Shown += load;
                                 lg.Show();
                             }
