@@ -1,7 +1,4 @@
-﻿using BasselTech_CamCapture;
-using MessagingToolkit.QRCode.Codec;
-using MessagingToolkit.QRCode.Codec.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +17,7 @@ namespace Library_Management_System_v1._1
     public partial class QRlogin : Form
     {
 
+     
         FilterInfoCollection getdata;
         VideoCaptureDevice camera;
         Model.DatabaseService database = new Model.DatabaseService();
@@ -41,8 +39,6 @@ namespace Library_Management_System_v1._1
         {
             pictureBox1.Image = (Bitmap)eventArgs.Frame.Clone();
         }
-
-
 
         private void QRlogin_Load(object sender, EventArgs e)
         {
@@ -92,32 +88,56 @@ namespace Library_Management_System_v1._1
                         sdr.Read();
                         if (sdr.HasRows)
                         {
+                            String emp_type = sdr["Emp_Type"].ToString();
                             int line = new Model.DatabaseService().updateData("Update AppUser SET IsLoggedIn = 1 WHERE Emp_Id= '" + emp_id + "'");
                             if (line > 0)
                             {
-                                database.Con.Close();
-                                timer1.Stop();
-                                camera.Stop();
-                                var lg = new View.LibrariyanHome();
-                                lg.Shown += load;
-                                lg.Show();
+                                if (emp_type == "Admin")
+                                {
+                                    Controller.LoginController.currentUserId = emp_id;
+                                    timer1.Stop();
+                                    camera.Stop();
+                                    Controller.LoginController.currentEmpType = emp_type;
+                                    database.Con.Close();
+                                    var lg = new View.AdminDashboard();
+                                    lg.Shown += load;
+                                    lg.Show();
+                                    Controller.CommonController.setActivity("Logged In ");
+                                }
+                                else
+                                {
+                                    Controller.LoginController.currentUserId = emp_id;
+                                    timer1.Stop();
+                                    camera.Stop();
+                                    database.Con.Close();
+                                    Controller.LoginController.currentEmpType = emp_type;
+                                    var lg = new View.LibrariyanHome();
+                                    lg.Shown += load;
+                                    lg.Show();
+                                    Controller.CommonController.setActivity("Logged In ");
+                                }
                             }
+
                         }
                         else
                         {
-                            database.Con.Close();
                             MessageBox.Show("user Does not exist ", MessageBoxIcon.Warning.ToString());
                         }
+
                     }
-                    catch(Exception ex)
+                    catch (MySqlException ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
-                    
+                    finally
+                    {
+                        database.Con.Close();
+                    }
+
                 }
             }
 
-        
+
         }
     }
 }
