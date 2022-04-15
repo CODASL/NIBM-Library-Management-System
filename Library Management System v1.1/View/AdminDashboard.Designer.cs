@@ -222,6 +222,7 @@ namespace Library_Management_System_v1._1.View
             this.swtSwitchTheme.TabIndex = 1;
             this.swtSwitchTheme.Text = "Dark Mode";
             this.swtSwitchTheme.UseVisualStyleBackColor = true;
+            this.swtSwitchTheme.CheckedChanged += new System.EventHandler(this.swtSwitchTheme_CheckedChanged);
             // 
             // materialLabel17
             // 
@@ -364,7 +365,7 @@ namespace Library_Management_System_v1._1.View
             // datePicker_AdminActivities
             // 
             this.datePicker_AdminActivities.Location = new System.Drawing.Point(698, 91);
-            this.datePicker_AdminActivities.MinimumSize = new System.Drawing.Size(0, 29);
+            this.datePicker_AdminActivities.MinimumSize = new System.Drawing.Size(4, 29);
             this.datePicker_AdminActivities.Name = "datePicker_AdminActivities";
             this.datePicker_AdminActivities.Size = new System.Drawing.Size(200, 29);
             this.datePicker_AdminActivities.TabIndex = 12;

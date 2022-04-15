@@ -35,18 +35,17 @@ namespace Library_Management_System_v1._1.Controller
                         form.Closed += (s, args) => form.Close();
                         if (emp_type == "Admin")
                         {
-                            
-                            new View.AdminDashboard().ShowDialog();
                             currentUserId = emp_id;
                             currentEmpType = emp_type;
+                            new View.AdminDashboard().ShowDialog();
                             Controller.CommonController.setActivity("Logged In ");
 
                         }
                         else
                         {
-                            new View.LibrariyanHome().Show();
                             currentUserId = emp_id;
                             currentEmpType = emp_type;
+                            new View.LibrariyanHome().Show();
                             Controller.CommonController.setActivity("Logged In ");
 
                         }
