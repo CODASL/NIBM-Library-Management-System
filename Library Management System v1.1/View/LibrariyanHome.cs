@@ -756,11 +756,9 @@ namespace Library_Management_System_v1._1.View
                 DialogResult res = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
                 if (res.Equals(DialogResult.Yes))
                 {
-
-                    String selectedRowId = memberListview.SelectedItems[0].SubItems[0].Text;
-
                     try
                     {
+                        String selectedRowId = LibBookList.SelectedItems[0].SubItems[0].Text;
                         int line = database.deleteData("DELETE FROM Book WHERE ISBN = '" + selectedRowId + "'");
 
                         if (line > 0)
