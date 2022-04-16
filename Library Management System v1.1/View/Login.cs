@@ -123,12 +123,12 @@ namespace Library_Management_System_v1._1
         {
             if (txtPass.PasswordChar)
             {
-                passwordShowHide.Image = Image.FromFile(Constant.IconClass.hidePass);
+                passwordShowHide.Image = Image.FromFile(Constant.IconClass.showPass);
                 txtPass.PasswordChar = false;
             }
             else
             {
-                passwordShowHide.Image = Image.FromFile(Constant.IconClass.showPass);
+                passwordShowHide.Image = Image.FromFile(Constant.IconClass.hidePass);
                 txtPass.PasswordChar = true;
             }
         }
