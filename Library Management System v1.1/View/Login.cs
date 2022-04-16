@@ -30,6 +30,7 @@ namespace Library_Management_System_v1._1
         {
             InitializeComponent();
             btnretry.Hide();
+            Console.WriteLine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal));
         }
 
 

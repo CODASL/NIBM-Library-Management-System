@@ -647,41 +647,49 @@ namespace Library_Management_System_v1._1.View
         //============================Update Member Btn===================================================
         private void btn_updateMember_Click(object sender, EventArgs e)
         {
-            try
+            if (memberListview.SelectedIndices.Count > 0)
             {
-                String selectedRowId = memberListview.SelectedItems[0].SubItems[0].Text;
-                new AddMember(true, selectedRowId).Show();
+                try
+                {
+                    String selectedRowId = memberListview.SelectedItems[0].SubItems[0].Text;
+                    new AddMember(true, selectedRowId).Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please select a record to update");
             }
+            
         }
 
         //===================Delete Member Btn ========================================
         private void btn_deleteMember_Click(object sender, EventArgs e)
         {
-            Model.DatabaseService database = new Model.DatabaseService();
-            DialogResult res = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
-            if (res.Equals(DialogResult.Yes))
+            ListView.SelectedIndexCollection selectedIndex = memberListview.SelectedIndices;
+            if (selectedIndex.Count > 0)
             {
-                ListView.SelectedIndexCollection selectedIndex = memberListview.SelectedIndices;
-                if (selectedIndex.Count > 0)
+                Model.DatabaseService database = new Model.DatabaseService();
+                DialogResult res = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
+                if (res.Equals(DialogResult.Yes))
                 {
-                    
+
                     String selectedRowId = memberListview.SelectedItems[0].SubItems[0].Text;
                     String GID = memberListview.SelectedItems[0].SubItems[1].Text;
 
                     try
                     {
                         int line3 = database.deleteData("DELETE FROM Accounting WHERE MID = '" + selectedRowId + "'");
-                        int line1 = database.deleteData("DELETE FROM Guardian WHERE GID = '"+GID+"'");
+                        int line1 = database.deleteData("DELETE FROM Guardian WHERE GID = '" + GID + "'");
                         int line = database.deleteData("DELETE FROM Member WHERE MID = '" + selectedRowId + "'");
-                        
+
 
                         Console.WriteLine(line + " " + line1 + " " + line3);
 
-                        if (line > 0 && line1 > 0 && line3>0)
+                        if (line > 0 && line1 > 0 && line3 > 0)
                         {
                             Controller.CommonController.setActivity("Deleted " + selectedRowId + " Member Data");
                             MessageBox.Show("Member Removed Successfully");
@@ -697,18 +705,17 @@ namespace Library_Management_System_v1._1.View
                     {
                         MessageBox.Show(ex.ToString());
                     }
-
                 }
                 else
                 {
-                    MessageBox.Show("No Rows Selected");
-
+                    MessageBox.Show("Deletation Cancelled");
                 }
             }
             else
             {
-                MessageBox.Show("Deletation Cancelled");
+                MessageBox.Show("Please select a record to delete");
             }
+            
         }
 
         //====================Update Books Button ====================================
@@ -743,13 +750,13 @@ namespace Library_Management_System_v1._1.View
         //========================Delete Book ================================================
         private void btn_DeleteBook_Click(object sender, EventArgs e)
         {
-            Model.DatabaseService database = new Model.DatabaseService();
-            DialogResult res = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
-            if (res.Equals(DialogResult.Yes))
+            if (LibBookList.SelectedIndices.Count > 0)
             {
-                ListView.SelectedIndexCollection selectedIndex = LibBookList.SelectedIndices;
-                if (selectedIndex.Count > 0)
+                Model.DatabaseService database = new Model.DatabaseService();
+                DialogResult res = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
+                if (res.Equals(DialogResult.Yes))
                 {
+
                     String selectedRowId = memberListview.SelectedItems[0].SubItems[0].Text;
 
                     try
@@ -772,17 +779,19 @@ namespace Library_Management_System_v1._1.View
                     {
                         MessageBox.Show(ex.Message);
                     }
+
+
                 }
                 else
                 {
-                    MessageBox.Show("No Rows Selected");
-
+                    MessageBox.Show("Deletation Cancelled");
                 }
             }
             else
             {
-                MessageBox.Show("Deletation Cancelled");
+                MessageBox.Show("Please select a record to delete");
             }
+            
         }
 
         //=================Refresh books =================================
