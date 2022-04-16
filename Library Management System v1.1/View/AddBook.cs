@@ -1,5 +1,7 @@
 ﻿using MaterialSkin.Controls;
 using MySql.Data.MySqlClient;
+using AForge.Video;
+using AForge.Video.DirectShow;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZXing;
 
 namespace Library_Management_System_v1._1.View
 {
@@ -19,6 +22,8 @@ namespace Library_Management_System_v1._1.View
         Boolean isUpdate;
         String selectedISBN;
         MaterialLabel lastUpdate;
+        FilterInfoCollection getdata;
+        VideoCaptureDevice camera;
         public AddBook(Boolean isUpdate, String selectedISBN = null , MaterialLabel lastUpdate = null)
         {
             InitializeComponent();
@@ -38,7 +43,9 @@ namespace Library_Management_System_v1._1.View
             Controller.BookController.loadComboBoxes(cmb_bookCategories, "Category", "Category_Name");
             Controller.BookController.loadComboBoxes(cmb_BookAuthors, "Author", "Author_Name");
             Controller.BookController.loadComboBoxes(cmb_bookRacks, "Rack", "Rack_NO");
-            
+            pictureBox2.Hide();
+            lblsrc.Hide();
+            comboBox1.Hide();
         }
 
 
@@ -119,16 +126,35 @@ namespace Library_Management_System_v1._1.View
         //=============Show ISBN QR Scanner ===========================
         private void isbnQrBtnAddBook_Click(object sender, EventArgs e)
         {
-            if (this.qrPanelBookAdd.Controls.Count > 0)
-                this.qrPanelBookAdd.Controls.RemoveAt(0);
-            QRlogin f = new QRlogin();
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            qrPanelBookAdd.Controls.Clear();
-            qrPanelBookAdd.Controls.Add(f);
-            qrPanelBookAdd.Tag = f;
-            f.Show();
+            try
+            {
+                lblsrc.Show();
+                pictureBox2.Show();
+                comboBox1.Show();
 
+                getdata = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+                foreach (FilterInfo info in getdata)
+                {
+                    comboBox1.Items.Add(info.Name);
+                    comboBox1.SelectedIndex = 0;
+
+                }
+
+                camera = new VideoCaptureDevice(getdata[comboBox1.SelectedIndex].MonikerString);
+                camera.NewFrame += Camera_NewFrame;
+                camera.Start();
+                timer1.Start();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        private void Camera_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            pictureBox2.Image = (Bitmap)eventArgs.Frame.Clone();
         }
 
         private void btn_AddBookDialog_Click(object sender, EventArgs e)
@@ -217,6 +243,29 @@ namespace Library_Management_System_v1._1.View
             cmb_bookCategories.ResetText();
             cmb_bookRacks.ResetText();
             
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (pictureBox2.Image != null)
+            {
+                BarcodeReader br = new BarcodeReader();
+                Result ans = br.Decode((Bitmap)pictureBox2.Image);
+                if (ans != null)
+                {
+                    txt_bookISBN.Text = ans.ToString();
+                    timer1.Stop();
+                    if (camera.IsRunning)
+                    {
+                        camera.Stop();
+                        pictureBox2.Hide();
+                        lblsrc.Hide();
+                        comboBox1.Hide();
+                    }
+
+                }
+
+            }
         }
     }
 }
