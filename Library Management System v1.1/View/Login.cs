@@ -115,6 +115,9 @@ namespace Library_Management_System_v1._1
             txtmail.Hide();
             btnlogin.Hide();
             btnretry.Show();
+            label1.Hide();
+            label2.Hide();
+            passwordShowHide.Hide();
             Loadform(new QRlogin());  
         }
 
@@ -158,10 +161,30 @@ namespace Library_Management_System_v1._1
 
         }
 
+        //================ remove dock panel ===========
+        public void remove(object Form)
+        {
+            if (this.metroPanel1.Controls.Count > 0)
+                this.metroPanel1.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = Dock;
+            metroPanel1.Controls.Clear();
+            metroPanel1.Controls.Add(f);
+            metroPanel1.Tag = f;
+            f.Hide();
+        }
+
         private void btnretry_Click(object sender, EventArgs e)
         {
-            
-           
+
+            remove(new QRlogin());
+            txtPass.Show();
+            txtmail.Show();
+            btnlogin.Show();
+            label1.Show();
+            label2.Show();
+            passwordShowHide.Show();
 
         }
     }
