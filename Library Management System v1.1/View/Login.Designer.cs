@@ -39,25 +39,22 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.piclogo = new System.Windows.Forms.PictureBox();
-            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.btnretry = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnQR = new Library_Management_System_v1._1.View.Custom_Controls.RJButton();
             this.label6 = new System.Windows.Forms.Label();
+            this.resetBtn = new System.Windows.Forms.Button();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.passwordShowHide = new System.Windows.Forms.PictureBox();
-            this.txtPass = new CustomControls.RJControls.RJTextBox();
-            this.txtmail = new CustomControls.RJControls.RJTextBox();
-            this.btnlogin = new Library_Management_System_v1._1.View.Custom_Controls.RJButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.resetBtn = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.passwordShowHide = new System.Windows.Forms.PictureBox();
+            this.txtmail = new CustomControls.RJControls.RJTextBox();
+            this.btnlogin = new Library_Management_System_v1._1.View.Custom_Controls.RJButton();
+            this.txtPass = new CustomControls.RJControls.RJTextBox();
+            this.btnQR = new Library_Management_System_v1._1.View.Custom_Controls.RJButton();
             this.bluebackround.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).BeginInit();
-            this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passwordShowHide)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,31 +145,12 @@
             this.piclogo.TabIndex = 11;
             this.piclogo.TabStop = false;
             // 
-            // materialCard1
-            // 
-            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.btnretry);
-            this.materialCard1.Controls.Add(this.pictureBox1);
-            this.materialCard1.Controls.Add(this.btnQR);
-            this.materialCard1.Controls.Add(this.label6);
-            this.materialCard1.Controls.Add(this.resetBtn);
-            this.materialCard1.Controls.Add(this.metroPanel1);
-            this.materialCard1.Depth = 0;
-            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(292, 23);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(343, 450);
-            this.materialCard1.TabIndex = 26;
-            // 
             // btnretry
             // 
             this.btnretry.FlatAppearance.BorderSize = 0;
             this.btnretry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnretry.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnretry.Location = new System.Drawing.Point(113, 391);
+            this.btnretry.Location = new System.Drawing.Point(420, 415);
             this.btnretry.Name = "btnretry";
             this.btnretry.Size = new System.Drawing.Size(109, 23);
             this.btnretry.TabIndex = 30;
@@ -183,59 +161,43 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(49, 44);
+            this.pictureBox1.Location = new System.Drawing.Point(357, 70);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
             // 
-            // btnQR
-            // 
-            this.btnQR.BackColor = System.Drawing.Color.White;
-            this.btnQR.BackgroundColor = System.Drawing.Color.White;
-            this.btnQR.BorderColor = System.Drawing.Color.Black;
-            this.btnQR.BorderRadius = 8;
-            this.btnQR.BorderSize = 1;
-            this.btnQR.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnQR.FlatAppearance.BorderSize = 0;
-            this.btnQR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQR.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQR.ForeColor = System.Drawing.Color.Black;
-            this.btnQR.Image = ((System.Drawing.Image)(resources.GetObject("btnQR.Image")));
-            this.btnQR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQR.Location = new System.Drawing.Point(46, 342);
-            this.btnQR.Name = "btnQR";
-            this.btnQR.Size = new System.Drawing.Size(251, 40);
-            this.btnQR.TabIndex = 3;
-            this.btnQR.Text = "Login with QR";
-            this.btnQR.TextColor = System.Drawing.Color.Black;
-            this.btnQR.UseVisualStyleBackColor = false;
-            this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(100, 58);
+            this.label6.Location = new System.Drawing.Point(408, 84);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(165, 18);
+            this.label6.Size = new System.Drawing.Size(160, 18);
             this.label6.TabIndex = 26;
             this.label6.Text = "Hello Welcome Again !";
             // 
+            // resetBtn
+            // 
+            this.resetBtn.FlatAppearance.BorderSize = 0;
+            this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetBtn.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetBtn.Location = new System.Drawing.Point(420, 434);
+            this.resetBtn.Name = "resetBtn";
+            this.resetBtn.Size = new System.Drawing.Size(109, 23);
+            this.resetBtn.TabIndex = 4;
+            this.resetBtn.Text = "Reset Password";
+            this.resetBtn.UseVisualStyleBackColor = true;
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
+            // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.btnlogin);
-            this.metroPanel1.Controls.Add(this.passwordShowHide);
-            this.metroPanel1.Controls.Add(this.txtPass);
-            this.metroPanel1.Controls.Add(this.label2);
-            this.metroPanel1.Controls.Add(this.label1);
-            this.metroPanel1.Controls.Add(this.txtmail);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(46, 103);
+            this.metroPanel1.Location = new System.Drawing.Point(357, 137);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(251, 220);
             this.metroPanel1.TabIndex = 22;
@@ -243,37 +205,40 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(357, 233);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 14);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Password";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(357, 159);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 14);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Employee ID";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // passwordShowHide
             // 
             this.passwordShowHide.Image = ((System.Drawing.Image)(resources.GetObject("passwordShowHide.Image")));
-            this.passwordShowHide.Location = new System.Drawing.Point(219, 133);
+            this.passwordShowHide.Location = new System.Drawing.Point(579, 268);
             this.passwordShowHide.Name = "passwordShowHide";
             this.passwordShowHide.Size = new System.Drawing.Size(20, 20);
             this.passwordShowHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.passwordShowHide.TabIndex = 29;
             this.passwordShowHide.TabStop = false;
             this.passwordShowHide.Click += new System.EventHandler(this.passwordShowHide_Click);
-            // 
-            // txtPass
-            // 
-            this.txtPass.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPass.BorderColor = System.Drawing.Color.Black;
-            this.txtPass.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.txtPass.BorderSize = 2;
-            this.txtPass.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.ForeColor = System.Drawing.Color.Black;
-            this.txtPass.Location = new System.Drawing.Point(0, 128);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPass.MaximumSize = new System.Drawing.Size(251, 33);
-            this.txtPass.MinimumSize = new System.Drawing.Size(251, 33);
-            this.txtPass.Multiline = false;
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Padding = new System.Windows.Forms.Padding(7);
-            this.txtPass.PasswordChar = true;
-            this.txtPass.Size = new System.Drawing.Size(251, 33);
-            this.txtPass.TabIndex = 1;
-            this.txtPass.UnderlinedStyle = true;
-            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // txtmail
             // 
@@ -283,7 +248,7 @@
             this.txtmail.BorderSize = 2;
             this.txtmail.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmail.ForeColor = System.Drawing.Color.Black;
-            this.txtmail.Location = new System.Drawing.Point(0, 47);
+            this.txtmail.Location = new System.Drawing.Point(358, 184);
             this.txtmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtmail.MaximumSize = new System.Drawing.Size(251, 33);
             this.txtmail.MinimumSize = new System.Drawing.Size(251, 33);
@@ -303,14 +268,13 @@
             this.btnlogin.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnlogin.BorderRadius = 8;
             this.btnlogin.BorderSize = 0;
-            this.btnlogin.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnlogin.FlatAppearance.BorderSize = 0;
             this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlogin.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogin.ForeColor = System.Drawing.Color.White;
             this.btnlogin.Image = ((System.Drawing.Image)(resources.GetObject("btnlogin.Image")));
             this.btnlogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnlogin.Location = new System.Drawing.Point(0, 180);
+            this.btnlogin.Location = new System.Drawing.Point(358, 317);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(251, 40);
             this.btnlogin.TabIndex = 2;
@@ -319,50 +283,68 @@
             this.btnlogin.UseVisualStyleBackColor = false;
             this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
-            // label2
+            // txtPass
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(-1, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 14);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Password";
+            this.txtPass.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPass.BorderColor = System.Drawing.Color.Black;
+            this.txtPass.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.txtPass.BorderSize = 2;
+            this.txtPass.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.ForeColor = System.Drawing.Color.Black;
+            this.txtPass.Location = new System.Drawing.Point(358, 264);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPass.MaximumSize = new System.Drawing.Size(251, 33);
+            this.txtPass.MinimumSize = new System.Drawing.Size(251, 33);
+            this.txtPass.Multiline = false;
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Padding = new System.Windows.Forms.Padding(7);
+            this.txtPass.PasswordChar = true;
+            this.txtPass.Size = new System.Drawing.Size(251, 33);
+            this.txtPass.TabIndex = 1;
+            this.txtPass.UnderlinedStyle = true;
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
-            // label1
+            // btnQR
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 14);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Employee ID";
-            // 
-            // resetBtn
-            // 
-            this.resetBtn.FlatAppearance.BorderSize = 0;
-            this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetBtn.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetBtn.Location = new System.Drawing.Point(113, 410);
-            this.resetBtn.Name = "resetBtn";
-            this.resetBtn.Size = new System.Drawing.Size(109, 23);
-            this.resetBtn.TabIndex = 4;
-            this.resetBtn.Text = "Reset Password";
-            this.resetBtn.UseVisualStyleBackColor = true;
-            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.btnQR.BackColor = System.Drawing.Color.White;
+            this.btnQR.BackgroundColor = System.Drawing.Color.White;
+            this.btnQR.BorderColor = System.Drawing.Color.Black;
+            this.btnQR.BorderRadius = 8;
+            this.btnQR.BorderSize = 1;
+            this.btnQR.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnQR.FlatAppearance.BorderSize = 0;
+            this.btnQR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQR.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQR.ForeColor = System.Drawing.Color.Black;
+            this.btnQR.Image = ((System.Drawing.Image)(resources.GetObject("btnQR.Image")));
+            this.btnQR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQR.Location = new System.Drawing.Point(357, 363);
+            this.btnQR.Name = "btnQR";
+            this.btnQR.Size = new System.Drawing.Size(251, 40);
+            this.btnQR.TabIndex = 3;
+            this.btnQR.Text = "Login with QR";
+            this.btnQR.TextColor = System.Drawing.Color.Black;
+            this.btnQR.UseVisualStyleBackColor = false;
+            this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 466);
-            this.Controls.Add(this.materialCard1);
+            this.Controls.Add(this.passwordShowHide);
+            this.Controls.Add(this.txtmail);
+            this.Controls.Add(this.btnlogin);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.btnretry);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.resetBtn);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnQR);
             this.Controls.Add(this.bluebackround);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.metroPanel1);
             this.MaximizeBox = false;
             this.Name = "Login";
             this.Resizable = false;
@@ -374,13 +356,10 @@
             this.bluebackround.ResumeLayout(false);
             this.bluebackround.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).EndInit();
-            this.materialCard1.ResumeLayout(false);
-            this.materialCard1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passwordShowHide)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -392,7 +371,6 @@
         private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private System.Windows.Forms.Button resetBtn;
-        private MaterialSkin.Controls.MaterialCard materialCard1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -400,13 +378,13 @@
         private View.Custom_Controls.RJButton btnlogin;
         private View.Custom_Controls.RJButton btnQR;
         private CustomControls.RJControls.RJTextBox txtmail;
-        private CustomControls.RJControls.RJTextBox txtPass;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialProgressBar progressBar_LoginProgress;
-        private System.Windows.Forms.PictureBox passwordShowHide;
         private System.Windows.Forms.Label lbl_LoginProgress;
         private System.Windows.Forms.Label lbl_LoginMessage;
         private System.Windows.Forms.Button btnretry;
         private System.Windows.Forms.Timer timer1;
+        private CustomControls.RJControls.RJTextBox txtPass;
+        private System.Windows.Forms.PictureBox passwordShowHide;
     }
 }
