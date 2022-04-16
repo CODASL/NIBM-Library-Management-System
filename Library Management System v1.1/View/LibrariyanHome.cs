@@ -512,7 +512,7 @@ namespace Library_Management_System_v1._1.View
                         if (dialogresult.Equals(DialogResult.Yes))
                         {
 
-                                new AddfineWindow(BID, MID, emp_Id).ShowDialog();
+                                new AddfineWindow(BID, MID, emp_Id,ID , lbl_IssueBookLastUpdate).ShowDialog();
 
                         }
                         else if (dialogresult.Equals(DialogResult.No))

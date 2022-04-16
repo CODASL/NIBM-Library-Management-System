@@ -16,13 +16,17 @@ namespace Library_Management_System_v1._1.View
         String MID;
         String BID;
         String Emp_Id;
-        public AddfineWindow(String BID, String MID,String Emp_Id)
+        String ID;
+        MaterialLabel lbl_IssueBookLastUpdate;
+        public AddfineWindow(String BID, String MID,String Emp_Id , String ID , MaterialLabel lbl_IssueBookLastUpdate)
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
             this.BID = BID;
             this.MID = MID;
             this.Emp_Id = Emp_Id;
+            this.ID = ID;
+            this.lbl_IssueBookLastUpdate = lbl_IssueBookLastUpdate;
         }
 
         //================On load Add Fine Window =========================================
@@ -53,7 +57,18 @@ namespace Library_Management_System_v1._1.View
                     {
                         this.Hide();
                         Controller.CommonController.setActivity("Recieved fine from " + MID + " For " + BID + " Book");
-                        MessageBox.Show("Fine paid Successfully");
+                        if (Controller.BookIssueReturnController.returnBook(ID, BID))
+                        {
+                            Controller.CommonController.setActivity("Handeled book returning from Book issue Id =" + ID);
+                            MessageBox.Show("Fine paid & Book Returned successfully");
+                            lbl_IssueBookLastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Book_issue status update failed");
+                        }
+                        
                     }
                     else
                     {
