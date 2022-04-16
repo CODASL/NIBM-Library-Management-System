@@ -50,5 +50,10 @@ namespace Library_Management_System_v1._1.View
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btn_clearRackNo_Click(object sender, EventArgs e)
+        {
+            txt_rackNo.Clear();
+        }
     }
 }
