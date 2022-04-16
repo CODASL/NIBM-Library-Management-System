@@ -56,7 +56,8 @@ namespace Library_Management_System_v1._1.View
             cmb_bookIssueFilter.SelectedIndex = 0;
             cmb_filterAccounting.SelectedIndex = 0;
             lbl_totalBookIssueCount.Text = getTotalBookIssueCount().ToString();
-            
+            lbl_IssueBookLastUpdate.Text = Controller.BookIssueReturnController.getLastUpdateDateTime("Book_Issue", "Updated_Date");
+            lbl_BooksLastUpdate.Text = Controller.BookIssueReturnController.getLastUpdateDateTime("Book", "Date_updated");
             
         }
         
@@ -498,12 +499,11 @@ namespace Library_Management_System_v1._1.View
         //=================Return Book Btn ==============================
         private void returnBookBtn_Click(object sender, EventArgs e)
         {
-
+             if (listView_issueBooks.SelectedItems.Count > 0)
+             {
                 String BID = listView_issueBooks.SelectedItems[0].SubItems[0].Text;
                 String MID = listView_issueBooks.SelectedItems[0].SubItems[1].Text;
-                if (listView_issueBooks.SelectedItems.Count > 0)
-                {
-                    if(listView_issueBooks.SelectedItems[0].SubItems[5].Text != "Returned")
+                if (listView_issueBooks.SelectedItems[0].SubItems[5].Text != "Returned")
                     {
                         DialogResult dialogresult = MessageBox.Show("Have any Damages/Late return in Book ?", "", MessageBoxButtons.YesNoCancel);
                             if (dialogresult.Equals(DialogResult.Yes))
@@ -564,11 +564,11 @@ namespace Library_Management_System_v1._1.View
                     MessageBox.Show("Book Already Returned");
                     }
                     
-                }
-                else
-                {
-                    MessageBox.Show("Please Select a record");
-                } 
+             }
+             else
+             {
+                MessageBox.Show("Please Select a record");
+             } 
         }
 
         //============Pay Member Fee =================================================

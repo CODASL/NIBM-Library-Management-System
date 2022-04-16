@@ -1,14 +1,37 @@
 ﻿using MaterialSkin.Controls;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Library_Management_System_v1._1.Controller
 {
     class BookIssueReturnController
     {
+        //=============================Last update ===================================
+
+        public static String  getLastUpdateDateTime (String tableName, String columnName){
+            String date = DateTime.Now.ToString();
+            Model.DatabaseService database = new Model.DatabaseService();
+            try
+            {
+                database.Con.Open();
+                MySqlDataReader sdr = database.readData("SELECT " + columnName + " FROM " + tableName + " ORDER BY " + columnName + " DESC LIMIT 1");
+                sdr.Read();
+                date = sdr[columnName].ToString();
+                database.Con.Close();
+                return date;
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return date;
+            
+        }
         //===========================Search Function ==================================================
         public static void bookIssueSearchFunction(MaterialListView list, int itemIndex, MaterialTextBox inputBox)
         {
