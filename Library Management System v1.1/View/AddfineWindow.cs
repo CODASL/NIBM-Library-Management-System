@@ -35,25 +35,37 @@ namespace Library_Management_System_v1._1.View
 
         private void btn_PayFine_Click(object sender, EventArgs e)
         {
-            try
+            if (string.IsNullOrEmpty(txt_fineAmount.Text))
             {
-                Model.DatabaseService database = new Model.DatabaseService();
-                int row = database.insertData("INSERT INTO Fine VALUES ('" + txt_fineId.Text + "','" + txt_MIDAddFine.Text + "','" + txt_BIDAddFine.Text + "','" + Emp_Id + "','" + txt_FineReason.Text + "','" + txt_fineAmount.Text + "')");
-                int row1 = database.updateData("UPDATE Accounting SET Fine_Count = Fine_Count + 1 WHERE MID = '" + MID + "'");
-                if (row > 0 && row1>0)
-                {
-                    this.Hide();
-                    Controller.CommonController.setActivity("Recieved fine from " + MID + " For "+ BID +" Book");
-                    MessageBox.Show("Fine paid Successfully");
-                }
-                else
-                {
-                    MessageBox.Show("Something went Wrong");
-                }
-            }catch(Exception ex)
+                MessageBox.Show("Please enter fine amount");
+            }else if (string.IsNullOrEmpty(txt_FineReason.Text))
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please enter reason to fine");
             }
+            else
+            {
+                try
+                {
+                    Model.DatabaseService database = new Model.DatabaseService();
+                    int row = database.insertData("INSERT INTO Fine VALUES ('" + txt_fineId.Text + "','" + txt_MIDAddFine.Text + "','" + txt_BIDAddFine.Text + "','" + Emp_Id + "','" + txt_FineReason.Text + "','" + txt_fineAmount.Text + "')");
+                    int row1 = database.updateData("UPDATE Accounting SET Fine_Count = Fine_Count + 1 WHERE MID = '" + MID + "'");
+                    if (row > 0 && row1 > 0)
+                    {
+                        this.Hide();
+                        Controller.CommonController.setActivity("Recieved fine from " + MID + " For " + BID + " Book");
+                        MessageBox.Show("Fine paid Successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went Wrong");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            
             
         }
 
