@@ -238,12 +238,16 @@ namespace Library_Management_System_v1._1.View
 
         private void clearBtnAddBook_Click(object sender, EventArgs e)
         {
+            cmb_BookAuthors.SelectedIndex = -1;
+            cmb_bookCategories.SelectedIndex = -1;
+            cmb_bookRacks.SelectedIndex = -1;
             txt_bookISBN.Clear();
             txt_BookName.Clear();
-            cmb_BookAuthors.ResetText();
-            cmb_bookCategories.ResetText();
-            cmb_bookRacks.ResetText();
-            
+            pictureBox2.Hide();
+            lblsrc.Hide();
+            comboBox1.Hide();
+
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
