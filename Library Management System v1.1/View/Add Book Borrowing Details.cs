@@ -1,4 +1,7 @@
 ﻿using MaterialSkin.Controls;
+using AForge.Video;
+using ZXing;
+using AForge.Video.DirectShow;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -17,11 +20,15 @@ namespace Library_Management_System_v1._1.View
         Controller.CommonController commonController = new Controller.CommonController();
         Model.Librarian librarian;
         String BID;
+        FilterInfoCollection getdata;
+        VideoCaptureDevice camera;
+        String lbl;
         public Add_Book_Borrowing_Details(Model.Librarian librarian)
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
             this.librarian = librarian;
+
         }
 
         //=================Book Issue On Load ==============================
@@ -34,7 +41,8 @@ namespace Library_Management_System_v1._1.View
             loadMemberData();
             txt_issuingLibId.Text = librarian.Id;
             lbl_LibName.Text = librarian.Name;
-           
+            getdatabr();
+
         }
 
 
@@ -83,29 +91,21 @@ namespace Library_Management_System_v1._1.View
         //==================Load ISBN Barcode =============================
         private void isbnQrBtnissueBook_Click(object sender, EventArgs e)
         {
-            if (this.qrPanelBookBorrow.Controls.Count > 0)
-                this.qrPanelBookBorrow.Controls.RemoveAt(0);
-            QRlogin f = new QRlogin();
-            f.TopLevel = false;
-            f.Dock = Dock;
-            qrPanelBookBorrow.Controls.Clear();
-            qrPanelBookBorrow.Controls.Add(f);
-            qrPanelBookBorrow.Tag = f;
-            f.Show();
+            camera = new VideoCaptureDevice(getdata[comboBox1.SelectedIndex].MonikerString);
+            camera.NewFrame += Camera_NewFrame;
+            camera.Start();
+            timer1.Start();
+            cmb_ISBN.Text = lbl;
         }
 
         //==================Load MemberID QR =============================
         private void memberIdbtnIssueBook_Click(object sender, EventArgs e)
         {
-            if (this.qrPanelBookBorrow.Controls.Count > 0)
-                this.qrPanelBookBorrow.Controls.RemoveAt(0);
-            QRlogin f = new QRlogin();
-            f.TopLevel = false;
-            f.Dock = Dock;
-            qrPanelBookBorrow.Controls.Clear();
-            qrPanelBookBorrow.Controls.Add(f);
-            qrPanelBookBorrow.Tag = f;
-            f.Show();
+            camera = new VideoCaptureDevice(getdata[comboBox1.SelectedIndex].MonikerString);
+            camera.NewFrame += Camera_NewFrame;
+            camera.Start();
+            timer1.Start();
+            cmb_MemberId.Text = lbl;
         }
 
         //==============GET Book Details By ISBN =============================
@@ -191,6 +191,42 @@ namespace Library_Management_System_v1._1.View
         {
             cmb_ISBN.ResetText();
             cmb_MemberId.ResetText();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (pictureBox2.Image != null)
+            {
+                BarcodeReader br = new BarcodeReader();
+                Result ans = br.Decode((Bitmap)pictureBox2.Image);
+                if (ans != null)
+                {
+                    lbl = ans.ToString();
+                    timer1.Stop();
+                    if (camera.IsRunning)
+                    {
+                        camera.Stop();
+                    }
+
+                }
+                return;
+
+            }
+        }
+
+        private void getdatabr()
+        {
+            getdata = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo info in getdata)
+            {
+                comboBox1.Items.Add(info.Name);
+                comboBox1.SelectedIndex = 0;
+
+            }
+        }
+        private void Camera_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            pictureBox2.Image = (Bitmap)eventArgs.Frame.Clone();
         }
     }
 }
