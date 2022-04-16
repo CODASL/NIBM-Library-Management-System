@@ -256,7 +256,10 @@ namespace Library_Management_System_v1._1.View
             cmb_bookCategories.Focus();
             cmb_bookRacks.Focus();
             txt_bookISBN.Focus();
-            
+            pictureBox2.Hide();
+            lblsrc.Hide();
+            comboBox1.Hide();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
