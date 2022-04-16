@@ -153,7 +153,7 @@ namespace Library_Management_System_v1._1.Controller
             try
             {
                 database.Con.Open();
-                MySqlDataReader sdr = database.readData("SELECT " + column_name + " FROM " + table_name + whereCommand+" ORDER BY " + primary_key + " DESC LIMIT 1");
+                MySqlDataReader sdr = database.readData("SELECT " + column_name + " FROM " + table_name + whereCommand+" ORDER BY " + column_name + " DESC LIMIT 1");
                 sdr.Read();
                 if (sdr.HasRows)
                 {
