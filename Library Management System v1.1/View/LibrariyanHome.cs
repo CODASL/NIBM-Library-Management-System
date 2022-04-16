@@ -55,6 +55,8 @@ namespace Library_Management_System_v1._1.View
             cmb_filterBooks.SelectedIndex = 0;
             cmb_bookIssueFilter.SelectedIndex = 0;
             cmb_filterAccounting.SelectedIndex = 0;
+            lbl_totalBookIssueCount.Text = getTotalBookIssueCount().ToString();
+            
         }
         
         //========================load Book Availability ====================================
@@ -119,6 +121,7 @@ namespace Library_Management_System_v1._1.View
             lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
             lbl_BookIssuedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" +DateTime.Now.Date.ToString("yyyy-MM-dd") + "' AND Status='" + 1 + "'").ToString();
             lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "' AND Status='" + 0 + "'").ToString();
+            
         }
 
         //============ form x or F4 click logout user ================================
@@ -349,7 +352,7 @@ namespace Library_Management_System_v1._1.View
                         listView_issueBooks.Items.Add(item);
                     }
                     DB.Con.Close();
-                    lbl_totalBookIssueCount.Text = listView_issueBooks.Items.Count.ToString();
+                    lbl_totalBookIssueCount.Text = getTotalBookIssueCount().ToString();
                     lbl_IssueBookLastUpdate.Text = commonController.setUpdatedTime("Updated_date", "Book_Issue", "ID", "");
 
                 }
@@ -375,7 +378,25 @@ namespace Library_Management_System_v1._1.View
                 DB.Con.Close();
             }
         }
+        //=======================total book issue count ===========================================
+        private int getTotalBookIssueCount()
+        {
+            
+            int count = 0;
+            if (listView_issueBooks.Items.Count > 0)
+            {
+                for(int i = 0; i < listView_issueBooks.Items.Count; i++)
+                {
+                    if(listView_issueBooks.Items[i].SubItems[5].Text == "Issued")
+                    {
+                        count = count + 1;
+                    }
+                }
 
+                return count;
+            }
+            return count;
+        }
         //=======================set Dashboard tile Counts ========================================
         public int tile_count(String query)
         {
