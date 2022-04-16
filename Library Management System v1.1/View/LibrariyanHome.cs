@@ -58,7 +58,9 @@ namespace Library_Management_System_v1._1.View
             lbl_totalBookIssueCount.Text = getTotalBookIssueCount().ToString();
             lbl_IssueBookLastUpdate.Text = Controller.BookIssueReturnController.getLastUpdateDateTime("Book_Issue", "Updated_Date");
             lbl_BooksLastUpdate.Text = Controller.BookIssueReturnController.getLastUpdateDateTime("Book", "Date_updated");
-            
+            lbl_AccountingLastUpdate.Text = Controller.BookIssueReturnController.getLastUpdateDateTime("Accounting", "Last_Updated");
+
+
         }
         
         //========================load Book Availability ====================================
