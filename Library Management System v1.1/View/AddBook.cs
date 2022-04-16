@@ -20,20 +20,19 @@ namespace Library_Management_System_v1._1.View
         Controller.CommonController commonController = new Controller.CommonController();
         Controller.BookController bookcontroller = new Controller.BookController();
         Boolean isUpdate;
-        String selectedISBN;
         MaterialLabel lastUpdate;
         FilterInfoCollection getdata;
         VideoCaptureDevice camera;
         Model.Book selectedBook = Controller.BookController.selectedBook;
-        
+        public static List<String> categories = new List<string>();
+        public static List<String> authors = new List<string>();
+        public static List<String> racks = new List<string>();
+
         public AddBook( Boolean isUpdate, MaterialLabel lastUpdate = null)
         {
             InitializeComponent();
             this.isUpdate = isUpdate;
-            this.selectedISBN = selectedISBN;
             this.lastUpdate = lastUpdate;
-            
-           
         }
 
 
@@ -41,12 +40,13 @@ namespace Library_Management_System_v1._1.View
 
         private void AddBook_Load(object sender, EventArgs e)
         {
-            onUpdate();
+            
             new Controller.MaterialController().addStyle(this);
            
-            Controller.BookController.loadComboBoxes(cmb_bookCategories, "Category", "Category_Name");
-            Controller.BookController.loadComboBoxes(cmb_BookAuthors, "Author", "Author_Name");
-            Controller.BookController.loadComboBoxes(cmb_bookRacks, "Rack", "Rack_NO");
+            Controller.BookController.loadComboBoxes(cmb_bookCategories, "Category", "Category_Name",categories);
+            Controller.BookController.loadComboBoxes(cmb_BookAuthors, "Author", "Author_Name",authors);
+            Controller.BookController.loadComboBoxes(cmb_bookRacks, "Rack", "Rack_NO" , racks);
+            onUpdate();
             pictureBox2.Hide();
             lblsrc.Hide();
             comboBox1.Hide();
@@ -76,9 +76,9 @@ namespace Library_Management_System_v1._1.View
                             txt_bookIdAddBook.Text = sdr["BID"].ToString();
                             txt_BookName.Text = selectedBook.Name.ToString();
                             txt_bookISBN.Text = selectedBook.Isbn.ToString();
-                            cmb_BookAuthors.Text = selectedBook.Author.ToString();
-                            cmb_bookCategories.Text = selectedBook.Category.ToString();
-                            cmb_bookRacks.Text = selectedBook.RackNo.ToString();
+                            cmb_BookAuthors.SelectedIndex = authors.IndexOf(selectedBook.Author.ToString());
+                            cmb_bookCategories.SelectedIndex = categories.IndexOf(selectedBook.Category.ToString());
+                            cmb_bookRacks.SelectedIndex = racks.IndexOf(selectedBook.RackNo.ToString());
                         }
                         
                     }catch(Exception ex)

@@ -43,7 +43,7 @@ namespace Library_Management_System_v1._1.View
                     MessageBox.Show("Record Added");
                     if (cmb_BookAuthors != null)
                     {
-                        Controller.BookController.loadComboBoxes(cmb_BookAuthors, "Author", "Author_Name");
+                        Controller.BookController.loadComboBoxes(cmb_BookAuthors, "Author", "Author_Name",AddBook.authors);
                     }
 
                 }

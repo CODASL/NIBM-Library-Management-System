@@ -37,7 +37,7 @@ namespace Library_Management_System_v1._1.View
                     Controller.CommonController.setActivity("Added " + txt_categoryId.Text + " Category Data");
                     MessageBox.Show("Category Added Successfully");
                     if(cmb_bookCategories != null) {
-                        Controller.BookController.loadComboBoxes(cmb_bookCategories, "Category", "Category_Name");
+                        Controller.BookController.loadComboBoxes(cmb_bookCategories, "Category", "Category_Name",AddBook.categories);
                     }
                 }
                 else

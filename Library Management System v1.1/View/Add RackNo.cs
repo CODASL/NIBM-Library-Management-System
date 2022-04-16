@@ -36,7 +36,7 @@ namespace Library_Management_System_v1._1.View
                     MessageBox.Show("Rack No Added Successfully");
                     if (cmb_bookRacks != null)
                     {
-                        Controller.BookController.loadComboBoxes(cmb_bookRacks, "Rack", "Rack_NO");
+                        Controller.BookController.loadComboBoxes(cmb_bookRacks, "Rack", "Rack_NO",AddBook.racks);
                     }
                     
                 }

@@ -11,6 +11,10 @@ namespace Library_Management_System_v1._1.Controller
 {
     class BookController
     {
+        static List<String> categories;
+        static List<String> authors;
+        static List<String> racks;
+
         public static Model.Book selectedBook = null;
         //=======================Book Search =========================================================
         public static void bookSearchFunction(MaterialListView list, int itemIndex, MaterialTextBox inputBox)
@@ -132,11 +136,13 @@ namespace Library_Management_System_v1._1.Controller
         }
 
         //========================Load  Category , Rack , Author Combo Boxes =============================
-        public static void loadComboBoxes(MaterialComboBox cmbBox, String tableName, String columnName)
+        public static void loadComboBoxes(MaterialComboBox cmbBox, String tableName, String columnName ,List<String> list)
         {
             Model.DatabaseService database = new Model.DatabaseService();
             try
             {
+               
+                list.Clear();
                 cmbBox.Items.Clear();
                 database.Con.Open();
                 MySqlDataReader sdr = database.readData("Select * From " + tableName);
@@ -144,7 +150,9 @@ namespace Library_Management_System_v1._1.Controller
                 {
                     while (sdr.Read())
                     {
-                        cmbBox.Items.Add(sdr[columnName].ToString());
+                        String item = sdr[columnName].ToString();
+                        cmbBox.Items.Add(item);
+                        list.Add(item);
                     }
                 }
                 else
