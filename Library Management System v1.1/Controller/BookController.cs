@@ -11,6 +11,7 @@ namespace Library_Management_System_v1._1.Controller
 {
     class BookController
     {
+        public static Model.Book selectedBook = null;
         //=======================Book Search =========================================================
         public static void bookSearchFunction(MaterialListView list, int itemIndex, MaterialTextBox inputBox)
         {

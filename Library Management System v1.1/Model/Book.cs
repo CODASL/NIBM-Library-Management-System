@@ -41,6 +41,15 @@ namespace Library_Management_System_v1._1.Model
             this.author = author;
         }
 
+        public Book(String isbn, String name, String category, String author, String rackNo)
+        {
+            this.isbn = isbn;
+            this.name = name;
+            this.category = category;
+            this.author = author;
+            this.rackNo = rackNo;
+        }
+
         public string Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public string Category { get => category; set => category = value; }

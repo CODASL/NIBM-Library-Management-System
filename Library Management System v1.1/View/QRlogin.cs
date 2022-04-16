@@ -117,11 +117,13 @@ namespace Library_Management_System_v1._1
                                     Controller.CommonController.setActivity("Logged In ");
                                 }
                             }
+                            database.Con.Close();
 
                         }
                         else
                         {
                             MessageBox.Show("user Does not exist ", MessageBoxIcon.Warning.ToString());
+                            database.Con.Close();
                         }
 
                     }

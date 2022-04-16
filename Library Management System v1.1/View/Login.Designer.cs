@@ -44,14 +44,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnQR = new Library_Management_System_v1._1.View.Custom_Controls.RJButton();
             this.label6 = new System.Windows.Forms.Label();
+            this.resetBtn = new System.Windows.Forms.Button();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.btnlogin = new Library_Management_System_v1._1.View.Custom_Controls.RJButton();
             this.passwordShowHide = new System.Windows.Forms.PictureBox();
             this.txtPass = new CustomControls.RJControls.RJTextBox();
-            this.txtmail = new CustomControls.RJControls.RJTextBox();
-            this.btnlogin = new Library_Management_System_v1._1.View.Custom_Controls.RJButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.resetBtn = new System.Windows.Forms.Button();
+            this.txtmail = new CustomControls.RJControls.RJTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bluebackround.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.piclogo)).BeginInit();
@@ -144,7 +144,7 @@
             this.piclogo.Location = new System.Drawing.Point(21, 32);
             this.piclogo.Name = "piclogo";
             this.piclogo.Size = new System.Drawing.Size(72, 70);
-            this.piclogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.piclogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.piclogo.TabIndex = 11;
             this.piclogo.TabStop = false;
             // 
@@ -220,9 +220,22 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(100, 58);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(165, 18);
+            this.label6.Size = new System.Drawing.Size(160, 18);
             this.label6.TabIndex = 26;
             this.label6.Text = "Hello Welcome Again !";
+            // 
+            // resetBtn
+            // 
+            this.resetBtn.FlatAppearance.BorderSize = 0;
+            this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetBtn.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetBtn.Location = new System.Drawing.Point(113, 410);
+            this.resetBtn.Name = "resetBtn";
+            this.resetBtn.Size = new System.Drawing.Size(109, 23);
+            this.resetBtn.TabIndex = 4;
+            this.resetBtn.Text = "Reset Password";
+            this.resetBtn.UseVisualStyleBackColor = true;
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
             // metroPanel1
             // 
@@ -242,6 +255,29 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // btnlogin
+            // 
+            this.btnlogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnlogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnlogin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnlogin.BorderRadius = 8;
+            this.btnlogin.BorderSize = 0;
+            this.btnlogin.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnlogin.FlatAppearance.BorderSize = 0;
+            this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlogin.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogin.ForeColor = System.Drawing.Color.White;
+            this.btnlogin.Image = ((System.Drawing.Image)(resources.GetObject("btnlogin.Image")));
+            this.btnlogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnlogin.Location = new System.Drawing.Point(0, 180);
+            this.btnlogin.Name = "btnlogin";
+            this.btnlogin.Size = new System.Drawing.Size(251, 40);
+            this.btnlogin.TabIndex = 2;
+            this.btnlogin.Text = "Login";
+            this.btnlogin.TextColor = System.Drawing.Color.White;
+            this.btnlogin.UseVisualStyleBackColor = false;
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // passwordShowHide
             // 
@@ -275,6 +311,26 @@
             this.txtPass.UnderlinedStyle = true;
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(-1, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 14);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Password";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 14);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Employee ID";
+            // 
             // txtmail
             // 
             this.txtmail.BackColor = System.Drawing.SystemColors.Window;
@@ -295,62 +351,6 @@
             this.txtmail.TabIndex = 0;
             this.txtmail.UnderlinedStyle = true;
             this.txtmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmail_KeyPress);
-            // 
-            // btnlogin
-            // 
-            this.btnlogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.btnlogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.btnlogin.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnlogin.BorderRadius = 8;
-            this.btnlogin.BorderSize = 0;
-            this.btnlogin.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnlogin.FlatAppearance.BorderSize = 0;
-            this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnlogin.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogin.ForeColor = System.Drawing.Color.White;
-            this.btnlogin.Image = ((System.Drawing.Image)(resources.GetObject("btnlogin.Image")));
-            this.btnlogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnlogin.Location = new System.Drawing.Point(0, 180);
-            this.btnlogin.Name = "btnlogin";
-            this.btnlogin.Size = new System.Drawing.Size(251, 40);
-            this.btnlogin.TabIndex = 2;
-            this.btnlogin.Text = "Login";
-            this.btnlogin.TextColor = System.Drawing.Color.White;
-            this.btnlogin.UseVisualStyleBackColor = false;
-            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(-1, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 14);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Password";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 14);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Employee ID";
-            // 
-            // resetBtn
-            // 
-            this.resetBtn.FlatAppearance.BorderSize = 0;
-            this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetBtn.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetBtn.Location = new System.Drawing.Point(113, 410);
-            this.resetBtn.Name = "resetBtn";
-            this.resetBtn.Size = new System.Drawing.Size(109, 23);
-            this.resetBtn.TabIndex = 4;
-            this.resetBtn.Text = "Reset Password";
-            this.resetBtn.UseVisualStyleBackColor = true;
-            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
             // timer1
             // 

@@ -24,12 +24,16 @@ namespace Library_Management_System_v1._1.View
         MaterialLabel lastUpdate;
         FilterInfoCollection getdata;
         VideoCaptureDevice camera;
-        public AddBook(Boolean isUpdate, String selectedISBN = null , MaterialLabel lastUpdate = null)
+        Model.Book selectedBook = Controller.BookController.selectedBook;
+        
+        public AddBook( Boolean isUpdate, MaterialLabel lastUpdate = null)
         {
             InitializeComponent();
             this.isUpdate = isUpdate;
             this.selectedISBN = selectedISBN;
             this.lastUpdate = lastUpdate;
+            
+           
         }
 
 
@@ -58,23 +62,23 @@ namespace Library_Management_System_v1._1.View
                 this.btn_AddBookDialog.Text = "Update";
                 txt_bookISBN.ReadOnly = true;
                 
-                if(selectedISBN != null)
+                if(selectedBook != null)
                 {
                     Model.DatabaseService database = new Model.DatabaseService();
                     try
                     {
                         
                         database.Con.Open();
-                        MySqlDataReader sdr = database.readData("SELECT * FROM Book WHERE ISBN = '"+selectedISBN+"'");
+                        MySqlDataReader sdr = database.readData("SELECT BID FROM Book WHERE ISBN = '"+selectedBook.Isbn+"'");
                         sdr.Read();
                         if (sdr.HasRows)
                         {
                             txt_bookIdAddBook.Text = sdr["BID"].ToString();
-                            txt_BookName.Text = sdr["Name"].ToString();
-                            txt_bookISBN.Text = sdr["ISBN"].ToString();
-                            cmb_BookAuthors.SelectedText = sdr["Author"].ToString();
-                            cmb_bookCategories.SelectedText = sdr["Category"].ToString();
-                            cmb_bookRacks.SelectedText = sdr["Rack_No"].ToString();
+                            txt_BookName.Text = selectedBook.Name.ToString();
+                            txt_bookISBN.Text = selectedBook.Isbn.ToString();
+                            cmb_BookAuthors.Text = selectedBook.Author.ToString();
+                            cmb_bookCategories.Text = selectedBook.Category.ToString();
+                            cmb_bookRacks.Text = selectedBook.RackNo.ToString();
                         }
                         
                     }catch(Exception ex)

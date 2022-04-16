@@ -431,7 +431,7 @@ namespace Library_Management_System_v1._1.View
         //=================Add Book Btn =======================
         private void LibAddBook_Click(object sender, EventArgs e)
         {
-            new View.AddBook(false ,null ,lbl_BooksLastUpdate).ShowDialog();
+            new View.AddBook(false ,lbl_BooksLastUpdate).ShowDialog();
         }
 
         //=================Add Members Btn =======================
@@ -583,7 +583,7 @@ namespace Library_Management_System_v1._1.View
         //============Add Book  Dashboard Btn ======================================
         private void addBookDashBoard_Click(object sender, EventArgs e)
         {
-            new View.AddBook(false ,null, lbl_BooksLastUpdate).ShowDialog();
+            new View.AddBook(false ,lbl_BooksLastUpdate).ShowDialog();
         }
 
         //===========Add Category Dashboard Btn ====================================
@@ -718,7 +718,17 @@ namespace Library_Management_System_v1._1.View
             {
                 try
                 {
-                    new AddBook(true , LibBookList.SelectedItems[0].SubItems[0].Text,lbl_BooksLastUpdate).Show();
+                    Model.Book book = new Model.Book(
+                            LibBookList.SelectedItems[0].SubItems[0].Text,
+                            LibBookList.SelectedItems[0].SubItems[1].Text,
+                            LibBookList.SelectedItems[0].SubItems[2].Text,
+                            LibBookList.SelectedItems[0].SubItems[3].Text,
+                            LibBookList.SelectedItems[0].SubItems[5].Text
+                        );
+
+                    Controller.BookController.selectedBook = book;
+                  
+                    new AddBook(true ,lbl_BooksLastUpdate).Show();
                 }catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);

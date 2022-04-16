@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5FFE9F40-A4B7-48A2-8B06-3368399DE08A}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Library_Management_System_v1._1</RootNamespace>
     <AssemblyName>Library Management System v1.1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
