@@ -56,5 +56,10 @@ namespace Library_Management_System_v1._1.View
             new Controller.CommonController().setId(txt_categoryId, "Category_Id", "Category", "C");
             txt_categoryName.Focus();
         }
+
+        private void btn_clearCategory_Click(object sender, EventArgs e)
+        {
+            txt_categoryName.Clear();
+        }
     }
 }

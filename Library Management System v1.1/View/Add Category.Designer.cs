@@ -101,6 +101,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_clearCategory.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_clearCategory.UseAccentColor = false;
             this.btn_clearCategory.UseVisualStyleBackColor = true;
+            this.btn_clearCategory.Click += new System.EventHandler(this.btn_clearCategory_Click);
             // 
             // materialLabel2
             // 
@@ -141,7 +142,7 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.txt_categoryId);
             this.Name = "Add_Category";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Category";
             this.Load += new System.EventHandler(this.Add_Category_Load);
             this.ResumeLayout(false);

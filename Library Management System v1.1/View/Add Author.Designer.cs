@@ -142,7 +142,7 @@ namespace Library_Management_System_v1._1.View
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.txt_authorId);
             this.Name = "Add_Author";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Author";
             this.ResumeLayout(false);
             this.PerformLayout();
