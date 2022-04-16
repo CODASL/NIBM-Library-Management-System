@@ -159,7 +159,14 @@ namespace Library_Management_System_v1._1.View
         }
         private void Camera_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            pictureBox2.Image = (Bitmap)eventArgs.Frame.Clone();
+            try
+            {
+                pictureBox2.Image = (Bitmap)eventArgs.Frame.Clone();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void btn_AddBookDialog_Click(object sender, EventArgs e)
@@ -263,7 +270,6 @@ namespace Library_Management_System_v1._1.View
             pictureBox2.Hide();
             lblsrc.Hide();
             comboBox1.Hide();
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
