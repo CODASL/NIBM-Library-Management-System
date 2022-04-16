@@ -46,8 +46,9 @@ namespace Library_Management_System_v1._1
             {
                 camera = new VideoCaptureDevice(getdata[comboBox1.SelectedIndex].MonikerString);
                 camera.NewFrame += Camera_NewFrame;
-                camera.Start();
                 timer1.Start();
+                camera.Start();
+
             }
             catch (Exception ex)
             {
@@ -81,6 +82,7 @@ namespace Library_Management_System_v1._1
                 {
                     try
                     {
+
                         String emp_id;
                         database.Con.Open();
                         emp_id = ans.ToString();
@@ -121,6 +123,9 @@ namespace Library_Management_System_v1._1
                         }
                         else
                         {
+                            database.Con.Close();
+                            camera.Stop();
+                            timer1.Stop();
                             MessageBox.Show("user Does not exist ", MessageBoxIcon.Warning.ToString());
                         }
 
