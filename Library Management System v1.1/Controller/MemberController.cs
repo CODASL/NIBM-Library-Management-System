@@ -87,7 +87,7 @@ namespace Library_Management_System_v1._1.Controller
 
             int row2 = database.updateData("UPDATE Guardian SET Name = '" + guardian.Name + "' , NIC = '" + guardian.NIC1 + "' ," +
                 "Address ='" + guardian.Address + "',Phone ='"+guardian.Phone+"', updated_date = '"+guardian.UpdateDate.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE GID = '"+guardian.Id+"'");
-            Console.WriteLine(row + " " + row2);
+            
             return row > 0 && row2>0;
         }
     }
