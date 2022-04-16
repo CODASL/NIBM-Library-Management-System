@@ -219,6 +219,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_clearBtnAddFine.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_clearBtnAddFine.UseAccentColor = false;
             this.btn_clearBtnAddFine.UseVisualStyleBackColor = true;
+            this.btn_clearBtnAddFine.Click += new System.EventHandler(this.btn_clearBtnAddFine_Click);
             // 
             // materialLabel6
             // 

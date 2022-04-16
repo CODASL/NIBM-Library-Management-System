@@ -57,5 +57,11 @@ namespace Library_Management_System_v1._1.View
             
         }
 
+        private void btn_clearBtnAddFine_Click(object sender, EventArgs e)
+        {
+            txt_fineAmount.Clear();
+            txt_FineReason.Clear();
+            txt_fineAmount.Focus();
+        }
     }
 }
