@@ -507,20 +507,20 @@ namespace Library_Management_System_v1._1.View
                 String ID = (listView_issueBooks.SelectedItems[0].Index + 1).ToString();
 
                 if (listView_issueBooks.SelectedItems[0].SubItems[5].Text != "Returned")
-                    {
+                {
                         DialogResult dialogresult = MessageBox.Show("Have any Damages/Late return in Book ?", "", MessageBoxButtons.YesNoCancel);
-                            if (dialogresult.Equals(DialogResult.Yes))
-                            {
+                        if (dialogresult.Equals(DialogResult.Yes))
+                        {
 
                                 new AddfineWindow(BID, MID, emp_Id).ShowDialog();
 
-                            }
-                            else if (dialogresult.Equals(DialogResult.No))
-                            {
+                        }
+                        else if (dialogresult.Equals(DialogResult.No))
+                        {
                                 
-                                DialogResult dialogresult1 = MessageBox.Show("Are you sure that member retured Book?", "", MessageBoxButtons.YesNo);
-                                if (dialogresult1.Equals(DialogResult.Yes))
-                                {
+                            DialogResult dialogresult1 = MessageBox.Show("Are you sure that member retured Book?", "", MessageBoxButtons.YesNo);
+                            if (dialogresult1.Equals(DialogResult.Yes))
+                            {
                                     try
                                     {
 
@@ -541,21 +541,15 @@ namespace Library_Management_System_v1._1.View
                                     {
                                         MessageBox.Show(ex.ToString());
                                     }
-                                }
-                            else
-                            {
-                                this.Hide();
                             }
+                            
                         }
-                        else
-                        {
-                            this.Hide();
-                        }
-                    }
-                    else
-                    {
+                        
+                }
+                else
+                {
                     MessageBox.Show("Book Already Returned");
-                    }
+                }
                     
              }
              else
