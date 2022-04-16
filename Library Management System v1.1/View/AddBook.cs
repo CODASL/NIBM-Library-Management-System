@@ -165,11 +165,16 @@ namespace Library_Management_System_v1._1.View
         {
             try
             {
-                if (txt_bookISBN.Text == null)
+                int isbn;
+                if (string.IsNullOrEmpty(txt_bookISBN.Text))
                 {
                     MessageBox.Show("Please Scan or type ISBN Code");
+
+                }else if(!int.TryParse(txt_bookISBN.Text , out isbn))
+                {
+                    MessageBox.Show("Invalid ISBN");
                 }
-                else if (txt_BookName.Text == null)
+                else if (string.IsNullOrEmpty(txt_BookName.Text))
                 {
                     MessageBox.Show("Please Enter Book Name");
                 }
@@ -243,9 +248,13 @@ namespace Library_Management_System_v1._1.View
         {
             txt_bookISBN.Clear();
             txt_BookName.Clear();
-            cmb_BookAuthors.ResetText();
-            cmb_bookCategories.ResetText();
-            cmb_bookRacks.ResetText();
+            cmb_BookAuthors.SelectedIndex = -1;
+            cmb_bookCategories.SelectedIndex = -1;
+            cmb_bookRacks.SelectedIndex = -1;
+            cmb_BookAuthors.Focus();
+            cmb_bookCategories.Focus();
+            cmb_bookRacks.Focus();
+            txt_bookISBN.Focus();
             
         }
 

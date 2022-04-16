@@ -101,6 +101,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_clearCategory.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_clearCategory.UseAccentColor = false;
             this.btn_clearCategory.UseVisualStyleBackColor = true;
+            this.btn_clearCategory.Click += new System.EventHandler(this.btn_clearCategory_Click);
             // 
             // materialLabel2
             // 
