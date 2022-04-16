@@ -156,35 +156,48 @@ namespace Library_Management_System_v1._1.View
 
         private void btn_issueBookDialog_Click(object sender, EventArgs e)
         {
-            Model.DatabaseService database = new Model.DatabaseService();
-            try
+            if (string.IsNullOrEmpty(cmb_ISBN.Text))
             {
-                int row = database.insertData("INSERT INTO Book_Issue VALUES('" + txt_issueId.Text + "','" + BID + "','" + cmb_MemberId.SelectedItem + "','" + txt_issuingLibId.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','" + DateTime.Now.AddDays(14).ToString("yyyy-MM-dd HH:mm:ss") + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','" + 1 + "')");
-                if(row > 0)
+                MessageBox.Show("Please scan or choose ISBN");
+            }
+            else if(string.IsNullOrEmpty(cmb_MemberId.Text))
+            {
+                MessageBox.Show("Please scan or choose Member Id");
+            }
+            else
+            {
+                Model.DatabaseService database = new Model.DatabaseService();
+                try
                 {
-                    int row1 = database.updateData("UPDATE Book SET Availability = 0 WHERE BID = '" + BID + "'");
-                    if(row1 > 0)
+                    int row = database.insertData("INSERT INTO Book_Issue VALUES('" + txt_issueId.Text + "','" + BID + "','" + cmb_MemberId.SelectedItem + "','" + txt_issuingLibId.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','" + DateTime.Now.AddDays(14).ToString("yyyy-MM-dd HH:mm:ss") + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','" + 1 + "')");
+                    if (row > 0)
                     {
-                        this.Hide();
-                        Controller.CommonController.setActivity("Added Id =" + txt_issueId.Text + " Book Issue");
-                        MessageBox.Show("Book Issue Data Added Successfully");
-                        
+                        int row1 = database.updateData("UPDATE Book SET Availability = 0 WHERE BID = '" + BID + "'");
+                        if (row1 > 0)
+                        {
+                            this.Hide();
+                            Controller.CommonController.setActivity("Added Id =" + txt_issueId.Text + " Book Issue");
+                            MessageBox.Show("Book Issue Data Added Successfully");
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Something went Wrong");
+                        }
                     }
                     else
                     {
                         MessageBox.Show("Something went Wrong");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Something went Wrong");
-                }
-                
 
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
+            
         }
 
         private void btn_clearissueBookDialog_Click(object sender, EventArgs e)
