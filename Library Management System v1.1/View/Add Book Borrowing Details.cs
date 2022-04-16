@@ -95,6 +95,7 @@ namespace Library_Management_System_v1._1.View
             camera.NewFrame += Camera_NewFrame;
             camera.Start();
             timer1.Start();
+            pictureBox2.Hide();
             cmb_ISBN.Text = lbl;
         }
 
@@ -105,6 +106,7 @@ namespace Library_Management_System_v1._1.View
             camera.NewFrame += Camera_NewFrame;
             camera.Start();
             timer1.Start();
+            pictureBox2.Hide();
             cmb_MemberId.Text = lbl;
         }
 

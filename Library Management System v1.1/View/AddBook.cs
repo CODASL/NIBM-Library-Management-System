@@ -131,6 +131,7 @@ namespace Library_Management_System_v1._1.View
                 lblsrc.Show();
                 pictureBox2.Show();
                 comboBox1.Show();
+                pictureBox1.Hide();
 
                 getdata = new FilterInfoCollection(FilterCategory.VideoInputDevice);
                 foreach (FilterInfo info in getdata)
