@@ -23,11 +23,13 @@ namespace Library_Management_System_v1._1.View
         FilterInfoCollection getdata;
         VideoCaptureDevice camera;
         String lbl;
-        public Add_Book_Borrowing_Details(Model.Librarian librarian)
+        MaterialLabel lbl_IssueBookLastUpdate;
+        public Add_Book_Borrowing_Details(Model.Librarian librarian , MaterialLabel lbl_IssueBookLastUpdate)
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
             this.librarian = librarian;
+            this.lbl_IssueBookLastUpdate = lbl_IssueBookLastUpdate;
 
         }
 
@@ -177,6 +179,7 @@ namespace Library_Management_System_v1._1.View
                         {
                             this.Hide();
                             Controller.CommonController.setActivity("Added Id =" + txt_issueId.Text + " Book Issue");
+                            lbl_IssueBookLastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                             MessageBox.Show("Book Issue Data Added Successfully");
 
                         }

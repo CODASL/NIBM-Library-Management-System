@@ -57,6 +57,7 @@ namespace Library_Management_System_v1._1.View
             cmb_filterAccounting.SelectedIndex = 0;
             lbl_totalBookIssueCount.Text = getTotalBookIssueCount().ToString();
             
+            
         }
         
         //========================load Book Availability ====================================
@@ -472,7 +473,7 @@ namespace Library_Management_System_v1._1.View
         {
             if(avCount > 0)
             {
-                new Add_Book_Borrowing_Details(librarian).ShowDialog();
+                new Add_Book_Borrowing_Details(librarian, lbl_IssueBookLastUpdate).ShowDialog();
             }
             else
             {
@@ -486,7 +487,7 @@ namespace Library_Management_System_v1._1.View
         {
             if (avCount > 0)
             {
-                new Add_Book_Borrowing_Details(librarian).ShowDialog();
+                new Add_Book_Borrowing_Details(librarian, lbl_IssueBookLastUpdate).ShowDialog();
             }
             else
             {
@@ -519,7 +520,7 @@ namespace Library_Management_System_v1._1.View
                                 {
                                     try
                                     {
-                                        Console.WriteLine(listView_issueBooks.SelectedItems[0].Index + 1);
+                                        
                                         String ID = (listView_issueBooks.SelectedItems[0].Index + 1).ToString();
                                         int row = DB.updateData("UPDATE Book_Issue SET Status = 0 WHERE ID = '" + ID + "'");
                                         if (row > 0)
@@ -530,6 +531,7 @@ namespace Library_Management_System_v1._1.View
                                             {
                                                 Controller.CommonController.setActivity("Handeled book returning from Book issue Id =" + ID );
                                                 MessageBox.Show("Book Returned successfully");
+                                                lbl_IssueBookLastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                                             }
                                             else
                                             {
