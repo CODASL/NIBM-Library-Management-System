@@ -1,7 +1,7 @@
-﻿using AForge.Video;
-using AForge.Video.DirectShow;
-using MaterialSkin.Controls;
+﻿using MaterialSkin.Controls;
 using MySql.Data.MySqlClient;
+using AForge.Video;
+using AForge.Video.DirectShow;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,13 +39,13 @@ namespace Library_Management_System_v1._1.View
         {
             onUpdate();
             new Controller.MaterialController().addStyle(this);
+           
             Controller.BookController.loadComboBoxes(cmb_bookCategories, "Category", "Category_Name");
             Controller.BookController.loadComboBoxes(cmb_BookAuthors, "Author", "Author_Name");
             Controller.BookController.loadComboBoxes(cmb_bookRacks, "Rack", "Rack_NO");
             pictureBox2.Hide();
             lblsrc.Hide();
             comboBox1.Hide();
-
         }
 
 
@@ -126,7 +126,6 @@ namespace Library_Management_System_v1._1.View
         //=============Show ISBN QR Scanner ===========================
         private void isbnQrBtnAddBook_Click(object sender, EventArgs e)
         {
-            
             try
             {
                 lblsrc.Show();

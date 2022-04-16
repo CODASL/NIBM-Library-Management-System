@@ -46,18 +46,16 @@ namespace Library_Management_System_v1._1.View
             this.addAuthorBtnAddBook = new MaterialSkin.Controls.MaterialButton();
             this.addRackNoBtnAddBook = new MaterialSkin.Controls.MaterialButton();
             this.cmb_bookRacks = new MaterialSkin.Controls.MaterialComboBox();
-            this.qrPanelBookAdd = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.txt_bookISBN = new MaterialSkin.Controls.MaterialTextBox();
             this.isbnQrBtnAddBook = new MaterialSkin.Controls.MaterialButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblsrc = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.qrPanelBookAdd.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblsrc = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -317,30 +315,6 @@ namespace Library_Management_System_v1._1.View
             this.cmb_bookRacks.TabIndex = 22;
             this.cmb_bookRacks.UseTallSize = false;
             // 
-            // qrPanelBookAdd
-            // 
-            this.qrPanelBookAdd.BackColor = System.Drawing.Color.White;
-            this.qrPanelBookAdd.Controls.Add(this.comboBox1);
-            this.qrPanelBookAdd.Controls.Add(this.lblsrc);
-            this.qrPanelBookAdd.Controls.Add(this.pictureBox2);
-            this.qrPanelBookAdd.Controls.Add(this.pictureBox1);
-            this.qrPanelBookAdd.Location = new System.Drawing.Point(531, 107);
-            this.qrPanelBookAdd.Name = "qrPanelBookAdd";
-            this.qrPanelBookAdd.Size = new System.Drawing.Size(334, 295);
-            this.qrPanelBookAdd.TabIndex = 30;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(334, 295);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // materialLabel4
             // 
             this.materialLabel4.AutoSize = true;
@@ -387,45 +361,59 @@ namespace Library_Management_System_v1._1.View
             this.isbnQrBtnAddBook.UseVisualStyleBackColor = true;
             this.isbnQrBtnAddBook.Click += new System.EventHandler(this.isbnQrBtnAddBook_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(616, 132);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(229, 21);
+            this.comboBox1.TabIndex = 41;
+            // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(18, 47);
+            this.pictureBox2.Location = new System.Drawing.Point(559, 159);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(298, 232);
-            this.pictureBox2.TabIndex = 36;
+            this.pictureBox2.TabIndex = 40;
             this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(541, 112);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(334, 295);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 39;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblsrc
+            // 
+            this.lblsrc.AutoSize = true;
+            this.lblsrc.Location = new System.Drawing.Point(569, 137);
+            this.lblsrc.Name = "lblsrc";
+            this.lblsrc.Size = new System.Drawing.Size(41, 13);
+            this.lblsrc.TabIndex = 42;
+            this.lblsrc.Text = "Source";
             // 
             // timer1
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // lblsrc
-            // 
-            this.lblsrc.AutoSize = true;
-            this.lblsrc.Location = new System.Drawing.Point(28, 26);
-            this.lblsrc.Name = "lblsrc";
-            this.lblsrc.Size = new System.Drawing.Size(41, 13);
-            this.lblsrc.TabIndex = 37;
-            this.lblsrc.Text = "Source";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(75, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(229, 21);
-            this.comboBox1.TabIndex = 38;
-            // 
             // AddBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 467);
+            this.Controls.Add(this.lblsrc);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.isbnQrBtnAddBook);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.txt_bookISBN);
-            this.Controls.Add(this.qrPanelBookAdd);
             this.Controls.Add(this.cmb_bookRacks);
             this.Controls.Add(this.addRackNoBtnAddBook);
             this.Controls.Add(this.addAuthorBtnAddBook);
@@ -445,10 +433,8 @@ namespace Library_Management_System_v1._1.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Book";
             this.Load += new System.EventHandler(this.AddBook_Load);
-            this.qrPanelBookAdd.ResumeLayout(false);
-            this.qrPanelBookAdd.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -471,14 +457,13 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialButton addAuthorBtnAddBook;
         private MaterialSkin.Controls.MaterialButton addRackNoBtnAddBook;
         private MaterialSkin.Controls.MaterialComboBox cmb_bookRacks;
-        private System.Windows.Forms.Panel qrPanelBookAdd;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialTextBox txt_bookISBN;
         private MaterialSkin.Controls.MaterialButton isbnQrBtnAddBook;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblsrc;
+        private System.Windows.Forms.Timer timer1;
     }
 }
