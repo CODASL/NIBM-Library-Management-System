@@ -25,7 +25,7 @@ namespace Library_Management_System_v1._1.View
 
         private void btn_AddRackNo_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txt_rackNo.Text))
+            if (!string.IsNullOrEmpty(txt_rackNo.Text))
             {
                 Model.DatabaseService database = new Model.DatabaseService();
                 try

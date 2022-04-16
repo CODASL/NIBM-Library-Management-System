@@ -32,6 +32,26 @@ namespace Library_Management_System_v1._1.Controller
             return date;
             
         }
+
+        //=========================Return Book ============================================================
+
+        public static Boolean returnBook(String ID , String BID )
+        {
+            Model.DatabaseService DB = new Model.DatabaseService();
+            int row = DB.updateData("UPDATE Book_Issue SET Status = 0 WHERE ID = '" + ID + "'");
+            if (row > 0)
+            {
+
+                int row1 = DB.updateData("UPDATE Book SET Availability = 1 WHERE BID = '" + BID + "'");
+                if (row1 > 0)
+                {
+                    return true;
+                    
+                }
+                
+            }
+            return false;
+        }
         //===========================Search Function ==================================================
         public static void bookIssueSearchFunction(MaterialListView list, int itemIndex, MaterialTextBox inputBox)
         {

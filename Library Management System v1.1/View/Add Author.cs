@@ -31,7 +31,7 @@ namespace Library_Management_System_v1._1.View
 
         private void btn_addAuthor_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txt_authorName.Text))
+            if (!string.IsNullOrEmpty(txt_authorName.Text))
             {
                 Model.Author author = new Model.Author(txt_authorId.Text, txt_authorName.Text, DateTime.Now);
                 try

@@ -11,11 +11,10 @@ namespace Library_Management_System_v1._1.Controller
 {
     class BookController
     {
-        static List<String> categories;
-        static List<String> authors;
-        static List<String> racks;
-
         public static Model.Book selectedBook = null;
+
+
+
         //=======================Book Search =========================================================
         public static void bookSearchFunction(MaterialListView list, int itemIndex, MaterialTextBox inputBox)
         {
@@ -135,6 +134,7 @@ namespace Library_Management_System_v1._1.Controller
             return row > 0;
         }
 
+        
         //========================Load  Category , Rack , Author Combo Boxes =============================
         public static void loadComboBoxes(MaterialComboBox cmbBox, String tableName, String columnName ,List<String> list)
         {

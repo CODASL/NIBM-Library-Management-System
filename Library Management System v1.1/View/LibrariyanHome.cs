@@ -357,7 +357,6 @@ namespace Library_Management_System_v1._1.View
                     }
                     DB.Con.Close();
                     lbl_totalBookIssueCount.Text = getTotalBookIssueCount().ToString();
-                    lbl_IssueBookLastUpdate.Text = commonController.setUpdatedTime("Updated_date", "Book_Issue", "ID", "");
 
                 }
                 else
@@ -505,6 +504,8 @@ namespace Library_Management_System_v1._1.View
              {
                 String BID = listView_issueBooks.SelectedItems[0].SubItems[0].Text;
                 String MID = listView_issueBooks.SelectedItems[0].SubItems[1].Text;
+                String ID = (listView_issueBooks.SelectedItems[0].Index + 1).ToString();
+
                 if (listView_issueBooks.SelectedItems[0].SubItems[5].Text != "Returned")
                     {
                         DialogResult dialogresult = MessageBox.Show("Have any Damages/Late return in Book ?", "", MessageBoxButtons.YesNoCancel);
@@ -522,23 +523,13 @@ namespace Library_Management_System_v1._1.View
                                 {
                                     try
                                     {
-                                        
-                                        String ID = (listView_issueBooks.SelectedItems[0].Index + 1).ToString();
-                                        int row = DB.updateData("UPDATE Book_Issue SET Status = 0 WHERE ID = '" + ID + "'");
-                                        if (row > 0)
-                                        {
 
-                                            int row1 = DB.updateData("UPDATE Book SET Availability = 1 WHERE BID = '" + BID + "'");
-                                            if (row1 > 0)
-                                            {
-                                                Controller.CommonController.setActivity("Handeled book returning from Book issue Id =" + ID );
-                                                MessageBox.Show("Book Returned successfully");
-                                                lbl_IssueBookLastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                                            }
-                                            else
-                                            {
-                                                MessageBox.Show("Book status update failed");
-                                            }
+                                        if (Controller.BookIssueReturnController.returnBook(ID , BID))
+                                        {
+                                            Controller.CommonController.setActivity("Handeled book returning from Book issue Id =" + ID);
+                                            MessageBox.Show("Book Returned successfully");
+                                            lbl_IssueBookLastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
                                         }
                                         else
                                         {
@@ -930,6 +921,8 @@ namespace Library_Management_System_v1._1.View
         private void btn_refreshDashboard_Click(object sender, EventArgs e)
         {
             loadBookAvailability();
+            loadDashboardTileCounts();
+            
         }
     }
 }
