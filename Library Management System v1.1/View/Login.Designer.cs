@@ -156,7 +156,7 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(345, 135);
+            this.metroPanel1.Location = new System.Drawing.Point(345, 130);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(251, 220);
             this.metroPanel1.TabIndex = 22;
@@ -168,7 +168,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(341, 163);
+            this.label1.Location = new System.Drawing.Point(341, 157);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 14);
             this.label1.TabIndex = 17;
@@ -178,7 +178,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(342, 242);
+            this.label2.Location = new System.Drawing.Point(342, 235);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 14);
             this.label2.TabIndex = 19;
@@ -211,7 +211,7 @@
             // passwordHide
             // 
             this.passwordHide.Image = ((System.Drawing.Image)(resources.GetObject("passwordHide.Image")));
-            this.passwordHide.Location = new System.Drawing.Point(573, 265);
+            this.passwordHide.Location = new System.Drawing.Point(573, 259);
             this.passwordHide.Name = "passwordHide";
             this.passwordHide.Size = new System.Drawing.Size(20, 20);
             this.passwordHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -225,7 +225,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(348, 63);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
             // 
@@ -234,7 +234,7 @@
             this.btnretry.FlatAppearance.BorderSize = 0;
             this.btnretry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnretry.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnretry.Location = new System.Drawing.Point(412, 410);
+            this.btnretry.Location = new System.Drawing.Point(412, 407);
             this.btnretry.Name = "btnretry";
             this.btnretry.Size = new System.Drawing.Size(109, 23);
             this.btnretry.TabIndex = 30;
@@ -245,7 +245,7 @@
             // passwordShow
             // 
             this.passwordShow.Image = ((System.Drawing.Image)(resources.GetObject("passwordShow.Image")));
-            this.passwordShow.Location = new System.Drawing.Point(573, 265);
+            this.passwordShow.Location = new System.Drawing.Point(573, 259);
             this.passwordShow.Name = "passwordShow";
             this.passwordShow.Size = new System.Drawing.Size(20, 20);
             this.passwordShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -266,7 +266,7 @@
             this.btnlogin.ForeColor = System.Drawing.Color.White;
             this.btnlogin.Image = ((System.Drawing.Image)(resources.GetObject("btnlogin.Image")));
             this.btnlogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnlogin.Location = new System.Drawing.Point(345, 315);
+            this.btnlogin.Location = new System.Drawing.Point(345, 308);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(251, 40);
             this.btnlogin.TabIndex = 2;
@@ -306,7 +306,7 @@
             this.txtmail.BorderSize = 2;
             this.txtmail.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmail.ForeColor = System.Drawing.Color.Black;
-            this.txtmail.Location = new System.Drawing.Point(345, 186);
+            this.txtmail.Location = new System.Drawing.Point(345, 175);
             this.txtmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtmail.MaximumSize = new System.Drawing.Size(251, 33);
             this.txtmail.MinimumSize = new System.Drawing.Size(251, 33);
@@ -327,7 +327,7 @@
             this.txtPass.BorderSize = 2;
             this.txtPass.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.ForeColor = System.Drawing.Color.Black;
-            this.txtPass.Location = new System.Drawing.Point(345, 259);
+            this.txtPass.Location = new System.Drawing.Point(345, 252);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.MaximumSize = new System.Drawing.Size(251, 33);
             this.txtPass.MinimumSize = new System.Drawing.Size(251, 33);
