@@ -118,6 +118,7 @@ namespace Library_Management_System_v1._1
             label1.Hide();
             label2.Hide();
             passwordHide.Hide();
+            passwordShow.Hide();
             Loadform(new QRlogin());  
         }
 
@@ -170,6 +171,8 @@ namespace Library_Management_System_v1._1
             label1.Show();
             label2.Show();
             passwordHide.Show();
+            passwordShow.Show();
+            btnretry.Hide();
 
         }
 
