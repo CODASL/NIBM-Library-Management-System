@@ -117,25 +117,10 @@ namespace Library_Management_System_v1._1
             btnretry.Show();
             label1.Hide();
             label2.Hide();
-            passwordShowHide.Hide();
+            passwordHide.Hide();
             Loadform(new QRlogin());  
         }
 
-
-        //===================Password Show hide btn ===================
-        private void passwordShowHide_Click(object sender, EventArgs e)
-        {
-            if (txtPass.PasswordChar)
-            {
-                passwordShowHide.Image = Image.FromFile(Constant.IconClass.showPass);
-                txtPass.PasswordChar = false;
-            }
-            else
-            {
-                passwordShowHide.Image = Image.FromFile(Constant.IconClass.hidePass);
-                txtPass.PasswordChar = true;
-            }
-        }
 
         //===========Login page onload =================================
         private void Login_Load(object sender, EventArgs e)
@@ -184,8 +169,28 @@ namespace Library_Management_System_v1._1
             btnlogin.Show();
             label1.Show();
             label2.Show();
-            passwordShowHide.Show();
+            passwordHide.Show();
 
+        }
+
+        private void passwordShow_Click(object sender, EventArgs e)
+        {
+            if (txtPass.PasswordChar)
+            {
+                passwordHide.BringToFront();
+                txtPass.PasswordChar = false;
+            }
+            
+        }
+
+        private void passwordHide_Click(object sender, EventArgs e)
+        {
+            if (!txtPass.PasswordChar)
+            {
+                passwordShow.BringToFront();
+                txtPass.PasswordChar = true;
+            }
+            
         }
     }
 }
