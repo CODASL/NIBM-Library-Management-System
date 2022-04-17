@@ -441,12 +441,23 @@ namespace Library_Management_System_v1._1.View
             if (swtSwitchTheme.Checked) {
                 swtSwitchTheme.Text = "Light Mode";
                 material.Thememode = MaterialSkinManager.Themes.DARK;
-                
+                listview_BookAvailability.GridLines = false;
+                memberListview.GridLines = false;
+                LibBookList.GridLines = false;
+                listView_issueBooks.GridLines = false;
+                accountingListview.GridLines = false;
+                listview_librarianActivities.GridLines = false;
             }
             else
             {
                 swtSwitchTheme.Text = "Dark Mode";
                 material.Thememode = MaterialSkinManager.Themes.LIGHT;
+                listview_BookAvailability.GridLines = true;
+                memberListview.GridLines = true;
+                LibBookList.GridLines = true;
+                listView_issueBooks.GridLines = true;
+                accountingListview.GridLines = true;
+                listview_librarianActivities.GridLines = true;
             }
             material.MaterialSkinManager.Theme = material.Thememode;
 

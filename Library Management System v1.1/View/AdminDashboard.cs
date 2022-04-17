@@ -364,12 +364,19 @@ namespace Library_Management_System_v1._1.View
             {
                 swtSwitchTheme.Text = "Light Mode";
                 material.Thememode = MaterialSkinManager.Themes.DARK;
+                libActivityListAdmin.GridLines = false;
+                librariyanList.GridLines = false;
+                listview_MyActivitiesAdmin.GridLines = false;
+
 
             }
             else
             {
                 swtSwitchTheme.Text = "Dark Mode";
                 material.Thememode = MaterialSkinManager.Themes.LIGHT;
+                libActivityListAdmin.GridLines = true;
+                librariyanList.GridLines = true;
+                listview_MyActivitiesAdmin.GridLines = true;
             }
             material.MaterialSkinManager.Theme = material.Thememode;
         }

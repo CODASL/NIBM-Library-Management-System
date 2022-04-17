@@ -103,6 +103,7 @@ namespace Library_Management_System_v1._1.View
             this.adminAvatar = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.materialLabel23 = new MaterialSkin.Controls.MaterialLabel();
             this.adminSettings.SuspendLayout();
             this.materialCard7.SuspendLayout();
             this.adminActivity.SuspendLayout();
@@ -261,7 +262,7 @@ namespace Library_Management_System_v1._1.View
             this.refreshAdminActivties.DrawShadows = true;
             this.refreshAdminActivties.Icon = ((System.Drawing.Image)(resources.GetObject("refreshAdminActivties.Icon")));
             this.refreshAdminActivties.Image = ((System.Drawing.Image)(resources.GetObject("refreshAdminActivties.Image")));
-            this.refreshAdminActivties.Location = new System.Drawing.Point(949, 86);
+            this.refreshAdminActivties.Location = new System.Drawing.Point(987, 86);
             this.refreshAdminActivties.Mini = true;
             this.refreshAdminActivties.MouseState = MaterialSkin.MouseState.HOVER;
             this.refreshAdminActivties.Name = "refreshAdminActivties";
@@ -355,7 +356,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel52.AutoSize = true;
             this.materialLabel52.Depth = 0;
             this.materialLabel52.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel52.Location = new System.Drawing.Point(615, 98);
+            this.materialLabel52.Location = new System.Drawing.Point(653, 98);
             this.materialLabel52.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel52.Name = "materialLabel52";
             this.materialLabel52.Size = new System.Drawing.Size(62, 19);
@@ -364,8 +365,8 @@ namespace Library_Management_System_v1._1.View
             // 
             // datePicker_AdminActivities
             // 
-            this.datePicker_AdminActivities.Location = new System.Drawing.Point(698, 91);
-            this.datePicker_AdminActivities.MinimumSize = new System.Drawing.Size(4, 29);
+            this.datePicker_AdminActivities.Location = new System.Drawing.Point(736, 91);
+            this.datePicker_AdminActivities.MinimumSize = new System.Drawing.Size(0, 29);
             this.datePicker_AdminActivities.Name = "datePicker_AdminActivities";
             this.datePicker_AdminActivities.Size = new System.Drawing.Size(200, 29);
             this.datePicker_AdminActivities.TabIndex = 12;
@@ -381,6 +382,7 @@ namespace Library_Management_System_v1._1.View
             this.DateTimeActivity});
             this.listview_MyActivitiesAdmin.Depth = 0;
             this.listview_MyActivitiesAdmin.FullRowSelect = true;
+            this.listview_MyActivitiesAdmin.GridLines = true;
             this.listview_MyActivitiesAdmin.HideSelection = false;
             this.listview_MyActivitiesAdmin.Location = new System.Drawing.Point(28, 140);
             this.listview_MyActivitiesAdmin.MinimumSize = new System.Drawing.Size(200, 100);
@@ -388,7 +390,7 @@ namespace Library_Management_System_v1._1.View
             this.listview_MyActivitiesAdmin.MouseState = MaterialSkin.MouseState.OUT;
             this.listview_MyActivitiesAdmin.Name = "listview_MyActivitiesAdmin";
             this.listview_MyActivitiesAdmin.OwnerDraw = true;
-            this.listview_MyActivitiesAdmin.Size = new System.Drawing.Size(980, 399);
+            this.listview_MyActivitiesAdmin.Size = new System.Drawing.Size(1008, 399);
             this.listview_MyActivitiesAdmin.TabIndex = 11;
             this.listview_MyActivitiesAdmin.UseCompatibleStateImageBehavior = false;
             this.listview_MyActivitiesAdmin.View = System.Windows.Forms.View.Details;
@@ -407,6 +409,7 @@ namespace Library_Management_System_v1._1.View
             // 
             // ManageLibrariyans
             // 
+            this.ManageLibrariyans.Controls.Add(this.materialLabel23);
             this.ManageLibrariyans.Controls.Add(this.cmb_filterLibrarians);
             this.ManageLibrariyans.Controls.Add(this.btn_refreshLibrarianList);
             this.ManageLibrariyans.Controls.Add(this.searchTxtBox);
@@ -444,7 +447,7 @@ namespace Library_Management_System_v1._1.View
             this.cmb_filterLibrarians.Items.AddRange(new object[] {
             "ID",
             "Name"});
-            this.cmb_filterLibrarians.Location = new System.Drawing.Point(466, 128);
+            this.cmb_filterLibrarians.Location = new System.Drawing.Point(531, 128);
             this.cmb_filterLibrarians.MaxDropDownItems = 4;
             this.cmb_filterLibrarians.MaximumSize = new System.Drawing.Size(131, 0);
             this.cmb_filterLibrarians.MinimumSize = new System.Drawing.Size(131, 0);
@@ -462,13 +465,12 @@ namespace Library_Management_System_v1._1.View
             this.btn_refreshLibrarianList.DrawShadows = true;
             this.btn_refreshLibrarianList.Icon = ((System.Drawing.Image)(resources.GetObject("btn_refreshLibrarianList.Icon")));
             this.btn_refreshLibrarianList.Image = ((System.Drawing.Image)(resources.GetObject("btn_refreshLibrarianList.Image")));
-            this.btn_refreshLibrarianList.Location = new System.Drawing.Point(1043, 444);
-            this.btn_refreshLibrarianList.Mini = false;
+            this.btn_refreshLibrarianList.Location = new System.Drawing.Point(1020, 126);
+            this.btn_refreshLibrarianList.Mini = true;
             this.btn_refreshLibrarianList.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_refreshLibrarianList.Name = "btn_refreshLibrarianList";
-            this.btn_refreshLibrarianList.Size = new System.Drawing.Size(56, 56);
+            this.btn_refreshLibrarianList.Size = new System.Drawing.Size(40, 40);
             this.btn_refreshLibrarianList.TabIndex = 22;
-            this.btn_refreshLibrarianList.Text = "materialFloatingActionButton8";
             this.btn_refreshLibrarianList.UseVisualStyleBackColor = false;
             this.btn_refreshLibrarianList.Click += new System.EventHandler(this.btn_refreshLibrarianList_Click);
             // 
@@ -514,7 +516,7 @@ namespace Library_Management_System_v1._1.View
             this.updateLibrariyanBtn.DrawShadows = true;
             this.updateLibrariyanBtn.HighEmphasis = true;
             this.updateLibrariyanBtn.Icon = null;
-            this.updateLibrariyanBtn.Location = new System.Drawing.Point(807, 123);
+            this.updateLibrariyanBtn.Location = new System.Drawing.Point(800, 128);
             this.updateLibrariyanBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.updateLibrariyanBtn.MaximumSize = new System.Drawing.Size(100, 35);
             this.updateLibrariyanBtn.MinimumSize = new System.Drawing.Size(100, 35);
@@ -535,7 +537,7 @@ namespace Library_Management_System_v1._1.View
             this.deleteLibrariyanBtn.DrawShadows = true;
             this.deleteLibrariyanBtn.HighEmphasis = true;
             this.deleteLibrariyanBtn.Icon = null;
-            this.deleteLibrariyanBtn.Location = new System.Drawing.Point(910, 123);
+            this.deleteLibrariyanBtn.Location = new System.Drawing.Point(907, 128);
             this.deleteLibrariyanBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deleteLibrariyanBtn.MaximumSize = new System.Drawing.Size(100, 35);
             this.deleteLibrariyanBtn.MinimumSize = new System.Drawing.Size(100, 35);
@@ -558,7 +560,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard5.Depth = 0;
             this.materialCard5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard5.Location = new System.Drawing.Point(509, 14);
+            this.materialCard5.Location = new System.Drawing.Point(556, 14);
             this.materialCard5.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard5.Name = "materialCard5";
@@ -684,6 +686,7 @@ namespace Library_Management_System_v1._1.View
             this.librariyanList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.librariyanList.Depth = 0;
             this.librariyanList.FullRowSelect = true;
+            this.librariyanList.GridLines = true;
             this.librariyanList.HideSelection = false;
             this.librariyanList.Location = new System.Drawing.Point(24, 177);
             this.librariyanList.MinimumSize = new System.Drawing.Size(200, 100);
@@ -693,7 +696,7 @@ namespace Library_Management_System_v1._1.View
             this.librariyanList.Name = "librariyanList";
             this.librariyanList.OwnerDraw = true;
             this.librariyanList.ShowItemToolTips = true;
-            this.librariyanList.Size = new System.Drawing.Size(986, 355);
+            this.librariyanList.Size = new System.Drawing.Size(1033, 355);
             this.librariyanList.TabIndex = 14;
             this.librariyanList.UseCompatibleStateImageBehavior = false;
             this.librariyanList.View = System.Windows.Forms.View.Details;
@@ -706,7 +709,7 @@ namespace Library_Management_System_v1._1.View
             // 
             this.libName.Text = "Name";
             this.libName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.libName.Width = 171;
+            this.libName.Width = 177;
             // 
             // libAddress
             // 
@@ -718,13 +721,13 @@ namespace Library_Management_System_v1._1.View
             // 
             this.libPhone.Text = "Phone";
             this.libPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.libPhone.Width = 130;
+            this.libPhone.Width = 154;
             // 
             // libNIC
             // 
             this.libNIC.Text = "NIC";
             this.libNIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.libNIC.Width = 131;
+            this.libNIC.Width = 144;
             // 
             // libLastUpdate
             // 
@@ -739,7 +742,7 @@ namespace Library_Management_System_v1._1.View
             this.addLibrarianBtn.DrawShadows = true;
             this.addLibrarianBtn.HighEmphasis = true;
             this.addLibrarianBtn.Icon = null;
-            this.addLibrarianBtn.Location = new System.Drawing.Point(705, 123);
+            this.addLibrarianBtn.Location = new System.Drawing.Point(692, 128);
             this.addLibrarianBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.addLibrarianBtn.MaximumSize = new System.Drawing.Size(100, 35);
             this.addLibrarianBtn.MinimumSize = new System.Drawing.Size(100, 35);
@@ -781,6 +784,7 @@ namespace Library_Management_System_v1._1.View
             this.libActivityTimeAdminDashboard});
             this.libActivityListAdmin.Depth = 0;
             this.libActivityListAdmin.FullRowSelect = true;
+            this.libActivityListAdmin.GridLines = true;
             this.libActivityListAdmin.HideSelection = false;
             this.libActivityListAdmin.Location = new System.Drawing.Point(221, 79);
             this.libActivityListAdmin.MaximumSize = new System.Drawing.Size(909, 120);
@@ -1155,6 +1159,18 @@ namespace Library_Management_System_v1._1.View
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // materialLabel23
+            // 
+            this.materialLabel23.AutoSize = true;
+            this.materialLabel23.Depth = 0;
+            this.materialLabel23.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel23.Location = new System.Drawing.Point(437, 138);
+            this.materialLabel23.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel23.Name = "materialLabel23";
+            this.materialLabel23.Size = new System.Drawing.Size(80, 19);
+            this.materialLabel23.TabIndex = 23;
+            this.materialLabel23.Text = "Search By :";
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1272,5 +1288,6 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialFloatingActionButton refreshAdminActivties;
         private MaterialSkin.Controls.MaterialFloatingActionButton btn_refreshAdminDashboard;
         private MaterialSkin.Controls.MaterialLabel lbl_memberCount;
+        private MaterialSkin.Controls.MaterialLabel materialLabel23;
     }
 }
