@@ -96,6 +96,7 @@ namespace Library_Management_System_v1._1.View
             this.todayDateAdmin = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_welcomeTxt = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_refreshAdminDashboard = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.lbl_notification_count = new System.Windows.Forms.Label();
             this.adminNotifications = new MaterialSkin.Controls.MaterialFloatingActionButton();
@@ -103,7 +104,6 @@ namespace Library_Management_System_v1._1.View
             this.adminName = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.adminSettings.SuspendLayout();
             this.materialCard7.SuspendLayout();
             this.adminActivity.SuspendLayout();
@@ -117,8 +117,8 @@ namespace Library_Management_System_v1._1.View
             this.materialCard6.SuspendLayout();
             this.materialCard3.SuspendLayout();
             this.materialCard1.SuspendLayout();
-            this.materialTabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.materialTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList1
@@ -366,7 +366,7 @@ namespace Library_Management_System_v1._1.View
             // datePicker_AdminActivities
             // 
             this.datePicker_AdminActivities.Location = new System.Drawing.Point(736, 91);
-            this.datePicker_AdminActivities.MinimumSize = new System.Drawing.Size(4, 29);
+            this.datePicker_AdminActivities.MinimumSize = new System.Drawing.Size(0, 29);
             this.datePicker_AdminActivities.Name = "datePicker_AdminActivities";
             this.datePicker_AdminActivities.Size = new System.Drawing.Size(200, 29);
             this.datePicker_AdminActivities.TabIndex = 12;
@@ -490,6 +490,7 @@ namespace Library_Management_System_v1._1.View
             this.searchTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.searchTxtBox.Depth = 0;
             this.searchTxtBox.Font = new System.Drawing.Font("Roboto", 12F);
+            this.searchTxtBox.Hint = "Search Librarians";
             this.searchTxtBox.Location = new System.Drawing.Point(24, 130);
             this.searchTxtBox.MaxLength = 50;
             this.searchTxtBox.MouseState = MaterialSkin.MouseState.OUT;
@@ -1061,6 +1062,15 @@ namespace Library_Management_System_v1._1.View
             this.materialCard1.Size = new System.Drawing.Size(175, 245);
             this.materialCard1.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(39, 52);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(111, 98);
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
             // btn_refreshAdminDashboard
             // 
             this.btn_refreshAdminDashboard.AnimateShowHideButton = false;
@@ -1152,15 +1162,6 @@ namespace Library_Management_System_v1._1.View
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(39, 52);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 98);
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
-            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1199,8 +1200,8 @@ namespace Library_Management_System_v1._1.View
             this.materialCard3.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            this.materialTabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.materialTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

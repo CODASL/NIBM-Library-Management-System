@@ -32,7 +32,7 @@ namespace Library_Management_System_v1._1.View
             InitializeComponent();
 
             material.addStyle(this);
-            cmbFilterAvailability.SelectedIndex = 0;
+            cmb_FilterBookAvailability.SelectedIndex = 0;
             timer1.Start();
             this.FormClosing += Form_FormClosing;
         }
@@ -55,6 +55,7 @@ namespace Library_Management_System_v1._1.View
             cmb_filterBooks.SelectedIndex = 0;
             cmb_bookIssueFilter.SelectedIndex = 0;
             cmb_filterAccounting.SelectedIndex = 0;
+            cmb_FilterBookAvailability.SelectedIndex = 0;
             lbl_totalBookIssueCount.Text = getTotalBookIssueCount().ToString();
             lbl_IssueBookLastUpdate.Text = Controller.BookIssueReturnController.getLastUpdateDateTime("Book_Issue", "Updated_Date");
             lbl_BooksLastUpdate.Text = Controller.BookIssueReturnController.getLastUpdateDateTime("Book", "Date_updated");
@@ -929,6 +930,19 @@ namespace Library_Management_System_v1._1.View
             loadBookAvailability();
             loadDashboardTileCounts();
             
+        }
+
+        //================Search Book Availibility
+        private void txt_searchBookAvailability_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_searchBookAvailability.Text != "")
+            {
+                Controller.BookController.bookAvailibilitySearchFunction(listview_BookAvailability, cmb_FilterBookAvailability.SelectedIndex, txt_searchBookAvailability);
+            }
+            else
+            {
+                loadBookAvailability();
+            }
         }
     }
 }

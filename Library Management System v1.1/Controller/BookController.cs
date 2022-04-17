@@ -13,6 +13,59 @@ namespace Library_Management_System_v1._1.Controller
     {
         public static Model.Book selectedBook = null;
 
+        //=======================Book Availibility Search ============================================
+
+        public static void bookAvailibilitySearchFunction(MaterialListView list, int itemIndex, MaterialTextBox inputBox)
+        {
+
+            if (itemIndex == 0)
+            {
+
+                for (int i = list.Items.Count - 1; i >= 0; i--)
+                {
+                    var item = list.Items[i];
+
+                    if (item.SubItems[1].Text.ToLower().Contains(inputBox.Text.ToLower()))
+                    {
+
+                    }
+                    else
+                    {
+                        list.Items.Remove(item);
+                    }
+                }
+                if (list.SelectedItems.Count == 1)
+                {
+                    list.Focus();
+                }
+            }
+            else if (itemIndex == 1)
+            {
+                for (int i = list.Items.Count - 1; i >= 0; i--)
+                {
+                    var item = list.Items[i];
+
+                    if (item.SubItems[2].Text.ToLower().Contains(inputBox.Text.ToLower()))
+                    {
+
+                    }
+                    else
+                    {
+                        list.Items.Remove(item);
+                    }
+                }
+                if (list.SelectedItems.Count == 1)
+                {
+                    list.Focus();
+                }
+
+            }
+            else
+            {
+
+            }
+
+        }
 
 
         //=======================Book Search =========================================================
