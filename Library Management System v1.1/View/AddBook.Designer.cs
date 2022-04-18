@@ -333,7 +333,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_bookISBN.Depth = 0;
             this.txt_bookISBN.Font = new System.Drawing.Font("Roboto", 12F);
             this.txt_bookISBN.Location = new System.Drawing.Point(158, 133);
-            this.txt_bookISBN.MaxLength = 50;
+            this.txt_bookISBN.MaxLength = 13;
             this.txt_bookISBN.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_bookISBN.Multiline = false;
             this.txt_bookISBN.Name = "txt_bookISBN";

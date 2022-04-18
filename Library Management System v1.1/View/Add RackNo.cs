@@ -25,7 +25,16 @@ namespace Library_Management_System_v1._1.View
 
         private void btn_AddRackNo_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt_rackNo.Text))
+            int val;
+            if (string.IsNullOrEmpty(txt_rackNo.Text))
+            {
+                MessageBox.Show("Please enter rack No");
+
+            }else if(!int.TryParse(txt_rackNo.Text, out val))
+            {
+                MessageBox.Show("Please enter valid rack No");
+            }
+            else
             {
                 Model.DatabaseService database = new Model.DatabaseService();
                 try
@@ -52,10 +61,6 @@ namespace Library_Management_System_v1._1.View
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Please enter rack number");
             }
             
         }

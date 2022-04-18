@@ -178,6 +178,9 @@ namespace Library_Management_System_v1._1.View
                 {
                     MessageBox.Show("Please Scan or type ISBN Code");
 
+                }else if (!int.TryParse(txt_bookISBN.Text , out isbn))
+                {
+                    MessageBox.Show("Please Enter valid ISBN");
                 }
                 
                 else if (string.IsNullOrEmpty(txt_BookName.Text))

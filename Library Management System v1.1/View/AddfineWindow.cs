@@ -37,19 +37,8 @@ namespace Library_Management_System_v1._1.View
             new Controller.CommonController().setId(txt_fineId, "Fine_Id", "Fine", "F");
         }
 
-        //Validated fine amount
-        private Boolean validateInt(int numb)
-        {
-            try
-            {
-                int a = numb;
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
+        //============================Pay fine==================== 
+     
 
         private void btn_PayFine_Click(object sender, EventArgs e)
         {
