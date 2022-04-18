@@ -44,6 +44,7 @@ namespace Library_Management_System_v1._1.View
             txt_issuingLibId.Text = librarian.Id;
             lbl_LibName.Text = librarian.Name;
             getdatabr();
+           
 
         }
 
@@ -207,8 +208,8 @@ namespace Library_Management_System_v1._1.View
 
         private void btn_clearissueBookDialog_Click(object sender, EventArgs e)
         {
-            cmb_ISBN.ResetText();
-            cmb_MemberId.ResetText();
+            cmb_ISBN.SelectedIndex = -1;
+            cmb_MemberId.SelectedIndex = -1;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
