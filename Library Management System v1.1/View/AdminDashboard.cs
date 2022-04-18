@@ -55,8 +55,10 @@ namespace Library_Management_System_v1._1.View
             lbl_categoryCount.Text = adminDashboardCtrl.setBookCount().ToString();
             lbl_memberCount.Text = Controller.AdminDashboardController.memberCount.ToString();
             
-           
-            
+
+
+
+
         }
 
         
@@ -200,12 +202,13 @@ namespace Library_Management_System_v1._1.View
 
         private void deleteLibrariyanBtn_Click(object sender, EventArgs e)
         {
- 
-            DialogResult res = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
-            if (res.Equals(DialogResult.Yes)){
-                ListView.SelectedIndexCollection selectedIndex = librariyanList.SelectedIndices;
-                if (selectedIndex.Count > 0)
+            if (librariyanList.SelectedIndices.Count > 0)
+            {
+                DialogResult res = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
+                if (res.Equals(DialogResult.Yes))
                 {
+                    ListView.SelectedIndexCollection selectedIndex = librariyanList.SelectedIndices;
+
                     foreach (int index in selectedIndex)
                     {
                         Console.WriteLine(index);
@@ -238,13 +241,16 @@ namespace Library_Management_System_v1._1.View
                 }
                 else
                 {
-                    MessageBox.Show("No Rows Selected");
-
+                    MessageBox.Show("Deletation Cancelled");
                 }
+
             }
-            else{
-                MessageBox.Show("Deletation Cancelled");
+            else
+            {
+                MessageBox.Show("Please select a row");
             }
+ 
+           
         }
 
         //=================Refresh Btn Manage Librarians=====================
@@ -358,12 +364,19 @@ namespace Library_Management_System_v1._1.View
             {
                 swtSwitchTheme.Text = "Light Mode";
                 material.Thememode = MaterialSkinManager.Themes.DARK;
+                libActivityListAdmin.GridLines = false;
+                librariyanList.GridLines = false;
+                listview_MyActivitiesAdmin.GridLines = false;
+
 
             }
             else
             {
                 swtSwitchTheme.Text = "Dark Mode";
                 material.Thememode = MaterialSkinManager.Themes.LIGHT;
+                libActivityListAdmin.GridLines = true;
+                librariyanList.GridLines = true;
+                listview_MyActivitiesAdmin.GridLines = true;
             }
             material.MaterialSkinManager.Theme = material.Thememode;
         }

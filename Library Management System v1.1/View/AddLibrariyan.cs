@@ -37,11 +37,11 @@ namespace Library_Management_System_v1._1.View
         {
             try
             {
-                if (txt_LibName.Text == null || txt_LibNIC.Text == null || txt_LibAddress == null)
+                if (string.IsNullOrEmpty(txt_LibName.Text) || string.IsNullOrEmpty(txt_LibNIC.Text) || string.IsNullOrEmpty(txt_LibAddress.Text))
                 {
                     MessageBox.Show("Please fill All fields");
                 }
-                else if(commonController.isPhoneNumberValid(txt_LibPhone.Text))
+                else if(!commonController.isPhoneNumberValid(txt_LibPhone.Text))
                 {
                     MessageBox.Show("Please Enter valid Phone number");
                 }

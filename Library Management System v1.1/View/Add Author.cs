@@ -31,31 +31,39 @@ namespace Library_Management_System_v1._1.View
 
         private void btn_addAuthor_Click(object sender, EventArgs e)
         {
-            Model.Author author = new Model.Author(txt_authorId.Text, txt_authorName.Text, DateTime.Now);
-            try
+            if (!string.IsNullOrEmpty(txt_authorName.Text))
             {
-                Boolean isAdded = ATR.addauthor(author);
-
-                if (isAdded)
+                Model.Author author = new Model.Author(txt_authorId.Text, txt_authorName.Text, DateTime.Now);
+                try
                 {
-                   this.Hide();
-                    Controller.CommonController.setActivity("Added Id=" + author.Id + " Author Data");
-                    MessageBox.Show("Record Added");
-                    if (cmb_BookAuthors != null)
+                    Boolean isAdded = ATR.addauthor(author);
+
+                    if (isAdded)
                     {
-                        Controller.BookController.loadComboBoxes(cmb_BookAuthors, "Author", "Author_Name");
-                    }
+                        this.Hide();
+                        Controller.CommonController.setActivity("Added Id=" + author.Id + " Author Data");
+                        MessageBox.Show("Record Added");
+                        if (cmb_BookAuthors != null)
+                        {
+                            Controller.BookController.loadComboBoxes(cmb_BookAuthors, "Author", "Author_Name", AddBook.authors);
+                        }
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong try again");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                   MessageBox.Show("Something went wrong try again");
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
+            else
             {
-               MessageBox.Show(ex.Message);
+                MessageBox.Show("Please enter author name");
             }
+            
         }
     }
 }

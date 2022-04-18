@@ -37,16 +37,18 @@ namespace Library_Management_System_v1._1.Controller
                         {
                             currentUserId = emp_id;
                             currentEmpType = emp_type;
-                            new View.AdminDashboard().ShowDialog();
                             Controller.CommonController.setActivity("Logged In ");
+                            new View.AdminDashboard().ShowDialog();
+                            
 
                         }
                         else
                         {
                             currentUserId = emp_id;
                             currentEmpType = emp_type;
-                            new View.LibrariyanHome().Show();
                             Controller.CommonController.setActivity("Logged In ");
+                            new View.LibrariyanHome().Show();
+                            
 
                         }
                     }

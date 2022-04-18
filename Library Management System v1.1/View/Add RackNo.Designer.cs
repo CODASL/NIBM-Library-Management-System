@@ -54,6 +54,7 @@ namespace Library_Management_System_v1._1.View
             this.btn_clearRackNo.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_clearRackNo.UseAccentColor = false;
             this.btn_clearRackNo.UseVisualStyleBackColor = true;
+            this.btn_clearRackNo.Click += new System.EventHandler(this.btn_clearRackNo_Click);
             // 
             // btn_AddRackNo
             // 

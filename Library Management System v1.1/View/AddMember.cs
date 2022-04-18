@@ -97,12 +97,12 @@ namespace Library_Management_System_v1._1.View
         {
             try
             {
-                if (txt_mname.Text == null || txt_MNIC.Text == null || txt_Maddress.Text == null)
+                if (string.IsNullOrEmpty(txt_mname.Text)||string.IsNullOrEmpty(txt_MNIC.Text)  || string.IsNullOrEmpty(txt_Maddress.Text))
                 {
-                    MessageBox.Show("Please fill All Member Detail fields");
-                }else if(txt_Gname.Text == null || txt_GNIC.Text == null || txt_GAddress.Text == null)
+                    MessageBox.Show("Please fill all Member detail fields");
+                } else if (string.IsNullOrEmpty(txt_Gname.Text)|| string.IsNullOrEmpty(txt_GNIC.Text) || string.IsNullOrEmpty(txt_GAddress.Text))
                 {
-                    MessageBox.Show("Please fill All Guardian Detail fields");
+                    MessageBox.Show("Please fill all Guardian detail fields");
                 }
                 else if(txt_MPhone.Text.Length != 9)
                 {

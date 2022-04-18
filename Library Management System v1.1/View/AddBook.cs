@@ -20,15 +20,18 @@ namespace Library_Management_System_v1._1.View
         Controller.CommonController commonController = new Controller.CommonController();
         Controller.BookController bookcontroller = new Controller.BookController();
         Boolean isUpdate;
-        String selectedISBN;
         MaterialLabel lastUpdate;
         FilterInfoCollection getdata;
         VideoCaptureDevice camera;
-        public AddBook(Boolean isUpdate, String selectedISBN = null , MaterialLabel lastUpdate = null)
+        Model.Book selectedBook = Controller.BookController.selectedBook;
+        public static List<String> categories = new List<string>();
+        public static List<String> authors = new List<string>();
+        public static List<String> racks = new List<string>();
+
+        public AddBook( Boolean isUpdate, MaterialLabel lastUpdate = null)
         {
             InitializeComponent();
             this.isUpdate = isUpdate;
-            this.selectedISBN = selectedISBN;
             this.lastUpdate = lastUpdate;
         }
 
@@ -37,12 +40,13 @@ namespace Library_Management_System_v1._1.View
 
         private void AddBook_Load(object sender, EventArgs e)
         {
-            onUpdate();
+            
             new Controller.MaterialController().addStyle(this);
            
-            Controller.BookController.loadComboBoxes(cmb_bookCategories, "Category", "Category_Name");
-            Controller.BookController.loadComboBoxes(cmb_BookAuthors, "Author", "Author_Name");
-            Controller.BookController.loadComboBoxes(cmb_bookRacks, "Rack", "Rack_NO");
+            Controller.BookController.loadComboBoxes(cmb_bookCategories, "Category", "Category_Name",categories);
+            Controller.BookController.loadComboBoxes(cmb_BookAuthors, "Author", "Author_Name",authors);
+            Controller.BookController.loadComboBoxes(cmb_bookRacks, "Rack", "Rack_NO" , racks);
+            onUpdate();
             pictureBox2.Hide();
             lblsrc.Hide();
             comboBox1.Hide();
@@ -58,23 +62,23 @@ namespace Library_Management_System_v1._1.View
                 this.btn_AddBookDialog.Text = "Update";
                 txt_bookISBN.ReadOnly = true;
                 
-                if(selectedISBN != null)
+                if(selectedBook != null)
                 {
                     Model.DatabaseService database = new Model.DatabaseService();
                     try
                     {
                         
                         database.Con.Open();
-                        MySqlDataReader sdr = database.readData("SELECT * FROM Book WHERE ISBN = '"+selectedISBN+"'");
+                        MySqlDataReader sdr = database.readData("SELECT BID FROM Book WHERE ISBN = '"+selectedBook.Isbn+"'");
                         sdr.Read();
                         if (sdr.HasRows)
                         {
                             txt_bookIdAddBook.Text = sdr["BID"].ToString();
-                            txt_BookName.Text = sdr["Name"].ToString();
-                            txt_bookISBN.Text = sdr["ISBN"].ToString();
-                            cmb_BookAuthors.SelectedText = sdr["Author"].ToString();
-                            cmb_bookCategories.SelectedText = sdr["Category"].ToString();
-                            cmb_bookRacks.SelectedText = sdr["Rack_No"].ToString();
+                            txt_BookName.Text = selectedBook.Name.ToString();
+                            txt_bookISBN.Text = selectedBook.Isbn.ToString();
+                            cmb_BookAuthors.SelectedIndex = authors.IndexOf(selectedBook.Author.ToString());
+                            cmb_bookCategories.SelectedIndex = categories.IndexOf(selectedBook.Category.ToString());
+                            cmb_bookRacks.SelectedIndex = racks.IndexOf(selectedBook.RackNo.ToString());
                         }
                         
                     }catch(Exception ex)
@@ -155,18 +159,28 @@ namespace Library_Management_System_v1._1.View
         }
         private void Camera_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            pictureBox2.Image = (Bitmap)eventArgs.Frame.Clone();
+            try
+            {
+                pictureBox2.Image = (Bitmap)eventArgs.Frame.Clone();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void btn_AddBookDialog_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txt_bookISBN.Text == null)
+                int isbn;
+                if (string.IsNullOrEmpty(txt_bookISBN.Text))
                 {
                     MessageBox.Show("Please Scan or type ISBN Code");
+
                 }
-                else if (txt_BookName.Text == null)
+                
+                else if (string.IsNullOrEmpty(txt_BookName.Text))
                 {
                     MessageBox.Show("Please Enter Book Name");
                 }
@@ -238,16 +252,18 @@ namespace Library_Management_System_v1._1.View
 
         private void clearBtnAddBook_Click(object sender, EventArgs e)
         {
+            txt_bookISBN.Clear();
+            txt_BookName.Clear();
             cmb_BookAuthors.SelectedIndex = -1;
             cmb_bookCategories.SelectedIndex = -1;
             cmb_bookRacks.SelectedIndex = -1;
-            txt_bookISBN.Clear();
-            txt_BookName.Clear();
+            cmb_BookAuthors.Focus();
+            cmb_bookCategories.Focus();
+            cmb_bookRacks.Focus();
+            txt_bookISBN.Focus();
             pictureBox2.Hide();
             lblsrc.Hide();
             comboBox1.Hide();
-
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)

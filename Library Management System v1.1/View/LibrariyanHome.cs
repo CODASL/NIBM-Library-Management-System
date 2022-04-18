@@ -32,7 +32,7 @@ namespace Library_Management_System_v1._1.View
             InitializeComponent();
 
             material.addStyle(this);
-            cmbFilterAvailability.SelectedIndex = 0;
+            cmb_FilterBookAvailability.SelectedIndex = 0;
             timer1.Start();
             this.FormClosing += Form_FormClosing;
         }
@@ -55,6 +55,14 @@ namespace Library_Management_System_v1._1.View
             cmb_filterBooks.SelectedIndex = 0;
             cmb_bookIssueFilter.SelectedIndex = 0;
             cmb_filterAccounting.SelectedIndex = 0;
+            cmb_FilterBookAvailability.SelectedIndex = 0;
+            lbl_totalBookIssueCount.Text = getTotalBookIssueCount().ToString();
+            lbl_IssueBookLastUpdate.Text = Controller.BookIssueReturnController.getLastUpdateDateTime("Book_Issue", "Updated_Date");
+            lbl_BooksLastUpdate.Text = Controller.BookIssueReturnController.getLastUpdateDateTime("Book", "Date_updated");
+            lbl_AccountingLastUpdate.Text = Controller.BookIssueReturnController.getLastUpdateDateTime("Accounting", "Last_Updated");
+            
+
+
         }
         
         //========================load Book Availability ====================================
@@ -119,6 +127,7 @@ namespace Library_Management_System_v1._1.View
             lbl_books_count.Text = tile_count("SELECT * FROM Book").ToString();
             lbl_BookIssuedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" +DateTime.Now.Date.ToString("yyyy-MM-dd") + "' AND Status='" + 1 + "'").ToString();
             lbl_BooksReturnedCount.Text = tile_count("SELECT * FROM Book_Issue WHERE DATE(Updated_date) = '" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "' AND Status='" + 0 + "'").ToString();
+            
         }
 
         //============ form x or F4 click logout user ================================
@@ -349,8 +358,7 @@ namespace Library_Management_System_v1._1.View
                         listView_issueBooks.Items.Add(item);
                     }
                     DB.Con.Close();
-                    lbl_totalBookIssueCount.Text = listView_issueBooks.Items.Count.ToString();
-                    lbl_IssueBookLastUpdate.Text = commonController.setUpdatedTime("Updated_date", "Book_Issue", "ID", "");
+                    lbl_totalBookIssueCount.Text = getTotalBookIssueCount().ToString();
 
                 }
                 else
@@ -375,7 +383,25 @@ namespace Library_Management_System_v1._1.View
                 DB.Con.Close();
             }
         }
+        //=======================total book issue count ===========================================
+        private int getTotalBookIssueCount()
+        {
+            
+            int count = 0;
+            if (listView_issueBooks.Items.Count > 0)
+            {
+                for(int i = 0; i < listView_issueBooks.Items.Count; i++)
+                {
+                    if(listView_issueBooks.Items[i].SubItems[5].Text == "Issued")
+                    {
+                        count = count + 1;
+                    }
+                }
 
+                return count;
+            }
+            return count;
+        }
         //=======================set Dashboard tile Counts ========================================
         public int tile_count(String query)
         {
@@ -417,12 +443,23 @@ namespace Library_Management_System_v1._1.View
             if (swtSwitchTheme.Checked) {
                 swtSwitchTheme.Text = "Light Mode";
                 material.Thememode = MaterialSkinManager.Themes.DARK;
-                
+                listview_BookAvailability.GridLines = false;
+                memberListview.GridLines = false;
+                LibBookList.GridLines = false;
+                listView_issueBooks.GridLines = false;
+                accountingListview.GridLines = false;
+                listview_librarianActivities.GridLines = false;
             }
             else
             {
                 swtSwitchTheme.Text = "Dark Mode";
                 material.Thememode = MaterialSkinManager.Themes.LIGHT;
+                listview_BookAvailability.GridLines = true;
+                memberListview.GridLines = true;
+                LibBookList.GridLines = true;
+                listView_issueBooks.GridLines = true;
+                accountingListview.GridLines = true;
+                listview_librarianActivities.GridLines = true;
             }
             material.MaterialSkinManager.Theme = material.Thememode;
 
@@ -431,7 +468,7 @@ namespace Library_Management_System_v1._1.View
         //=================Add Book Btn =======================
         private void LibAddBook_Click(object sender, EventArgs e)
         {
-            new View.AddBook(false ,null ,lbl_BooksLastUpdate).ShowDialog();
+            new View.AddBook(false ,lbl_BooksLastUpdate).ShowDialog();
         }
 
         //=================Add Members Btn =======================
@@ -451,7 +488,7 @@ namespace Library_Management_System_v1._1.View
         {
             if(avCount > 0)
             {
-                new Add_Book_Borrowing_Details(librarian).ShowDialog();
+                new Add_Book_Borrowing_Details(librarian, lbl_IssueBookLastUpdate).ShowDialog();
             }
             else
             {
@@ -465,7 +502,7 @@ namespace Library_Management_System_v1._1.View
         {
             if (avCount > 0)
             {
-                new Add_Book_Borrowing_Details(librarian).ShowDialog();
+                new Add_Book_Borrowing_Details(librarian, lbl_IssueBookLastUpdate).ShowDialog();
             }
             else
             {
@@ -476,44 +513,36 @@ namespace Library_Management_System_v1._1.View
         //=================Return Book Btn ==============================
         private void returnBookBtn_Click(object sender, EventArgs e)
         {
-
+             if (listView_issueBooks.SelectedItems.Count > 0)
+             {
                 String BID = listView_issueBooks.SelectedItems[0].SubItems[0].Text;
                 String MID = listView_issueBooks.SelectedItems[0].SubItems[1].Text;
-                if (listView_issueBooks.SelectedItems.Count > 0)
+                String ID = (listView_issueBooks.SelectedItems[0].Index + 1).ToString();
+
+                if (listView_issueBooks.SelectedItems[0].SubItems[5].Text != "Returned")
                 {
-                    if(listView_issueBooks.SelectedItems[0].SubItems[5].Text != "Returned")
-                    {
                         DialogResult dialogresult = MessageBox.Show("Have any Damages/Late return in Book ?", "", MessageBoxButtons.YesNoCancel);
-                            if (dialogresult.Equals(DialogResult.Yes))
-                            {
+                        if (dialogresult.Equals(DialogResult.Yes))
+                        {
 
-                                new AddfineWindow(BID, MID, emp_Id).ShowDialog();
+                                new AddfineWindow(BID, MID, emp_Id,ID , lbl_IssueBookLastUpdate).ShowDialog();
 
-                            }
-                            else if (dialogresult.Equals(DialogResult.No))
-                            {
+                        }
+                        else if (dialogresult.Equals(DialogResult.No))
+                        {
                                 
-                                DialogResult dialogresult1 = MessageBox.Show("Are you sure that member retured Book?", "", MessageBoxButtons.YesNo);
-                                if (dialogresult1.Equals(DialogResult.Yes))
-                                {
+                            DialogResult dialogresult1 = MessageBox.Show("Are you sure that member retured Book?", "", MessageBoxButtons.YesNo);
+                            if (dialogresult1.Equals(DialogResult.Yes))
+                            {
                                     try
                                     {
-                                        Console.WriteLine(listView_issueBooks.SelectedItems[0].Index + 1);
-                                        String ID = (listView_issueBooks.SelectedItems[0].Index + 1).ToString();
-                                        int row = DB.updateData("UPDATE Book_Issue SET Status = 0 WHERE ID = '" + ID + "'");
-                                        if (row > 0)
-                                        {
 
-                                            int row1 = DB.updateData("UPDATE Book SET Availability = 1 WHERE BID = '" + BID + "'");
-                                            if (row1 > 0)
-                                            {
-                                                Controller.CommonController.setActivity("Handeled book returning from Book issue Id =" + ID );
-                                                MessageBox.Show("Book Returned successfully");
-                                            }
-                                            else
-                                            {
-                                                MessageBox.Show("Book status update failed");
-                                            }
+                                        if (Controller.BookIssueReturnController.returnBook(ID , BID))
+                                        {
+                                            Controller.CommonController.setActivity("Handeled book returning from Book issue Id =" + ID);
+                                            MessageBox.Show("Book Returned successfully");
+                                            lbl_IssueBookLastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
                                         }
                                         else
                                         {
@@ -525,27 +554,21 @@ namespace Library_Management_System_v1._1.View
                                     {
                                         MessageBox.Show(ex.ToString());
                                     }
-                                }
-                            else
-                            {
-                                this.Hide();
                             }
+                            
                         }
-                        else
-                        {
-                            this.Hide();
-                        }
-                    }
-                    else
-                    {
-                    MessageBox.Show("Book Already Returned");
-                    }
-                    
+                        
                 }
                 else
                 {
-                    MessageBox.Show("Please Select a record");
-                } 
+                    MessageBox.Show("Book Already Returned");
+                }
+                    
+             }
+             else
+             {
+                MessageBox.Show("Please Select a record");
+             } 
         }
 
         //============Pay Member Fee =================================================
@@ -583,7 +606,7 @@ namespace Library_Management_System_v1._1.View
         //============Add Book  Dashboard Btn ======================================
         private void addBookDashBoard_Click(object sender, EventArgs e)
         {
-            new View.AddBook(false ,null, lbl_BooksLastUpdate).ShowDialog();
+            new View.AddBook(false ,lbl_BooksLastUpdate).ShowDialog();
         }
 
         //===========Add Category Dashboard Btn ====================================
@@ -647,41 +670,49 @@ namespace Library_Management_System_v1._1.View
         //============================Update Member Btn===================================================
         private void btn_updateMember_Click(object sender, EventArgs e)
         {
-            try
+            if (memberListview.SelectedIndices.Count > 0)
             {
-                String selectedRowId = memberListview.SelectedItems[0].SubItems[0].Text;
-                new AddMember(true, selectedRowId).Show();
+                try
+                {
+                    String selectedRowId = memberListview.SelectedItems[0].SubItems[0].Text;
+                    new AddMember(true, selectedRowId).Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please select a record to update");
             }
+            
         }
 
         //===================Delete Member Btn ========================================
         private void btn_deleteMember_Click(object sender, EventArgs e)
         {
-            Model.DatabaseService database = new Model.DatabaseService();
-            DialogResult res = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
-            if (res.Equals(DialogResult.Yes))
+            ListView.SelectedIndexCollection selectedIndex = memberListview.SelectedIndices;
+            if (selectedIndex.Count > 0)
             {
-                ListView.SelectedIndexCollection selectedIndex = memberListview.SelectedIndices;
-                if (selectedIndex.Count > 0)
+                Model.DatabaseService database = new Model.DatabaseService();
+                DialogResult res = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
+                if (res.Equals(DialogResult.Yes))
                 {
-                    
+
                     String selectedRowId = memberListview.SelectedItems[0].SubItems[0].Text;
                     String GID = memberListview.SelectedItems[0].SubItems[1].Text;
 
                     try
                     {
                         int line3 = database.deleteData("DELETE FROM Accounting WHERE MID = '" + selectedRowId + "'");
-                        int line1 = database.deleteData("DELETE FROM Guardian WHERE GID = '"+GID+"'");
+                        int line1 = database.deleteData("DELETE FROM Guardian WHERE GID = '" + GID + "'");
                         int line = database.deleteData("DELETE FROM Member WHERE MID = '" + selectedRowId + "'");
-                        
+
 
                         Console.WriteLine(line + " " + line1 + " " + line3);
 
-                        if (line > 0 && line1 > 0 && line3>0)
+                        if (line > 0 && line1 > 0 && line3 > 0)
                         {
                             Controller.CommonController.setActivity("Deleted " + selectedRowId + " Member Data");
                             MessageBox.Show("Member Removed Successfully");
@@ -697,18 +728,17 @@ namespace Library_Management_System_v1._1.View
                     {
                         MessageBox.Show(ex.ToString());
                     }
-
                 }
                 else
                 {
-                    MessageBox.Show("No Rows Selected");
-
+                    MessageBox.Show("Deletation Cancelled");
                 }
             }
             else
             {
-                MessageBox.Show("Deletation Cancelled");
+                MessageBox.Show("Please select a record to delete");
             }
+            
         }
 
         //====================Update Books Button ====================================
@@ -718,7 +748,17 @@ namespace Library_Management_System_v1._1.View
             {
                 try
                 {
-                    new AddBook(true , LibBookList.SelectedItems[0].SubItems[0].Text,lbl_BooksLastUpdate).Show();
+                    Model.Book book = new Model.Book(
+                            LibBookList.SelectedItems[0].SubItems[0].Text,
+                            LibBookList.SelectedItems[0].SubItems[1].Text,
+                            LibBookList.SelectedItems[0].SubItems[2].Text,
+                            LibBookList.SelectedItems[0].SubItems[3].Text,
+                            LibBookList.SelectedItems[0].SubItems[5].Text
+                        );
+
+                    Controller.BookController.selectedBook = book;
+                  
+                    new AddBook(true ,lbl_BooksLastUpdate).Show();
                 }catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
@@ -733,17 +773,15 @@ namespace Library_Management_System_v1._1.View
         //========================Delete Book ================================================
         private void btn_DeleteBook_Click(object sender, EventArgs e)
         {
-            Model.DatabaseService database = new Model.DatabaseService();
-            DialogResult res = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
-            if (res.Equals(DialogResult.Yes))
+            if (LibBookList.SelectedIndices.Count > 0)
             {
-                ListView.SelectedIndexCollection selectedIndex = LibBookList.SelectedIndices;
-                if (selectedIndex.Count > 0)
+                Model.DatabaseService database = new Model.DatabaseService();
+                DialogResult res = MessageBox.Show("Are you sure ?", "", MessageBoxButtons.YesNo);
+                if (res.Equals(DialogResult.Yes))
                 {
-                    String selectedRowId = memberListview.SelectedItems[0].SubItems[0].Text;
-
                     try
                     {
+                        String selectedRowId = LibBookList.SelectedItems[0].SubItems[0].Text;
                         int line = database.deleteData("DELETE FROM Book WHERE ISBN = '" + selectedRowId + "'");
 
                         if (line > 0)
@@ -762,17 +800,19 @@ namespace Library_Management_System_v1._1.View
                     {
                         MessageBox.Show(ex.Message);
                     }
+
+
                 }
                 else
                 {
-                    MessageBox.Show("No Rows Selected");
-
+                    MessageBox.Show("Deletation Cancelled");
                 }
             }
             else
             {
-                MessageBox.Show("Deletation Cancelled");
+                MessageBox.Show("Please select a record to delete");
             }
+            
         }
 
         //=================Refresh books =================================
@@ -888,6 +928,21 @@ namespace Library_Management_System_v1._1.View
         private void btn_refreshDashboard_Click(object sender, EventArgs e)
         {
             loadBookAvailability();
+            loadDashboardTileCounts();
+            
+        }
+
+        //================Search Book Availibility
+        private void txt_searchBookAvailability_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_searchBookAvailability.Text != "")
+            {
+                Controller.BookController.bookAvailibilitySearchFunction(listview_BookAvailability, cmb_FilterBookAvailability.SelectedIndex, txt_searchBookAvailability);
+            }
+            else
+            {
+                loadBookAvailability();
+            }
         }
     }
 }

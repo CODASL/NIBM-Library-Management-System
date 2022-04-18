@@ -27,27 +27,37 @@ namespace Library_Management_System_v1._1.View
 
         private void btn_addCategory_Click(object sender, EventArgs e)
         {
-            Model.DatabaseService database = new Model.DatabaseService();
-            try
+            if (!string.IsNullOrEmpty(txt_categoryName.Text))
             {
-                Boolean isAdded = category.addCategory(new Model.Category(txt_categoryId.Text, txt_categoryName.Text, DateTime.Now));
-                if (isAdded)
+                Model.DatabaseService database = new Model.DatabaseService();
+                try
                 {
-                    this.Hide();
-                    Controller.CommonController.setActivity("Added " + txt_categoryId.Text + " Category Data");
-                    MessageBox.Show("Category Added Successfully");
-                    if(cmb_bookCategories != null) {
-                        Controller.BookController.loadComboBoxes(cmb_bookCategories, "Category", "Category_Name");
+                    Boolean isAdded = category.addCategory(new Model.Category(txt_categoryId.Text, txt_categoryName.Text, DateTime.Now));
+                    if (isAdded)
+                    {
+                        this.Hide();
+                        Controller.CommonController.setActivity("Added " + txt_categoryId.Text + " Category Data");
+                        MessageBox.Show("Category Added Successfully");
+                        if (cmb_bookCategories != null)
+                        {
+                            Controller.BookController.loadComboBoxes(cmb_bookCategories, "Category", "Category_Name", AddBook.categories);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong !");
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Something went wrong !");
+                    MessageBox.Show(ex.Message);
                 }
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
+            else
+            {
+                MessageBox.Show("Please enter category name");
+            }
+            
         }
 
         private void Add_Category_Load(object sender, EventArgs e)

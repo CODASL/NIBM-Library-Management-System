@@ -34,7 +34,7 @@ namespace Library_Management_System_v1._1.View
             this.LibrariyanTabController = new MaterialSkin.Controls.MaterialTabControl();
             this.LibrariyanDashBoard = new System.Windows.Forms.TabPage();
             this.btn_refreshDashboard = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_searchBookAvailability = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.listview_BookAvailability = new MaterialSkin.Controls.MaterialListView();
             this.BookId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -42,7 +42,7 @@ namespace Library_Management_System_v1._1.View
             this.bookAuthorDash = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bAvailability = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rackNoDashboard = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cmbFilterAvailability = new MaterialSkin.Controls.MaterialComboBox();
+            this.cmb_FilterBookAvailability = new MaterialSkin.Controls.MaterialComboBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.addBorrowDashBoardBtn = new MaterialSkin.Controls.MaterialButton();
             this.addMemberDashboard = new MaterialSkin.Controls.MaterialButton();
@@ -53,9 +53,9 @@ namespace Library_Management_System_v1._1.View
             this.lbl_welcome_note = new MaterialSkin.Controls.MaterialLabel();
             this.SecondDashboardRow = new System.Windows.Forms.FlowLayoutPanel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_librariyan_name = new MaterialSkin.Controls.MaterialLabel();
-            this.rjCircularPictureBox1 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton2 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
@@ -176,6 +176,7 @@ namespace Library_Management_System_v1._1.View
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.materialLabel50 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard17 = new MaterialSkin.Controls.MaterialCard();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_refreshLibrarianActivities = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel48 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel49 = new MaterialSkin.Controls.MaterialLabel();
@@ -189,7 +190,6 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel40 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_librarianProfileName = new MaterialSkin.Controls.MaterialLabel();
-            this.rjCircularPictureBox2 = new Library_Management_System_v1._1.View.Custom_Controls.RJCircularPictureBox();
             this.LibSettings = new System.Windows.Forms.TabPage();
             this.btn_librariyanLogout = new MaterialSkin.Controls.MaterialButton();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -204,7 +204,7 @@ namespace Library_Management_System_v1._1.View
             this.flowLayoutPanel3.SuspendLayout();
             this.SecondDashboardRow.SuspendLayout();
             this.materialCard1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard3.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.materialCard5.SuspendLayout();
@@ -223,7 +223,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard16.SuspendLayout();
             this.LibMyProfile.SuspendLayout();
             this.materialCard17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.LibSettings.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.materialCard7.SuspendLayout();
@@ -253,10 +253,10 @@ namespace Library_Management_System_v1._1.View
             // LibrariyanDashBoard
             // 
             this.LibrariyanDashBoard.Controls.Add(this.btn_refreshDashboard);
-            this.LibrariyanDashBoard.Controls.Add(this.materialTextBox1);
+            this.LibrariyanDashBoard.Controls.Add(this.txt_searchBookAvailability);
             this.LibrariyanDashBoard.Controls.Add(this.materialLabel1);
             this.LibrariyanDashBoard.Controls.Add(this.listview_BookAvailability);
-            this.LibrariyanDashBoard.Controls.Add(this.cmbFilterAvailability);
+            this.LibrariyanDashBoard.Controls.Add(this.cmb_FilterBookAvailability);
             this.LibrariyanDashBoard.Controls.Add(this.flowLayoutPanel3);
             this.LibrariyanDashBoard.Controls.Add(this.lbl_librarianDateTime);
             this.LibrariyanDashBoard.Controls.Add(this.lbl_welcome_note);
@@ -280,41 +280,42 @@ namespace Library_Management_System_v1._1.View
             this.btn_refreshDashboard.DrawShadows = true;
             this.btn_refreshDashboard.Icon = ((System.Drawing.Image)(resources.GetObject("btn_refreshDashboard.Icon")));
             this.btn_refreshDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btn_refreshDashboard.Image")));
-            this.btn_refreshDashboard.Location = new System.Drawing.Point(913, 564);
-            this.btn_refreshDashboard.Mini = false;
+            this.btn_refreshDashboard.Location = new System.Drawing.Point(900, 353);
+            this.btn_refreshDashboard.Mini = true;
             this.btn_refreshDashboard.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_refreshDashboard.Name = "btn_refreshDashboard";
-            this.btn_refreshDashboard.Size = new System.Drawing.Size(56, 56);
+            this.btn_refreshDashboard.Size = new System.Drawing.Size(40, 40);
             this.btn_refreshDashboard.TabIndex = 6;
             this.btn_refreshDashboard.Text = "materialFloatingActionButton8";
             this.btn_refreshDashboard.UseVisualStyleBackColor = false;
             this.btn_refreshDashboard.Click += new System.EventHandler(this.btn_refreshDashboard_Click);
             // 
-            // materialTextBox1
+            // txt_searchBookAvailability
             // 
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.materialTextBox1.Hint = "Search Book Avalibility";
-            this.materialTextBox1.Location = new System.Drawing.Point(16, 412);
-            this.materialTextBox1.MaximumSize = new System.Drawing.Size(489, 40);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MinimumSize = new System.Drawing.Size(489, 40);
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(489, 40);
-            this.materialTextBox1.TabIndex = 0;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.UseTallSize = false;
+            this.txt_searchBookAvailability.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_searchBookAvailability.Depth = 0;
+            this.txt_searchBookAvailability.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txt_searchBookAvailability.ForeColor = System.Drawing.Color.Black;
+            this.txt_searchBookAvailability.Hint = "Search Book Avalibility";
+            this.txt_searchBookAvailability.Location = new System.Drawing.Point(16, 412);
+            this.txt_searchBookAvailability.MaximumSize = new System.Drawing.Size(489, 40);
+            this.txt_searchBookAvailability.MaxLength = 50;
+            this.txt_searchBookAvailability.MinimumSize = new System.Drawing.Size(489, 40);
+            this.txt_searchBookAvailability.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_searchBookAvailability.Multiline = false;
+            this.txt_searchBookAvailability.Name = "txt_searchBookAvailability";
+            this.txt_searchBookAvailability.Size = new System.Drawing.Size(489, 40);
+            this.txt_searchBookAvailability.TabIndex = 0;
+            this.txt_searchBookAvailability.Text = "";
+            this.txt_searchBookAvailability.UseTallSize = false;
+            this.txt_searchBookAvailability.TextChanged += new System.EventHandler(this.txt_searchBookAvailability_TextChanged);
             // 
             // materialLabel1
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(615, 423);
+            this.materialLabel1.Location = new System.Drawing.Point(567, 423);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(72, 19);
@@ -335,7 +336,7 @@ namespace Library_Management_System_v1._1.View
             this.listview_BookAvailability.Depth = 0;
             this.listview_BookAvailability.FullRowSelect = true;
             this.listview_BookAvailability.HideSelection = false;
-            this.listview_BookAvailability.Location = new System.Drawing.Point(18, 474);
+            this.listview_BookAvailability.Location = new System.Drawing.Point(17, 474);
             this.listview_BookAvailability.MinimumSize = new System.Drawing.Size(200, 100);
             this.listview_BookAvailability.MouseLocation = new System.Drawing.Point(-1, -1);
             this.listview_BookAvailability.MouseState = MaterialSkin.MouseState.OUT;
@@ -343,7 +344,7 @@ namespace Library_Management_System_v1._1.View
             this.listview_BookAvailability.Name = "listview_BookAvailability";
             this.listview_BookAvailability.OwnerDraw = true;
             this.listview_BookAvailability.ShowItemToolTips = true;
-            this.listview_BookAvailability.Size = new System.Drawing.Size(840, 146);
+            this.listview_BookAvailability.Size = new System.Drawing.Size(952, 146);
             this.listview_BookAvailability.TabIndex = 6;
             this.listview_BookAvailability.UseCompatibleStateImageBehavior = false;
             this.listview_BookAvailability.View = System.Windows.Forms.View.Details;
@@ -351,51 +352,52 @@ namespace Library_Management_System_v1._1.View
             // BookId
             // 
             this.BookId.Text = "Book ID";
-            this.BookId.Width = 100;
+            this.BookId.Width = 84;
             // 
             // bookName
             // 
             this.bookName.Text = "Book Name";
-            this.bookName.Width = 258;
+            this.bookName.Width = 272;
             // 
             // bookAuthorDash
             // 
             this.bookAuthorDash.Text = "Author";
-            this.bookAuthorDash.Width = 221;
+            this.bookAuthorDash.Width = 251;
             // 
             // bAvailability
             // 
             this.bAvailability.Text = "Availability";
-            this.bAvailability.Width = 151;
+            this.bAvailability.Width = 220;
             // 
             // rackNoDashboard
             // 
             this.rackNoDashboard.Text = "Rack No";
-            this.rackNoDashboard.Width = 108;
+            this.rackNoDashboard.Width = 94;
             // 
-            // cmbFilterAvailability
+            // cmb_FilterBookAvailability
             // 
-            this.cmbFilterAvailability.AutoResize = false;
-            this.cmbFilterAvailability.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbFilterAvailability.Depth = 0;
-            this.cmbFilterAvailability.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cmbFilterAvailability.DropDownHeight = 118;
-            this.cmbFilterAvailability.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFilterAvailability.DropDownWidth = 121;
-            this.cmbFilterAvailability.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cmbFilterAvailability.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmbFilterAvailability.FormattingEnabled = true;
-            this.cmbFilterAvailability.IntegralHeight = false;
-            this.cmbFilterAvailability.ItemHeight = 29;
-            this.cmbFilterAvailability.Items.AddRange(new object[] {
-            "Name"});
-            this.cmbFilterAvailability.Location = new System.Drawing.Point(721, 417);
-            this.cmbFilterAvailability.MaxDropDownItems = 4;
-            this.cmbFilterAvailability.MouseState = MaterialSkin.MouseState.OUT;
-            this.cmbFilterAvailability.Name = "cmbFilterAvailability";
-            this.cmbFilterAvailability.Size = new System.Drawing.Size(136, 35);
-            this.cmbFilterAvailability.TabIndex = 2;
-            this.cmbFilterAvailability.UseTallSize = false;
+            this.cmb_FilterBookAvailability.AutoResize = false;
+            this.cmb_FilterBookAvailability.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmb_FilterBookAvailability.Depth = 0;
+            this.cmb_FilterBookAvailability.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmb_FilterBookAvailability.DropDownHeight = 118;
+            this.cmb_FilterBookAvailability.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_FilterBookAvailability.DropDownWidth = 121;
+            this.cmb_FilterBookAvailability.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmb_FilterBookAvailability.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmb_FilterBookAvailability.FormattingEnabled = true;
+            this.cmb_FilterBookAvailability.IntegralHeight = false;
+            this.cmb_FilterBookAvailability.ItemHeight = 29;
+            this.cmb_FilterBookAvailability.Items.AddRange(new object[] {
+            "Name",
+            "Author"});
+            this.cmb_FilterBookAvailability.Location = new System.Drawing.Point(673, 417);
+            this.cmb_FilterBookAvailability.MaxDropDownItems = 4;
+            this.cmb_FilterBookAvailability.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmb_FilterBookAvailability.Name = "cmb_FilterBookAvailability";
+            this.cmb_FilterBookAvailability.Size = new System.Drawing.Size(136, 35);
+            this.cmb_FilterBookAvailability.TabIndex = 2;
+            this.cmb_FilterBookAvailability.UseTallSize = false;
             // 
             // flowLayoutPanel3
             // 
@@ -407,7 +409,7 @@ namespace Library_Management_System_v1._1.View
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(17, 349);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(840, 48);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(833, 48);
             this.flowLayoutPanel3.TabIndex = 11;
             // 
             // addBorrowDashBoardBtn
@@ -418,7 +420,7 @@ namespace Library_Management_System_v1._1.View
             this.addBorrowDashBoardBtn.DrawShadows = true;
             this.addBorrowDashBoardBtn.HighEmphasis = true;
             this.addBorrowDashBoardBtn.Icon = ((System.Drawing.Image)(resources.GetObject("addBorrowDashBoardBtn.Icon")));
-            this.addBorrowDashBoardBtn.Location = new System.Drawing.Point(678, 6);
+            this.addBorrowDashBoardBtn.Location = new System.Drawing.Point(671, 6);
             this.addBorrowDashBoardBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 10);
             this.addBorrowDashBoardBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.addBorrowDashBoardBtn.Name = "addBorrowDashBoardBtn";
@@ -438,7 +440,7 @@ namespace Library_Management_System_v1._1.View
             this.addMemberDashboard.DrawShadows = true;
             this.addMemberDashboard.HighEmphasis = true;
             this.addMemberDashboard.Icon = ((System.Drawing.Image)(resources.GetObject("addMemberDashboard.Icon")));
-            this.addMemberDashboard.Location = new System.Drawing.Point(512, 6);
+            this.addMemberDashboard.Location = new System.Drawing.Point(505, 6);
             this.addMemberDashboard.Margin = new System.Windows.Forms.Padding(4, 6, 4, 10);
             this.addMemberDashboard.MouseState = MaterialSkin.MouseState.HOVER;
             this.addMemberDashboard.Name = "addMemberDashboard";
@@ -458,7 +460,7 @@ namespace Library_Management_System_v1._1.View
             this.addBookDashBoard.DrawShadows = true;
             this.addBookDashBoard.HighEmphasis = true;
             this.addBookDashBoard.Icon = ((System.Drawing.Image)(resources.GetObject("addBookDashBoard.Icon")));
-            this.addBookDashBoard.Location = new System.Drawing.Point(346, 6);
+            this.addBookDashBoard.Location = new System.Drawing.Point(339, 6);
             this.addBookDashBoard.Margin = new System.Windows.Forms.Padding(4, 6, 4, 10);
             this.addBookDashBoard.MouseState = MaterialSkin.MouseState.HOVER;
             this.addBookDashBoard.Name = "addBookDashBoard";
@@ -478,7 +480,7 @@ namespace Library_Management_System_v1._1.View
             this.addCategoryDashboard.DrawShadows = true;
             this.addCategoryDashboard.HighEmphasis = true;
             this.addCategoryDashboard.Icon = ((System.Drawing.Image)(resources.GetObject("addCategoryDashboard.Icon")));
-            this.addCategoryDashboard.Location = new System.Drawing.Point(180, 6);
+            this.addCategoryDashboard.Location = new System.Drawing.Point(173, 6);
             this.addCategoryDashboard.Margin = new System.Windows.Forms.Padding(4, 6, 4, 10);
             this.addCategoryDashboard.MouseState = MaterialSkin.MouseState.HOVER;
             this.addCategoryDashboard.Name = "addCategoryDashboard";
@@ -498,7 +500,7 @@ namespace Library_Management_System_v1._1.View
             this.addAuthorDashboard.DrawShadows = true;
             this.addAuthorDashboard.HighEmphasis = true;
             this.addAuthorDashboard.Icon = ((System.Drawing.Image)(resources.GetObject("addAuthorDashboard.Icon")));
-            this.addAuthorDashboard.Location = new System.Drawing.Point(14, 6);
+            this.addAuthorDashboard.Location = new System.Drawing.Point(7, 6);
             this.addAuthorDashboard.Margin = new System.Windows.Forms.Padding(4, 6, 4, 4);
             this.addAuthorDashboard.MouseState = MaterialSkin.MouseState.HOVER;
             this.addAuthorDashboard.Name = "addAuthorDashboard";
@@ -515,7 +517,7 @@ namespace Library_Management_System_v1._1.View
             this.lbl_librarianDateTime.AutoSize = true;
             this.lbl_librarianDateTime.Depth = 0;
             this.lbl_librarianDateTime.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lbl_librarianDateTime.Location = new System.Drawing.Point(387, 14);
+            this.lbl_librarianDateTime.Location = new System.Drawing.Point(792, 13);
             this.lbl_librarianDateTime.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbl_librarianDateTime.Name = "lbl_librarianDateTime";
             this.lbl_librarianDateTime.Size = new System.Drawing.Size(210, 19);
@@ -550,9 +552,9 @@ namespace Library_Management_System_v1._1.View
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.pictureBox1);
             this.materialCard1.Controls.Add(this.materialLabel2);
             this.materialCard1.Controls.Add(this.lbl_librariyan_name);
-            this.materialCard1.Controls.Add(this.rjCircularPictureBox1);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard1.Location = new System.Drawing.Point(14, 14);
@@ -562,6 +564,15 @@ namespace Library_Management_System_v1._1.View
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(314, 132);
             this.materialCard1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(9, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(111, 98);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // materialLabel2
             // 
@@ -588,22 +599,6 @@ namespace Library_Management_System_v1._1.View
             this.lbl_librariyan_name.Size = new System.Drawing.Size(112, 19);
             this.lbl_librariyan_name.TabIndex = 1;
             this.lbl_librariyan_name.Text = "Carolina James";
-            // 
-            // rjCircularPictureBox1
-            // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 0;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(17, 14);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(85, 85);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 0;
-            this.rjCircularPictureBox1.TabStop = false;
             // 
             // materialCard3
             // 
@@ -930,11 +925,11 @@ namespace Library_Management_System_v1._1.View
             this.btn_refreshMember.DrawShadows = true;
             this.btn_refreshMember.Icon = ((System.Drawing.Image)(resources.GetObject("btn_refreshMember.Icon")));
             this.btn_refreshMember.Image = ((System.Drawing.Image)(resources.GetObject("btn_refreshMember.Image")));
-            this.btn_refreshMember.Location = new System.Drawing.Point(911, 520);
-            this.btn_refreshMember.Mini = false;
+            this.btn_refreshMember.Location = new System.Drawing.Point(913, 181);
+            this.btn_refreshMember.Mini = true;
             this.btn_refreshMember.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_refreshMember.Name = "btn_refreshMember";
-            this.btn_refreshMember.Size = new System.Drawing.Size(56, 56);
+            this.btn_refreshMember.Size = new System.Drawing.Size(40, 40);
             this.btn_refreshMember.TabIndex = 16;
             this.btn_refreshMember.Text = "materialFloatingActionButton8";
             this.btn_refreshMember.UseVisualStyleBackColor = false;
@@ -1018,7 +1013,7 @@ namespace Library_Management_System_v1._1.View
             this.memberListview.Name = "memberListview";
             this.memberListview.OwnerDraw = true;
             this.memberListview.ShowItemToolTips = true;
-            this.memberListview.Size = new System.Drawing.Size(865, 355);
+            this.memberListview.Size = new System.Drawing.Size(926, 355);
             this.memberListview.TabIndex = 12;
             this.memberListview.UseCompatibleStateImageBehavior = false;
             this.memberListview.View = System.Windows.Forms.View.Details;
@@ -1036,13 +1031,13 @@ namespace Library_Management_System_v1._1.View
             // 
             this.name.Text = "Name";
             this.name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.name.Width = 120;
+            this.name.Width = 148;
             // 
             // Address
             // 
             this.Address.Text = "Address";
             this.Address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Address.Width = 140;
+            this.Address.Width = 171;
             // 
             // Phone
             // 
@@ -1117,6 +1112,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_memberSearch.Depth = 0;
             this.txt_memberSearch.Font = new System.Drawing.Font("Roboto", 12F);
             this.txt_memberSearch.ForeColor = System.Drawing.Color.Black;
+            this.txt_memberSearch.Hint = "Search Members";
             this.txt_memberSearch.Location = new System.Drawing.Point(27, 179);
             this.txt_memberSearch.MaximumSize = new System.Drawing.Size(330, 40);
             this.txt_memberSearch.MaxLength = 50;
@@ -1138,7 +1134,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard9.Controls.Add(this.lbl_members_tot);
             this.materialCard9.Depth = 0;
             this.materialCard9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard9.Location = new System.Drawing.Point(477, 31);
+            this.materialCard9.Location = new System.Drawing.Point(558, 31);
             this.materialCard9.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard9.Name = "materialCard9";
@@ -1289,15 +1285,15 @@ namespace Library_Management_System_v1._1.View
             this.LibBookList.FullRowSelect = true;
             this.LibBookList.HideSelection = false;
             this.LibBookList.Location = new System.Drawing.Point(23, 229);
-            this.LibBookList.MaximumSize = new System.Drawing.Size(841, 400);
-            this.LibBookList.MinimumSize = new System.Drawing.Size(841, 400);
+            this.LibBookList.MaximumSize = new System.Drawing.Size(910, 400);
+            this.LibBookList.MinimumSize = new System.Drawing.Size(910, 400);
             this.LibBookList.MouseLocation = new System.Drawing.Point(-1, -1);
             this.LibBookList.MouseState = MaterialSkin.MouseState.OUT;
             this.LibBookList.MultiSelect = false;
             this.LibBookList.Name = "LibBookList";
             this.LibBookList.OwnerDraw = true;
             this.LibBookList.ShowItemToolTips = true;
-            this.LibBookList.Size = new System.Drawing.Size(841, 400);
+            this.LibBookList.Size = new System.Drawing.Size(910, 400);
             this.LibBookList.TabIndex = 22;
             this.LibBookList.UseCompatibleStateImageBehavior = false;
             this.LibBookList.View = System.Windows.Forms.View.Details;
@@ -1312,13 +1308,13 @@ namespace Library_Management_System_v1._1.View
             // 
             this.LibbookName.Text = "Name";
             this.LibbookName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.LibbookName.Width = 115;
+            this.LibbookName.Width = 151;
             // 
             // bookcategory
             // 
             this.bookcategory.Text = "Category";
             this.bookcategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bookcategory.Width = 117;
+            this.bookcategory.Width = 124;
             // 
             // bookAuthor
             // 
@@ -1330,7 +1326,7 @@ namespace Library_Management_System_v1._1.View
             // 
             this.bookAvalability.Text = "Avalability";
             this.bookAvalability.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bookAvalability.Width = 103;
+            this.bookAvalability.Width = 128;
             // 
             // LblBookRack
             // 
@@ -1352,11 +1348,11 @@ namespace Library_Management_System_v1._1.View
             this.btn_refreshBooks.DrawShadows = true;
             this.btn_refreshBooks.Icon = ((System.Drawing.Image)(resources.GetObject("btn_refreshBooks.Icon")));
             this.btn_refreshBooks.Image = ((System.Drawing.Image)(resources.GetObject("btn_refreshBooks.Image")));
-            this.btn_refreshBooks.Location = new System.Drawing.Point(887, 552);
-            this.btn_refreshBooks.Mini = false;
+            this.btn_refreshBooks.Location = new System.Drawing.Point(895, 165);
+            this.btn_refreshBooks.Mini = true;
             this.btn_refreshBooks.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_refreshBooks.Name = "btn_refreshBooks";
-            this.btn_refreshBooks.Size = new System.Drawing.Size(56, 56);
+            this.btn_refreshBooks.Size = new System.Drawing.Size(40, 40);
             this.btn_refreshBooks.TabIndex = 27;
             this.btn_refreshBooks.Text = "materialFloatingActionButton8";
             this.btn_refreshBooks.UseVisualStyleBackColor = false;
@@ -1452,6 +1448,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_bookSearch.Depth = 0;
             this.txt_bookSearch.Font = new System.Drawing.Font("Roboto", 12F);
             this.txt_bookSearch.ForeColor = System.Drawing.Color.Black;
+            this.txt_bookSearch.Hint = "Search Books";
             this.txt_bookSearch.Location = new System.Drawing.Point(18, 168);
             this.txt_bookSearch.MaximumSize = new System.Drawing.Size(330, 40);
             this.txt_bookSearch.MaxLength = 50;
@@ -1495,7 +1492,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard11.Controls.Add(this.lbl_totalBookCount);
             this.materialCard11.Depth = 0;
             this.materialCard11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard11.Location = new System.Drawing.Point(469, 32);
+            this.materialCard11.Location = new System.Drawing.Point(540, 32);
             this.materialCard11.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard11.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard11.Name = "materialCard11";
@@ -1669,11 +1666,11 @@ namespace Library_Management_System_v1._1.View
             this.btn_refreshBookIssues.DrawShadows = true;
             this.btn_refreshBookIssues.Icon = ((System.Drawing.Image)(resources.GetObject("btn_refreshBookIssues.Icon")));
             this.btn_refreshBookIssues.Image = ((System.Drawing.Image)(resources.GetObject("btn_refreshBookIssues.Image")));
-            this.btn_refreshBookIssues.Location = new System.Drawing.Point(914, 543);
-            this.btn_refreshBookIssues.Mini = false;
+            this.btn_refreshBookIssues.Location = new System.Drawing.Point(902, 153);
+            this.btn_refreshBookIssues.Mini = true;
             this.btn_refreshBookIssues.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_refreshBookIssues.Name = "btn_refreshBookIssues";
-            this.btn_refreshBookIssues.Size = new System.Drawing.Size(56, 56);
+            this.btn_refreshBookIssues.Size = new System.Drawing.Size(40, 40);
             this.btn_refreshBookIssues.TabIndex = 31;
             this.btn_refreshBookIssues.Text = "materialFloatingActionButton8";
             this.btn_refreshBookIssues.UseVisualStyleBackColor = false;
@@ -1748,6 +1745,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_searchBookIssue.Depth = 0;
             this.txt_searchBookIssue.Font = new System.Drawing.Font("Roboto", 12F);
             this.txt_searchBookIssue.ForeColor = System.Drawing.Color.Black;
+            this.txt_searchBookIssue.Hint = "Search Book Issues";
             this.txt_searchBookIssue.Location = new System.Drawing.Point(40, 156);
             this.txt_searchBookIssue.MaximumSize = new System.Drawing.Size(330, 40);
             this.txt_searchBookIssue.MaxLength = 50;
@@ -1807,7 +1805,7 @@ namespace Library_Management_System_v1._1.View
             this.listView_issueBooks.Name = "listView_issueBooks";
             this.listView_issueBooks.OwnerDraw = true;
             this.listView_issueBooks.ShowItemToolTips = true;
-            this.listView_issueBooks.Size = new System.Drawing.Size(860, 394);
+            this.listView_issueBooks.Size = new System.Drawing.Size(905, 394);
             this.listView_issueBooks.TabIndex = 24;
             this.listView_issueBooks.UseCompatibleStateImageBehavior = false;
             this.listView_issueBooks.View = System.Windows.Forms.View.Details;
@@ -1854,7 +1852,7 @@ namespace Library_Management_System_v1._1.View
             this.materialCard13.Controls.Add(this.lbl_totalBookIssueCount);
             this.materialCard13.Depth = 0;
             this.materialCard13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard13.Location = new System.Drawing.Point(487, 23);
+            this.materialCard13.Location = new System.Drawing.Point(547, 23);
             this.materialCard13.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard13.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard13.Name = "materialCard13";
@@ -2026,11 +2024,11 @@ namespace Library_Management_System_v1._1.View
             this.btn_refreshAccounting.DrawShadows = true;
             this.btn_refreshAccounting.Icon = ((System.Drawing.Image)(resources.GetObject("btn_refreshAccounting.Icon")));
             this.btn_refreshAccounting.Image = ((System.Drawing.Image)(resources.GetObject("btn_refreshAccounting.Image")));
-            this.btn_refreshAccounting.Location = new System.Drawing.Point(909, 554);
-            this.btn_refreshAccounting.Mini = false;
+            this.btn_refreshAccounting.Location = new System.Drawing.Point(904, 161);
+            this.btn_refreshAccounting.Mini = true;
             this.btn_refreshAccounting.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_refreshAccounting.Name = "btn_refreshAccounting";
-            this.btn_refreshAccounting.Size = new System.Drawing.Size(56, 56);
+            this.btn_refreshAccounting.Size = new System.Drawing.Size(40, 40);
             this.btn_refreshAccounting.TabIndex = 29;
             this.btn_refreshAccounting.Text = "materialFloatingActionButton8";
             this.btn_refreshAccounting.UseVisualStyleBackColor = false;
@@ -2059,7 +2057,7 @@ namespace Library_Management_System_v1._1.View
             this.accountingListview.Name = "accountingListview";
             this.accountingListview.OwnerDraw = true;
             this.accountingListview.ShowItemToolTips = true;
-            this.accountingListview.Size = new System.Drawing.Size(841, 398);
+            this.accountingListview.Size = new System.Drawing.Size(899, 398);
             this.accountingListview.TabIndex = 28;
             this.accountingListview.UseCompatibleStateImageBehavior = false;
             this.accountingListview.View = System.Windows.Forms.View.Details;
@@ -2160,6 +2158,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_searchAccounting.Depth = 0;
             this.txt_searchAccounting.Font = new System.Drawing.Font("Roboto", 12F);
             this.txt_searchAccounting.ForeColor = System.Drawing.Color.Black;
+            this.txt_searchAccounting.Hint = "Search accounting details";
             this.txt_searchAccounting.Location = new System.Drawing.Point(41, 164);
             this.txt_searchAccounting.MaximumSize = new System.Drawing.Size(430, 40);
             this.txt_searchAccounting.MaxLength = 50;
@@ -2283,7 +2282,7 @@ namespace Library_Management_System_v1._1.View
             // datetime_activityFilter
             // 
             this.datetime_activityFilter.Location = new System.Drawing.Point(762, 269);
-            this.datetime_activityFilter.MinimumSize = new System.Drawing.Size(4, 29);
+            this.datetime_activityFilter.MinimumSize = new System.Drawing.Size(0, 29);
             this.datetime_activityFilter.Name = "datetime_activityFilter";
             this.datetime_activityFilter.Size = new System.Drawing.Size(200, 29);
             this.datetime_activityFilter.TabIndex = 4;
@@ -2352,6 +2351,7 @@ namespace Library_Management_System_v1._1.View
             // materialCard17
             // 
             this.materialCard17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard17.Controls.Add(this.pictureBox2);
             this.materialCard17.Controls.Add(this.btn_refreshLibrarianActivities);
             this.materialCard17.Controls.Add(this.materialLabel48);
             this.materialCard17.Controls.Add(this.materialLabel49);
@@ -2365,7 +2365,6 @@ namespace Library_Management_System_v1._1.View
             this.materialCard17.Controls.Add(this.materialLabel40);
             this.materialCard17.Controls.Add(this.materialLabel33);
             this.materialCard17.Controls.Add(this.lbl_librarianProfileName);
-            this.materialCard17.Controls.Add(this.rjCircularPictureBox2);
             this.materialCard17.Depth = 0;
             this.materialCard17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard17.Location = new System.Drawing.Point(40, 23);
@@ -2375,6 +2374,15 @@ namespace Library_Management_System_v1._1.View
             this.materialCard17.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard17.Size = new System.Drawing.Size(921, 208);
             this.materialCard17.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(33, 16);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(111, 98);
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
             // 
             // btn_refreshLibrarianActivities
             // 
@@ -2527,9 +2535,9 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel33.Location = new System.Drawing.Point(30, 159);
             this.materialLabel33.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel33.Name = "materialLabel33";
-            this.materialLabel33.Size = new System.Drawing.Size(64, 17);
+            this.materialLabel33.Size = new System.Drawing.Size(57, 17);
             this.materialLabel33.TabIndex = 4;
-            this.materialLabel33.Text = "Librariyan";
+            this.materialLabel33.Text = "Librarian";
             // 
             // lbl_librarianProfileName
             // 
@@ -2543,22 +2551,6 @@ namespace Library_Management_System_v1._1.View
             this.lbl_librarianProfileName.Size = new System.Drawing.Size(140, 24);
             this.lbl_librarianProfileName.TabIndex = 3;
             this.lbl_librarianProfileName.Text = "Carolina James";
-            // 
-            // rjCircularPictureBox2
-            // 
-            this.rjCircularPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox2.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.rjCircularPictureBox2.BorderColor2 = System.Drawing.Color.HotPink;
-            this.rjCircularPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox2.BorderSize = 0;
-            this.rjCircularPictureBox2.GradientAngle = 50F;
-            this.rjCircularPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox2.Image")));
-            this.rjCircularPictureBox2.Location = new System.Drawing.Point(32, 17);
-            this.rjCircularPictureBox2.Name = "rjCircularPictureBox2";
-            this.rjCircularPictureBox2.Size = new System.Drawing.Size(85, 85);
-            this.rjCircularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox2.TabIndex = 1;
-            this.rjCircularPictureBox2.TabStop = false;
             // 
             // LibSettings
             // 
@@ -2702,7 +2694,7 @@ namespace Library_Management_System_v1._1.View
             this.SecondDashboardRow.ResumeLayout(false);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.materialCard3.ResumeLayout(false);
             this.materialCard3.PerformLayout();
             this.materialCard2.ResumeLayout(false);
@@ -2739,7 +2731,7 @@ namespace Library_Management_System_v1._1.View
             this.LibMyProfile.PerformLayout();
             this.materialCard17.ResumeLayout(false);
             this.materialCard17.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.LibSettings.ResumeLayout(false);
             this.LibSettings.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -2764,7 +2756,6 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel lbl_librariyan_name;
-        private Custom_Controls.RJCircularPictureBox rjCircularPictureBox1;
         
         private MaterialSkin.Controls.MaterialLabel lbl_books_count;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
@@ -2787,7 +2778,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton5;
         private MaterialSkin.Controls.MaterialLabel materialLabel14;
         private MaterialSkin.Controls.MaterialLabel lbl_BooksReturnedCount;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox txt_searchBookAvailability;
         private MaterialSkin.Controls.MaterialListView listview_BookAvailability;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private MaterialSkin.Controls.MaterialCard materialCard7;
@@ -2891,7 +2882,6 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialLabel materialLabel40;
         private MaterialSkin.Controls.MaterialLabel materialLabel33;
         private MaterialSkin.Controls.MaterialLabel lbl_librarianProfileName;
-        private Custom_Controls.RJCircularPictureBox rjCircularPictureBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel52;
         private MetroFramework.Controls.MetroDateTime datetime_activityFilter;
         private MaterialSkin.Controls.MaterialListView listview_librarianActivities;
@@ -2905,7 +2895,7 @@ namespace Library_Management_System_v1._1.View
         private System.Windows.Forms.ColumnHeader bAvailability;
         private System.Windows.Forms.ColumnHeader rackNoDashboard;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialComboBox cmbFilterAvailability;
+        private MaterialSkin.Controls.MaterialComboBox cmb_FilterBookAvailability;
         private MaterialSkin.Controls.MaterialFloatingActionButton btn_refreshDashboard;
         private MaterialSkin.Controls.MaterialFloatingActionButton btn_refreshMember;
         private MaterialSkin.Controls.MaterialFloatingActionButton btn_refreshBooks;
@@ -2920,5 +2910,7 @@ namespace Library_Management_System_v1._1.View
         private System.Windows.Forms.ColumnHeader LblBookRack;
         private System.Windows.Forms.ColumnHeader bookLastUpdate;
         private MaterialSkin.Controls.MaterialFloatingActionButton btn_refreshLibrarianActivities;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

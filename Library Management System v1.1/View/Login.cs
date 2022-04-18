@@ -22,11 +22,15 @@ namespace Library_Management_System_v1._1
         Model.DatabaseService database = new Model.DatabaseService();
         QRlogin qr = new QRlogin();
 
+        
+       
+
         [Obsolete]
         public Login()
         {
             InitializeComponent();
             btnretry.Hide();
+           
         }
 
 
@@ -53,6 +57,8 @@ namespace Library_Management_System_v1._1
         }
 
 
+
+
         //====================Login Button Event=======================================================
         [Obsolete]
         private void btnlogin_Click(object sender, EventArgs e)
@@ -67,6 +73,7 @@ namespace Library_Management_System_v1._1
             else {
                 try
                 {
+                    
 
                     progressBar_LoginProgress.Value += 20;
                     database.Con.Open();
@@ -110,25 +117,11 @@ namespace Library_Management_System_v1._1
             btnretry.Show();
             label1.Hide();
             label2.Hide();
-            passwordShowHide.Hide();
+            passwordHide.Hide();
+            passwordShow.Hide();
             Loadform(new QRlogin());  
         }
 
-
-        //===================Password Show hide btn ===================
-        private void passwordShowHide_Click(object sender, EventArgs e)
-        {
-            if (txtPass.PasswordChar)
-            {
-                passwordShowHide.Image = Image.FromFile(Constant.IconClass.hidePass);
-                txtPass.PasswordChar = false;
-            }
-            else
-            {
-                passwordShowHide.Image = Image.FromFile(Constant.IconClass.showPass);
-                txtPass.PasswordChar = true;
-            }
-        }
 
         //===========Login page onload =================================
         private void Login_Load(object sender, EventArgs e)
@@ -154,18 +147,6 @@ namespace Library_Management_System_v1._1
 
         }
 
-        private void btnretry_Click(object sender, EventArgs e)
-        {
-            
-            remove(new QRlogin());
-            txtPass.Show();
-            txtmail.Show();
-            btnlogin.Show();
-            label1.Show();
-            label2.Show();
-            passwordShowHide.Show();
-
-        }
         //================ remove dock panel ===========
         public void remove(object Form)
         {
@@ -178,6 +159,41 @@ namespace Library_Management_System_v1._1
             metroPanel1.Controls.Add(f);
             metroPanel1.Tag = f;
             f.Hide();
+        }
+
+        private void btnretry_Click(object sender, EventArgs e)
+        {
+
+            remove(new QRlogin());
+            txtPass.Show();
+            txtmail.Show();
+            btnlogin.Show();
+            label1.Show();
+            label2.Show();
+            passwordHide.Show();
+            passwordShow.Show();
+            btnretry.Hide();
+
+        }
+
+        private void passwordShow_Click(object sender, EventArgs e)
+        {
+            if (txtPass.PasswordChar)
+            {
+                passwordHide.BringToFront();
+                txtPass.PasswordChar = false;
+            }
+            
+        }
+
+        private void passwordHide_Click(object sender, EventArgs e)
+        {
+            if (!txtPass.PasswordChar)
+            {
+                passwordShow.BringToFront();
+                txtPass.PasswordChar = true;
+            }
+            
         }
     }
 }

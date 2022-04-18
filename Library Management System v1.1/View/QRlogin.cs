@@ -48,7 +48,6 @@ namespace Library_Management_System_v1._1
                 camera.NewFrame += Camera_NewFrame;
                 timer1.Start();
                 camera.Start();
-
             }
             catch (Exception ex)
             {
@@ -82,7 +81,6 @@ namespace Library_Management_System_v1._1
                 {
                     try
                     {
-
                         String emp_id;
                         database.Con.Open();
                         emp_id = ans.ToString();
@@ -119,6 +117,7 @@ namespace Library_Management_System_v1._1
                                     Controller.CommonController.setActivity("Logged In ");
                                 }
                             }
+                            database.Con.Close();
 
                         }
                         else
