@@ -37,14 +37,32 @@ namespace Library_Management_System_v1._1.View
             new Controller.CommonController().setId(txt_fineId, "Fine_Id", "Fine", "F");
         }
 
+        //Validated fine amount
+        private Boolean validateInt(int numb)
+        {
+            try
+            {
+                int a = numb;
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         private void btn_PayFine_Click(object sender, EventArgs e)
         {
+            int val;
             if (string.IsNullOrEmpty(txt_fineAmount.Text))
             {
                 MessageBox.Show("Please enter fine amount");
             }else if (string.IsNullOrEmpty(txt_FineReason.Text))
             {
                 MessageBox.Show("Please enter reason to fine");
+            }else if(!int.TryParse(txt_FineReason.Text ,  out val))
+            {
+                MessageBox.Show("Please enter valid amount");
             }
             else
             {
