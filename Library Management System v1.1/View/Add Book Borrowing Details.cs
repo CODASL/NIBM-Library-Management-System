@@ -44,8 +44,7 @@ namespace Library_Management_System_v1._1.View
             txt_issuingLibId.Text = librarian.Id;
             lbl_LibName.Text = librarian.Name;
             getdatabr();
-           
-
+    
         }
 
 
