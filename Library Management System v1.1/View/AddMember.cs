@@ -29,8 +29,8 @@ namespace Library_Management_System_v1._1.View
 
         private void AddMember_Load(object sender, EventArgs e)
         {
-            commonController.setId(txt_mid, "MID", "Member", "M");
-            commonController.setId(txt_GID, "GID", "Guardian", "G");
+            commonController.setId(txt_mid, "MID", "Member", "M", "Date_Added");
+            commonController.setId(txt_GID, "Guardian_Id", "Member", "G", "Date_Added");
             loadAllFields();
             cmb_GCountryCodes.SelectedIndex = 1;
             cmb_Mcountrycodes.SelectedIndex = 1;

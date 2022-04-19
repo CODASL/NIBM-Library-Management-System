@@ -37,7 +37,7 @@ namespace Library_Management_System_v1._1.View
         private void Add_Book_Borrowing_Details_Load(object sender, EventArgs e)
         {
             
-            commonController.setId(txt_issueId, "ID", "Book_Issue", "");
+            commonController.setId(txt_issueId, "ID", "Book_Issue", "", "Issued_dateTime");
             cmb_ISBN.Focus();
             loadISBNData();
             loadMemberData();

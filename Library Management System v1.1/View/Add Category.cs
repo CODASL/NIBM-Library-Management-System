@@ -63,7 +63,7 @@ namespace Library_Management_System_v1._1.View
         private void Add_Category_Load(object sender, EventArgs e)
         {
             new Controller.MaterialController().addStyle(this);
-            new Controller.CommonController().setId(txt_categoryId, "Category_Id", "Category", "C");
+            new Controller.CommonController().setId(txt_categoryId, "Category_Id", "Category", "C", "Date_Added");
             txt_categoryName.Focus();
         }
 

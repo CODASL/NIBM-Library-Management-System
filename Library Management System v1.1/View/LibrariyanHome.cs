@@ -73,7 +73,7 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 DB.Con.Open();
-                MySqlDataReader sdr = DB.readData("Select * From Book");
+                MySqlDataReader sdr = DB.readData("Select * From Book ORDER BY Date_added ASC");
                 if (sdr.HasRows)
                 {
 
@@ -231,7 +231,7 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 DB.Con.Open();
-                MySqlDataReader sdr = DB.readData("Select * From Member");
+                MySqlDataReader sdr = DB.readData("SELECT * FROM Member ORDER BY Date_Added ASC");
                 if (sdr.HasRows)
                 {
 
@@ -276,7 +276,7 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 DB.Con.Open();
-                MySqlDataReader sdr = DB.readData("Select * From Book");
+                MySqlDataReader sdr = DB.readData("Select * From Book ORDER BY Date_added ASC");
                 if (sdr.HasRows)
                 {
 
@@ -336,7 +336,7 @@ namespace Library_Management_System_v1._1.View
             try
             {
                 DB.Con.Open();
-                MySqlDataReader sdr = DB.readData("Select * From Book_Issue");
+                MySqlDataReader sdr = DB.readData("Select * From Book_Issue ORDER BY Issued_dateTime ASC");
                 if (sdr.HasRows)
                 {
 

@@ -34,7 +34,7 @@ namespace Library_Management_System_v1._1.View
         {
             txt_BIDAddFine.Text = BID;
             txt_MIDAddFine.Text = MID;
-            new Controller.CommonController().setId(txt_fineId, "Fine_Id", "Fine", "F");
+            new Controller.CommonController().setId(txt_fineId, "Fine_Id", "Fine", "F", "Added_Date");
         }
 
         //============================Pay fine==================== 
@@ -49,7 +49,7 @@ namespace Library_Management_System_v1._1.View
             }else if (string.IsNullOrEmpty(txt_FineReason.Text))
             {
                 MessageBox.Show("Please enter reason to fine");
-            }else if(!int.TryParse(txt_FineReason.Text ,  out val))
+            }else if(!int.TryParse(txt_fineAmount.Text ,  out val))
             {
                 MessageBox.Show("Please enter valid amount");
             }
@@ -58,7 +58,7 @@ namespace Library_Management_System_v1._1.View
                 try
                 {
                     Model.DatabaseService database = new Model.DatabaseService();
-                    int row = database.insertData("INSERT INTO Fine VALUES ('" + txt_fineId.Text + "','" + txt_MIDAddFine.Text + "','" + txt_BIDAddFine.Text + "','" + Emp_Id + "','" + txt_FineReason.Text + "','" + txt_fineAmount.Text + "')");
+                    int row = database.insertData("INSERT INTO Fine VALUES ('" + txt_fineId.Text + "','" + txt_MIDAddFine.Text + "','" + txt_BIDAddFine.Text + "','" + Emp_Id + "','" + txt_FineReason.Text + "','" + txt_fineAmount.Text + "','"+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "')");
                     int row1 = database.updateData("UPDATE Accounting SET Fine_Count = Fine_Count + 1 WHERE MID = '" + MID + "'");
                     if (row > 0 && row1 > 0)
                     {
