@@ -217,14 +217,14 @@ namespace Library_Management_System_v1._1.Controller
 
         //==================Generate Id ==============================================
 
-        public void setId(MaterialTextBox textBox, String IDColumn, String tableName, String firstLetter)
+        public void setId(MaterialTextBox textBox, String IDColumn, String tableName, String firstLetter,String added_date)
         {
             Model.DatabaseService database = new Model.DatabaseService();
             String id;
             try
             {
                 database.Con.Open();
-                MySqlDataReader sdr = database.readData("SELECT " + IDColumn + " FROM " + tableName + " ORDER BY " + IDColumn + " DESC LIMIT 1");
+                MySqlDataReader sdr = database.readData("SELECT " + IDColumn + " FROM " + tableName + " ORDER BY " + added_date + " DESC LIMIT 1");
                 sdr.Read();
                 if (sdr.HasRows)
                 {

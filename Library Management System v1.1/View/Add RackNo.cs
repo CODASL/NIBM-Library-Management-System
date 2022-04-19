@@ -18,7 +18,7 @@ namespace Library_Management_System_v1._1.View
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
-            new Controller.CommonController().setId(txt_rackId, "Rack_Id", "Rack", "R");
+            new Controller.CommonController().setId(txt_rackId, "Rack_Id", "Rack", "R", "Added_Date");
             this.cmb_bookRacks = cmb_bookRacks;
             
         }

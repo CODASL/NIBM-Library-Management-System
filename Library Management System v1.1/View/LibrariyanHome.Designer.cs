@@ -383,7 +383,7 @@ namespace Library_Management_System_v1._1.View
             this.cmb_FilterBookAvailability.DropDownHeight = 118;
             this.cmb_FilterBookAvailability.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_FilterBookAvailability.DropDownWidth = 121;
-            this.cmb_FilterBookAvailability.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmb_FilterBookAvailability.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmb_FilterBookAvailability.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmb_FilterBookAvailability.FormattingEnabled = true;
             this.cmb_FilterBookAvailability.IntegralHeight = false;
@@ -1066,7 +1066,7 @@ namespace Library_Management_System_v1._1.View
             this.cmb_MemberFilter.DropDownHeight = 118;
             this.cmb_MemberFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_MemberFilter.DropDownWidth = 150;
-            this.cmb_MemberFilter.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmb_MemberFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmb_MemberFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmb_MemberFilter.FormattingEnabled = true;
             this.cmb_MemberFilter.IntegralHeight = false;
@@ -1421,7 +1421,7 @@ namespace Library_Management_System_v1._1.View
             this.cmb_filterBooks.DropDownHeight = 118;
             this.cmb_filterBooks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_filterBooks.DropDownWidth = 150;
-            this.cmb_filterBooks.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmb_filterBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmb_filterBooks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmb_filterBooks.FormattingEnabled = true;
             this.cmb_filterBooks.IntegralHeight = false;
@@ -1719,7 +1719,7 @@ namespace Library_Management_System_v1._1.View
             this.cmb_bookIssueFilter.DropDownHeight = 118;
             this.cmb_bookIssueFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_bookIssueFilter.DropDownWidth = 150;
-            this.cmb_bookIssueFilter.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmb_bookIssueFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmb_bookIssueFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmb_bookIssueFilter.FormattingEnabled = true;
             this.cmb_bookIssueFilter.IntegralHeight = false;
@@ -2112,7 +2112,7 @@ namespace Library_Management_System_v1._1.View
             this.cmb_filterAccounting.DropDownHeight = 118;
             this.cmb_filterAccounting.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_filterAccounting.DropDownWidth = 150;
-            this.cmb_filterAccounting.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmb_filterAccounting.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmb_filterAccounting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmb_filterAccounting.FormattingEnabled = true;
             this.cmb_filterAccounting.IntegralHeight = false;
@@ -2282,7 +2282,7 @@ namespace Library_Management_System_v1._1.View
             // datetime_activityFilter
             // 
             this.datetime_activityFilter.Location = new System.Drawing.Point(762, 269);
-            this.datetime_activityFilter.MinimumSize = new System.Drawing.Size(0, 29);
+            this.datetime_activityFilter.MinimumSize = new System.Drawing.Size(4, 29);
             this.datetime_activityFilter.Name = "datetime_activityFilter";
             this.datetime_activityFilter.Size = new System.Drawing.Size(200, 29);
             this.datetime_activityFilter.TabIndex = 4;
