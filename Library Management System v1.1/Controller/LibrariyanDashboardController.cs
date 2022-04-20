@@ -22,9 +22,10 @@ namespace Library_Management_System_v1._1.Controller
             {
                 database.Con.Open();
                 MySqlDataReader sdr = database.readData("Select * From Librarian WHERE Librarian_Id = '" + emp_id + "'");
-                sdr.Read();
+                
                 if (sdr.HasRows)
                 {
+                    sdr.Read();
                     librarian = new Model.Librarian(
                         emp_id, sdr["Name"].ToString(), sdr["Address"].ToString(), sdr["Email"].ToString(),
                         sdr["NIC"].ToString(), sdr["Phone"].ToString(),Convert.ToDateTime(sdr["updated_date"]),
