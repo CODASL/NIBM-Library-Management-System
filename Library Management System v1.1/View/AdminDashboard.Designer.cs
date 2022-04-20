@@ -55,7 +55,7 @@ namespace Library_Management_System_v1._1.View
             this.cmb_filterLibrarians = new MaterialSkin.Controls.MaterialComboBox();
             this.btn_refreshLibrarianList = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.searchTxtBox = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
+            this.btn_generateLibrarianReport = new MaterialSkin.Controls.MaterialButton();
             this.updateLibrariyanBtn = new MaterialSkin.Controls.MaterialButton();
             this.deleteLibrariyanBtn = new MaterialSkin.Controls.MaterialButton();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
@@ -366,7 +366,7 @@ namespace Library_Management_System_v1._1.View
             // datePicker_AdminActivities
             // 
             this.datePicker_AdminActivities.Location = new System.Drawing.Point(736, 91);
-            this.datePicker_AdminActivities.MinimumSize = new System.Drawing.Size(0, 29);
+            this.datePicker_AdminActivities.MinimumSize = new System.Drawing.Size(4, 29);
             this.datePicker_AdminActivities.Name = "datePicker_AdminActivities";
             this.datePicker_AdminActivities.Size = new System.Drawing.Size(200, 29);
             this.datePicker_AdminActivities.TabIndex = 12;
@@ -412,7 +412,7 @@ namespace Library_Management_System_v1._1.View
             this.ManageLibrariyans.Controls.Add(this.cmb_filterLibrarians);
             this.ManageLibrariyans.Controls.Add(this.btn_refreshLibrarianList);
             this.ManageLibrariyans.Controls.Add(this.searchTxtBox);
-            this.ManageLibrariyans.Controls.Add(this.materialButton6);
+            this.ManageLibrariyans.Controls.Add(this.btn_generateLibrarianReport);
             this.ManageLibrariyans.Controls.Add(this.updateLibrariyanBtn);
             this.ManageLibrariyans.Controls.Add(this.deleteLibrariyanBtn);
             this.ManageLibrariyans.Controls.Add(this.materialCard5);
@@ -502,24 +502,25 @@ namespace Library_Management_System_v1._1.View
             this.searchTxtBox.UseTallSize = false;
             this.searchTxtBox.TextChanged += new System.EventHandler(this.searchTxtBox_TextChanged_1);
             // 
-            // materialButton6
+            // btn_generateLibrarianReport
             // 
-            this.materialButton6.AutoSize = false;
-            this.materialButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton6.Depth = 0;
-            this.materialButton6.DrawShadows = true;
-            this.materialButton6.HighEmphasis = true;
-            this.materialButton6.Icon = null;
-            this.materialButton6.Location = new System.Drawing.Point(761, 575);
-            this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton6.Name = "materialButton6";
-            this.materialButton6.Size = new System.Drawing.Size(249, 41);
-            this.materialButton6.TabIndex = 19;
-            this.materialButton6.Text = "Generate Librariyans Report";
-            this.materialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton6.UseAccentColor = false;
-            this.materialButton6.UseVisualStyleBackColor = true;
+            this.btn_generateLibrarianReport.AutoSize = false;
+            this.btn_generateLibrarianReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_generateLibrarianReport.Depth = 0;
+            this.btn_generateLibrarianReport.DrawShadows = true;
+            this.btn_generateLibrarianReport.HighEmphasis = true;
+            this.btn_generateLibrarianReport.Icon = null;
+            this.btn_generateLibrarianReport.Location = new System.Drawing.Point(761, 575);
+            this.btn_generateLibrarianReport.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_generateLibrarianReport.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_generateLibrarianReport.Name = "btn_generateLibrarianReport";
+            this.btn_generateLibrarianReport.Size = new System.Drawing.Size(249, 41);
+            this.btn_generateLibrarianReport.TabIndex = 19;
+            this.btn_generateLibrarianReport.Text = "Generate Librariyans Report";
+            this.btn_generateLibrarianReport.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_generateLibrarianReport.UseAccentColor = false;
+            this.btn_generateLibrarianReport.UseVisualStyleBackColor = true;
+            this.btn_generateLibrarianReport.Click += new System.EventHandler(this.btn_generateLibrarianReport_Click);
             // 
             // updateLibrariyanBtn
             // 
@@ -1256,7 +1257,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialCard materialCard4;
         private MaterialSkin.Controls.MaterialLabel materialLabel19;
         private MaterialSkin.Controls.MaterialLabel lbl_libraryUpdated;
-        private MaterialSkin.Controls.MaterialButton materialButton6;
+        private MaterialSkin.Controls.MaterialButton btn_generateLibrarianReport;
         private MaterialSkin.Controls.MaterialButton updateLibrariyanBtn;
         private MaterialSkin.Controls.MaterialButton deleteLibrariyanBtn;
         private MaterialSkin.Controls.MaterialLabel materialLabel52;

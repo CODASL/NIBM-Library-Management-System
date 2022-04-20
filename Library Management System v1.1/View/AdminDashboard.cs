@@ -54,7 +54,9 @@ namespace Library_Management_System_v1._1.View
             commonController.loadActivities(listview_MyActivitiesAdmin, emp_id);
             lbl_categoryCount.Text = adminDashboardCtrl.setBookCount().ToString();
             lbl_memberCount.Text = Controller.AdminDashboardController.memberCount.ToString();
-            
+            lbl_libraryUpdated.Text = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
+
+
 
 
 
@@ -379,6 +381,11 @@ namespace Library_Management_System_v1._1.View
                 listview_MyActivitiesAdmin.GridLines = true;
             }
             material.MaterialSkinManager.Theme = material.Thememode;
+        }
+
+        private void btn_generateLibrarianReport_Click(object sender, EventArgs e)
+        {
+            new Report.ReportViewer().Show();
         }
     }
 }
