@@ -40,7 +40,7 @@ namespace Library_Management_System_v1._1.View
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
             this.adminActivity = new System.Windows.Forms.TabPage();
             this.refreshAdminActivties = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.materialButton7 = new MaterialSkin.Controls.MaterialButton();
+            this.btn_activityReport = new MaterialSkin.Controls.MaterialButton();
             this.materialCard8 = new MaterialSkin.Controls.MaterialCard();
             this.materialFloatingActionButton4 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
@@ -75,22 +75,19 @@ namespace Library_Management_System_v1._1.View
             this.libLastUpdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addLibrarianBtn = new MaterialSkin.Controls.MaterialButton();
             this.adminDashboardBtn = new System.Windows.Forms.TabPage();
-            this.libActivityListAdmin = new MaterialSkin.Controls.MaterialListView();
-            this.LIDAdminDashboard = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ActivityAdminDashBoard = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.libActivityTimeAdminDashboard = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialCard13 = new MaterialSkin.Controls.MaterialCard();
-            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
             this.lbl_memberCount = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.memberRegistrationChart = new LiveCharts.WinForms.CartesianChart();
             this.materialCard12 = new MaterialSkin.Controls.MaterialCard();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.lbl_categoryCount = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.categoriesPieChart = new LiveCharts.WinForms.PieChart();
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
-            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
+            this.libActivityListAdmin = new MaterialSkin.Controls.MaterialListView();
+            this.LIDAdminDashboard = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ActivityAdminDashBoard = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.libActivityTimeAdminDashboard = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.datePicker_AdminDashboard = new MetroFramework.Controls.MetroDateTime();
             this.todayDateAdmin = new MaterialSkin.Controls.MaterialLabel();
@@ -240,7 +237,7 @@ namespace Library_Management_System_v1._1.View
             // adminActivity
             // 
             this.adminActivity.Controls.Add(this.refreshAdminActivties);
-            this.adminActivity.Controls.Add(this.materialButton7);
+            this.adminActivity.Controls.Add(this.btn_activityReport);
             this.adminActivity.Controls.Add(this.materialCard8);
             this.adminActivity.Controls.Add(this.materialLabel52);
             this.adminActivity.Controls.Add(this.datePicker_AdminActivities);
@@ -272,24 +269,25 @@ namespace Library_Management_System_v1._1.View
             this.refreshAdminActivties.UseVisualStyleBackColor = false;
             this.refreshAdminActivties.Click += new System.EventHandler(this.refreshAdminActivties_Click);
             // 
-            // materialButton7
+            // btn_activityReport
             // 
-            this.materialButton7.AutoSize = false;
-            this.materialButton7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton7.Depth = 0;
-            this.materialButton7.DrawShadows = true;
-            this.materialButton7.HighEmphasis = true;
-            this.materialButton7.Icon = null;
-            this.materialButton7.Location = new System.Drawing.Point(712, 580);
-            this.materialButton7.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton7.Name = "materialButton7";
-            this.materialButton7.Size = new System.Drawing.Size(249, 41);
-            this.materialButton7.TabIndex = 20;
-            this.materialButton7.Text = "Generate Activity Report";
-            this.materialButton7.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton7.UseAccentColor = false;
-            this.materialButton7.UseVisualStyleBackColor = true;
+            this.btn_activityReport.AutoSize = false;
+            this.btn_activityReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_activityReport.Depth = 0;
+            this.btn_activityReport.DrawShadows = true;
+            this.btn_activityReport.HighEmphasis = true;
+            this.btn_activityReport.Icon = null;
+            this.btn_activityReport.Location = new System.Drawing.Point(712, 580);
+            this.btn_activityReport.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_activityReport.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_activityReport.Name = "btn_activityReport";
+            this.btn_activityReport.Size = new System.Drawing.Size(249, 41);
+            this.btn_activityReport.TabIndex = 20;
+            this.btn_activityReport.Text = "Generate Activity Report";
+            this.btn_activityReport.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_activityReport.UseAccentColor = false;
+            this.btn_activityReport.UseVisualStyleBackColor = true;
+            this.btn_activityReport.Click += new System.EventHandler(this.btn_activityReport_Click);
             // 
             // materialCard8
             // 
@@ -366,7 +364,7 @@ namespace Library_Management_System_v1._1.View
             // datePicker_AdminActivities
             // 
             this.datePicker_AdminActivities.Location = new System.Drawing.Point(736, 91);
-            this.datePicker_AdminActivities.MinimumSize = new System.Drawing.Size(4, 29);
+            this.datePicker_AdminActivities.MinimumSize = new System.Drawing.Size(0, 29);
             this.datePicker_AdminActivities.Name = "datePicker_AdminActivities";
             this.datePicker_AdminActivities.Size = new System.Drawing.Size(200, 29);
             this.datePicker_AdminActivities.TabIndex = 12;
@@ -770,7 +768,6 @@ namespace Library_Management_System_v1._1.View
             // 
             // adminDashboardBtn
             // 
-            this.adminDashboardBtn.Controls.Add(this.libActivityListAdmin);
             this.adminDashboardBtn.Controls.Add(this.materialCard13);
             this.adminDashboardBtn.Controls.Add(this.materialCard12);
             this.adminDashboardBtn.Controls.Add(this.materialCard6);
@@ -785,51 +782,9 @@ namespace Library_Management_System_v1._1.View
             this.adminDashboardBtn.Text = "Dashboard";
             this.adminDashboardBtn.UseVisualStyleBackColor = true;
             // 
-            // libActivityListAdmin
-            // 
-            this.libActivityListAdmin.AutoSizeTable = false;
-            this.libActivityListAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.libActivityListAdmin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.libActivityListAdmin.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.LIDAdminDashboard,
-            this.ActivityAdminDashBoard,
-            this.libActivityTimeAdminDashboard});
-            this.libActivityListAdmin.Depth = 0;
-            this.libActivityListAdmin.FullRowSelect = true;
-            this.libActivityListAdmin.HideSelection = false;
-            this.libActivityListAdmin.Location = new System.Drawing.Point(221, 79);
-            this.libActivityListAdmin.MaximumSize = new System.Drawing.Size(909, 120);
-            this.libActivityListAdmin.MinimumSize = new System.Drawing.Size(909, 120);
-            this.libActivityListAdmin.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.libActivityListAdmin.MouseState = MaterialSkin.MouseState.OUT;
-            this.libActivityListAdmin.MultiSelect = false;
-            this.libActivityListAdmin.Name = "libActivityListAdmin";
-            this.libActivityListAdmin.OwnerDraw = true;
-            this.libActivityListAdmin.ShowItemToolTips = true;
-            this.libActivityListAdmin.Size = new System.Drawing.Size(909, 120);
-            this.libActivityListAdmin.TabIndex = 0;
-            this.libActivityListAdmin.UseCompatibleStateImageBehavior = false;
-            this.libActivityListAdmin.View = System.Windows.Forms.View.Details;
-            // 
-            // LIDAdminDashboard
-            // 
-            this.LIDAdminDashboard.Text = "Librariyan ID";
-            this.LIDAdminDashboard.Width = 141;
-            // 
-            // ActivityAdminDashBoard
-            // 
-            this.ActivityAdminDashBoard.Text = "Activity";
-            this.ActivityAdminDashBoard.Width = 462;
-            // 
-            // libActivityTimeAdminDashboard
-            // 
-            this.libActivityTimeAdminDashboard.Text = "Date Time";
-            this.libActivityTimeAdminDashboard.Width = 284;
-            // 
             // materialCard13
             // 
             this.materialCard13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard13.Controls.Add(this.materialButton3);
             this.materialCard13.Controls.Add(this.lbl_memberCount);
             this.materialCard13.Controls.Add(this.materialLabel8);
             this.materialCard13.Controls.Add(this.memberRegistrationChart);
@@ -842,25 +797,6 @@ namespace Library_Management_System_v1._1.View
             this.materialCard13.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard13.Size = new System.Drawing.Size(760, 369);
             this.materialCard13.TabIndex = 6;
-            // 
-            // materialButton3
-            // 
-            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton3.Depth = 0;
-            this.materialButton3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.materialButton3.DrawShadows = true;
-            this.materialButton3.HighEmphasis = true;
-            this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(14, 319);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton3.Name = "materialButton3";
-            this.materialButton3.Size = new System.Drawing.Size(732, 36);
-            this.materialButton3.TabIndex = 5;
-            this.materialButton3.Text = "Genarate Report";
-            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton3.UseAccentColor = false;
-            this.materialButton3.UseVisualStyleBackColor = true;
             // 
             // lbl_memberCount
             // 
@@ -890,14 +826,13 @@ namespace Library_Management_System_v1._1.View
             // 
             this.memberRegistrationChart.Location = new System.Drawing.Point(13, 53);
             this.memberRegistrationChart.Name = "memberRegistrationChart";
-            this.memberRegistrationChart.Size = new System.Drawing.Size(729, 262);
+            this.memberRegistrationChart.Size = new System.Drawing.Size(729, 299);
             this.memberRegistrationChart.TabIndex = 0;
             this.memberRegistrationChart.Text = "cartesianChart1";
             // 
             // materialCard12
             // 
             this.materialCard12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard12.Controls.Add(this.materialButton2);
             this.materialCard12.Controls.Add(this.lbl_categoryCount);
             this.materialCard12.Controls.Add(this.materialLabel6);
             this.materialCard12.Controls.Add(this.categoriesPieChart);
@@ -910,25 +845,6 @@ namespace Library_Management_System_v1._1.View
             this.materialCard12.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard12.Size = new System.Drawing.Size(359, 369);
             this.materialCard12.TabIndex = 5;
-            // 
-            // materialButton2
-            // 
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.materialButton2.DrawShadows = true;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(14, 319);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.Size = new System.Drawing.Size(331, 36);
-            this.materialButton2.TabIndex = 3;
-            this.materialButton2.Text = "Genarate Report";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
             // 
             // lbl_categoryCount
             // 
@@ -958,13 +874,13 @@ namespace Library_Management_System_v1._1.View
             // 
             this.categoriesPieChart.Location = new System.Drawing.Point(0, 53);
             this.categoriesPieChart.Name = "categoriesPieChart";
-            this.categoriesPieChart.Size = new System.Drawing.Size(359, 247);
+            this.categoriesPieChart.Size = new System.Drawing.Size(359, 302);
             this.categoriesPieChart.TabIndex = 0;
             // 
             // materialCard6
             // 
             this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard6.Controls.Add(this.materialButton4);
+            this.materialCard6.Controls.Add(this.libActivityListAdmin);
             this.materialCard6.Depth = 0;
             this.materialCard6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard6.Location = new System.Drawing.Point(207, 66);
@@ -975,24 +891,46 @@ namespace Library_Management_System_v1._1.View
             this.materialCard6.Size = new System.Drawing.Size(937, 193);
             this.materialCard6.TabIndex = 3;
             // 
-            // materialButton4
+            // libActivityListAdmin
             // 
-            this.materialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton4.Depth = 0;
-            this.materialButton4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.materialButton4.DrawShadows = true;
-            this.materialButton4.HighEmphasis = true;
-            this.materialButton4.Icon = null;
-            this.materialButton4.Location = new System.Drawing.Point(14, 143);
-            this.materialButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton4.Name = "materialButton4";
-            this.materialButton4.Size = new System.Drawing.Size(909, 36);
-            this.materialButton4.TabIndex = 6;
-            this.materialButton4.Text = "Genarate Report";
-            this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton4.UseAccentColor = false;
-            this.materialButton4.UseVisualStyleBackColor = true;
+            this.libActivityListAdmin.AutoSizeTable = false;
+            this.libActivityListAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.libActivityListAdmin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.libActivityListAdmin.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.LIDAdminDashboard,
+            this.ActivityAdminDashBoard,
+            this.libActivityTimeAdminDashboard});
+            this.libActivityListAdmin.Depth = 0;
+            this.libActivityListAdmin.FullRowSelect = true;
+            this.libActivityListAdmin.HideSelection = false;
+            this.libActivityListAdmin.Location = new System.Drawing.Point(10, 18);
+            this.libActivityListAdmin.MaximumSize = new System.Drawing.Size(909, 150);
+            this.libActivityListAdmin.MinimumSize = new System.Drawing.Size(909, 150);
+            this.libActivityListAdmin.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.libActivityListAdmin.MouseState = MaterialSkin.MouseState.OUT;
+            this.libActivityListAdmin.MultiSelect = false;
+            this.libActivityListAdmin.Name = "libActivityListAdmin";
+            this.libActivityListAdmin.OwnerDraw = true;
+            this.libActivityListAdmin.ShowItemToolTips = true;
+            this.libActivityListAdmin.Size = new System.Drawing.Size(909, 150);
+            this.libActivityListAdmin.TabIndex = 0;
+            this.libActivityListAdmin.UseCompatibleStateImageBehavior = false;
+            this.libActivityListAdmin.View = System.Windows.Forms.View.Details;
+            // 
+            // LIDAdminDashboard
+            // 
+            this.LIDAdminDashboard.Text = "Librariyan ID";
+            this.LIDAdminDashboard.Width = 141;
+            // 
+            // ActivityAdminDashBoard
+            // 
+            this.ActivityAdminDashBoard.Text = "Activity";
+            this.ActivityAdminDashBoard.Width = 462;
+            // 
+            // libActivityTimeAdminDashboard
+            // 
+            this.libActivityTimeAdminDashboard.Text = "Date Time";
+            this.libActivityTimeAdminDashboard.Width = 284;
             // 
             // materialCard3
             // 
@@ -1196,7 +1134,6 @@ namespace Library_Management_System_v1._1.View
             this.materialCard12.ResumeLayout(false);
             this.materialCard12.PerformLayout();
             this.materialCard6.ResumeLayout(false);
-            this.materialCard6.PerformLayout();
             this.materialCard3.ResumeLayout(false);
             this.materialCard3.PerformLayout();
             this.materialCard1.ResumeLayout(false);
@@ -1236,16 +1173,13 @@ namespace Library_Management_System_v1._1.View
         private MetroFramework.Controls.MetroDateTime datePicker_AdminDashboard;
         private System.Windows.Forms.Timer timer1;
         private MaterialSkin.Controls.MaterialCard materialCard13;
-        private MaterialSkin.Controls.MaterialButton materialButton3;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private LiveCharts.WinForms.CartesianChart memberRegistrationChart;
         private MaterialSkin.Controls.MaterialCard materialCard12;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialLabel lbl_categoryCount;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private LiveCharts.WinForms.PieChart categoriesPieChart;
         private MaterialSkin.Controls.MaterialCard materialCard6;
-        private MaterialSkin.Controls.MaterialButton materialButton4;
         private MaterialSkin.Controls.MaterialListView libActivityListAdmin;
         private System.Windows.Forms.ColumnHeader LIDAdminDashboard;
         private System.Windows.Forms.ColumnHeader ActivityAdminDashBoard;
@@ -1268,7 +1202,7 @@ namespace Library_Management_System_v1._1.View
         private MaterialSkin.Controls.MaterialCard materialCard8;
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
         private MaterialSkin.Controls.MaterialLabel lbl_AdminActivity_LastUpdate;
-        private MaterialSkin.Controls.MaterialButton materialButton7;
+        private MaterialSkin.Controls.MaterialButton btn_activityReport;
         private MaterialSkin.Controls.MaterialFloatingActionButton adminNotifications;
         private MaterialSkin.Controls.MaterialButton adminLogout;
         private System.Windows.Forms.Label lbl_notification_count;

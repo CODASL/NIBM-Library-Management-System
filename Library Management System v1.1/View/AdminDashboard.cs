@@ -387,5 +387,20 @@ namespace Library_Management_System_v1._1.View
         {
             new Report.ReportViewer().Show();
         }
+
+        private void btn_generateCategoryReport_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_generateMemberReport_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_activityReport_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
