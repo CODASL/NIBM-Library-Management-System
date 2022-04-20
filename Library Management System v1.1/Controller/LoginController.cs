@@ -39,7 +39,7 @@ namespace Library_Management_System_v1._1.Controller
                             currentEmpType = emp_type;
                             Controller.CommonController.setActivity("Logged In ");
                             View.AdminDashboard frm = new View.AdminDashboard();
-                            frm.TopMost = true;
+                            
                             frm.Show();
                             
 
@@ -50,7 +50,7 @@ namespace Library_Management_System_v1._1.Controller
                             currentEmpType = emp_type;
                             Controller.CommonController.setActivity("Logged In ");
                             View.LibrariyanHome frm = new View.LibrariyanHome();
-                            frm.TopMost = true;
+                            
                             frm.Show();
                             
 
