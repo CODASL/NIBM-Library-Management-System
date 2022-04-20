@@ -366,7 +366,7 @@ namespace Library_Management_System_v1._1.View
             // datePicker_AdminActivities
             // 
             this.datePicker_AdminActivities.Location = new System.Drawing.Point(736, 91);
-            this.datePicker_AdminActivities.MinimumSize = new System.Drawing.Size(0, 29);
+            this.datePicker_AdminActivities.MinimumSize = new System.Drawing.Size(4, 29);
             this.datePicker_AdminActivities.Name = "datePicker_AdminActivities";
             this.datePicker_AdminActivities.Size = new System.Drawing.Size(200, 29);
             this.datePicker_AdminActivities.TabIndex = 12;
@@ -928,6 +928,7 @@ namespace Library_Management_System_v1._1.View
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
             // lbl_categoryCount
             // 

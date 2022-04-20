@@ -380,5 +380,11 @@ namespace Library_Management_System_v1._1.View
             }
             material.MaterialSkinManager.Theme = material.Thememode;
         }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            var frm = new ReportViewer();
+            frm.Show();
+        }
     }
 }
