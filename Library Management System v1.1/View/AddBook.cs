@@ -93,7 +93,7 @@ namespace Library_Management_System_v1._1.View
             }
             else
             {
-                commonController.setId(txt_bookIdAddBook, "BID", "Book", "B");
+                commonController.setId(txt_bookIdAddBook, "BID", "Book", "B", "Date_added");
             }
         }
 
@@ -173,7 +173,7 @@ namespace Library_Management_System_v1._1.View
         {
             try
             {
-                int isbn;
+               
                 if (string.IsNullOrEmpty(txt_bookISBN.Text))
                 {
                     MessageBox.Show("Please Scan or type ISBN Code");

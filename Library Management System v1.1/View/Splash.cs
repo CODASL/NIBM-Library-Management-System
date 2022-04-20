@@ -23,6 +23,7 @@ namespace Library_Management_System_v1._1
         public Splash()
         {
             InitializeComponent();
+            this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
         }
@@ -36,12 +37,13 @@ namespace Library_Management_System_v1._1
         private void timer1_Tick(object sender, EventArgs e)
         {
             progressBar1.Value = progressBar1.Value + 1;
-            if (progressBar1.Value > 50)
+            if (progressBar1.Value > 30)
             {
                 this.Hide();
                 var frm = new Login();
                 timer1.Enabled = false;
                 frm.Closed += (s, args) => this.Close();
+                frm.TopMost = true;
                 frm.ShowDialog();
             }
         }

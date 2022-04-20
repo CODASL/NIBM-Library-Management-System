@@ -81,7 +81,7 @@ namespace Library_Management_System_v1._1.View
             this.txt_rackNo.Depth = 0;
             this.txt_rackNo.Font = new System.Drawing.Font("Roboto", 12F);
             this.txt_rackNo.Location = new System.Drawing.Point(151, 142);
-            this.txt_rackNo.MaxLength = 50;
+            this.txt_rackNo.MaxLength = 4;
             this.txt_rackNo.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_rackNo.Multiline = false;
             this.txt_rackNo.Name = "txt_rackNo";

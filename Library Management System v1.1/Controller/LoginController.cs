@@ -38,7 +38,9 @@ namespace Library_Management_System_v1._1.Controller
                             currentUserId = emp_id;
                             currentEmpType = emp_type;
                             Controller.CommonController.setActivity("Logged In ");
-                            new View.AdminDashboard().ShowDialog();
+                            View.AdminDashboard frm = new View.AdminDashboard();
+                            
+                            frm.Show();
                             
 
                         }
@@ -47,7 +49,9 @@ namespace Library_Management_System_v1._1.Controller
                             currentUserId = emp_id;
                             currentEmpType = emp_type;
                             Controller.CommonController.setActivity("Logged In ");
-                            new View.LibrariyanHome().Show();
+                            View.LibrariyanHome frm = new View.LibrariyanHome();
+                            
+                            frm.Show();
                             
 
                         }

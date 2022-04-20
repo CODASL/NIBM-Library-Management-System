@@ -30,6 +30,7 @@ namespace Library_Management_System_v1._1.View
             new Controller.MaterialController().addStyle(this);
             this.librarian = librarian;
             this.lbl_IssueBookLastUpdate = lbl_IssueBookLastUpdate;
+            cmb_ISBN.Focus();
 
         }
 
@@ -37,13 +38,13 @@ namespace Library_Management_System_v1._1.View
         private void Add_Book_Borrowing_Details_Load(object sender, EventArgs e)
         {
             
-            commonController.setId(txt_issueId, "ID", "Book_Issue", "");
-            cmb_ISBN.Focus();
+            commonController.setId(txt_issueId, "ID", "Book_Issue", "", "Issued_dateTime");
             loadISBNData();
             loadMemberData();
             txt_issuingLibId.Text = librarian.Id;
             lbl_LibName.Text = librarian.Name;
             getdatabr();
+           
 
         }
 
@@ -115,47 +116,55 @@ namespace Library_Management_System_v1._1.View
         //==============GET Book Details By ISBN =============================
         private void cmb_ISBN_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Model.DatabaseService database = new Model.DatabaseService();
-            try
+            if(cmb_ISBN.SelectedItem != null || cmb_ISBN.SelectedIndex != -1)
             {
-                database.Con.Open();
-                MySqlDataReader sdr = database.readData("SELECT * FROM Book WHERE ISBN = '"+cmb_ISBN.SelectedItem+"'");
-                sdr.Read();
-                lbl_bookName.Text = sdr["Name"].ToString();
-                lbl_bookCategory.Text = sdr["Category"].ToString();
-                lbl_BookAuthor.Text = sdr["Author"].ToString();
-                BID = sdr["BID"].ToString();
-                
+                Model.DatabaseService database = new Model.DatabaseService();
+                try
+                {
+                    database.Con.Open();
+                    MySqlDataReader sdr = database.readData("SELECT * FROM Book WHERE ISBN = '" + cmb_ISBN.SelectedItem + "'");
+                    sdr.Read();
+                    lbl_bookName.Text = sdr["Name"].ToString();
+                    lbl_bookCategory.Text = sdr["Category"].ToString();
+                    lbl_BookAuthor.Text = sdr["Author"].ToString();
+                    BID = sdr["BID"].ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    database.Con.Close();
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                database.Con.Close();
-            }
+            
         }
 
         //==============GET Member Details By Member ID =============================
         private void cmb_MemberId_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Model.DatabaseService database = new Model.DatabaseService();
-            try
+            if(cmb_MemberId.SelectedItem != null || cmb_MemberId.SelectedIndex != -1)
             {
-                database.Con.Open();
-                MySqlDataReader sdr = database.readData("SELECT * FROM Member WHERE MID = '" + cmb_MemberId.SelectedItem + "'");
-                sdr.Read();
-                lbl_MemberName.Text = sdr["Name"].ToString();
+                Model.DatabaseService database = new Model.DatabaseService();
+                try
+                {
+                    database.Con.Open();
+                    MySqlDataReader sdr = database.readData("SELECT * FROM Member WHERE MID = '" + cmb_MemberId.SelectedItem + "'");
+                    sdr.Read();
+                    lbl_MemberName.Text = sdr["Name"].ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    database.Con.Close();
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                database.Con.Close();
-            }
+            
         }
 
         private void btn_issueBookDialog_Click(object sender, EventArgs e)
@@ -207,8 +216,10 @@ namespace Library_Management_System_v1._1.View
 
         private void btn_clearissueBookDialog_Click(object sender, EventArgs e)
         {
-            cmb_ISBN.ResetText();
-            cmb_MemberId.ResetText();
+            cmb_ISBN.SelectedIndex = -1;
+            cmb_MemberId.SelectedIndex = -1;
+            cmb_MemberId.Focus();
+            cmb_ISBN.Focus();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

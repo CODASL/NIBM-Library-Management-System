@@ -24,7 +24,7 @@ namespace Library_Management_System_v1._1.View
         {
             InitializeComponent();
             new Controller.MaterialController().addStyle(this);
-            commonController.setId(txt_LibID, "Librarian_Id", "Librarian", "L");
+            commonController.setId(txt_LibID, "Librarian_Id", "Librarian", "L", "date_added");
             this.isUpdate = isUpdate;
             this.selectedRowID = selectedRowID;
             cmb_countrycodes.SelectedIndex = 1;
